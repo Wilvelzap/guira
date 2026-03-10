@@ -1,666 +1,463 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Guira Empresas | Cuenta Operativa Internacional para LATAM</title>
+    <title>Guira Empresas | La cuenta operativa internacional para LATAM</title>
+    <meta name="description" content="Guira Empresas es la plataforma financiera B2B para recibir USD, administrar balances y liquidar fondos en LATAM.">
     
-    <!-- React and ReactDOM -->
-    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
-    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
-    
-    <!-- Babel for JSX -->
-    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
-    
-    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    
-    <!-- Framer Motion -->
-    <script src="https://unpkg.com/framer-motion@10.16.4/dist/framer-motion.js"></script>
-    
-    <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
-
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/styles.css">
 
-    <!-- Tailwind Config -->
     <script>
         tailwind.config = {
             darkMode: 'class',
             theme: {
                 extend: {
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                    },
+                    fontFamily: { sans: ['Inter', 'sans-serif'] },
                     colors: {
                         guira: {
-                            navy: '#0B1120',
-                            petrol: '#0F172A',
-                            cyan: '#06b6d4',
-                            teal: '#0d9488',
-                            neon: '#00f6ff',
-                            dark: '#020617',
+                            navy: '#0B1120', petrol: '#0F172A',
+                            cyan: '#06b6d4', teal: '#0d9488',
+                            neon: '#00f6ff', dark: '#020617',
                         }
-                    },
-                    backgroundImage: {
-                        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-                        'hero-glow': 'conic-gradient(from 180deg at 50% 50%, #0d948833 0deg, #06b6d433 180deg, transparent 360deg)',
                     }
                 }
             }
         }
     </script>
-    <style>
-        body {
-            background-color: #ffffff;
-            color: #0f172a;
-            font-family: 'Inter', sans-serif;
-            overflow-x: hidden;
-        }
-        .glass-panel {
-            background: rgba(255, 255, 255, 0.7);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
-            border: 1px solid rgba(0, 0, 0, 0.05);
-            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
-        }
-        .text-gradient {
-            background-clip: text;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-image: linear-gradient(to right, #0F172A, #334155);
-        }
-        .text-gradient-accent {
-            background-clip: text;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-image: linear-gradient(to right, #0d9488, #06b6d4);
-        }
-        /* Custom scrollbar */
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-        ::-webkit-scrollbar-track {
-            background: #f8fafc;
-        }
-        ::-webkit-scrollbar-thumb {
-            background: #cbd5e1;
-            border-radius: 4px;
-        }
-        ::-webkit-scrollbar-thumb:hover {
-            background: #94a3b8;
-        }
-    </style>
 </head>
-<body class="antialiased selection:bg-guira-teal selection:text-white">
-    <div id="root"></div>
+<body class="bg-white text-slate-900 font-sans antialiased overflow-x-hidden selection:bg-guira-teal selection:text-white">
 
-    <script type="text/babel">
-        const { useState, useEffect } = React;
-        const { motion, AnimatePresence } = window.Motion;
+    <!-- Navbar -->
+    <nav id="navbar" class="fixed top-0 w-full z-50 transition-all duration-300 bg-transparent py-5">
+        <div class="max-w-7xl mx-auto px-6 flex justify-between items-center relative">
+            <a href="index.html" class="flex items-center gap-2">
+                <img src="./logo.png" alt="Guira Logo" class="h-8 object-contain" onerror="this.style.display='none'">
+                <span class="text-slate-900 font-extrabold text-xl tracking-tight">Guira <span class="text-slate-500 font-normal">Empresas</span></span>
+            </a>
+            
+            <div class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-600">
+                <a href="producto.html" class="hover:text-guira-teal transition-colors">Producto</a>
+                <a href="soluciones.html" class="hover:text-guira-teal transition-colors">Soluciones</a>
+                <a href="como-funciona.html" class="hover:text-guira-teal transition-colors">Cómo funciona</a>
+                <a href="seguridad.html" class="hover:text-guira-teal transition-colors">Seguridad</a>
+                <a href="faq.html" class="hover:text-guira-teal transition-colors">FAQ</a>
+            </div>
 
-        const Icon = ({ name, className }) => {
-            return <i data-lucide={name} className={className}></i>;
-        };
+            <div class="hidden md:flex items-center gap-4">
+                <a href="https://app.guira.com/login" class="text-sm font-medium text-slate-700 hover:text-guira-teal transition-colors">Iniciar Sesión</a>
+                <a href="demo.html" class="bg-slate-900 text-white px-5 py-2.5 rounded-lg text-sm font-semibold hover:bg-slate-800 transition-colors shadow-lg shadow-slate-900/20">Solicitar Demo</a>
+            </div>
 
-        const useLucide = () => {
-            useEffect(() => {
-                if (window.lucide) {
-                    window.lucide.createIcons();
-                }
-            });
-        };
+            <button id="mobile-menu-btn" class="md:hidden text-slate-800">
+                <i data-lucide="menu" class="w-6 h-6"></i>
+            </button>
+        </div>
 
-        const Navbar = () => {
-            const [scrolled, setScrolled] = useState(false);
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden absolute top-full left-0 w-full bg-white shadow-xl border-t border-slate-100 p-6 flex flex-col gap-4">
+            <a href="producto.html" class="font-medium text-slate-700">Producto</a>
+            <a href="soluciones.html" class="font-medium text-slate-700">Soluciones</a>
+            <a href="como-funciona.html" class="font-medium text-slate-700">Cómo funciona</a>
+            <a href="seguridad.html" class="font-medium text-slate-700">Seguridad</a>
+            <hr class="border-slate-100">
+            <a href="https://app.guira.com/login" class="font-medium text-slate-700">Iniciar Sesión</a>
+            <a href="demo.html" class="bg-slate-900 text-white text-center px-5 py-3 rounded-lg font-bold">Solicitar Demo</a>
+        </div>
+    </nav>
 
-            useEffect(() => {
-                const handleScroll = () => {
-                    setScrolled(window.scrollY > 50);
-                };
-                window.addEventListener('scroll', handleScroll);
-                return () => window.removeEventListener('scroll', handleScroll);
-            }, []);
+    <!-- Hero -->
+    <header class="relative pt-40 pb-24 overflow-hidden bg-slate-50 border-b border-slate-200">
+        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[600px] bg-guira-teal opacity-[0.05] blur-[120px] rounded-full pointer-events-none"></div>
+        <div class="absolute bottom-0 right-0 w-[500px] h-[500px] bg-guira-cyan opacity-[0.05] blur-[100px] rounded-full pointer-events-none"></div>
 
-            return (
-                <motion.nav 
-                    initial={{ y: -100 }}
-                    animate={{ y: 0 }}
-                    transition={{ type: "spring", stiffness: 100, damping: 20 }}
-                    className={`fixed top-0 w-full z-50 transition-all duration-300 ${scrolled ? 'glass-panel py-3 shadow-md' : 'bg-transparent py-5'}`}
-                >
-                    <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
-                        <div className="flex items-center gap-2">
-                            <img src="./logo.png" alt="Guira Logo" className="h-8 object-contain" onError={(e) => { e.target.style.display = 'none' }} />
-                            <span className="text-slate-900 font-extrabold text-xl tracking-tight">Guira <span className="text-slate-500 font-normal">Empresas</span></span>
+        <div class="max-w-7xl mx-auto px-6 relative z-10 text-center">
+            <div class="reveal">
+                <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white text-xs font-bold text-guira-teal mb-8 border border-slate-200 shadow-sm">
+                    <span class="w-2 h-2 rounded-full bg-guira-teal animate-pulse"></span>
+                    Para Empresas de LATAM
+                </span>
+            </div>
+
+            <h1 class="reveal reveal-delay-1 text-5xl md:text-7xl font-extrabold tracking-tight mb-8 leading-[1.1] text-slate-900 max-w-5xl mx-auto">
+                La cuenta operativa internacional <br class="hidden md:block" />
+                <span class="text-gradient">para tu negocio en </span> <span class="text-gradient-accent">LATAM.</span>
+            </h1>
+
+            <p class="reveal reveal-delay-2 text-lg md:text-xl text-slate-600 mb-10 max-w-2xl mx-auto font-medium">
+                Recibe pagos en USD desde Estados Unidos, administra tu balance operativo digital y mueve fondos con flexibilidad a cuentas en Bolivia, USDT o pagos a proveedores en el exterior.
+            </p>
+
+            <div class="reveal reveal-delay-3 flex flex-col sm:flex-row items-center justify-center gap-4">
+                <a href="https://app.guira.com/register" class="w-full sm:w-auto px-8 py-4 bg-slate-900 text-white rounded-xl font-bold text-lg hover:bg-slate-800 transition-all shadow-xl shadow-slate-900/20 hover:-translate-y-1">
+                    Abrir Cuenta Empresa
+                </a>
+                <a href="demo.html" class="w-full sm:w-auto px-8 py-4 bg-white text-slate-700 border border-slate-200 rounded-xl font-bold text-lg hover:bg-slate-50 transition-all shadow-sm hover:-translate-y-1">
+                    Solicitar Demo
+                </a>
+            </div>
+
+            <!-- Hero Mockup Protagonista -->
+            <div class="mt-20 relative mx-auto max-w-5xl reveal reveal-delay-4 animate-float">
+                <div class="bg-white rounded-2xl border border-slate-200 shadow-[0_20px_50px_-12px_rgba(0,0,0,0.1)] overflow-hidden">
+                    <div class="h-12 border-b border-slate-100 flex items-center px-4 bg-slate-50">
+                        <div class="flex gap-2">
+                            <div class="w-3 h-3 rounded-full bg-slate-300"></div>
+                            <div class="w-3 h-3 rounded-full bg-slate-300"></div>
+                            <div class="w-3 h-3 rounded-full bg-slate-300"></div>
                         </div>
-                        <div className="hidden md:flex items-center gap-8 text-sm font-medium text-slate-600">
-                            <a href="#producto" className="hover:text-guira-teal transition-colors">Producto</a>
-                            <a href="#soluciones" className="hover:text-guira-teal transition-colors">Soluciones</a>
-                            <a href="#como-funciona" className="hover:text-guira-teal transition-colors">Cómo funciona</a>
-                            <a href="#seguridad" className="hover:text-guira-teal transition-colors">Seguridad</a>
-                        </div>
-                        <div className="flex items-center gap-4">
-                            <button className="hidden md:block text-sm font-medium text-slate-700 hover:text-guira-teal transition-colors">
-                                Iniciar Sesión
-                            </button>
-                            <motion.button 
-                                whileHover={{ scale: 1.05 }}
-                                whileTap={{ scale: 0.95 }}
-                                className="bg-slate-900 text-white px-5 py-2.5 rounded-lg text-sm font-semibold hover:bg-slate-800 transition-colors shadow-lg"
-                            >
-                                Solicitar Demo
-                            </motion.button>
+                        <div class="mx-auto flex-1 max-w-md mx-4">
+                            <div class="bg-white rounded-md px-3 py-1.5 flex items-center gap-2 border border-slate-200 shadow-sm justify-center">
+                                <i data-lucide="lock" class="w-3 h-3 text-slate-400"></i>
+                                <span class="text-xs font-medium text-slate-500">app.guira.com/dashboard</span>
+                            </div>
                         </div>
                     </div>
-                </motion.nav>
-            );
-        };
-
-        const Hero = () => {
-            return (
-                <section className="relative pt-32 pb-20 md:pt-48 md:pb-32 overflow-hidden bg-slate-50">
-                    <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-lg h-[500px] bg-guira-teal opacity-10 blur-[120px] rounded-full pointer-events-none"></div>
-                    <div className="absolute top-1/4 right-0 w-96 h-96 bg-guira-cyan opacity-10 blur-[100px] rounded-full pointer-events-none"></div>
-
-                    <div className="max-w-7xl mx-auto px-6 relative z-10">
-                        <div className="text-center max-w-4xl mx-auto">
-                            <motion.div
-                                initial={{ opacity: 0, y: 30 }}
-                                animate={{ opacity: 1, y: 0 }}
-                                transition={{ duration: 0.8, ease: "easeOut" }}
-                            >
-                                <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white text-xs font-semibold text-guira-teal mb-6 border border-slate-200 shadow-sm">
-                                    <span className="w-2 h-2 rounded-full bg-guira-teal animate-pulse"></span>
-                                    Infraestructura operativa para Bolivia y LATAM
-                                </span>
-                            </motion.div>
-
-                            <motion.h1 
-                                className="text-5xl md:text-7xl font-extrabold tracking-tight mb-8 leading-[1.1] text-slate-900"
-                                initial={{ opacity: 0, y: 30 }}
-                                animate={{ opacity: 1, y: 0 }}
-                                transition={{ duration: 0.8, delay: 0.1, ease: "easeOut" }}
-                            >
-                                La cuenta en USD <br className="hidden md:block" />
-                                <span className="text-gradient">para tu operación </span> 
-                                <span className="text-gradient-accent">Global.</span>
-                            </motion.h1>
-
-                            <motion.p 
-                                className="text-lg md:text-xl text-slate-600 mb-10 max-w-2xl mx-auto leading-relaxed"
-                                initial={{ opacity: 0, y: 30 }}
-                                animate={{ opacity: 1, y: 0 }}
-                                transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
-                            >
-                                Recibe pagos en Estados Unidos, administra tu balance operativo internacional y mueve fondos con flexibilidad a <strong>cuentas en Bolivianos (BOB)</strong>, USDT o pagos B2B mundiales.
-                            </motion.p>
-
-                            <motion.div 
-                                className="flex flex-col sm:flex-row items-center justify-center gap-4"
-                                initial={{ opacity: 0, y: 30 }}
-                                animate={{ opacity: 1, y: 0 }}
-                                transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
-                            >
-                                <motion.button whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }} className="w-full sm:w-auto px-8 py-4 bg-slate-900 text-white rounded-xl font-bold text-lg hover:bg-slate-800 transition-all shadow-xl">
-                                    Abrir Cuenta Empresas
-                                </motion.button>
-                                <motion.button whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }} className="w-full sm:w-auto px-8 py-4 bg-white text-slate-700 border border-slate-200 rounded-xl font-bold text-lg hover:bg-slate-50 transition-all shadow-sm">
-                                    Hablar con Ventas
-                                </motion.button>
-                            </motion.div>
-                        </div>
-
-                        {/* Hero Mockup */}
-                        <motion.div 
-                            className="mt-24 relative mx-auto max-w-5xl"
-                            initial={{ opacity: 0, y: 50, scale: 0.95 }}
-                            animate={{ opacity: 1, y: 0, scale: 1 }}
-                            transition={{ duration: 1, delay: 0.4, type: "spring" }}
-                        >
-                            <div className="bg-white rounded-2xl border border-slate-200 shadow-2xl overflow-hidden">
-                                <div className="h-12 border-b border-slate-100 flex items-center px-4 gap-2 bg-slate-50">
-                                    <div className="flex gap-1.5">
-                                        <div className="w-3 h-3 rounded-full bg-slate-300"></div>
-                                        <div className="w-3 h-3 rounded-full bg-slate-300"></div>
-                                        <div className="w-3 h-3 rounded-full bg-slate-300"></div>
-                                    </div>
-                                    <div className="mx-auto bg-white rounded-md px-10 md:px-32 py-1.5 flex items-center gap-2 border border-slate-200 shadow-sm">
-                                        <Icon name="lock" className="w-3 h-3 text-slate-400" />
-                                        <span className="text-xs font-medium text-slate-500">app.guira.com/empresas/dashboard</span>
-                                    </div>
+                    <!-- Mockup Body -->
+                    <div class="flex h-[450px]">
+                        <!-- Sidebar -->
+                        <div class="w-64 border-r border-slate-100 p-6 hidden md:block bg-slate-50/50">
+                            <div class="flex items-center gap-3 mb-8">
+                                <div class="w-10 h-10 rounded-xl bg-slate-900 flex items-center justify-center font-bold text-white shadow-md">AE</div>
+                                <div>
+                                    <div class="text-sm font-bold text-slate-900">Agencia Export</div>
+                                    <div class="text-xs text-slate-500 font-medium">Business #4829</div>
                                 </div>
-                                <div className="flex h-[500px]">
-                                    <div className="w-64 border-r border-slate-100 p-6 hidden md:block bg-slate-50/50">
-                                        <div className="flex items-center gap-3 mb-8">
-                                            <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-guira-cyan to-guira-teal flex items-center justify-center font-bold text-white shadow-md">A</div>
+                            </div>
+                            <div class="space-y-1">
+                                <div class="px-4 py-2.5 rounded-lg text-sm font-bold bg-slate-900 text-white shadow-md flex items-center gap-3">
+                                    <i data-lucide="layout-dashboard" class="w-4 h-4 text-guira-teal"></i> Dashboard
+                                </div>
+                                <div class="px-4 py-2.5 rounded-lg text-sm font-medium text-slate-600 flex items-center gap-3">
+                                    <i data-lucide="landmark" class="w-4 h-4"></i> Cuentas USD
+                                </div>
+                                <div class="px-4 py-2.5 rounded-lg text-sm font-medium text-slate-600 flex items-center gap-3">
+                                    <i data-lucide="arrow-right-left" class="w-4 h-4"></i> Transferencias
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Main Content -->
+                        <div class="flex-1 p-8 bg-white text-left relative overflow-hidden">
+                            <h3 class="text-slate-500 text-sm font-bold mb-1 uppercase tracking-wider">Balance Operativo (USD)</h3>
+                            <div class="text-4xl font-extrabold text-slate-900 flex items-center gap-3 mb-8">
+                                $124,500.00 <span class="text-xs font-bold text-guira-teal bg-guira-teal/10 px-2 py-1 rounded">USD</span>
+                            </div>
+
+                            <div class="grid grid-cols-2 gap-6 mb-8">
+                                <div class="p-5 rounded-xl border border-slate-200 bg-slate-50/50">
+                                    <div class="text-sm font-bold text-slate-700 mb-1">Recibir de EE.UU.</div>
+                                    <div class="text-xs text-slate-500 mb-3">Vía ACH o Wire</div>
+                                    <button class="w-full py-2 bg-white border border-slate-200 rounded-lg text-xs font-bold shadow-sm">Ver Detalles Cuenta</button>
+                                </div>
+                                <div class="p-5 rounded-xl border border-slate-200 bg-slate-50/50">
+                                    <div class="text-sm font-bold text-slate-700 mb-1">Liquidar Fondos</div>
+                                    <div class="text-xs text-slate-500 mb-3">A Bolivia o USDT</div>
+                                    <button class="w-full py-2 bg-slate-900 text-white border border-slate-900 rounded-lg text-xs font-bold shadow-sm">Nueva Liquidación</button>
+                                </div>
+                            </div>
+
+                            <div>
+                                <h4 class="text-sm font-bold text-slate-900 mb-3">Últimos Movimientos</h4>
+                                <div class="space-y-3">
+                                    <div class="flex justify-between items-center pb-3 border-b border-slate-100">
+                                        <div class="flex items-center gap-3">
+                                            <div class="w-8 h-8 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center"><i data-lucide="arrow-down-left" class="w-4 h-4"></i></div>
                                             <div>
-                                                <div className="text-sm font-bold text-slate-900">Acme Corp LATAM</div>
-                                                <div className="text-xs text-slate-500 font-medium">Business ID: #4829</div>
+                                                <div class="text-sm font-bold text-slate-900">Transferencia de Stripe</div>
+                                                <div class="text-xs text-slate-500">ACH In • Hoy</div>
                                             </div>
                                         </div>
-                                        <div className="space-y-1">
-                                            {['Dashboard', 'Cuentas USD', 'Transferencias', 'Liquidaciones (USDT)', 'Cuentas Locales (BOB)'].map((item, i) => (
-                                                <div key={i} className={`px-4 py-2.5 rounded-lg text-sm font-medium flex items-center gap-3 ${i === 0 ? 'bg-slate-900 text-white shadow-md' : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100 cursor-pointer transition-colors'}`}>
-                                                    <div className={`w-4 h-4 rounded-full flex items-center justify-center ${i === 0 ? 'bg-guira-teal text-white' : 'bg-slate-200'}`}>
-                                                        {i === 0 && <div className="w-1.5 h-1.5 bg-white rounded-full"></div>}
-                                                    </div>
-                                                    {item}
-                                                </div>
-                                            ))}
-                                        </div>
+                                        <div class="text-sm font-bold text-emerald-600">+$12,450.00</div>
                                     </div>
-                                    <div className="flex-1 p-8 overflow-hidden bg-white">
-                                        <div className="flex flex-wrap justify-between items-end mb-8 gap-4">
+                                    <div class="flex justify-between items-center">
+                                        <div class="flex items-center gap-3">
+                                            <div class="w-8 h-8 rounded-full bg-slate-100 text-slate-600 flex items-center justify-center"><i data-lucide="arrow-up-right" class="w-4 h-4"></i></div>
                                             <div>
-                                                <h3 className="text-slate-500 text-sm font-semibold mb-1 uppercase tracking-wider">Balance Operativo Total</h3>
-                                                <div className="text-4xl md:text-5xl font-extrabold text-slate-900 flex items-center gap-3">
-                                                    $124,500.00 <span className="text-xs font-bold text-guira-teal bg-guira-teal/10 px-2 py-1 rounded">USD</span>
-                                                </div>
-                                            </div>
-                                            <div className="flex gap-3">
-                                                <button className="px-4 py-2.5 bg-white border border-slate-200 rounded-lg text-sm font-bold text-slate-700 flex items-center gap-2 hover:bg-slate-50 shadow-sm transition-all">
-                                                    <Icon name="arrow-down-left" className="w-4 h-4" /> Recibir
-                                                </button>
-                                                <button className="px-4 py-2.5 bg-slate-900 text-white rounded-lg text-sm font-bold flex items-center gap-2 hover:bg-slate-800 shadow-md transition-all">
-                                                    <Icon name="send" className="w-4 h-4" /> Liquidar / Enviar
-                                                </button>
+                                                <div class="text-sm font-bold text-slate-900">Liquidación a BNB (BOB)</div>
+                                                <div class="text-xs text-slate-500">Wire Out • Ayer</div>
                                             </div>
                                         </div>
-
-                                        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-                                            <div className="bg-slate-50 p-5 rounded-2xl border border-slate-200 shadow-sm">
-                                                <div className="flex justify-between items-start mb-4">
-                                                    <div className="text-sm font-semibold text-slate-600">Virtual Account USA</div>
-                                                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Flag_of_the_United_States.svg/1200px-Flag_of_the_United_States.svg.png" className="w-6 h-4 rounded-sm object-cover" alt="USA Flag" />
-                                                </div>
-                                                <div className="text-2xl font-bold text-slate-900 mb-1">$82,000.00</div>
-                                                <div className="text-xs font-medium text-slate-500">Routing: 122***042 • ACH / Wire</div>
-                                            </div>
-                                            <div className="bg-slate-50 p-5 rounded-2xl border border-slate-200 shadow-sm">
-                                                <div className="flex justify-between items-start mb-4">
-                                                    <div className="text-sm font-semibold text-slate-600">Liquidaciones</div>
-                                                    <Icon name="wallet" className="w-4 h-4 text-guira-teal" />
-                                                </div>
-                                                <div className="text-2xl font-bold text-slate-900 mb-1">$42,500.00</div>
-                                                <div className="text-xs font-semibold text-guira-teal flex items-center gap-1">
-                                                    <span className="w-2 h-2 rounded-full bg-guira-teal"></span> Disponible para Off-ramp
-                                                </div>
-                                            </div>
-                                            <div className="p-5 rounded-2xl border-2 border-slate-200 border-dashed hover:border-guira-teal hover:bg-slate-50 cursor-pointer transition-all flex flex-col items-center justify-center text-center group">
-                                                <div className="w-10 h-10 rounded-full bg-white shadow-sm border border-slate-200 flex items-center justify-center mb-3 group-hover:scale-110 transition-transform">
-                                                    <Icon name="plus" className="w-5 h-5 text-slate-600" />
-                                                </div>
-                                                <div className="text-sm font-semibold text-slate-600">Añadir Beneficiario BOB</div>
-                                            </div>
-                                        </div>
-
-                                        <div>
-                                            <h3 className="text-slate-800 font-bold mb-4">Trazabilidad Reciente</h3>
-                                            <div className="space-y-3">
-                                                {[
-                                                    { title: "Pago recibido de Stripe Inc.", type: "ACH In", amount: "+ $12,450.00", date: "Hoy, 10:24 AM", icon: "arrow-down-left", color: "text-emerald-600", bg: "bg-emerald-100" },
-                                                    { title: "Liquidación a USDT (Binance)", type: "Off-ramp USDT", amount: "- $5,000.00", date: "Ayer, 14:30 PM", icon: "arrow-up-right", color: "text-slate-600", bg: "bg-slate-200" },
-                                                    { title: "Liquidación a Banco Nacional (Bolivia)", type: "Off-ramp BOB", amount: "- Bs. 20,850.00", date: "Ayer, 09:15 AM", icon: "arrow-up-right", color: "text-slate-600", bg: "bg-slate-200" }
-                                                ].map((tx, i) => (
-                                                    <div key={i} className="flex justify-between items-center p-3 rounded-xl hover:bg-slate-50 transition-colors border border-transparent hover:border-slate-100 group">
-                                                        <div className="flex items-center gap-4">
-                                                            <div className={`w-10 h-10 rounded-full flex items-center justify-center ${tx.bg} ${tx.color} group-hover:scale-110 transition-transform`}>
-                                                                <Icon name={tx.icon} className="w-4 h-4" />
-                                                            </div>
-                                                            <div>
-                                                                <div className="text-sm font-bold text-slate-900">{tx.title}</div>
-                                                                <div className="text-xs font-medium text-slate-500">{tx.type} • {tx.date}</div>
-                                                            </div>
-                                                        </div>
-                                                        <div className={`text-sm font-bold ${tx.amount.startsWith('+') ? 'text-emerald-600' : 'text-slate-900'}`}>
-                                                            {tx.amount}
-                                                        </div>
-                                                    </div>
-                                                ))}
-                                            </div>
-                                        </div>
+                                        <div class="text-sm font-bold text-slate-900">-$5,000.00</div>
                                     </div>
                                 </div>
                             </div>
-                        </motion.div>
-                    </div>
-                </section>
-            );
-        };
-
-        const TrustBanner = () => {
-            return (
-                <section className="py-12 border-y border-slate-200 bg-white relative z-20 overflow-hidden">
-                    <div className="max-w-7xl mx-auto px-6">
-                        <p className="text-center text-xs font-bold tracking-widest text-slate-400 uppercase mb-8">Infraestructura habilitada para operaciones de alto volumen</p>
-                        <div className="flex flex-wrap justify-center gap-x-12 gap-y-6 items-center">
-                            {[
-                                { name: "Business Onboarding", icon: "building" },
-                                { name: "USD Virtual Accounts", icon: "landmark" },
-                                { name: "Liquidación a BOB", icon: "arrow-right-left" },
-                                { name: "Soporte USDT & Crypto", icon: "coins" },
-                                { name: "Compliance B2B", icon: "shield-check" },
-                            ].map((item, i) => (
-                                <motion.div 
-                                    key={i} 
-                                    whileHover={{ y: -5 }}
-                                    className="flex items-center gap-2 text-slate-600 font-semibold"
-                                >
-                                    <Icon name={item.icon} className="w-5 h-5 text-guira-teal" />
-                                    <span>{item.name}</span>
-                                </motion.div>
-                            ))}
                         </div>
                     </div>
-                </section>
-            );
-        };
-
-        const ProblemSolution = () => {
-            return (
-                <section className="py-24 relative bg-slate-50" id="soluciones">
-                    <div className="max-w-7xl mx-auto px-6">
-                        <motion.div 
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            className="text-center mb-16"
-                        >
-                            <h2 className="text-3xl md:text-5xl font-extrabold mb-6 text-slate-900">El problema de operar desde LATAM. <br/><span className="text-slate-400">Resuelto.</span></h2>
-                            <p className="text-slate-600 max-w-2xl mx-auto text-lg font-medium">Abrir una cuenta bancaria en USA desde LATAM toma meses. Mover el dinero a países como Bolivia es lento y costoso. Guira reemplaza la fricción con software.</p>
-                        </motion.div>
-
-                        <div className="grid md:grid-cols-2 gap-8">
-                            {/* Problema */}
-                            <motion.div 
-                                initial={{ opacity: 0, x: -50 }}
-                                whileInView={{ opacity: 1, x: 0 }}
-                                viewport={{ once: true }}
-                                className="bg-white p-8 rounded-3xl border border-rose-100 shadow-lg shadow-rose-100/50"
-                            >
-                                <div className="flex items-center gap-4 mb-8">
-                                    <div className="w-12 h-12 rounded-2xl bg-rose-100 flex items-center justify-center text-rose-600">
-                                        <Icon name="x-circle" className="w-6 h-6" />
-                                    </div>
-                                    <h3 className="text-2xl font-bold text-slate-900">Banca Tradicional</h3>
-                                </div>
-                                <ul className="space-y-5">
-                                    {[
-                                        "Viajes obligatorios para abrir cuenta corporativa",
-                                        "Semana de espera para recibir pagos internacionales",
-                                        "Comisiones ocultas al traer dinero a bancos en Bolivia",
-                                        "Bloqueos arbitrarios sin soporte especializado"
-                                    ].map((item, i) => (
-                                        <li key={i} className="flex gap-4 text-slate-600 font-medium">
-                                            <Icon name="minus" className="w-6 h-6 text-rose-400 shrink-0" />
-                                            <span>{item}</span>
-                                        </li>
-                                    ))}
-                                </ul>
-                            </motion.div>
-
-                            {/* Solución */}
-                            <motion.div 
-                                initial={{ opacity: 0, x: 50 }}
-                                whileInView={{ opacity: 1, x: 0 }}
-                                viewport={{ once: true }}
-                                className="bg-slate-900 p-8 rounded-3xl border border-slate-800 shadow-2xl relative overflow-hidden"
-                            >
-                                <div className="absolute top-0 right-0 w-64 h-64 bg-guira-teal/20 blur-[80px] rounded-full"></div>
-                                <div className="flex items-center gap-4 mb-8 relative z-10">
-                                    <div className="w-12 h-12 rounded-2xl bg-guira-teal/20 flex items-center justify-center text-guira-teal">
-                                        <Icon name="check-circle-2" className="w-6 h-6" />
-                                    </div>
-                                    <h3 className="text-2xl font-bold text-white">Guira Empresas</h3>
-                                </div>
-                                <ul className="space-y-5 relative z-10">
-                                    {[
-                                        "Onboarding 100% digital para empresas extranjeras",
-                                        "Recepción de pagos en USA (ACH/Wire) el mismo día",
-                                        "Rampas de salida directas a bancos en Bolivia (BOB) o USDT",
-                                        "Trazabilidad completa y soporte empresarial dedicado"
-                                    ].map((item, i) => (
-                                        <li key={i} className="flex gap-4 text-slate-300 font-medium">
-                                            <Icon name="check" className="w-6 h-6 text-guira-teal shrink-0" />
-                                            <span>{item}</span>
-                                        </li>
-                                    ))}
-                                </ul>
-                            </motion.div>
-                        </div>
-                    </div>
-                </section>
-            );
-        };
-
-        const Products = () => {
-            const cards = [
-                {
-                    title: "Cuenta Corporativa USD",
-                    desc: "Obtén una cuenta virtual empresarial radicada en USA para recibir pagos de plataformas, clientes o procesadores (Stripe, Deel, Upwork).",
-                    icon: "landmark",
-                    features: ["Routing Number propio", "Recepción ACH & Wire", "Balance en dólares reales"]
-                },
-                {
-                    title: "Rampas Bolivia & Crypto",
-                    desc: "Liquida tus fondos en USD directamente a Bolivianos (BOB) en tu banco local (BNB, BCP, Bisa, etc.), o extrae a USDT mediante Binance y wallets externas en minutos.",
-                    icon: "coins",
-                    features: ["Liquidación a USDT (Binance/Wallets)", "Transferencia bancaria (BOB)", "Tasas competitivas B2B"]
-                },
-                {
-                    title: "Pagos y Trazabilidad",
-                    desc: "Paga a tus proveedores globales y a filiales locales. Obtén comprobantes y trazabilidad de cada movimiento ideal para tu contabilidad.",
-                    icon: "bar-chart-3",
-                    features: ["Pagos vía ACH / Wire a USA", "Reportes listos para exportar", "Historial B2B transparente"]
-                }
-            ];
-
-            return (
-                <section className="py-24 relative bg-white" id="producto">
-                    <div className="max-w-7xl mx-auto px-6">
-                        <div className="mb-16 md:flex justify-between items-end">
-                            <motion.div 
-                                initial={{ opacity: 0, y: 20 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: true }}
-                                className="max-w-2xl"
-                            >
-                                <h2 className="text-3xl md:text-5xl font-extrabold mb-4 text-slate-900">Tres pilares para tu <br/>operación internacional.</h2>
-                                <p className="text-slate-600 text-lg font-medium">Un ecosistema financiero diseñado estrictamente para las empresas tecnológicas e importadoras de LATAM y Bolivia.</p>
-                            </motion.div>
-                        </div>
-
-                        <div className="grid md:grid-cols-3 gap-8">
-                            {cards.map((card, i) => (
-                                <motion.div 
-                                    key={i}
-                                    initial={{ opacity: 0, y: 30 }}
-                                    whileInView={{ opacity: 1, y: 0 }}
-                                    viewport={{ once: true }}
-                                    transition={{ delay: i * 0.1 }}
-                                    className="bg-slate-50 p-8 rounded-3xl border border-slate-200 hover:border-guira-teal hover:shadow-xl transition-all group flex flex-col"
-                                >
-                                    <div className="w-14 h-14 rounded-2xl bg-white border border-slate-200 flex items-center justify-center mb-6 group-hover:bg-guira-teal group-hover:text-white group-hover:border-guira-teal text-slate-700 transition-colors shadow-sm">
-                                        <Icon name={card.icon} className="w-7 h-7" />
-                                    </div>
-                                    <h3 className="text-2xl font-bold text-slate-900 mb-4">{card.title}</h3>
-                                    <p className="text-slate-600 mb-8 flex-1 font-medium leading-relaxed">{card.desc}</p>
-                                    <div className="space-y-3 mt-auto pt-6 border-t border-slate-200">
-                                        {card.features.map((feat, j) => (
-                                            <div key={j} className="flex gap-3 items-center text-sm font-semibold text-slate-700">
-                                                <div className="w-5 h-5 rounded-full bg-guira-teal/10 flex items-center justify-center">
-                                                    <Icon name="check" className="w-3 h-3 text-guira-teal" />
-                                                </div>
-                                                {feat}
-                                            </div>
-                                        ))}
-                                    </div>
-                                </motion.div>
-                            ))}
-                        </div>
-                    </div>
-                </section>
-            );
-        };
-
-        const HowItWorks = () => {
-            const steps = [
-                { num: "01", title: "Registra tu empresa", desc: "Aplica en línea enviando la documentación corporativa de tu entidad LATAM. Onboarding ágil." },
-                { num: "02", title: "Activa tu cuenta", desc: "Obtén tus datos de cuenta virtual USD (Routing y Account Number) tras la validación." },
-                { num: "03", title: "Recibe fondos", desc: "Instruye a tus clientes o plataformas a enviar pagos vía ACH o Wire hacia Guira." },
-                { num: "04", title: "Liquida a BOB o USDT", desc: "Mantén el balance, retira a cuentas bancarias en Bolivia (Bs.), a wallets o realiza pagos a proveedores." }
-            ];
-
-            return (
-                <section className="py-24 bg-slate-900" id="como-funciona">
-                    <div className="max-w-7xl mx-auto px-6">
-                        <motion.h2 
-                            className="text-3xl md:text-5xl font-extrabold mb-20 text-center text-white"
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                        >
-                            Cómo funciona Guira
-                        </motion.h2>
-                        <div className="grid md:grid-cols-4 gap-8 relative">
-                            {/* Línea conectora */}
-                            <div className="hidden md:block absolute top-8 left-16 right-16 h-0.5 bg-gradient-to-r from-guira-teal/20 via-guira-teal to-slate-800 z-0"></div>
-                            
-                            {steps.map((step, i) => (
-                                <motion.div 
-                                    key={i} 
-                                    className="relative z-10"
-                                    initial={{ opacity: 0, scale: 0.9 }}
-                                    whileInView={{ opacity: 1, scale: 1 }}
-                                    viewport={{ once: true }}
-                                    transition={{ delay: i * 0.15 }}
-                                >
-                                    <div className="w-16 h-16 rounded-2xl bg-white border border-slate-700 flex items-center justify-center text-slate-900 font-extrabold text-xl mb-6 mx-auto md:mx-0 shadow-lg shadow-guira-teal/20">
-                                        {step.num}
-                                    </div>
-                                    <h3 className="text-xl font-bold text-white mb-3 text-center md:text-left">{step.title}</h3>
-                                    <p className="text-slate-400 text-sm font-medium text-center md:text-left leading-relaxed">{step.desc}</p>
-                                </motion.div>
-                            ))}
-                        </div>
-                    </div>
-                </section>
-            );
-        };
-
-        const Footer = () => {
-            return (
-                <footer className="border-t border-slate-200 bg-white pt-20 pb-10">
-                    <div className="max-w-7xl mx-auto px-6">
-                        <div className="grid grid-cols-2 md:grid-cols-4 gap-10 mb-16">
-                            <div className="col-span-2 md:col-span-1">
-                                <div className="flex items-center gap-2 mb-6">
-                                    <img src="./logo.png" alt="Guira Logo" className="h-6 object-contain" onError={(e) => { e.target.style.display = 'none' }} />
-                                    <span className="text-slate-900 font-extrabold text-lg">Guira Empresas</span>
-                                </div>
-                                <p className="text-sm text-slate-500 font-medium mb-6">Infraestructura financiera global para empresas de Bolivia y Latinoamérica.</p>
-                                <div className="flex gap-4 text-slate-400">
-                                    <Icon name="linkedin" className="w-5 h-5 hover:text-slate-900 cursor-pointer transition-colors" />
-                                    <Icon name="twitter" className="w-5 h-5 hover:text-slate-900 cursor-pointer transition-colors" />
-                                </div>
-                            </div>
-                            
-                            <div>
-                                <h4 className="text-slate-900 font-bold mb-4">Soluciones</h4>
-                                <ul className="space-y-3 text-sm font-medium text-slate-500">
-                                    <li><a href="#" className="hover:text-guira-teal">Cuenta Virtual USD</a></li>
-                                    <li><a href="#" className="hover:text-guira-teal">Liquidación a BOB</a></li>
-                                    <li><a href="#" className="hover:text-guira-teal">Liquidación a USDT</a></li>
-                                    <li><a href="#" className="hover:text-slate-900">Pagos B2B Globales</a></li>
-                                </ul>
-                            </div>
-
-                            <div>
-                                <h4 className="text-slate-900 font-bold mb-4">Empresa</h4>
-                                <ul className="space-y-3 text-sm font-medium text-slate-500">
-                                    <li><a href="#" className="hover:text-guira-teal">Acerca de nosotros</a></li>
-                                    <li><a href="#" className="hover:text-guira-teal">Seguridad y Compliance</a></li>
-                                    <li><a href="#" className="hover:text-guira-teal">Contacto Ventas</a></li>
-                                </ul>
-                            </div>
-
-                            <div>
-                                <h4 className="text-slate-900 font-bold mb-4">Legal</h4>
-                                <ul className="space-y-3 text-sm font-medium text-slate-500">
-                                    <li><a href="#" className="hover:text-guira-teal">Términos de Servicio</a></li>
-                                    <li><a href="#" className="hover:text-guira-teal">Políticas de Privacidad</a></li>
-                                    <li><a href="#" className="hover:text-guira-teal">Compliance</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        
-                        <div className="border-t border-slate-200 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-                            <p className="text-xs font-semibold text-slate-500">© 2026 Guira System LLC. Todos los derechos reservados.</p>
-                            <p className="text-xs font-medium text-slate-400 max-w-xl text-center md:text-right">Guira System LLC provee infraestructura tecnológica financiera. Los servicios transaccionales son operados a través de proveedores y entidades reguladas aplicables.</p>
-                        </div>
-                    </div>
-                </footer>
-            );
-        };
-
-        const App = () => {
-            useLucide();
-
-            return (
-                <div className="min-h-screen font-sans bg-white selection:bg-guira-teal selection:text-white">
-                    <Navbar />
-                    <Hero />
-                    <TrustBanner />
-                    <ProblemSolution />
-                    <Products />
-                    <HowItWorks />
-                    
-                    {/* Security Sub-section */}
-                    <section className="py-24 bg-slate-50" id="seguridad">
-                        <motion.div 
-                            initial={{ opacity: 0, y: 30 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            className="max-w-4xl mx-auto px-6 text-center"
-                        >
-                            <div className="inline-flex items-center justify-center w-20 h-20 rounded-3xl bg-white shadow-xl text-slate-900 border border-slate-200 mb-8 hover:scale-105 transition-transform">
-                                <Icon name="shield-check" className="w-10 h-10 text-guira-teal" />
-                            </div>
-                            <h2 className="text-4xl font-extrabold mb-6 text-slate-900">Trazabilidad B2B <br/>para Empresas en Bolivia y Latam</h2>
-                            <p className="text-slate-600 text-lg md:text-xl font-medium mb-10 max-w-3xl mx-auto leading-relaxed">Nuestra infraestructura (provista por <strong>Guira System LLC</strong>) cuenta con trazabilidad operativa para garantizar procesos transparentes y auditables, facilitando que importadores, agencias y exportadores manejen su contabilidad apoyada en tecnología de primer nivel.</p>
-                        </motion.div>
-                    </section>
-
-                    {/* Final CTA */}
-                    <section className="py-32 relative overflow-hidden bg-white">
-                        <div className="absolute inset-0 bg-gradient-to-b from-slate-50 to-white"></div>
-                        <motion.div 
-                            initial={{ opacity: 0, scale: 0.95 }}
-                            whileInView={{ opacity: 1, scale: 1 }}
-                            viewport={{ once: true }}
-                            className="max-w-4xl mx-auto px-6 text-center relative z-10"
-                        >
-                            <h2 className="text-4xl md:text-6xl font-extrabold mb-8 text-slate-900">Escala tu negocio internacional hoy mismo.</h2>
-                            <p className="text-xl text-slate-600 font-medium mb-12">No pierdas semanas en burocracia bancaria. Comienza a recibir pagos globales y liquidar en Bolivianos o USDT.</p>
-                            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-                                <motion.button whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="w-full sm:w-auto px-10 py-5 bg-slate-900 text-white rounded-2xl font-bold text-lg hover:bg-slate-800 transition-all shadow-2xl">
-                                    Solicitar Demo B2B
-                                </motion.button>
-                            </div>
-                        </motion.div>
-                    </section>
-
-                    <Footer />
                 </div>
-            );
-        }
+            </div>
+        </div>
+    </header>
 
-        const root = ReactDOM.createRoot(document.getElementById('root'));
-        root.render(<App />);
-    </script>
+    <!-- Franja Confianza -->
+    <section class="py-10 border-b border-slate-200 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <p class="text-center text-xs font-bold tracking-widest text-slate-400 uppercase mb-8">Infraestructura diseñada para operaciones empresariales internacionales</p>
+            <div class="flex flex-wrap justify-center gap-8 md:gap-14 items-center">
+                <div class="flex items-center gap-2 text-slate-700 font-semibold"><i data-lucide="building" class="w-5 h-5 text-guira-teal"></i> Onboarding Empresarial</div>
+                <div class="flex items-center gap-2 text-slate-700 font-semibold"><i data-lucide="landmark" class="w-5 h-5 text-guira-teal"></i> USD Virtual Accounts</div>
+                <div class="flex items-center gap-2 text-slate-700 font-semibold"><i data-lucide="globe" class="w-5 h-5 text-guira-teal"></i> Pagos ACH y Wire</div>
+                <div class="flex items-center gap-2 text-slate-700 font-semibold"><i data-lucide="arrow-right-left" class="w-5 h-5 text-guira-teal"></i> Liquidación Flexible</div>
+                <div class="flex items-center gap-2 text-slate-700 font-semibold"><i data-lucide="shield-check" class="w-5 h-5 text-guira-teal"></i> Soporte Especializado</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Problema / Solución -->
+    <section id="soluciones" class="py-24 bg-slate-50 border-b border-slate-200">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16 reveal">
+                <h2 class="text-3xl md:text-5xl font-extrabold mb-6 text-slate-900">El problema de operar desde LATAM.<br/><span class="text-slate-400">Resuelto.</span></h2>
+                <p class="text-slate-600 max-w-2xl mx-auto text-lg font-medium">Abrir una cuenta bancaria en USA desde LATAM toma meses. Mover el dinero a países como Bolivia es lento y costoso. Guira reemplaza la fricción con software puro.</p>
+            </div>
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Problema -->
+                <div class="bg-white p-8 rounded-3xl border border-rose-100 shadow-lg shadow-rose-100/50 reveal-left">
+                    <div class="flex items-center gap-4 mb-8">
+                        <div class="w-12 h-12 rounded-2xl bg-rose-100 flex items-center justify-center text-rose-600"><i data-lucide="x-circle" class="w-6 h-6"></i></div>
+                        <h3 class="text-2xl font-bold text-slate-900">Banca Tradicional</h3>
+                    </div>
+                    <ul class="space-y-5">
+                        <li class="flex gap-4 text-slate-600 font-medium"><i data-lucide="minus" class="w-6 h-6 text-rose-400 shrink-0"></i><span>Semanas de espera para recibir pagos internacionales.</span></li>
+                        <li class="flex gap-4 text-slate-600 font-medium"><i data-lucide="minus" class="w-6 h-6 text-rose-400 shrink-0"></i><span>Múltiples intermediarios y comisiones ocultas B2B.</span></li>
+                        <li class="flex gap-4 text-slate-600 font-medium"><i data-lucide="minus" class="w-6 h-6 text-rose-400 shrink-0"></i><span>Cierre de cuentas arbitrario y soporte deficiente.</span></li>
+                    </ul>
+                </div>
+                <!-- Solución -->
+                <div class="bg-slate-900 p-8 rounded-3xl border border-slate-800 shadow-2xl relative overflow-hidden reveal-right">
+                    <div class="absolute top-0 right-0 w-64 h-64 bg-guira-teal/20 blur-[80px] rounded-full"></div>
+                    <div class="flex items-center gap-4 mb-8 relative z-10">
+                        <div class="w-12 h-12 rounded-2xl bg-guira-teal/20 flex items-center justify-center text-guira-teal"><i data-lucide="check-circle-2" class="w-6 h-6"></i></div>
+                        <h3 class="text-2xl font-bold text-white">Guira Empresas</h3>
+                    </div>
+                    <ul class="space-y-5 relative z-10">
+                        <li class="flex gap-4 text-slate-300 font-medium"><i data-lucide="check" class="w-6 h-6 text-guira-teal shrink-0"></i><span>Cuenta operativa con Routing/Account number propio.</span></li>
+                        <li class="flex gap-4 text-slate-300 font-medium"><i data-lucide="check" class="w-6 h-6 text-guira-teal shrink-0"></i><span>Recibe, administra y envía fondos vía ACH o Wire.</span></li>
+                        <li class="flex gap-4 text-slate-300 font-medium"><i data-lucide="check" class="w-6 h-6 text-guira-teal shrink-0"></i><span>Liquidación directa a Banco Local (Bs.) o USDT.</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Productos -->
+    <section id="producto" class="py-24 bg-white relative">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="mb-16 md:flex justify-between items-end reveal">
+                <div class="max-w-2xl">
+                    <h2 class="text-3xl md:text-5xl font-extrabold mb-4 text-slate-900">Tres pilares de tu <br/>operación global.</h2>
+                    <p class="text-slate-600 text-lg font-medium">Un ecosistema financiero diseñado estrictamente para las empresas tecnológicas, agencias e importadoras de LATAM.</p>
+                </div>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-slate-50 p-8 rounded-3xl border border-slate-200 hover:border-guira-teal hover:shadow-xl transition-all group flex flex-col reveal text-left">
+                    <div class="w-14 h-14 rounded-2xl bg-white border border-slate-200 flex items-center justify-center mb-6 group-hover:bg-guira-teal group-hover:text-white transition-colors shadow-sm"><i data-lucide="landmark" class="w-7 h-7 text-slate-700 group-hover:text-white"></i></div>
+                    <h3 class="text-2xl font-bold text-slate-900 mb-4">Cuenta Operativa USD</h3>
+                    <p class="text-slate-600 mb-8 flex-1 font-medium leading-relaxed">Obtén una cuenta virtual empresarial en USA para recibir pagos de plataformas (Stripe, Deel) o clientes directos.</p>
+                    <div class="space-y-3 pt-6 border-t border-slate-200">
+                        <div class="flex gap-3 items-center text-sm font-semibold text-slate-700"><i data-lucide="check" class="w-4 h-4 text-guira-teal"></i> Routing Number propio</div>
+                        <div class="flex gap-3 items-center text-sm font-semibold text-slate-700"><i data-lucide="check" class="w-4 h-4 text-guira-teal"></i> Recepción ACH & Wire</div>
+                    </div>
+                </div>
+                <div class="bg-slate-50 p-8 rounded-3xl border border-slate-200 hover:border-guira-teal hover:shadow-xl transition-all group flex flex-col reveal reveal-delay-1 text-left">
+                    <div class="w-14 h-14 rounded-2xl bg-white border border-slate-200 flex items-center justify-center mb-6 group-hover:bg-guira-teal group-hover:text-white transition-colors shadow-sm"><i data-lucide="coins" class="w-7 h-7 text-slate-700 group-hover:text-white"></i></div>
+                    <h3 class="text-2xl font-bold text-slate-900 mb-4">Rampas de Salida</h3>
+                    <p class="text-slate-600 mb-8 flex-1 font-medium leading-relaxed">Liquida tus fondos en USD directamente a Bolivianos (BOB) en tu banco local, o extrae a USDT en minutos mediante Binance y wallets.</p>
+                    <div class="space-y-3 pt-6 border-t border-slate-200">
+                        <div class="flex gap-3 items-center text-sm font-semibold text-slate-700"><i data-lucide="check" class="w-4 h-4 text-guira-teal"></i> Liquidación a USDT B2B</div>
+                        <div class="flex gap-3 items-center text-sm font-semibold text-slate-700"><i data-lucide="check" class="w-4 h-4 text-guira-teal"></i> Transferencias locales (BOB)</div>
+                    </div>
+                </div>
+                <div class="bg-slate-50 p-8 rounded-3xl border border-slate-200 hover:border-guira-teal hover:shadow-xl transition-all group flex flex-col reveal reveal-delay-2 text-left">
+                    <div class="w-14 h-14 rounded-2xl bg-white border border-slate-200 flex items-center justify-center mb-6 group-hover:bg-guira-teal group-hover:text-white transition-colors shadow-sm"><i data-lucide="bar-chart-3" class="w-7 h-7 text-slate-700 group-hover:text-white"></i></div>
+                    <h3 class="text-2xl font-bold text-slate-900 mb-4">Pagos y Trazabilidad</h3>
+                    <p class="text-slate-600 mb-8 flex-1 font-medium leading-relaxed">Paga a tus proveedores globales y a filiales locales. Obtén comprobantes y trazabilidad de cada movimiento para tu contabilidad.</p>
+                    <div class="space-y-3 pt-6 border-t border-slate-200">
+                        <div class="flex gap-3 items-center text-sm font-semibold text-slate-700"><i data-lucide="check" class="w-4 h-4 text-guira-teal"></i> Pagos vía ACH / Wire a USA</div>
+                        <div class="flex gap-3 items-center text-sm font-semibold text-slate-700"><i data-lucide="check" class="w-4 h-4 text-guira-teal"></i> Reportes transparentes</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cómo Funciona -->
+    <section id="como-funciona" class="py-24 bg-slate-900 text-white relative">
+        <div class="max-w-7xl mx-auto px-6">
+            <h2 class="text-3xl md:text-5xl font-extrabold mb-20 text-center reveal">Cómo funciona Guira</h2>
+            <div class="grid md:grid-cols-4 gap-8 relative">
+                <div class="hidden md:block absolute top-8 left-16 right-16 h-[2px] bg-gradient-to-r from-guira-teal/20 via-guira-teal to-slate-800 z-0"></div>
+                
+                <div class="relative z-10 reveal text-center md:text-left">
+                    <div class="w-16 h-16 rounded-2xl bg-white border border-slate-700 flex items-center justify-center text-slate-900 font-extrabold text-xl mb-6 mx-auto md:mx-0 shadow-lg shadow-guira-teal/20">01</div>
+                    <h3 class="text-xl font-bold mb-3">Registra tu empresa</h3>
+                    <p class="text-slate-400 text-sm font-medium leading-relaxed">Aplica en línea enviando la documentación corporativa de tu entidad LATAM. Onboarding ágil y digital.</p>
+                </div>
+                <div class="relative z-10 reveal reveal-delay-1 text-center md:text-left">
+                    <div class="w-16 h-16 rounded-2xl bg-white border border-slate-700 flex items-center justify-center text-slate-900 font-extrabold text-xl mb-6 mx-auto md:mx-0 shadow-lg shadow-guira-teal/20">02</div>
+                    <h3 class="text-xl font-bold mb-3">Activa tu cuenta</h3>
+                    <p class="text-slate-400 text-sm font-medium leading-relaxed">Obtén tus datos de cuenta virtual USD (Routing y Account Number) tras la validación de cumplimiento.</p>
+                </div>
+                <div class="relative z-10 reveal reveal-delay-2 text-center md:text-left">
+                    <div class="w-16 h-16 rounded-2xl bg-white border border-slate-700 flex items-center justify-center text-slate-900 font-extrabold text-xl mb-6 mx-auto md:mx-0 shadow-lg shadow-guira-teal/20">03</div>
+                    <h3 class="text-xl font-bold mb-3">Opera los fondos</h3>
+                    <p class="text-slate-400 text-sm font-medium leading-relaxed">Instruye a tus clientes o plataformas a enviar pagos vía ACH o Wire hacia tu cuenta Guira.</p>
+                </div>
+                <div class="relative z-10 reveal reveal-delay-3 text-center md:text-left">
+                    <div class="w-16 h-16 rounded-2xl bg-white border border-slate-700 flex items-center justify-center text-slate-900 font-extrabold text-xl mb-6 mx-auto md:mx-0 shadow-lg shadow-guira-teal/20">04</div>
+                    <h3 class="text-xl font-bold mb-3">Liquida o transfiere</h3>
+                    <p class="text-slate-400 text-sm font-medium leading-relaxed">Mantén tu balance protegido, retira a cuentas en Bolivia, a wallets o realiza pagos a proveedores.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Casos de Uso -->
+    <section class="py-24 bg-slate-50 border-t border-slate-200">
+        <div class="max-w-7xl mx-auto px-6">
+            <h2 class="text-3xl md:text-5xl font-extrabold mb-16 text-center text-slate-900 reveal">¿Para quién es Guira?</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:shadow-lg transition-shadow reveal">
+                    <div class="w-12 h-12 rounded-xl bg-slate-100 flex items-center justify-center mb-4"><i data-lucide="laptop" class="w-6 h-6 text-slate-700"></i></div>
+                    <h3 class="text-lg font-bold text-slate-900 mb-2">Agencias IT y Software</h3>
+                    <p class="text-slate-600 text-sm font-medium">Cobra a clientes en USA por tus servicios de desarrollo sin comisiones Swift exorbitantes.</p>
+                </div>
+                <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:shadow-lg transition-shadow reveal reveal-delay-1">
+                    <div class="w-12 h-12 rounded-xl bg-slate-100 flex items-center justify-center mb-4"><i data-lucide="package" class="w-6 h-6 text-slate-700"></i></div>
+                    <h3 class="text-lg font-bold text-slate-900 mb-2">Importadores</h3>
+                    <p class="text-slate-600 text-sm font-medium">Paga a proveedores en EE.UU. y Asia mediante cuentas receptoras en USD, directo desde tu balance.</p>
+                </div>
+                <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:shadow-lg transition-shadow reveal reveal-delay-2">
+                    <div class="w-12 h-12 rounded-xl bg-slate-100 flex items-center justify-center mb-4"><i data-lucide="briefcase" class="w-6 h-6 text-slate-700"></i></div>
+                    <h3 class="text-lg font-bold text-slate-900 mb-2">Exportadores</h3>
+                    <p class="text-slate-600 text-sm font-medium">Recibe pagos internacionales B2B con routing number de USA y repatria el capital vía USDT o Banco.</p>
+                </div>
+                <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:shadow-lg transition-shadow reveal reveal-delay-3">
+                    <div class="w-12 h-12 rounded-xl bg-slate-100 flex items-center justify-center mb-4"><i data-lucide="globe-2" class="w-6 h-6 text-slate-700"></i></div>
+                    <h3 class="text-lg font-bold text-slate-900 mb-2">Operación Regional</h3>
+                    <p class="text-slate-600 text-sm font-medium">Maneja finanzas de múltiples sucursales en LATAM centralizando los dólares en un solo lugar.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seguridad -->
+    <section id="seguridad" class="py-24 bg-white">
+        <div class="max-w-4xl mx-auto px-6 text-center reveal">
+            <div class="inline-flex items-center justify-center w-20 h-20 rounded-3xl bg-white shadow-xl text-slate-900 border border-slate-200 mb-8 hover:scale-105 transition-transform"><i data-lucide="shield-check" class="w-10 h-10 text-guira-teal"></i></div>
+            <h2 class="text-3xl md:text-5xl font-extrabold mb-6 text-slate-900">Infraestructura y Compliance B2B</h2>
+            <p class="text-slate-600 text-lg md:text-xl font-medium mb-10 max-w-3xl mx-auto leading-relaxed">Nuestra plataforma cuenta con trazabilidad operativa integral. Aplicamos procesos de validación empresarial rigurosos para asegurar redes limpias y seguras. Guira provee infraestructura tecnológica conectando tu empresa con bancos e instituciones reguladas en EE.UU.</p>
+            <a href="seguridad.html" class="inline-flex items-center gap-2 text-guira-teal font-bold hover:text-guira-cyan transition-colors">Conoce más sobre nuestro compliance <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="py-24 bg-slate-50 border-y border-slate-200">
+        <div class="max-w-3xl mx-auto px-6 reveal">
+            <h2 class="text-3xl md:text-4xl font-extrabold mb-12 text-center text-slate-900">Preguntas Frecuentes</h2>
+            <div class="space-y-4">
+                <div class="faq-item bg-white border border-slate-200 rounded-xl overflow-hidden hover:border-slate-300 transition-colors">
+                    <button class="faq-button w-full px-6 py-5 flex items-center justify-between text-left font-bold text-slate-900 focus:outline-none">
+                        <span>¿Quién puede abrir una cuenta?</span>
+                        <i data-lucide="chevron-down" class="faq-icon w-5 h-5 text-slate-500 transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-content hidden px-6 pb-5 text-slate-600 font-medium leading-relaxed">
+                        Cualquier empresa legalmente constituida en Latinoamérica, incluyendo Bolivia, Perú, Colombia, etc. Realizamos un proceso de KYC/KYB corporativo. No abrimos cuentas para uso personal o retail.
+                    </div>
+                </div>
+                <div class="faq-item bg-white border border-slate-200 rounded-xl overflow-hidden hover:border-slate-300 transition-colors">
+                    <button class="faq-button w-full px-6 py-5 flex items-center justify-between text-left font-bold text-slate-900 focus:outline-none">
+                        <span>¿La cuenta está a nombre de mi empresa?</span>
+                        <i data-lucide="chevron-down" class="faq-icon w-5 h-5 text-slate-500 transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-content hidden px-6 pb-5 text-slate-600 font-medium leading-relaxed">
+                        Sí, las cuentas virtuales USD (Virtual Accounts) son emitidas para la recepción de fondos operativos y figurarán bajo el nombre de tu empresa beneficiaria, lo que facilita la conciliación de pagos de plataformas o clientes.
+                    </div>
+                </div>
+                <div class="faq-item bg-white border border-slate-200 rounded-xl overflow-hidden hover:border-slate-300 transition-colors">
+                    <button class="faq-button w-full px-6 py-5 flex items-center justify-between text-left font-bold text-slate-900 focus:outline-none">
+                        <span>¿Es Guira un Banco?</span>
+                        <i data-lucide="chevron-down" class="faq-icon w-5 h-5 text-slate-500 transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-content hidden px-6 pb-5 text-slate-600 font-medium leading-relaxed">
+                        No. Guira es una empresa de tecnología financiera. Los servicios bancarios, custodia y rampas operativas son proporcionadas por nuestras instituciones financieras asociadas reguladas en EE.UU. y localmente.
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-10">
+                <a href="faq.html" class="text-slate-500 font-bold hover:text-guira-teal transition-colors">Ver todas las preguntas &rarr;</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="py-32 relative overflow-hidden bg-white">
+        <div class="absolute inset-0 bg-gradient-to-b from-slate-50 to-white"></div>
+        <div class="max-w-4xl mx-auto px-6 text-center relative z-10 reveal">
+            <h2 class="text-4xl md:text-6xl font-extrabold mb-8 text-slate-900">Lleva la operación internacional de tu empresa a otro nivel.</h2>
+            <p class="text-xl text-slate-600 font-medium mb-12">No pierdas semanas en burocracia bancaria. Comienza a recibir pagos globales y liquidar en Bolivianos o USDT de manera segura.</p>
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <a href="https://app.guira.com/register" class="w-full sm:w-auto px-10 py-5 bg-slate-900 text-white rounded-2xl font-bold text-lg hover:bg-slate-800 transition-all shadow-2xl hover:-translate-y-1">Registrar Empresa</a>
+                <a href="demo.html" class="w-full sm:w-auto px-10 py-5 bg-white text-slate-700 border border-slate-200 rounded-2xl font-bold text-lg hover:bg-slate-50 transition-all shadow-sm hover:-translate-y-1">Hablar con un asesor</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="border-t border-slate-200 bg-white pt-20 pb-10">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-10 mb-16">
+                <div class="col-span-2 md:col-span-1">
+                    <a href="index.html" class="flex items-center gap-2 mb-6">
+                        <img src="./logo.png" alt="Guira Logo" class="h-6 object-contain" onerror="this.style.display='none'">
+                        <span class="text-slate-900 font-extrabold text-lg">Guira Empresas</span>
+                    </a>
+                    <p class="text-sm text-slate-500 font-medium mb-6">Infraestructura financiera global para empresas de Bolivia y Latinoamérica.</p>
+                    <div class="flex gap-4 text-slate-400">
+                        <a href="#" class="hover:text-slate-900 transition-colors"><i data-lucide="linkedin" class="w-5 h-5"></i></a>
+                        <a href="#" class="hover:text-slate-900 transition-colors"><i data-lucide="twitter" class="w-5 h-5"></i></a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="text-slate-900 font-bold mb-4">Soluciones</h4>
+                    <ul class="space-y-3 text-sm font-medium text-slate-500">
+                        <li><a href="producto.html" class="hover:text-guira-teal">Cuenta Virtual USD</a></li>
+                        <li><a href="soluciones.html" class="hover:text-guira-teal">Liquidación a BOB</a></li>
+                        <li><a href="soluciones.html" class="hover:text-guira-teal">Liquidación a USDT</a></li>
+                        <li><a href="producto.html" class="hover:text-slate-900">Pagos B2B Globales</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-slate-900 font-bold mb-4">Empresa</h4>
+                    <ul class="space-y-3 text-sm font-medium text-slate-500">
+                        <li><a href="sobre-guira.html" class="hover:text-guira-teal">Acerca de nosotros</a></li>
+                        <li><a href="seguridad.html" class="hover:text-guira-teal">Seguridad y Compliance</a></li>
+                        <li><a href="contacto.html" class="hover:text-guira-teal">Contacto Ventas</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-slate-900 font-bold mb-4">Legal</h4>
+                    <ul class="space-y-3 text-sm font-medium text-slate-500">
+                        <li><a href="terminos.html" class="hover:text-guira-teal">Términos de Servicio</a></li>
+                        <li><a href="privacidad.html" class="hover:text-guira-teal">Políticas de Privacidad</a></li>
+                        <li><a href="faq.html" class="hover:text-guira-teal">FAQ</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-slate-200 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-xs font-semibold text-slate-500">© 2026 Guira System LLC. Todos los derechos reservados.</p>
+                <p class="text-xs font-medium text-slate-400 max-w-xl text-center md:text-right">Guira System LLC provee infraestructura tecnológica. No es un banco. Los servicios bancarios son operados a través de proveedores y entidades reguladas aplicables.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="assets/js/main.js"></script>
 </body>
 </html>

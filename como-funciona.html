@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cómo Funciona | Guira Empresas</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <script>
+        tailwind.config = { darkMode: 'class', theme: { extend: { fontFamily: { sans: ['Inter', 'sans-serif'] }, colors: { guira: { navy: '#0B1120', petrol: '#0F172A', cyan: '#06b6d4', teal: '#0d9488', neon: '#00f6ff', dark: '#020617', } } } } }
+    </script>
+</head>
+<body class="bg-white text-slate-900 font-sans antialiased overflow-x-hidden selection:bg-guira-teal selection:text-white">
+
+    <!-- Navbar -->
+    <nav id="navbar" class="fixed top-0 w-full z-50 transition-all duration-300 bg-transparent py-5">
+        <div class="max-w-7xl mx-auto px-6 flex justify-between items-center relative">
+            <a href="index.html" class="flex items-center gap-2">
+                <img src="./logo.png" alt="Guira Logo" class="h-8 object-contain" onerror="this.style.display='none'">
+                <span class="text-slate-900 font-extrabold text-xl tracking-tight">Guira <span class="text-slate-500 font-normal">Empresas</span></span>
+            </a>
+            <div class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-600">
+                <a href="producto.html" class="hover:text-guira-teal transition-colors">Producto</a>
+                <a href="soluciones.html" class="hover:text-guira-teal transition-colors">Soluciones</a>
+                <a href="como-funciona.html" class="text-guira-teal font-bold transition-colors">Cómo funciona</a>
+                <a href="seguridad.html" class="hover:text-guira-teal transition-colors">Seguridad</a>
+                <a href="faq.html" class="hover:text-guira-teal transition-colors">FAQ</a>
+            </div>
+            <div class="hidden md:flex items-center gap-4">
+                <a href="https://app.guira.com/login" class="text-sm font-medium text-slate-700 hover:text-guira-teal transition-colors">Iniciar Sesión</a>
+                <a href="demo.html" class="bg-slate-900 text-white px-5 py-2.5 rounded-lg text-sm font-semibold hover:bg-slate-800 transition-colors shadow-lg">Solicitar Demo</a>
+            </div>
+            <button id="mobile-menu-btn" class="md:hidden text-slate-800"><i data-lucide="menu" class="w-6 h-6"></i></button>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden absolute top-full left-0 w-full bg-white shadow-xl border-t border-slate-100 p-6 flex flex-col gap-4">
+            <a href="producto.html" class="font-medium text-slate-700">Producto</a>
+            <a href="soluciones.html" class="font-medium text-slate-700">Soluciones</a>
+            <a href="como-funciona.html" class="font-bold text-guira-teal">Cómo funciona</a>
+            <a href="seguridad.html" class="font-medium text-slate-700">Seguridad</a>
+            <hr class="border-slate-100">
+            <a href="https://app.guira.com/login" class="font-medium text-slate-700">Iniciar Sesión</a>
+            <a href="demo.html" class="bg-slate-900 text-white text-center px-5 py-3 rounded-lg font-bold">Solicitar Demo</a>
+        </div>
+    </nav>
+
+    <!-- Header Section -->
+    <header class="pt-40 pb-20 bg-slate-900 text-white text-center relative overflow-hidden">
+        <div class="max-w-4xl mx-auto px-6 relative z-10 reveal">
+            <h1 class="text-4xl md:text-6xl font-extrabold mb-6">El proceso operativo B2B,<br/><span class="text-guira-teal">paso a paso.</span></h1>
+            <p class="text-lg md:text-xl text-slate-400 font-medium max-w-2xl mx-auto">Diseñamos Guira para minimizar el nivel de fricción operativa internacional. Operar con EE.UU. u otros mercados ahora es digital y transparente.</p>
+        </div>
+    </header>
+
+    <!-- Steps -->
+    <section class="py-24 bg-white relative">
+        <div class="max-w-4xl mx-auto px-6 space-y-16">
+            
+            <div class="flex flex-col md:flex-row gap-10 items-center reveal">
+                <div class="w-20 h-20 rounded-3xl bg-slate-50 flex items-center justify-center border border-slate-200 shadow-sm shrink-0">
+                    <span class="text-3xl font-extrabold text-guira-teal">1</span>
+                </div>
+                <div>
+                    <h3 class="text-2xl font-bold text-slate-900 mb-3">Registro de Empresa (Onboarding & KYCB)</h3>
+                    <p class="text-slate-600 font-medium leading-relaxed">Abre tu cuenta de empresa digitalmente. Revisaremos tus documentos constitutivos, identificación de directores y estructura accionaria (UBOs) a través de nuestros sistemas de cumplimiento en regla.</p>
+                    <div class="mt-4 p-4 bg-slate-50 border border-slate-100 rounded-lg text-sm font-semibold text-slate-600 flex gap-3">
+                        <i data-lucide="file-check" class="text-guira-teal"></i> Requisitos: Identificación legal de la empresa, ID de representantes, pruebas de domicilio comercial y facturación operativa.
+                    </div>
+                </div>
+            </div>
+
+            <div class="flex flex-col md:flex-row gap-10 items-center reveal">
+                <div class="w-20 h-20 rounded-3xl bg-slate-50 flex items-center justify-center border border-slate-200 shadow-sm shrink-0">
+                    <span class="text-3xl font-extrabold text-guira-teal">2</span>
+                </div>
+                <div>
+                    <h3 class="text-2xl font-bold text-slate-900 mb-3">Validación y Activación de Datos USD</h3>
+                    <p class="text-slate-600 font-medium leading-relaxed">Una vez la cuenta es aprobada, recibirás la habilitación de tus recíprocos USD Virtual Accounts en Estados Unidos en el Dashboard principal. Tendrás a tu disposición un Routing Number local para ser enviado a tus socios o pagadores.</p>
+                </div>
+            </div>
+
+            <div class="flex flex-col md:flex-row gap-10 items-center reveal">
+                <div class="w-20 h-20 rounded-3xl bg-slate-50 flex items-center justify-center border border-slate-200 shadow-sm shrink-0">
+                    <span class="text-3xl font-extrabold text-guira-teal">3</span>
+                </div>
+                <div>
+                    <h3 class="text-2xl font-bold text-slate-900 mb-3">Administración del Balance</h3>
+                    <p class="text-slate-600 font-medium leading-relaxed">Al recibir una transferencia, el saldo de tu dashboard se actualizará instantáneamente tras confirmarse el pago entrante (generalmente 0 a 1 días para ACH y horas para Wires). Tendrás completa visibilidad del historial y comprobantes desde la app.</p>
+                </div>
+            </div>
+
+            <div class="flex flex-col md:flex-row gap-10 items-center reveal">
+                <div class="w-20 h-20 rounded-3xl bg-slate-50 flex items-center justify-center border border-slate-200 shadow-sm shrink-0">
+                    <span class="text-3xl font-extrabold text-guira-teal">4</span>
+                </div>
+                <div>
+                    <h3 class="text-2xl font-bold text-slate-900 mb-3">Liquidación y Payouts a Proveedores</h3>
+                    <p class="text-slate-600 font-medium leading-relaxed">Genera solicitudes de Liquidación en la plataforma seleccionando el destino y la moneda; por ejemplo, enviar a tu cuenta banco en Bolivia en Bolivianos, o bien solicitar retiro a una billetera externa en formato red USDT. También puedes enviar USD por ACH a proveedores norteamericanos.</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer minificado -->
+    <footer class="border-t border-slate-200 bg-white pt-10 pb-10">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-4 text-xs font-semibold text-slate-500">
+            <div class="flex items-center gap-2">
+                <img src="./logo.png" alt="Guira Logo" class="h-6 object-contain" onerror="this.style.display='none'">
+                <span class="text-slate-900 font-bold">Guira Empresas</span>
+            </div>
+            <p>© 2026 Guira System LLC. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

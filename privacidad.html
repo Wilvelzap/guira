@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Política de Privacidad | Guira Empresas</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <script>
+        tailwind.config = { darkMode: 'class', theme: { extend: { fontFamily: { sans: ['Inter', 'sans-serif'] }, colors: { guira: { navy: '#0B1120', petrol: '#0F172A', cyan: '#06b6d4', teal: '#0d9488', neon: '#00f6ff', dark: '#020617', } } } } }
+    </script>
+</head>
+<body class="bg-white text-slate-900 font-sans antialiased overflow-x-hidden selection:bg-guira-teal selection:text-white flex flex-col min-h-screen">
+
+    <nav id="navbar" class="fixed top-0 w-full z-50 transition-all duration-300 bg-transparent py-5">
+        <div class="max-w-7xl mx-auto px-6 flex justify-between items-center relative">
+            <a href="index.html" class="flex items-center gap-2">
+                <img src="./logo.png" alt="Guira Logo" class="h-8 object-contain" onerror="this.style.display='none'">
+                <span class="text-slate-900 font-extrabold text-xl tracking-tight">Guira <span class="text-slate-500 font-normal">Empresas</span></span>
+            </a>
+            <div class="hidden md:flex items-center gap-4">
+                <a href="https://app.guira.com/login" class="text-sm font-medium text-slate-700 hover:text-guira-teal transition-colors">Iniciar Sesión</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="flex-1 max-w-4xl mx-auto w-full pt-32 pb-24 px-6 md:pt-40">
+        <h1 class="text-3xl md:text-5xl font-extrabold mb-4 text-slate-900">Política de Privacidad</h1>
+        <p class="text-slate-500 font-medium mb-12">Última actualización: Noviembre 2026</p>
+        
+        <div class="prose prose-slate prose-lg max-w-none font-medium text-slate-600 space-y-8">
+            <h2 class="text-2xl font-bold text-slate-900">1. Tratamiento de Información</h2>
+            <p>Guira System LLC respeta profundamente la privacidad y seguridad corporativa de nuestros clientes B2B. Recopilamos datos estrictamente necesarios para la prestación de los servicios operacionales y de cumplimiento (Compliance), tales como nombres de directores, datos de la compañía e historial de movimientos.</p>
+            
+            <h2 class="text-2xl font-bold text-slate-900">2. Intercambio con Socios Financieros</h2>
+            <p>Para emitir cuentas virtuales (Virtual Accounts) o procesar rampas fiat locales (p.ej. hacia Bolivia), la información debe ser compartida de manera cifrada a nuestros bancos regulados correspondientes para cumplir la ley anti lavado de dinero (AML).</p>
+
+            <h2 class="text-2xl font-bold text-slate-900">3. Seguridad de Datos</h2>
+            <p>Sus datos se encuentran protegidos bajo protocolos de seguridad de estándar institucional. No vendemos sus datos a entidades de marketing de terceros en ninguna circunstancia.</p>
+        </div>
+    </div>
+
+    <footer class="mt-auto border-t border-slate-200 bg-white pt-8 pb-8">
+        <div class="max-w-7xl mx-auto px-6 text-center text-xs font-semibold text-slate-500">
+            <p>© 2026 Guira System LLC. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

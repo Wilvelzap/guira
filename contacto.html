@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto | Guira Empresas</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <script>
+        tailwind.config = { darkMode: 'class', theme: { extend: { fontFamily: { sans: ['Inter', 'sans-serif'] }, colors: { guira: { navy: '#0B1120', petrol: '#0F172A', cyan: '#06b6d4', teal: '#0d9488', neon: '#00f6ff', dark: '#020617', } } } } }
+    </script>
+</head>
+<body class="bg-white text-slate-900 font-sans antialiased overflow-x-hidden selection:bg-guira-teal selection:text-white flex flex-col min-h-screen">
+
+    <nav id="navbar" class="fixed top-0 w-full z-50 transition-all duration-300 bg-transparent py-5">
+        <div class="max-w-7xl mx-auto px-6 flex justify-between items-center relative">
+            <a href="index.html" class="flex items-center gap-2">
+                <img src="./logo.png" alt="Guira Logo" class="h-8 object-contain" onerror="this.style.display='none'">
+                <span class="text-slate-900 font-extrabold text-xl tracking-tight">Guira <span class="text-slate-500 font-normal">Empresas</span></span>
+            </a>
+            <div class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-600">
+                <a href="producto.html" class="hover:text-guira-teal transition-colors">Producto</a>
+                <a href="soluciones.html" class="hover:text-guira-teal transition-colors">Soluciones</a>
+                <a href="como-funciona.html" class="hover:text-guira-teal transition-colors">Cómo funciona</a>
+                <a href="seguridad.html" class="hover:text-guira-teal transition-colors">Seguridad</a>
+                <a href="faq.html" class="hover:text-guira-teal transition-colors">FAQ</a>
+            </div>
+            <div class="hidden md:flex items-center gap-4">
+                <a href="https://app.guira.com/login" class="text-sm font-medium text-slate-700 hover:text-guira-teal transition-colors">Iniciar Sesión</a>
+                <a href="demo.html" class="bg-slate-900 text-white px-5 py-2.5 rounded-lg text-sm font-semibold hover:bg-slate-800 transition-colors shadow-lg">Solicitar Demo</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="flex-1 flex flex-col md:flex-row max-w-7xl mx-auto w-full pt-32 pb-24 px-6 md:pt-40 gap-16 items-start">
+        
+        <div class="w-full md:w-5/12 reveal-left space-y-10">
+            <div>
+                <h1 class="text-4xl md:text-5xl font-extrabold mb-6 text-slate-900">Mantente en contacto.</h1>
+                <p class="text-slate-600 text-lg font-medium">Nuestro equipo de soporte ejecutivo está a tu disposición para asesorarte sobre límites operativos, onboarding KYB e integraciones institucionales.</p>
+            </div>
+
+            <div class="space-y-6">
+                <div class="flex items-start gap-4">
+                    <div class="w-12 h-12 rounded-xl bg-slate-50 flex items-center justify-center border border-slate-200 shadow-sm shrink-0">
+                        <i data-lucide="mail" class="text-guira-teal w-6 h-6"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-slate-900 text-lg">Soporte y Ventas</h4>
+                        <a href="mailto:soporte@guira.com" class="text-slate-600 hover:text-guira-teal font-medium">soporte@guira.com</a>
+                    </div>
+                </div>
+
+                <div class="flex items-start gap-4">
+                    <div class="w-12 h-12 rounded-xl bg-slate-50 flex items-center justify-center border border-slate-200 shadow-sm shrink-0">
+                        <i data-lucide="building" class="text-guira-teal w-6 h-6"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-slate-900 text-lg">Guira System LLC</h4>
+                        <p class="text-slate-600 font-medium text-sm">Empresa y plataforma tecnológica.<br>Operaciones para LATAM.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="w-full md:w-7/12 reveal-right bg-slate-50 border border-slate-200 rounded-3xl p-8 shadow-sm">
+            <h3 class="text-2xl font-bold text-slate-900 mb-6">Envíanos un mensaje</h3>
+            <form class="space-y-5">
+                <div class="grid grid-cols-2 gap-5">
+                    <div>
+                        <label class="block text-xs font-bold text-slate-500 uppercase mb-2">Nombre y Apellido</label>
+                        <input type="text" class="w-full bg-white border border-slate-200 px-4 py-3 rounded-lg text-sm font-medium focus:outline-none focus:border-guira-teal transition-colors">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold text-slate-500 uppercase mb-2">Empresa</label>
+                        <input type="text" class="w-full bg-white border border-slate-200 px-4 py-3 rounded-lg text-sm font-medium focus:outline-none focus:border-guira-teal transition-colors">
+                    </div>
+                </div>
+                <div>
+                    <label class="block text-xs font-bold text-slate-500 uppercase mb-2">Correo Corporativo</label>
+                    <input type="email" class="w-full bg-white border border-slate-200 px-4 py-3 rounded-lg text-sm font-medium focus:outline-none focus:border-guira-teal transition-colors">
+                </div>
+                <div>
+                    <label class="block text-xs font-bold text-slate-500 uppercase mb-2">Mensaje</label>
+                    <textarea rows="4" class="w-full bg-white border border-slate-200 px-4 py-3 rounded-lg text-sm font-medium focus:outline-none focus:border-guira-teal transition-colors"></textarea>
+                </div>
+                <button type="button" class="w-full bg-slate-900 text-white px-8 py-4 rounded-xl font-bold hover:bg-slate-800 shadow-md transition-colors">Enviar email de consulta</button>
+            </form>
+        </div>
+
+    </div>
+
+    <!-- Footer minificado -->
+    <footer class="mt-auto border-t border-slate-200 bg-white pt-8 pb-8">
+        <div class="max-w-7xl mx-auto px-6 text-center text-xs font-semibold text-slate-500">
+            <p>© 2026 Guira System LLC. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
