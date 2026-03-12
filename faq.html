@@ -1,25 +1,67 @@
 <!DOCTYPE html>
 <html lang="es" class="scroll-smooth">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Preguntas Frecuentes | Guira Empresas</title>
+    <title>Preguntas Frecuentes | Soporte a Empresas - Guira</title>
+    <meta name="description"
+        content="Encuentra respuestas a preguntas frecuentes sobre la cuenta empresarial en USD, operaciones ACH/Wire y seguridad de Guira Empresas.">
+    <meta name="keywords" content="soporte guira empresas, FAQ empresas LATAM, cuenta USD B2B soporte">
+    <meta property="og:title" content="Preguntas Frecuentes - Guira Empresas">
+
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="assets/css/styles.css">
+
+    <!-- Schema Markup for FAQPage -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [{
+        "@type": "Question",
+        "name": "¿A quién está dirigida la plataforma de Guira?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Exclusivamente a empresas, agencias y entidades corporativas debidamente registradas en sus países base que requieran herramientas de recepción de pagos B2B internacionales."
+        }
+      }, {
+        "@type": "Question",
+        "name": "¿La cuenta internacional se registra a nombre de mi empresa?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Sí, nuestra arquitectura te otorga una Cuenta Virtual Empresarial ('Virtual Account') donde la razón social de tu empresa figura como beneficiaria, esencial para integraciones B2B."
+        }
+      }, {
+        "@type": "Question",
+        "name": "¿Cuáles son los tiempos de acreditación de pagos ACH/Wire?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Las transferencias Wire domésticas (USA) por lo general se acreditan el mismo día hábil. Las transferencias ACH tardan entre 1-3 días hábiles. Las transacciones internacionales dependen de bancos corresponsales."
+        }
+      }]
+    }
+    </script>
+
     <script>
         tailwind.config = { darkMode: 'class', theme: { extend: { fontFamily: { sans: ['Inter', 'sans-serif'] }, colors: { guira: { navy: '#0B1120', petrol: '#0F172A', cyan: '#06b6d4', teal: '#0d9488', neon: '#00f6ff', dark: '#020617', } } } } }
     </script>
 </head>
-<body class="bg-slate-50 text-slate-900 font-sans antialiased overflow-x-hidden selection:bg-guira-teal selection:text-white">
+
+<body
+    class="bg-slate-50 text-slate-900 font-sans antialiased overflow-x-hidden selection:bg-guira-teal selection:text-white flex flex-col min-h-screen">
 
     <!-- Navbar -->
     <nav id="navbar" class="fixed top-0 w-full z-50 transition-all duration-300 bg-transparent py-5">
         <div class="max-w-7xl mx-auto px-6 flex justify-between items-center relative">
             <a href="index.html" class="flex items-center gap-2">
-                <img src="./logo.png" alt="Guira Logo" class="h-8 object-contain" onerror="this.style.display='none'">
-                <span class="text-slate-900 font-extrabold text-xl tracking-tight">Guira <span class="text-slate-500 font-normal">Empresas</span></span>
+                <img src="./logo.png" alt="Guira Logo - Plataforma financiera empresarial" class="h-8 object-contain"
+                    onerror="this.style.display='none'">
+                <span class="text-slate-900 font-extrabold text-xl tracking-tight">Guira <span
+                        class="text-slate-500 font-normal">Empresas</span></span>
             </a>
             <div class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-600">
                 <a href="producto.html" class="hover:text-guira-teal transition-colors">Producto</a>
@@ -29,91 +71,140 @@
                 <a href="faq.html" class="text-guira-teal font-bold transition-colors">FAQ</a>
             </div>
             <div class="hidden md:flex items-center gap-4">
-                <a href="https://app.guira.com/login" class="text-sm font-medium text-slate-700 hover:text-guira-teal transition-colors">Iniciar Sesión</a>
-                <a href="demo.html" class="bg-slate-900 text-white px-5 py-2.5 rounded-lg text-sm font-semibold hover:bg-slate-800 transition-colors shadow-lg">Solicitar Demo</a>
+                <a href="https://app.guira.com/login"
+                    class="text-sm font-medium text-slate-700 hover:text-guira-teal transition-colors">Iniciar
+                    Sesión</a>
+                <a href="demo.html"
+                    class="bg-slate-900 text-white px-5 py-2.5 rounded-lg text-sm font-semibold hover:bg-slate-800 transition-colors shadow-lg">Solicitar
+                    Demo</a>
             </div>
-            <button id="mobile-menu-btn" class="md:hidden text-slate-800"><i data-lucide="menu" class="w-6 h-6"></i></button>
+            <button id="mobile-menu-btn" class="md:hidden text-slate-800" aria-label="Abrir menú"><i data-lucide="menu"
+                    class="w-6 h-6"></i></button>
         </div>
         <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden absolute top-full left-0 w-full bg-white shadow-xl border-t border-slate-100 p-6 flex flex-col gap-4">
+        <div id="mobile-menu"
+            class="hidden absolute top-full left-0 w-full bg-white shadow-xl border-t border-slate-100 p-6 flex flex-col gap-4">
             <a href="producto.html" class="font-medium text-slate-700">Producto</a>
             <a href="soluciones.html" class="font-medium text-slate-700">Soluciones</a>
             <a href="como-funciona.html" class="font-medium text-slate-700">Cómo funciona</a>
             <a href="seguridad.html" class="font-medium text-slate-700">Seguridad</a>
             <hr class="border-slate-100">
             <a href="https://app.guira.com/login" class="font-medium text-slate-700">Iniciar Sesión</a>
-            <a href="demo.html" class="bg-slate-900 text-white text-center px-5 py-3 rounded-lg font-bold">Solicitar Demo</a>
+            <a href="demo.html" class="bg-slate-900 text-white text-center px-5 py-3 rounded-lg font-bold">Solicitar
+                Demo</a>
         </div>
     </nav>
 
-    <header class="pt-40 pb-16 bg-white border-b border-slate-200 text-center relative overflow-hidden">
-        <div class="max-w-4xl mx-auto px-6 relative z-10 reveal">
-            <h1 class="text-4xl md:text-5xl font-extrabold text-slate-900 mb-6">Preguntas Frecuentes</h1>
-            <p class="text-lg text-slate-600 font-medium max-w-2xl mx-auto">Todo lo que necesitas saber operativo y legal para usar Guira de manera transparente.</p>
+    <!-- Header -->
+    <header class="pt-40 pb-20 bg-slate-50 text-center relative overflow-hidden">
+        <div class="max-w-3xl mx-auto px-6 relative z-10 reveal">
+            <h1 class="text-4xl md:text-5xl font-extrabold text-slate-900 mb-6">Preguntas <span
+                    class="text-guira-teal">Frecuentes</span></h1>
+            <p class="text-lg text-slate-600 font-medium">Resolución a las consultas corporativas y técnicas respecto a
+                las virtual accounts y transacciones cross-border comerciales.</p>
         </div>
     </header>
 
-    <section class="py-24">
+    <!-- FAQ Section -->
+    <section class="py-12 flex-1">
         <div class="max-w-3xl mx-auto px-6 reveal">
             <div class="space-y-4">
-                
-                <div class="faq-item bg-white border border-slate-200 rounded-xl overflow-hidden shadow-sm hover:border-slate-300 transition-colors">
-                    <button class="faq-button w-full px-6 py-5 flex items-center justify-between text-left font-bold text-slate-900 focus:outline-none">
-                        <span>¿Guira está orientado a personas o empresas?</span>
-                        <i data-lucide="chevron-down" class="faq-icon w-5 h-5 text-slate-500 transition-transform duration-300"></i>
+
+                <div
+                    class="faq-item bg-white border border-slate-200 rounded-xl overflow-hidden hover:border-slate-300 transition-colors">
+                    <button
+                        class="faq-button w-full px-6 py-5 flex items-center justify-between text-left font-bold text-slate-900 focus:outline-none"
+                        aria-expanded="false">
+                        <span>¿A quién está dirigida explícitamente la plataforma?</span>
+                        <i data-lucide="chevron-down"
+                            class="faq-icon w-5 h-5 text-slate-500 transition-transform duration-300"></i>
                     </button>
                     <div class="faq-content hidden px-6 pb-5 text-slate-600 font-medium leading-relaxed">
-                        Exclusivamente a Empresas e Instituciones. Al registrarte te pediremos documentos de incorporación de la empresa, registros fiscales e identificaciones de directivos (KYB). No operamos usuarios retail (C2C).
+                        Exclusivamente a empresas, agencias de IT corporativas y exportadoras de servicios en LATAM.
+                        Exigimos documentación registral (KYB) robusta para operar, no admitimos volumenes vinculados a
+                        giros de alto riesgo transaccional penalizado por OFAC.
                     </div>
                 </div>
 
-                <div class="faq-item bg-white border border-slate-200 rounded-xl overflow-hidden shadow-sm hover:border-slate-300 transition-colors">
-                    <button class="faq-button w-full px-6 py-5 flex items-center justify-between text-left font-bold text-slate-900 focus:outline-none">
-                        <span>¿La cuenta virtal está a nombre de mi empresa?</span>
-                        <i data-lucide="chevron-down" class="faq-icon w-5 h-5 text-slate-500 transition-transform duration-300"></i>
+                <div
+                    class="faq-item bg-white border border-slate-200 rounded-xl overflow-hidden hover:border-slate-300 transition-colors">
+                    <button
+                        class="faq-button w-full px-6 py-5 flex items-center justify-between text-left font-bold text-slate-900 focus:outline-none"
+                        aria-expanded="false">
+                        <span>¿La cuenta internacional figura a nombre corporativo o usan cuentas pooled?</span>
+                        <i data-lucide="chevron-down"
+                            class="faq-icon w-5 h-5 text-slate-500 transition-transform duration-300"></i>
                     </button>
                     <div class="faq-content hidden px-6 pb-5 text-slate-600 font-medium leading-relaxed">
-                        Sí, mediante nuestras alianzas bancarias, te proporcionaremos números de cuenta virtual en los que tú como empresa figurarás como el Beneficiario, logrando que sea fácil percibir pagos de Deel, Stripe, Upwork o clientes B2B.
+                        Nuestro core emite una "Virtual Account" en la cual la razón social beneficiaria es idéntica al
+                        registro corporativo de su empresa. A los ojos de terceros, ACH se transfiere directamente y se
+                        certifica "bajo nombre real".
                     </div>
                 </div>
 
-                <div class="faq-item bg-white border border-slate-200 rounded-xl overflow-hidden shadow-sm hover:border-slate-300 transition-colors">
-                    <button class="faq-button w-full px-6 py-5 flex items-center justify-between text-left font-bold text-slate-900 focus:outline-none">
-                        <span>¿Puedo liquidar pagos en Bolivia (BOB) y cripto (USDT)?</span>
-                        <i data-lucide="chevron-down" class="faq-icon w-5 h-5 text-slate-500 transition-transform duration-300"></i>
+                <div
+                    class="faq-item bg-white border border-slate-200 rounded-xl overflow-hidden hover:border-slate-300 transition-colors">
+                    <button
+                        class="faq-button w-full px-6 py-5 flex items-center justify-between text-left font-bold text-slate-900 focus:outline-none"
+                        aria-expanded="false">
+                        <span>¿Demora de la validación KYB inicial?</span>
+                        <i data-lucide="chevron-down"
+                            class="faq-icon w-5 h-5 text-slate-500 transition-transform duration-300"></i>
                     </button>
                     <div class="faq-content hidden px-6 pb-5 text-slate-600 font-medium leading-relaxed">
-                        Sí. Ofrecemos rampas cruzadas. En cuanto tus fondos USD se hagan efectivos en la plataforma, podrás instruir un retiro o liquidación directamente a tu cuenta bancaria boliviana en Bs., a otros bancos de la región, o extraer mediante transacciones sobre blockchain usando USDT para tu tesorería digital.
+                        Evaluamos los perfiles comerciales de la empresa, identidad de UBOs (Directores Principales) y
+                        modelo de negocio en márgenes entre 24 y 72 horas hábiles tras la carga completa del dossier
+                        corporativo.
                     </div>
                 </div>
 
-                <div class="faq-item bg-white border border-slate-200 rounded-xl overflow-hidden shadow-sm hover:border-slate-300 transition-colors">
-                    <button class="faq-button w-full px-6 py-5 flex items-center justify-between text-left font-bold text-slate-900 focus:outline-none">
-                        <span>¿Cuáles son los requisitos de registro KYB?</span>
-                        <i data-lucide="chevron-down" class="faq-icon w-5 h-5 text-slate-500 transition-transform duration-300"></i>
+                <div
+                    class="faq-item bg-white border border-slate-200 rounded-xl overflow-hidden hover:border-slate-300 transition-colors">
+                    <button
+                        class="faq-button w-full px-6 py-5 flex items-center justify-between text-left font-bold text-slate-900 focus:outline-none"
+                        aria-expanded="false">
+                        <span>¿Cuáles son los tiempos de liquidación de pagos locales internacionales?</span>
+                        <i data-lucide="chevron-down"
+                            class="faq-icon w-5 h-5 text-slate-500 transition-transform duration-300"></i>
                     </button>
                     <div class="faq-content hidden px-6 pb-5 text-slate-600 font-medium leading-relaxed">
-                        Deberás contar con Cédula de Identidad de Representante Legal, documento constitutivo (Ej. Registro NIT, Fundempresa local) y documentos respaldatorios de la dirección del negocio.
+                        Depende del circuito o riel bancario: ACH americano habitualmente compensa en 1-2 días;
+                        Liquidaciones locales a bancos de LATAM vía Wire oscilan de 1-4 días laborables.
                     </div>
                 </div>
 
-                <div class="faq-item bg-white border border-slate-200 rounded-xl overflow-hidden shadow-sm hover:border-slate-300 transition-colors">
-                    <button class="faq-button w-full px-6 py-5 flex items-center justify-between text-left font-bold text-slate-900 focus:outline-none">
-                        <span>¿Puedo enviar pagos a cuentas en USA?</span>
-                        <i data-lucide="chevron-down" class="faq-icon w-5 h-5 text-slate-500 transition-transform duration-300"></i>
+                <div
+                    class="faq-item bg-white border border-slate-200 rounded-xl overflow-hidden hover:border-slate-300 transition-colors">
+                    <button
+                        class="faq-button w-full px-6 py-5 flex items-center justify-between text-left font-bold text-slate-900 focus:outline-none"
+                        aria-expanded="false">
+                        <span>¿Permiten el uso de Cripto Opciones Estables (USDT) corporativas?</span>
+                        <i data-lucide="chevron-down"
+                            class="faq-icon w-5 h-5 text-slate-500 transition-transform duration-300"></i>
                     </button>
                     <div class="faq-content hidden px-6 pb-5 text-slate-600 font-medium leading-relaxed">
-                        Sí. Desde tu balance, puedes instruir envíos de fondos mediante ACH Local o Wire (Transferencia internacional) hacia cuentas corporativas o de proveedores en Estados Unidos. 
+                        Los clientes B2B que eligen un proceso de liquidación más robusto transfronterizo en ocasiones
+                        aprovechan rampas criptográficas institucionales como puente. El uso de estos activos está
+                        estrictamente encapsulado sobre liquidaciones off-chain bajo escrutinio exhaustivo.
                     </div>
                 </div>
 
+            </div>
+
+            <div class="mt-16 text-center border-t border-slate-200 pt-10">
+                <p class="text-slate-600 font-medium mb-4">¿Preguntas sobre integraciones complejas o volúmenes altos?
+                </p>
+                <a href="demo.html"
+                    class="inline-block px-8 py-3 bg-slate-900 text-white rounded-lg font-bold hover:bg-slate-800 transition-colors shadow-sm">Hablar
+                    con Ejecutivos</a>
             </div>
         </div>
     </section>
 
     <!-- Footer minificado -->
     <footer class="border-t border-slate-200 bg-white pt-10 pb-10 mt-auto">
-        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-4 text-xs font-semibold text-slate-500">
+        <div
+            class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-4 text-xs font-semibold text-slate-500">
             <div class="flex items-center gap-2">
                 <img src="./logo.png" alt="Guira Logo" class="h-6 object-contain" onerror="this.style.display='none'">
                 <span class="text-slate-900 font-bold">Guira Empresas</span>
@@ -123,4 +214,5 @@
     </footer>
     <script src="assets/js/main.js"></script>
 </body>
+
 </html>
