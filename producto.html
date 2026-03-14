@@ -38,402 +38,398 @@
                             dark: '#020617',
                             slate: '#1e293b'
                         }
+                    },
+                    animation: {
+                        'marquee': 'marquee 25s linear infinite',
+                        'blob': 'blob 7s infinite',
+                        'float': 'float 6s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        marquee: {
+                            '0%': { transform: 'translateX(0%)' },
+                            '100%': { transform: 'translateX(-100%)' }
+                        },
+                        blob: {
+                            '0%': { transform: 'translate(0px, 0px) scale(1)' },
+                            '33%': { transform: 'translate(30px, -50px) scale(1.1)' },
+                            '66%': { transform: 'translate(-20px, 20px) scale(0.9)' },
+                            '100%': { transform: 'translate(0px, 0px) scale(1)' }
+                        },
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-10px)' }
+                        }
                     }
                 }
             }
         }
     </script>
     <style>
-        .premium-shadow {
-            box-shadow: 0 10px 40px -10px rgba(16, 185, 129, 0.15);
-        }
-        .emerald-glow {
-            box-shadow: 0 0 20px rgba(16, 185, 129, 0.3);
-        }
+        .premium-shadow { box-shadow: 0 10px 40px -10px rgba(16, 185, 129, 0.15); }
+        .emerald-glow { box-shadow: 0 0 20px rgba(16, 185, 129, 0.3); }
+        .emerald-glow-hover:hover { box-shadow: 0 0 30px rgba(16, 185, 129, 0.2); }
+        
         .border-gradient {
             background: linear-gradient(to right, #1e293b, #1e293b) padding-box,
                         linear-gradient(to right, #10b981, #059669) border-box;
             border: 1px solid transparent;
         }
+
+        /* Scroll Reveal Animation Classes */
+        .reveal-up {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
+        }
+        .reveal-up.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .delay-100 { transition-delay: 100ms; }
+        .delay-200 { transition-delay: 200ms; }
+        .delay-300 { transition-delay: 300ms; }
+
+        /* Simula un scroll continuo fluido para el marquee */
+        .marquee-container {
+            display: flex;
+            overflow: hidden;
+            user-select: none;
+            gap: 3rem;
+        }
+        
+        .animation-paused:hover {
+            animation-play-state: paused;
+        }
+        
+        /* Linea conectora brillante para los 3 pasos */
+        .glow-line {
+            background: linear-gradient(90deg, transparent, rgba(16,185,129,0.5), transparent);
+            box-shadow: 0 0 10px rgba(16,185,129,0.5);
+        }
+        
+        /* Interactive Simulator Styling */
+        .simulator-step { cursor: pointer; transition: all 0.3s ease; }
+        .simulator-step.active { border-color: #10b981; background: rgba(16, 185, 129, 0.1); }
+        .simulator-step.active .lucide { color: #10b981; }
     </style>
 </head>
 
 <body
-    class="bg-guira-navy text-slate-300 font-sans antialiased overflow-x-hidden selection:bg-guira-emerald selection:text-white flex flex-col min-h-screen">
+    class="bg-white text-slate-600 font-sans antialiased overflow-x-hidden selection:bg-guira-emerald selection:text-white flex flex-col min-h-screen relative">
 
     <!-- Navbar -->
-    <nav id="navbar" class="fixed top-0 w-full z-50 transition-all duration-300 bg-guira-navy/90 backdrop-blur-md border-b border-white/5 py-4">
+    <nav id="navbar" class="fixed top-0 w-full z-50 transition-all duration-300 bg-white/90 backdrop-blur-md border-b border-slate-200 py-4">
         <div class="max-w-7xl mx-auto px-6 flex justify-between items-center relative">
-            <a href="index.html" class="flex items-center gap-2">
-                <img src="./logo.png" alt="Guira Logo - Infraestructura operativa" class="h-8 object-contain brightness-0 invert"
+            <a href="index.html" class="flex items-center gap-2 group">
+                <img src="./logo.png" alt="Guira Logo - Infraestructura operativa" class="h-8 object-contain transition-transform group-hover:scale-105"
                     onerror="this.style.display='none'">
-                <span class="text-white font-extrabold text-xl tracking-tight">Guira <span
-                        class="text-slate-400 font-normal">Empresas</span></span>
+                <span class="text-slate-900 font-extrabold text-xl tracking-tight transition-colors group-hover:text-guira-emerald">Guira <span
+                        class="text-slate-500 font-normal">Empresas</span></span>
             </a>
-            <div class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-300">
-                <a href="producto.html" class="text-guira-emerald font-bold transition-colors">Producto</a>
-                <a href="soluciones.html" class="hover:text-white transition-colors">Soluciones</a>
-                <a href="como-funciona.html" class="hover:text-white transition-colors">Cómo funciona</a>
-                <a href="seguridad.html" class="hover:text-white transition-colors">Seguridad</a>
-                <a href="faq.html" class="hover:text-white transition-colors">FAQ</a>
+            <div class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-600">
+                <a href="producto.html" class="text-guira-emerald font-bold transition-all hover:-translate-y-0.5">Producto</a>
+                <a href="soluciones.html" class="hover:text-slate-900 transition-all hover:-translate-y-0.5">Soluciones</a>
+                <a href="como-funciona.html" class="hover:text-slate-900 transition-all hover:-translate-y-0.5">Cómo funciona</a>
+                <a href="seguridad.html" class="hover:text-slate-900 transition-all hover:-translate-y-0.5">Seguridad</a>
+                <a href="faq.html" class="hover:text-slate-900 transition-all hover:-translate-y-0.5">FAQ</a>
             </div>
             <div class="hidden md:flex items-center gap-4">
                 <a href="https://app.guira.com/login"
-                    class="text-sm font-medium text-slate-300 hover:text-white transition-colors">Iniciar
-                    Sesión</a>
+                    class="text-sm font-bold text-slate-700 hover:text-slate-900 transition-colors">Iniciar Sesión</a>
                 <a href="demo.html"
-                    class="bg-guira-emerald text-white px-5 py-2.5 rounded-lg text-sm font-semibold hover:bg-guira-emerald_dark transition-colors shadow-lg">Solicitar
-                    Demo</a>
+                    class="bg-slate-900 text-white px-5 py-2.5 rounded-lg text-sm font-semibold hover:bg-slate-800 transition-all shadow-md active:scale-95">Solicitar Demo</a>
             </div>
-            <button id="mobile-menu-btn" class="md:hidden text-white" aria-label="Abrir menú">
+            <button id="mobile-menu-btn" class="md:hidden text-slate-900" aria-label="Abrir menú">
                 <i data-lucide="menu" class="w-6 h-6"></i>
             </button>
         </div>
         <!-- Mobile Menu -->
         <div id="mobile-menu"
-            class="hidden absolute top-full left-0 w-full bg-guira-petrol shadow-xl border-t border-white/10 p-6 flex flex-col gap-4">
+            class="hidden absolute top-full left-0 w-full bg-white shadow-2xl border-t border-slate-100 p-6 flex flex-col gap-4">
             <a href="producto.html" class="font-bold text-guira-emerald">Producto</a>
-            <a href="soluciones.html" class="font-medium text-slate-300">Soluciones</a>
-            <a href="como-funciona.html" class="font-medium text-slate-300">Cómo funciona</a>
-            <a href="seguridad.html" class="font-medium text-slate-300">Seguridad</a>
-            <hr class="border-white/10">
-            <a href="https://app.guira.com/login" class="font-medium text-slate-300">Iniciar Sesión</a>
-            <a href="demo.html" class="bg-guira-emerald text-white text-center px-5 py-3 rounded-lg font-bold">Solicitar
-                Demo</a>
+            <a href="soluciones.html" class="font-medium text-slate-700">Soluciones</a>
+            <a href="como-funciona.html" class="font-medium text-slate-700">Cómo funciona</a>
+            <a href="seguridad.html" class="font-medium text-slate-700">Seguridad</a>
+            <hr class="border-slate-100">
+            <a href="https://app.guira.com/login" class="font-medium text-slate-700">Iniciar Sesión</a>
+            <a href="demo.html" class="bg-slate-900 text-white text-center px-5 py-3 rounded-lg font-bold">Solicitar Demo</a>
         </div>
     </nav>
 
     <!-- 1. Hero Principal -->
-    <header class="pt-32 pb-20 md:pt-40 md:pb-28 relative overflow-hidden">
-        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-guira-emerald opacity-[0.05] blur-[120px] rounded-full point-events-none"></div>
-        
-        <div class="max-w-7xl mx-auto px-6 relative z-10 grid lg:grid-cols-2 gap-12 items-center">
-            <div class="text-left">
-                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs font-semibold text-guira-emerald mb-6">
-                    <span class="w-2 h-2 rounded-full bg-guira-emerald"></span>
-                    Plataforma para empresas de Bolivia y Latinoamérica
+    <header class="pt-32 pb-16 md:pt-40 md:pb-24 relative z-10 bg-slate-50 border-b border-slate-200">
+        <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-12 items-center">
+            <div class="text-left reveal-up">
+                <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white border border-slate-200 shadow-sm text-xs font-bold text-slate-600 mb-6 cursor-default">
+                    <span class="w-2 h-2 rounded-full bg-guira-emerald animate-pulse"></span>
+                    Plataforma para empresas de LATAM
                 </div>
-                <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white mb-6 leading-tight">
-                    Ordena cobros internacionales, liquidación y pagos corporativos con una experiencia B2B
+                <h1 class="text-4xl md:text-5xl lg:text-7xl font-extrabold text-slate-900 mb-6 leading-[1.1] tracking-tight">
+                    Ordena cobros y pagos con una <span class="text-guira-emerald">experiencia B2B</span>
                 </h1>
-                <p class="text-lg text-slate-400 font-medium max-w-xl mb-8">
-                    Infraestructura operativa seria y moderna para empresas. Coordinación, trazabilidad documental y soporte corporativo en cada transacción.
+                <p class="text-lg text-slate-600 font-medium max-w-xl mb-8 leading-relaxed">
+                    Infraestructura operativa seria y moderna para empresas. Coordinación, trazabilidad documental y soporte corporativo en cada transacción internacional.
                 </p>
                 <div class="flex flex-col sm:flex-row gap-4">
-                    <a href="demo.html" class="bg-guira-emerald text-white px-6 py-3 rounded-lg font-bold hover:bg-guira-emerald_dark transition-colors shadow-lg text-center flex items-center justify-center gap-2">
-                        Solicitar demo <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    <a href="demo.html" class="group bg-slate-900 text-white px-8 py-4 rounded-xl font-bold hover:bg-slate-800 transition-all shadow-xl hover:-translate-y-1 text-center flex items-center justify-center gap-2">
+                        Solicitar demo 
                     </a>
-                    <a href="#soluciones" class="bg-white/5 border border-white/10 text-white px-6 py-3 rounded-lg font-bold hover:bg-white/10 transition-colors text-center">
+                    <a href="#soluciones" class="bg-white border border-slate-200 text-slate-700 px-8 py-4 rounded-xl font-bold hover:bg-slate-50 transition-all shadow-sm hover:-translate-y-1 text-center">
                         Ver solución
                     </a>
                 </div>
                 
-                <div class="mt-10 flex items-center gap-8 border-t border-white/10 pt-6">
-                    <div>
-                        <p class="text-white font-bold">Cobros</p>
-                        <p class="text-xs text-slate-500">Más claros</p>
+                <div class="mt-10 flex items-center gap-8 border-t border-slate-200 pt-6 reveal-up delay-100">
+                    <div class="group cursor-default">
+                        <p class="text-slate-900 font-bold group-hover:text-guira-emerald transition-colors">Cobros</p>
+                        <p class="text-xs text-slate-500 font-medium mt-1">Nativos en EEUU</p>
                     </div>
-                    <div>
-                        <p class="text-white font-bold">Validación</p>
-                        <p class="text-xs text-slate-500">Documental</p>
+                    <div class="group cursor-default border-l border-slate-200 pl-8">
+                        <p class="text-slate-900 font-bold group-hover:text-guira-emerald transition-colors">Validación</p>
+                        <p class="text-xs text-slate-500 font-medium mt-1">Documental</p>
                     </div>
-                    <div>
-                        <p class="text-white font-bold">Pagos</p>
-                        <p class="text-xs text-slate-500">Con trazabilidad</p>
+                    <div class="group cursor-default border-l border-slate-200 pl-8">
+                        <p class="text-slate-900 font-bold group-hover:text-guira-emerald transition-colors">Pagos</p>
+                        <p class="text-xs text-slate-500 font-medium mt-1">Con trazabilidad</p>
                     </div>
                 </div>
             </div>
             
-            <!-- Mockup Premium -->
-            <div class="relative lg:ml-auto w-full max-w-lg mt-10 lg:mt-0">
-                <div class="bg-guira-petrol border border-white/10 rounded-2xl p-6 shadow-2xl premium-shadow relative z-20">
-                    <div class="flex items-center justify-between mb-6 border-b border-white/10 pb-4">
+            <!-- Mockup Premium Brillante (Claro/Oscuro Intersilado) -->
+            <div class="relative lg:ml-auto w-full max-w-lg mt-10 lg:mt-0 reveal-up delay-200">
+                <div class="bg-white border border-slate-200 rounded-2xl p-6 shadow-2xl relative z-20 hover:border-slate-300 transition-colors duration-500">
+                    <div class="flex items-center justify-between mb-6 border-b border-slate-100 pb-4">
                         <div class="flex items-center gap-3">
-                            <div class="w-8 h-8 rounded bg-guira-emerald/20 flex items-center justify-center">
-                                <i data-lucide="briefcase" class="w-4 h-4 text-guira-emerald"></i>
+                            <div class="w-8 h-8 rounded bg-slate-100 flex items-center justify-center">
+                                <i data-lucide="briefcase" class="w-4 h-4 text-slate-700"></i>
                             </div>
-                            <h3 class="font-bold text-white text-sm">Vista de producto sugerida</h3>
+                            <h3 class="font-bold text-slate-900 text-sm">Vista de producto corporativa</h3>
                         </div>
-                        <span class="text-[10px] uppercase tracking-wider text-slate-500 font-semibold">Datos de Operación</span>
+                        <span class="flex h-2 w-2 relative">
+                            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-guira-emerald opacity-75"></span>
+                            <span class="relative inline-flex rounded-full h-2 w-2 bg-guira-emerald"></span>
+                        </span>
                     </div>
                     
                     <div class="grid grid-cols-3 gap-3 mb-6">
-                        <div class="bg-white/5 rounded-lg p-3 border border-white/5">
-                            <p class="text-[10px] text-slate-500 font-semibold mb-1 uppercase">Canal</p>
-                            <p class="text-xs text-white font-bold">ACH / Wire</p>
+                        <div class="bg-slate-50 rounded-lg p-3 border border-slate-100">
+                            <p class="text-[10px] text-slate-400 font-bold mb-1 uppercase tracking-wider">Canal</p>
+                            <p class="text-xs text-slate-900 font-bold">ACH / Wire</p>
                         </div>
-                        <div class="bg-white/5 rounded-lg p-3 border border-white/5">
-                            <p class="text-[10px] text-slate-500 font-semibold mb-1 uppercase">Liquidación</p>
-                            <p class="text-xs text-white font-bold">BOB / Digital</p>
+                        <div class="bg-slate-50 rounded-lg p-3 border border-slate-100">
+                            <p class="text-[10px] text-slate-400 font-bold mb-1 uppercase tracking-wider">Liquidación</p>
+                            <p class="text-xs text-slate-900 font-bold">BOB / Digital</p>
                         </div>
-                        <div class="bg-white/5 rounded-lg p-3 border border-white/5">
-                            <p class="text-[10px] text-slate-500 font-semibold mb-1 uppercase">Enfoque</p>
-                            <p class="text-xs text-white font-bold">B2B</p>
+                        <div class="bg-slate-50 rounded-lg p-3 border border-slate-100">
+                            <p class="text-[10px] text-slate-400 font-bold mb-1 uppercase tracking-wider">Enfoque</p>
+                            <p class="text-xs text-slate-900 font-bold">B2B</p>
                         </div>
                     </div>
                     
-                    <div class="bg-guira-dark rounded-xl p-4 border border-white/5">
+                    <div class="bg-slate-900 rounded-xl p-5 border border-slate-800 relative overflow-hidden shadow-inner">
                         <h4 class="text-sm font-bold text-white mb-3">Beneficiario corporativo</h4>
-                        <div class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded bg-guira-emerald/10 text-[10px] text-guira-emerald font-medium mb-4">
+                        <div class="inline-flex items-center gap-1.5 px-2 py-1 rounded bg-guira-emerald/20 text-[10px] text-guira-emerald font-bold mb-5 border border-guira-emerald/30">
                             <i data-lucide="shield-check" class="w-3 h-3"></i> Empresa verificada
                         </div>
                         
-                        <div class="space-y-3">
+                        <div class="space-y-4">
                             <div class="flex justify-between items-center text-xs">
-                                <span class="text-slate-500">Routing</span>
-                                <span class="text-white font-mono">0210000**</span>
+                                <span class="text-slate-400 font-medium">Routing Number</span>
+                                <span class="text-white font-mono bg-white/10 px-2 py-1.5 rounded shadow-sm border border-white/5">0210000**</span>
                             </div>
                             <div class="flex justify-between items-center text-xs">
-                                <span class="text-slate-500">Account</span>
-                                <span class="text-white font-mono">4682000001**</span>
+                                <span class="text-slate-400 font-medium">Account Number</span>
+                                <span class="text-white font-mono bg-white/10 px-2 py-1.5 rounded shadow-sm border border-white/5">4682000001**</span>
                             </div>
                             <div class="flex justify-between items-center text-xs">
-                                <span class="text-slate-500">Destino</span>
-                                <span class="text-white">Bolivia / Digital compatible</span>
+                                <span class="text-slate-400 font-medium">Destino Operativo</span>
+                                <span class="text-white font-medium">Bolivia / USA B2B</span>
                             </div>
                         </div>
                     </div>
-                    
-                    <div class="mt-4 pt-4 border-t border-white/10 text-center">
-                        <p class="text-[10px] text-guira-emerald font-semibold flex items-center justify-center gap-1">
-                            <i data-lucide="check-circle-2" class="w-3 h-3"></i> Control sobre liquidación y documentación operativa
-                        </p>
-                    </div>
                 </div>
-                
-                <!-- Decorative elements behind mockup -->
-                <div class="absolute -top-4 -right-4 w-24 h-24 bg-guira-emerald/20 blur-xl rounded-full"></div>
-                <div class="absolute -bottom-4 -left-4 w-32 h-32 bg-blue-500/10 blur-xl rounded-full"></div>
             </div>
         </div>
     </header>
 
-    <!-- 2. Beneficios de negocio -->
-    <section class="py-20 bg-guira-dark border-y border-white/5">
+    <!-- Social Proof Marquee (Blanco/Gris estilo Corporativo) -->
+    <div class="w-full bg-white border-b border-slate-200 py-6 overflow-hidden relative z-10">
+        <!-- masks para desvanecer bordes en modo claro -->
+        <div class="absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none"></div>
+        <div class="absolute inset-y-0 right-0 w-24 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none"></div>
+        
+        <div class="flex marquee-container w-[200%] animate-marquee animation-paused">
+            <!-- Bloque 1 -->
+            <div class="flex items-center justify-around w-1/2 min-w-full sm:min-w-0">
+                <div class="flex items-center gap-2 text-slate-500 font-bold opacity-60 grayscale hover:grayscale-0 hover:opacity-100 hover:text-slate-900 transition-all"><i data-lucide="building" class="w-6 h-6"></i> Bancos Regulados</div>
+                <div class="flex items-center gap-2 text-slate-500 font-bold opacity-60 grayscale hover:grayscale-0 hover:opacity-100 hover:text-slate-900 transition-all"><i data-lucide="network" class="w-6 h-6"></i> Redes ACH/Wire</div>
+                <div class="flex items-center gap-2 text-slate-500 font-bold opacity-60 grayscale hover:grayscale-0 hover:opacity-100 hover:text-slate-900 transition-all"><i data-lucide="file-check-2" class="w-6 h-6"></i> Partners APIs Compliance</div>
+                <div class="flex items-center gap-2 text-slate-500 font-bold opacity-60 grayscale hover:grayscale-0 hover:opacity-100 hover:text-slate-900 transition-all"><i data-lucide="wallet" class="w-6 h-6"></i> Billeteras B2B</div>
+            </div>
+            <!-- Bloque 2 (Duplicado para infinito) -->
+            <div class="flex items-center justify-around w-1/2 min-w-full sm:min-w-0">
+                <div class="flex items-center gap-2 text-slate-500 font-bold opacity-60 grayscale hover:grayscale-0 hover:opacity-100 hover:text-slate-900 transition-all"><i data-lucide="building" class="w-6 h-6"></i> Bancos Regulados</div>
+                <div class="flex items-center gap-2 text-slate-500 font-bold opacity-60 grayscale hover:grayscale-0 hover:opacity-100 hover:text-slate-900 transition-all"><i data-lucide="network" class="w-6 h-6"></i> Redes ACH/Wire</div>
+                <div class="flex items-center gap-2 text-slate-500 font-bold opacity-60 grayscale hover:grayscale-0 hover:opacity-100 hover:text-slate-900 transition-all"><i data-lucide="file-check-2" class="w-6 h-6"></i> Partners APIs Compliance</div>
+                <div class="flex items-center gap-2 text-slate-500 font-bold opacity-60 grayscale hover:grayscale-0 hover:opacity-100 hover:text-slate-900 transition-all"><i data-lucide="wallet" class="w-6 h-6"></i> Billeteras B2B</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 2. Beneficios de negocio con micro-interacciones -->
+    <section class="py-20 bg-white relative z-10">
         <div class="max-w-7xl mx-auto px-6">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl font-extrabold text-white mb-4">Infraestructura operativa seria para escalar</h2>
-                <p class="text-slate-400 max-w-2xl mx-auto">Diseñada para empresas que buscan orden, cumplimiento y agilidad en sus operaciones internacionales.</p>
+            <div class="text-center mb-16 reveal-up">
+                <h2 class="text-3xl font-extrabold text-slate-900 mb-4">Infraestructura operativa seria para escalar</h2>
+                <p class="text-slate-600 max-w-2xl mx-auto font-medium">Diseñada para empresas que buscan orden, cumplimiento y agilidad en sus operaciones internacionales.</p>
             </div>
             
             <div class="grid md:grid-cols-3 gap-8">
-                <div class="p-8 rounded-2xl bg-white/5 border border-white/10 hover:border-guira-emerald/50 transition-colors">
-                    <div class="w-12 h-12 rounded-xl bg-guira-emerald/10 flex items-center justify-center mb-6">
-                        <i data-lucide="file-check" class="w-6 h-6 text-guira-emerald"></i>
+                <!-- Card 1 -->
+                <div class="p-8 rounded-2xl bg-slate-50 border border-slate-200 hover:border-guira-emerald/50 hover:shadow-[0_8px_30px_rgb(0,0,0,0.04)] transition-all duration-300 transform hover:-translate-y-1 group reveal-up">
+                    <div class="w-12 h-12 rounded-xl bg-white border border-slate-200 flex items-center justify-center mb-6 shadow-sm group-hover:bg-guira-emerald group-hover:border-guira-emerald transition-colors">
+                        <i data-lucide="file-check" class="w-6 h-6 text-slate-700 group-hover:text-white transition-colors"></i>
                     </div>
-                    <h3 class="text-xl font-bold text-white mb-3">Trazabilidad Documental</h3>
-                    <p class="text-slate-400 text-sm">Cada operación está respaldada por procesos de validación claros, garantizando el cumplimiento B2B necesario para tu contabilidad.</p>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3 group-hover:text-guira-emerald transition-colors">Trazabilidad Documental</h3>
+                    <p class="text-slate-600 text-sm font-medium leading-relaxed">Cada operación está respaldada por procesos de validación claros, garantizando el cumplimiento B2B necesario para tu contabilidad.</p>
                 </div>
-                <div class="p-8 rounded-2xl bg-white/5 border border-white/10 hover:border-guira-emerald/50 transition-colors">
-                    <div class="w-12 h-12 rounded-xl bg-guira-emerald/10 flex items-center justify-center mb-6">
-                        <i data-lucide="globe-2" class="w-6 h-6 text-guira-emerald"></i>
+                <!-- Card 2 -->
+                <div class="p-8 rounded-2xl bg-slate-50 border border-slate-200 hover:border-guira-emerald/50 hover:shadow-[0_8px_30px_rgb(0,0,0,0.04)] transition-all duration-300 transform hover:-translate-y-1 group reveal-up delay-100">
+                    <div class="w-12 h-12 rounded-xl bg-white border border-slate-200 flex items-center justify-center mb-6 shadow-sm group-hover:bg-guira-emerald group-hover:border-guira-emerald transition-colors">
+                        <i data-lucide="globe-2" class="w-6 h-6 text-slate-700 group-hover:text-white transition-colors"></i>
                     </div>
-                    <h3 class="text-xl font-bold text-white mb-3">Alcance Internacional</h3>
-                    <p class="text-slate-400 text-sm">Accede a una solución para cobros internacionales y evita bloqueos o demoras mediante un marco operativo robusto.</p>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3 group-hover:text-guira-emerald transition-colors">Alcance Internacional</h3>
+                    <p class="text-slate-600 text-sm font-medium leading-relaxed">Accede a una solución para cobros internacionales y evita bloqueos o demoras mediante un marco operativo robusto.</p>
                 </div>
-                <div class="p-8 rounded-2xl bg-white/5 border border-white/10 hover:border-guira-emerald/50 transition-colors">
-                    <div class="w-12 h-12 rounded-xl bg-guira-emerald/10 flex items-center justify-center mb-6">
-                        <i data-lucide="network" class="w-6 h-6 text-guira-emerald"></i>
+                <!-- Card 3 -->
+                <div class="p-8 rounded-2xl bg-slate-50 border border-slate-200 hover:border-guira-emerald/50 hover:shadow-[0_8px_30px_rgb(0,0,0,0.04)] transition-all duration-300 transform hover:-translate-y-1 group reveal-up delay-200">
+                    <div class="w-12 h-12 rounded-xl bg-white border border-slate-200 flex items-center justify-center mb-6 shadow-sm group-hover:bg-guira-emerald group-hover:border-guira-emerald transition-colors">
+                        <i data-lucide="network" class="w-6 h-6 text-slate-700 group-hover:text-white transition-colors"></i>
                     </div>
-                    <h3 class="text-xl font-bold text-white mb-3">Coordinación Centralizada</h3>
-                    <p class="text-slate-400 text-sm">Gestiona liquidaciones y ejecuta pagos a proveedores vinculados a tu operación desde un solo panel de control corporativo.</p>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3 group-hover:text-guira-emerald transition-colors">Coordinación Centralizada</h3>
+                    <p class="text-slate-600 text-sm font-medium leading-relaxed">Gestiona liquidaciones y ejecuta pagos a proveedores vinculados a tu empresa desde un solo panel de control corporativo.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- 3. Soluciones Operativas -->
-    <section id="soluciones" class="py-24 bg-guira-navy">
+    <!-- Simulador Visual B2B (Inspirado en Mesa de Pagos) -->
+    <section class="py-20 bg-guira-navy border-t border-white/5 relative z-10 overflow-hidden">
         <div class="max-w-7xl mx-auto px-6">
-            
-            <div class="grid lg:grid-cols-2 gap-16 items-center mb-24">
-                <div>
-                    <h2 class="text-3xl font-extrabold text-white mb-6">Recepción Validada USD</h2>
-                    <p class="text-slate-400 font-medium mb-6">Guira proporciona acceso a un marco operativo con datos corporativos domiciliados en Estados Unidos (Routing & Account Number). Fundamental para coordinar retribuciones de alto impacto con plataformas y clientes.</p>
-                    <ul class="space-y-4 mb-8">
-                        <li class="flex items-start gap-3">
-                            <i data-lucide="check-circle-2" class="text-guira-emerald w-5 h-5 mt-0.5 shrink-0"></i>
-                            <span class="text-slate-300">Coordinación vía ACH desde plataformas corporativas (Stripe, Deel, Upwork, plataformas B2B).</span>
-                        </li>
-                        <li class="flex items-start gap-3">
-                            <i data-lucide="check-circle-2" class="text-guira-emerald w-5 h-5 mt-0.5 shrink-0"></i>
-                            <span class="text-slate-300">Validación de ingresos procedentes de Wire Transfers comerciales.</span>
-                        </li>
-                        <li class="flex items-start gap-3">
-                            <i data-lucide="check-circle-2" class="text-guira-emerald w-5 h-5 mt-0.5 shrink-0"></i>
-                            <span class="text-slate-300">Montos sujetos a evaluación documental y validación operativa.</span>
-                        </li>
-                    </ul>
-                </div>
-                <div class="bg-guira-petrol rounded-2xl border border-white/10 p-2 sm:p-4 shadow-xl">
-                    <div class="bg-guira-navy rounded-xl border border-white/5 p-6 sm:p-8 relative overflow-hidden">
-                        <div class="absolute top-0 right-0 p-4 opacity-10">
-                            <i data-lucide="landmark" class="w-24 h-24 text-white"></i>
-                        </div>
-                        <div class="relative z-10">
-                            <h3 class="font-bold text-white mb-6 flex items-center gap-2">
-                                <i data-lucide="arrow-down-to-line" class="text-guira-emerald w-5 h-5"></i>
-                                Datos Operativos de Ingreso
-                            </h3>
-                            <div class="space-y-5 bg-white/5 p-5 rounded-lg border border-white/5">
-                                <div>
-                                    <div class="text-[10px] font-semibold text-slate-500 uppercase tracking-wider mb-1">Beneficiario Validado</div>
-                                    <div class="font-bold text-white font-mono text-sm">Muestra el nombre de tu Entidad</div>
-                                </div>
-                                <div class="grid grid-cols-2 gap-4">
-                                    <div>
-                                        <div class="text-[10px] font-semibold text-slate-500 uppercase tracking-wider mb-1">Routing (ACH/Wire)</div>
-                                        <div class="font-bold text-white font-mono text-sm">0210000**</div>
-                                    </div>
-                                    <div>
-                                        <div class="text-[10px] font-semibold text-slate-500 uppercase tracking-wider mb-1">Account Number</div>
-                                        <div class="font-bold text-white font-mono text-sm">4682000001**</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <div class="text-center mb-16 reveal-up">
+                <h2 class="text-3xl font-extrabold text-white mb-4">Simula tu flujo operativo</h2>
+                <p class="text-slate-400 max-w-2xl mx-auto">Visualiza cómo Guira coordina y enruta el valor empresarial de forma ágil y transparente.</p>
             </div>
+            
+            <div class="bg-guira-petrol rounded-3xl border border-white/10 p-8 md:p-12 shadow-2xl relative overflow-hidden reveal-up">
+                <div class="absolute inset-0 bg-gradient-to-br from-guira-emerald/10 to-transparent opacity-50"></div>
+                
+                <div class="grid md:grid-cols-3 gap-8 relative z-10 items-center">
+                    
+                    <!-- Entrada -->
+                    <div class="simulator-step active p-6 rounded-xl border border-guira-emerald/50 bg-white/5 text-center" id="sim-in">
+                        <div class="mx-auto w-12 h-12 bg-guira-emerald/20 text-guira-emerald rounded-full flex items-center justify-center mb-4">
+                            <i data-lucide="arrow-down-to-line" class="w-6 h-6"></i>
+                        </div>
+                        <h4 class="text-white font-bold mb-2">Ingreso Validado</h4>
+                        <select class="bg-guira-dark border border-white/10 text-white text-sm rounded-lg w-full p-2.5 outline-none focus:border-guira-emerald">
+                            <option value="ach">ACH Local USD ($1,000+)</option>
+                            <option value="wire">Wire Internacional</option>
+                            <option value="platform">Plataforma B2B (Deel, Stripe)</option>
+                        </select>
+                    </div>
 
-            <div class="grid lg:grid-cols-2 gap-16 items-center flex-col-reverse lg:flex-row-reverse">
-                <div>
-                    <h2 class="text-3xl font-extrabold text-white mb-6">Liquidación y Pagos a Proveedores</h2>
-                    <p class="text-slate-400 font-medium mb-6">Una vez la operación es validada, puedes ordenar la liquidación o ejecución correspondiente. Coordina la salida de valor hacia bancos, proveedores o herramientas comerciales.</p>
-                    <ul class="space-y-4">
-                        <li class="flex items-start gap-3">
-                            <div class="w-8 h-8 rounded bg-white/5 border border-white/10 flex items-center justify-center shrink-0 mt-1">
-                                <i data-lucide="building-2" class="text-guira-emerald w-4 h-4"></i>
+                    <!-- Process -->
+                    <div class="flex flex-col items-center justify-center">
+                        <div class="hidden md:flex w-full items-center justify-center mb-2">
+                            <div class="h-1 bg-white/10 w-full rounded-l-full relative overflow-hidden">
+                                <div class="absolute inset-y-0 left-0 bg-guira-emerald w-1/2 animate-[marquee_2s_linear_infinite]"></div>
                             </div>
-                            <div>
-                                <h4 class="text-white font-bold text-sm">Liquidación Bancaria</h4>
-                                <p class="text-slate-400 text-sm">Conciliación hacia el sistema bancario corporativo local en Bolivia y la región.</p>
-                            </div>
-                        </li>
-                        <li class="flex items-start gap-3">
-                            <div class="w-8 h-8 rounded bg-white/5 border border-white/10 flex items-center justify-center shrink-0 mt-1">
-                                <i data-lucide="wallet" class="text-guira-emerald w-4 h-4"></i>
-                            </div>
-                            <div>
-                                <h4 class="text-white font-bold text-sm">Liquidación Digital</h4>
-                                <p class="text-slate-400 text-sm">Mediante billeteras digitales compatibles, sujeta a validación operativa y documental.</p>
-                            </div>
-                        </li>
-                        <li class="flex items-start gap-3">
-                            <div class="w-8 h-8 rounded bg-white/5 border border-white/10 flex items-center justify-center shrink-0 mt-1">
-                                <i data-lucide="arrow-up-right" class="text-guira-emerald w-4 h-4"></i>
-                            </div>
-                            <div>
-                                <h4 class="text-white font-bold text-sm">Pagos B2B (Outbound)</h4>
-                                <p class="text-slate-400 text-sm">Coordinación de ejecución de pagos a proveedores vinculados a tu empresa en EE.UU y global.</p>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-                <div class="bg-guira-petrol rounded-2xl border border-white/10 p-2 sm:p-4 shadow-xl">
-                    <div class="bg-guira-navy rounded-xl border border-white/5 p-6 sm:p-8 relative">
-                        <h3 class="font-bold text-white mb-6 flex items-center gap-2">
-                            <i data-lucide="send" class="text-guira-emerald w-5 h-5"></i>
-                            Panel Operativo de Salida
-                        </h3>
-                        
-                        <div class="space-y-3">
-                            <!-- Outbound Card 1 -->
-                            <div class="flex items-center justify-between p-4 bg-white/5 border border-white/5 rounded-lg hover:border-white/20 transition-colors">
-                                <div class="flex items-center gap-3">
-                                    <div class="w-8 h-8 rounded-full bg-slate-800 flex items-center justify-center">
-                                        <i data-lucide="landmark" class="w-4 h-4 text-slate-300"></i>
-                                    </div>
-                                    <div>
-                                        <div class="text-sm font-bold text-white">Banco Nacional BOB</div>
-                                        <div class="text-[10px] text-slate-400">Liquidación Local T+1</div>
-                                    </div>
-                                </div>
-                                <span class="px-2 py-1 rounded bg-guira-emerald/10 text-guira-emerald text-[10px] font-bold">Activo</span>
-                            </div>
-                            
-                            <!-- Outbound Card 2 -->
-                            <div class="flex items-center justify-between p-4 bg-white/5 border border-white/5 rounded-lg hover:border-white/20 transition-colors">
-                                <div class="flex items-center gap-3">
-                                    <div class="w-8 h-8 rounded-full bg-slate-800 flex items-center justify-center">
-                                        <span class="text-xs font-bold text-slate-300">B2B</span>
-                                    </div>
-                                    <div>
-                                        <div class="text-sm font-bold text-white">Proveedor Software USA</div>
-                                        <div class="text-[10px] text-slate-400">Pago Validado ACH</div>
-                                    </div>
-                                </div>
-                                <span class="px-2 py-1 rounded bg-guira-emerald/10 text-guira-emerald text-[10px] font-bold">Activo</span>
-                            </div>
-                            
-                            <!-- Outbound Card 3 -->
-                            <div class="flex items-center justify-between p-4 bg-white/5 border border-white/5 rounded-lg hover:border-white/20 transition-colors">
-                                <div class="flex items-center gap-3">
-                                    <div class="w-8 h-8 rounded-full bg-slate-800 flex items-center justify-center">
-                                        <i data-lucide="smartphone" class="w-4 h-4 text-slate-300"></i>
-                                    </div>
-                                    <div>
-                                        <div class="text-sm font-bold text-white">Billetera Digital B2B</div>
-                                        <div class="text-[10px] text-slate-400">Liquidación en minutos</div>
-                                    </div>
-                                </div>
-                                <span class="px-2 py-1 rounded bg-slate-800 text-slate-400 text-[10px] font-bold">Sujeto a Valid.</span>
+                            <i data-lucide="arrow-right" class="text-guira-emerald mx-4 w-6 h-6 shrink-0 animate-pulse"></i>
+                            <div class="h-1 bg-white/10 w-full rounded-r-full relative overflow-hidden">
+                                <div class="absolute inset-y-0 left-0 bg-guira-emerald w-1/2 animate-[marquee_2s_linear_infinite_reverse]"></div>
                             </div>
                         </div>
+                        <div class="bg-guira-navy border border-white/10 p-4 rounded-xl text-center shadow-lg transform hover:scale-105 transition-transform cursor-default">
+                            <img src="./logo.png" class="h-6 mx-auto mb-2 invert brightness-0" alt="Guira" onerror="this.style.display='none'">
+                            <span class="text-[10px] text-guira-emerald uppercase font-bold tracking-widest block">Validación KYC/KYB</span>
+                        </div>
+                        <div class="md:hidden w-1 h-8 bg-guira-emerald/30 my-4 mx-auto"></div>
                     </div>
+
+                    <!-- Salida -->
+                    <div class="simulator-step p-6 rounded-xl border border-white/10 bg-white/5 hover:border-white/30 text-center" id="sim-out">
+                        <div class="mx-auto w-12 h-12 bg-white/10 text-slate-400 rounded-full flex items-center justify-center mb-4 transition-colors">
+                            <i data-lucide="arrow-up-right" class="w-6 h-6"></i>
+                        </div>
+                        <h4 class="text-white font-bold mb-2"> Liquidación / Pago</h4>
+                        <select class="bg-guira-dark border border-white/10 text-white text-sm rounded-lg w-full p-2.5 outline-none focus:border-guira-emerald" onchange="document.getElementById('sim-out').classList.add('active'); document.getElementById('sim-out').style.borderColor='#10b981'; document.getElementById('sim-out').querySelector('.bg-white\\/10').classList.replace('bg-white/10','bg-guira-emerald/20'); document.getElementById('sim-out').querySelector('.text-slate-400').classList.replace('text-slate-400','text-guira-emerald');">
+                            <option value="" disabled selected>Selecciona destino...</option>
+                            <option value="bob">Liquidación en Bancos BOB / Locales</option>
+                            <option value="us">Pago a Proveedor EE.UU (ACH)</option>
+                            <option value="crypto">Liquidación en Billetera Digital</option>
+                        </select>
+                    </div>
+
                 </div>
             </div>
-            
         </div>
     </section>
 
-    <!-- 4. Cómo funciona -->
-    <section class="py-24 bg-guira-dark">
-        <div class="max-w-5xl mx-auto px-6">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl font-extrabold text-white mb-4">Cómo funciona Guira</h2>
-                <p class="text-slate-400 max-w-2xl mx-auto">Un proceso en tres pasos diseñado para aportar fluidez sin comprometer el compliance corporativo.</p>
+    <!-- 4. Cómo funciona (3 simples pasos rediseñado en Claro) -->
+    <section class="py-24 bg-slate-50 relative z-10 border-y border-slate-200">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center mb-20 reveal-up">
+                <h2 class="text-3xl font-extrabold text-slate-900 mb-4">Proceso en 3 pasos</h2>
+                <p class="text-slate-600 max-w-2xl mx-auto font-medium">Flujo dinámico diseñado para aportar agilidad sin comprometer el compliance corporativo.</p>
             </div>
             
             <div class="relative">
                 <!-- Linea conectora desktop -->
-                <div class="hidden md:block absolute top-1/2 left-0 w-full h-0.5 bg-gradient-to-r from-guira-navy via-guira-emerald/30 to-guira-navy -translate-y-1/2"></div>
+                <div class="hidden md:block absolute top-[40px] left-[10%] w-[80%] h-1 bg-slate-200 rounded-full z-0">
+                    <div class="absolute inset-y-0 left-0 bg-guira-emerald w-1/3 animate-pulse rounded-full"></div>
+                </div>
                 
-                <div class="grid md:grid-cols-3 gap-8 relative z-10">
+                <div class="grid md:grid-cols-3 gap-12 relative z-10">
                     <!-- Step 1 -->
-                    <div class="bg-guira-petrol p-8 rounded-2xl border border-white/10 text-center relative">
-                        <div class="w-12 h-12 rounded-full bg-guira-emerald text-white font-bold text-xl flex items-center justify-center mx-auto mb-6 shadow-lg">1</div>
-                        <h3 class="text-lg font-bold text-white mb-3">Onboarding B2B</h3>
-                        <p class="text-slate-400 text-sm">Completas el proceso de Verificación Corporativa (KYB). Se habilita tu infraestructura y obtienes los lineamientos operativos.</p>
+                    <div class="text-center group reveal-up bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:shadow-lg transition-all duration-300">
+                        <div class="w-16 h-16 rounded-2xl bg-slate-50 border border-slate-200 text-slate-700 flex items-center justify-center mx-auto mb-6 group-hover:bg-guira-emerald group-hover:border-guira-emerald group-hover:text-white transition-colors relative">
+                            <i data-lucide="user-plus" class="w-6 h-6"></i>
+                            <div class="absolute -top-3 -right-3 w-6 h-6 bg-slate-900 text-white rounded-full text-xs flex items-center justify-center font-bold">1</div>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-3">Onboarding B2B</h3>
+                        <p class="text-slate-600 text-sm font-medium">Completas la Validación Corporativa (KYB). Se habilita tu infraestructura y lineamientos.</p>
                     </div>
                     
                     <!-- Step 2 -->
-                    <div class="bg-guira-petrol p-8 rounded-2xl border border-white/10 text-center relative border-gradient premium-shadow">
-                        <div class="w-12 h-12 rounded-full bg-guira-emerald text-white font-bold text-xl flex items-center justify-center mx-auto mb-6 shadow-lg">2</div>
-                        <h3 class="text-lg font-bold text-white mb-3">Ingreso Validado</h3>
-                        <p class="text-slate-400 text-sm">Recibes fondos corporativos respaldados por facturas o contratos de servicio. Guira verifica la legitimidad de la operación.</p>
+                    <div class="text-center group reveal-up delay-100 bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:shadow-lg hover:border-guira-emerald transition-all duration-300">
+                        <div class="w-16 h-16 rounded-2xl bg-guira-emerald/10 border border-guira-emerald/30 text-guira-emerald flex items-center justify-center mx-auto mb-6 group-hover:bg-guira-emerald group-hover:text-white transition-colors relative">
+                            <i data-lucide="arrow-down-to-line" class="w-6 h-6"></i>
+                            <div class="absolute -top-3 -right-3 w-6 h-6 bg-guira-emerald text-white rounded-full text-xs flex items-center justify-center font-bold">2</div>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-3">Ingreso Validado</h3>
+                        <p class="text-slate-600 text-sm font-medium">Recibes fondos corporativos respaldados comercialmente. Guira verifica la operación.</p>
                     </div>
                     
                     <!-- Step 3 -->
-                    <div class="bg-guira-petrol p-8 rounded-2xl border border-white/10 text-center relative">
-                        <div class="w-12 h-12 rounded-full bg-guira-emerald text-white font-bold text-xl flex items-center justify-center mx-auto mb-6 shadow-lg">3</div>
-                        <h3 class="text-lg font-bold text-white mb-3">Coordinación y Cierre</h3>
-                        <p class="text-slate-400 text-sm">Instruyes hacia dónde debe dirigirse el valor: liquidable a bancos locales, canales digitales o pago a tus proveedores.</p>
+                    <div class="text-center group reveal-up delay-200 bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:shadow-lg transition-all duration-300">
+                        <div class="w-16 h-16 rounded-2xl bg-slate-50 border border-slate-200 text-slate-700 flex items-center justify-center mx-auto mb-6 group-hover:bg-guira-emerald group-hover:border-guira-emerald group-hover:text-white transition-colors relative">
+                            <i data-lucide="refresh-cw" class="w-6 h-6"></i>
+                            <div class="absolute -top-3 -right-3 w-6 h-6 bg-slate-900 text-white rounded-full text-xs flex items-center justify-center font-bold">3</div>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-3">Coordinación/Cierre</h3>
+                        <p class="text-slate-600 text-sm font-medium">Instruyes hacia dónde dirigirse: cuentas locales BOB, billeteras digitales o pago a proveedores.</p>
                     </div>
                 </div>
-            </div>
-            
-            <div class="text-center mt-12 text-sm text-slate-500 font-medium">
-                * Todos los montos operativos y liquidaciones están sujetos a validación documental previa.
             </div>
         </div>
     </section>
 
     <!-- 5. Confianza y Compliance -->
-    <section class="py-20 bg-guira-navy border-t border-white/10">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="bg-gradient-to-br from-guira-petrol to-guira-navy border border-white/10 rounded-3xl p-8 md:p-12 overflow-hidden relative shadow-2xl">
-                <div class="absolute top-0 right-0 w-64 h-64 bg-guira-emerald/10 blur-[80px] rounded-full point-events-none"></div>
+    <section class="py-20 bg-guira-navy border-t border-white/10 relative z-10">
+        <div class="max-w-7xl mx-auto px-6 reveal-up">
+            <div class="bg-gradient-to-br from-guira-petrol to-guira-navy border border-white/10 rounded-3xl p-8 md:p-12 overflow-hidden relative shadow-2xl group hover:border-white/20 transition-colors">
+                <div class="absolute top-0 right-0 w-64 h-64 bg-guira-emerald/10 blur-[80px] rounded-full point-events-none group-hover:bg-guira-emerald/20 transition-colors duration-700"></div>
                 
                 <div class="grid md:grid-cols-2 gap-12 items-center relative z-10">
                     <div>
@@ -441,30 +437,36 @@
                             <i data-lucide="shield-check" class="w-4 h-4 text-guira-emerald"></i> Cumplimiento Empresarial
                         </div>
                         <h2 class="text-3xl font-extrabold text-white mb-6">Tranquilidad para tesorería comercial</h2>
-                        <p class="text-slate-400 mb-6">Guira no es un banco, ni un custodio no regulado. Operamos como una <b>plataforma tecnológica de coordinación e infraestructura</b> conectada a instituciones financieras reguladas.</p>
+                        <p class="text-slate-400 mb-6">Guira no es un banco, ni custodio no regulado. Operamos como una <b>plataforma tecnológica de coordinación e infraestructura</b> conectada a instituciones reguladas.</p>
                         
                         <ul class="space-y-4">
-                            <li class="flex items-center gap-3">
-                                <i data-lucide="file-signature" class="w-5 h-5 text-guira-emerald shrink-0"></i>
-                                <span class="text-slate-300 text-sm">Procesos estrictos de validación AML y KYC/KYB operados por partners globales.</span>
+                            <li class="flex items-center gap-3 group/item">
+                                <div class="w-8 h-8 rounded bg-white/5 flex items-center justify-center group-hover/item:bg-guira-emerald/10 transition-colors">
+                                    <i data-lucide="file-signature" class="w-4 h-4 text-guira-emerald"></i>
+                                </div>
+                                <span class="text-slate-300 text-sm">Procesos estrictos de validación AML y KYC/KYB por partners globales.</span>
                             </li>
-                            <li class="flex items-center gap-3">
-                                <i data-lucide="lock" class="w-5 h-5 text-guira-emerald shrink-0"></i>
-                                <span class="text-slate-300 text-sm">Los fondos transitan únicamente por redes financieras institucionales.</span>
+                            <li class="flex items-center gap-3 group/item">
+                                <div class="w-8 h-8 rounded bg-white/5 flex items-center justify-center group-hover/item:bg-guira-emerald/10 transition-colors">
+                                    <i data-lucide="lock" class="w-4 h-4 text-guira-emerald"></i>
+                                </div>
+                                <span class="text-slate-300 text-sm">Los fondos transitan únicamente por redes institucionales.</span>
                             </li>
-                            <li class="flex items-center gap-3">
-                                <i data-lucide="headset" class="w-5 h-5 text-guira-emerald shrink-0"></i>
-                                <span class="text-slate-300 text-sm">Soporte corporativo B2B dedicado para resolver validaciones rápidamente.</span>
+                            <li class="flex items-center gap-3 group/item">
+                                <div class="w-8 h-8 rounded bg-white/5 flex items-center justify-center group-hover/item:bg-guira-emerald/10 transition-colors">
+                                    <i data-lucide="headset" class="w-4 h-4 text-guira-emerald"></i>
+                                </div>
+                                <span class="text-slate-300 text-sm">Soporte corporativo dedicado para resolver dudas rápidamente.</span>
                             </li>
                         </ul>
                     </div>
                     
                     <div class="flex flex-col gap-4 items-center sm:items-end">
-                        <div class="bg-white/5 backdrop-blur-md rounded-2xl p-6 border border-white/10 max-w-xs shadow-lg w-full">
-                            <p class="text-xs text-slate-400 mb-4 whitespace-normal">«Nuestra promesa corporativa y comercial se basa en el orden documental, no en el resguardo simple de capital».</p>
+                        <div class="bg-white/5 backdrop-blur-md rounded-2xl p-6 border border-white/10 max-w-xs shadow-lg w-full transform hover:scale-105 transition-transform">
+                            <p class="text-xs text-slate-400 mb-4 whitespace-normal italic">«Nuestra promesa corporativa se basa en el orden documental y fluidez, no en el resguardo simple de capital».</p>
                             <div class="flex items-center gap-3">
-                                <div class="w-10 h-10 rounded-full bg-guira-slate flex items-center justify-center">
-                                    <img src="./logo.png" class="w-6 h-6 object-contain invert" alt="Guira Logo Pequeño" onerror="this.style.display='none'">
+                                <div class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center border border-white/10">
+                                    <img src="./logo.png" class="w-5 h-5 object-contain invert" alt="Guira Logo Pequeño" onerror="this.style.display='none'">
                                 </div>
                                 <div>
                                     <p class="text-sm font-bold text-white">Equipo de Compliance</p>
@@ -478,89 +480,114 @@
         </div>
     </section>
 
-    <!-- 6. FAQ (orientado a B2B y baja ficción comercial) -->
-    <section class="py-24 bg-guira-dark border-t border-white/5">
-        <div class="max-w-4xl mx-auto px-6">
-            <h2 class="text-3xl font-extrabold text-white mb-12 text-center">Preguntas Frecuentes Corporativas</h2>
+    <!-- 6. FAQ (Modo Claro) -->
+    <section class="py-24 bg-white relative z-10">
+        <div class="max-w-4xl mx-auto px-6 reveal-up">
+            <h2 class="text-3xl font-extrabold text-slate-900 mb-12 text-center">Preguntas Frecuentes Corporativas</h2>
             
             <div class="space-y-4">
-                <details class="bg-guira-petrol border border-white/10 rounded-xl group overflow-hidden">
-                    <summary class="flex justify-between items-center font-bold cursor-pointer list-none p-5 text-white">
+                <details class="bg-slate-50 border border-slate-200 rounded-xl group overflow-hidden transition-all hover:border-slate-300">
+                    <summary class="flex justify-between items-center font-bold cursor-pointer list-none p-6 text-slate-900">
                         <span>¿Es Guira un banco o billetera cripto tradicional?</span>
-                        <span class="transition group-open:rotate-180">
+                        <span class="transition-transform group-open:rotate-180">
                             <i data-lucide="chevron-down" class="w-5 h-5 text-guira-emerald"></i>
                         </span>
                     </summary>
-                    <div class="text-slate-400 p-5 pt-0 text-sm leading-relaxed border-t border-white/5 mt-2">
-                        No. Guira es una plataforma de infraestructura tecnológica especializada en empresas. Facilitamos herramientas para la coordinación de ingresos y liquidación de dinero mediante alianzas con entidades financieras reguladas, aportando reportes y procesos pensados para tu contabilidad empresarial corporativa B2B, no retail.
+                    <div class="text-slate-600 p-6 pt-0 text-sm font-medium leading-relaxed border-t border-slate-200 mt-2 bg-white">
+                        No. Guira es infraestructura tecnológica. Facilitamos herramientas para coordinar ingresos y liquidación de dinero operados mediante alianzas financieras reguladas, aportando lineamientos pensados para tu contabilidad B2B.
                     </div>
                 </details>
 
-                <details class="bg-guira-petrol border border-white/10 rounded-xl group overflow-hidden">
-                    <summary class="flex justify-between items-center font-bold cursor-pointer list-none p-5 text-white">
+                <details class="bg-slate-50 border border-slate-200 rounded-xl group overflow-hidden transition-all hover:border-slate-300">
+                    <summary class="flex justify-between items-center font-bold cursor-pointer list-none p-6 text-slate-900">
                         <span>¿Qué documentos necesito para operar?</span>
-                        <span class="transition group-open:rotate-180">
+                        <span class="transition-transform group-open:rotate-180">
                             <i data-lucide="chevron-down" class="w-5 h-5 text-guira-emerald"></i>
                         </span>
                     </summary>
-                    <div class="text-slate-400 p-5 pt-0 text-sm leading-relaxed border-t border-white/5 mt-2">
-                        El onboarding (KYB) requiere documentos de constitución de la empresa, identidad funcional de representantes legales y pruebas de domicilio comercial. Cada ingreso transaccional debe respaldarse comercialmente (factura o contrato) para superar la validación antes de su liquidación.
+                    <div class="text-slate-600 p-6 pt-0 text-sm font-medium leading-relaxed border-t border-slate-200 mt-2 bg-white">
+                        El onboarding (KYB) requiere documentos de constitución de la empresa y pruebas de domicilio. Cada ingreso transaccional debe respaldarse comercialmente (factura o contrato) para superar la validación antes de su liquidación.
                     </div>
                 </details>
                 
-                <details class="bg-guira-petrol border border-white/10 rounded-xl group overflow-hidden">
-                    <summary class="flex justify-between items-center font-bold cursor-pointer list-none p-5 text-white">
+                <details class="bg-slate-50 border border-slate-200 rounded-xl group overflow-hidden transition-all hover:border-slate-300">
+                    <summary class="flex justify-between items-center font-bold cursor-pointer list-none p-6 text-slate-900">
                         <span>¿Cuál es el tiempo promedio para liquidaciones?</span>
-                        <span class="transition group-open:rotate-180">
+                        <span class="transition-transform group-open:rotate-180">
                             <i data-lucide="chevron-down" class="w-5 h-5 text-guira-emerald"></i>
                         </span>
                     </summary>
-                    <div class="text-slate-400 p-5 pt-0 text-sm leading-relaxed border-t border-white/5 mt-2">
-                        Una vez los fondos ACH/Wire validan en origen hacia la infraestructura, la coordinación de tu liquidación varía por el canal utilizado. Liquidaciones nativas pueden completarse entre minutos y 24hs; instrucciones SWIFT bancarias o hacia bancos latinoamericanos pueden demorar entre T+1 y T+3 días hábiles.
+                    <div class="text-slate-600 p-6 pt-0 text-sm font-medium leading-relaxed border-t border-slate-200 mt-2 bg-white">
+                        Una vez los fondos validan en origen, liquidaciones digitales nativas pueden completarse entre minutos y hrs; instrucciones hacia bancos en LATAM pueden demorar entre T+1 y T+3 días hábiles.
                     </div>
                 </details>
             </div>
         </div>
     </section>
 
-    <!-- 7. Cierre Comercial Fuerte -->
-    <section class="py-24 bg-guira-navy border-t border-white/10 text-center relative overflow-hidden">
-        <div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-guira-emerald opacity-[0.06] blur-[150px] rounded-[100%] point-events-none"></div>
-        <div class="max-w-3xl mx-auto px-6 relative z-10">
+    <!-- 7. Cierre Comercial (Tema Oscuro para Alto Contraste) -->
+    <section class="py-24 bg-guira-navy text-center relative overflow-hidden z-10">
+        <div class="max-w-3xl mx-auto px-6 relative z-10 reveal-up">
             <h2 class="text-3xl md:text-5xl font-extrabold text-white mb-6">Da el siguiente paso comercial</h2>
-            <p class="text-slate-400 text-lg mb-10 font-medium">Revisemos las necesidades operativas de tu empresa y estructuremos el canal ideal de cobranza y pagos.</p>
+            <p class="text-slate-400 text-lg mb-10 font-medium">Revisemos las necesidades operativas de tu empresa y estructuremos el canal ideal de cobranza y pagos internacionales.</p>
             <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                <a href="demo.html" class="inline-block px-10 py-4 bg-guira-emerald text-white rounded-xl font-bold hover:bg-guira-emerald_dark shadow-lg transition-all flex items-center justify-center gap-2">
-                    Solicitar demo personalizada <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                <a href="demo.html" class="group inline-block px-10 py-4 bg-guira-emerald text-white rounded-xl font-bold hover:bg-guira-emerald_dark shadow-lg transition-all flex items-center justify-center gap-2">
+                    Solicitar demo personalizada <i data-lucide="arrow-right" class="w-4 h-4 transition-transform group-hover:translate-x-1"></i>
                 </a>
                 <a href="contacto.html" class="inline-block px-10 py-4 bg-white/5 text-white border border-white/10 rounded-xl font-bold hover:bg-white/10 transition-all">
                     Hablar con ventas
                 </a>
             </div>
-            <p class="mt-6 text-xs text-slate-500 font-medium">* No se aplican costos de apertura de cuenta ni mantenimientos forzosos en etapas iniciales de evaluación.</p>
         </div>
     </section>
 
-    <!-- Footer Corporativo -->
-    <footer class="border-t border-white/10 bg-guira-navy pt-12 pb-8 mt-auto">
+    <!-- Footer Corporativo (Claro/Neutro) -->
+    <footer class="border-t border-slate-200 bg-white pt-12 pb-8 mt-auto relative z-10">
         <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
             <div class="flex items-center gap-2">
-                <img src="./logo.png" alt="Guira Logo" class="h-6 object-contain invert brightness-0" onerror="this.style.display='none'">
-                <span class="text-white font-bold text-sm">Guira Empresas</span>
+                <img src="./logo.png" alt="Guira Logo" class="h-6 object-contain" onerror="this.style.display='none'">
+                <span class="text-slate-900 font-bold text-sm">Guira Empresas</span>
             </div>
             
             <div class="flex flex-wrap justify-center gap-6 text-xs text-slate-500 font-medium">
-                <a href="terminos.html" class="hover:text-slate-300 transition-colors">Términos Legales</a>
-                <a href="privacidad.html" class="hover:text-slate-300 transition-colors">Privacidad</a>
-                <a href="compliance.html" class="hover:text-slate-300 transition-colors">Compliance</a>
+                <a href="terminos.html" class="hover:text-guira-emerald transition-colors">Términos Legales</a>
+                <a href="privacidad.html" class="hover:text-guira-emerald transition-colors">Privacidad</a>
+                <a href="compliance.html" class="hover:text-guira-emerald transition-colors">Compliance</a>
             </div>
             
-            <p class="text-xs text-slate-600 font-semibold">© 2026 Guira System LLC. Todos los derechos reservados.</p>
+            <p class="text-xs text-slate-400 font-medium">© 2026 Guira System LLC. Todos los derechos reservados.</p>
         </div>
     </footer>
+    
     <script src="assets/js/main.js"></script>
     <script>
+        // Init Lucide Icons
         lucide.createIcons();
+
+        // Reveal Animation Observer (AOS-like effect)
+        document.addEventListener("DOMContentLoaded", () => {
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.15
+            };
+            
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+            
+            document.querySelectorAll('.reveal-up').forEach(element => {
+                observer.observe(element);
+            });
+            
+            // Allow marquee to play
+            document.querySelector('.marquee-container').classList.remove('animation-paused');
+        });
     </script>
 </body>
 
