@@ -6,9 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inicio | Guira Empresas – Cuenta operativa internacional para empresas de LATAM</title>
     <meta name="description"
-        content="Guira Empresas es la plataforma financiera B2B con cuenta operativa internacional para empresas de LATAM. Recibe pagos en USD desde Estados Unidos, administra tu balance y realiza pagos empresariales.">
+        content="Guira Empresas ayuda a empresas de LATAM a recibir pagos en USD, administrar saldo operativo y ejecutar pagos empresariales internacionales con trazabilidad y soporte.">
     <meta name="keywords"
-        content="cuenta operativa internacional, cuenta internacional para empresas, cuenta en USD para empresas, recibir pagos en USD, pagos empresariales internacionales, plataforma financiera para empresas">
+        content="cuenta operativa internacional, cuenta internacional para empresas, cuenta en USD para empresas, recibir pagos en USD, recibir pagos desde Estados Unidos, pagos empresariales internacionales, cuenta virtual en USD, fintech para empresas en LATAM">
 
     <!-- Open Graph Tags -->
     <meta property="og:title" content="Guira Empresas | Cuenta operativa internacional para LATAM">
@@ -42,6 +42,20 @@
                             cyan: '#06b6d4', teal: '#0d9488',
                             neon: '#00f6ff', dark: '#020617',
                         }
+                    },
+                    animation: {
+                        'float-soft': 'float-soft 7s ease-in-out infinite',
+                        'pulse-grid': 'pulse-grid 4s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        'float-soft': {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-10px)' }
+                        },
+                        'pulse-grid': {
+                            '0%, 100%': { opacity: '0.35' },
+                            '50%': { opacity: '0.7' }
+                        }
                     }
                 }
             }
@@ -53,21 +67,21 @@
     class="bg-white text-slate-900 font-sans antialiased overflow-x-hidden selection:bg-guira-teal selection:text-white">
 
     <!-- Navbar -->
-    <nav id="navbar" class="fixed top-0 w-full z-50 transition-all duration-300 bg-transparent py-5">
+    <nav id="navbar" class="fixed top-0 w-full z-50 transition-all duration-300 bg-white/70 backdrop-blur-md border-b border-white/50 py-4">
         <div class="max-w-7xl mx-auto px-6 flex justify-between items-center relative">
-            <a href="index.html" class="flex items-center gap-2">
-                <img src="./logo.png" alt="Guira Logo - Plataforma financiera empresarial" class="h-8 object-contain"
+            <a href="index.html" class="flex items-center gap-2 group">
+                <img src="./logo.png" alt="Guira Logo - Plataforma financiera empresarial" class="h-8 object-contain transition-transform duration-300 group-hover:scale-105"
                     onerror="this.style.display='none'">
-                <span class="text-slate-900 font-extrabold text-xl tracking-tight">Guira <span
+                <span class="text-slate-900 font-extrabold text-xl tracking-tight transition-colors duration-300 group-hover:text-guira-teal">Guira <span
                         class="text-slate-500 font-normal">Empresas</span></span>
             </a>
 
             <div class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-600">
-                <a href="producto.html" class="hover:text-guira-teal transition-colors">Producto</a>
-                <a href="soluciones.html" class="hover:text-guira-teal transition-colors">Soluciones</a>
+                <a href="producto.html" class="hover:text-guira-teal transition-all hover:-translate-y-0.5">Producto</a>
+                <a href="soluciones.html" class="hover:text-guira-teal transition-all hover:-translate-y-0.5">Soluciones</a>
                 <a href="como-funciona.html" class="hover:text-guira-teal transition-colors">Cómo funciona</a>
-                <a href="seguridad.html" class="hover:text-guira-teal transition-colors">Seguridad</a>
-                <a href="faq.html" class="hover:text-guira-teal transition-colors">FAQ</a>
+                <a href="seguridad.html" class="hover:text-guira-teal transition-all hover:-translate-y-0.5">Seguridad</a>
+                <a href="faq.html" class="hover:text-guira-teal transition-all hover:-translate-y-0.5">FAQ</a>
             </div>
 
             <div class="hidden md:flex items-center gap-4">
@@ -75,7 +89,7 @@
                     class="text-sm font-medium text-slate-700 hover:text-guira-teal transition-colors">Iniciar
                     Sesión</a>
                 <a href="demo.html"
-                    class="bg-slate-900 text-white px-5 py-2.5 rounded-lg text-sm font-semibold hover:bg-slate-800 transition-colors shadow-lg shadow-slate-900/20">Solicitar
+                    class="bg-slate-900 text-white px-5 py-2.5 rounded-lg text-sm font-semibold hover:bg-slate-800 transition-all shadow-lg shadow-slate-900/20 hover:-translate-y-0.5">Solicitar
                     Demo</a>
             </div>
 
@@ -99,38 +113,37 @@
     </nav>
 
     <!-- Hero -->
-    <header class="relative pt-40 pb-24 overflow-hidden bg-slate-50 border-b border-slate-200">
-        <div
-            class="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[600px] bg-guira-teal opacity-[0.05] blur-[120px] rounded-full pointer-events-none">
-        </div>
-        <div
-            class="absolute bottom-0 right-0 w-[500px] h-[500px] bg-guira-cyan opacity-[0.05] blur-[100px] rounded-full pointer-events-none">
-        </div>
+    <header class="relative pt-36 pb-24 overflow-hidden border-b border-slate-200">
+        <div class="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(13,148,136,0.14),transparent_30%),radial-gradient(circle_at_80%_10%,rgba(6,182,212,0.14),transparent_24%),linear-gradient(180deg,#f8fafc_0%,#ffffff_58%,#f8fafc_100%)]"></div>
+        <div class="absolute inset-0 opacity-60 bg-[linear-gradient(rgba(15,23,42,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(15,23,42,0.03)_1px,transparent_1px)] bg-[size:72px_72px] animate-pulse-grid"></div>
+        <div class="fintech-orb w-72 h-72 bg-guira-teal/30 top-24 left-8" data-parallax="26"></div>
+        <div class="fintech-orb w-64 h-64 bg-guira-cyan/30 top-20 right-10 [animation-delay:1.2s]" data-parallax="18"></div>
+        <div class="fintech-orb w-52 h-52 bg-slate-200/70 bottom-12 right-1/4 [animation-delay:2.2s]" data-parallax="12"></div>
 
-        <div class="max-w-7xl mx-auto px-6 relative z-10 text-center">
+        <div class="max-w-7xl mx-auto px-6 relative z-10 grid lg:grid-cols-[1.1fr_0.9fr] gap-14 items-center">
+            <div class="text-left">
             <div class="reveal">
                 <span
-                    class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white text-xs font-bold text-guira-teal mb-8 border border-slate-200 shadow-sm">
-                    <span class="w-2 h-2 rounded-full bg-guira-teal animate-pulse"></span>
-                    Para Empresas de LATAM
+                    class="fintech-badge inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-bold text-guira-teal mb-8">
+                    <span class="signal-dot w-2 h-2 rounded-full bg-guira-teal"></span>
+                    Infraestructura financiera para empresas de LATAM
                 </span>
             </div>
 
             <h1
-                class="reveal reveal-delay-1 text-5xl md:text-7xl font-extrabold tracking-tight mb-8 leading-[1.1] text-slate-900 max-w-5xl mx-auto">
-                La cuenta operativa internacional <br class="hidden md:block" />
-                <span class="text-gradient">para tu empresa en </span> <span class="text-gradient-accent">LATAM.</span>
+                class="reveal reveal-delay-1 text-5xl md:text-7xl font-extrabold tracking-tight mb-8 leading-[1.02] text-slate-900 max-w-4xl">
+                La cuenta operativa internacional <span class="text-gradient">para empresas</span> de LATAM
             </h1>
 
-            <p class="reveal reveal-delay-2 text-lg md:text-xl text-slate-600 mb-10 max-w-2xl mx-auto font-medium">
-                Recibe pagos en USD desde Estados Unidos, administra tu balance operativo digital y liquida fondos con
-                flexibilidad a través de ACH, Wire o moneda local.
+            <p class="reveal reveal-delay-2 text-lg md:text-xl text-slate-600 mb-10 max-w-2xl font-medium leading-relaxed">
+                Recibe pagos en USD desde Estados Unidos, administra tu saldo operativo y ejecuta pagos empresariales con una experiencia centralizada, trazable y diseñada para empresas de LATAM.
             </p>
 
-            <div class="reveal reveal-delay-3 flex flex-col sm:flex-row items-center justify-center gap-4">
+            <div class="reveal reveal-delay-3 flex flex-col sm:flex-row items-center sm:items-stretch gap-4 mb-10">
                 <a href="https://app.guira.com/register"
-                    class="w-full sm:w-auto px-8 py-4 bg-slate-900 text-white rounded-xl font-bold text-lg hover:bg-slate-800 transition-all shadow-xl shadow-slate-900/20 hover:-translate-y-1">
+                    class="w-full sm:w-auto px-8 py-4 bg-slate-900 text-white rounded-xl font-bold text-lg hover:bg-slate-800 transition-all shadow-xl shadow-slate-900/20 hover:-translate-y-1 flex items-center justify-center gap-2">
                     Abrir Cuenta Empresa
+                    <i data-lucide="arrow-right" class="w-5 h-5"></i>
                 </a>
                 <a href="demo.html"
                     class="w-full sm:w-auto px-8 py-4 bg-white text-slate-700 border border-slate-200 rounded-xl font-bold text-lg hover:bg-slate-50 transition-all shadow-sm hover:-translate-y-1">
@@ -138,9 +151,52 @@
                 </a>
             </div>
 
+            <div class="reveal reveal-delay-4 grid sm:grid-cols-3 gap-4 max-w-3xl">
+                <div class="premium-card fintech-stat rounded-2xl p-5 tilt-card" data-tilt>
+                    <p class="text-xs font-bold text-slate-400 section-kicker mb-3">Onboarding</p>
+                    <p class="text-2xl font-extrabold text-slate-900 mb-1">Empresarial</p>
+                    <p class="text-sm font-medium text-slate-500">Validación KYB diseñada para negocios de LATAM.</p>
+                </div>
+                <div class="premium-card fintech-stat rounded-2xl p-5 tilt-card" data-tilt>
+                    <p class="text-xs font-bold text-slate-400 section-kicker mb-3">Canales</p>
+                    <p class="text-2xl font-extrabold text-slate-900 mb-1">ACH / Wire</p>
+                    <p class="text-sm font-medium text-slate-500">Cuenta virtual USD para recibir y enviar fondos.</p>
+                </div>
+                <div class="premium-card fintech-stat rounded-2xl p-5 tilt-card" data-tilt>
+                    <p class="text-xs font-bold text-slate-400 section-kicker mb-3">Control</p>
+                    <p class="text-2xl font-extrabold text-slate-900 mb-1">Trazabilidad</p>
+                    <p class="text-sm font-medium text-slate-500">Visibilidad total de cada flujo operativo.</p>
+                </div>
+            </div>
+
+            </div>
+
             <!-- Hero Mockup Protagonista -->
-            <div class="mt-20 relative mx-auto max-w-5xl reveal reveal-delay-4 animate-float">
-                <div class="bg-white rounded-2xl border border-slate-200 shadow-[0_20px_50px_-12px_rgba(0,0,0,0.1)] overflow-hidden"
+            <div class="mt-20 lg:mt-0 relative mx-auto max-w-5xl reveal reveal-delay-4">
+                <div class="absolute -top-10 -left-6 fintech-badge rounded-2xl p-4 w-56 animate-float-soft z-20 tilt-card" data-tilt>
+                    <div class="flex items-center justify-between mb-3">
+                        <span class="text-xs font-bold text-slate-400 section-kicker">Settlement</span>
+                        <span class="inline-flex items-center gap-1 text-[11px] font-bold text-emerald-600">
+                            <span class="w-2 h-2 rounded-full bg-emerald-500"></span> Activo
+                        </span>
+                    </div>
+                    <div class="text-2xl font-extrabold text-slate-900">$248K</div>
+                    <div class="text-xs font-medium text-slate-500 mt-1">Operaciones conciliadas esta semana</div>
+                </div>
+                <div class="absolute -bottom-8 -right-4 fintech-badge rounded-2xl p-4 w-60 animate-float-soft [animation-delay:1.2s] z-20 tilt-card" data-tilt>
+                    <div class="text-xs font-bold text-slate-400 section-kicker mb-3">Compliance</div>
+                    <div class="flex items-center gap-3">
+                        <div class="w-12 h-12 rounded-2xl bg-emerald-100 text-emerald-600 flex items-center justify-center">
+                            <i data-lucide="shield-check" class="w-6 h-6"></i>
+                        </div>
+                        <div>
+                            <div class="text-sm font-bold text-slate-900">ValidaciÃ³n KYB</div>
+                            <div class="text-xs text-slate-500 font-medium">Soporte documental trazable</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="premium-card rounded-[32px] border border-slate-200 shadow-[0_30px_80px_-32px_rgba(15,23,42,0.45)] overflow-hidden tilt-card"
+                    data-tilt
                     role="img" aria-label="Mockup del panel de control de la cuenta operativa Guira Empresas">
                     <div class="h-12 border-b border-slate-100 flex items-center px-4 bg-slate-50">
                         <div class="flex gap-2">
@@ -157,7 +213,7 @@
                         </div>
                     </div>
                     <!-- Mockup Body -->
-                    <div class="flex h-[450px]">
+                    <div class="flex h-[470px]">
                         <!-- Sidebar -->
                         <div class="w-64 border-r border-slate-100 p-6 hidden md:block bg-slate-50/50">
                             <div class="flex items-center gap-3 mb-8">
@@ -182,15 +238,38 @@
                                     class="px-4 py-2.5 rounded-lg text-sm font-medium text-slate-600 flex items-center gap-3">
                                     <i data-lucide="arrow-right-left" class="w-4 h-4"></i> Transferencias
                                 </div>
+                                <div
+                                    class="px-4 py-2.5 rounded-lg text-sm font-medium text-slate-600 flex items-center gap-3">
+                                    <i data-lucide="shield-check" class="w-4 h-4"></i> Compliance
+                                </div>
                             </div>
                         </div>
                         <!-- Main Content -->
                         <div class="flex-1 p-8 bg-white text-left relative overflow-hidden">
+                            <div class="absolute top-5 right-6 flex items-center gap-2 text-[11px] font-bold text-emerald-600 bg-emerald-50 px-3 py-1.5 rounded-full border border-emerald-100">
+                                <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+                                OperaciÃ³n estable
+                            </div>
                             <h2 class="text-slate-500 text-sm font-bold mb-1 uppercase tracking-wider">Balance Operativo
                                 Digital</h2>
                             <div class="text-4xl font-extrabold text-slate-900 flex items-center gap-3 mb-8">
                                 $124,500.00 <span
                                     class="text-xs font-bold text-guira-teal bg-guira-teal/10 px-2 py-1 rounded">USD</span>
+                            </div>
+
+                            <div class="grid grid-cols-3 gap-3 mb-6">
+                                <div class="rounded-xl bg-slate-50 border border-slate-200 p-4">
+                                    <p class="text-[10px] font-bold uppercase tracking-[0.22em] text-slate-400 mb-1">FX Window</p>
+                                    <p class="text-sm font-bold text-slate-900">Abierta</p>
+                                </div>
+                                <div class="rounded-xl bg-slate-50 border border-slate-200 p-4">
+                                    <p class="text-[10px] font-bold uppercase tracking-[0.22em] text-slate-400 mb-1">Risk</p>
+                                    <p class="text-sm font-bold text-slate-900">Monitoreado</p>
+                                </div>
+                                <div class="rounded-xl bg-slate-50 border border-slate-200 p-4">
+                                    <p class="text-[10px] font-bold uppercase tracking-[0.22em] text-slate-400 mb-1">Desk</p>
+                                    <p class="text-sm font-bold text-slate-900">Corporate</p>
+                                </div>
                             </div>
 
                             <div class="grid grid-cols-2 gap-6 mb-8">
@@ -249,21 +328,27 @@
     </header>
 
     <!-- Franja Confianza -->
-    <section class="py-10 border-b border-slate-200 bg-white">
+    <section class="py-10 border-b border-slate-200 bg-white relative overflow-hidden">
         <div class="max-w-7xl mx-auto px-6">
             <p class="text-center text-xs font-bold tracking-widest text-slate-400 uppercase mb-8">Infraestructura
-                desarrollada para escalar tu operación internacional</p>
-            <div class="flex flex-wrap justify-center gap-8 md:gap-14 items-center">
-                <div class="flex items-center gap-2 text-slate-700 font-semibold"><i data-lucide="building"
-                        class="w-5 h-5 text-guira-teal"></i> Onboarding Empresarial (KYB)</div>
-                <div class="flex items-center gap-2 text-slate-700 font-semibold"><i data-lucide="landmark"
-                        class="w-5 h-5 text-guira-teal"></i> Cuenta Virtual USD</div>
-                <div class="flex items-center gap-2 text-slate-700 font-semibold"><i data-lucide="globe"
-                        class="w-5 h-5 text-guira-teal"></i> Pagos Empresariales</div>
-                <div class="flex items-center gap-2 text-slate-700 font-semibold"><i data-lucide="arrow-right-left"
-                        class="w-5 h-5 text-guira-teal"></i> Liquidación Institucional</div>
-                <div class="flex items-center gap-2 text-slate-700 font-semibold"><i data-lucide="shield-check"
-                        class="w-5 h-5 text-guira-teal"></i> Compliance Especializado</div>
+                desarrollada para escalar tu operaci??n internacional</p>
+            <div class="relative overflow-hidden">
+                <div class="absolute inset-y-0 left-0 w-20 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none"></div>
+                <div class="absolute inset-y-0 right-0 w-20 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none"></div>
+                <div class="marquee-track">
+                    <div class="marquee-chip"><i data-lucide="check-circle" class="w-4 h-4 text-guira-teal"></i> Validación Empresarial</div>
+                    <div class="marquee-chip"><i data-lucide="shield-check" class="w-4 h-4 text-guira-teal"></i> Soporte Especializado</div>
+                    <div class="marquee-chip"><i data-lucide="landmark" class="w-4 h-4 text-guira-teal"></i> Recepción en USD</div>
+                    <div class="marquee-chip"><i data-lucide="globe" class="w-4 h-4 text-guira-teal"></i> Pagos Internacionales</div>
+                    <div class="marquee-chip"><i data-lucide="align-left" class="w-4 h-4 text-guira-teal"></i> Control Operativo</div>
+                    <div class="marquee-chip"><i data-lucide="bar-chart" class="w-4 h-4 text-guira-teal"></i> Trazabilidad B2B</div>
+                    <div class="marquee-chip"><i data-lucide="check-circle" class="w-4 h-4 text-guira-teal"></i> Validación Empresarial</div>
+                    <div class="marquee-chip"><i data-lucide="shield-check" class="w-4 h-4 text-guira-teal"></i> Soporte Especializado</div>
+                    <div class="marquee-chip"><i data-lucide="landmark" class="w-4 h-4 text-guira-teal"></i> Recepción en USD</div>
+                    <div class="marquee-chip"><i data-lucide="globe" class="w-4 h-4 text-guira-teal"></i> Pagos Internacionales</div>
+                    <div class="marquee-chip"><i data-lucide="align-left" class="w-4 h-4 text-guira-teal"></i> Control Operativo</div>
+                    <div class="marquee-chip"><i data-lucide="bar-chart" class="w-4 h-4 text-guira-teal"></i> Trazabilidad B2B</div>
+                </div>
             </div>
         </div>
     </section>
@@ -281,22 +366,22 @@
                 <div class="bg-white/5 backdrop-blur-sm p-8 rounded-3xl border border-white/10 shadow-lg reveal-left hover:border-rose-500/30 transition-colors">
                     <div class="flex items-center gap-4 mb-8">
                         <div class="w-12 h-12 rounded-2xl bg-rose-500/10 flex items-center justify-center text-rose-500">
-                            <i data-lucide="x-circle" class="w-6 h-6"></i>
+                            <i data-lucide="alert-circle" class="w-6 h-6"></i>
                         </div>
-                        <h3 class="text-2xl font-bold text-white">Finanzas Tradicionales</h3>
+                        <h3 class="text-2xl font-bold text-white">Desafíos de la Operación Tradicional</h3>
                     </div>
                     <ul class="space-y-5">
                         <li class="flex gap-4 text-slate-400 font-medium">
                             <i data-lucide="minus" class="w-6 h-6 text-rose-500 shrink-0"></i>
-                            <span>Semanas de espera para verificar y recibir pagos corporativos.</span>
+                            <span>Dificultad para recibir pagos en USD desde LATAM de forma fluida.</span>
                         </li>
                         <li class="flex gap-4 text-slate-400 font-medium">
                             <i data-lucide="minus" class="w-6 h-6 text-rose-500 shrink-0"></i>
-                            <span>Múltiples bancos intermediarios y pérdida de capital en márgenes.</span>
+                            <span>Fricción operativa por múltiples intermediarios y procesos lentos.</span>
                         </li>
                         <li class="flex gap-4 text-slate-400 font-medium">
                             <i data-lucide="minus" class="w-6 h-6 text-rose-500 shrink-0"></i>
-                            <span>Controles manuales que bloquean tu flujo de caja operativo.</span>
+                            <span>Baja visibilidad y falta de una interfaz operativa centralizada.</span>
                         </li>
                     </ul>
                 </div>
@@ -312,15 +397,15 @@
                     <ul class="space-y-5 relative z-10">
                         <li class="flex gap-4 text-slate-300 font-medium">
                             <i data-lucide="check" class="w-6 h-6 text-guira-teal shrink-0"></i>
-                            <span>Cuenta operativa con número de ruta (Routing) y cuenta propia.</span>
+                            <span>Interfaz operativa centralizada para gestionar cobros, saldo y pagos.</span>
                         </li>
                         <li class="flex gap-4 text-slate-300 font-medium">
                             <i data-lucide="check" class="w-6 h-6 text-guira-teal shrink-0"></i>
-                            <span>Cobranza ágil desde plataformas extranjeras y clientes vía ACH/Wire.</span>
+                            <span>Cuenta virtual empresarial para la recepción estructurada de fondos.</span>
                         </li>
                         <li class="flex gap-4 text-slate-300 font-medium">
                             <i data-lucide="check" class="w-6 h-6 text-guira-teal shrink-0"></i>
-                            <span>Liquidación eficiente hacia jurisdicciones locales conservando trazabilidad.</span>
+                            <span>Capa empresarial para una operación internacional con trazabilidad real.</span>
                         </li>
                     </ul>
                 </div>
@@ -345,47 +430,41 @@
                     <div
                         class="w-14 h-14 rounded-2xl bg-white border border-slate-200 flex items-center justify-center mb-6 group-hover:bg-guira-teal group-hover:text-white transition-colors shadow-sm">
                         <i data-lucide="landmark" class="w-7 h-7 text-slate-700 group-hover:text-white"></i></div>
-                    <h3 class="text-2xl font-bold text-slate-900 mb-4">Cuenta Empresarial en USD</h3>
-                    <p class="text-slate-600 mb-8 flex-1 font-medium leading-relaxed">Obtén datos bancarios virtuales a
-                        nombre de tu empresa para la recepción fluida de pagos, suscripciones y liquidaciones de
-                        gateways de cobro como Stripe o PayPal.</p>
+                    <h3 class="text-2xl font-bold text-slate-900 mb-4">Cuenta operativa en USD</h3>
+                    <p class="text-slate-600 mb-8 flex-1 font-medium leading-relaxed">Obtén datos bancarios virtuales a nombre de tu empresa para la recepción centralizada de pagos desde USA y la administración de tu saldo operativo internacional.</p>
                     <div class="space-y-3 pt-6 border-t border-slate-200">
                         <div class="flex gap-3 items-center text-sm font-semibold text-slate-700"><i data-lucide="check"
-                                class="w-4 h-4 text-guira-teal"></i> Recepción nativa en Estados Unidos</div>
+                                class="w-4 h-4 text-guira-teal"></i> Datos de recepción en USD</div>
                         <div class="flex gap-3 items-center text-sm font-semibold text-slate-700"><i data-lucide="check"
-                                class="w-4 h-4 text-guira-teal"></i> Trazabilidad de cada invoice</div>
+                                class="w-4 h-4 text-guira-teal"></i> Recepción de pagos desde USA</div>
                     </div>
                 </div>
                 <div
                     class="bg-slate-50 p-8 rounded-3xl border border-slate-200 hover:border-guira-teal hover:shadow-xl transition-all group flex flex-col reveal reveal-delay-1 text-left">
                     <div
                         class="w-14 h-14 rounded-2xl bg-white border border-slate-200 flex items-center justify-center mb-6 group-hover:bg-guira-teal group-hover:text-white transition-colors shadow-sm">
-                        <i data-lucide="coins" class="w-7 h-7 text-slate-700 group-hover:text-white"></i></div>
-                    <h3 class="text-2xl font-bold text-slate-900 mb-4">Liquidación Internacional Flexible</h3>
-                    <p class="text-slate-600 mb-8 flex-1 font-medium leading-relaxed">Traslada tus fondos desde el
-                        balance digital hacia cuentas operativas de tu país, o utiliza canales digitales para optimizar
-                        tiempos de movimiento internacional.</p>
+                        <i data-lucide="globe" class="w-7 h-7 text-slate-700 group-hover:text-white"></i></div>
+                    <h3 class="text-2xl font-bold text-slate-900 mb-4">Pagos Empresariales</h3>
+                    <p class="text-slate-600 mb-8 flex-1 font-medium leading-relaxed">Ejecuta pagos ACH y Wire a proveedores y partners clave en Estados Unidos con total visibilidad, orden y trazabilidad operativa.</p>
                     <div class="space-y-3 pt-6 border-t border-slate-200">
                         <div class="flex gap-3 items-center text-sm font-semibold text-slate-700"><i data-lucide="check"
-                                class="w-4 h-4 text-guira-teal"></i> Reducción de comisiones cross-border</div>
+                                class="w-4 h-4 text-guira-teal"></i> Pagos ACH y Wire transfer</div>
                         <div class="flex gap-3 items-center text-sm font-semibold text-slate-700"><i data-lucide="check"
-                                class="w-4 h-4 text-guira-teal"></i> Transferencias corporativas directas</div>
+                                class="w-4 h-4 text-guira-teal"></i> Mayor orden y trazabilidad</div>
                     </div>
                 </div>
                 <div
                     class="bg-slate-50 p-8 rounded-3xl border border-slate-200 hover:border-guira-teal hover:shadow-xl transition-all group flex flex-col reveal reveal-delay-2 text-left">
                     <div
                         class="w-14 h-14 rounded-2xl bg-white border border-slate-200 flex items-center justify-center mb-6 group-hover:bg-guira-teal group-hover:text-white transition-colors shadow-sm">
-                        <i data-lucide="bar-chart-3" class="w-7 h-7 text-slate-700 group-hover:text-white"></i></div>
-                    <h3 class="text-2xl font-bold text-slate-900 mb-4">Pagos B2B y Control Operativo</h3>
-                    <p class="text-slate-600 mb-8 flex-1 font-medium leading-relaxed">Ejecuta pagos a de nómina
-                        internacional, SaaS o remite fondos a tus proveedores clave en Estados Unidos y otras regiones
-                        con claridad absoluta.</p>
+                        <i data-lucide="refresh-cw" class="w-7 h-7 text-slate-700 group-hover:text-white"></i></div>
+                    <h3 class="text-2xl font-bold text-slate-900 mb-4">Flexibilidad de salida</h3>
+                    <p class="text-slate-600 mb-8 flex-1 font-medium leading-relaxed">Traslada fondos según la necesidad de tu operación hacia cuentas locales o rieles digitales, contando con soporte operativo para distintos escenarios.</p>
                     <div class="space-y-3 pt-6 border-t border-slate-200">
                         <div class="flex gap-3 items-center text-sm font-semibold text-slate-700"><i data-lucide="check"
-                                class="w-4 h-4 text-guira-teal"></i> Gestión de pagos transfronterizos</div>
+                                class="w-4 h-4 text-guira-teal"></i> Opciones de liquidación flexible</div>
                         <div class="flex gap-3 items-center text-sm font-semibold text-slate-700"><i data-lucide="check"
-                                class="w-4 h-4 text-guira-teal"></i> Soporte documental de egresos</div>
+                                class="w-4 h-4 text-guira-teal"></i> Soporte experto para tu empresa</div>
                     </div>
                 </div>
             </div>
@@ -408,36 +487,32 @@
                     <div
                         class="w-12 h-12 rounded-xl bg-slate-50 border border-slate-100 flex items-center justify-center mb-4">
                         <i data-lucide="laptop" class="w-6 h-6 text-slate-700"></i></div>
-                    <h3 class="text-lg font-bold text-slate-900 mb-2">Agencias y Software Devs</h3>
-                    <p class="text-slate-600 text-sm font-medium">Facturación simplificada B2B para firmas contratistas
-                        y proveedores de servicios IT en LATAM.</p>
+                    <h3 class="text-lg font-bold text-slate-900 mb-2">Exportadores de Servicios</h3>
+                    <p class="text-slate-600 text-sm font-medium">Agencias y estudios que perciben dólares por sus operaciones en el exterior y requieren liquidar fondos con eficiencia.</p>
                 </div>
                 <div
                     class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:shadow-lg transition-shadow reveal reveal-delay-1">
                     <div
                         class="w-12 h-12 rounded-xl bg-slate-50 border border-slate-100 flex items-center justify-center mb-4">
                         <i data-lucide="package" class="w-6 h-6 text-slate-700"></i></div>
-                    <h3 class="text-lg font-bold text-slate-900 mb-2">Importadoras B2B</h3>
-                    <p class="text-slate-600 text-sm font-medium">Moviliza capital productivo para saldar órdenes con
-                        proveedores mediante canales ACH/Wire validados.</p>
+                    <h3 class="text-lg font-bold text-slate-900 mb-2">Importadoras y Comerciales</h3>
+                    <p class="text-slate-600 text-sm font-medium">Proveedores con saldos pendientes en USA que necesitan ejecutar pagos ACH/Wire de forma trazable.</p>
                 </div>
                 <div
                     class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:shadow-lg transition-shadow reveal reveal-delay-2">
                     <div
                         class="w-12 h-12 rounded-xl bg-slate-50 border border-slate-100 flex items-center justify-center mb-4">
                         <i data-lucide="briefcase" class="w-6 h-6 text-slate-700"></i></div>
-                    <h3 class="text-lg font-bold text-slate-900 mb-2">Exportadoras de Servicios</h3>
-                    <p class="text-slate-600 text-sm font-medium">Percibe dólares por tus operaciones en el exterior
-                        protegiendo tus márgenes ante fluctuaciones locales.</p>
+                    <h3 class="text-lg font-bold text-slate-900 mb-2">Agencias y Software Devs</h3>
+                    <p class="text-slate-600 text-sm font-medium">Empresas con clientes globales que buscan centralizar su facturación y administración de flujos en USD.</p>
                 </div>
                 <div
                     class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:shadow-lg transition-shadow reveal reveal-delay-3">
                     <div
                         class="w-12 h-12 rounded-xl bg-slate-50 border border-slate-100 flex items-center justify-center mb-4">
                         <i data-lucide="globe-2" class="w-6 h-6 text-slate-700"></i></div>
-                    <h3 class="text-lg font-bold text-slate-900 mb-2">Corporativos Regionales</h3>
-                    <p class="text-slate-600 text-sm font-medium">Concentración de balances en una jurisdicción estable
-                        para el crecimiento de sedes y expansiones.</p>
+                    <h3 class="text-lg font-bold text-slate-900 mb-2">Operaciones Regionales</h3>
+                    <p class="text-slate-600 text-sm font-medium">Negocios con presencia en múltiples países de LATAM que necesitan una plataforma operativa internacional.</p>
                 </div>
             </div>
             <div class="mt-12 text-center">
@@ -455,12 +530,8 @@
             <div
                 class="inline-flex items-center justify-center w-20 h-20 rounded-3xl bg-white/5 shadow-xl text-white border border-white/10 mb-8 hover:scale-105 transition-transform backdrop-blur-md">
                 <i data-lucide="shield-check" class="w-10 h-10 text-guira-teal"></i></div>
-            <h2 class="text-3xl md:text-5xl font-extrabold mb-6 text-white">Validación y Compliance de Talla Mundial
-            </h2>
-            <p class="text-slate-400 text-lg md:text-xl font-medium mb-10 max-w-3xl mx-auto leading-relaxed">Integramos
-                protocolos robustos de validación (KYB), mitigación de riesgos y prevención de ilícitos financieros para
-                mantener tu tesorería operativa en una infraestructura de confianza alineada a estándares
-                estadounidenses.</p>
+            <h2 class="text-3xl md:text-5xl font-extrabold mb-6 text-white">Seguridad y Trazabilidad Empresarial</h2>
+            <p class="text-slate-400 text-lg md:text-xl font-medium mb-10 max-w-3xl mx-auto leading-relaxed">Implementamos protocolos de validación empresarial, revisión documental exhaustiva y monitoreo operativo en tiempo real. Guira ofrece una infraestructura conectada a partners regulados para garantizar la transparencia y seguridad en cada una de tus operaciones internacionales.</p>
             <a href="seguridad.html"
                 class="inline-flex items-center gap-2 text-guira-teal font-bold hover:text-white transition-colors bg-white/5 px-6 py-3 rounded-xl border border-white/10 hover:bg-white/10">Conoce
                 más sobre nuestro compliance <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
@@ -512,9 +583,7 @@
                             class="faq-icon w-5 h-5 text-slate-500 transition-transform duration-300"></i>
                     </button>
                     <div class="faq-content hidden px-6 pb-5 text-slate-600 font-medium leading-relaxed">
-                        Guira es una plataforma de tecnología financiera. Las soluciones de pagos, alojamiento de
-                        capital y liquidación se proporcionan a través de alianzas estratégicas con instituciones
-                        debidamente reguladas y licenciadas.
+                        Guira Empresas provee software e infraestructura operativa para facilitar flujos financieros empresariales. Los servicios financieros aplicables son prestados por instituciones o partners regulados, según corresponda. La disponibilidad del servicio depende del perfil del cliente y el riel operativo.
                     </div>
                 </div>
             </div>
@@ -530,9 +599,8 @@
         <div class="absolute inset-0 bg-gradient-to-b from-guira-dark to-guira-navy"></div>
         <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-guira-teal opacity-[0.05] blur-[150px] rounded-full pointer-events-none"></div>
         <div class="max-w-5xl mx-auto px-6 text-center relative z-10 reveal">
-            <h2 class="text-4xl md:text-6xl font-extrabold mb-8 text-white">Impulsa tu matriz financiera
-                internacional</h2>
-            <p class="text-xl text-slate-400 font-medium mb-12 max-w-2xl mx-auto">Empieza a procesar pagos operativos, recibir dólares americanos y pagar proveedores alrededor del mundo estructurando tu capital con Guira.</p>
+            <h2 class="text-4xl md:text-6xl font-extrabold mb-8 text-white">Centraliza la operación internacional de tu empresa</h2>
+            <p class="text-xl text-slate-400 font-medium mb-12 max-w-2xl mx-auto">Solicita una demo y descubre cómo Guira puede ayudarte a recibir pagos en USD y ejecutar pagos empresariales desde una sola experiencia operativa.</p>
             <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
                 <a href="https://app.guira.com/register"
                     class="w-full sm:w-auto px-10 py-5 bg-guira-teal text-white rounded-2xl font-bold text-lg hover:bg-teal-500 transition-all shadow-xl hover:-translate-y-1 hover:shadow-guira-teal/20">Activa
@@ -589,7 +657,7 @@
 
             <div class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
                 <p class="text-xs font-semibold text-slate-500">© 2026 Guira System LLC. Todos los derechos comerciales reservados.</p>
-                <p class="text-xs font-medium text-slate-500 max-w-xl text-center md:text-right">Guira System LLC provee la capa de software a negocios. No somos un banco constituido. La custodia y ejecución de transacciones se prestan bajo la certificación de entidades de clase mundial reguladas.</p>
+                <p class="text-xs font-medium text-slate-500 max-w-xl text-center md:text-right">Guira Empresas provee software e infraestructura operativa para facilitar flujos financieros empresariales. Los servicios financieros aplicables son prestados por instituciones o partners regulados, según corresponda. La disponibilidad del servicio depende del perfil del cliente, la jurisdicción y el riel operativo aplicable.</p>
             </div>
         </div>
     </footer>
