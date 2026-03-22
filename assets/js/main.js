@@ -60,7 +60,41 @@ document.addEventListener('DOMContentLoaded', () => {
         revealObserver.observe(el);
     });
 
-    // 5. FAQ Accordion Logic
+    // 5. Premium tilt interaction for hero/cards
+    const tiltCards = document.querySelectorAll('[data-tilt]');
+    tiltCards.forEach(card => {
+        card.dataset.tiltReady = 'true';
+
+        card.addEventListener('mousemove', event => {
+            const rect = card.getBoundingClientRect();
+            const offsetX = event.clientX - rect.left;
+            const offsetY = event.clientY - rect.top;
+            const rotateY = ((offsetX / rect.width) - 0.5) * 10;
+            const rotateX = (0.5 - (offsetY / rect.height)) * 8;
+
+            card.style.transform = `perspective(1200px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-4px)`;
+        });
+
+        card.addEventListener('mouseleave', () => {
+            card.style.transform = '';
+        });
+    });
+
+    // 6. Subtle parallax for decorative layers
+    const parallaxItems = document.querySelectorAll('[data-parallax]');
+    if (parallaxItems.length) {
+        window.addEventListener('mousemove', event => {
+            const xRatio = (event.clientX / window.innerWidth) - 0.5;
+            const yRatio = (event.clientY / window.innerHeight) - 0.5;
+
+            parallaxItems.forEach(item => {
+                const depth = Number(item.dataset.parallax || 16);
+                item.style.transform = `translate3d(${xRatio * depth}px, ${yRatio * depth}px, 0)`;
+            });
+        });
+    }
+
+    // 7. FAQ Accordion Logic
     const faqItems = document.querySelectorAll('.faq-item');
     faqItems.forEach(item => {
         const button = item.querySelector('.faq-button');
