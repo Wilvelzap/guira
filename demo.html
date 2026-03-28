@@ -45,30 +45,35 @@
 
             <div class="reveal-left">
                 <span
-                    class="inline-flex py-1 px-3 rounded-full text-xs font-bold bg-guira-teal/10 text-guira-teal mb-6">Ejecutivos
-                    B2B Especializados</span>
-                <h1 class="text-4xl md:text-5xl font-extrabold text-slate-900 mb-6">Eleva la matriz de tus pagos <span
-                        class="text-gradient">internacionales</span></h1>
-                <p class="text-lg text-slate-600 font-medium mb-8">Nuestros expertos revisarán tu caso de uso particular
-                    (Agencia IT, Comercio Exterior, Holdings) y te darán un panorama sobre cómo la API y el portal B2B
-                    de Guira pueden acortar tiempos y comisiones FX.</p>
+                    class="inline-flex py-1 px-3 rounded-full text-xs font-bold bg-guira-teal/10 text-guira-teal mb-6">Ejecutivos B2B Especializados</span>
+                <h1 class="text-4xl md:text-5xl font-extrabold text-slate-900 mb-6">Solicita una demo para tu <span class="text-gradient">empresa</span></h1>
+                <p class="text-lg text-slate-600 font-medium mb-8">Revisaremos tu caso de uso, la estructura operativa que necesitas y si Guira encaja con tu operación internacional en USD.</p>
                 <div class="space-y-6">
                     <div class="flex items-center gap-4">
                         <div
                             class="w-12 h-12 rounded-xl bg-white border border-slate-200 flex items-center justify-center text-slate-700 shadow-sm">
-                            <i data-lucide="video" class="w-6 h-6"></i></div>
+                            <i data-lucide="briefcase" class="w-6 h-6"></i></div>
                         <div>
-                            <div class="font-bold text-slate-900">Demostración UI (15 mins)</div>
-                            <div class="text-sm text-slate-500">Recorrido por el Virtual Account panel.</div>
+                            <div class="font-bold text-slate-900">Revisión de encaje operativo</div>
+                            <div class="text-sm text-slate-500">Análisis para asegurar que solucionamos tu necesidad.</div>
                         </div>
                     </div>
                     <div class="flex items-center gap-4">
                         <div
                             class="w-12 h-12 rounded-xl bg-white border border-slate-200 flex items-center justify-center text-slate-700 shadow-sm">
-                            <i data-lucide="shield-check" class="w-6 h-6"></i></div>
+                            <i data-lucide="layout-dashboard" class="w-6 h-6"></i></div>
                         <div>
-                            <div class="font-bold text-slate-900">Validación KYC Comercial</div>
-                            <div class="text-sm text-slate-500">Repaso rápido sobre qué docs pedirá tu empresa.</div>
+                            <div class="font-bold text-slate-900">Recorrido por la plataforma</div>
+                            <div class="text-sm text-slate-500">Demostración del panel de gestión y pagos.</div>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-4">
+                        <div
+                            class="w-12 h-12 rounded-xl bg-white border border-slate-200 flex items-center justify-center text-slate-700 shadow-sm">
+                            <i data-lucide="file-check-2" class="w-6 h-6"></i></div>
+                        <div>
+                            <div class="font-bold text-slate-900">Requisitos de validación empresarial</div>
+                            <div class="text-sm text-slate-500">Revisión de estructura documental exigida.</div>
                         </div>
                     </div>
                 </div>
@@ -77,7 +82,7 @@
             <div
                 class="bg-white rounded-3xl border border-slate-200 shadow-[0_20px_50px_-12px_rgba(0,0,0,0.1)] p-8 md:p-10 reveal-right relative z-10">
                 <h2 class="text-2xl font-bold text-slate-900 mb-2">Ingresa tus datos corporativos</h2>
-                <p class="text-sm text-slate-500 mb-8">Un especialista se comunicará hoy mismo.</p>
+                <p class="text-sm text-slate-500 mb-8">Un especialista se comunicará a la brevedad.</p>
 
                 <form id="demo-form" action="#" method="POST" class="space-y-5">
                     <div class="grid grid-cols-2 gap-5">
@@ -95,32 +100,49 @@
                         </div>
                     </div>
 
-                    <div class="space-y-1">
-                        <label for="email" class="text-xs font-bold text-slate-700 uppercase">Correo Corporativo</label>
-                        <input type="email" id="email" required
-                            class="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 focus:bg-white focus:border-guira-teal focus:ring-2 focus:ring-guira-teal/20 transition-all outline-none font-medium text-slate-900 placeholder-slate-400"
-                            placeholder="juan@tuempresa.com">
+                    <div class="grid grid-cols-2 gap-5">
+                        <div class="space-y-1">
+                            <label for="email" class="text-xs font-bold text-slate-700 uppercase">Email Corporativo</label>
+                            <input type="email" id="email" required
+                                class="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 focus:bg-white focus:border-guira-teal focus:ring-2 focus:ring-guira-teal/20 transition-all outline-none font-medium text-slate-900 placeholder-slate-400"
+                                placeholder="juan@tuempresa.com">
+                        </div>
+                        <div class="space-y-1">
+                            <label for="company" class="text-xs font-bold text-slate-700 uppercase">Empresa</label>
+                            <input type="text" id="company" required
+                                class="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 focus:bg-white focus:border-guira-teal focus:ring-2 focus:ring-guira-teal/20 transition-all outline-none font-medium text-slate-900 placeholder-slate-400"
+                                placeholder="Empresa Tech LLC">
+                        </div>
                     </div>
 
                     <div class="space-y-1">
-                        <label for="company" class="text-xs font-bold text-slate-700 uppercase">Razón Social o
-                            Agencia</label>
-                        <input type="text" id="company" required
+                        <label for="country" class="text-xs font-bold text-slate-700 uppercase">País de Operación</label>
+                        <input type="text" id="country" required
                             class="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 focus:bg-white focus:border-guira-teal focus:ring-2 focus:ring-guira-teal/20 transition-all outline-none font-medium text-slate-900 placeholder-slate-400"
-                            placeholder="Empresa Tech LLC">
+                            placeholder="Ej. México, Colombia, Perú">
                     </div>
 
-                    <div class="space-y-1">
-                        <label for="volume" class="text-xs font-bold text-slate-700 uppercase">Volumen Mensual de
-                            Recepción USD Aprox.</label>
-                        <select id="volume"
-                            class="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 focus:bg-white focus:border-guira-teal focus:ring-2 focus:ring-guira-teal/20 transition-all outline-none font-medium text-slate-900">
-                            <option value="">Selecciona una estimación</option>
-                            <option value="1k-10k">$1k - $10k USD / mes</option>
-                            <option value="10k-50k">$10k - $50k USD / mes</option>
-                            <option value="50k-500k">$50k - $500k USD / mes</option>
-                            <option value="500k+">Más de $500k USD (Institucional)</option>
-                        </select>
+                    <div class="grid grid-cols-2 gap-5">
+                        <div class="space-y-1">
+                            <label for="volume" class="text-xs font-bold text-slate-700 uppercase">Volumen Estimado USD</label>
+                            <select id="volume"
+                                class="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 focus:bg-white focus:border-guira-teal focus:ring-2 focus:ring-guira-teal/20 transition-all outline-none font-medium text-slate-900">
+                                <option value="">Selecciona volumen</option>
+                                <option value="10k-50k">$10k - $50k / mes</option>
+                                <option value="50k-500k">$50k - $500k / mes</option>
+                                <option value="500k+">Más de $500k</option>
+                            </select>
+                        </div>
+                        <div class="space-y-1">
+                            <label for="usecase" class="text-xs font-bold text-slate-700 uppercase">Caso de Uso Principal</label>
+                            <select id="usecase"
+                                class="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 focus:bg-white focus:border-guira-teal focus:ring-2 focus:ring-guira-teal/20 transition-all outline-none font-medium text-slate-900">
+                                <option value="">Selecciona caso</option>
+                                <option value="cobros">Cobros internacionales</option>
+                                <option value="pagos">Pago a proveedores</option>
+                                <option value="ambos">Cobros y pagos unificados</option>
+                            </select>
+                        </div>
                     </div>
 
                     <div class="pt-2 pb-4">
@@ -133,15 +155,13 @@
                             </div>
                             <span
                                 class="text-xs text-slate-500 font-medium leading-relaxed group-hover:text-slate-700 transition-colors">He
-                                leído y acepto la obligatoriedad de confidencialidad en la <a href="privacidad.html"
-                                    class="text-guira-teal font-bold hover:underline">Política de Privacidad Integral
-                                    B2B</a> correspondiente de Guira.</span>
+                                leído la <a href="privacidad.html"
+                                    class="text-guira-teal font-bold hover:underline">Política de Privacidad</a> de Guira.</span>
                         </label>
                     </div>
 
                     <button type="submit"
-                        class="w-full py-4 bg-slate-900 text-white rounded-xl font-bold text-lg hover:bg-slate-800 transition-all shadow-md active:scale-[0.98]">Solicitar
-                        Agenda de Demo</button>
+                        class="w-full py-4 bg-slate-900 text-white rounded-xl font-bold text-lg hover:bg-slate-800 transition-all shadow-md active:scale-[0.98]">Solicitar demo</button>
 
                     <p class="text-center text-xs text-slate-400 font-medium pt-2">Toda la información viaja sobre HTTPS
                         seguro y es estrictamente comercial.</p>
