@@ -33,8 +33,8 @@
                         guira: {
                             navy: '#0B1120',
                             petrol: '#0F172A',
-                            emerald: '#10b981',
-                            emerald_dark: '#059669',
+                            emerald: '#0051ff',
+                            emerald_dark: '#003fcc',
                             dark: '#020617',
                             slate: '#1e293b'
                         }
@@ -65,13 +65,13 @@
         }
     </script>
     <style>
-        .premium-shadow { box-shadow: 0 10px 40px -10px rgba(16, 185, 129, 0.15); }
-        .emerald-glow { box-shadow: 0 0 20px rgba(16, 185, 129, 0.3); }
-        .emerald-glow-hover:hover { box-shadow: 0 0 30px rgba(16, 185, 129, 0.2); }
+        .premium-shadow { box-shadow: 0 10px 40px -10px rgba(0, 81, 255, 0.15); }
+        .emerald-glow { box-shadow: 0 0 20px rgba(0, 81, 255, 0.3); }
+        .emerald-glow-hover:hover { box-shadow: 0 0 30px rgba(0, 81, 255, 0.2); }
         
         .border-gradient {
             background: linear-gradient(to right, #1e293b, #1e293b) padding-box,
-                        linear-gradient(to right, #10b981, #059669) border-box;
+                        linear-gradient(to right, #0051ff, #003fcc) border-box;
             border: 1px solid transparent;
         }
 
@@ -103,14 +103,14 @@
         
         /* Linea conectora brillante para los 3 pasos */
         .glow-line {
-            background: linear-gradient(90deg, transparent, rgba(16,185,129,0.5), transparent);
-            box-shadow: 0 0 10px rgba(16,185,129,0.5);
+            background: linear-gradient(90deg, transparent, rgba(0,81,255,0.5), transparent);
+            box-shadow: 0 0 10px rgba(0,81,255,0.5);
         }
         
         /* Interactive Simulator Styling */
         .simulator-step { cursor: pointer; transition: all 0.3s ease; }
-        .simulator-step.active { border-color: #10b981; background: rgba(16, 185, 129, 0.1); }
-        .simulator-step.active .lucide { color: #10b981; }
+        .simulator-step.active { border-color: #0051ff; background: rgba(0, 81, 255, 0.1); }
+        .simulator-step.active .lucide { color: #0051ff; }
     </style>
 </head>
 
@@ -121,8 +121,8 @@
     <nav id="navbar" class="fixed top-0 w-full z-50 transition-all duration-300 bg-white/90 backdrop-blur-md border-b border-slate-200 py-4">
         <div class="max-w-7xl mx-auto px-6 flex justify-between items-center relative">
             <a href="index.html" class="flex items-center gap-2 group">
-                <img src="./logo.png" alt="Guira Logo - Infraestructura operativa" class="h-8 object-contain transition-transform group-hover:scale-105"
-                    onerror="this.style.display='none'">
+                <img src="./LOGO GUIRRA ISOTIPO.svg" alt="Guira Logo - Infraestructura operativa" class="h-8 object-contain transition-transform group-hover:scale-105"
+                   >
                 <span class="text-slate-900 font-extrabold text-xl tracking-tight transition-colors group-hover:text-guira-emerald">Guira <span
                         class="text-slate-500 font-normal">Empresas</span></span>
             </a>
@@ -323,6 +323,19 @@
         </div>
     </section>
 
+    <!-- Visual Dashboard Showcase -->
+    <div class="relative overflow-hidden bg-slate-900 py-16">
+        <div class="absolute inset-0">
+            <img src="assets/images/producto-dashboard.jpg" alt="Dashboard operativo Guira Empresas" class="w-full h-full object-cover object-top opacity-25">
+            <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/60 to-slate-900/80"></div>
+        </div>
+        <div class="relative z-10 max-w-4xl mx-auto px-6 text-center reveal-up">
+            <p class="text-xs font-bold tracking-widest text-guira-emerald uppercase mb-3">Plataforma Guira</p>
+            <h3 class="text-2xl md:text-3xl font-extrabold text-white mb-4">Una sola vista para toda tu operación internacional</h3>
+            <p class="text-slate-400 font-medium max-w-xl mx-auto">Saldos, instrucciones, estados y comprobantes — todo centralizado y trazable desde el panel de tu empresa.</p>
+        </div>
+    </div>
+
     <!-- Simulador Visual B2B (Inspirado en Mesa de Pagos) -->
     <section class="py-20 bg-guira-navy border-t border-white/5 relative z-10 overflow-hidden">
         <div class="max-w-7xl mx-auto px-6">
@@ -361,7 +374,7 @@
                             </div>
                         </div>
                         <div class="bg-guira-navy border border-white/10 p-4 rounded-xl text-center shadow-lg transform hover:scale-105 transition-transform cursor-default">
-                            <img src="./logo.png" class="h-6 mx-auto mb-2 invert brightness-0" alt="Guira" onerror="this.style.display='none'">
+                            <img src="./LOGO GUIRRA ISOTIPO.svg" class="h-6 mx-auto mb-2" alt="Guira">
                             <span class="text-[10px] text-guira-emerald uppercase font-bold tracking-widest block">Validación de Soporte Documental</span>
                         </div>
                         <div class="md:hidden w-1 h-8 bg-guira-emerald/30 my-4 mx-auto"></div>
@@ -373,7 +386,7 @@
                             <i data-lucide="arrow-up-right" class="w-6 h-6"></i>
                         </div>
                         <h4 class="text-white font-bold mb-2"> Instrucción de Pago B2B</h4>
-                        <select class="bg-guira-dark border border-white/10 text-white text-sm rounded-lg w-full p-2.5 outline-none focus:border-guira-emerald" onchange="document.getElementById('sim-out').classList.add('active'); document.getElementById('sim-out').style.borderColor='#10b981'; document.getElementById('sim-out').querySelector('.bg-white\\/10').classList.replace('bg-white/10','bg-guira-emerald/20'); document.getElementById('sim-out').querySelector('.text-slate-400').classList.replace('text-slate-400','text-guira-emerald');">
+                        <select class="bg-guira-dark border border-white/10 text-white text-sm rounded-lg w-full p-2.5 outline-none focus:border-guira-emerald" onchange="document.getElementById('sim-out').classList.add('active'); document.getElementById('sim-out').style.borderColor='#0051ff'; document.getElementById('sim-out').querySelector('.bg-white\\/10').classList.replace('bg-white/10','bg-guira-emerald/20'); document.getElementById('sim-out').querySelector('.text-slate-400').classList.replace('text-slate-400','text-guira-emerald');">
                             <option value="" disabled selected>Selecciona destino...</option>
                             <option value="us">Pago a Proveedor Extranjero (ACH/Wire)</option>
                             <option value="bob">Enrutamiento hacia Cuenta Local B2B</option>
@@ -476,7 +489,7 @@
                             <p class="text-xs text-slate-400 mb-4 whitespace-normal italic">«Nuestra tecnología prioriza el orden documental y la fluidez en cada movimiento operativo».</p>
                             <div class="flex items-center gap-3">
                                 <div class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center border border-white/10">
-                                    <img src="./logo.png" class="w-5 h-5 object-contain invert" alt="Guira Logo Pequeño" onerror="this.style.display='none'">
+                                    <img src="./LOGO GUIRRA ISOTIPO.svg" class="w-5 h-5 object-contain" alt="Guira Logo Pequeño">
                                 </div>
                                 <div>
                                     <p class="text-sm font-bold text-white">Equipo de Estructuración</p>
@@ -589,7 +602,7 @@
     <footer class="border-t border-slate-200 bg-white pt-12 pb-8 mt-auto relative z-10">
         <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
             <div class="flex items-center gap-2">
-                <img src="./logo.png" alt="Guira Logo" class="h-6 object-contain" onerror="this.style.display='none'">
+                <img src="./LOGO GUIRRA ISOTIPO.svg" alt="Guira Logo" class="h-6 object-contain">
                 <span class="text-slate-900 font-bold text-sm">Guira Empresas</span>
             </div>
             

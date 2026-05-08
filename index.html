@@ -39,7 +39,7 @@
                     colors: {
                         guira: {
                             navy: '#0B1120', petrol: '#0F172A',
-                            cyan: '#06b6d4', teal: '#0d9488',
+                            cyan: '#00d8ff', teal: '#0051ff',
                             neon: '#00f6ff', dark: '#020617',
                         }
                     },
@@ -71,9 +71,9 @@
         class="fixed top-0 w-full z-50 transition-all duration-300 bg-white/70 backdrop-blur-md border-b border-white/50 py-4">
         <div class="max-w-7xl mx-auto px-6 flex justify-between items-center relative">
             <a href="index.html" class="flex items-center gap-2 group">
-                <img src="./logo.png" alt="Guira Logo - Plataforma financiera empresarial"
+                <img src="./LOGO GUIRRA ISOTIPO.svg" alt="Guira Logo - Plataforma financiera empresarial"
                     class="h-8 object-contain transition-transform duration-300 group-hover:scale-105"
-                    onerror="this.style.display='none'">
+                   >
                 <span
                     class="text-slate-900 font-extrabold text-xl tracking-tight transition-colors duration-300 group-hover:text-guira-teal">Guira
                     <span class="text-slate-500 font-normal">Empresas</span></span>
@@ -121,8 +121,13 @@
 
     <!-- Hero -->
     <header class="relative pt-36 pb-24 overflow-hidden border-b border-slate-200">
+        <div class="absolute inset-0">
+            <img src="assets/images/hero-ejecutivo.jpg" alt="" class="w-full h-full object-cover object-center" aria-hidden="true">
+            <div class="absolute inset-0 bg-gradient-to-r from-white via-white/95 to-white/60"></div>
+            <div class="absolute inset-0 bg-gradient-to-b from-white/80 via-transparent to-white/80"></div>
+        </div>
         <div
-            class="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(13,148,136,0.14),transparent_30%),radial-gradient(circle_at_80%_10%,rgba(6,182,212,0.14),transparent_24%),linear-gradient(180deg,#f8fafc_0%,#ffffff_58%,#f8fafc_100%)]">
+            class="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(13,148,136,0.14),transparent_30%),radial-gradient(circle_at_80%_10%,rgba(6,182,212,0.14),transparent_24%)]">
         </div>
         <div
             class="absolute inset-0 opacity-60 bg-[linear-gradient(rgba(15,23,42,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(15,23,42,0.03)_1px,transparent_1px)] bg-[size:72px_72px] animate-pulse-grid">
@@ -426,6 +431,18 @@
         </div>
     </section>
 
+    <!-- Banner Visual LATAM -->
+    <section class="relative h-72 md:h-96 overflow-hidden">
+        <img src="assets/images/sobre-ciudad-latam.jpg" alt="Infraestructura financiera para empresas de LATAM" class="w-full h-full object-cover object-center">
+        <div class="absolute inset-0 bg-gradient-to-r from-guira-navy/90 via-guira-navy/60 to-transparent"></div>
+        <div class="absolute inset-0 flex items-center">
+            <div class="max-w-7xl mx-auto px-6">
+                <p class="text-xs font-bold tracking-widest text-guira-teal uppercase mb-3">Presencia en LATAM</p>
+                <h2 class="text-2xl md:text-4xl font-extrabold text-white max-w-xl leading-tight">Conectando empresas de la región con la economía global en USD.</h2>
+            </div>
+        </div>
+    </section>
+
     <!-- Problema / Solución (Fondo Oscuro Alto Contraste) -->
     <section class="py-24 bg-guira-navy border-y border-white/5 relative overflow-hidden">
         <div
@@ -619,6 +636,18 @@
                 <a href="soluciones.html"
                     class="inline-flex items-center gap-2 text-guira-teal font-bold hover:text-guira-cyan transition-colors">Explora
                     las soluciones por industria <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Banner Corporativo -->
+    <section class="relative h-56 md:h-72 overflow-hidden border-t border-slate-200">
+        <img src="assets/images/soluciones-corporativo.jpg" alt="Reunión corporativa empresas LATAM" class="w-full h-full object-cover object-top">
+        <div class="absolute inset-0 bg-gradient-to-l from-white/95 via-white/60 to-transparent"></div>
+        <div class="absolute inset-0 flex items-center justify-end">
+            <div class="max-w-7xl mx-auto px-6 text-right">
+                <p class="text-xs font-bold tracking-widest text-guira-teal uppercase mb-3">Empresas B2B</p>
+                <h2 class="text-xl md:text-3xl font-extrabold text-slate-900 max-w-md ml-auto leading-tight">Diseñado para equipos corporativos con operación internacional activa.</h2>
             </div>
         </div>
     </section>
@@ -918,8 +947,8 @@
             <div class="grid grid-cols-2 md:grid-cols-4 gap-10 mb-16">
                 <div class="col-span-2 md:col-span-1">
                     <a href="index.html" class="flex items-center gap-2 mb-6">
-                        <img src="./logo.png" alt="Guira Logo - Finanzas corporativas"
-                            class="h-6 object-contain invert brightness-0" onerror="this.style.display='none'">
+                        <img src="./LOGO GUIRRA ISOTIPO.svg" alt="Guira Logo - Finanzas corporativas"
+                            class="h-6 object-contain invert brightness-0">
                         <span class="text-white font-extrabold text-lg">Guira Empresas</span>
                     </a>
                     <p class="text-sm text-slate-400 font-medium mb-6">Infraestructura financiera corporativa para

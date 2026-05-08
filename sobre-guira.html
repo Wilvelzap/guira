@@ -21,7 +21,7 @@
         rel="stylesheet">
     <link rel="stylesheet" href="assets/css/styles.css">
     <script>
-        tailwind.config = { darkMode: 'class', theme: { extend: { fontFamily: { sans: ['Inter', 'sans-serif'] }, colors: { guira: { navy: '#0B1120', petrol: '#0F172A', cyan: '#06b6d4', teal: '#0d9488', neon: '#00f6ff', dark: '#020617', } } } } }
+        tailwind.config = { darkMode: 'class', theme: { extend: { fontFamily: { sans: ['Inter', 'sans-serif'] }, colors: { guira: { navy: '#0B1120', petrol: '#0F172A', cyan: '#00d8ff', teal: '#0051ff', neon: '#00f6ff', dark: '#020617', } } } } }
     </script>
 </head>
 
@@ -33,15 +33,21 @@
         class="fixed top-0 w-full z-50 transition-all duration-300 bg-white/80 backdrop-blur-md border-b border-slate-200 py-4">
         <div class="max-w-7xl mx-auto px-6 flex justify-between items-center relative">
             <a href="index.html" class="flex items-center gap-2">
-                <img src="./logo.png" alt="Guira Logo" class="h-8 object-contain" onerror="this.style.display='none'">
+                <img src="./LOGO GUIRRA ISOTIPO.svg" alt="Guira Logo" class="h-8 object-contain">
                 <span class="text-slate-900 font-extrabold text-xl tracking-tight">Guira <span
                         class="text-slate-500 font-normal">Empresas</span></span>
             </a>
+            <div class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-600">
+                <a href="producto.html" class="hover:text-guira-teal transition-colors">Producto</a>
+                <a href="soluciones.html" class="hover:text-guira-teal transition-colors">Soluciones</a>
+                <a href="como-funciona.html" class="hover:text-guira-teal transition-colors">Cómo funciona</a>
+                <a href="seguridad.html" class="hover:text-guira-teal transition-colors">Seguridad</a>
+                <a href="faq.html" class="hover:text-guira-teal transition-colors">FAQ</a>
+                <a href="contacto.html" class="hover:text-guira-teal transition-colors">Contacto</a>
+            </div>
             <div class="hidden md:flex items-center gap-4">
-                <a href="producto.html"
-                    class="text-sm font-medium text-slate-600 hover:text-guira-teal transition-colors">Producto</a>
-                <a href="contacto.html"
-                    class="text-sm font-medium text-slate-600 hover:text-guira-teal transition-colors">Contacto</a>
+                <a href="https://app.guira.com/login"
+                    class="text-sm font-medium text-slate-700 hover:text-guira-teal transition-colors">Iniciar Sesión</a>
                 <a href="demo.html"
                     class="bg-slate-900 text-white px-5 py-2.5 rounded-lg text-sm font-semibold hover:bg-slate-800 transition-colors shadow-lg">Solicitar
                     Demo</a>
@@ -52,9 +58,13 @@
         <!-- Mobile Menu -->
         <div id="mobile-menu"
             class="hidden absolute top-full left-0 w-full bg-white shadow-xl border-t border-slate-100 p-6 flex flex-col gap-4">
-            <a href="producto.html" class="font-bold text-guira-teal">Producto</a>
+            <a href="producto.html" class="font-medium text-slate-700">Producto</a>
+            <a href="soluciones.html" class="font-medium text-slate-700">Soluciones</a>
+            <a href="como-funciona.html" class="font-medium text-slate-700">Cómo funciona</a>
+            <a href="seguridad.html" class="font-medium text-slate-700">Seguridad</a>
             <a href="contacto.html" class="font-medium text-slate-700">Contacto</a>
             <hr class="border-slate-100">
+            <a href="https://app.guira.com/login" class="font-medium text-slate-700">Iniciar Sesión</a>
             <a href="demo.html" class="bg-slate-900 text-white text-center px-5 py-3 rounded-lg font-bold">Solicitar
                 Demo</a>
         </div>
@@ -62,6 +72,10 @@
 
     <!-- Header Content -->
     <header class="pt-32 pb-20 bg-slate-900 text-center relative overflow-hidden">
+        <div class="absolute inset-0">
+            <img src="assets/images/sobre-ciudad-latam.jpg" alt="" class="w-full h-full object-cover object-center opacity-30" aria-hidden="true">
+            <div class="absolute inset-0 bg-gradient-to-b from-slate-900/80 via-slate-900/70 to-slate-900/90"></div>
+        </div>
         <div class="absolute inset-0 bg-gradient-to-br from-guira-teal/10 to-transparent"></div>
         <div class="max-w-4xl mx-auto px-6 relative z-10 reveal">
             <h1 class="text-4xl md:text-5xl font-extrabold text-white mb-6">Sobre <span class="text-guira-teal">Guira</span></h1>
@@ -90,6 +104,18 @@
                         <p>Guira es una plataforma de operación financiera transfronteriza diseñada exclusivamente para el entorno B2B. Reunimos en una sola infraestructura tecnológica la recepción en USD, la visibilidad de saldo operativo y la ejecución de pagos internacionales empresariales.</p>
                         <p>Nuestra empresa matriz se encuentra constituida en <strong>Delaware, EE. UU.</strong>, lo que nos brinda una base institucional sólida de cara al mundo financiero global, mientras que nuestra presencia operativa y equipo se centran estratégicamente en <strong>Bolivia</strong>. Esta dualidad nos permite brindar a las empresas de LATAM un estándar tecnológico de primer nivel, pero respaldado por un acompañamiento empresarial local, humano y empático.</p>
                         <p>No somos un banco ni un custodio directo; existimos para brindar <strong>orden, trazabilidad y claridad operativa</strong> a negocios cuyo crecimiento se veía frenado por infraestructuras financieras extranjeras que no entendían la realidad de cruzar fronteras en Latinoamérica.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Imagen equipo -->
+            <section class="reveal -mx-6">
+                <div class="relative rounded-3xl overflow-hidden h-64 md:h-80 shadow-xl">
+                    <img src="assets/images/sobre-equipo.jpg" alt="Equipo Guira Empresas" class="w-full h-full object-cover object-center">
+                    <div class="absolute inset-0 bg-gradient-to-t from-slate-900/70 via-transparent to-transparent"></div>
+                    <div class="absolute bottom-6 left-8">
+                        <p class="text-xs font-bold tracking-widest text-guira-teal uppercase mb-1">Nuestro equipo</p>
+                        <p class="text-white font-bold text-lg">Un equipo humano, consultivo y permanente.</p>
                     </div>
                 </div>
             </section>
@@ -161,7 +187,7 @@
         <div
             class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-4 text-xs font-semibold text-slate-500">
             <div class="flex items-center gap-2">
-                <img src="./logo.png" alt="Guira Logo" class="h-6 object-contain" onerror="this.style.display='none'">
+                <img src="./LOGO GUIRRA ISOTIPO.svg" alt="Guira Logo" class="h-6 object-contain">
                 <span class="text-slate-900 font-bold">Guira Empresas</span>
             </div>
             <p>Corporate Overview. © 2026 Guira System LLC. Todos los derechos reservados.</p>
