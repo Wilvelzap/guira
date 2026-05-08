@@ -7,15 +7,21 @@
     // 2. Navbar Scroll Effect
     const navbar = document.getElementById('navbar');
     if (navbar) {
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 50) {
-                navbar.classList.add('glass-panel', 'py-3', 'shadow-md');
-                navbar.classList.remove('bg-transparent', 'py-5');
+        const scrolledClasses = ['glass-panel', 'py-3'];
+        const unscrolledClasses = ['py-5'];
+
+        const updateNavbar = () => {
+            if (window.scrollY > 40) {
+                navbar.classList.add(...scrolledClasses);
+                navbar.classList.remove(...unscrolledClasses);
             } else {
-                navbar.classList.remove('glass-panel', 'py-3', 'shadow-md');
-                navbar.classList.add('bg-transparent', 'py-5');
+                navbar.classList.remove(...scrolledClasses);
+                navbar.classList.add(...unscrolledClasses);
             }
-        });
+        };
+
+        window.addEventListener('scroll', updateNavbar, { passive: true });
+        updateNavbar(); // Run once on load
     }
 
     // 3. Mobile Menu Toggle
