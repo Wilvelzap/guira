@@ -100,17 +100,17 @@
             <!-- Form -->
             <div class="md:col-span-3 bg-white p-8 rounded-3xl border border-slate-200 shadow-sm reveal-right">
                 <h2 class="text-2xl font-bold text-slate-900 mb-6">Déjanos tu mensaje</h2>
-                <form id="contact-form" action="#" method="POST" class="space-y-5">
+                <form id="contact-form" action="https://formspree.io/f/4bcb5f9d527045acbf8594b2b665542c" method="POST" class="space-y-5">
 
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                         <div class="space-y-1">
                             <label for="name" class="text-xs font-bold text-slate-500 uppercase tracking-wider">Nombre</label>
-                            <input type="text" id="name" required
+                            <input type="text" id="name" name="name" required
                                 class="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 focus:bg-white focus:border-guira-teal focus:ring-2 focus:ring-guira-teal/20 transition-all outline-none font-medium text-slate-900 placeholder-slate-400">
                         </div>
                         <div class="space-y-1">
                             <label for="company" class="text-xs font-bold text-slate-500 uppercase tracking-wider">Empresa</label>
-                            <input type="text" id="company" required
+                            <input type="text" id="company" name="company" required
                                 class="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 focus:bg-white focus:border-guira-teal focus:ring-2 focus:ring-guira-teal/20 transition-all outline-none font-medium text-slate-900 placeholder-slate-400">
                         </div>
                     </div>
@@ -118,19 +118,19 @@
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                         <div class="space-y-1">
                             <label for="email" class="text-xs font-bold text-slate-500 uppercase tracking-wider">Email Corporativo</label>
-                            <input type="email" id="email" required
+                            <input type="email" id="email" name="email" required
                                 class="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 focus:bg-white focus:border-guira-teal focus:ring-2 focus:ring-guira-teal/20 transition-all outline-none font-medium text-slate-900 placeholder-slate-400">
                         </div>
                         <div class="space-y-1">
                             <label for="country" class="text-xs font-bold text-slate-500 uppercase tracking-wider">País</label>
-                            <input type="text" id="country" required
+                            <input type="text" id="country" name="country" required
                                 class="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 focus:bg-white focus:border-guira-teal focus:ring-2 focus:ring-guira-teal/20 transition-all outline-none font-medium text-slate-900 placeholder-slate-400">
                         </div>
                     </div>
 
                     <div class="space-y-1">
                         <label for="topic" class="text-xs font-bold text-slate-500 uppercase tracking-wider">Tipo de Operación</label>
-                        <select id="topic" required
+                        <select id="topic" name="topic" required
                             class="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 focus:bg-white focus:border-guira-teal focus:ring-2 focus:ring-guira-teal/20 transition-all outline-none font-medium text-slate-900">
                             <option value="">Selecciona tu enfoque principal</option>
                             <option value="cobros">Recibir pagos internacionales en USD</option>
@@ -142,7 +142,7 @@
 
                     <div class="space-y-1">
                         <label for="message" class="text-xs font-bold text-slate-500 uppercase tracking-wider">Mensaje</label>
-                        <textarea id="message" rows="4" required
+                        <textarea id="message" name="message" rows="4" required
                             class="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 focus:bg-white focus:border-guira-teal focus:ring-2 focus:ring-guira-teal/20 transition-all outline-none font-medium text-slate-900 placeholder-slate-400 resize-none"></textarea>
                     </div>
 
@@ -175,19 +175,75 @@
     <script>
         document.getElementById('contact-form').addEventListener('submit', function (e) {
             e.preventDefault();
-            const btn = this.querySelector('button[type="submit"]');
-            btn.innerHTML = '<i data-lucide="check" class="w-5 h-5 mx-auto"></i> Recibido. Verificando canal de retorno...';
-            btn.classList.replace('bg-guira-teal', 'bg-emerald-600');
+            const form = this;
+            const btn = form.querySelector('button[type="submit"]');
+            const originalText = btn.innerText;
+
+            // Comprobar si se ha configurado Formspree u otro servicio
+            const action = form.getAttribute('action');
+            if (action === '#' || action === '') {
+                // Comportamiento de demostración por defecto con aviso instructivo
+                btn.innerHTML = '<i data-lucide="loader-2" class="w-5 h-5 animate-spin mx-auto"></i>';
+                lucide.createIcons();
+                
+                setTimeout(() => {
+                    btn.innerHTML = '<i data-lucide="check" class="w-5 h-5 mx-auto"></i> ¡Simulado con éxito! (Configura el "action" en HTML para recibir correos)';
+                    btn.classList.add('bg-emerald-600');
+                    btn.classList.remove('bg-slate-900');
+                    lucide.createIcons();
+
+                    setTimeout(() => {
+                        btn.innerHTML = originalText;
+                        btn.classList.remove('bg-emerald-600');
+                        btn.classList.add('bg-slate-900');
+                        form.reset();
+                    }, 4000);
+                }, 1000);
+                return;
+            }
+
+            // Envío real por AJAX
+            btn.disabled = true;
+            btn.innerHTML = '<i data-lucide="loader-2" class="w-5 h-5 animate-spin mx-auto"></i> Enviando...';
             lucide.createIcons();
 
-            setTimeout(() => {
-                btn.innerHTML = 'Nuevo Ticket Generado Exitosamente';
+            fetch(action, {
+                method: 'POST',
+                body: new FormData(form),
+                headers: {
+                    'Accept': 'application/json'
+                }
+            })
+            .then(response => {
+                if (response.ok) {
+                    btn.innerHTML = '<i data-lucide="check" class="w-5 h-5 mx-auto"></i> ¡Mensaje enviado con éxito!';
+                    btn.classList.add('bg-emerald-600');
+                    btn.classList.remove('bg-slate-900');
+                    lucide.createIcons();
+                    form.reset();
+                } else {
+                    btn.innerHTML = 'Error en el envío. Verifica tu URL de Formspree.';
+                    btn.classList.add('bg-rose-600');
+                    btn.classList.remove('bg-slate-900');
+                }
                 setTimeout(() => {
-                    btn.innerHTML = 'Enviar consulta';
-                    btn.classList.replace('bg-emerald-600', 'bg-slate-900');
-                    this.reset();
+                    btn.innerHTML = originalText;
+                    btn.classList.remove('bg-emerald-600', 'bg-rose-600');
+                    btn.classList.add('bg-slate-900');
+                    btn.disabled = false;
                 }, 4000);
-            }, 1000);
+            })
+            .catch(error => {
+                btn.innerHTML = 'Error de conexión.';
+                btn.classList.add('bg-rose-600');
+                btn.classList.remove('bg-slate-900');
+                setTimeout(() => {
+                    btn.innerHTML = originalText;
+                    btn.classList.remove('bg-rose-600');
+                    btn.classList.add('bg-slate-900');
+                    btn.disabled = false;
+                }, 4000);
+            });
         });
     </script>
 </body>

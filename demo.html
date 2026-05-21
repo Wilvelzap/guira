@@ -84,17 +84,17 @@
                 <h2 class="text-2xl font-bold text-slate-900 mb-2">Ingresa tus datos corporativos</h2>
                 <p class="text-sm text-slate-500 mb-8">Un especialista se comunicará a la brevedad.</p>
 
-                <form id="demo-form" action="#" method="POST" class="space-y-5">
+                <form id="demo-form" action="https://formspree.io/f/4bcb5f9d527045acbf8594b2b665542c" method="POST" class="space-y-5">
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                         <div class="space-y-1">
                             <label for="fname" class="text-xs font-bold text-slate-500 uppercase tracking-wider">Nombre</label>
-                            <input type="text" id="fname" required
+                            <input type="text" id="fname" name="first_name" required
                                 class="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 focus:bg-white focus:border-guira-teal focus:ring-2 focus:ring-guira-teal/20 transition-all outline-none font-medium text-slate-900 placeholder-slate-400"
                                 placeholder="Juan">
                         </div>
                         <div class="space-y-1">
                             <label for="lname" class="text-xs font-bold text-slate-500 uppercase tracking-wider">Apellido</label>
-                            <input type="text" id="lname" required
+                            <input type="text" id="lname" name="last_name" required
                                 class="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 focus:bg-white focus:border-guira-teal focus:ring-2 focus:ring-guira-teal/20 transition-all outline-none font-medium text-slate-900 placeholder-slate-400"
                                 placeholder="Pérez">
                         </div>
@@ -103,13 +103,13 @@
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                         <div class="space-y-1">
                             <label for="email" class="text-xs font-bold text-slate-500 uppercase tracking-wider">Email Corporativo</label>
-                            <input type="email" id="email" required
+                            <input type="email" id="email" name="email" required
                                 class="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 focus:bg-white focus:border-guira-teal focus:ring-2 focus:ring-guira-teal/20 transition-all outline-none font-medium text-slate-900 placeholder-slate-400"
                                 placeholder="juan@tuempresa.com">
                         </div>
                         <div class="space-y-1">
                             <label for="company" class="text-xs font-bold text-slate-500 uppercase tracking-wider">Empresa</label>
-                            <input type="text" id="company" required
+                            <input type="text" id="company" name="company" required
                                 class="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 focus:bg-white focus:border-guira-teal focus:ring-2 focus:ring-guira-teal/20 transition-all outline-none font-medium text-slate-900 placeholder-slate-400"
                                 placeholder="Empresa Tech LLC">
                         </div>
@@ -117,7 +117,7 @@
 
                     <div class="space-y-1">
                         <label for="country" class="text-xs font-bold text-slate-500 uppercase tracking-wider">País de Operación</label>
-                        <input type="text" id="country" required
+                        <input type="text" id="country" name="country" required
                             class="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 focus:bg-white focus:border-guira-teal focus:ring-2 focus:ring-guira-teal/20 transition-all outline-none font-medium text-slate-900 placeholder-slate-400"
                             placeholder="Ej. México, Colombia, Perú">
                     </div>
@@ -125,7 +125,7 @@
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                         <div class="space-y-1">
                             <label for="volume" class="text-xs font-bold text-slate-500 uppercase tracking-wider">Volumen Estimado USD</label>
-                            <select id="volume"
+                            <select id="volume" name="volume"
                                 class="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 focus:bg-white focus:border-guira-teal focus:ring-2 focus:ring-guira-teal/20 transition-all outline-none font-medium text-slate-900">
                                 <option value="">Selecciona volumen</option>
                                 <option value="10k-50k">$10k - $50k / mes</option>
@@ -135,7 +135,7 @@
                         </div>
                         <div class="space-y-1">
                             <label for="usecase" class="text-xs font-bold text-slate-500 uppercase tracking-wider">Caso de Uso Principal</label>
-                            <select id="usecase"
+                            <select id="usecase" name="usecase"
                                 class="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 focus:bg-white focus:border-guira-teal focus:ring-2 focus:ring-guira-teal/20 transition-all outline-none font-medium text-slate-900">
                                 <option value="">Selecciona caso</option>
                                 <option value="cobros">Cobros internacionales</option>
@@ -183,23 +183,75 @@
     <script>
         document.getElementById('demo-form').addEventListener('submit', function (e) {
             e.preventDefault();
-            // Just simulate a successful sumission UI locally
-            const btn = this.querySelector('button[type="submit"]');
+            const form = this;
+            const btn = form.querySelector('button[type="submit"]');
             const originalText = btn.innerText;
-            btn.innerHTML = '<i data-lucide="loader-2" class="w-5 h-5 animate-spin mx-auto"></i>';
-            btn.classList.add('bg-guira-teal', 'text-white');
+
+            // Comprobar si se ha configurado Formspree u otro servicio
+            const action = form.getAttribute('action');
+            if (action === '#' || action === '') {
+                // Comportamiento de demostración por defecto con aviso instructivo
+                btn.innerHTML = '<i data-lucide="loader-2" class="w-5 h-5 animate-spin mx-auto"></i>';
+                lucide.createIcons();
+                
+                setTimeout(() => {
+                    btn.innerHTML = '<i data-lucide="check" class="w-5 h-5 mx-auto"></i> ¡Simulado con éxito! (Configura el "action" en HTML para recibir correos)';
+                    btn.classList.add('bg-emerald-500');
+                    btn.classList.remove('bg-slate-900');
+                    lucide.createIcons();
+
+                    setTimeout(() => {
+                        btn.innerHTML = originalText;
+                        btn.classList.remove('bg-emerald-500');
+                        btn.classList.add('bg-slate-900');
+                        form.reset();
+                    }, 4000);
+                }, 1000);
+                return;
+            }
+
+            // Envío real por AJAX
+            btn.disabled = true;
+            btn.innerHTML = '<i data-lucide="loader-2" class="w-5 h-5 animate-spin mx-auto"></i> Enviando...';
             lucide.createIcons();
 
-            setTimeout(() => {
-                btn.innerHTML = '¡Solicitud Recibida Correctamente!';
-                btn.classList.remove('bg-guira-teal');
-                btn.classList.add('bg-emerald-500');
+            fetch(action, {
+                method: 'POST',
+                body: new FormData(form),
+                headers: {
+                    'Accept': 'application/json'
+                }
+            })
+            .then(response => {
+                if (response.ok) {
+                    btn.innerHTML = '<i data-lucide="check" class="w-5 h-5 mx-auto"></i> ¡Mensaje enviado con éxito!';
+                    btn.classList.add('bg-emerald-500');
+                    btn.classList.remove('bg-slate-900');
+                    lucide.createIcons();
+                    form.reset();
+                } else {
+                    btn.innerHTML = 'Error en el envío. Verifica tu URL de Formspree.';
+                    btn.classList.add('bg-rose-600');
+                    btn.classList.remove('bg-slate-900');
+                }
                 setTimeout(() => {
                     btn.innerHTML = originalText;
-                    btn.classList.remove('bg-emerald-500');
-                    this.reset();
-                }, 3000);
-            }, 1000);
+                    btn.classList.remove('bg-emerald-500', 'bg-rose-600');
+                    btn.classList.add('bg-slate-900');
+                    btn.disabled = false;
+                }, 4000);
+            })
+            .catch(error => {
+                btn.innerHTML = 'Error de conexión.';
+                btn.classList.add('bg-rose-600');
+                btn.classList.remove('bg-slate-900');
+                setTimeout(() => {
+                    btn.innerHTML = originalText;
+                    btn.classList.remove('bg-rose-600');
+                    btn.classList.add('bg-slate-900');
+                    btn.disabled = false;
+                }, 4000);
+            });
         });
     </script>
 </body>
