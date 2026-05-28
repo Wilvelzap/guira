@@ -12,52 +12,69 @@
     <meta charset="UTF-8">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://unpkg.com">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contacto y Soporte B2B | Guira Empresas</title>
+    <meta name="robots" content="index, follow">
+    <title>Contacto y Asesoría B2B | Guira Empresas</title>
     <link rel="icon" type="image/svg+xml" href="./guira-logo.svg">
     <meta name="description"
-        content="Inicia comunicación con ejecutivos y soporte técnico avanzado para la resolución de inquietudes corporativas en LATAM.">
+        content="Habla con el equipo de Guira Empresas sobre recibir pagos en USD, pagar proveedores internacionales ACH/Wire o habilitar tu operación B2B desde LATAM. Asesores en Bolivia y EE.UU.">
     <link rel="canonical" href="https://www.guiracorp.com/contacto.html">
 
     <!-- Open Graph Tags -->
-    <meta property="og:title" content="Contacto y Soporte B2B | Guira Empresas">
+    <meta property="og:title" content="Contacto y Asesoría B2B | Guira Empresas">
     <meta property="og:description"
-        content="Inicia comunicación con ejecutivos y soporte técnico avanzado para la resolución de inquietudes corporativas en LATAM.">
+        content="Inicia comunicación con ejecutivos y asesores especializados para la resolución de inquietudes corporativas en LATAM.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://www.guiracorp.com/contacto.html">
     <meta property="og:image" content="https://www.guiracorp.com/assets/images/og-image.jpg">
+    <meta property="og:locale" content="es_ES">
 
     <!-- Twitter Cards -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Contacto y Soporte B2B | Guira Empresas">
+    <meta name="twitter:title" content="Contacto y Asesoría B2B | Guira Empresas">
     <meta name="twitter:description"
-        content="Soporte y atención corporativa para la operación internacional de tu empresa.">
+        content="Acompañamiento y atención corporativa para la operación internacional de tu empresa.">
     <meta name="twitter:image" content="https://www.guiracorp.com/assets/images/og-image.jpg">
 
-    <!-- Schema: ContactPage -->
+    <!-- Schema: ContactPage + BreadcrumbList -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "ContactPage",
-      "name": "Contacto y Soporte B2B | Guira Empresas",
-      "description": "Formulario de contacto y soporte para empresas de LATAM en Guira.",
+      "name": "Contacto y Asesoría B2B | Guira Empresas",
+      "description": "Habla con el equipo de Guira para recibir pagos en USD o pagar proveedores internacionales desde LATAM.",
       "url": "https://www.guiracorp.com/contacto.html",
+      "breadcrumb": {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {"@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://www.guiracorp.com/"},
+          {"@type": "ListItem", "position": 2, "name": "Contacto", "item": "https://www.guiracorp.com/contacto.html"}
+        ]
+      },
       "mainEntity": {
         "@type": "FinancialService",
         "name": "Guira Empresas",
-        "url": "https://www.guiracorp.com"
+        "url": "https://www.guiracorp.com",
+        "telephone": "+13057681048",
+        "email": "administracion@guiracorp.com",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "1201 North Market Street #111",
+          "addressLocality": "Wilmington",
+          "addressRegion": "Delaware",
+          "postalCode": "19801",
+          "addressCountry": "US"
+        }
       }
     }
     </script>
 
-    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="assets/css/tw.css">
     <script src="https://unpkg.com/lucide@latest"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="assets/css/styles.css">
-    <script>
-        tailwind.config = { darkMode: 'class', theme: { extend: { fontFamily: { sans: ['Inter', 'sans-serif'] }, colors: { guira: { navy: '#0B1120', petrol: '#0F172A', cyan: '#00d8ff', teal: '#0051ff', neon: '#00f6ff', dark: '#020617', } } } } }
-    </script>
 </head>
 
 <body
@@ -90,8 +107,8 @@
 
             <div class="md:col-span-2 reveal-left space-y-8 mt-4">
                 <div>
-                    <h1 class="text-4xl font-extrabold text-slate-900 mb-4">Habla con el equipo de Guira</h1>
-                    <p class="text-slate-600 font-medium mb-8 text-lg">Cuéntanos tu caso de uso y revisaremos si Guira puede ayudar a tu empresa a recibir pagos en USD, ejecutar pagos empresariales y operar con más claridad.</p>
+                    <h1 class="text-4xl font-extrabold text-slate-900 mb-4">Contacto: Recibe Pagos en USD o Paga Proveedores Internacionales desde LATAM</h1>
+                    <p class="text-slate-600 font-medium mb-8 text-lg">Cuéntanos tu caso de uso y revisaremos si Guira puede ayudar a tu empresa a recibir pagos en USD, ejecutar pagos empresariales B2B vía ACH o Wire, y operar internacionalmente con más claridad y trazabilidad.</p>
                 </div>
 
                 <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm space-y-6">
@@ -106,7 +123,7 @@
                     <div class="flex gap-4">
                         <i data-lucide="life-buoy" class="w-6 h-6 text-guira-teal"></i>
                         <div>
-                            <div class="font-bold text-slate-900">Soporte de onboarding</div>
+                            <div class="font-bold text-slate-900">Asesoría de onboarding</div>
                             <a href="mailto:soporte@guiracorp.com"
                                 class="text-sm text-slate-500 hover:text-guira-teal transition-colors font-medium">soporte@guiracorp.com</a>
                         </div>
@@ -209,7 +226,7 @@
                 <img src="./guira-logo.svg" alt="Guira Logo" class="h-6 object-contain">
                 <span class="text-slate-900 font-bold">Guira Empresas</span>
             </div>
-            <p>Soporte. © 2026 Guira System LLC. Todos los derechos reservados.</p>
+            <p>Acompañamiento Corporativo. © 2026 Guira System LLC. Todos los derechos reservados.</p>
         </div>
         <div class="max-w-7xl mx-auto px-6 mt-4">
             <p class="text-[10px] text-slate-400 leading-relaxed text-center">

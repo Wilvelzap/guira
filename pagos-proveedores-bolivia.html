@@ -13,6 +13,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="index, follow">
     <title>Paga a tus Proveedores en el Exterior desde Bolivia | Guira Empresas</title>
     <link rel="icon" type="image/svg+xml" href="./guira-logo.svg">
     <meta name="description"
@@ -27,6 +28,7 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://www.guiracorp.com/pagos-proveedores-bolivia.html">
     <meta property="og:image" content="https://www.guiracorp.com/assets/images/og-image.jpg">
+    <meta property="og:locale" content="es_ES">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Paga a tus Proveedores en el Exterior desde Bolivia | Guira Empresas">
     <meta name="twitter:description" content="Asesores en Bolivia + plataforma Guira en EE.UU. para que tu empresa pague a proveedores internacionales.">
@@ -37,39 +39,25 @@
     {"@context":"https://schema.org","@graph":[{"@type":"ProfessionalService","name":"Asesoría para usar Guira Empresas desde Bolivia","url":"https://www.guiracorp.com/pagos-proveedores-bolivia.html","description":"Equipo asesor en Bolivia que acompaña a empresas bolivianas para acceder y operar con Guira Empresas — plataforma de pagos B2B internacionales con sede en EE.UU. — y pagar a sus proveedores en el exterior.","provider":{"@type":"Organization","name":"Guira System LLC","url":"https://www.guiracorp.com"},"areaServed":{"@type":"Country","name":"Bolivia"},"serviceType":"Asesoría para pagos empresariales internacionales B2B"},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"¿Pueden empresas bolivianas usar Guira para pagar a sus proveedores en el exterior?","acceptedAnswer":{"@type":"Answer","text":"Sí. A través del equipo asesor en Bolivia, las empresas bolivianas pueden acceder a la plataforma Guira — que opera en EE.UU. — para instruir pagos ACH o Wire a sus proveedores internacionales."}},{"@type":"Question","name":"¿Guira opera como entidad financiera en Bolivia?","acceptedAnswer":{"@type":"Answer","text":"No. Guira es una plataforma tecnológica con sede en EE.UU. En Bolivia contamos con una empresa de asesoramiento que acompaña a las organizaciones bolivianas para registrarse y usar Guira correctamente."}}]}]}
     </script>
 
-    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Schema: BreadcrumbList -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://www.guiracorp.com/"},
+        {"@type": "ListItem", "position": 2, "name": "Soluciones", "item": "https://www.guiracorp.com/soluciones.html"},
+        {"@type": "ListItem", "position": 3, "name": "Pagos a Proveedores desde Bolivia", "item": "https://www.guiracorp.com/pagos-proveedores-bolivia.html"}
+      ]
+    }
+    </script>
+
+    <link rel="preconnect" href="https://unpkg.com">
+    <link rel="stylesheet" href="assets/css/tw.css">
     <script src="https://unpkg.com/lucide@latest"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/styles.css">
 
-    <script>
-        tailwind.config = {
-            darkMode: 'class',
-            theme: {
-                extend: {
-                    fontFamily: { sans: ['Inter', 'sans-serif'] },
-                    colors: {
-                        guira: {
-                            navy: '#0B1120', petrol: '#0F172A',
-                            cyan: '#00d8ff', teal: '#0051ff',
-                            neon: '#00f6ff', dark: '#020617',
-                        }
-                    },
-                    animation: {
-                        'float-soft': 'float-soft 7s ease-in-out infinite',
-                        'float-soft-2': 'float-soft 9s ease-in-out infinite',
-                        'pulse-grid': 'pulse-grid 4s ease-in-out infinite',
-                        'slide-up': 'slide-up 0.6s ease-out forwards',
-                    },
-                    keyframes: {
-                        'float-soft': { '0%,100%': { transform: 'translateY(0px)' }, '50%': { transform: 'translateY(-14px)' } },
-                        'pulse-grid': { '0%,100%': { opacity: '0.3' }, '50%': { opacity: '0.65' } },
-                        'slide-up': { '0%': { opacity: '0', transform: 'translateY(24px)' }, '100%': { opacity: '1', transform: 'translateY(0)' } },
-                    }
-                }
-            }
-        }
-    </script>
 
     <style>
         .fintech-orb { position: absolute; border-radius: 50%; filter: blur(80px); pointer-events: none; animation: float-soft 7s ease-in-out infinite; }

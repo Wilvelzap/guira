@@ -1,0 +1,25 @@
+{
+  "name": "guira",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build:css": "tailwindcss -i assets/css/tailwind.css -o assets/css/tw.css --minify",
+    "watch:css": "tailwindcss -i assets/css/tailwind.css -o assets/css/tw.css --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Wilvelzap/guira.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Wilvelzap/guira/issues"
+  },
+  "homepage": "https://github.com/Wilvelzap/guira#readme",
+  "devDependencies": {
+    "tailwindcss": "^3.4.19"
+  }
+}

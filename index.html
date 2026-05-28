@@ -12,7 +12,10 @@
     <meta charset="UTF-8">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://unpkg.com">
+    <link rel="preload" as="image" href="assets/images/hero-ejecutivo.webp" type="image/webp">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="index, follow">
     <title>Cuenta Operativa en USD para Empresas de LATAM | Guira Empresas</title>
     <link rel="icon" type="image/svg+xml" href="./guira-logo.svg">
     <meta name="description"
@@ -28,6 +31,7 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://www.guiracorp.com/">
     <meta property="og:image" content="https://www.guiracorp.com/assets/images/og-image.jpg">
+    <meta property="og:locale" content="es_ES">
 
     <!-- Twitter Cards -->
     <meta name="twitter:card" content="summary_large_image">
@@ -42,12 +46,66 @@
       "@context": "https://schema.org",
       "@type": "FinancialService",
       "name": "Guira Empresas",
+      "alternateName": "Guira System LLC",
       "url": "https://www.guiracorp.com",
-      "description": "Plataforma operativa con sede en EE.UU. para pagos empresariales internacionales. Con equipo asesor en Bolivia para acompañar a empresas bolivianas que quieren pagar a sus proveedores en el exterior.",
+      "description": "Plataforma operativa B2B con sede en EE.UU. para pagos empresariales internacionales en USD. Centraliza la recepción de pagos, visibilidad operativa y pagos a proveedores mediante ACH o Wire para empresas de LATAM.",
       "logo": "https://www.guiracorp.com/guira-logo.svg",
+      "image": "https://www.guiracorp.com/assets/images/og-image.jpg",
+      "telephone": "+13057681048",
+      "email": "administracion@guiracorp.com",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "1201 North Market Street #111",
+        "addressLocality": "Wilmington",
+        "addressRegion": "Delaware",
+        "postalCode": "19801",
+        "addressCountry": "US"
+      },
       "areaServed": [
-        { "@type": "Place", "name": "América Latina" }
+        { "@type": "Place", "name": "América Latina" },
+        { "@type": "Country", "name": "Bolivia" },
+        { "@type": "Country", "name": "Colombia" },
+        { "@type": "Country", "name": "Perú" },
+        { "@type": "Country", "name": "México" }
       ],
+      "contactPoint": [
+        {
+          "@type": "ContactPoint",
+          "telephone": "+13057681048",
+          "contactType": "sales",
+          "areaServed": "LATAM",
+          "availableLanguage": "Spanish"
+        },
+        {
+          "@type": "ContactPoint",
+          "telephone": "+59175245845",
+          "contactType": "customer support",
+          "areaServed": "BO",
+          "availableLanguage": "Spanish"
+        }
+      ],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Servicios Financieros Empresariales",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Cuenta Virtual en USD para Empresas",
+              "description": "Recibe pagos en USD desde Estados Unidos con datos de recepción en tu nombre corporativo."
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Pagos empresariales ACH y Wire",
+              "description": "Instruye pagos a proveedores internacionales mediante ACH o Wire con trazabilidad completa."
+            }
+          }
+        ]
+      },
       "sameAs": []
     }
     </script>
@@ -56,47 +114,24 @@
       "@context": "https://schema.org",
       "@type": "WebSite",
       "name": "Guira Empresas",
-      "url": "https://www.guiracorp.com"
+      "url": "https://www.guiracorp.com",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": {
+          "@type": "EntryPoint",
+          "urlTemplate": "https://www.guiracorp.com/faq.html?q={search_term_string}"
+        },
+        "query-input": "required name=search_term_string"
+      }
     }
     </script>
 
-    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="assets/css/tw.css">
     <script src="https://unpkg.com/lucide@latest"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="assets/css/styles.css">
 
-    <script>
-        tailwind.config = {
-            darkMode: 'class',
-            theme: {
-                extend: {
-                    fontFamily: { sans: ['Inter', 'sans-serif'] },
-                    colors: {
-                        guira: {
-                            navy: '#0B1120', petrol: '#0F172A',
-                            cyan: '#00d8ff', teal: '#0051ff',
-                            neon: '#00f6ff', dark: '#020617',
-                        }
-                    },
-                    animation: {
-                        'float-soft': 'float-soft 7s ease-in-out infinite',
-                        'pulse-grid': 'pulse-grid 4s ease-in-out infinite',
-                    },
-                    keyframes: {
-                        'float-soft': {
-                            '0%, 100%': { transform: 'translateY(0px)' },
-                            '50%': { transform: 'translateY(-10px)' }
-                        },
-                        'pulse-grid': {
-                            '0%, 100%': { opacity: '0.35' },
-                            '50%': { opacity: '0.7' }
-                        }
-                    }
-                }
-            }
-        }
-    </script>
 </head>
 
 <body
@@ -166,8 +201,8 @@
     <header class="relative pt-36 pb-24 overflow-hidden border-b border-slate-200">
         <div class="absolute inset-0">
             <picture class="w-full h-full block">
-                <source srcset="assets/images/hero-ejecutivo.webp" type="image/webp">
-                <img src="assets/images/hero-ejecutivo.jpg" alt="" class="w-full h-full object-cover object-center" aria-hidden="true">
+                <source srcset="assets/images/hero-ejecutivo.webp" type="image/webp" fetchpriority="high">
+                <img src="assets/images/hero-ejecutivo.jpg" alt="" class="w-full h-full object-cover object-center" aria-hidden="true" fetchpriority="high">
             </picture>
             <div class="absolute inset-0 bg-gradient-to-r from-white via-white/95 to-white/60"></div>
             <div class="absolute inset-0 bg-gradient-to-b from-white/80 via-transparent to-white/80"></div>
@@ -482,7 +517,7 @@
     <section class="relative h-72 md:h-96 overflow-hidden">
         <picture class="w-full h-full block">
             <source srcset="assets/images/sobre-ciudad-latam.webp" type="image/webp">
-            <img src="assets/images/sobre-ciudad-latam.jpg" alt="Infraestructura financiera para empresas de LATAM" class="w-full h-full object-cover object-center">
+            <img src="assets/images/sobre-ciudad-latam.jpg" alt="Infraestructura financiera para empresas de LATAM" class="w-full h-full object-cover object-center" loading="lazy">
         </picture>
         <div class="absolute inset-0 bg-gradient-to-r from-guira-navy/90 via-guira-navy/60 to-transparent"></div>
         <div class="absolute inset-0 flex items-center">
@@ -694,7 +729,7 @@
     <section class="relative h-56 md:h-72 overflow-hidden border-t border-slate-200">
         <picture class="w-full h-full block">
             <source srcset="assets/images/soluciones-corporativo.webp" type="image/webp">
-            <img src="assets/images/soluciones-corporativo.jpg" alt="Reunión corporativa empresas LATAM" class="w-full h-full object-cover object-top">
+            <img src="assets/images/soluciones-corporativo.jpg" alt="Reunión corporativa empresas LATAM" class="w-full h-full object-cover object-top" loading="lazy">
         </picture>
         <div class="absolute inset-0 bg-gradient-to-l from-white/95 via-white/60 to-transparent"></div>
         <div class="absolute inset-0 flex items-center justify-end">
@@ -1043,7 +1078,7 @@
                         </li>
                         <li><a href="privacidad.html" class="hover:text-white transition-colors">Protección de Datos</a>
                         </li>
-                        <li><a href="faq.html" class="hover:text-white transition-colors">Centro de Ayuda / FAQ</a></li>
+                        <li><a href="faq.html" class="hover:text-white transition-colors">Preguntas Frecuentes / FAQ</a></li>
                     </ul>
                 </div>
             </div>
