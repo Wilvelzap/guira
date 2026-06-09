@@ -1,0 +1,121 @@
+---
+const pathname = Astro.url.pathname;
+
+const isCurrent = (page: string) => {
+  const cleanPath = pathname.replace(/^\/|\/$/g, '');
+  if (page === 'index') {
+    return cleanPath === '' || cleanPath === 'index.html';
+  }
+  return cleanPath === page || cleanPath === `${page}.html`;
+};
+
+const getLinkClass = (page: string) => {
+  const active = isCurrent(page);
+  const onProduct = isCurrent('producto');
+  
+  if (onProduct) {
+    if (active) {
+      return "text-guira-emerald font-bold transition-all hover:-translate-y-0.5";
+    }
+    return "text-slate-600 hover:text-slate-900 transition-all hover:-translate-y-0.5";
+  } else {
+    if (active) {
+      return "text-guira-teal font-bold transition-colors";
+    }
+    return "text-slate-600 hover:text-guira-teal transition-colors";
+  }
+};
+
+const getMobileLinkClass = (page: string) => {
+  const active = isCurrent(page);
+  const onProduct = isCurrent('producto');
+  
+  if (onProduct) {
+    if (active) {
+      return "font-bold text-guira-emerald";
+    }
+    return "font-medium text-slate-700 hover:text-slate-900";
+  } else {
+    if (active) {
+      return "font-bold text-guira-teal";
+    }
+    return "font-medium text-slate-700 hover:text-guira-teal";
+  }
+};
+
+const onProduct = isCurrent('producto');
+---
+
+<nav id="navbar" class="fixed top-0 w-full z-50 transition-all duration-300 bg-white/80 backdrop-blur-md border-b border-slate-200/70 py-5">
+    <div class="max-w-7xl mx-auto px-6 flex justify-between items-center relative">
+        <a href="index.html" class="flex items-center gap-2 group">
+            <img src="/guira-logo.svg" alt="Guira Logo - Plataforma financiera empresarial"
+                class="h-8 object-contain transition-transform duration-300 group-hover:scale-105" />
+            <span class:list={[
+                "font-extrabold text-xl tracking-tight transition-colors duration-300",
+                onProduct ? "text-slate-900 group-hover:text-guira-emerald" : "text-slate-900 group-hover:text-guira-teal"
+            ]}>
+                Guira <span class="text-slate-500 font-normal">Empresas</span>
+            </span>
+        </a>
+
+        <div class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-600">
+            <a href="producto.html" class={getLinkClass('producto')}>Producto</a>
+            <a href="soluciones.html" class={getLinkClass('soluciones')}>Soluciones</a>
+            <a href="como-funciona.html" class={getLinkClass('como-funciona')}>Cómo funciona</a>
+            <a href="seguridad.html" class={getLinkClass('seguridad')}>Seguridad</a>
+            <a href="faq.html" class={getLinkClass('faq')}>FAQ</a>
+            <a href="sobre-guira.html" class={getLinkClass('sobre-guira')}>Sobre Guira</a>
+            <a href="contacto.html" class={getLinkClass('contacto')}>Contacto</a>
+        </div>
+
+        <div class="hidden md:flex items-center gap-4">
+            <a href="https://app.guiracorp.com"
+                class:list={[
+                    "border border-slate-200 bg-white hover:bg-slate-50 text-slate-700 px-4 py-2.5 rounded-lg text-sm font-semibold transition-all hover:-translate-y-0.5 shadow-sm hover:shadow flex items-center gap-1.5 group",
+                    onProduct ? "hover:border-guira-emerald/30 hover:text-guira-emerald" : "hover:border-guira-teal/30 hover:text-guira-teal"
+                ]}>
+                <span>Ingresar a Plataforma</span>
+                <i data-lucide="log-in" class:list={[
+                    "w-4 h-4 text-slate-400 transition-colors",
+                    onProduct ? "group-hover:text-guira-emerald" : "group-hover:text-guira-teal"
+                ]}></i>
+            </a>
+            <a href="demo.html"
+                class="bg-slate-900 text-white px-5 py-2.5 rounded-lg text-sm font-semibold hover:bg-slate-800 transition-all shadow-lg shadow-slate-900/20 hover:-translate-y-0.5">
+                Solicitar Demo
+            </a>
+        </div>
+
+        <button id="mobile-menu-btn" class="md:hidden text-slate-800" aria-label="Abrir menú">
+            <i data-lucide="menu" class="w-6 h-6"></i>
+        </button>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu"
+        class="hidden absolute top-full left-0 w-full bg-white shadow-xl border-t border-slate-100 p-6 flex flex-col gap-4">
+        <a href="producto.html" class={getMobileLinkClass('producto')}>Producto</a>
+        <a href="soluciones.html" class={getMobileLinkClass('soluciones')}>Soluciones</a>
+        <a href="como-funciona.html" class={getMobileLinkClass('como-funciona')}>Cómo funciona</a>
+        <a href="seguridad.html" class={getMobileLinkClass('seguridad')}>Seguridad</a>
+        <a href="faq.html" class={getMobileLinkClass('faq')}>FAQ</a>
+        <a href="sobre-guira.html" class={getMobileLinkClass('sobre-guira')}>Sobre Guira</a>
+        <a href="contacto.html" class={getMobileLinkClass('contacto')}>Contacto</a>
+        <hr class="border-slate-100" />
+        <a href="https://app.guiracorp.com"
+            class:list={[
+                "border border-slate-200 bg-slate-50/50 hover:bg-slate-50 text-slate-700 text-center px-5 py-3 rounded-lg font-bold transition-all flex items-center justify-center gap-2 group",
+                onProduct ? "hover:text-guira-emerald" : "hover:text-guira-teal"
+            ]}>
+            <i data-lucide="log-in" class:list={[
+                "w-5 h-5 text-slate-400 transition-colors",
+                onProduct ? "group-hover:text-guira-emerald" : "group-hover:text-guira-teal"
+            ]}></i>
+            <span>Ingresar a Plataforma</span>
+        </a>
+        <a href="demo.html" class="bg-slate-900 text-white text-center px-5 py-3 rounded-lg font-bold hover:bg-slate-800 transition-colors shadow-md">
+            Solicitar Demo
+        </a>
+    </div>
+</nav>

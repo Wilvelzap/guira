@@ -4,6 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro",
     "build:css": "tailwindcss -i assets/css/tailwind.css -o assets/css/tw.css --minify",
     "watch:css": "tailwindcss -i assets/css/tailwind.css -o assets/css/tw.css --watch"
   },
@@ -21,5 +26,9 @@
   "homepage": "https://github.com/Wilvelzap/guira#readme",
   "devDependencies": {
     "tailwindcss": "^3.4.19"
+  },
+  "dependencies": {
+    "@astrojs/tailwind": "^6.0.2",
+    "astro": "^6.4.5"
   }
 }

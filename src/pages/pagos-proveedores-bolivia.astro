@@ -1,0 +1,695 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout
+  title="Paga a tus Proveedores en el Exterior desde Bolivia | Guira Empresas"
+  description="Asesores especializados en Bolivia te ayudan a usar Guira Empresas para instruir pagos ACH/Wire a tus proveedores internacionales. Guira opera en EE.UU. — nuestro equipo en Bolivia te acompaña en todo el proceso."
+  keywords="pagos a proveedores en Bolivia, pagar proveedores internacionales desde Bolivia, transferencia a proveedor USA desde empresa boliviana, como pagar proveedor extranjero Bolivia, cuenta en USD para empresas bolivianas, pagos ACH Wire Bolivia empresa, plataforma de pagos B2B Bolivia, enviar dinero a proveedor USA desde Bolivia, pago internacional empresa Bolivia"
+  canonicalUrl="https://www.guiracorp.com/pagos-proveedores-bolivia.html"
+  footerTheme="dark"
+>
+  <Fragment slot="head">
+    <!-- Schema: ProfessionalService + FAQPage -->
+    <script type="application/ld+json" is:inline>
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "ProfessionalService",
+          "name": "Asesoría para usar Guira Empresas desde Bolivia",
+          "url": "https://www.guiracorp.com/pagos-proveedores-bolivia.html",
+          "description": "Equipo asesor en Bolivia que acompaña a empresas bolivianas para acceder y operar con Guira Empresas — plataforma de pagos B2B internacionales con sede en EE.UU. — y pagar a sus proveedores en el exterior.",
+          "provider": {
+            "@type": "Organization",
+            "name": "Guira System LLC",
+            "url": "https://www.guiracorp.com"
+          },
+          "areaServed": {
+            "@type": "Country",
+            "name": "Bolivia"
+          },
+          "serviceType": "Asesoría para pagos empresariales internacionales B2B"
+        },
+        {
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "¿Pueden empresas bolivianas usar Guira para pagar a sus proveedores en el exterior?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Sí. A través del equipo asesor en Bolivia, las empresas bolivianas pueden acceder a la plataforma Guira — que opera en EE.UU. — para instruir pagos ACH o Wire a sus proveedores internacionales."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "¿Guira opera como entidad financiera en Bolivia?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "No. Guira es una plataforma tecnológica con sede en EE.UU. En Bolivia contamos con una empresa de asesoramiento que acompaña a las organizaciones bolivianas para registrarse y usar Guira correctamente."
+              }
+            }
+          ]
+        }
+      ]
+    }
+    </script>
+
+    <!-- Schema: BreadcrumbList -->
+    <script type="application/ld+json" is:inline>
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://www.guiracorp.com/"},
+        {"@type": "ListItem", "position": 2, "name": "Soluciones", "item": "https://www.guiracorp.com/soluciones.html"},
+        {"@type": "ListItem", "position": 3, "name": "Pagos a Proveedores desde Bolivia", "item": "https://www.guiracorp.com/pagos-proveedores-bolivia.html"}
+      ]
+    }
+    </script>
+  </Fragment>
+
+  <!-- HERO — Two-column con mockup de pago flotante -->
+  <header class="relative pt-36 pb-24 overflow-hidden bg-guira-dark border-b border-white/5">
+      <!-- Orbs -->
+      <div class="fintech-orb w-[500px] h-[500px] bg-guira-teal/20 -top-20 -left-32" style="animation-delay:0s"></div>
+      <div class="fintech-orb w-[400px] h-[400px] bg-blue-500/15 top-10 right-0" style="animation-delay:2s"></div>
+      <div class="fintech-orb w-64 h-64 bg-guira-cyan/10 bottom-0 left-1/3" style="animation-delay:4s"></div>
+
+      <!-- Grid Background -->
+      <div class="absolute inset-0 opacity-30 bg-[linear-gradient(rgba(0,81,255,0.06)_1px,transparent_1px),linear-gradient(90deg,rgba(0,81,255,0.06)_1px,transparent_1px)] bg-[size:72px_72px] animate-pulse-grid"></div>
+
+      <div class="max-w-7xl mx-auto px-6 relative z-10 grid lg:grid-cols-[1.15fr_0.85fr] gap-16 items-center">
+          <!-- Left: Texto -->
+          <div class="text-left reveal">
+              <!-- Badge -->
+              <div class="inline-flex items-center gap-2.5 px-4 py-2 rounded-full text-xs font-bold text-guira-cyan bg-guira-teal/10 border border-guira-teal/25 mb-8">
+                  <span class="signal-dot w-2 h-2 rounded-full bg-guira-cyan"></span>
+                  Asesores especializados en Bolivia · Guira opera en EE.UU.
+              </div>
+
+              <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight mb-6 leading-[1.1]">
+                  <span class="text-white">Paga a tus proveedores</span><br />
+                  <span class="gradient-text">internacionales</span>
+                  <span class="text-white"> desde Bolivia</span>
+              </h1>
+
+              <p class="text-base md:text-lg text-slate-400 mb-10 max-w-xl font-medium leading-relaxed">
+                  Nuestro equipo asesor en Bolivia te acompaña para que tu empresa acceda a <strong class="text-white">Guira</strong> — plataforma de pagos B2B en EE.UU. — e instruya pagos ACH y Wire a proveedores en el exterior.
+              </p>
+
+              <div class="flex flex-col sm:flex-row gap-4 mb-12">
+                  <a href="demo.html" class="px-8 py-4 bg-guira-teal text-white rounded-xl font-bold text-base hover:bg-blue-700 transition-all shadow-xl shadow-guira-teal/30 hover:-translate-y-1 flex items-center justify-center gap-2">
+                      Hablar con un asesor en Bolivia
+                      <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                  </a>
+                  <a href="soluciones.html" class="px-8 py-4 bg-white/5 text-white border border-white/15 rounded-xl font-bold text-base hover:bg-white/10 transition-all hover:-translate-y-1 flex items-center justify-center">
+                      Ver todas las soluciones
+                  </a>
+              </div>
+
+              <!-- Mini stats row -->
+              <div class="grid grid-cols-3 gap-4 max-w-lg">
+                  <div class="fintech-badge rounded-2xl p-4 text-center">
+                      <div class="text-xl font-extrabold text-white mb-0.5">ACH</div>
+                      <div class="text-[11px] text-slate-400 font-semibold">1-2 días</div>
+                  </div>
+                  <div class="fintech-badge rounded-2xl p-4 text-center">
+                      <div class="text-xl font-extrabold text-white mb-0.5">Wire</div>
+                      <div class="text-[11px] text-slate-400 font-semibold">Mismo día</div>
+                  </div>
+                  <div class="fintech-badge rounded-2xl p-4 text-center">
+                      <div class="text-xl font-extrabold text-guira-cyan mb-0.5">B2B</div>
+                      <div class="text-[11px] text-slate-400 font-semibold">100% empresarial</div>
+                  </div>
+              </div>
+          </div>
+
+          <!-- Right: Mockup visual de pago -->
+          <div class="relative mx-auto w-full max-w-sm reveal reveal-delay-2">
+              <!-- Card flotante superior izquierda -->
+              <div class="absolute -top-8 -left-8 fintech-badge rounded-2xl p-4 w-52 animate-float-soft z-20 shadow-2xl">
+                  <div class="flex items-center justify-between mb-2">
+                      <span class="section-kicker text-slate-400">Asesor Bolivia</span>
+                      <span class="inline-flex items-center gap-1 text-[10px] font-bold text-emerald-500">
+                          <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span> Online
+                      </span>
+                  </div>
+                  <div class="flex items-center gap-3">
+                      <div class="w-8 h-8 rounded-full bg-guira-teal/20 flex items-center justify-center text-guira-cyan text-xs font-bold">JP</div>
+                      <div>
+                          <div class="text-xs font-bold text-white">Juan Pablo M.</div>
+                          <div class="text-[10px] text-slate-400">Asesor Corporativo</div>
+                      </div>
+                  </div>
+              </div>
+
+              <!-- Card flotante inferior derecha -->
+              <div class="absolute -bottom-8 -right-6 fintech-badge rounded-2xl p-4 w-56 animate-float-soft z-20 shadow-2xl" style="animation-delay:1.5s">
+                  <div class="section-kicker text-slate-400 mb-2">Pago ejecutado</div>
+                  <div class="flex items-center gap-3">
+                      <div class="w-10 h-10 rounded-xl bg-emerald-500/15 text-emerald-500 flex items-center justify-center">
+                          <i data-lucide="check-circle-2" class="w-5 h-5"></i>
+                      </div>
+                      <div>
+                          <div class="text-sm font-bold text-white">Wire · USA</div>
+                          <div class="text-[11px] text-emerald-400 font-bold">+$18,400 USD</div>
+                      </div>
+                  </div>
+              </div>
+
+              <!-- Panel principal mockup -->
+              <div class="payment-card rounded-3xl overflow-hidden shadow-[0_32px_80px_-16px_rgba(0,81,255,0.35)] glow-teal">
+                  <!-- Header del panel -->
+                  <div class="border-b border-white/10 px-5 py-4 flex items-center justify-between bg-white/5">
+                      <div class="flex items-center gap-2">
+                          <div class="w-2.5 h-2.5 rounded-full bg-rose-500"></div>
+                          <div class="w-2.5 h-2.5 rounded-full bg-amber-400"></div>
+                          <div class="w-2.5 h-2.5 rounded-full bg-emerald-500"></div>
+                      </div>
+                      <div class="flex items-center gap-2 bg-white/10 rounded-lg px-3 py-1.5">
+                          <i data-lucide="lock" class="w-3 h-3 text-slate-400"></i>
+                          <span class="text-[11px] text-slate-400 font-medium">app.guiracorp.com</span>
+                      </div>
+                      <div class="w-16"></div>
+                  </div>
+
+                  <!-- Body -->
+                  <div class="p-6">
+                      <div class="flex items-center justify-between mb-5">
+                          <div>
+                              <p class="text-[10px] font-bold text-slate-500 uppercase tracking-widest mb-1">Empresa Bolivia</p>
+                              <p class="text-sm font-bold text-white">Importadora Andina S.R.L.</p>
+                          </div>
+                          <span class="inline-flex items-center gap-1.5 text-[10px] font-bold text-emerald-400 bg-emerald-500/10 px-3 py-1.5 rounded-full border border-emerald-500/20">
+                              <span class="w-1.5 h-1.5 bg-emerald-400 rounded-full"></span>KYB Aprobado
+                          </span>
+                      </div>
+
+                      <!-- Balance -->
+                      <div class="bg-white/5 rounded-2xl p-4 mb-4 border border-white/10">
+                          <p class="text-[10px] text-slate-500 font-bold uppercase tracking-widest mb-1">Balance operativo</p>
+                          <p class="text-3xl font-extrabold text-white">$42,800 <span class="text-sm font-bold text-guira-cyan">USD</span></p>
+                      </div>
+
+                      <!-- Nueva instrucción de pago -->
+                      <div class="space-y-3 mb-5">
+                          <div class="bg-white/5 border border-white/10 rounded-xl p-4">
+                              <div class="flex justify-between items-start mb-3">
+                                  <div>
+                                      <p class="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-1">Proveedor · EE.UU.</p>
+                                      <p class="text-sm font-bold text-white">Tech Supplies Inc.</p>
+                                  </div>
+                                  <span class="text-[10px] font-bold text-amber-400 bg-amber-400/10 px-2 py-1 rounded-lg border border-amber-400/20">Wire</span>
+                              </div>
+                              <div class="flex items-center justify-between">
+                                  <div class="flex items-center gap-2 text-[10px] text-slate-400">
+                                      <i data-lucide="file-check-2" class="w-3.5 h-3.5 text-guira-cyan"></i>
+                                      Invoice #2026-084 adjunto
+                                  </div>
+                                  <span class="text-sm font-extrabold text-white">$12,500</span>
+                              </div>
+                          </div>
+
+                          <!-- Transacción anterior -->
+                          <div class="flex items-center gap-3 px-2">
+                              <div class="w-8 h-8 rounded-full bg-emerald-500/15 text-emerald-400 flex items-center justify-center shrink-0">
+                                  <i data-lucide="check" class="w-4 h-4"></i>
+                              </div>
+                              <div class="flex-1">
+                                  <p class="text-xs font-bold text-white">Global Parts Corp · ACH</p>
+                                  <p class="text-[10px] text-slate-500">Ayer · Invoice #2026-079</p>
+                              </div>
+                              <span class="text-xs font-bold text-emerald-400">✓ $8,200</span>
+                          </div>
+                      </div>
+
+                      <button class="w-full py-3 bg-guira-teal text-white rounded-xl text-sm font-bold hover:bg-blue-700 transition-colors flex items-center justify-center gap-2">
+                          <i data-lucide="send" class="w-4 h-4"></i>
+                          Instruir pago Wire
+                      </button>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </header>
+
+  <!-- Aviso Importante Bolivia -->
+  <section class="bg-slate-900 border-b border-white/5 py-8 relative">
+      <div class="max-w-4xl mx-auto px-6 flex flex-col md:flex-row items-center gap-6">
+          <div class="w-12 h-12 rounded-2xl bg-amber-500/10 flex items-center justify-center text-amber-500 shrink-0 border border-amber-500/20">
+              <i data-lucide="alert-triangle" class="w-6 h-6"></i>
+          </div>
+          <div>
+              <p class="text-slate-300 text-sm font-medium leading-relaxed">
+                  <strong class="text-white">Aviso importante para Bolivia:</strong> En Bolivia, Guira brinda acompañamiento comercial, documental y operativo a empresas que desean evaluar su elegibilidad y acceder correctamente a la plataforma. Guira no presta servicios financieros regulados en Bolivia, no recibe fondos de clientes, no custodia dinero, no realiza cambio de divisas y no ejecuta transferencias por cuenta propia o de terceros desde Bolivia.
+              </p>
+          </div>
+      </div>
+  </section>
+
+  <!-- FRANJA — Marquee de credibilidad -->
+  <section class="py-8 bg-guira-navy border-b border-white/5 overflow-hidden relative">
+      <div class="absolute inset-y-0 left-0 w-20 bg-gradient-to-r from-guira-navy to-transparent z-10"></div>
+      <div class="absolute inset-y-0 right-0 w-20 bg-gradient-to-l from-guira-navy to-transparent z-10"></div>
+      <div class="marquee-track">
+          <div class="marquee-chip"><i data-lucide="map-pin" class="w-4 h-4 text-guira-teal"></i> Asesores en Bolivia</div>
+          <div class="marquee-chip"><i data-lucide="building-2" class="w-4 h-4 text-guira-teal"></i> Guira opera en EE.UU. · Delaware</div>
+          <div class="marquee-chip"><i data-lucide="arrow-right-left" class="w-4 h-4 text-guira-teal"></i> Pagos ACH y Wire</div>
+          <div class="marquee-chip"><i data-lucide="file-check-2" class="w-4 h-4 text-guira-teal"></i> Respaldo documental por operación</div>
+          <div class="marquee-chip"><i data-lucide="shield-check" class="w-4 h-4 text-guira-teal"></i> Validación KYB corporativa</div>
+          <div class="marquee-chip"><i data-lucide="users" class="w-4 h-4 text-guira-teal"></i> Acompañamiento B2B personalizado</div>
+          <div class="marquee-chip"><i data-lucide="map-pin" class="w-4 h-4 text-guira-teal"></i> Asesores en Bolivia</div>
+          <div class="marquee-chip"><i data-lucide="building-2" class="w-4 h-4 text-guira-teal"></i> Guira opera en EE.UU. · Delaware</div>
+          <div class="marquee-chip"><i data-lucide="arrow-right-left" class="w-4 h-4 text-guira-teal"></i> Pagos ACH y Wire</div>
+          <div class="marquee-chip"><i data-lucide="file-check-2" class="w-4 h-4 text-guira-teal"></i> Respaldo documental por operación</div>
+          <div class="marquee-chip"><i data-lucide="shield-check" class="w-4 h-4 text-guira-teal"></i> Validación KYB corporativa</div>
+          <div class="marquee-chip"><i data-lucide="users" class="w-4 h-4 text-guira-teal"></i> Acompañamiento B2B personalizado</div>
+      </div>
+  </section>
+
+  <!-- PROBLEMA / SOLUCIÓN — Fondo oscuro -->
+  <section class="py-28 bg-guira-navy relative overflow-hidden">
+      <div class="absolute top-0 right-1/4 w-[600px] h-[600px] bg-guira-teal opacity-[0.04] blur-[140px] rounded-full pointer-events-none"></div>
+      <div class="absolute bottom-0 left-0 w-[400px] h-[400px] bg-blue-600 opacity-[0.04] blur-[100px] rounded-full pointer-events-none"></div>
+      <div class="max-w-7xl mx-auto px-6 relative z-10">
+          <div class="text-center mb-20 reveal">
+              <span class="section-kicker text-guira-teal font-bold mb-4 block">El desafío boliviano</span>
+              <h2 class="text-3xl md:text-5xl font-extrabold text-white mb-6">
+                  ¿Por qué es difícil pagar a<br /><span class="text-slate-400">proveedores internacionales desde Bolivia?</span>
+              </h2>
+              <p class="text-slate-400 max-w-2xl mx-auto text-lg font-medium">
+                  Las empresas bolivianas que necesitan pagar a proveedores en el exterior enfrentan barreras operativas reales. Nuestros asesores te orientan para resolverlas con Guira.
+              </p>
+          </div>
+
+          <div class="grid md:grid-cols-2 gap-8">
+              <!-- Problema -->
+              <div class="bg-white/5 backdrop-blur-sm p-8 md:p-10 rounded-3xl border border-white/10 hover:border-rose-500/30 transition-colors reveal-left">
+                  <div class="flex items-center gap-4 mb-8">
+                      <div class="w-12 h-12 rounded-2xl bg-rose-500/15 flex items-center justify-center text-rose-500 border border-rose-500/20">
+                          <i data-lucide="alert-circle" class="w-6 h-6"></i>
+                      </div>
+                      <h3 class="text-2xl font-bold text-white">Problemas habituales</h3>
+                  </div>
+                  <ul class="space-y-6">
+                      <li class="flex gap-4">
+                          <div class="w-8 h-8 rounded-xl bg-rose-500/10 flex items-center justify-center shrink-0 mt-0.5">
+                              <i data-lucide="x" class="w-4 h-4 text-rose-400"></i>
+                          </div>
+                          <div>
+                              <p class="font-bold text-white text-sm mb-1">Canales limitados para enviar USD</p>
+                              <p class="text-slate-400 text-sm font-medium">Dificultad para enviar fondos desde Bolivia a cuentas comerciales en EE.UU. o Europa.</p>
+                          </div>
+                      </li>
+                      <li class="flex gap-4">
+                          <div class="w-8 h-8 rounded-xl bg-rose-500/10 flex items-center justify-center shrink-0 mt-0.5">
+                              <i data-lucide="x" class="w-4 h-4 text-rose-400"></i>
+                          </div>
+                          <div>
+                              <p class="font-bold text-white text-sm mb-1">Intermediarios lentos y costosos</p>
+                              <p class="text-slate-400 text-sm font-medium">Múltiples intermediarios, comisiones opacas y tiempos impredecibles por operación.</p>
+                          </div>
+                      </li>
+                      <li class="flex gap-4">
+                          <div class="w-8 h-8 rounded-xl bg-rose-500/10 flex items-center justify-center shrink-0 mt-0.5">
+                              <i data-lucide="x" class="w-4 h-4 text-rose-400"></i>
+                          </div>
+                          <div>
+                              <p class="font-bold text-white text-sm mb-1">Nula visibilidad del pago</p>
+                              <p class="text-slate-400 text-sm font-medium">Sin trazabilidad sobre el estado de cada pago a proveedores extranjeros.</p>
+                          </div>
+                      </li>
+                      <li class="flex gap-4">
+                          <div class="w-8 h-8 rounded-xl bg-rose-500/10 flex items-center justify-center shrink-0 mt-0.5">
+                              <i data-lucide="x" class="w-4 h-4 text-rose-400"></i>
+                          </div>
+                          <div>
+                              <p class="font-bold text-white text-sm mb-1">Falta de respaldo documental</p>
+                              <p class="text-slate-400 text-sm font-medium">Sin historial estructurado para auditorías internas y cumplimiento contable.</p>
+                          </div>
+                      </li>
+                  </ul>
+              </div>
+
+              <!-- Solución -->
+              <div class="relative bg-guira-dark p-8 md:p-10 rounded-3xl border border-guira-teal/30 shadow-2xl overflow-hidden reveal-right">
+                  <div class="absolute top-0 right-0 w-72 h-72 bg-guira-teal/15 blur-[90px] rounded-full"></div>
+                  <div class="absolute bottom-0 left-0 w-48 h-48 bg-blue-600/10 blur-[70px] rounded-full"></div>
+                  <div class="relative z-10">
+                      <div class="flex items-center gap-4 mb-8">
+                          <div class="w-12 h-12 rounded-2xl bg-guira-teal flex items-center justify-center text-white shadow-lg shadow-guira-teal/30">
+                              <i data-lucide="check-circle-2" class="w-6 h-6"></i>
+                          </div>
+                          <h3 class="text-2xl font-bold text-white">Guira + Asesores en Bolivia</h3>
+                      </div>
+                      <ul class="space-y-6">
+                          <li class="flex gap-4">
+                              <div class="w-8 h-8 rounded-xl bg-guira-teal/20 flex items-center justify-center shrink-0 mt-0.5">
+                                  <i data-lucide="check" class="w-4 h-4 text-guira-cyan"></i>
+                              </div>
+                              <div>
+                                  <p class="font-bold text-white text-sm mb-1">Asesoría local para acceder a Guira</p>
+                                  <p class="text-slate-400 text-sm font-medium">Nuestro equipo en Bolivia te acompaña para registrarte y operar en la plataforma.</p>
+                              </div>
+                          </li>
+                          <li class="flex gap-4">
+                              <div class="w-8 h-8 rounded-xl bg-guira-teal/20 flex items-center justify-center shrink-0 mt-0.5">
+                                  <i data-lucide="check" class="w-4 h-4 text-guira-cyan"></i>
+                              </div>
+                              <div>
+                                  <p class="font-bold text-white text-sm mb-1">Pagos ACH y Wire a proveedores en EE.UU.</p>
+                                  <p class="text-slate-400 text-sm font-medium">Instrucciones de pago a través de rieles bancarios habilitados con trazabilidad completa.</p>
+                              </div>
+                          </li>
+                          <li class="flex gap-4">
+                              <div class="w-8 h-8 rounded-xl bg-guira-teal/20 flex items-center justify-center shrink-0 mt-0.5">
+                                  <i data-lucide="check" class="w-4 h-4 text-guira-cyan"></i>
+                              </div>
+                              <div>
+                                  <p class="font-bold text-white text-sm mb-1">Invoice asociado por cada operación</p>
+                                  <p class="text-slate-400 text-sm font-medium">Historial documental estructurado para auditorías internas y reportes corporativos.</p>
+                              </div>
+                          </li>
+                          <li class="flex gap-4">
+                              <div class="w-8 h-8 rounded-xl bg-guira-teal/20 flex items-center justify-center shrink-0 mt-0.5">
+                                  <i data-lucide="check" class="w-4 h-4 text-guira-cyan"></i>
+                              </div>
+                              <div>
+                                  <p class="font-bold text-white text-sm mb-1">Seguimiento con apoyo del asesor local</p>
+                                  <p class="text-slate-400 text-sm font-medium">Tu asesor boliviano está disponible para acompañar cada paso del proceso.</p>
+                              </div>
+                          </li>
+                      </ul>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </section>
+
+  <!-- CÓMO FUNCIONA — Timeline conectado -->
+  <section class="py-28 bg-white relative overflow-hidden">
+      <div class="absolute top-0 left-1/2 -translate-x-1/2 w-px h-full bg-gradient-to-b from-slate-100 via-slate-200 to-slate-100"></div>
+      <div class="max-w-7xl mx-auto px-6 relative z-10">
+          <div class="text-center mb-20 reveal">
+              <span class="section-kicker text-guira-teal font-bold mb-4 block">Proceso simplificado</span>
+              <h2 class="text-3xl md:text-5xl font-extrabold text-slate-900 mb-4">¿Cómo funciona para<br /><span class="text-slate-400">empresas bolivianas?</span></h2>
+              <p class="text-slate-500 max-w-xl mx-auto text-lg font-medium">Nuestros asesores en Bolivia te acompañan en cada paso para que puedas operar con Guira.</p>
+          </div>
+
+          <!-- Grid de pasos -->
+          <div class="grid md:grid-cols-4 gap-6 relative">
+              <!-- Línea conectora (desktop) -->
+              <div class="hidden md:block absolute top-[52px] left-[calc(12.5%+28px)] right-[calc(12.5%+28px)] h-px bg-gradient-to-r from-guira-teal/40 via-guira-teal/20 to-guira-teal/40"></div>
+
+              <!-- Paso 1 -->
+              <div class="bg-slate-50 border border-slate-200 rounded-3xl p-8 hover-lift reveal group">
+                  <div class="relative mb-6">
+                      <div class="w-14 h-14 rounded-2xl bg-guira-teal text-white flex items-center justify-center mx-auto font-extrabold text-xl shadow-lg shadow-guira-teal/30 group-hover:scale-110 transition-transform">1</div>
+                  </div>
+                  <h3 class="text-base font-bold text-slate-900 mb-3 text-center">Consulta con el asesor</h3>
+                  <p class="text-slate-500 font-medium text-sm text-center leading-relaxed">El equipo asesor en Bolivia evalúa el perfil de tu empresa y te orienta sobre el acceso a Guira.</p>
+                  <div class="mt-6 pt-5 border-t border-slate-200 flex items-center justify-center gap-2 text-guira-teal">
+                      <i data-lucide="map-pin" class="w-4 h-4"></i>
+                      <span class="text-xs font-bold">Presencial o remoto</span>
+                  </div>
+              </div>
+
+              <!-- Paso 2 -->
+              <div class="bg-slate-50 border border-slate-200 rounded-3xl p-8 hover-lift reveal reveal-delay-1 group">
+                  <div class="relative mb-6">
+                      <div class="w-14 h-14 rounded-2xl bg-guira-teal text-white flex items-center justify-center mx-auto font-extrabold text-xl shadow-lg shadow-guira-teal/30 group-hover:scale-110 transition-transform">2</div>
+                  </div>
+                  <h3 class="text-base font-bold text-slate-900 mb-3 text-center">Onboarding KYB asistido</h3>
+                  <p class="text-slate-500 font-medium text-sm text-center leading-relaxed">Con guía paso a paso, tu empresa completa la validación corporativa en Guira (NIT, constitución, perfil de negocio).</p>
+                  <div class="mt-6 pt-5 border-t border-slate-200 flex items-center justify-center gap-2 text-guira-teal">
+                      <i data-lucide="shield-check" class="w-4 h-4"></i>
+                      <span class="text-xs font-bold">Validación KYB</span>
+                  </div>
+              </div>
+
+              <!-- Paso 3 -->
+              <div class="bg-slate-50 border border-slate-200 rounded-3xl p-8 hover-lift reveal reveal-delay-2 group">
+                  <div class="relative mb-6">
+                      <div class="w-14 h-14 rounded-2xl bg-guira-teal text-white flex items-center justify-center mx-auto font-extrabold text-xl shadow-lg shadow-guira-teal/30 group-hover:scale-110 transition-transform">3</div>
+                  </div>
+                  <h3 class="text-base font-bold text-slate-900 mb-3 text-center">Instrucción de pago</h3>
+                  <p class="text-slate-500 font-medium text-sm text-center leading-relaxed">Adjuntas el invoice de tu proveedor, seleccionas ACH o Wire, e instruyes el pago desde el panel Guira.</p>
+                  <div class="mt-6 pt-5 border-t border-slate-200 flex items-center justify-center gap-2 text-guira-teal">
+                      <i data-lucide="send" class="w-4 h-4"></i>
+                      <span class="text-xs font-bold">ACH · Wire</span>
+                  </div>
+              </div>
+
+              <!-- Paso 4 -->
+              <div class="bg-guira-navy border border-guira-teal/20 rounded-3xl p-8 hover-lift reveal reveal-delay-3 group relative overflow-hidden">
+                  <div class="absolute top-0 right-0 w-32 h-32 bg-guira-teal/10 blur-[40px] rounded-full"></div>
+                  <div class="relative z-10">
+                      <div class="relative mb-6">
+                          <div class="w-14 h-14 rounded-2xl bg-guira-teal text-white flex items-center justify-center mx-auto font-extrabold text-xl shadow-lg shadow-guira-teal/40 group-hover:scale-110 transition-transform">4</div>
+                      </div>
+                      <h3 class="text-base font-bold text-white mb-3 text-center">Seguimiento con apoyo local</h3>
+                      <p class="text-slate-400 font-medium text-sm text-center leading-relaxed">El pago se ejecuta. Tu asesor boliviano te mantiene informado y resuelve cualquier consulta.</p>
+                      <div class="mt-6 pt-5 border-t border-white/10 flex items-center justify-center gap-2 text-guira-cyan">
+                          <i data-lucide="check-circle-2" class="w-4 h-4"></i>
+                          <span class="text-xs font-bold">Trazabilidad completa</span>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </section>
+
+  <!-- ELEGIBILIDAD — Cards visuales -->
+  <section class="py-28 bg-slate-50 border-y border-slate-200 relative overflow-hidden">
+      <div class="absolute bottom-0 right-0 w-[500px] h-[500px] bg-guira-teal/5 blur-[120px] rounded-full pointer-events-none"></div>
+      <div class="max-w-6xl mx-auto px-6 relative z-10">
+          <div class="text-center mb-20 reveal">
+              <span class="section-kicker text-guira-teal font-bold mb-4 block">Requisitos</span>
+              <h2 class="text-3xl md:text-5xl font-extrabold text-slate-900 mb-4">¿Qué tipo de empresa boliviana<br />puede acceder?</h2>
+              <p class="text-slate-500 max-w-xl mx-auto text-lg font-medium">Nuestros asesores evalúan tu perfil y te orientan sobre la elegibilidad.</p>
+          </div>
+
+          <div class="grid md:grid-cols-2 gap-8 mb-12">
+              <!-- Sí aplica -->
+              <div class="bg-white rounded-3xl border border-slate-200 p-8 md:p-10 shadow-sm reveal-left hover-lift">
+                  <div class="flex items-center gap-4 mb-8">
+                      <div class="w-12 h-12 rounded-2xl bg-emerald-100 flex items-center justify-center text-emerald-600">
+                          <i data-lucide="check-circle-2" class="w-6 h-6"></i>
+                      </div>
+                      <h3 class="text-xl font-bold text-slate-900">Perfiles que pueden aplicar</h3>
+                  </div>
+                  <div class="space-y-4">
+                      <div class="flex items-start gap-4 p-4 bg-emerald-50/60 rounded-2xl border border-emerald-100">
+                          <div class="w-9 h-9 rounded-xl bg-emerald-100 flex items-center justify-center shrink-0">
+                              <i data-lucide="package" class="w-4 h-4 text-emerald-600"></i>
+                          </div>
+                          <div>
+                              <p class="font-bold text-slate-900 text-sm">Importadoras bolivianas</p>
+                              <p class="text-slate-500 text-xs font-medium mt-0.5">Que pagan a proveedores en USA, Europa o Asia.</p>
+                          </div>
+                      </div>
+                      <div class="flex items-start gap-4 p-4 bg-emerald-50/60 rounded-2xl border border-emerald-100">
+                          <div class="w-9 h-9 rounded-xl bg-emerald-100 flex items-center justify-center shrink-0">
+                              <i data-lucide="briefcase" class="w-4 h-4 text-emerald-600"></i>
+                          </div>
+                          <div>
+                              <p class="font-bold text-slate-900 text-sm">Empresas de servicios</p>
+                              <p class="text-slate-500 text-xs font-medium mt-0.5">Con contratos activos con proveedores extranjeros.</p>
+                          </div>
+                      </div>
+                      <div class="flex items-start gap-4 p-4 bg-emerald-50/60 rounded-2xl border border-emerald-100">
+                          <div class="w-9 h-9 rounded-xl bg-emerald-100 flex items-center justify-center shrink-0">
+                              <i data-lucide="globe" class="w-4 h-4 text-emerald-600"></i>
+                          </div>
+                          <div>
+                              <p class="font-bold text-slate-900 text-sm">Corporativos y ONGs bolivianas</p>
+                              <p class="text-slate-500 text-xs font-medium mt-0.5">Con operación regional o proyectos internacionales.</p>
+                          </div>
+                      </div>
+                      <div class="flex items-start gap-4 p-4 bg-emerald-50/60 rounded-2xl border border-emerald-100">
+                          <div class="w-9 h-9 rounded-xl bg-emerald-100 flex items-center justify-center shrink-0">
+                              <i data-lucide="file-text" class="w-4 h-4 text-emerald-600"></i>
+                          </div>
+                          <div>
+                              <p class="font-bold text-slate-900 text-sm">NIT activo + documentación de respaldo</p>
+                              <p class="text-slate-500 text-xs font-medium mt-0.5">Invoice o contrato por cada operación de pago.</p>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+
+              <!-- No aplica -->
+              <div class="bg-white rounded-3xl border border-slate-200 p-8 md:p-10 shadow-sm reveal-right hover-lift">
+                  <div class="flex items-center gap-4 mb-8">
+                      <div class="w-12 h-12 rounded-2xl bg-rose-100 flex items-center justify-center text-rose-500">
+                          <i data-lucide="x-circle" class="w-6 h-6"></i>
+                      </div>
+                      <h3 class="text-xl font-bold text-slate-900">Lo que no aplica</h3>
+                  </div>
+                  <div class="space-y-4 mb-8">
+                      <div class="flex items-start gap-4 p-4 bg-rose-50/50 rounded-2xl border border-rose-100">
+                          <div class="w-9 h-9 rounded-xl bg-rose-100 flex items-center justify-center shrink-0">
+                              <i data-lucide="user" class="w-4 h-4 text-rose-500"></i>
+                          </div>
+                          <div>
+                              <p class="font-bold text-slate-900 text-sm">Personas naturales</p>
+                              <p class="text-slate-500 text-xs font-medium mt-0.5">Uso individual o consumo personal.</p>
+                          </div>
+                      </div>
+                      <div class="flex items-start gap-4 p-4 bg-rose-50/50 rounded-2xl border border-rose-100">
+                          <div class="w-9 h-9 rounded-xl bg-rose-100 flex items-center justify-center shrink-0">
+                              <i data-lucide="file-x" class="w-4 h-4 text-rose-500"></i>
+                          </div>
+                          <div>
+                              <p class="font-bold text-slate-900 text-sm">Sin soporte documental</p>
+                              <p class="text-slate-500 text-xs font-medium mt-0.5">Operaciones sin invoice o contrato de respaldo.</p>
+                          </div>
+                      </div>
+                      <div class="flex items-start gap-4 p-4 bg-rose-50/50 rounded-2xl border border-rose-100">
+                          <div class="w-9 h-9 rounded-xl bg-rose-100 flex items-center justify-center shrink-0">
+                              <i data-lucide="alert-triangle" class="w-4 h-4 text-rose-500"></i>
+                          </div>
+                          <div>
+                              <p class="font-bold text-slate-900 text-sm">Actividades restringidas</p>
+                              <p class="text-slate-500 text-xs font-medium mt-0.5">Alto riesgo o fuera de los rieles habilitados por los partners financieros.</p>
+                          </div>
+                      </div>
+                  </div>
+                  <p class="text-xs text-slate-400 font-medium leading-relaxed bg-slate-50 rounded-xl p-4 border border-slate-200">
+                      La elegibilidad final queda sujeta a la revisión del perfil KYB y la aprobación de los partners financieros de Guira. El equipo asesor en Bolivia te guía en la evaluación previa.
+                  </p>
+              </div>
+          </div>
+      </div>
+  </section>
+
+  <!-- FAQ — Acordeones con diseño premium -->
+  <section class="py-28 bg-white relative overflow-hidden">
+      <div class="absolute top-0 left-0 w-[400px] h-[400px] bg-guira-teal/5 blur-[100px] rounded-full pointer-events-none"></div>
+      <div class="max-w-4xl mx-auto px-6 relative z-10">
+          <div class="text-center mb-16 reveal">
+              <span class="section-kicker text-guira-teal font-bold mb-4 block">FAQ</span>
+              <h2 class="text-3xl md:text-5xl font-extrabold text-slate-900 mb-4">Preguntas frecuentes</h2>
+              <p class="text-slate-500 text-lg font-medium">Todo lo que necesitas saber sobre pagos a proveedores desde Bolivia.</p>
+          </div>
+
+          <div class="space-y-3 reveal-up">
+              <details class="group bg-slate-50 border border-slate-200 rounded-2xl overflow-hidden hover:border-guira-teal/40 hover:shadow-md transition-all">
+                  <summary class="flex justify-between items-center font-bold cursor-pointer list-none p-6 text-slate-900 gap-4">
+                      <span class="flex items-center gap-3"><span class="w-7 h-7 rounded-lg bg-guira-teal/10 text-guira-teal flex items-center justify-center shrink-0 text-xs font-extrabold">Q</span>¿Pueden empresas bolivianas usar Guira para pagar a sus proveedores en el exterior?</span>
+                      <span class="transition-transform duration-300 group-open:rotate-180 shrink-0"><i data-lucide="chevron-down" class="w-5 h-5 text-slate-400"></i></span>
+                  </summary>
+                  <div class="px-6 pb-6 text-slate-600 text-sm font-medium leading-relaxed border-t border-slate-200 pt-5 bg-white">
+                      Sí. A través del equipo asesor con presencia en Bolivia, las empresas bolivianas pueden acceder a la plataforma Guira — que opera en EE.UU. — para instruir pagos ACH o Wire a sus proveedores internacionales. Los asesores acompañan todo el proceso: onboarding, operación y seguimiento.
+                  </div>
+              </details>
+
+              <details class="group bg-slate-50 border border-slate-200 rounded-2xl overflow-hidden hover:border-guira-teal/40 hover:shadow-md transition-all">
+                  <summary class="flex justify-between items-center font-bold cursor-pointer list-none p-6 text-slate-900 gap-4">
+                      <span class="flex items-center gap-3"><span class="w-7 h-7 rounded-lg bg-guira-teal/10 text-guira-teal flex items-center justify-center shrink-0 text-xs font-extrabold">Q</span>¿Qué documentos necesita una empresa boliviana para comenzar?</span>
+                      <span class="transition-transform duration-300 group-open:rotate-180 shrink-0"><i data-lucide="chevron-down" class="w-5 h-5 text-slate-400"></i></span>
+                  </summary>
+                  <div class="px-6 pb-6 text-slate-600 text-sm font-medium leading-relaxed border-t border-slate-200 pt-5 bg-white">
+                      El equipo asesor en Bolivia te guía en la recopilación de la documentación necesaria: constitución legal de la empresa, NIT vigente y perfil de negocio para el onboarding en Guira. Para cada instrucción de pago se requiere adjuntar el invoice comercial o contrato que sustente la operación ante los partners financieros de la plataforma.
+                  </div>
+              </details>
+
+              <details class="group bg-slate-50 border border-slate-200 rounded-2xl overflow-hidden hover:border-guira-teal/40 hover:shadow-md transition-all">
+                  <summary class="flex justify-between items-center font-bold cursor-pointer list-none p-6 text-slate-900 gap-4">
+                      <span class="flex items-center gap-3"><span class="w-7 h-7 rounded-lg bg-guira-teal/10 text-guira-teal flex items-center justify-center shrink-0 text-xs font-extrabold">Q</span>¿Cuánto demora un pago Wire o ACH gestionado a través de Guira?</span>
+                      <span class="transition-transform duration-300 group-open:rotate-180 shrink-0"><i data-lucide="chevron-down" class="w-5 h-5 text-slate-400"></i></span>
+                  </summary>
+                  <div class="px-6 pb-6 text-slate-600 text-sm font-medium leading-relaxed border-t border-slate-200 pt-5 bg-white">
+                      Con el soporte documental previo aprobado, las instrucciones Wire suelen ejecutarse el mismo día hábil o al siguiente. Los pagos ACH siguen los tiempos bancarios estándar de Estados Unidos (1-2 días hábiles). El asesor boliviano te mantiene informado del estado de cada operación.
+                  </div>
+              </details>
+
+              <details class="group bg-slate-50 border border-slate-200 rounded-2xl overflow-hidden hover:border-guira-teal/40 hover:shadow-md transition-all">
+                  <summary class="flex justify-between items-center font-bold cursor-pointer list-none p-6 text-slate-900 gap-4">
+                      <span class="flex items-center gap-3"><span class="w-7 h-7 rounded-lg bg-guira-teal/10 text-guira-teal flex items-center justify-center shrink-0 text-xs font-extrabold">Q</span>¿Guira opera como entidad financiera en Bolivia?</span>
+                      <span class="transition-transform duration-300 group-open:rotate-180 shrink-0"><i data-lucide="chevron-down" class="w-5 h-5 text-slate-400"></i></span>
+                  </summary>
+                  <div class="px-6 pb-6 text-slate-600 text-sm font-medium leading-relaxed border-t border-slate-200 pt-5 bg-white">
+                      No. Guira es una plataforma tecnológica con sede en EE.UU. (Delaware) que no opera como entidad financiera en Bolivia. En Bolivia contamos con una empresa de asesoramiento que acompaña a las organizaciones bolivianas para registrarse y usar Guira correctamente. Los movimientos de fondos se realizan a través de la plataforma y sus partners financieros en EE.UU.
+                  </div>
+              </details>
+
+              <details class="group bg-slate-50 border border-slate-200 rounded-2xl overflow-hidden hover:border-guira-teal/40 hover:shadow-md transition-all">
+                  <summary class="flex justify-between items-center font-bold cursor-pointer list-none p-6 text-slate-900 gap-4">
+                      <span class="flex items-center gap-3"><span class="w-7 h-7 rounded-lg bg-guira-teal/10 text-guira-teal flex items-center justify-center shrink-0 text-xs font-extrabold">Q</span>¿Guira tiene asesores en Bolivia?</span>
+                      <span class="transition-transform duration-300 group-open:rotate-180 shrink-0"><i data-lucide="chevron-down" class="w-5 h-5 text-slate-400"></i></span>
+                  </summary>
+                  <div class="px-6 pb-6 text-slate-600 text-sm font-medium leading-relaxed border-t border-slate-200 pt-5 bg-white">
+                      Sí. Contamos con un equipo asesor con presencia en Bolivia que orienta a las empresas bolivianas durante todo el proceso: desde la evaluación de elegibilidad y el onboarding en la plataforma Guira, hasta el seguimiento de cada pago a proveedores internacionales.
+                  </div>
+              </details>
+          </div>
+      </div>
+  </section>
+
+  <!-- CTA FINAL — Dramático fondo oscuro -->
+  <section class="py-32 bg-guira-dark relative overflow-hidden">
+      <!-- Orbs múltiples -->
+      <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-guira-teal opacity-[0.06] blur-[150px] rounded-full pointer-events-none"></div>
+      <div class="absolute top-0 right-0 w-[400px] h-[400px] bg-blue-600 opacity-[0.05] blur-[120px] rounded-full pointer-events-none"></div>
+      <div class="absolute bottom-0 left-0 w-[300px] h-[300px] bg-guira-cyan opacity-[0.04] blur-[100px] rounded-full pointer-events-none"></div>
+      <!-- Grid -->
+      <div class="absolute inset-0 opacity-20 bg-[linear-gradient(rgba(0,81,255,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(0,81,255,0.05)_1px,transparent_1px)] bg-[size:72px_72px]"></div>
+
+      <div class="max-w-4xl mx-auto px-6 text-center relative z-10 reveal">
+          <span class="section-kicker text-guira-cyan font-bold mb-6 block">Empresas bolivianas</span>
+          <h2 class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white mb-8 leading-tight">
+              ¿Tu empresa necesita pagar<br />proveedores en el exterior?
+          </h2>
+          <p class="text-slate-400 text-xl mb-12 font-medium max-w-2xl mx-auto leading-relaxed">
+              Habla con nuestros asesores en Bolivia. Evaluamos tu caso, te orientamos en el proceso y te acompañamos para operar con Guira desde el primer día.
+          </p>
+
+          <!-- CTA buttons -->
+          <div class="flex flex-col sm:flex-row justify-center gap-4 mb-16">
+              <a href="demo.html" class="px-10 py-5 bg-guira-teal text-white rounded-2xl font-bold text-lg hover:bg-blue-700 transition-all shadow-2xl shadow-guira-teal/30 hover:-translate-y-1 flex items-center justify-center gap-3">
+                  Hablar con un asesor en Bolivia
+                  <i data-lucide="arrow-right" class="w-5 h-5"></i>
+              </a>
+              <a href="contacto.html" class="px-10 py-5 bg-white/5 text-white border border-white/15 rounded-2xl font-bold text-lg hover:bg-white/10 transition-all hover:-translate-y-1 flex items-center justify-center">
+                  Escribirnos directamente
+              </a>
+          </div>
+
+          <!-- Mini garantías -->
+          <div class="grid grid-cols-3 gap-4 max-w-md mx-auto">
+              <div class="fintech-badge rounded-xl p-3 text-center">
+                  <i data-lucide="shield-check" class="w-5 h-5 text-guira-cyan mx-auto mb-1"></i>
+                  <p class="text-[11px] text-slate-400 font-bold">KYB Corporativo</p>
+              </div>
+              <div class="fintech-badge rounded-xl p-3 text-center">
+                  <i data-lucide="map-pin" class="w-5 h-5 text-guira-cyan mx-auto mb-1"></i>
+                  <p class="text-[11px] text-slate-400 font-bold">Asesor en Bolivia</p>
+              </div>
+              <div class="fintech-badge rounded-xl p-3 text-center">
+                  <i data-lucide="file-check-2" class="w-5 h-5 text-guira-cyan mx-auto mb-1"></i>
+                  <p class="text-[11px] text-slate-400 font-bold">100% documentado</p>
+              </div>
+          </div>
+      </div>
+  </section>
+
+</Layout>
+
+<style>
+  .fintech-orb { position: absolute; border-radius: 50%; filter: blur(80px); pointer-events: none; animation: float-soft 7s ease-in-out infinite; }
+  .fintech-badge { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12); backdrop-filter: blur(12px); }
+  .premium-card { background: rgba(255,255,255,0.97); border: 1px solid rgba(15,23,42,0.08); backdrop-filter: blur(12px); }
+  .tilt-card { transform-style: preserve-3d; transition: transform 0.2s ease; }
+  .step-connector { position: absolute; top: 28px; left: calc(50% + 28px); width: calc(100% - 56px); height: 2px; background: linear-gradient(90deg, #0051ff44, #0051ff11); }
+  .glow-teal { box-shadow: 0 0 40px rgba(0,81,255,0.25), 0 0 80px rgba(0,81,255,0.1); }
+  .gradient-text { background: linear-gradient(135deg, #ffffff 0%, #00d8ff 50%, #0051ff 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+  .section-kicker { letter-spacing: 0.18em; text-transform: uppercase; font-size: 0.7rem; }
+  .signal-dot { animation: pulse 2s cubic-bezier(0.4,0,0.6,1) infinite; }
+  @keyframes pulse { 0%,100% { opacity:1 } 50% { opacity:.4 } }
+  .payment-card { background: linear-gradient(135deg, #0F172A 0%, #1e293b 100%); border: 1px solid rgba(0,81,255,0.2); }
+  .hover-lift { transition: transform 0.25s ease, box-shadow 0.25s ease; }
+  .hover-lift:hover { transform: translateY(-4px); box-shadow: 0 24px 48px -12px rgba(0,81,255,0.2); }
+</style>
