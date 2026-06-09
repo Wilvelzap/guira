@@ -126,7 +126,9 @@
                 <h2 class="text-2xl font-bold text-slate-900 mb-2">Ingresa tus datos corporativos</h2>
                 <p class="text-sm text-slate-500 mb-8">Un especialista se comunicará a la brevedad.</p>
 
-                <form id="demo-form" action="https://formspree.io/f/4bcb5f9d527045acbf8594b2b665542c" method="POST" class="space-y-5">
+                <form id="demo-form" action="https://api.staticforms.xyz/submit" method="POST" class="space-y-5">
+                    <input type="hidden" name="accessKey" value="dedc25e22d8847c295cea5aad93e1b66">
+                    <input type="hidden" name="subject" value="Nueva solicitud de demo - Guira Empresas">
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                         <div class="space-y-1">
                             <label for="fname" class="text-xs font-bold text-slate-500 uppercase tracking-wider">Nombre</label>
@@ -229,56 +231,33 @@
             const btn = form.querySelector('button[type="submit"]');
             const originalText = btn.innerText;
 
-            // Comprobar si se ha configurado Formspree u otro servicio
-            const action = form.getAttribute('action');
-            if (action === '#' || action === '') {
-                // Comportamiento de demostración por defecto con aviso instructivo
-                btn.innerHTML = '<i data-lucide="loader-2" class="w-5 h-5 animate-spin mx-auto"></i>';
-                lucide.createIcons();
-                
-                setTimeout(() => {
-                    btn.innerHTML = '<i data-lucide="check" class="w-5 h-5 mx-auto"></i> ¡Simulado con éxito! (Configura el "action" en HTML para recibir correos)';
-                    btn.classList.add('bg-emerald-500');
-                    btn.classList.remove('bg-slate-900');
-                    lucide.createIcons();
-
-                    setTimeout(() => {
-                        btn.innerHTML = originalText;
-                        btn.classList.remove('bg-emerald-500');
-                        btn.classList.add('bg-slate-900');
-                        form.reset();
-                    }, 4000);
-                }, 1000);
-                return;
-            }
-
-            // Envío real por AJAX
             btn.disabled = true;
             btn.innerHTML = '<i data-lucide="loader-2" class="w-5 h-5 animate-spin mx-auto"></i> Enviando...';
             lucide.createIcons();
 
-            fetch(action, {
+            fetch(form.action, {
                 method: 'POST',
                 body: new FormData(form),
                 headers: {
                     'Accept': 'application/json'
                 }
             })
-            .then(response => {
-                if (response.ok) {
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
                     btn.innerHTML = '<i data-lucide="check" class="w-5 h-5 mx-auto"></i> ¡Mensaje enviado con éxito!';
-                    btn.classList.add('bg-emerald-500');
+                    btn.classList.add('bg-emerald-600');
                     btn.classList.remove('bg-slate-900');
                     lucide.createIcons();
                     form.reset();
                 } else {
-                    btn.innerHTML = 'Error en el envío. Verifica tu URL de Formspree.';
+                    btn.innerHTML = 'Error: ' + (data.message || 'Verifica tu clave de formulario.');
                     btn.classList.add('bg-rose-600');
                     btn.classList.remove('bg-slate-900');
                 }
                 setTimeout(() => {
                     btn.innerHTML = originalText;
-                    btn.classList.remove('bg-emerald-500', 'bg-rose-600');
+                    btn.classList.remove('bg-emerald-600', 'bg-rose-600');
                     btn.classList.add('bg-slate-900');
                     btn.disabled = false;
                 }, 4000);
