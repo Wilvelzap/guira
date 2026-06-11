@@ -1,0 +1,16 @@
+# Non-www to www redirect
+https://guiracorp.com/* https://www.guiracorp.com/:splat 301!
+
+# Remove .html extension — 301 redirect old URLs to clean URLs
+/index.html / 301!
+/producto.html /producto 301!
+/pagos-proveedores-bolivia.html /pagos-proveedores-bolivia 301!
+/soluciones.html /soluciones 301!
+/como-funciona.html /como-funciona 301!
+/seguridad.html /seguridad 301!
+/demo.html /demo 301!
+/faq.html /faq 301!
+/sobre-guira.html /sobre-guira 301!
+/contacto.html /contacto 301!
+/privacidad.html /privacidad 301!
+/terminos.html /terminos 301!

@@ -48,7 +48,7 @@ const onProduct = isCurrent('producto');
 
 <nav id="navbar" class="fixed top-0 w-full z-50 transition-all duration-300 bg-white/80 backdrop-blur-md border-b border-slate-200/70 py-5">
     <div class="max-w-7xl mx-auto px-6 flex justify-between items-center relative">
-        <a href="index.html" class="flex items-center gap-2 group">
+        <a href="/" class="flex items-center gap-2 group">
             <img src="/guira-logo.svg" alt="Guira Logo - Plataforma financiera empresarial"
                 class="h-8 object-contain transition-transform duration-300 group-hover:scale-105" />
             <span class:list={[
@@ -60,13 +60,13 @@ const onProduct = isCurrent('producto');
         </a>
 
         <div class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-600">
-            <a href="producto.html" class={getLinkClass('producto')}>Producto</a>
-            <a href="soluciones.html" class={getLinkClass('soluciones')}>Soluciones</a>
-            <a href="como-funciona.html" class={getLinkClass('como-funciona')}>Cómo funciona</a>
-            <a href="seguridad.html" class={getLinkClass('seguridad')}>Seguridad</a>
-            <a href="faq.html" class={getLinkClass('faq')}>FAQ</a>
-            <a href="sobre-guira.html" class={getLinkClass('sobre-guira')}>Sobre Guira</a>
-            <a href="contacto.html" class={getLinkClass('contacto')}>Contacto</a>
+            <a href="/producto" class={getLinkClass('producto')}>Producto</a>
+            <a href="/soluciones" class={getLinkClass('soluciones')}>Soluciones</a>
+            <a href="/como-funciona" class={getLinkClass('como-funciona')}>Cómo funciona</a>
+            <a href="/seguridad" class={getLinkClass('seguridad')}>Seguridad</a>
+            <a href="/faq" class={getLinkClass('faq')}>FAQ</a>
+            <a href="/sobre-guira" class={getLinkClass('sobre-guira')}>Sobre Guira</a>
+            <a href="/contacto" class={getLinkClass('contacto')}>Contacto</a>
         </div>
 
         <div class="hidden md:flex items-center gap-4">
@@ -81,7 +81,7 @@ const onProduct = isCurrent('producto');
                     onProduct ? "group-hover:text-guira-emerald" : "group-hover:text-guira-teal"
                 ]}></i>
             </a>
-            <a href="demo.html"
+            <a href="/demo"
                 class="bg-slate-900 text-white px-5 py-2.5 rounded-lg text-sm font-semibold hover:bg-slate-800 transition-all shadow-lg shadow-slate-900/20 hover:-translate-y-0.5">
                 Solicitar Demo
             </a>
@@ -95,13 +95,13 @@ const onProduct = isCurrent('producto');
     <!-- Mobile Menu -->
     <div id="mobile-menu"
         class="hidden absolute top-full left-0 w-full bg-white shadow-xl border-t border-slate-100 p-6 flex flex-col gap-4">
-        <a href="producto.html" class={getMobileLinkClass('producto')}>Producto</a>
-        <a href="soluciones.html" class={getMobileLinkClass('soluciones')}>Soluciones</a>
-        <a href="como-funciona.html" class={getMobileLinkClass('como-funciona')}>Cómo funciona</a>
-        <a href="seguridad.html" class={getMobileLinkClass('seguridad')}>Seguridad</a>
-        <a href="faq.html" class={getMobileLinkClass('faq')}>FAQ</a>
-        <a href="sobre-guira.html" class={getMobileLinkClass('sobre-guira')}>Sobre Guira</a>
-        <a href="contacto.html" class={getMobileLinkClass('contacto')}>Contacto</a>
+        <a href="/producto" class={getMobileLinkClass('producto')}>Producto</a>
+        <a href="/soluciones" class={getMobileLinkClass('soluciones')}>Soluciones</a>
+        <a href="/como-funciona" class={getMobileLinkClass('como-funciona')}>Cómo funciona</a>
+        <a href="/seguridad" class={getMobileLinkClass('seguridad')}>Seguridad</a>
+        <a href="/faq" class={getMobileLinkClass('faq')}>FAQ</a>
+        <a href="/sobre-guira" class={getMobileLinkClass('sobre-guira')}>Sobre Guira</a>
+        <a href="/contacto" class={getMobileLinkClass('contacto')}>Contacto</a>
         <hr class="border-slate-100" />
         <a href="https://app.guiracorp.com"
             class:list={[
@@ -114,7 +114,7 @@ const onProduct = isCurrent('producto');
             ]}></i>
             <span>Ingresar a Plataforma</span>
         </a>
-        <a href="demo.html" class="bg-slate-900 text-white text-center px-5 py-3 rounded-lg font-bold hover:bg-slate-800 transition-colors shadow-md">
+        <a href="/demo" class="bg-slate-900 text-white text-center px-5 py-3 rounded-lg font-bold hover:bg-slate-800 transition-colors shadow-md">
             Solicitar Demo
         </a>
     </div>
