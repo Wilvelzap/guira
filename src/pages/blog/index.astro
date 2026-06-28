@@ -1,0 +1,280 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { getCollection } from 'astro:content';
+
+const allPosts = await getCollection('blog');
+const posts = allPosts.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+
+const getSlug = (id: string) => id.replace(/\.md$/, '');
+
+const featuredPost = posts.find(p => p.data.featured) ?? posts[0];
+const restPosts = posts.filter(p => p.id !== featuredPost.id);
+
+const categories = [...new Set(posts.map(p => p.data.category))];
+
+const formatDate = (date: Date) => {
+  return date.toLocaleDateString('es-BO', { year: 'numeric', month: 'long', day: 'numeric' });
+};
+
+const categoryColors: Record<string, string> = {
+  'Pagos Internacionales': 'bg-blue-50 text-blue-700 border-blue-200',
+  'Gestión de Proveedores': 'bg-emerald-50 text-emerald-700 border-emerald-200',
+  'Seguridad Financiera': 'bg-violet-50 text-violet-700 border-violet-200',
+};
+const getCategoryClass = (cat: string) => categoryColors[cat] ?? 'bg-slate-50 text-slate-700 border-slate-200';
+
+const categoryIcons: Record<string, string> = {
+  'Pagos Internacionales': 'arrow-right-left',
+  'Gestión de Proveedores': 'building-2',
+  'Seguridad Financiera': 'shield-check',
+};
+const getCategoryIcon = (cat: string) => categoryIcons[cat] ?? 'file-text';
+---
+
+<Layout
+  title="Blog de Finanzas Corporativas | Guira Empresas"
+  description="Guías, artículos y recursos sobre pagos internacionales, gestión de proveedores y finanzas corporativas para empresas en Bolivia y Latinoamérica."
+  keywords="blog finanzas corporativas Bolivia, pagos internacionales Bolivia, gestión proveedores internacionales, guía empresas Bolivia"
+  canonicalUrl="https://www.guiracorp.com/blog"
+  activeLink="blog"
+  footerTheme="rich-dark"
+>
+  <slot name="head">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Blog",
+      "name": "Blog Guira Empresas",
+      "description": "Recursos y guías sobre pagos internacionales y finanzas corporativas para empresas en Bolivia",
+      "url": "https://www.guiracorp.com/blog",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Guira System LLC",
+        "url": "https://www.guiracorp.com"
+      }
+    }
+    </script>
+  </slot>
+
+  <!-- Hero Section -->
+  <section class="relative pt-32 pb-20 overflow-hidden bg-guira-petrol">
+    <div class="absolute inset-0 pointer-events-none">
+      <div class="fintech-orb w-96 h-96 bg-guira-teal top-[-80px] left-[-60px] opacity-20"></div>
+      <div class="fintech-orb w-80 h-80 bg-guira-cyan bottom-[-40px] right-[-40px] opacity-15"></div>
+    </div>
+    <div class="relative max-w-7xl mx-auto px-6 text-center">
+      <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/10 border border-white/20 text-white/80 text-xs font-semibold uppercase tracking-widest mb-6 reveal">
+        <i data-lucide="book-open" class="w-3.5 h-3.5"></i>
+        Blog & Recursos
+      </div>
+      <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white leading-tight mb-6 reveal reveal-delay-1">
+        Finanzas corporativas<br class="hidden md:block" />
+        <span class="text-gradient-accent">sin fronteras</span>
+      </h1>
+      <p class="text-lg text-slate-300 max-w-2xl mx-auto mb-8 reveal reveal-delay-2">
+        Guías prácticas, análisis y recursos sobre pagos internacionales, gestión de proveedores y compliance para empresas en Bolivia y Latinoamérica.
+      </p>
+
+      <!-- Category pills -->
+      <div class="flex flex-wrap justify-center gap-2 reveal reveal-delay-3">
+        <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white text-slate-800 text-xs font-bold">
+          <i data-lucide="layout-grid" class="w-3.5 h-3.5"></i>
+          Todos los temas
+        </span>
+        {categories.map(cat => (
+          <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/10 border border-white/20 text-white/80 text-xs font-semibold hover:bg-white/20 transition-colors cursor-pointer">
+            <i data-lucide={getCategoryIcon(cat)} class="w-3.5 h-3.5"></i>
+            {cat}
+          </span>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <main class="max-w-7xl mx-auto px-6 py-16">
+
+    <!-- Featured Post -->
+    {featuredPost && (
+      <section class="mb-16">
+        <div class="flex items-center gap-3 mb-6">
+          <span class="section-kicker">Artículo destacado</span>
+          <div class="h-px flex-1 bg-slate-200"></div>
+        </div>
+
+        <a href={`/blog/${getSlug(featuredPost.id)}`} class="group block">
+          <article class="grid md:grid-cols-5 gap-0 rounded-2xl overflow-hidden border border-slate-200 premium-card hover:border-guira-teal/30 transition-all duration-300">
+            <!-- Visual side -->
+            <div class="md:col-span-2 relative bg-gradient-to-br from-guira-petrol via-guira-navy to-guira-dark p-10 flex flex-col justify-between min-h-[260px]">
+              <div class="fintech-orb w-48 h-48 bg-guira-teal -top-12 -right-12 opacity-25"></div>
+              <div class="fintech-orb w-32 h-32 bg-guira-cyan bottom-4 left-4 opacity-15"></div>
+              <div class="relative z-10">
+                <span class={`inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-bold border ${getCategoryClass(featuredPost.data.category)} mb-4`}>
+                  <i data-lucide={getCategoryIcon(featuredPost.data.category)} class="w-3 h-3"></i>
+                  {featuredPost.data.category}
+                </span>
+                <div class="text-white/40 text-xs font-medium">Artículo destacado</div>
+              </div>
+              <div class="relative z-10">
+                <div class="w-12 h-12 rounded-xl bg-white/10 border border-white/20 flex items-center justify-center">
+                  <i data-lucide="file-text" class="w-6 h-6 text-white/70"></i>
+                </div>
+              </div>
+            </div>
+
+            <!-- Content side -->
+            <div class="md:col-span-3 p-8 md:p-10 flex flex-col justify-between">
+              <div>
+                <div class="flex items-center gap-3 text-xs text-slate-500 font-medium mb-4">
+                  <span class="flex items-center gap-1.5">
+                    <i data-lucide="calendar" class="w-3.5 h-3.5"></i>
+                    {formatDate(featuredPost.data.pubDate)}
+                  </span>
+                  <span class="w-1 h-1 bg-slate-300 rounded-full"></span>
+                  <span class="flex items-center gap-1.5">
+                    <i data-lucide="clock" class="w-3.5 h-3.5"></i>
+                    {featuredPost.data.readingTime} min de lectura
+                  </span>
+                </div>
+                <h2 class="text-2xl md:text-3xl font-extrabold text-slate-900 mb-4 leading-tight group-hover:text-guira-teal transition-colors">
+                  {featuredPost.data.title}
+                </h2>
+                <p class="text-slate-600 leading-relaxed mb-6">
+                  {featuredPost.data.excerpt ?? featuredPost.data.description}
+                </p>
+                <div class="flex flex-wrap gap-2 mb-6">
+                  {featuredPost.data.tags.slice(0, 4).map(tag => (
+                    <span class="text-xs font-medium text-slate-500 bg-slate-100 px-2.5 py-1 rounded-full">
+                      #{tag}
+                    </span>
+                  ))}
+                </div>
+              </div>
+              <div class="flex items-center justify-between">
+                <div class="flex items-center gap-3">
+                  <div class="w-8 h-8 rounded-full bg-guira-teal/10 flex items-center justify-center">
+                    <i data-lucide="user" class="w-4 h-4 text-guira-teal"></i>
+                  </div>
+                  <div>
+                    <div class="text-sm font-semibold text-slate-800">{featuredPost.data.author}</div>
+                    <div class="text-xs text-slate-500">{featuredPost.data.authorRole}</div>
+                  </div>
+                </div>
+                <span class="inline-flex items-center gap-2 text-guira-teal font-bold text-sm group-hover:gap-3 transition-all">
+                  Leer artículo
+                  <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                </span>
+              </div>
+            </div>
+          </article>
+        </a>
+      </section>
+    )}
+
+    <!-- Articles Grid -->
+    {restPosts.length > 0 && (
+      <section class="mb-16">
+        <div class="flex items-center gap-3 mb-8">
+          <span class="section-kicker">Últimos artículos</span>
+          <div class="h-px flex-1 bg-slate-200"></div>
+          <span class="text-xs text-slate-400 font-medium">{posts.length} artículos</span>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {restPosts.map((post, i) => (
+            <a href={`/blog/${getSlug(post.id)}`} class="group block reveal" style={`transition-delay: ${i * 0.08}s`}>
+              <article class="h-full flex flex-col rounded-2xl border border-slate-200 overflow-hidden premium-card hover:border-guira-teal/30 transition-all duration-300">
+                <!-- Card visual header -->
+                <div class="relative h-40 bg-gradient-to-br from-slate-50 to-slate-100 flex items-center justify-center overflow-hidden">
+                  <div class="absolute inset-0 bg-gradient-to-br from-guira-teal/5 to-guira-cyan/5"></div>
+                  <div class="relative z-10 text-center">
+                    <div class="w-14 h-14 rounded-2xl bg-white border border-slate-200 shadow-sm flex items-center justify-center mx-auto mb-2">
+                      <i data-lucide={getCategoryIcon(post.data.category)} class="w-6 h-6 text-guira-teal"></i>
+                    </div>
+                    <span class={`inline-flex items-center px-2.5 py-1 rounded-full text-xs font-bold border ${getCategoryClass(post.data.category)}`}>
+                      {post.data.category}
+                    </span>
+                  </div>
+                </div>
+
+                <!-- Card body -->
+                <div class="flex-1 flex flex-col p-6">
+                  <div class="flex items-center gap-2 text-xs text-slate-400 font-medium mb-3">
+                    <span>{formatDate(post.data.pubDate)}</span>
+                    <span class="w-1 h-1 bg-slate-300 rounded-full"></span>
+                    <span class="flex items-center gap-1">
+                      <i data-lucide="clock" class="w-3 h-3"></i>
+                      {post.data.readingTime} min
+                    </span>
+                  </div>
+
+                  <h3 class="text-lg font-extrabold text-slate-900 leading-snug mb-3 group-hover:text-guira-teal transition-colors">
+                    {post.data.title}
+                  </h3>
+
+                  <p class="text-sm text-slate-600 leading-relaxed mb-4 flex-1">
+                    {post.data.excerpt ?? post.data.description.slice(0, 120) + '…'}
+                  </p>
+
+                  <div class="flex flex-wrap gap-1.5 mb-4">
+                    {post.data.tags.slice(0, 3).map(tag => (
+                      <span class="text-[11px] font-medium text-slate-400 bg-slate-50 border border-slate-100 px-2 py-0.5 rounded-full">
+                        #{tag}
+                      </span>
+                    ))}
+                  </div>
+
+                  <div class="flex items-center justify-between pt-4 border-t border-slate-100">
+                    <div class="flex items-center gap-2">
+                      <div class="w-6 h-6 rounded-full bg-guira-teal/10 flex items-center justify-center">
+                        <i data-lucide="user" class="w-3.5 h-3.5 text-guira-teal"></i>
+                      </div>
+                      <span class="text-xs font-semibold text-slate-600">{post.data.author}</span>
+                    </div>
+                    <span class="text-guira-teal text-xs font-bold flex items-center gap-1 group-hover:gap-2 transition-all">
+                      Leer
+                      <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+                    </span>
+                  </div>
+                </div>
+              </article>
+            </a>
+          ))}
+        </div>
+      </section>
+    )}
+
+    <!-- CTA Newsletter / Demo -->
+    <section class="reveal">
+      <div class="rounded-2xl bg-gradient-to-br from-guira-petrol via-guira-navy to-guira-dark p-10 md:p-14 relative overflow-hidden">
+        <div class="fintech-orb w-64 h-64 bg-guira-teal -top-20 -right-20 opacity-20"></div>
+        <div class="fintech-orb w-48 h-48 bg-guira-cyan bottom-0 left-10 opacity-10"></div>
+
+        <div class="relative z-10 flex flex-col md:flex-row md:items-center gap-8">
+          <div class="flex-1">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 border border-white/20 text-white/70 text-xs font-semibold mb-4">
+              <i data-lucide="zap" class="w-3.5 h-3.5"></i>
+              ¿Listo para el siguiente paso?
+            </div>
+            <h2 class="text-2xl md:text-3xl font-extrabold text-white mb-3">
+              Simplifica tus pagos<br class="hidden md:block" /> internacionales con Guira
+            </h2>
+            <p class="text-slate-300 text-sm leading-relaxed max-w-lg">
+              Todo lo que lees en este blog lo resolvemos en la plataforma: pagos a proveedores, recepción en USD, validación B2B y trazabilidad completa. Todo en un solo lugar.
+            </p>
+          </div>
+          <div class="flex flex-col sm:flex-row md:flex-col gap-3 shrink-0">
+            <a href="/demo" class="inline-flex items-center justify-center gap-2 bg-white text-slate-900 px-6 py-3.5 rounded-xl font-bold text-sm hover:bg-slate-100 transition-all shadow-lg hover:-translate-y-0.5">
+              <i data-lucide="calendar" class="w-4 h-4"></i>
+              Solicitar Demo Gratuita
+            </a>
+            <a href="/producto" class="inline-flex items-center justify-center gap-2 border border-white/20 text-white px-6 py-3.5 rounded-xl font-bold text-sm hover:bg-white/10 transition-all">
+              <i data-lucide="arrow-right" class="w-4 h-4"></i>
+              Ver el Producto
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+</Layout>
