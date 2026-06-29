@@ -1,20 +1,22 @@
 ---
 title: "Validación B2B: cómo verificar empresas extranjeras y evitar fraudes"
 description: "Aprende a verificar la identidad y legitimidad de empresas extranjeras antes de realizar transacciones. Guía práctica de validación B2B para empresas bolivianas y latinoamericanas."
-pubDate: 2026-06-25
+pubDate: 2026-06-08
 author: "Equipo Guira"
 authorRole: "Compliance y Seguridad"
 category: "Seguridad Financiera"
 tags: ["validación B2B", "KYB", "fraude empresarial", "due diligence", "compliance", "proveedores extranjeros"]
 readingTime: 6
 featured: false
+image: "/assets/images/blog/validacion-b2b-empresas-extranjeras-fraude.webp"
+imageAlt: "Especialistas de compliance revisando documentación KYB y un dashboard de validación de empresas extranjeras"
 keywords: "validación B2B Bolivia, verificar empresas extranjeras, KYB Bolivia, fraude proveedores internacionales, due diligence empresarial"
 excerpt: "El fraude en transacciones B2B internacionales cuesta millones de dólares al año a empresas latinoamericanas. Esta guía te explica cómo verificar cualquier empresa extranjera antes de hacer negocios."
 ---
 
 Cada año, miles de empresas latinoamericanas pierden dinero por no verificar correctamente a sus contrapartes comerciales. El fraude en transacciones B2B internacionales adopta muchas formas: proveedores fantasma, cambios de datos bancarios fraudulentos, facturas falsas, y empresas que simplemente no existen.
 
-La validación B2B —también conocida como **KYB (Know Your Business)**— es el proceso de verificar que la empresa con la que vas a hacer negocios es quien dice ser. En esta guía te explicamos cómo hacerlo de forma sistemática.
+La validación B2B —también conocida como **KYB (Know Your Business)**— es el proceso de verificar que la empresa con la que vas a hacer negocios es quien dice ser. En esta guía te explicamos cómo hacerlo de forma sistemática. Esto es fundamental antes de realizar cualquier [pago a un proveedor en el exterior desde Bolivia](/blog/como-pagar-proveedor-exterior-desde-bolivia) o emitir una instrucción para [enviar un Wire a un proveedor en Estados Unidos desde Bolivia](/blog/como-enviar-wire-proveedor-eeuu-desde-bolivia). Asimismo, es una práctica clave para asegurar la [trazabilidad de pagos internacionales](/blog/trazabilidad-pagos-internacionales-proveedores-bolivia).
 
 ## Por qué la validación B2B es crítica para tu empresa
 

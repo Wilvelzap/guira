@@ -48,7 +48,7 @@ const postImage = post.data.image
 ---
 
 <Layout
-  title={`${post.data.title} | Blog Guira Empresas`}
+  title={post.data.metaTitle ?? `${post.data.title} | Blog Guira Empresas`}
   description={post.data.description}
   keywords={post.data.keywords}
   canonicalUrl={canonicalUrl}

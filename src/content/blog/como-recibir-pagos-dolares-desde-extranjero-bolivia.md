@@ -1,20 +1,22 @@
 ---
 title: "Cómo recibir pagos en dólares desde el extranjero siendo empresa boliviana"
 description: "Guía completa para empresas bolivianas que necesitan recibir pagos internacionales en USD. Aprende los métodos disponibles, requisitos legales y cómo simplificar el proceso."
-pubDate: 2026-06-10
+pubDate: 2026-06-01
 author: "Equipo Guira"
 authorRole: "Finanzas Corporativas"
 category: "Pagos Internacionales"
 tags: ["pagos en dólares", "Bolivia", "empresas", "USD", "cobros internacionales", "exportadores"]
 readingTime: 7
 featured: true
+image: "/assets/images/blog/recibir-pagos-dolares-extranjero-bolivia.webp"
+imageAlt: "Equipo financiero boliviano revisando una confirmación de pago internacional en dólares en una oficina corporativa"
 keywords: "recibir pagos dolares Bolivia, cobros internacionales empresa boliviana, pagos USD Bolivia, exportadores Bolivia"
 excerpt: "Recibir pagos en dólares desde el extranjero es uno de los mayores desafíos para las empresas bolivianas. En esta guía explicamos paso a paso cómo lograrlo de forma legal, eficiente y sin complicaciones."
 ---
 
 Recibir pagos internacionales en dólares es uno de los retos más frecuentes para las empresas bolivianas que trabajan con clientes, socios o proyectos en el exterior. Ya sea que exportes servicios, trabajes con organismos internacionales, o simplemente cobres a clientes de Estados Unidos, Europa o Latinoamérica, el proceso puede resultar confuso y lleno de obstáculos.
 
-En esta guía te explicamos todo lo que necesitas saber: los métodos disponibles, los requisitos legales en Bolivia, los costos típicos y cómo modernizar tu proceso de cobro.
+En esta guía te explicamos todo lo que necesitas saber: los métodos disponibles, los requisitos legales en Bolivia, los costos típicos y cómo modernizar tu proceso de cobro. Si también estás cobrando a clientes específicos en EE.UU., te recomendamos revisar nuestra guía sobre [cómo cobrar clientes de Estados Unidos desde Bolivia](/blog/como-cobrar-clientes-estados-unidos-desde-bolivia) y conocer los principales [desafíos al recibir pagos internacionales](/blog/desafios-recibir-pagos-internacionales-bolivia).
 
 ## Por qué es complicado recibir pagos del exterior en Bolivia
 
