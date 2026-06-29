@@ -13,7 +13,7 @@ const restPosts = posts.filter(p => p.id !== featuredPost.id);
 const categories = [...new Set(posts.map(p => p.data.category))];
 
 const formatDate = (date: Date) => {
-  return date.toLocaleDateString('es-BO', { year: 'numeric', month: 'long', day: 'numeric' });
+  return date.toLocaleDateString('es-BO', { year: 'numeric', month: 'long', day: 'numeric', timeZone: 'UTC' });
 };
 
 const categoryColors: Record<string, string> = {
@@ -103,22 +103,36 @@ const getCategoryIcon = (cat: string) => categoryIcons[cat] ?? 'file-text';
 
         <a href={`/blog/${getSlug(featuredPost.id)}`} class="group block">
           <article class="grid md:grid-cols-5 gap-0 rounded-2xl overflow-hidden border border-slate-200 premium-card hover:border-guira-teal/30 transition-all duration-300">
-            <!-- Visual side -->
-            <div class="md:col-span-2 relative bg-gradient-to-br from-guira-petrol via-guira-navy to-guira-dark p-10 flex flex-col justify-between min-h-[260px]">
-              <div class="fintech-orb w-48 h-48 bg-guira-teal -top-12 -right-12 opacity-25"></div>
-              <div class="fintech-orb w-32 h-32 bg-guira-cyan bottom-4 left-4 opacity-15"></div>
-              <div class="relative z-10">
-                <span class={`inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-bold border ${getCategoryClass(featuredPost.data.category)} mb-4`}>
-                  <i data-lucide={getCategoryIcon(featuredPost.data.category)} class="w-3 h-3"></i>
-                  {featuredPost.data.category}
-                </span>
-                <div class="text-white/40 text-xs font-medium">Artículo destacado</div>
-              </div>
-              <div class="relative z-10">
-                <div class="w-12 h-12 rounded-xl bg-white/10 border border-white/20 flex items-center justify-center">
-                  <i data-lucide="file-text" class="w-6 h-6 text-white/70"></i>
+            <div class="md:col-span-2 relative bg-gradient-to-br from-guira-petrol via-guira-navy to-guira-dark min-h-[260px] overflow-hidden">
+              {featuredPost.data.image ? (
+                <>
+                  <img src={featuredPost.data.image} alt={featuredPost.data.imageAlt ?? featuredPost.data.title} loading="eager" decoding="async" class="absolute inset-0 w-full h-full object-cover" />
+                  <div class="absolute inset-0 bg-gradient-to-br from-guira-petrol/70 via-guira-navy/35 to-transparent"></div>
+                  <div class="relative z-10 p-8">
+                    <span class={`inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-bold border ${getCategoryClass(featuredPost.data.category)}`}>
+                      <i data-lucide={getCategoryIcon(featuredPost.data.category)} class="w-3 h-3"></i>
+                      {featuredPost.data.category}
+                    </span>
+                  </div>
+                </>
+              ) : (
+                <div class="p-10 flex flex-col justify-between min-h-[260px]">
+                  <div class="fintech-orb w-48 h-48 bg-guira-teal -top-12 -right-12 opacity-25"></div>
+                  <div class="fintech-orb w-32 h-32 bg-guira-cyan bottom-4 left-4 opacity-15"></div>
+                  <div class="relative z-10">
+                    <span class={`inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-bold border ${getCategoryClass(featuredPost.data.category)} mb-4`}>
+                      <i data-lucide={getCategoryIcon(featuredPost.data.category)} class="w-3 h-3"></i>
+                      {featuredPost.data.category}
+                    </span>
+                    <div class="text-white/40 text-xs font-medium">Artículo destacado</div>
+                  </div>
+                  <div class="relative z-10">
+                    <div class="w-12 h-12 rounded-xl bg-white/10 border border-white/20 flex items-center justify-center">
+                      <i data-lucide="file-text" class="w-6 h-6 text-white/70"></i>
+                    </div>
+                  </div>
                 </div>
-              </div>
+              )}
             </div>
 
             <!-- Content side -->
@@ -183,17 +197,28 @@ const getCategoryIcon = (cat: string) => categoryIcons[cat] ?? 'file-text';
           {restPosts.map((post, i) => (
             <a href={`/blog/${getSlug(post.id)}`} class="group block reveal" style={`transition-delay: ${i * 0.08}s`}>
               <article class="h-full flex flex-col rounded-2xl border border-slate-200 overflow-hidden premium-card hover:border-guira-teal/30 transition-all duration-300">
-                <!-- Card visual header -->
                 <div class="relative h-40 bg-gradient-to-br from-slate-50 to-slate-100 flex items-center justify-center overflow-hidden">
-                  <div class="absolute inset-0 bg-gradient-to-br from-guira-teal/5 to-guira-cyan/5"></div>
-                  <div class="relative z-10 text-center">
-                    <div class="w-14 h-14 rounded-2xl bg-white border border-slate-200 shadow-sm flex items-center justify-center mx-auto mb-2">
-                      <i data-lucide={getCategoryIcon(post.data.category)} class="w-6 h-6 text-guira-teal"></i>
-                    </div>
-                    <span class={`inline-flex items-center px-2.5 py-1 rounded-full text-xs font-bold border ${getCategoryClass(post.data.category)}`}>
-                      {post.data.category}
-                    </span>
-                  </div>
+                  {post.data.image ? (
+                    <>
+                      <img src={post.data.image} alt={post.data.imageAlt ?? post.data.title} loading="lazy" decoding="async" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                      <div class="absolute inset-0 bg-gradient-to-t from-slate-950/45 via-transparent to-transparent"></div>
+                      <span class={`absolute left-4 bottom-4 inline-flex items-center px-2.5 py-1 rounded-full text-xs font-bold border ${getCategoryClass(post.data.category)}`}>
+                        {post.data.category}
+                      </span>
+                    </>
+                  ) : (
+                    <>
+                      <div class="absolute inset-0 bg-gradient-to-br from-guira-teal/5 to-guira-cyan/5"></div>
+                      <div class="relative z-10 text-center">
+                        <div class="w-14 h-14 rounded-2xl bg-white border border-slate-200 shadow-sm flex items-center justify-center mx-auto mb-2">
+                          <i data-lucide={getCategoryIcon(post.data.category)} class="w-6 h-6 text-guira-teal"></i>
+                        </div>
+                        <span class={`inline-flex items-center px-2.5 py-1 rounded-full text-xs font-bold border ${getCategoryClass(post.data.category)}`}>
+                          {post.data.category}
+                        </span>
+                      </div>
+                    </>
+                  )}
                 </div>
 
                 <!-- Card body -->

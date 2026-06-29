@@ -22,7 +22,7 @@ const relatedPosts = allPosts
   .slice(0, 2);
 
 const formatDate = (date: Date) => {
-  return date.toLocaleDateString('es-BO', { year: 'numeric', month: 'long', day: 'numeric' });
+  return date.toLocaleDateString('es-BO', { year: 'numeric', month: 'long', day: 'numeric', timeZone: 'UTC' });
 };
 
 const categoryColors: Record<string, string> = {
@@ -41,6 +41,10 @@ const getCategoryIcon = (cat: string) => categoryIcons[cat] ?? 'file-text';
 
 const tocHeadings = headings.filter(h => h.depth === 2 || h.depth === 3);
 const canonicalUrl = `https://www.guiracorp.com/blog/${getSlug(post.id)}`;
+const siteUrl = 'https://www.guiracorp.com';
+const postImage = post.data.image
+  ? (post.data.image.startsWith('http') ? post.data.image : `${siteUrl}${post.data.image}`)
+  : undefined;
 ---
 
 <Layout
@@ -50,6 +54,8 @@ const canonicalUrl = `https://www.guiracorp.com/blog/${getSlug(post.id)}`;
   canonicalUrl={canonicalUrl}
   ogTitle={post.data.title}
   ogDescription={post.data.description}
+  ogType="article"
+  ogImage={postImage}
   footerTheme="rich-dark"
 >
   <slot name="head">
@@ -58,6 +64,7 @@ const canonicalUrl = `https://www.guiracorp.com/blog/${getSlug(post.id)}`;
       "@type": "Article",
       "headline": post.data.title,
       "description": post.data.description,
+      ...(postImage ? { "image": postImage } : {}),
       "datePublished": post.data.pubDate.toISOString(),
       "dateModified": (post.data.updatedDate ?? post.data.pubDate).toISOString(),
       "author": {
@@ -130,13 +137,28 @@ const canonicalUrl = `https://www.guiracorp.com/blog/${getSlug(post.id)}`;
             <div class="text-xs text-slate-500">{post.data.authorRole}</div>
           </div>
         </div>
+
+        {post.data.image && (
+          <picture class="block mt-8 overflow-hidden rounded-2xl border border-slate-200 shadow-sm">
+            <source srcset={post.data.image} type="image/webp" />
+            <img
+              src={post.data.image}
+              alt={post.data.imageAlt ?? post.data.title}
+              width="1200"
+              height="630"
+              loading="eager"
+              decoding="async"
+              class="w-full h-auto object-cover"
+            />
+          </picture>
+        )}
       </div>
     </div>
   </header>
 
   <!-- Main Content Layout -->
   <div class="max-w-7xl mx-auto px-6 py-12">
-    <div class="flex gap-12 items-start">
+    <div class="flex gap-12 items-stretch">
 
       <!-- Article Body -->
       <article class="flex-1 min-w-0 max-w-3xl">
@@ -257,7 +279,7 @@ const canonicalUrl = `https://www.guiracorp.com/blog/${getSlug(post.id)}`;
       </article>
 
       <!-- Sidebar (desktop only) -->
-      <aside class="hidden lg:flex flex-col gap-6 w-72 shrink-0">
+      <aside class="hidden lg:block w-72 shrink-0 relative">
         <div class="sticky top-24 flex flex-col gap-6">
 
           <!-- Table of Contents -->
@@ -267,7 +289,7 @@ const canonicalUrl = `https://www.guiracorp.com/blog/${getSlug(post.id)}`;
                 <i data-lucide="list" class="w-4 h-4 text-guira-teal"></i>
                 <span class="text-xs font-bold text-slate-700 uppercase tracking-wider">Índice</span>
               </div>
-              <nav class="p-4" id="toc-desktop">
+              <nav class="p-4 max-h-[45vh] overflow-y-auto sidebar-scroll" id="toc-desktop">
                 <ul class="space-y-1.5">
                   {tocHeadings.map(h => (
                     <li style={h.depth === 3 ? 'padding-left: 0.875rem' : ''}>
