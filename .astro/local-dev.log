@@ -1,0 +1,67 @@
+
+> guira@1.0.0 dev
+> astro dev --host localhost --port 4321
+
+[vite] connected.
+[2m23:19:30[22m [34m[types][39m Generated [2m2ms[22m
+[vite] connected.
+[2m23:19:30[22m [34m[content][39m Syncing content
+[2m23:19:30[22m [34m[content][39m Astro config changed
+[2m23:19:30[22m [34m[content][39m Clearing content store
+[2m23:19:30[22m [34m[content][39m Synced content
+[42m[1m astro [22m[49m [32mv6.4.5[39m [2mready in[22m 2004 [2mms[22m
+[2m┃[22m Local    [36mhttp://localhost:4321/[39m
+[2m23:19:30[22m [32mwatching for file changes...[39m
+[2m23:19:32[22m [34m[200][39m /blog [2m68ms[22m
+[2m23:19:35[22m [34m[200][39m /blog [2m3ms[22m
+[2m23:19:35[22m [34m[200][39m /blog/como-cobrar-clientes-estados-unidos-desde-bolivia [2m24ms[22m
+[2m23:19:49[22m [34m[200][39m /blog/como-cobrar-clientes-estados-unidos-desde-bolivia [2m5ms[22m
+[2m23:20:02[22m [34m[200][39m /blog [2m3ms[22m
+[2m23:20:28[22m [34m[200][39m /blog/como-cobrar-clientes-estados-unidos-desde-bolivia [2m4ms[22m
+[2m23:20:28[22m [34m[200][39m /blog [2m3ms[22m
+[33m[1m23:20:46[22m [WARN] [router][39m A `getStaticPaths()` route pattern was matched, but no matching static path was found for requested path `/blog/como-cobrar-clientes-estados-unidos-desde-bolivia`.
+
+Possible dynamic routes being matched: src/pages/blog/[slug].astro.
+[2m23:20:46[22m [33m[404][39m /blog/como-cobrar-clientes-estados-unidos-desde-bolivia [2m2ms[22m
+[33m[1m23:58:30[22m [WARN] [router][39m A `getStaticPaths()` route pattern was matched, but no matching static path was found for requested path `/blog/como-cobrar-clientes-estados-unidos-desde-bolivia`.
+
+Possible dynamic routes being matched: src/pages/blog/[slug].astro.
+[2m23:58:30[22m [33m[404][39m /blog/como-cobrar-clientes-estados-unidos-desde-bolivia [2m1ms[22m
+[2m23:58:33[22m [34m[200][39m /blog [2m29ms[22m
+[2m23:58:46[22m [34m[200][39m /blog [2m3ms[22m
+[2m00:00:58[22m [34m[200][39m /blog [2m14ms[22m
+[2m00:07:35[22m [34m[glob-loader][39m Reloaded data from [32mwire-vs-ach-diferencias-empresas-bolivianas.md[39m
+[2m00:11:38[22m [34m[watch][39m /node_modules/@astrojs/tailwind/base.css
+[2m00:11:38[22m [34m[glob-loader][39m Reloaded data from [32mcomo-recibir-pagos-dolares-desde-extranjero-bolivia.md[39m
+[2m00:11:39[22m [34m[watch][39m /node_modules/@astrojs/tailwind/base.css
+[2m00:11:39[22m [34m[glob-loader][39m Reloaded data from [32mpagos-proveedores-internacionales-desde-bolivia.md[39m
+[2m00:11:40[22m [34m[watch][39m /node_modules/@astrojs/tailwind/base.css
+[2m00:11:40[22m [34m[glob-loader][39m Reloaded data from [32mvalidacion-b2b-como-verificar-empresas-extranjeras.md[39m
+[2m00:16:49[22m [34m[glob-loader][39m Reloaded data from [32mwire-vs-ach-diferencias-empresas-bolivianas.md[39m
+[2m00:17:02[22m [34m[watch][39m /node_modules/@astrojs/tailwind/base.css
+[2m00:17:02[22m [34m[content][39m Syncing content
+[2m00:17:02[22m [34m[content][39m Content config changed
+[2m00:17:02[22m [34m[content][39m Clearing content store
+[2m00:17:05[22m [34m[watch][39m src/pages/blog/[slug].astro
+[2m00:17:59[22m [34m[glob-loader][39m Reloaded data from [32mdesafios-recibir-pagos-internacionales-bolivia.md[39m
+[2m00:18:01[22m [34m[200][39m /blog [2m29ms[22m
+[2m00:18:28[22m [34m[watch][39m /node_modules/@astrojs/tailwind/base.css
+[2m00:18:33[22m [34m[watch][39m /node_modules/@astrojs/tailwind/base.css
+[2m00:24:53[22m [34m[glob-loader][39m Reloaded data from [32mcomo-pagar-proveedor-exterior-desde-bolivia.md[39m
+[2m00:24:54[22m [34m[content][39m Synced content
+[2m00:27:29[22m [34m[glob-loader][39m Reloaded data from [32mcomo-enviar-wire-proveedor-eeuu-desde-bolivia.md[39m
+[2m00:29:55[22m [34m[glob-loader][39m Reloaded data from [32mtrazabilidad-pagos-internacionales-proveedores-bolivia.md[39m
+[2m00:33:48[22m [34m[glob-loader][39m Reloaded data from [32mwire-vs-ach-diferencias-empresas-bolivianas.md[39m
+[2m00:37:51[22m [34m[watch][39m /node_modules/@astrojs/tailwind/base.css
+[2m00:37:51[22m [34m[watch][39m /node_modules/@astrojs/tailwind/base.css
+[2m00:37:51[22m [34m[watch][39m /node_modules/@astrojs/tailwind/base.css
+[2m00:37:51[22m [34m[watch][39m /node_modules/@astrojs/tailwind/base.css
+[2m00:37:51[22m [34m[glob-loader][39m Reloaded data from [32mcomo-enviar-wire-proveedor-eeuu-desde-bolivia.md[39m
+[2m00:37:51[22m [34m[glob-loader][39m Reloaded data from [32mtrazabilidad-pagos-internacionales-proveedores-bolivia.md[39m
+[2m00:37:51[22m [34m[glob-loader][39m Reloaded data from [32mcomo-pagar-proveedor-exterior-desde-bolivia.md[39m
+[2m00:37:51[22m [34m[glob-loader][39m Reloaded data from [32mdesafios-recibir-pagos-internacionales-bolivia.md[39m
+[2m00:37:51[22m [34m[glob-loader][39m Reloaded data from [32mcomo-cobrar-clientes-estados-unidos-desde-bolivia.md[39m
+[2m00:37:51[22m [34m[glob-loader][39m Reloaded data from [32mpagos-proveedores-internacionales-desde-bolivia.md[39m
+[2m00:37:51[22m [34m[glob-loader][39m Reloaded data from [32mvalidacion-b2b-como-verificar-empresas-extranjeras.md[39m
+[2m00:37:51[22m [34m[glob-loader][39m Reloaded data from [32mwire-vs-ach-diferencias-empresas-bolivianas.md[39m
+[2m00:37:51[22m [34m[glob-loader][39m Reloaded data from [32mcomo-recibir-pagos-dolares-desde-extranjero-bolivia.md[39m
