@@ -1,0 +1,511 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout
+  title="Guira - Trazabilidad documental para pagos y cobros internacionales"
+  description="Guira convierte cada operación internacional de tu empresa en un registro que tu contador puede defender. Plataforma para PYMEs bolivianas importadoras y exportadoras."
+  keywords="pagos internacionales Bolivia, cobros internacionales, trazabilidad documental, importación Bolivia, exportación Bolivia, compliance aduanero, respaldo contable"
+  canonicalUrl="https://www.guiracorp.com/pagos-cobros-internacionales"
+  activeLink="pagos-cobros-internacionales"
+  footerTheme="dark"
+>
+  <Fragment slot="head">
+    <link rel="preload" as="image" href="/assets/images/hero-ejecutivo.webp" type="image/webp" />
+  </Fragment>
+
+  <!-- HERO -->
+  <header class="relative pt-32 pb-20 overflow-hidden border-b border-slate-200 bg-white">
+    <div class="absolute inset-0">
+      <picture class="w-full h-full block">
+        <source srcset="/assets/images/hero-ejecutivo.webp" type="image/webp" fetchpriority="high">
+        <img src="/assets/images/hero-ejecutivo.jpg" alt="" class="w-full h-full object-cover object-center" aria-hidden="true" fetchpriority="high">
+      </picture>
+      <div class="absolute inset-0 bg-gradient-to-r from-white via-white/95 to-white/70"></div>
+    </div>
+
+    <div class="max-w-4xl mx-auto px-6 relative z-10 text-center">
+      <h1 class="text-3xl md:text-5xl lg:text-6xl font-extrabold tracking-tight mb-8 leading-tight text-slate-900">
+        Si mañana te llega una auditoría, ¿con qué documento defiendes ese pago o cobro al exterior?
+      </h1>
+      <p class="text-lg md:text-xl text-slate-600 mb-10 max-w-2xl mx-auto font-medium leading-relaxed">
+        Guira convierte cada operación internacional de tu empresa en un registro que tu contador puede defender.
+      </p>
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+        <a href="#formulario"
+          class="w-full sm:w-auto px-8 py-4 bg-slate-900 text-white rounded-xl font-bold text-lg hover:bg-slate-800 transition-all shadow-xl shadow-slate-900/20 hover:-translate-y-1 flex items-center justify-center gap-2">
+          Solicita información
+          <i data-lucide="arrow-right" class="w-5 h-5"></i>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- BLOQUE DE DOLOR -->
+  <section class="py-20 bg-white">
+    <div class="max-w-5xl mx-auto px-6">
+      <div class="text-center mb-14">
+        <span class="text-xs font-bold tracking-widest text-slate-400 uppercase mb-4 block">El riesgo</span>
+        <h2 class="text-2xl md:text-4xl font-extrabold mb-6 text-slate-900">
+          Un pago sin respaldo es un pago que no se puede defender
+        </h2>
+        <p class="text-slate-600 text-lg font-medium max-w-3xl mx-auto">
+          Sin importar qué tan rápido llegó, sin importar qué tan bien salió la operación. Si no tienes el documento, no tienes defensa.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-6 mb-10">
+        <div class="bg-rose-50 border border-rose-100 p-6 rounded-2xl">
+          <div class="flex gap-4 mb-4">
+            <div class="w-12 h-12 rounded-xl bg-rose-100 flex items-center justify-center shrink-0">
+              <i data-lucide="file-warning" class="w-6 h-6 text-rose-600"></i>
+            </div>
+            <div>
+              <h3 class="font-bold text-slate-900 mb-2">La observación del contador</h3>
+              <p class="text-slate-700 font-medium text-sm leading-relaxed">
+                A fin de año te pregunta por el respaldo de ese pago al exterior. El comprobante del banco no alcanza. Falta la conciliación con la factura, falta el origen del fondo.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-rose-50 border border-rose-100 p-6 rounded-2xl">
+          <div class="flex gap-4 mb-4">
+            <div class="w-12 h-12 rounded-xl bg-rose-100 flex items-center justify-center shrink-0">
+              <i data-lucide="alert-triangle" class="w-6 h-6 text-rose-600"></i>
+            </div>
+            <div>
+              <h3 class="font-bold text-slate-900 mb-2">SIN exige justificar tipo de cambio</h3>
+              <p class="text-slate-700 font-medium text-sm leading-relaxed">
+                Te piden el documento que demuestra cómo llegó el dinero y con qué tasa se operó. El comprobante simple no dice todo. Necesitas la cadena documental completa.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-rose-50 border border-rose-100 p-6 rounded-2xl">
+          <div class="flex gap-4 mb-4">
+            <div class="w-12 h-12 rounded-xl bg-rose-100 flex items-center justify-center shrink-0">
+              <i data-lucide="package-search" class="w-6 h-6 text-rose-600"></i>
+            </div>
+            <div>
+              <h3 class="font-bold text-slate-900 mb-2">Aduana exige validar medio de pago</h3>
+              <p class="text-slate-700 font-medium text-sm leading-relaxed">
+                Para tu declaración de importación requieren certificar el medio de pago utilizado. Sin el documento correcto, tu mercadería puede quedarse trabada en aduana.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-rose-50 border border-rose-100 p-6 rounded-2xl">
+          <div class="flex gap-4 mb-4">
+            <div class="w-12 h-12 rounded-xl bg-rose-100 flex items-center justify-center shrink-0">
+              <i data-lucide="help-circle" class="w-6 h-6 text-rose-600"></i>
+            </div>
+            <div>
+              <h3 class="font-bold text-slate-900 mb-2">Cobro sin origen justificado</h3>
+              <p class="text-slate-700 font-medium text-sm leading-relaxed">
+                Te pagó un cliente en el exterior, el dinero llegó, pero ¿cómo explicas de dónde salió? Sin trazabilidad del origen, tu contador no puede registrar el ingreso correctamente.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-slate-900 text-white p-8 rounded-2xl text-center">
+        <p class="text-xl font-bold mb-3">Un pago sin respaldo es un pago que no se puede defender</p>
+        <p class="text-slate-300 font-medium">Sin importar qué tan rápido llegó, sin importar qué tan bien salió la operación.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- BLOQUE DE AUTORIDAD -->
+  <section class="py-20 bg-slate-50 border-t border-slate-200">
+    <div class="max-w-5xl mx-auto px-6">
+      <div class="text-center mb-14">
+        <span class="text-xs font-bold tracking-widest text-slate-400 uppercase mb-4 block">Autoridad</span>
+        <h2 class="text-2xl md:text-4xl font-extrabold mb-6 text-slate-900">
+          Cada operación queda documentada
+        </h2>
+        <p class="text-slate-600 text-lg font-medium max-w-3xl mx-auto">
+          No prometemos velocidad. No prometemos el mejor precio. Prometemos que cuando tu contador abra el archivo, encuentre todo lo que necesita.
+        </p>
+      </div>
+
+      <div class="bg-white border border-slate-200 rounded-3xl p-8 md:p-12 shadow-lg">
+        <div class="grid md:grid-cols-3 gap-8 mb-10">
+          <div class="text-center">
+            <div class="w-16 h-16 rounded-2xl bg-slate-100 flex items-center justify-center mx-auto mb-4">
+              <i data-lucide="file-check-2" class="w-8 h-8 text-slate-700"></i>
+            </div>
+            <h3 class="font-bold text-slate-900 mb-2">Comprobante</h3>
+            <p class="text-slate-600 text-sm font-medium">Cada operación tiene su comprobante completo con todos los datos necesarios.</p>
+          </div>
+          <div class="text-center">
+            <div class="w-16 h-16 rounded-2xl bg-slate-100 flex items-center justify-center mx-auto mb-4">
+              <i data-lucide="scroll-text" class="w-8 h-8 text-slate-700"></i>
+            </div>
+            <h3 class="font-bold text-slate-900 mb-2">Conciliación con factura</h3>
+            <p class="text-slate-600 text-sm font-medium">El pago o cobro se vincula directamente con la factura comercial correspondiente.</p>
+          </div>
+          <div class="text-center">
+            <div class="w-16 h-16 rounded-2xl bg-slate-100 flex items-center justify-center mx-auto mb-4">
+              <i data-lucide="route" class="w-8 h-8 text-slate-700"></i>
+            </div>
+            <h3 class="font-bold text-slate-900 mb-2">Origen y destino</h3>
+            <p class="text-slate-600 text-sm font-medium">Queda registrado el origen del fondo y su destino final, con trazabilidad completa.</p>
+          </div>
+        </div>
+
+        <div class="bg-slate-50 border border-slate-200 rounded-2xl p-6 text-center">
+          <p class="text-slate-700 font-medium text-lg">
+            Diseñado para que tu contador y tu auditor tengan lo que necesitan sin pedírtelo dos veces.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOLUCIÓN (VALUE STACK) -->
+  <section class="py-20 bg-white border-t border-slate-200">
+    <div class="max-w-5xl mx-auto px-6">
+      <div class="text-center mb-14">
+        <span class="text-xs font-bold tracking-widest text-slate-400 uppercase mb-4 block">Solución</span>
+        <h2 class="text-2xl md:text-4xl font-extrabold mb-6 text-slate-900">
+          Lo que incluye Guira
+        </h2>
+      </div>
+
+      <div class="space-y-4">
+        <div class="bg-emerald-50 border border-emerald-100 rounded-2xl p-6 flex items-start gap-4">
+          <div class="w-10 h-10 rounded-xl bg-emerald-100 flex items-center justify-center shrink-0">
+            <i data-lucide="arrow-down-circle" class="w-5 h-5 text-emerald-600"></i>
+          </div>
+          <div>
+            <h3 class="font-bold text-slate-900 mb-1">Pago internacional con respaldo documental completo</h3>
+            <p class="text-slate-600 font-medium text-sm">Cada pago que haces queda registrado con el comprobante, la conciliación y la referencia que tu contador necesita.</p>
+          </div>
+        </div>
+
+        <div class="bg-emerald-50 border border-emerald-100 rounded-2xl p-6 flex items-start gap-4">
+          <div class="w-10 h-10 rounded-xl bg-emerald-100 flex items-center justify-center shrink-0">
+            <i data-lucide="arrow-up-circle" class="w-5 h-5 text-emerald-600"></i>
+          </div>
+          <div>
+            <h3 class="font-bold text-slate-900 mb-1">Cobro internacional con el mismo respaldo</h3>
+            <p class="text-slate-600 font-medium text-sm">Cuando te pagan, queda documentado el origen del fondo, el monto exacto y la referencia a tu factura.</p>
+          </div>
+        </div>
+
+        <div class="bg-emerald-50 border border-emerald-100 rounded-2xl p-6 flex items-start gap-4">
+          <div class="w-10 h-10 rounded-xl bg-emerald-100 flex items-center justify-center shrink-0">
+            <i data-lucide="us-dollar" class="w-5 h-5 text-emerald-600"></i>
+          </div>
+          <div>
+            <h3 class="font-bold text-slate-900 mb-1">Cuenta operativa en Estados Unidos para el corredor USD</h3>
+            <p class="text-slate-600 font-medium text-sm">En el corredor de Estados Unidos, la operación puede salir a nombre de tu empresa. Único corredor con esta promesa confirmada.</p>
+          </div>
+        </div>
+
+        <div class="bg-emerald-50 border border-emerald-100 rounded-2xl p-6 flex items-start gap-4">
+          <div class="w-10 h-10 rounded-xl bg-emerald-100 flex items-center justify-center shrink-0">
+            <i data-lucide="eye" class="w-5 h-5 text-emerald-600"></i>
+          </div>
+          <div>
+            <h3 class="font-bold text-slate-900 mb-1">Revisión manual de cada operación antes de ejecutarse</h3>
+            <p class="text-slate-600 font-medium text-sm">No es automatismo ciego. Un humano revisa cada operación antes de que se ejecute. Es más lento, pero es más seguro.</p>
+          </div>
+        </div>
+
+        <div class="bg-emerald-50 border border-emerald-100 rounded-2xl p-6 flex items-start gap-4">
+          <div class="w-10 h-10 rounded-xl bg-emerald-100 flex items-center justify-center shrink-0">
+            <i data-lucide="file-text" class="w-5 h-5 text-emerald-600"></i>
+          </div>
+          <div>
+            <h3 class="font-bold text-slate-900 mb-1">Conciliación lista para aduana, SIN o auditoría</h3>
+            <p class="text-slate-600 font-medium text-sm">Cuando te pidan el documento, ya lo tienes. Formateado, completo, defendible.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CORREDORES -->
+  <section class="py-20 bg-slate-50 border-t border-slate-200">
+    <div class="max-w-5xl mx-auto px-6">
+      <div class="text-center mb-14">
+        <span class="text-xs font-bold tracking-widest text-slate-400 uppercase mb-4 block">Corredores disponibles</span>
+        <h2 class="text-2xl md:text-4xl font-extrabold mb-6 text-slate-900">
+          Opera en los corredores que necesites
+        </h2>
+      </div>
+
+      <div class="grid grid-cols-2 md:grid-cols-5 gap-4">
+        <div class="bg-white border border-slate-200 rounded-xl p-4 text-center">
+          <p class="font-bold text-slate-900">Estados Unidos</p>
+          <p class="text-xs text-slate-500 font-medium mt-1">USD</p>
+        </div>
+        <div class="bg-white border border-slate-200 rounded-xl p-4 text-center">
+          <p class="font-bold text-slate-900">Colombia</p>
+          <p class="text-xs text-slate-500 font-medium mt-1">COP</p>
+        </div>
+        <div class="bg-white border border-slate-200 rounded-xl p-4 text-center">
+          <p class="font-bold text-slate-900">Europa</p>
+          <p class="text-xs text-slate-500 font-medium mt-1">EUR</p>
+        </div>
+        <div class="bg-white border border-slate-200 rounded-xl p-4 text-center">
+          <p class="font-bold text-slate-900">México</p>
+          <p class="text-xs text-slate-500 font-medium mt-1">MXN</p>
+        </div>
+        <div class="bg-white border border-slate-200 rounded-xl p-4 text-center">
+          <p class="font-bold text-slate-900">Brasil</p>
+          <p class="text-xs text-slate-500 font-medium mt-1">BRL</p>
+        </div>
+      </div>
+
+      <p class="text-center text-slate-600 font-medium text-sm mt-6">
+        Solo en el corredor de Estados Unidos está confirmado que la operación puede salir a nombre de tu empresa.
+      </p>
+    </div>
+  </section>
+
+  <!-- CÓMO FUNCIONA -->
+  <section class="py-20 bg-white border-t border-slate-200">
+    <div class="max-w-5xl mx-auto px-6">
+      <div class="text-center mb-14">
+        <span class="text-xs font-bold tracking-widest text-slate-400 uppercase mb-4 block">Proceso</span>
+        <h2 class="text-2xl md:text-4xl font-extrabold mb-6 text-slate-900">
+          Cómo empezar
+        </h2>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-8">
+        <div class="flex gap-4">
+          <div class="w-12 h-12 rounded-full bg-slate-900 text-white flex items-center justify-center font-bold text-lg shrink-0">1</div>
+          <div>
+            <h3 class="font-bold text-slate-900 mb-2 text-lg">Completas el formulario</h3>
+            <p class="text-slate-600 font-medium">Ingresas los datos de tu empresa y el corredor que necesitas.</p>
+          </div>
+        </div>
+
+        <div class="flex gap-4">
+          <div class="w-12 h-12 rounded-full bg-slate-900 text-white flex items-center justify-center font-bold text-lg shrink-0">2</div>
+          <div>
+            <h3 class="font-bold text-slate-900 mb-2 text-lg">Guira evalúa tu operación</h3>
+            <p class="text-slate-600 font-medium">Revisamos tu perfil y te contactamos para continuar el proceso.</p>
+          </div>
+        </div>
+
+        <div class="flex gap-4">
+          <div class="w-12 h-12 rounded-full bg-slate-900 text-white flex items-center justify-center font-bold text-lg shrink-0">3</div>
+          <div>
+            <h3 class="font-bold text-slate-900 mb-2 text-lg">Haces tu primera operación acompañado</h3>
+            <p class="text-slate-600 font-medium">No te dejamos solo. Te guiamos en la primera transacción.</p>
+          </div>
+        </div>
+
+        <div class="flex gap-4">
+          <div class="w-12 h-12 rounded-full bg-slate-900 text-white flex items-center justify-center font-bold text-lg shrink-0">4</div>
+          <div>
+            <h3 class="font-bold text-slate-900 mb-2 text-lg">Cada operación queda documentada</h3>
+            <p class="text-slate-600 font-medium">Desde el primer día, cada pago o cobro tiene su respaldo completo.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- OBJECIONES Y MIEDOS -->
+  <section class="py-20 bg-slate-50 border-t border-slate-200">
+    <div class="max-w-5xl mx-auto px-6">
+      <div class="text-center mb-14">
+        <span class="text-xs font-bold tracking-widest text-slate-400 uppercase mb-4 block">Objeciones</span>
+        <h2 class="text-2xl md:text-4xl font-extrabold mb-6 text-slate-900">
+          Preguntas comunes
+        </h2>
+      </div>
+
+      <div class="space-y-4">
+        <div class="bg-white border border-slate-200 rounded-xl overflow-hidden">
+          <button class="faq-button w-full px-6 py-5 flex items-center justify-between text-left font-bold text-slate-900 focus:outline-none" aria-expanded="false">
+            <span>¿Esto es cripto?</span>
+            <i data-lucide="chevron-down" class="faq-icon w-5 h-5 text-slate-500 transition-transform duration-300"></i>
+          </button>
+          <div class="faq-content hidden px-6 pb-5 text-slate-600 font-medium leading-relaxed">
+            No. Guira opera con infraestructura licenciada en Estados Unidos. No cripto, no volatilidad, no complejidad innecesaria. Es una plataforma para operaciones internacionales tradicionales, con respaldo documental.
+          </div>
+        </div>
+
+        <div class="bg-white border border-slate-200 rounded-xl overflow-hidden">
+          <button class="faq-button w-full px-6 py-5 flex items-center justify-between text-left font-bold text-slate-900 focus:outline-none" aria-expanded="false">
+            <span>¿Es tan lento como el banco?</span>
+            <i data-lucide="chevron-down" class="faq-icon w-5 h-5 text-slate-500 transition-transform duration-300"></i>
+          </button>
+          <div class="faq-content hidden px-6 pb-5 text-slate-600 font-medium leading-relaxed">
+            No prometemos velocidad porque no controlamos todos los eslabones de la cadena. Lo que prometemos es acompañamiento: cada operación es revisada, documentada y rastreada. Es más cuidado, no más lento.
+          </div>
+        </div>
+
+        <div class="bg-white border border-slate-200 rounded-xl overflow-hidden">
+          <button class="faq-button w-full px-6 py-5 flex items-center justify-between text-left font-bold text-slate-900 focus:outline-none" aria-expanded="false">
+            <span>¿Y si mi contador no lo aprueba?</span>
+            <i data-lucide="chevron-down" class="faq-icon w-5 h-5 text-slate-500 transition-transform duration-300"></i>
+          </button>
+          <div class="faq-content hidden px-6 pb-5 text-slate-600 font-medium leading-relaxed">
+            Ofrecemos material descargable para que tu contador revise cómo funciona la plataforma. La trazabilidad documental es exactamente lo que los contadores necesitan para aprobar una operación internacional.
+          </div>
+        </div>
+
+        <div class="bg-white border border-slate-200 rounded-xl overflow-hidden">
+          <button class="faq-button w-full px-6 py-5 flex items-center justify-between text-left font-bold text-slate-900 focus:outline-none" aria-expanded="false">
+            <span>¿Qué corredores tienen disponibles?</span>
+            <i data-lucide="chevron-down" class="faq-icon w-5 h-5 text-slate-500 transition-transform duration-300"></i>
+          </button>
+          <div class="faq-content hidden px-6 pb-5 text-slate-600 font-medium leading-relaxed">
+            Operamos en los corredores de Estados Unidos (USD), Colombia, Europa, México y Brasil. Solo en el corredor de Estados Unidos está confirmado que la operación puede salir a nombre de tu empresa.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA FINAL + FORMULARIO -->
+  <section id="formulario" class="py-20 bg-white border-t border-slate-200">
+    <div class="max-w-3xl mx-auto px-6">
+      <div class="text-center mb-12">
+        <h2 class="text-2xl md:text-4xl font-extrabold mb-6 text-slate-900">
+          Si mañana te llega una auditoría, ¿con qué documento defiendes ese pago o cobro al exterior?
+        </h2>
+        <p class="text-slate-600 text-lg font-medium">
+          Completa el formulario. Evaluamos tu operación y te contactamos.
+        </p>
+      </div>
+
+      <form id="qualification-form" class="bg-slate-50 border border-slate-200 rounded-2xl p-8">
+        <div class="space-y-6">
+          <div>
+            <label for="empresa" class="block text-sm font-bold text-slate-900 mb-2">Nombre de la empresa *</label>
+            <input
+              type="text"
+              id="empresa"
+              name="empresa"
+              required
+              class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:border-slate-500 focus:ring-2 focus:ring-slate-200 outline-none transition-all"
+              placeholder="Ej: Importadora Boliviana SRL">
+          </div>
+
+          <div>
+            <label for="corredor" class="block text-sm font-bold text-slate-900 mb-2">Corredor de interés *</label>
+            <select
+              id="corredor"
+              name="corredor"
+              required
+              class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:border-slate-500 focus:ring-2 focus:ring-slate-200 outline-none transition-all bg-white">
+              <option value="">Selecciona un corredor</option>
+              <option value="estados-unidos">Estados Unidos (USD)</option>
+              <option value="colombia">Colombia</option>
+              <option value="europa">Europa</option>
+              <option value="mexico">México</option>
+              <option value="brasil">Brasil</option>
+            </select>
+          </div>
+
+          <div>
+            <label for="volumen" class="block text-sm font-bold text-slate-900 mb-2">Volumen mensual aproximado (USD) *</label>
+            <select
+              id="volumen"
+              name="volumen"
+              required
+              class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:border-slate-500 focus:ring-2 focus:ring-slate-200 outline-none transition-all bg-white">
+              <option value="">Selecciona un rango</option>
+              <option value="menos-5000">Menos de $5,000</option>
+              <option value="5000-20000">$5,000 - $20,000</option>
+              <option value="20000-50000">$20,000 - $50,000</option>
+              <option value="50000-100000">$50,000 - $100,000</option>
+              <option value="mas-100000">Más de $100,000</option>
+            </select>
+          </div>
+
+          <div>
+            <label for="contacto" class="block text-sm font-bold text-slate-900 mb-2">Teléfono o WhatsApp *</label>
+            <input
+              type="tel"
+              id="contacto"
+              name="contacto"
+              required
+              class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:border-slate-500 focus:ring-2 focus:ring-slate-200 outline-none transition-all"
+              placeholder="Ej: +591 70000000">
+          </div>
+
+          <button
+            type="submit"
+            class="w-full px-8 py-4 bg-slate-900 text-white rounded-xl font-bold text-lg hover:bg-slate-800 transition-all shadow-xl shadow-slate-900/20 hover:-translate-y-1">
+            Enviar solicitud
+          </button>
+
+          <p class="text-center text-slate-500 text-sm font-medium">
+            Guira evalúa cada empresa antes de incorporarla a la plataforma. No es un proceso abierto a cualquiera.
+          </p>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <!-- FOOTER INSTITUCIONAL -->
+  <footer class="bg-slate-900 text-white py-12 border-t border-slate-800">
+    <div class="max-w-5xl mx-auto px-6">
+      <div class="text-center space-y-4">
+        <p class="text-slate-300 font-medium leading-relaxed">
+          Guira es una plataforma operada por Guira System LLC (Estados Unidos). En Bolivia, Guiraglobal SRL brinda asesoría comercial y acompañamiento operativo para el uso de la plataforma.
+        </p>
+        <div class="flex items-center justify-center gap-6 pt-4">
+          <a href="/terminos" class="text-slate-400 hover:text-white text-sm font-medium transition-colors">Términos de uso</a>
+          <a href="/privacidad" class="text-slate-400 hover:text-white text-sm font-medium transition-colors">Política de privacidad</a>
+        </div>
+        <p class="text-slate-500 text-sm">© 2024 Guira. Todos los derechos reservados.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Script para FAQ y formulario -->
+  <script is:inline>
+    document.addEventListener('DOMContentLoaded', function() {
+      // FAQ functionality
+      const faqButtons = document.querySelectorAll('.faq-button');
+      faqButtons.forEach(button => {
+        button.addEventListener('click', function() {
+          const content = this.nextElementSibling;
+          const icon = this.querySelector('.faq-icon');
+          const isExpanded = this.getAttribute('aria-expanded') === 'true';
+
+          // Close all other FAQs
+          faqButtons.forEach(otherButton => {
+            if (otherButton !== button) {
+              otherButton.setAttribute('aria-expanded', 'false');
+              otherButton.nextElementSibling.classList.add('hidden');
+              otherButton.querySelector('.faq-icon').style.transform = 'rotate(0deg)';
+            }
+          });
+
+          // Toggle current FAQ
+          this.setAttribute('aria-expanded', !isExpanded);
+          content.classList.toggle('hidden');
+          icon.style.transform = isExpanded ? 'rotate(0deg)' : 'rotate(180deg)';
+        });
+      });
+
+      // Form submission (demo - replace with actual form handling)
+      const form = document.getElementById('qualification-form');
+      form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        const formData = new FormData(form);
+        const data = Object.fromEntries(formData);
+        console.log('Form submitted:', data);
+
+        // Show success message (replace with actual submission logic)
+        alert('Gracias. Hemos recibido tu información. Te contactaremos pronto.');
+        form.reset();
+      });
+    });
+  </script>
+</Layout>
