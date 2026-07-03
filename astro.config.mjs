@@ -7,6 +7,6 @@ export default defineConfig({
     configFile: './tailwind.config.mjs',
   })],
   build: {
-    format: 'file',
+    format: 'directory',
   }
 });
