@@ -14,3 +14,6 @@ https://guiracorp.com/* https://www.guiracorp.com/:splat 301!
 /contacto.html /contacto 301!
 /privacidad.html /privacidad 301!
 /terminos.html /terminos 301!
+
+# Return custom 404 page with 404 HTTP status for any non-existent page
+/* /404.html 404
