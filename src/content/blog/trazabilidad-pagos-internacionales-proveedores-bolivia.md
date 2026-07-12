@@ -9,8 +9,6 @@ category: "Pagos Internacionales"
 tags: ["trazabilidad de pagos internacionales", "seguimiento de pagos internacionales", "gestión de pagos internacionales", "pagos internacionales a proveedores"]
 readingTime: 5
 featured: false
-image: "/assets/images/blog/trazabilidad-pagos-internacionales-proveedores-hero.webp"
-imageAlt: "Responsable financiero revisando un panel con operaciones internacionales, documentos y estados de pago en Guira"
 keywords: "trazabilidad de pagos internacionales, seguimiento de pagos internacionales, gestión de pagos internacionales, pagos internacionales a proveedores, control de pagos internacionales, documentación de pagos internacionales, pagos internacionales a proveedores desde Bolivia, trazabilidad de operaciones internacionales, seguimiento de Wire Transfer, gestión documental internacional, pagos a proveedores internacionales"
 excerpt: "Cuando una empresa realiza pagos internacionales de forma recurrente, la gestión de la información que los acompaña es clave. Descubre cómo mejorar la trazabilidad y reducir la carga administrativa."
 ---
@@ -18,8 +16,6 @@ excerpt: "Cuando una empresa realiza pagos internacionales de forma recurrente, 
 Cuando una empresa realiza pagos internacionales de forma recurrente, uno de los mayores desafíos no suele ser la transferencia en sí, sino la gestión de la información que la acompaña. Documentos distribuidos, múltiples correos electrónicos y falta de visibilidad pueden dificultar el seguimiento de las operaciones y aumentar la carga administrativa.
 
 Mejorar la trazabilidad permite conocer el estado de cada pago, facilitar la coordinación entre áreas y mantener información organizada para futuras consultas y auditorías.
-
-![Responsable financiero revisando un panel con operaciones internacionales, documentos y estados de pago en la plataforma Guira](/assets/images/blog/trazabilidad-pagos-internacionales-proveedores-hero.webp)
 
 ## ¿Qué significa la trazabilidad en los pagos internacionales?
 

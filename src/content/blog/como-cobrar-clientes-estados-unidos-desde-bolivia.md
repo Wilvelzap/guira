@@ -8,8 +8,8 @@ category: "Pagos Internacionales"
 tags: ["cobros internacionales", "Estados Unidos", "Bolivia", "USD", "ACH", "Wire Transfer", "trazabilidad"]
 readingTime: 7
 featured: false
-image: "/assets/images/blog/cobrar-clientes-estados-unidos-bolivia-hero.webp"
-imageAlt: "Equipo financiero boliviano en videollamada con una empresa de Estados Unidos revisando documentación de cobro en dólares"
+image: "/assets/images/blog/recibir-pagos-dolares-extranjero-bolivia.webp"
+imageAlt: "Equipo financiero revisando una confirmación de recepción de pago internacional en Guira"
 keywords: "cómo cobrar clientes de Estados Unidos desde Bolivia, cobrar dólares desde EE. UU. empresa boliviana, recibir pagos USD Bolivia empresa, pagos internacionales Bolivia, recepción de pagos USD Bolivia, cobrar clientes americanos desde Bolivia"
 excerpt: "Cobrar a empresas de Estados Unidos desde Bolivia requiere más que enviar datos bancarios: también implica elegir el método de pago correcto, ordenar documentación y mantener trazabilidad."
 ---

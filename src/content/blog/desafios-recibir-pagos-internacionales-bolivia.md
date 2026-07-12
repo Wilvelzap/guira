@@ -9,8 +9,8 @@ category: "Pagos Internacionales"
 tags: ["pagos internacionales Bolivia", "recibir pagos internacionales empresa boliviana", "cobros internacionales empresas", "conciliación de pagos internacionales", "trazabilidad de pagos internacionales"]
 readingTime: 4
 featured: false
-image: "/assets/images/blog/desafios-recibir-pagos-internacionales-bolivia-hero.webp"
-imageAlt: "Responsable financiero revisando un panel con pagos internacionales y documentos digitales"
+image: "/assets/images/blog/equipo-finanzas-dashboard-pagos-internacionales.webp"
+imageAlt: "Equipo financiero revisando un dashboard de pagos internacionales y documentación operativa"
 keywords: "desafíos al recibir pagos internacionales, pagos internacionales Bolivia, recibir pagos internacionales empresa boliviana, cobros internacionales empresas, conciliación de pagos internacionales, trazabilidad de pagos internacionales, gestión de pagos internacionales, documentación de pagos internacionales, control de pagos internacionales, operaciones internacionales empresas, recepción de pagos internacionales"
 excerpt: "Recibir un pago internacional es solo una parte del proceso. Para empresas bolivianas, la gestión posterior suele presentar desafíos administrativos y operativos que afectan la organización y el seguimiento de las operaciones."
 ---

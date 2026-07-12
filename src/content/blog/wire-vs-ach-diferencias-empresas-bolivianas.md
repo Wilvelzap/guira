@@ -8,8 +8,8 @@ category: "Pagos Internacionales"
 tags: ["Wire Transfer", "ACH", "Bolivia", "pagos internacionales", "Estados Unidos", "cobros internacionales", "transferencias"]
 readingTime: 4
 featured: false
-image: "/assets/images/blog/transferencia-internacional-documentos-usd.webp"
-imageAlt: "Responsable financiero comparando rutas de pago Wire Transfer y ACH en un dashboard corporativo"
+image: "/assets/images/blog/wire-vs-ach-empresas-bolivianas.webp"
+imageAlt: "Responsable financiero comparando métodos de pago Wire Transfer y ACH para cobros desde Estados Unidos"
 keywords: "Wire vs ACH, diferencias entre Wire y ACH, Wire Transfer Bolivia, ACH Estados Unidos, recibir pagos desde Estados Unidos, pagos internacionales Bolivia, cobros internacionales empresas, transferencias internacionales empresas, Wire Transfer para empresas bolivianas, ACH para empresas bolivianas, pagos internacionales desde EE. UU."
 excerpt: "Wire Transfer y ACH son los dos métodos más comunes con que empresas de EE.UU. pagan a sus proveedores. Conocer sus diferencias ayuda a preparar mejor tu empresa para recibirlos."
 ---
@@ -68,6 +68,8 @@ Una empresa en EE.UU. usa ACH cuando paga a otra entidad con cuenta bancaria en 
 | Monto típico | Alto (corporativo) | Variable |
 | Trazabilidad | Alta (código SWIFT/UETR) | Media (número de rastreo ACH) |
 | Disponibilidad para Bolivia | Directa (con cuenta en banco boliviano) | Requiere cuenta o estructura en EE.UU. |
+
+![Profesional analizando una comparación entre pagos Wire Transfer y ACH](/assets/images/blog/wire-vs-ach-empresas-bolivianas.webp)
 
 ## ¿Cuál conviene para tu empresa boliviana?
 

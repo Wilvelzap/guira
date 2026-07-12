@@ -3,15 +3,15 @@ import Layout from '../layouts/Layout.astro';
 ---
 
 <Layout
-  title="Guira - Pagos y cobros internacionales con trazabilidad documental"
-  description="Opera en USD, recibe y envía pagos internacionales con trazabilidad completa. Plataforma para PYMEs bolivianas importadoras y exportadoras."
-  keywords="pagos internacionales Bolivia, cobros internacionales, trazabilidad documental, importación Bolivia, exportación Bolivia, plataforma de pagos"
+  title="Recepción de pagos USD para empresas bolivianas | Guira"
+  description="Gestiona cobros internacionales desde Estados Unidos con mayor trazabilidad, documentación centralizada y visibilidad operativa para tu empresa en Bolivia."
+  keywords="recepción de pagos USD Bolivia, cobrar clientes de Estados Unidos desde Bolivia, cobros internacionales empresas, Wire vs ACH, pagos internacionales Bolivia, trazabilidad de pagos internacionales"
   canonicalUrl="https://www.guiracorp.com/pagos-cobros-internacionales"
   activeLink="pagos-cobros-internacionales"
   footerTheme="dark"
 >
   <Fragment slot="head">
-    <link rel="preload" as="image" href="/assets/images/hero-ejecutivo.webp" type="image/webp" />
+    <link rel="preload" as="image" href="/assets/images/plataforma-dashboard-macbook.webp" type="image/webp" />
     <style is:inline>
       /* Ocultar botón de WhatsApp global en esta página, usamos el personalizado más grande */
       body > a[href*="wa.me"][class*="fixed"] {
@@ -28,36 +28,37 @@ import Layout from '../layouts/Layout.astro';
       <div class="grid lg:grid-cols-2 gap-12 items-center">
         <div class="text-left">
           <h1 class="text-3xl md:text-5xl lg:text-6xl font-extrabold tracking-tight mb-6 leading-tight text-white">
-            Pagos y cobros internacionales que tu contador puede defender
+            Recepción de pagos USD para empresas bolivianas
           </h1>
           <p class="text-lg md:text-xl text-slate-300 mb-8 max-w-xl font-medium leading-relaxed">
-            Cada operación queda documentada con comprobante, conciliación y trazabilidad. Auditoría, aduana y SIN: ya tienes el documento listo.
+            Cobra clientes de Estados Unidos con información centralizada, seguimiento por operación y documentación lista para tu equipo administrativo, financiero y contable.
           </p>
           <div class="flex flex-col sm:flex-row items-center gap-4">
-            <a href="https://app.guiracorp.com"
+            <a href="https://wa.me/59175245845?text=Hola,%20quiero%20recibir%20pagos%20USD%20desde%20Estados%20Unidos%20con%20Guira"
+              target="_blank" rel="noopener noreferrer"
               class="w-full sm:w-auto px-8 py-4 bg-guira-teal text-white rounded-xl font-bold text-lg hover:bg-guira-teal/80 transition-all shadow-xl shadow-guira-teal/30 hover:-translate-y-1 flex items-center justify-center gap-2">
-              Crear cuenta gratis
+              <i data-lucide="message-circle" class="w-5 h-5"></i>
+              Hablar con un especialista
+            </a>
+            <a href="/demo"
+              class="w-full sm:w-auto px-8 py-4 bg-slate-700 text-white rounded-xl font-bold text-lg hover:bg-slate-600 transition-all shadow-xl shadow-slate-700/30 hover:-translate-y-1 flex items-center justify-center gap-2">
+              Solicitar demostración
               <i data-lucide="arrow-right" class="w-5 h-5"></i>
             </a>
-            <a href="https://wa.me/59175245845?text=Hola,%20me%20interesa%20la%20plataforma%20Guira"
-              target="_blank"
-              class="w-full sm:w-auto px-8 py-4 bg-slate-700 text-white rounded-xl font-bold text-lg hover:bg-slate-600 transition-all shadow-xl shadow-slate-700/30 hover:-translate-y-1 flex items-center justify-center gap-2">
-              <i data-lucide="message-circle" class="w-5 h-5"></i>
-              Hablar por WhatsApp
-            </a>
           </div>
-          <p class="text-slate-400 text-sm mt-4 font-medium">Sin compromiso. Te respondemos en minutos.</p>
+          <p class="text-slate-400 text-sm mt-4 font-medium">Te orientamos según tu tipo de cliente, monto y documentación disponible.</p>
         </div>
 
         <!-- Mockup de la plataforma -->
         <div class="relative">
           <div class="absolute inset-0 bg-gradient-to-r from-guira-teal/20 to-guira-cyan/20 blur-3xl rounded-full"></div>
-          <img src="/assets/images/producto-dashboard.webp"
+          <img src="/assets/images/plataforma-dashboard-macbook.webp"
             alt="Plataforma Guira - Dashboard con saldo, operaciones y trazabilidad"
             class="relative rounded-2xl shadow-2xl border border-slate-700 w-full">
-          <div class="absolute -bottom-4 -right-4 bg-guira-teal text-white px-4 py-2 rounded-xl font-bold text-sm animate-bounce">
+          <a href="https://app.guiracorp.com" target="_blank" rel="noopener noreferrer"
+            class="absolute -bottom-4 -right-4 bg-guira-teal text-white px-4 py-2 rounded-xl font-bold text-sm animate-bounce hover:bg-guira-teal/80 transition-all">
             Plataforma en vivo
-          </div>
+          </a>
         </div>
       </div>
     </div>
@@ -68,20 +69,20 @@ import Layout from '../layouts/Layout.astro';
     <div class="max-w-6xl mx-auto px-6">
       <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center text-white">
         <div>
-          <p class="text-3xl md:text-4xl font-extrabold mb-1">5+</p>
-          <p class="text-guira-cyan text-sm font-medium">Corredores disponibles</p>
+          <p class="text-3xl md:text-4xl font-extrabold mb-1">USD</p>
+          <p class="text-guira-cyan text-sm font-medium">Cobros desde EE. UU.</p>
         </div>
         <div>
-          <p class="text-3xl md:text-4xl font-extrabold mb-1">100%</p>
-          <p class="text-guira-cyan text-sm font-medium">Operaciones documentadas</p>
+          <p class="text-3xl md:text-4xl font-extrabold mb-1">Wire</p>
+          <p class="text-guira-cyan text-sm font-medium">Pagos corporativos</p>
         </div>
         <div>
-          <p class="text-3xl md:text-4xl font-extrabold mb-1">Manual</p>
-          <p class="text-guira-cyan text-sm font-medium">Revisión por humano</p>
+          <p class="text-3xl md:text-4xl font-extrabold mb-1">ACH</p>
+          <p class="text-guira-cyan text-sm font-medium">Según estructura</p>
         </div>
         <div>
-          <p class="text-3xl md:text-4xl font-extrabold mb-1">USD+EUR</p>
-          <p class="text-guira-cyan text-sm font-medium">Cuentas operativas</p>
+          <p class="text-3xl md:text-4xl font-extrabold mb-1">1 lugar</p>
+          <p class="text-guira-cyan text-sm font-medium">Documentos y estado</p>
         </div>
       </div>
     </div>
@@ -92,51 +93,112 @@ import Layout from '../layouts/Layout.astro';
     <div class="max-w-5xl mx-auto px-6">
       <div class="text-center mb-12">
         <h2 class="text-2xl md:text-4xl font-extrabold mb-6 text-slate-900">
-          ¿Te pasa esto?
+          Recibir el pago es solo una parte del proceso
         </h2>
+        <p class="text-slate-600 text-lg font-medium max-w-3xl mx-auto">
+          Cuando cobras a clientes del exterior, tu empresa también debe identificar el origen del fondo, relacionarlo con la factura y conservar respaldo para controles internos.
+        </p>
       </div>
 
       <div class="grid md:grid-cols-2 gap-6 mb-8">
         <div class="bg-rose-50 border-l-4 border-rose-500 p-6 rounded-r-xl">
           <p class="text-slate-700 font-medium leading-relaxed">
-            <strong class="text-rose-600">El contador te pregunta</strong> por el respaldo de ese pago al exterior y el comprobante del banco no alcanza.
+            <strong class="text-rose-600">No sabes qué cliente pagó</strong> porque la referencia bancaria llega incompleta o con datos del intermediario.
           </p>
         </div>
         <div class="bg-rose-50 border-l-4 border-rose-500 p-6 rounded-r-xl">
           <p class="text-slate-700 font-medium leading-relaxed">
-            <strong class="text-rose-600">SIN te exige</strong> justificar tipo de cambio y no tienes el documento que lo demuestra.
+            <strong class="text-rose-600">La documentación queda dispersa</strong> entre correos, carpetas y mensajes de distintas áreas.
           </p>
         </div>
         <div class="bg-rose-50 border-l-4 border-rose-500 p-6 rounded-r-xl">
           <p class="text-slate-700 font-medium leading-relaxed">
-            <strong class="text-rose-600">Aduana traba tu mercadería</strong> porque no puedes certificar el medio de pago de la importación.
+            <strong class="text-rose-600">El seguimiento depende de mensajes</strong> y nadie ve con claridad si la operación está pendiente, en revisión o completada.
           </p>
         </div>
         <div class="bg-rose-50 border-l-4 border-rose-500 p-6 rounded-r-xl">
           <p class="text-slate-700 font-medium leading-relaxed">
-            <strong class="text-rose-600">Te pagaron desde el exterior</strong> pero no puedes justificar el origen del fondo.
+            <strong class="text-rose-600">Conciliar toma demasiado tiempo</strong> porque pago, factura, contrato y comprobante no viven en el mismo flujo.
           </p>
         </div>
       </div>
 
       <div class="text-center">
-        <a href="https://app.guiracorp.com" class="inline-flex items-center gap-2 px-8 py-4 bg-slate-900 text-white rounded-xl font-bold text-lg hover:bg-slate-800 transition-all">
-          Solucionar esto ahora
+        <a href="https://wa.me/59175245845?text=Hola,%20quiero%20ordenar%20la%20recepci%C3%B3n%20de%20pagos%20internacionales%20de%20mi%20empresa" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-8 py-4 bg-slate-900 text-white rounded-xl font-bold text-lg hover:bg-slate-800 transition-all">
+          Resolver mis dudas por WhatsApp
           <i data-lucide="arrow-right" class="w-5 h-5"></i>
         </a>
       </div>
     </div>
   </section>
 
-  <!-- CÓMO FUNCIONA LA PLATAFORMA -->
+  <!-- OPCIONES DE COBRO -->
   <section class="py-20 bg-slate-50">
     <div class="max-w-6xl mx-auto px-6">
       <div class="text-center mb-14">
         <h2 class="text-2xl md:text-4xl font-extrabold mb-6 text-slate-900">
-          Así funciona Guira
+          Opciones para cobrar clientes de Estados Unidos desde Bolivia
+        </h2>
+        <p class="text-slate-600 text-lg font-medium max-w-3xl mx-auto">
+          La mejor ruta depende del tipo de cliente, el monto, la frecuencia del cobro y los requisitos administrativos de tu empresa.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-6">
+        <article class="bg-white border border-slate-200 rounded-2xl p-7 shadow-sm">
+          <div class="w-12 h-12 rounded-xl bg-guira-teal/10 flex items-center justify-center mb-5">
+            <i data-lucide="landmark" class="w-6 h-6 text-guira-teal"></i>
+          </div>
+          <h3 class="font-extrabold text-slate-900 text-xl mb-3">Wire Transfer</h3>
+          <p class="text-slate-600 font-medium leading-relaxed mb-5">
+            Suele usarse para montos relevantes, contratos empresariales y operaciones donde es importante identificar claramente origen, beneficiario y referencia.
+          </p>
+          <a href="/blog/wire-vs-ach-diferencias-empresas-bolivianas" class="inline-flex items-center gap-2 text-guira-teal font-bold hover:text-guira-petrol">
+            Ver diferencias con ACH
+            <i data-lucide="arrow-right" class="w-4 h-4"></i>
+          </a>
+        </article>
+
+        <article class="bg-white border border-slate-200 rounded-2xl p-7 shadow-sm">
+          <div class="w-12 h-12 rounded-xl bg-guira-teal/10 flex items-center justify-center mb-5">
+            <i data-lucide="repeat-2" class="w-6 h-6 text-guira-teal"></i>
+          </div>
+          <h3 class="font-extrabold text-slate-900 text-xl mb-3">ACH</h3>
+          <p class="text-slate-600 font-medium leading-relaxed mb-5">
+            Puede servir para pagos recurrentes o administrativos originados dentro de Estados Unidos cuando la empresa cuenta con una estructura habilitada para recibirlos.
+          </p>
+          <a href="/blog/como-cobrar-clientes-estados-unidos-desde-bolivia" class="inline-flex items-center gap-2 text-guira-teal font-bold hover:text-guira-petrol">
+            Leer opciones de cobro
+            <i data-lucide="arrow-right" class="w-4 h-4"></i>
+          </a>
+        </article>
+
+        <article class="bg-white border border-slate-200 rounded-2xl p-7 shadow-sm">
+          <div class="w-12 h-12 rounded-xl bg-guira-teal/10 flex items-center justify-center mb-5">
+            <i data-lucide="layout-dashboard" class="w-6 h-6 text-guira-teal"></i>
+          </div>
+          <h3 class="font-extrabold text-slate-900 text-xl mb-3">Plataforma especializada</h3>
+          <p class="text-slate-600 font-medium leading-relaxed mb-5">
+            Ayuda a centralizar información, documentos, seguimiento y validaciones asociadas a cada operación internacional.
+          </p>
+          <a href="/blog/desafios-recibir-pagos-internacionales-bolivia" class="inline-flex items-center gap-2 text-guira-teal font-bold hover:text-guira-petrol">
+            Conocer desafíos frecuentes
+            <i data-lucide="arrow-right" class="w-4 h-4"></i>
+          </a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- CÓMO FUNCIONA LA PLATAFORMA -->
+  <section class="py-20 bg-white">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="text-center mb-14">
+        <h2 class="text-2xl md:text-4xl font-extrabold mb-6 text-slate-900">
+          Cómo Guira ordena la recepción de pagos internacionales
         </h2>
         <p class="text-slate-600 text-lg font-medium max-w-2xl mx-auto">
-          Tres pasos simples y empiezas a operar con trazabilidad completa
+          Nuestro equipo te ayuda a revisar la operación, centralizar la información y mantener visibilidad desde que el cliente prepara el pago hasta que tu empresa lo concilia.
         </p>
       </div>
 
@@ -145,30 +207,85 @@ import Layout from '../layouts/Layout.astro';
           <div class="w-16 h-16 rounded-full bg-guira-teal/10 flex items-center justify-center mx-auto mb-6">
             <span class="text-2xl font-bold text-guira-teal">1</span>
           </div>
-          <h3 class="font-bold text-slate-900 mb-3 text-xl">Crea tu cuenta</h3>
-          <p class="text-slate-600 font-medium">Regístrate en la plataforma en 2 minutos. Solo necesitas datos básicos de tu empresa.</p>
+          <h3 class="font-bold text-slate-900 mb-3 text-xl">Prepara la operación</h3>
+          <p class="text-slate-600 font-medium">Organiza factura, contrato, datos del pagador y referencia para que el cobro llegue identificado desde el inicio.</p>
         </div>
         <div class="bg-white p-8 rounded-2xl shadow-lg border border-slate-200 text-center">
           <div class="w-16 h-16 rounded-full bg-guira-teal/10 flex items-center justify-center mx-auto mb-6">
             <span class="text-2xl font-bold text-guira-teal">2</span>
           </div>
-          <h3 class="font-bold text-slate-900 mb-3 text-xl">Deposita o transfiere</h3>
-          <p class="text-slate-600 font-medium">Haz tu primera operación. La revisamos manualmente para asegurar que todo esté correcto.</p>
+          <h3 class="font-bold text-slate-900 mb-3 text-xl">Recibe por la ruta adecuada</h3>
+          <p class="text-slate-600 font-medium">Evalúa si la operación conviene por Wire, ACH o una estructura especializada según monto, frecuencia y requisitos.</p>
         </div>
         <div class="bg-white p-8 rounded-2xl shadow-lg border border-slate-200 text-center">
           <div class="w-16 h-16 rounded-full bg-guira-teal/10 flex items-center justify-center mx-auto mb-6">
             <span class="text-2xl font-bold text-guira-teal">3</span>
           </div>
-          <h3 class="font-bold text-slate-900 mb-3 text-xl">Todo documentado</h3>
-          <p class="text-slate-600 font-medium">Cada operación queda con su comprobante, conciliación y trazabilidad lista para entregar.</p>
+          <h3 class="font-bold text-slate-900 mb-3 text-xl">Centraliza el respaldo</h3>
+          <p class="text-slate-600 font-medium">Mantén comprobantes, conciliación, estado e historial de la operación disponibles para tu equipo.</p>
         </div>
       </div>
 
-      <div class="text-center">
-        <a href="https://app.guiracorp.com" class="inline-flex items-center gap-2 px-10 py-5 bg-guira-teal text-white rounded-xl font-bold text-lg hover:bg-guira-teal/80 transition-all shadow-xl hover:-translate-y-1">
-          Empezar ahora - Es gratis
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+        <a href="/demo" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-10 py-5 bg-guira-teal text-white rounded-xl font-bold text-lg hover:bg-guira-teal/80 transition-all shadow-xl hover:-translate-y-1">
+          Solicitar demostración
           <i data-lucide="arrow-right" class="w-5 h-5"></i>
         </a>
+        <a href="https://wa.me/59175245845?text=Hola,%20mi%20cliente%20de%20Estados%20Unidos%20quiere%20pagarme%20y%20necesito%20orientaci%C3%B3n" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-10 py-5 bg-slate-900 text-white rounded-xl font-bold text-lg hover:bg-slate-800 transition-all shadow-xl hover:-translate-y-1">
+          <i data-lucide="message-circle" class="w-5 h-5"></i>
+          Hablar por WhatsApp
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- INFORMACIÓN PARA EL PAGADOR -->
+  <section class="py-20 bg-slate-50">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="grid lg:grid-cols-2 gap-10 items-center">
+        <div>
+          <h2 class="text-2xl md:text-4xl font-extrabold mb-6 text-slate-900">
+            ¿Tu cliente ya está listo para pagar?
+          </h2>
+          <p class="text-slate-600 text-lg font-medium leading-relaxed mb-8">
+            Antes de enviar instrucciones, conviene tener organizada la información que normalmente solicita una empresa estadounidense para procesar el pago sin retrasos.
+          </p>
+          <a href="https://wa.me/59175245845?text=Hola,%20mi%20cliente%20ya%20est%C3%A1%20listo%20para%20pagar%20desde%20Estados%20Unidos%20y%20quiero%20revisar%20los%20datos"
+            target="_blank" rel="noopener noreferrer"
+            class="inline-flex items-center gap-2 px-8 py-4 bg-slate-900 text-white rounded-xl font-bold text-lg hover:bg-slate-800 transition-all">
+            Revisar mis datos por WhatsApp
+            <i data-lucide="arrow-right" class="w-5 h-5"></i>
+          </a>
+        </div>
+
+        <div class="bg-white border border-slate-200 rounded-2xl p-8 shadow-sm">
+          <ul class="grid sm:grid-cols-2 gap-4">
+            <li class="flex gap-3 text-slate-700 font-medium">
+              <i data-lucide="check-circle-2" class="w-5 h-5 text-guira-teal shrink-0 mt-0.5"></i>
+              Nombre legal de la empresa
+            </li>
+            <li class="flex gap-3 text-slate-700 font-medium">
+              <i data-lucide="check-circle-2" class="w-5 h-5 text-guira-teal shrink-0 mt-0.5"></i>
+              Dirección fiscal o comercial
+            </li>
+            <li class="flex gap-3 text-slate-700 font-medium">
+              <i data-lucide="check-circle-2" class="w-5 h-5 text-guira-teal shrink-0 mt-0.5"></i>
+              Datos de cuenta o ruta receptora
+            </li>
+            <li class="flex gap-3 text-slate-700 font-medium">
+              <i data-lucide="check-circle-2" class="w-5 h-5 text-guira-teal shrink-0 mt-0.5"></i>
+              Referencia de factura o contrato
+            </li>
+            <li class="flex gap-3 text-slate-700 font-medium">
+              <i data-lucide="check-circle-2" class="w-5 h-5 text-guira-teal shrink-0 mt-0.5"></i>
+              Documentación de respaldo
+            </li>
+            <li class="flex gap-3 text-slate-700 font-medium">
+              <i data-lucide="check-circle-2" class="w-5 h-5 text-guira-teal shrink-0 mt-0.5"></i>
+              Contacto del área financiera
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
   </section>
@@ -178,16 +295,16 @@ import Layout from '../layouts/Layout.astro';
     <div class="max-w-6xl mx-auto px-6">
       <div class="text-center mb-14">
         <h2 class="text-2xl md:text-4xl font-extrabold mb-6 text-slate-900">
-          Tu operación, siempre visible
+          Visibilidad y control para cada cobro internacional
         </h2>
         <p class="text-slate-600 text-lg font-medium max-w-2xl mx-auto">
-          Sabes en qué estado está cada operación, en tiempo real
+          Guira centraliza la información de tus operaciones para que administración, finanzas y contabilidad trabajen con el mismo contexto.
         </p>
       </div>
 
       <div class="grid md:grid-cols-2 gap-8 items-center mb-12">
         <div>
-          <img src="/assets/images/producto-dashboard.webp"
+          <img src="/assets/images/plataforma-dashboard-monitor.webp"
             alt="Dashboard Guira - Gestión de operaciones"
             class="rounded-2xl shadow-xl border border-slate-200 w-full">
         </div>
@@ -197,8 +314,8 @@ import Layout from '../layouts/Layout.astro';
               <i data-lucide="eye" class="w-6 h-6 text-guira-teal"></i>
             </div>
             <div>
-              <h3 class="font-bold text-slate-900 mb-2 text-lg">Seguimiento en vivo</h3>
-              <p class="text-slate-600 font-medium">Ves exactamente en qué estado está tu operación: pendiente, en revisión, completada.</p>
+              <h3 class="font-bold text-slate-900 mb-2 text-lg">Seguimiento por operación</h3>
+              <p class="text-slate-600 font-medium">Consulta el estado de cada cobro y reduce la dependencia de correos, planillas y mensajes sueltos.</p>
             </div>
           </div>
           <div class="flex gap-4">
@@ -206,8 +323,8 @@ import Layout from '../layouts/Layout.astro';
               <i data-lucide="bell" class="w-6 h-6 text-guira-teal"></i>
             </div>
             <div>
-              <h3 class="font-bold text-slate-900 mb-2 text-lg">Notificaciones instantáneas</h3>
-              <p class="text-slate-600 font-medium">Recibes alertas cuando hay novedades en tus operaciones.</p>
+              <h3 class="font-bold text-slate-900 mb-2 text-lg">Información centralizada</h3>
+              <p class="text-slate-600 font-medium">Conecta factura, contrato, pagador, monto, moneda y referencia en un solo entorno operativo.</p>
             </div>
           </div>
           <div class="flex gap-4">
@@ -215,8 +332,8 @@ import Layout from '../layouts/Layout.astro';
               <i data-lucide="file-check" class="w-6 h-6 text-guira-teal"></i>
             </div>
             <div>
-              <h3 class="font-bold text-slate-900 mb-2 text-lg">Documentos automáticos</h3>
-              <p class="text-slate-600 font-medium">Cada operación genera su documento automáticamente, listo para descargar.</p>
+              <h3 class="font-bold text-slate-900 mb-2 text-lg">Respaldo disponible</h3>
+              <p class="text-slate-600 font-medium">Mantén documentos y comprobantes asociados a la operación para revisiones internas, auditorías o controles.</p>
             </div>
           </div>
         </div>
@@ -224,36 +341,32 @@ import Layout from '../layouts/Layout.astro';
     </div>
   </section>
 
-  <!-- CORREDORES -->
+  <!-- CRITERIOS OPERATIVOS -->
   <section class="py-16 bg-slate-900 text-white">
     <div class="max-w-5xl mx-auto px-6 text-center">
       <h2 class="text-2xl md:text-3xl font-extrabold mb-8">
-        Opera en múltiples corredores
+        Qué conviene revisar antes de recibir un pago desde EE. UU.
       </h2>
-      <div class="grid grid-cols-2 md:grid-cols-5 gap-4 mb-8">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
         <div class="bg-white/10 backdrop-blur p-4 rounded-xl">
-          <p class="font-bold">Estados Unidos</p>
-          <p class="text-guira-cyan text-sm">USD</p>
+          <p class="font-bold">Método</p>
+          <p class="text-guira-cyan text-sm">Wire, ACH o plataforma</p>
         </div>
         <div class="bg-white/10 backdrop-blur p-4 rounded-xl">
-          <p class="font-bold">Colombia</p>
-          <p class="text-guira-cyan text-sm">COP</p>
+          <p class="font-bold">Referencia</p>
+          <p class="text-guira-cyan text-sm">Factura o contrato</p>
         </div>
         <div class="bg-white/10 backdrop-blur p-4 rounded-xl">
-          <p class="font-bold">Europa</p>
-          <p class="text-guira-cyan text-sm">EUR</p>
+          <p class="font-bold">Documentos</p>
+          <p class="text-guira-cyan text-sm">Respaldo por operación</p>
         </div>
         <div class="bg-white/10 backdrop-blur p-4 rounded-xl">
-          <p class="font-bold">México</p>
-          <p class="text-guira-cyan text-sm">MXN</p>
-        </div>
-        <div class="bg-white/10 backdrop-blur p-4 rounded-xl">
-          <p class="font-bold">Brasil</p>
-          <p class="text-guira-cyan text-sm">BRL</p>
+          <p class="font-bold">Seguimiento</p>
+          <p class="text-guira-cyan text-sm">Estado y conciliación</p>
         </div>
       </div>
       <p class="text-slate-400 text-sm">
-        En el corredor de Estados Unidos, la operación puede salir a nombre de tu empresa.
+        Cada empresa opera distinto. Guira te ayuda a evaluar el proceso según el cliente, monto, frecuencia y documentación disponible.
       </p>
     </div>
   </section>
@@ -263,58 +376,58 @@ import Layout from '../layouts/Layout.astro';
     <div class="max-w-4xl mx-auto px-6">
       <div class="text-center mb-14">
         <h2 class="text-2xl md:text-4xl font-extrabold mb-6 text-slate-900">
-          Preguntas sobre el seguimiento de operaciones
+          Preguntas sobre recepción de pagos internacionales
         </h2>
       </div>
 
       <div class="space-y-4">
         <div class="bg-white border border-slate-200 rounded-xl overflow-hidden">
           <button class="faq-button w-full px-6 py-5 flex items-center justify-between text-left font-bold text-slate-900 focus:outline-none" aria-expanded="false">
-            <span>¿Cómo veo en qué estado está mi operación?</span>
+            <span>¿Cuál es la mejor forma de cobrar clientes de Estados Unidos desde Bolivia?</span>
             <i data-lucide="chevron-down" class="faq-icon w-5 h-5 text-slate-500 transition-transform duration-300"></i>
           </button>
           <div class="faq-content hidden px-6 pb-5 text-slate-600 font-medium leading-relaxed">
-            En tu dashboard ves todas tus operaciones con estados claros: pendiente, en revisión, completada, o requiere atención. Cada estado tiene un color distintivo para identificarlo rápido.
+            Depende del monto, frecuencia, tipo de cliente y documentación requerida. Wire suele usarse en pagos corporativos internacionales; ACH puede servir si existe una estructura habilitada en Estados Unidos; y una plataforma especializada ayuda a ordenar seguimiento y respaldo.
           </div>
         </div>
 
         <div class="bg-white border border-slate-200 rounded-xl overflow-hidden">
           <button class="faq-button w-full px-6 py-5 flex items-center justify-between text-left font-bold text-slate-900 focus:outline-none" aria-expanded="false">
-            <span>¿Recibo notificaciones sobre mis operaciones?</span>
+            <span>¿ACH sirve para recibir pagos directamente en una cuenta boliviana?</span>
             <i data-lucide="chevron-down" class="faq-icon w-5 h-5 text-slate-500 transition-transform duration-300"></i>
           </button>
           <div class="faq-content hidden px-6 pb-5 text-slate-600 font-medium leading-relaxed">
-            Sí. Recibes notificaciones por email y en la plataforma cuando hay cambios en tus operaciones: cuando se inicia, cuando se completa, o si necesitamos información adicional.
+            ACH es una red de pagos de Estados Unidos. Para una empresa boliviana puede ser útil cuando cuenta con una cuenta, partner o plataforma que pueda recibir fondos por esa vía dentro de EE. UU.; no funciona como una transferencia internacional directa a Bolivia.
           </div>
         </div>
 
         <div class="bg-white border border-slate-200 rounded-xl overflow-hidden">
           <button class="faq-button w-full px-6 py-5 flex items-center justify-between text-left font-bold text-slate-900 focus:outline-none" aria-expanded="false">
-            <span>¿Dónde descargo los comprobantes de mis operaciones?</span>
+            <span>¿Qué información suele pedir mi cliente para realizar el pago?</span>
             <i data-lucide="chevron-down" class="faq-icon w-5 h-5 text-slate-500 transition-transform duration-300"></i>
           </button>
           <div class="faq-content hidden px-6 pb-5 text-slate-600 font-medium leading-relaxed">
-            Cada operación completada tiene un botón de descarga. Obtienes un PDF con todos los datos: comprobante, conciliación con factura, origen y destino del fondo.
+            Normalmente solicita nombre legal de la empresa, dirección fiscal, datos de la cuenta o ruta receptora, referencia de factura o contrato, información bancaria necesaria y documentación de respaldo cuando corresponda.
           </div>
         </div>
 
         <div class="bg-white border border-slate-200 rounded-xl overflow-hidden">
           <button class="faq-button w-full px-6 py-5 flex items-center justify-between text-left font-bold text-slate-900 focus:outline-none" aria-expanded="false">
-            <span>¿Puedo ver el historial completo de una operación?</span>
+            <span>¿Qué documentos debo conservar por cada cobro internacional?</span>
             <i data-lucide="chevron-down" class="faq-icon w-5 h-5 text-slate-500 transition-transform duration-300"></i>
           </button>
           <div class="faq-content hidden px-6 pb-5 text-slate-600 font-medium leading-relaxed">
-            Sí. Cada operación tiene un timeline completo: cuándo se creó, cuándo se revisó, cuándo se ejecutó, y cualquier evento intermedio. Trazabilidad total.
+            Como mínimo conviene conservar factura, contrato u orden de servicio, instrucciones de pago, comprobante del pagador, confirmación de recepción y registro interno de conciliación. Cada operación puede requerir documentos adicionales.
           </div>
         </div>
 
         <div class="bg-white border border-slate-200 rounded-xl overflow-hidden">
           <button class="faq-button w-full px-6 py-5 flex items-center justify-between text-left font-bold text-slate-900 focus:outline-none" aria-expanded="false">
-            <span>¿Qué pasa si mi operación queda pendiente?</span>
+            <span>¿Cómo ayuda Guira en la gestión de cobros internacionales?</span>
             <i data-lucide="chevron-down" class="faq-icon w-5 h-5 text-slate-500 transition-transform duration-300"></i>
           </button>
           <div class="faq-content hidden px-6 pb-5 text-slate-600 font-medium leading-relaxed">
-            Te notificamos el motivo. Generalmente es por falta de documentación. Subes los documentos faltantes desde la plataforma y continuamos el proceso.
+            Guira centraliza información, documentación, estado e historial de las operaciones internacionales para que el equipo administrativo y financiero tenga mayor visibilidad y control operativo.
           </div>
         </div>
       </div>
@@ -325,19 +438,19 @@ import Layout from '../layouts/Layout.astro';
   <section class="py-20 bg-gradient-to-br from-guira-teal to-slate-800">
     <div class="max-w-4xl mx-auto px-6 text-center text-white">
       <h2 class="text-2xl md:text-4xl font-extrabold mb-6">
-        Empieza a operar con trazabilidad hoy
+        Centraliza la gestión de tus cobros internacionales
       </h2>
       <p class="text-guira-cyan text-lg mb-10 max-w-2xl mx-auto font-medium">
-        Crea tu cuenta gratis, deposita y empieza a operar. O habla con nosotros por WhatsApp si tienes dudas.
+        Si tu empresa ya recibe pagos desde el exterior o está por comenzar a hacerlo, conversemos sobre el proceso que mejor se adapta a tu operación.
       </p>
       <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-        <a href="https://app.guiracorp.com"
+        <a href="/demo"
           class="w-full sm:w-auto px-10 py-5 bg-white text-guira-teal rounded-xl font-bold text-lg hover:bg-slate-50 transition-all shadow-xl hover:-translate-y-1 flex items-center justify-center gap-2">
-          Crear cuenta ahora
+          Solicitar demostración
           <i data-lucide="arrow-right" class="w-5 h-5"></i>
         </a>
-        <a href="https://wa.me/59175245845?text=Hola,%20tengo%20preguntas%20sobre%20Guira"
-          target="_blank"
+        <a href="https://wa.me/59175245845?text=Hola,%20quiero%20conocer%20c%C3%B3mo%20gestionar%20mis%20cobros%20internacionales%20con%20Guira"
+          target="_blank" rel="noopener noreferrer"
           class="w-full sm:w-auto px-10 py-5 bg-slate-700 text-white rounded-xl font-bold text-lg hover:bg-slate-600 transition-all shadow-xl hover:-translate-y-1 flex items-center justify-center gap-2">
           <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
           WhatsApp
@@ -356,7 +469,7 @@ import Layout from '../layouts/Layout.astro';
           </p>
         </div>
         <div class="flex flex-col gap-4">
-          <a href="https://wa.me/59175245845" target="_blank" class="text-guira-cyan hover:text-guira-neon font-bold flex items-center gap-2">
+          <a href="https://wa.me/59175245845" target="_blank" rel="noopener noreferrer" class="text-guira-cyan hover:text-guira-neon font-bold flex items-center gap-2">
             <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
             +591 75 245845
           </a>
@@ -374,13 +487,13 @@ import Layout from '../layouts/Layout.astro';
   </footer>
 
   <!-- BOTÓN FLOTANTE WHATSAPP GRANDE -->
-  <a href="https://wa.me/59175245845?text=Hola,%20me%20interesa%20la%20plataforma%20Guira"
+  <a href="https://wa.me/59175245845?text=Hola,%20quiero%20recibir%20pagos%20internacionales%20en%20mi%20empresa%20con%20Guira"
      target="_blank"
      rel="noopener noreferrer"
      class="fixed bottom-6 right-6 z-50 bg-guira-teal text-white p-6 rounded-full shadow-2xl hover:bg-guira-teal/80 transition-all hover:scale-110 group animate-bounce-slow">
     <svg class="w-14 h-14" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
     <span class="absolute right-full mr-4 top-1/2 -translate-y-1/2 bg-white text-slate-900 px-4 py-2 rounded-xl text-sm font-bold whitespace-nowrap shadow-xl">
-      ¿Tienes dudas? Habla con nosotros
+      ¿Tienes dudas sobre cobros USD?
     </span>
   </a>
 

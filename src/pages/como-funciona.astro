@@ -3,9 +3,9 @@ import Layout from '../layouts/Layout.astro';
 ---
 
 <Layout
-  title="Cómo Recibir Pagos en USD y Pagar Proveedores Internacionales desde LATAM | Guira Empresas"
-  description="Descubre cómo organizar tu operación internacional con Guira. Centraliza la recepción en USD y las instrucciones de pagos empresariales vía ACH o Wire para empresas de LATAM."
-  keywords="plataforma de pagos internacional, cuenta internacional para empresas, cuenta en USD para empresas, recibir pagos en USD, recibir pagos desde Estados Unidos, pagos empresariales internacionales, plataforma tecnológica para empresas en LATAM, pagos a proveedores Bolivia, empresa boliviana pagar proveedor extranjero, pagar proveedores internacionales desde Bolivia, cuenta en USD para empresas bolivianas"
+  title="Cómo funciona el ecosistema de pagos internacionales | Guira"
+  description="Conoce cómo una empresa puede organizar recepción en USD, validación KYB, documentación, compliance y seguimiento de operaciones internacionales con Guira."
+  keywords="cómo funciona cuenta virtual USD empresas, KYB para empresas, compliance pagos internacionales, ecosistema pagos internacionales, recepción de pagos internacionales, gestión de operaciones internacionales"
   canonicalUrl="https://www.guiracorp.com/como-funciona"
   activeLink="como-funciona"
   footerTheme="rich-dark"
@@ -28,8 +28,8 @@ import Layout from '../layouts/Layout.astro';
     {
       "@context": "https://schema.org",
       "@type": "HowTo",
-      "name": "Cómo usar Guira Empresas para recibir pagos en USD y pagar proveedores internacionales",
-      "description": "Proceso para que empresas de LATAM centralicen su operación en USD usando Guira: onboarding, recepción de pagos y ejecución de pagos a proveedores.",
+      "name": "Cómo funciona el ecosistema de pagos internacionales de Guira",
+      "description": "Proceso para que empresas organicen validación corporativa, recepción en USD, documentación, seguimiento y gestión de operaciones internacionales.",
       "step": [
         {
           "@type": "HowToStep",
@@ -65,14 +65,56 @@ import Layout from '../layouts/Layout.astro';
       <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[600px] bg-guira-teal opacity-[0.05] blur-[120px] rounded-full pointer-events-none"></div>
       <div class="max-w-4xl mx-auto px-6 relative z-10 text-center reveal">
           <h1 class="text-4xl md:text-6xl font-extrabold mb-8 leading-[1.1] text-slate-900">
-              Cómo funciona Guira <br class="hidden md:block" />
-              <span class="text-guira-teal">para empresas de LATAM</span>
+              Cómo funciona el ecosistema <br class="hidden md:block" />
+              <span class="text-guira-teal">de pagos internacionales</span>
           </h1>
           <p class="text-lg md:text-xl text-slate-600 font-medium max-w-2xl mx-auto leading-relaxed">
-              Desde el registro de tu empresa hasta la recepción de pagos en USD y la ejecución de pagos empresariales vía ACH o Wire, Guira organiza tu operación internacional en una experiencia más simple y trazable.
+              Desde la validación KYB hasta la recepción de pagos en USD, la organización documental y el seguimiento de cada operación, Guira ayuda a que tu empresa trabaje con mayor visibilidad.
           </p>
       </div>
   </header>
+
+  <!-- Ecosistema -->
+  <section class="py-20 bg-white border-b border-slate-200">
+      <div class="max-w-7xl mx-auto px-6">
+          <div class="text-center mb-14 reveal">
+              <p class="text-xs font-bold tracking-widest text-guira-teal uppercase mb-3">Ecosistema operativo</p>
+              <h2 class="text-3xl md:text-5xl font-extrabold text-slate-900 mb-5">Las piezas que conectan una operación internacional</h2>
+              <p class="text-slate-600 max-w-2xl mx-auto font-medium text-lg">
+                  Una operación internacional no es solo recibir o enviar fondos. También implica identificación, documentos, validaciones, seguimiento y conciliación.
+              </p>
+          </div>
+
+          <div class="grid md:grid-cols-3 gap-6">
+              <article class="bg-slate-50 border border-slate-200 rounded-2xl p-7 hover:shadow-md transition-shadow">
+                  <div class="w-12 h-12 rounded-xl bg-guira-teal/10 text-guira-teal flex items-center justify-center mb-5">
+                      <i data-lucide="badge-dollar-sign" class="w-6 h-6"></i>
+                  </div>
+                  <h3 class="text-xl font-extrabold text-slate-900 mb-3">Cuenta virtual USD</h3>
+                  <p class="text-slate-600 font-medium leading-relaxed mb-5">Facilita la recepción, identificación y gestión operativa de cobros internacionales en dólares.</p>
+                  <a href="/blog/como-funciona-cuenta-virtual-usd-empresas" class="text-guira-teal font-bold inline-flex items-center gap-2">Leer guía <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+              </article>
+
+              <article class="bg-slate-50 border border-slate-200 rounded-2xl p-7 hover:shadow-md transition-shadow">
+                  <div class="w-12 h-12 rounded-xl bg-guira-teal/10 text-guira-teal flex items-center justify-center mb-5">
+                      <i data-lucide="shield-check" class="w-6 h-6"></i>
+                  </div>
+                  <h3 class="text-xl font-extrabold text-slate-900 mb-3">KYB</h3>
+                  <p class="text-slate-600 font-medium leading-relaxed mb-5">Permite verificar información corporativa antes de habilitar determinados servicios empresariales.</p>
+                  <a href="/blog/que-es-kyb-por-que-empresas-deben-completarlo" class="text-guira-teal font-bold inline-flex items-center gap-2">Ver requisitos <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+              </article>
+
+              <article class="bg-slate-50 border border-slate-200 rounded-2xl p-7 hover:shadow-md transition-shadow">
+                  <div class="w-12 h-12 rounded-xl bg-guira-teal/10 text-guira-teal flex items-center justify-center mb-5">
+                      <i data-lucide="folder-check" class="w-6 h-6"></i>
+                  </div>
+                  <h3 class="text-xl font-extrabold text-slate-900 mb-3">Compliance y documentos</h3>
+                  <p class="text-slate-600 font-medium leading-relaxed mb-5">Organiza respaldos y procesos para responder a solicitudes, revisiones y auditorías con menos fricción.</p>
+                  <a href="/blog/compliance-pagos-internacionales-empresas" class="text-guira-teal font-bold inline-flex items-center gap-2">Entender compliance <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+              </article>
+          </div>
+      </div>
+  </section>
 
   <!-- Pasos de Operación -->
   <section class="py-24 bg-white relative">
