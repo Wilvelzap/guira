@@ -1,6 +1,7 @@
 ---
 import Navbar from '../components/Navbar.astro';
 import Footer from '../components/Footer.astro';
+import CookieBanner from '../components/CookieBanner.astro';
 import '../styles/global.css';
 
 interface Props {
@@ -47,33 +48,68 @@ const {
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="robots" content="index, follow" />
 
-    <!-- Google Tag Manager -->
+    <!-- Consent-based Analytics & Marketing Scripts -->
     <script is:inline>
-      (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-      })(window,document,'script','dataLayer','GTM-KN47K3LJ');
-    </script>
-    <!-- End Google Tag Manager -->
+      (function() {
+        // Function to get cookie value
+        function getCookie(name) {
+          let matches = document.cookie.match(new RegExp(
+            "(?:^|; )" + name.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, '\\$1') + "=([^;]*)"
+          ));
+          return matches ? decodeURIComponent(matches[1]) : undefined;
+        }
 
-    <!-- Meta Pixel Code -->
-    <script is:inline>
-      !function(f,b,e,v,n,t,s)
-      {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-      n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-      if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-      n.queue=[];t=b.createElement(e);t.async=!0;
-      t.src=v;s=b.getElementsByTagName(e)[0];
-      s.parentNode.insertBefore(t,s)}(window, document,'script',
-      'https://connect.facebook.net/en_US/fbevents.js');
-      fbq('init', '1012152791596331');
-      fbq('track', 'PageView');
+        // Timezone heuristic for EU/UK
+        function isEUorUK() {
+          try {
+            const tz = Intl.DateTimeFormat().resolvedOptions().timeZone;
+            if (tz) {
+              const euTzPrefixes = [
+                'Europe/', 'Atlantic/Reykjavik', 'Atlantic/Azores', 
+                'Atlantic/Canary', 'Atlantic/Faroe', 'Atlantic/Madeira'
+              ];
+              return euTzPrefixes.some(prefix => tz.startsWith(prefix));
+            }
+          } catch (e) {}
+          return false;
+        }
+
+        window.loadNonEssentialTracking = function() {
+          if (window.nonEssentialTrackingLoaded) return;
+          window.nonEssentialTrackingLoaded = true;
+
+          // Google Tag Manager
+          (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+          new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+          j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+          'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+          })(window,document,'script','dataLayer','GTM-KN47K3LJ');
+
+          // Meta Pixel Code
+          !function(f,b,e,v,n,t,s)
+          {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+          n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+          if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+          n.queue=[];t=b.createElement(e);t.async=!0;
+          t.src=v;s=b.getElementsByTagName(e)[0];
+          s.parentNode.insertBefore(t,s)}(window, document,'script',
+          'https://connect.facebook.net/en_US/fbevents.js');
+          fbq('init', '1012152791596331');
+          fbq('track', 'PageView');
+        };
+
+        const consent = getCookie('cookie_consent');
+
+        // Load immediately if already accepted, OR if no consent is set yet but user is NOT in EU/UK (implicit consent)
+        if (consent === 'accepted' || (!consent && !isEUorUK())) {
+          window.loadNonEssentialTracking();
+        }
+      })();
     </script>
     <noscript>
       <img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1012152791596331&ev=PageView&noscript=1" />
     </noscript>
-    <!-- End Meta Pixel Code -->
+    <!-- End Consent-based Analytics & Marketing Scripts -->
 
     <title>{title}</title>
     <meta name="description" content={description} />
@@ -118,6 +154,8 @@ const {
     <slot />
 
     <Footer theme={footerTheme} />
+
+    <CookieBanner />
 
     <!-- Main Client Script -->
     <script src="../scripts/main.js"></script>
