@@ -1,0 +1,9 @@
+[mcp_servers.muapi]
+command = "muapi"
+args = [
+    "mcp",
+    "serve",
+]
+
+[mcp_servers.muapi.env]
+MUAPI_API_KEY = "bd1cc3bc032c6e26a038f59376b9df6ad91c2744e5b82dbb8513d01202f6972c"
