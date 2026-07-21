@@ -5,7 +5,7 @@ import Flag from '../components/Flag.astro';
 
 <Layout
   title="Pagos y cobros internacionales que tu contador puede defender | Guira"
-  description="Cobra de tus clientes en EE.UU. directo a tu cuenta en dólares, sin depender de cómo te paguen. Con el respaldo que tu contador necesita."
+  description="Paga a tus proveedores y cobra a tus clientes en el exterior desde una misma cuenta en dólares. Con el respaldo que tu contador necesita."
   keywords="recepción de pagos USD Bolivia, cobrar clientes de Estados Unidos desde Bolivia, cobros internacionales empresas, Wire vs ACH, pagos internacionales Bolivia, trazabilidad de pagos internacionales"
   canonicalUrl="https://www.guiracorp.com/pagos-cobros-internacionales"
   activeLink="pagos-cobros-internacionales"
@@ -30,10 +30,10 @@ import Flag from '../components/Flag.astro';
       <div class="grid lg:grid-cols-2 gap-12 items-center">
         <div class="text-left">
           <h1 class="text-3xl md:text-5xl lg:text-6xl font-extrabold tracking-tight mb-6 leading-tight text-white">
-            Cobra de tus clientes en el exterior directo a tu cuenta en dólares
+            Paga a tus proveedores y cobra a tus clientes en el exterior
           </h1>
           <p class="text-lg md:text-xl text-slate-300 mb-8 max-w-xl font-medium leading-relaxed">
-            Sin depender de que ellos resuelvan cómo pagarte. Tu flujo de caja no espera a que el comprador encuentre la forma de enviarte el dinero.
+            Todo desde una misma cuenta en dólares, sin depender de trámites bancarios distintos para cada operación.
           </p>
           <div class="flex flex-col sm:flex-row items-center gap-4">
             <a href="https://wa.me/59175245845?text=Hola,%20quiero%20recibir%20pagos%20USD%20desde%20Estados%20Unidos%20con%20Guira"
@@ -46,6 +46,11 @@ import Flag from '../components/Flag.astro';
               class="w-full sm:w-auto px-8 py-4 bg-slate-700 text-white rounded-xl font-bold text-lg hover:bg-slate-600 transition-all shadow-xl shadow-slate-700/30 hover:-translate-y-1 flex items-center justify-center gap-2">
               Solicitar demostración
               <i data-lucide="arrow-right" class="w-5 h-5"></i>
+            </a>
+          </div>
+          <div class="mt-4">
+            <a href="https://app.guiracorp.com/registro" class="text-guira-cyan hover:text-white text-sm font-medium transition-colors">
+              ¿Ya sabes que quieres empezar? Crea tu cuenta
             </a>
           </div>
           <p class="text-slate-400 text-sm mt-4 font-medium">Te orientamos según tu tipo de cliente, monto y documentación disponible.</p>
@@ -349,9 +354,13 @@ import Flag from '../components/Flag.astro';
         Y si te preguntan, lo puedes mostrar.
       </p>
 
-      <div class="text-center">
-        <a href="https://wa.me/59175245845?text=Hola,%20quiero%20ordenar%20la%20recepci%C3%B3n%20de%20pagos%20internacionales%20de%20mi%20empresa" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-8 py-4 bg-slate-900 text-white rounded-xl font-bold text-lg hover:bg-slate-800 transition-all">
+      <div class="text-center flex flex-col sm:flex-row items-center justify-center gap-4">
+        <a href="https://wa.me/59175245845?text=Hola,%20quiero%20ordenar%20la%20recepci%C3%B3n%20de%20pagos%20internacionales%20de%20mi%20empresa" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto inline-flex items-center gap-2 px-8 py-4 bg-slate-900 text-white rounded-xl font-bold text-lg hover:bg-slate-800 transition-all">
           Resolver mis dudas por WhatsApp
+          <i data-lucide="arrow-right" class="w-5 h-5"></i>
+        </a>
+        <a href="/demo" class="w-full sm:w-auto inline-flex items-center gap-2 px-8 py-4 bg-white text-slate-900 border border-slate-200 rounded-xl font-bold text-lg hover:bg-slate-50 transition-all">
+          Solicitar demostración
           <i data-lucide="arrow-right" class="w-5 h-5"></i>
         </a>
       </div>
@@ -379,7 +388,7 @@ import Flag from '../components/Flag.astro';
           <p class="text-slate-600 font-medium leading-relaxed mb-5">
             Suele usarse para montos relevantes, contratos empresariales y operaciones donde es importante identificar claramente origen, beneficiario y referencia.
           </p>
-          <a href="/blog/wire-vs-ach-diferencias-empresas-bolivianas" class="inline-flex items-center gap-2 text-guira-teal font-bold hover:text-guira-petrol">
+          <a href="/blog/wire-vs-ach-diferencias-empresas-bolivianas" target="_blank" rel="noopener" class="inline-flex items-center gap-2 text-guira-teal font-bold hover:text-guira-petrol">
             Ver diferencias con ACH
             <i data-lucide="arrow-right" class="w-4 h-4"></i>
           </a>
@@ -393,7 +402,7 @@ import Flag from '../components/Flag.astro';
           <p class="text-slate-600 font-medium leading-relaxed mb-5">
             Puede servir para pagos recurrentes o administrativos originados dentro de Estados Unidos cuando la empresa cuenta con una estructura habilitada para recibirlos.
           </p>
-          <a href="/blog/como-cobrar-clientes-estados-unidos-desde-bolivia" class="inline-flex items-center gap-2 text-guira-teal font-bold hover:text-guira-petrol">
+          <a href="/blog/como-cobrar-clientes-estados-unidos-desde-bolivia" target="_blank" rel="noopener" class="inline-flex items-center gap-2 text-guira-teal font-bold hover:text-guira-petrol">
             Leer opciones de cobro
             <i data-lucide="arrow-right" class="w-4 h-4"></i>
           </a>
@@ -407,7 +416,7 @@ import Flag from '../components/Flag.astro';
           <p class="text-slate-600 font-medium leading-relaxed mb-5">
             Ayuda a centralizar información, documentos, seguimiento y validaciones asociadas a cada operación internacional.
           </p>
-          <a href="/blog/desafios-recibir-pagos-internacionales-bolivia" class="inline-flex items-center gap-2 text-guira-teal font-bold hover:text-guira-petrol">
+          <a href="/blog/desafios-recibir-pagos-internacionales-bolivia" target="_blank" rel="noopener" class="inline-flex items-center gap-2 text-guira-teal font-bold hover:text-guira-petrol">
             Conocer desafíos frecuentes
             <i data-lucide="arrow-right" class="w-4 h-4"></i>
           </a>
@@ -680,6 +689,11 @@ import Flag from '../components/Flag.astro';
           class="w-full sm:w-auto px-10 py-5 bg-slate-700 text-white rounded-xl font-bold text-lg hover:bg-slate-600 transition-all shadow-xl hover:-translate-y-1 flex items-center justify-center gap-2">
           <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
           WhatsApp
+        </a>
+      </div>
+      <div class="mt-4">
+        <a href="https://app.guiracorp.com/registro" class="text-guira-neon hover:text-white text-sm font-medium transition-colors">
+          ¿Ya sabes que quieres empezar? Crea tu cuenta
         </a>
       </div>
     </div>
