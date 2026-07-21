@@ -40,6 +40,11 @@ const {
   activeLink,
   footerTheme
 } = Astro.props;
+
+const siteOrigin = 'https://www.guiracorp.com';
+const rawPath = Astro.url.pathname.replace(/\/$/, '');
+const computedCanonical = `${siteOrigin}${rawPath === '' ? '/' : rawPath}`;
+const finalCanonicalUrl = canonicalUrl || computedCanonical;
 ---
 
 <!DOCTYPE html>
@@ -116,7 +121,7 @@ const {
     <title>{title}</title>
     <meta name="description" content={description} />
     {keywords && <meta name="keywords" content={keywords} />}
-    {canonicalUrl && <link rel="canonical" href={canonicalUrl} />}
+    <link rel="canonical" href={finalCanonicalUrl} />
     
     <link rel="icon" type="image/svg+xml" href="/guira-logo.svg" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -127,7 +132,7 @@ const {
     <meta property="og:title" content={ogTitle} />
     <meta property="og:description" content={ogDescription} />
     <meta property="og:type" content={ogType} />
-    {canonicalUrl && <meta property="og:url" content={canonicalUrl} />}
+    <meta property="og:url" content={finalCanonicalUrl} />
     <meta property="og:image" content={ogImage} />
     <meta property="og:locale" content={ogLocale} />
 

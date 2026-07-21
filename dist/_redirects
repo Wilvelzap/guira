@@ -1,10 +1,16 @@
-# Non-www to www redirect
+# Canonical Domain Redirects (http -> https, non-www -> www)
+http://guiracorp.com/* https://www.guiracorp.com/:splat 301!
 https://guiracorp.com/* https://www.guiracorp.com/:splat 301!
+http://www.guiracorp.com/* https://www.guiracorp.com/:splat 301!
+
+# Legacy Sitemap Redirect
+/sitemap.xml /sitemap-index.xml 301!
 
 # Remove .html extension — 301 redirect old URLs to clean URLs
 /index.html / 301!
 /producto.html /producto 301!
 /pagos-proveedores-bolivia.html /pagos-proveedores-bolivia 301!
+/pagos-cobros-internacionales.html /pagos-cobros-internacionales 301!
 /soluciones.html /soluciones 301!
 /como-funciona.html /como-funciona 301!
 /seguridad.html /seguridad 301!
@@ -14,6 +20,10 @@ https://guiracorp.com/* https://www.guiracorp.com/:splat 301!
 /contacto.html /contacto 301!
 /privacidad.html /privacidad 301!
 /terminos.html /terminos 301!
+/cookies.html /cookies 301!
+/guiraglobal.html /guiraglobal 301!
+/blog.html /blog 301!
 
 # Return custom 404 page with 404 HTTP status for any non-existent page
 /* /404.html 404
+
