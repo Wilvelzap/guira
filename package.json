@@ -29,6 +29,6 @@
   },
   "dependencies": {
     "@astrojs/tailwind": "^6.0.2",
-    "astro": "^6.4.5"
+    "astro": "^7.1.3"
   }
 }
