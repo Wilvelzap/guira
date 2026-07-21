@@ -2,6 +2,7 @@
 import Navbar from '../components/Navbar.astro';
 import Footer from '../components/Footer.astro';
 import CookieBanner from '../components/CookieBanner.astro';
+import PostHog from '../components/posthog.astro';
 import '../styles/global.css';
 
 interface Props {
@@ -47,6 +48,7 @@ const {
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="robots" content="index, follow" />
+    <PostHog />
 
     <!-- Consent-based Analytics & Marketing Scripts -->
     <script is:inline>
@@ -159,5 +161,30 @@ const {
 
     <!-- Main Client Script -->
     <script src="../scripts/main.js"></script>
+    <script is:inline>
+      document.addEventListener('click', (event) => {
+        const link = event.target.closest('a');
+        if (!link) return;
+
+        const href = link.getAttribute('href') || '';
+        const location = link.closest('nav') ? 'navigation' : link.closest('footer') ? 'footer' : 'content';
+
+        if (href.includes('app.guiracorp.com')) {
+          window.posthog?.capture('platform_link_clicked', {
+            link_location: location,
+            registration_link: href.includes('/registro')
+          });
+        } else if (href.includes('wa.me')) {
+          window.posthog?.capture('whatsapp_contact_clicked', {
+            link_location: location
+          });
+        } else if (href === '/demo' || href.startsWith('/demo?') || href === '#solicitar-demo') {
+          window.posthog?.capture('demo_cta_clicked', {
+            link_location: location,
+            destination_type: href.startsWith('#') ? 'embedded_form' : 'demo_page'
+          });
+        }
+      });
+    </script>
 </body>
 </html>

@@ -404,6 +404,13 @@ const postImage = post.data.image
       const total = articleHeight - window.innerHeight;
       const progress = Math.min(Math.max((scrolled / total) * 100, 0), 100);
       progressBar.style.width = progress + '%';
+
+      if (progress >= 90 && progressBar.dataset.completionCaptured !== 'true') {
+        progressBar.dataset.completionCaptured = 'true';
+        window.posthog?.capture('blog_article_completed', {
+          article_path: window.location.pathname
+        });
+      }
     };
     window.addEventListener('scroll', updateProgress, { passive: true });
     updateProgress();

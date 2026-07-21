@@ -109,6 +109,13 @@
         .then(response => response.json())
         .then(data => {
             if (data.success) {
+                const volume = form.querySelector('[name="volume"]')?.value || 'not_selected';
+                const useCase = form.querySelector('[name="usecase"]')?.value || 'not_selected';
+                window.posthog?.capture('demo_form_submitted', {
+                    volume_range: volume,
+                    use_case: useCase,
+                    form_path: window.location.pathname
+                });
                 btn.innerHTML = '<i data-lucide="check" class="w-5 h-5 mx-auto"></i> ¡Mensaje enviado con éxito!';
                 btn.classList.add('bg-emerald-600');
                 btn.classList.remove('bg-slate-900');
@@ -121,6 +128,10 @@
                   'lead_type': 'demo_request'
                 });
             } else {
+                window.posthog?.capture('demo_form_failed', {
+                    failure_type: 'api_response',
+                    form_path: window.location.pathname
+                });
                 btn.innerHTML = 'Error: ' + (data.message || 'Verifica tu clave de formulario.');
                 btn.classList.add('bg-rose-600');
                 btn.classList.remove('bg-slate-900');
@@ -133,6 +144,11 @@
             }, 4000);
         })
         .catch(error => {
+            window.posthog?.capture('demo_form_failed', {
+                failure_type: 'network_error',
+                form_path: window.location.pathname
+            });
+            window.posthog?.captureException(error);
             btn.innerHTML = 'Error de conexión.';
             btn.classList.add('bg-rose-600');
             btn.classList.remove('bg-slate-900');
