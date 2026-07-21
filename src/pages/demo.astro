@@ -184,6 +184,12 @@ import Layout from '../layouts/Layout.astro';
                   btn.classList.remove('bg-slate-900');
                   if (typeof lucide !== 'undefined') lucide.createIcons();
                   form.reset();
+
+                  window.dataLayer = window.dataLayer || [];
+                  window.dataLayer.push({
+                    'event': 'generate_lead',
+                    'lead_type': 'demo_request'
+                  });
               } else {
                   btn.innerHTML = 'Error: ' + (data.message || 'Verifica tu clave de formulario.');
                   btn.classList.add('bg-rose-600');
