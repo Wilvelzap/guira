@@ -23,6 +23,8 @@ http://www.guiracorp.com/* https://www.guiracorp.com/:splat 301!
 /cookies.html /cookies 301!
 /guiraglobal.html /guiraglobal 301!
 /blog.html /blog 301!
+/compliance.html /seguridad 301!
+/compliance /seguridad 301!
 
 # Return custom 404 page with 404 HTTP status for any non-existent page
 /* /404.html 404
