@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import StackedSections from '../components/StackedSections.astro';
 ---
 
 <Layout
@@ -38,8 +39,10 @@ import Layout from '../layouts/Layout.astro';
     </script>
   </Fragment>
 
+  <StackedSections>
+
   <!-- Header Content -->
-  <header class="pt-32 pb-20 bg-slate-900 text-center relative overflow-hidden">
+  <header data-stack-section class="pt-32 pb-20 bg-slate-900 text-center relative overflow-hidden">
       <div class="absolute inset-0">
           <picture class="w-full h-full block">
               <source srcset="/assets/images/sobre-ciudad-latam.webp" type="image/webp">
@@ -55,7 +58,7 @@ import Layout from '../layouts/Layout.astro';
   </header>
 
   <!-- Main Content -->
-  <main class="py-24 bg-white flex-1 text-left">
+  <main data-stack-section class="py-24 bg-white flex-1 text-left">
       <div class="max-w-4xl mx-auto px-6 space-y-24">
 
           <!-- Block 1: El Problema -->
@@ -154,4 +157,6 @@ import Layout from '../layouts/Layout.astro';
 
       </div>
   </main>
+
+  </StackedSections>
 </Layout>

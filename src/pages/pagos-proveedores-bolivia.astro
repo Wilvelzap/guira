@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import StackedSections from '../components/StackedSections.astro';
 ---
 
 <Layout
@@ -70,8 +71,10 @@ import Layout from '../layouts/Layout.astro';
     </script>
   </Fragment>
 
+  <StackedSections>
+
   <!-- HERO — Two-column con mockup de pago flotante -->
-  <header class="relative pt-36 pb-24 overflow-hidden bg-guira-dark border-b border-white/5">
+  <header data-stack-section class="relative pt-36 pb-24 overflow-hidden bg-guira-dark border-b border-white/5">
       <!-- Orbs -->
       <div class="fintech-orb w-[500px] h-[500px] bg-guira-teal/20 -top-20 -left-32" style="animation-delay:0s"></div>
       <div class="fintech-orb w-[400px] h-[400px] bg-blue-500/15 top-10 right-0" style="animation-delay:2s"></div>
@@ -236,7 +239,7 @@ import Layout from '../layouts/Layout.astro';
   </header>
 
   <!-- Aviso Importante Bolivia -->
-  <section class="bg-slate-900 border-b border-white/5 py-8 relative">
+  <section data-stack-section class="bg-slate-900 border-b border-white/5 py-8 relative">
       <div class="max-w-4xl mx-auto px-6 flex flex-col md:flex-row items-center gap-6">
           <div class="w-12 h-12 rounded-2xl bg-amber-500/10 flex items-center justify-center text-amber-500 shrink-0 border border-amber-500/20">
               <i data-lucide="alert-triangle" class="w-6 h-6"></i>
@@ -250,7 +253,7 @@ import Layout from '../layouts/Layout.astro';
   </section>
 
   <!-- FRANJA — Marquee de credibilidad -->
-  <section class="py-8 bg-guira-navy border-b border-white/5 overflow-hidden relative">
+  <section data-stack-section class="py-8 bg-guira-navy border-b border-white/5 overflow-hidden relative">
       <div class="absolute inset-y-0 left-0 w-20 bg-gradient-to-r from-guira-navy to-transparent z-10"></div>
       <div class="absolute inset-y-0 right-0 w-20 bg-gradient-to-l from-guira-navy to-transparent z-10"></div>
       <div class="marquee-track">
@@ -270,7 +273,7 @@ import Layout from '../layouts/Layout.astro';
   </section>
 
   <!-- INFORMACIÓN NECESARIA -->
-  <section class="py-24 bg-white relative overflow-hidden">
+  <section data-stack-section class="py-24 bg-white relative overflow-hidden">
       <div class="absolute top-0 right-0 w-[420px] h-[420px] bg-guira-teal/5 blur-[110px] rounded-full pointer-events-none"></div>
       <div class="max-w-7xl mx-auto px-6 relative z-10">
           <div class="text-center mb-16 reveal">
@@ -331,7 +334,7 @@ import Layout from '../layouts/Layout.astro';
   </section>
 
   <!-- PROBLEMA / SOLUCIÓN — Fondo oscuro -->
-  <section class="py-28 bg-guira-navy relative overflow-hidden">
+  <section data-stack-section class="py-28 bg-guira-navy relative overflow-hidden">
       <div class="absolute top-0 right-1/4 w-[600px] h-[600px] bg-guira-teal opacity-[0.04] blur-[140px] rounded-full pointer-events-none"></div>
       <div class="absolute bottom-0 left-0 w-[400px] h-[400px] bg-blue-600 opacity-[0.04] blur-[100px] rounded-full pointer-events-none"></div>
       <div class="max-w-7xl mx-auto px-6 relative z-10">
@@ -450,7 +453,7 @@ import Layout from '../layouts/Layout.astro';
   </section>
 
   <!-- CÓMO FUNCIONA — Timeline conectado -->
-  <section class="py-28 bg-white relative overflow-hidden">
+  <section data-stack-section class="py-28 bg-white relative overflow-hidden">
       <div class="absolute top-0 left-1/2 -translate-x-1/2 w-px h-full bg-gradient-to-b from-slate-100 via-slate-200 to-slate-100"></div>
       <div class="max-w-7xl mx-auto px-6 relative z-10">
           <div class="text-center mb-20 reveal">
@@ -523,7 +526,7 @@ import Layout from '../layouts/Layout.astro';
   </section>
 
   <!-- ELEGIBILIDAD — Cards visuales -->
-  <section class="py-28 bg-slate-50 border-y border-slate-200 relative overflow-hidden">
+  <section data-stack-section class="py-28 bg-slate-50 border-y border-slate-200 relative overflow-hidden">
       <div class="absolute bottom-0 right-0 w-[500px] h-[500px] bg-guira-teal/5 blur-[120px] rounded-full pointer-events-none"></div>
       <div class="max-w-6xl mx-auto px-6 relative z-10">
           <div class="text-center mb-20 reveal">
@@ -626,8 +629,8 @@ import Layout from '../layouts/Layout.astro';
       </div>
   </section>
 
-  <!-- FAQ — Acordeones con diseño premium -->
-  <section class="py-28 bg-white relative overflow-hidden">
+  <!-- FAQ — Acordeones de ancho completo -->
+  <section data-stack-section class="py-28 bg-white relative overflow-hidden">
       <div class="absolute top-0 left-0 w-[400px] h-[400px] bg-guira-teal/5 blur-[100px] rounded-full pointer-events-none"></div>
       <div class="max-w-4xl mx-auto px-6 relative z-10">
           <div class="text-center mb-16 reveal">
@@ -635,63 +638,74 @@ import Layout from '../layouts/Layout.astro';
               <h2 class="text-3xl md:text-5xl font-extrabold text-slate-900 mb-4">Preguntas frecuentes</h2>
               <p class="text-slate-500 text-lg font-medium">Todo lo que necesitas saber sobre pagos a proveedores desde Bolivia.</p>
           </div>
+      </div>
 
-          <div class="space-y-3 reveal-up">
-              <details class="group bg-slate-50 border border-slate-200 rounded-2xl overflow-hidden hover:border-guira-teal/40 hover:shadow-md transition-all">
-                  <summary class="flex justify-between items-center font-bold cursor-pointer list-none p-6 text-slate-900 gap-4">
-                      <span class="flex items-center gap-3"><span class="w-7 h-7 rounded-lg bg-guira-teal/10 text-guira-teal flex items-center justify-center shrink-0 text-xs font-extrabold">Q</span>¿Qué información necesito antes de pagar a un proveedor en el exterior?</span>
-                      <span class="transition-transform duration-300 group-open:rotate-180 shrink-0"><i data-lucide="chevron-down" class="w-5 h-5 text-slate-400"></i></span>
-                  </summary>
-                  <div class="px-6 pb-6 text-slate-600 text-sm font-medium leading-relaxed border-t border-slate-200 pt-5 bg-white">
-                      Conviene verificar nombre legal del proveedor, país, dirección registrada, contacto, banco receptor, número de cuenta, código SWIFT, ABA Routing Number o IBAN cuando aplique, además de moneda, monto y referencia comercial.
+      <!-- Wrapper de ancho completo: líneas y fondo van de borde a borde de la ventana -->
+      <div class="w-full border-t border-slate-200 relative z-10 reveal-up">
+          <details class="group border-b border-slate-200">
+              <summary class="max-w-4xl mx-auto px-6 flex justify-between items-center gap-6 font-bold cursor-pointer list-none py-6 text-slate-900">
+                  <span class="flex items-center gap-3"><span class="w-7 h-7 rounded-lg bg-guira-teal/10 text-guira-teal flex items-center justify-center shrink-0 text-xs font-extrabold">Q</span>¿Qué información necesito antes de pagar a un proveedor en el exterior?</span>
+                  <div class="w-9 h-9 rounded-full border border-slate-200 flex items-center justify-center shrink-0">
+                      <i data-lucide="plus" class="w-4 h-4 text-guira-teal transition-transform duration-300 group-open:rotate-45"></i>
                   </div>
-              </details>
+              </summary>
+              <div class="max-w-4xl mx-auto px-6 text-slate-600 text-sm font-medium leading-relaxed pb-8">
+                  Conviene verificar nombre legal del proveedor, país, dirección registrada, contacto, banco receptor, número de cuenta, código SWIFT, ABA Routing Number o IBAN cuando aplique, además de moneda, monto y referencia comercial.
+              </div>
+          </details>
 
-              <details class="group bg-slate-50 border border-slate-200 rounded-2xl overflow-hidden hover:border-guira-teal/40 hover:shadow-md transition-all">
-                  <summary class="flex justify-between items-center font-bold cursor-pointer list-none p-6 text-slate-900 gap-4">
-                      <span class="flex items-center gap-3"><span class="w-7 h-7 rounded-lg bg-guira-teal/10 text-guira-teal flex items-center justify-center shrink-0 text-xs font-extrabold">Q</span>¿Qué documentos respaldan un pago internacional a proveedores?</span>
-                      <span class="transition-transform duration-300 group-open:rotate-180 shrink-0"><i data-lucide="chevron-down" class="w-5 h-5 text-slate-400"></i></span>
-                  </summary>
-                  <div class="px-6 pb-6 text-slate-600 text-sm font-medium leading-relaxed border-t border-slate-200 pt-5 bg-white">
-                      La factura comercial suele ser el documento principal. Según la operación, también pueden requerirse contratos, órdenes de compra, propuestas aceptadas, instrucciones bancarias y documentos propios de importación.
+          <details class="group border-b border-slate-200">
+              <summary class="max-w-4xl mx-auto px-6 flex justify-between items-center gap-6 font-bold cursor-pointer list-none py-6 text-slate-900">
+                  <span class="flex items-center gap-3"><span class="w-7 h-7 rounded-lg bg-guira-teal/10 text-guira-teal flex items-center justify-center shrink-0 text-xs font-extrabold">Q</span>¿Qué documentos respaldan un pago internacional a proveedores?</span>
+                  <div class="w-9 h-9 rounded-full border border-slate-200 flex items-center justify-center shrink-0">
+                      <i data-lucide="plus" class="w-4 h-4 text-guira-teal transition-transform duration-300 group-open:rotate-45"></i>
                   </div>
-              </details>
+              </summary>
+              <div class="max-w-4xl mx-auto px-6 text-slate-600 text-sm font-medium leading-relaxed pb-8">
+                  La factura comercial suele ser el documento principal. Según la operación, también pueden requerirse contratos, órdenes de compra, propuestas aceptadas, instrucciones bancarias y documentos propios de importación.
+              </div>
+          </details>
 
-              <details class="group bg-slate-50 border border-slate-200 rounded-2xl overflow-hidden hover:border-guira-teal/40 hover:shadow-md transition-all">
-                  <summary class="flex justify-between items-center font-bold cursor-pointer list-none p-6 text-slate-900 gap-4">
-                      <span class="flex items-center gap-3"><span class="w-7 h-7 rounded-lg bg-guira-teal/10 text-guira-teal flex items-center justify-center shrink-0 text-xs font-extrabold">Q</span>¿Qué datos se revisan para enviar un Wire a Estados Unidos?</span>
-                      <span class="transition-transform duration-300 group-open:rotate-180 shrink-0"><i data-lucide="chevron-down" class="w-5 h-5 text-slate-400"></i></span>
-                  </summary>
-                  <div class="px-6 pb-6 text-slate-600 text-sm font-medium leading-relaxed border-t border-slate-200 pt-5 bg-white">
-                      Normalmente se revisa nombre legal del beneficiario, banco receptor, número de cuenta, código SWIFT, dirección del beneficiario y dirección del banco. La información debe coincidir con la factura, contrato y documentos asociados.
+          <details class="group border-b border-slate-200">
+              <summary class="max-w-4xl mx-auto px-6 flex justify-between items-center gap-6 font-bold cursor-pointer list-none py-6 text-slate-900">
+                  <span class="flex items-center gap-3"><span class="w-7 h-7 rounded-lg bg-guira-teal/10 text-guira-teal flex items-center justify-center shrink-0 text-xs font-extrabold">Q</span>¿Qué datos se revisan para enviar un Wire a Estados Unidos?</span>
+                  <div class="w-9 h-9 rounded-full border border-slate-200 flex items-center justify-center shrink-0">
+                      <i data-lucide="plus" class="w-4 h-4 text-guira-teal transition-transform duration-300 group-open:rotate-45"></i>
                   </div>
-              </details>
+              </summary>
+              <div class="max-w-4xl mx-auto px-6 text-slate-600 text-sm font-medium leading-relaxed pb-8">
+                  Normalmente se revisa nombre legal del beneficiario, banco receptor, número de cuenta, código SWIFT, dirección del beneficiario y dirección del banco. La información debe coincidir con la factura, contrato y documentos asociados.
+              </div>
+          </details>
 
-              <details class="group bg-slate-50 border border-slate-200 rounded-2xl overflow-hidden hover:border-guira-teal/40 hover:shadow-md transition-all">
-                  <summary class="flex justify-between items-center font-bold cursor-pointer list-none p-6 text-slate-900 gap-4">
-                      <span class="flex items-center gap-3"><span class="w-7 h-7 rounded-lg bg-guira-teal/10 text-guira-teal flex items-center justify-center shrink-0 text-xs font-extrabold">Q</span>¿Cómo mejora la trazabilidad de un pago internacional?</span>
-                      <span class="transition-transform duration-300 group-open:rotate-180 shrink-0"><i data-lucide="chevron-down" class="w-5 h-5 text-slate-400"></i></span>
-                  </summary>
-                  <div class="px-6 pb-6 text-slate-600 text-sm font-medium leading-relaxed border-t border-slate-200 pt-5 bg-white">
-                      La trazabilidad permite registrar solicitud, documentación, estado de revisión, aprobaciones, avances y comprobantes de cada operación. Así compras, administración, finanzas y contabilidad trabajan con la misma información.
+          <details class="group border-b border-slate-200">
+              <summary class="max-w-4xl mx-auto px-6 flex justify-between items-center gap-6 font-bold cursor-pointer list-none py-6 text-slate-900">
+                  <span class="flex items-center gap-3"><span class="w-7 h-7 rounded-lg bg-guira-teal/10 text-guira-teal flex items-center justify-center shrink-0 text-xs font-extrabold">Q</span>¿Cómo mejora la trazabilidad de un pago internacional?</span>
+                  <div class="w-9 h-9 rounded-full border border-slate-200 flex items-center justify-center shrink-0">
+                      <i data-lucide="plus" class="w-4 h-4 text-guira-teal transition-transform duration-300 group-open:rotate-45"></i>
                   </div>
-              </details>
+              </summary>
+              <div class="max-w-4xl mx-auto px-6 text-slate-600 text-sm font-medium leading-relaxed pb-8">
+                  La trazabilidad permite registrar solicitud, documentación, estado de revisión, aprobaciones, avances y comprobantes de cada operación. Así compras, administración, finanzas y contabilidad trabajan con la misma información.
+              </div>
+          </details>
 
-              <details class="group bg-slate-50 border border-slate-200 rounded-2xl overflow-hidden hover:border-guira-teal/40 hover:shadow-md transition-all">
-                  <summary class="flex justify-between items-center font-bold cursor-pointer list-none p-6 text-slate-900 gap-4">
-                      <span class="flex items-center gap-3"><span class="w-7 h-7 rounded-lg bg-guira-teal/10 text-guira-teal flex items-center justify-center shrink-0 text-xs font-extrabold">Q</span>¿Qué plataforma puede ayudar a gestionar estos procesos?</span>
-                      <span class="transition-transform duration-300 group-open:rotate-180 shrink-0"><i data-lucide="chevron-down" class="w-5 h-5 text-slate-400"></i></span>
-                  </summary>
-                  <div class="px-6 pb-6 text-slate-600 text-sm font-medium leading-relaxed border-t border-slate-200 pt-5 bg-white">
-                      Guira es una plataforma orientada a la gestión, trazabilidad y administración de operaciones internacionales para empresas. Permite centralizar documentación, consultar información relevante de cada operación y mantener mayor visibilidad sobre los procesos asociados.
+          <details class="group border-b border-slate-200">
+              <summary class="max-w-4xl mx-auto px-6 flex justify-between items-center gap-6 font-bold cursor-pointer list-none py-6 text-slate-900">
+                  <span class="flex items-center gap-3"><span class="w-7 h-7 rounded-lg bg-guira-teal/10 text-guira-teal flex items-center justify-center shrink-0 text-xs font-extrabold">Q</span>¿Qué plataforma puede ayudar a gestionar estos procesos?</span>
+                  <div class="w-9 h-9 rounded-full border border-slate-200 flex items-center justify-center shrink-0">
+                      <i data-lucide="plus" class="w-4 h-4 text-guira-teal transition-transform duration-300 group-open:rotate-45"></i>
                   </div>
-              </details>
-          </div>
+              </summary>
+              <div class="max-w-4xl mx-auto px-6 text-slate-600 text-sm font-medium leading-relaxed pb-8">
+                  Guira es una plataforma orientada a la gestión, trazabilidad y administración de operaciones internacionales para empresas. Permite centralizar documentación, consultar información relevante de cada operación y mantener mayor visibilidad sobre los procesos asociados.
+              </div>
+          </details>
       </div>
   </section>
 
   <!-- CTA FINAL — Dramático fondo oscuro -->
-  <section class="py-32 bg-guira-dark relative overflow-hidden">
+  <section data-stack-section class="py-32 bg-guira-dark relative overflow-hidden">
       <!-- Orbs múltiples -->
       <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-guira-teal opacity-[0.06] blur-[150px] rounded-full pointer-events-none"></div>
       <div class="absolute top-0 right-0 w-[400px] h-[400px] bg-blue-600 opacity-[0.05] blur-[120px] rounded-full pointer-events-none"></div>
@@ -736,6 +750,8 @@ import Layout from '../layouts/Layout.astro';
           </div>
       </div>
   </section>
+
+  </StackedSections>
 
 </Layout>
 

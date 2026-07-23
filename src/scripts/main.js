@@ -100,35 +100,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // 7. FAQ Accordion Logic
-    const faqItems = document.querySelectorAll('.faq-item');
-    faqItems.forEach(item => {
-        const button = item.querySelector('.faq-button');
-        const content = item.querySelector('.faq-content');
-        const icon = item.querySelector('.faq-icon');
-        
-        if (button && content) {
-            button.addEventListener('click', () => {
-                const isOpen = !content.classList.contains('hidden');
-                
-                document.querySelectorAll('.faq-content').forEach(c => {
-                    if (c !== content) c.classList.add('hidden');
-                });
-                document.querySelectorAll('.faq-icon').forEach(i => {
-                    if (i !== icon) i.style.transform = 'rotate(0deg)';
-                });
-
-                if (!isOpen) {
-                    content.classList.remove('hidden');
-                    if (icon) icon.style.transform = 'rotate(180deg)';
-                } else {
-                    content.classList.add('hidden');
-                    if (icon) icon.style.transform = 'rotate(0deg)';
-                }
-            });
-        }
-    });
-
     // 8. WhatsApp Floating Widget
     const waWidget = document.createElement('a');
     waWidget.href = 'https://wa.me/59175245845';

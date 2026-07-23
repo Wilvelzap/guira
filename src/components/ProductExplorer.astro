@@ -1,0 +1,86 @@
+<div class="product-showcase" data-product-showcase>
+  <div class="product-showcase__nav" aria-label="Navegaci&oacute;n de capacidades">
+    <span class="product-showcase__counter" data-product-counter></span>
+    <div class="product-showcase__actions">
+      <button class="product-showcase__arrow" type="button" data-product-prev aria-label="Ver capacidades anteriores"><i data-lucide="arrow-left" aria-hidden="true"></i></button>
+      <button class="product-showcase__arrow" type="button" data-product-next aria-label="Ver m&aacute;s capacidades"><i data-lucide="arrow-right" aria-hidden="true"></i></button>
+    </div>
+  </div>
+  <div class="product-showcase__viewport" data-product-viewport>
+    <div class="product-showcase__track" data-product-track>
+      <article class="product-showcase__intro" data-key="intro">
+        <span class="product-showcase__eyebrow">Capacidades operativas</span>
+        <h2>Una suite estructurada para tu operaci&oacute;n financiera internacional.</h2>
+        <p>Capacidades operativas pensadas exclusivamente para las exigencias corporativas de agencias y exportadoras en LATAM.</p>
+      </article>
+    </div>
+  </div>
+  <p class="product-showcase__hint">Selecciona una capacidad para ver una imagen de referencia. Vuelve a seleccionarla para restaurar la escena.</p>
+</div>
+
+<style is:global>
+  .product-showcase { --product-gap:2rem; width:100vw; margin-left:calc(50% - 50vw); padding:0 clamp(1.25rem, 4vw, 5rem); }
+  .product-showcase__nav { display:flex; align-items:center; justify-content:flex-end; gap:1rem; margin:0 0 1.5rem; }
+  .product-showcase__counter { color:#64748b; font-size:.8rem; font-weight:800; letter-spacing:.08em; text-transform:uppercase; }
+  .product-showcase__actions { display:flex; gap:.5rem; }
+  .product-showcase__arrow { display:grid; width:2.6rem; height:2.6rem; place-items:center; border:1px solid #dbe3ed; border-radius:999px; background:#fff; color:#0f172a; transition:border-color .2s ease, color .2s ease, background .2s ease; }
+  .product-showcase__arrow:hover:not(:disabled), .product-showcase__arrow:focus-visible { border-color:#0d9488; background:#f0fdfa; color:#0d9488; outline:none; }
+  .product-showcase__arrow:disabled { cursor:not-allowed; opacity:.35; }
+  .product-showcase__arrow svg { width:1.1rem; height:1.1rem; }
+  .product-showcase__viewport { overflow:hidden; }
+  .product-showcase__track { position:relative; height:34rem; }
+  .product-showcase__intro, .product-showcase__card { position:absolute; top:0; left:0; display:flex; height:34rem; flex-direction:column; border-radius:0; will-change:transform; }
+  .product-showcase__intro { justify-content:flex-end; padding:clamp(2rem, 4vw, 4rem); background:none; color:#0f172a; }
+  .product-showcase__eyebrow { margin-bottom:1rem; color:#0d9488; font-size:.7rem; font-weight:800; letter-spacing:.1em; text-transform:uppercase; }
+  .product-showcase__intro h2 { margin:0; font-size:clamp(1.75rem, 2.5vw, 2.6rem); font-weight:800; line-height:1.1; letter-spacing:-.04em; color:#0f172a; }
+  .product-showcase__intro p { margin:1.25rem 0 0; color:#475569; font-size:1rem; font-weight:500; line-height:1.65; }
+  .product-showcase__card { padding:clamp(1.75rem, 3vw, 3rem); border-top:0; border-bottom:0; border-left:1px solid #e2e8f0; border-right:1px solid #e2e8f0; background:#f8fafc; color:#0f172a; text-align:left; transition:border-color .2s ease, background .2s ease, box-shadow .2s ease; }
+  .product-showcase__card:hover, .product-showcase__card:focus-visible { border-color:#0051ff; background:#f5f8ff; box-shadow:0 18px 40px -32px rgba(0,81,255,.45); outline:none; }
+  .product-showcase__card[aria-pressed="true"] { border-color:#0051ff; background:#f5f8ff; box-shadow:0 0 0 3px rgba(0,81,255,.78), 0 24px 56px -38px rgba(0,81,255,.7); }
+  .product-showcase__icon { width:1.85rem; height:1.85rem; margin-bottom:auto; stroke-width:1.7; }
+  .product-showcase__card .product-showcase__eyebrow { margin:1.7rem 0 .65rem; color:#0d9488; }
+  .product-showcase__card h3 { margin:0; font-size:1.45rem; font-weight:800; line-height:1.25; }
+  .product-showcase__card p { margin:1rem 0 1.75rem; color:#475569; font-size:.94rem; font-weight:500; line-height:1.65; }
+  .product-showcase__card ul { margin:auto 0 0; padding:1.25rem 0 0; border-top:1px solid #dbe3ed; list-style:none; color:#334155; font-size:.83rem; font-weight:700; line-height:1.8; }
+  .product-showcase__card li + li { margin-top:.45rem; }
+  .product-showcase__card li::before { content:"✓"; margin-right:.65rem; color:#0d9488; }
+  .product-showcase__detail { padding:0; overflow:hidden; border:0; background:#e2e8f0; box-shadow:0 28px 80px -48px rgba(15,23,42,.55); }
+  .product-showcase__detail:hover, .product-showcase__detail:focus-visible { background:#e2e8f0; }
+  .product-showcase__detail img { width:100%; height:100%; object-fit:cover; }
+  .product-showcase__hint { margin:1.2rem 0 0; color:#64748b; font-size:.875rem; font-weight:600; text-align:center; }
+  @media (max-width:767px) { .product-showcase { padding:0 1rem; } .product-showcase__track, .product-showcase__intro, .product-showcase__card { height:31rem; } .product-showcase__intro { padding:1.75rem; } }
+</style>
+
+<script>
+  import { gsap } from "gsap";
+  const showcase = document.querySelector("[data-product-showcase]");
+  if (showcase) {
+    const items = [
+      { id:"usd", icon:"landmark", eyebrow:"Cuenta operativa en USD", title:"Infraestructura operativa en USD", text:"Centraliza la recepci&oacute;n de pagos desde USA al integrarte con estructuras de pago reguladas, facilitando la visibilidad de tu flujo operativo internacional de inicio a fin.", points:["Datos de recepci&oacute;n en USD", "Recepci&oacute;n de pagos desde USA"], detail:{ type:"image", src:"/assets/images/blog/dashboard-cobros-internacionales-trazabilidad.webp", alt:"Panel de cobros internacionales" } },
+      { id:"payments", icon:"globe-2", eyebrow:"Pagos internacionales", title:"Pagos empresariales", text:"Ejecuta pagos ACH y Wire a proveedores y partners clave en Estados Unidos con total visibilidad, orden y trazabilidad operativa.", points:["Pagos ACH y Wire transfer", "Mayor orden y trazabilidad"], detail:{ type:"image", src:"/assets/images/blog/factura-proveedor-internacional-banco.webp", alt:"Factura de proveedor internacional" } },
+      { id:"routing", icon:"refresh-cw", eyebrow:"Flexibilidad operativa", title:"Flexibilidad de salida", text:"Instruye transferencias seg&uacute;n la estructura aprobada hacia cuentas locales o canales digitales mediante una interfaz orientada al control documental.", points:["Opciones de enrutamiento operativo", "Soporte documental trazable por transacci&oacute;n"], detail:{ type:"image", src:"/assets/images/blog/transferencia-internacional-documentos-usd.webp", alt:"Documentos de transferencia internacional" } }
+    ];
+    const viewport = showcase.querySelector("[data-product-viewport]"); const track = showcase.querySelector("[data-product-track]"); const previous = showcase.querySelector("[data-product-prev]"); const next = showcase.querySelector("[data-product-next]"); const counter = showcase.querySelector("[data-product-counter]");
+    const cards = new Map([["intro", track.querySelector("[data-key='intro']")]]); const scenes = Array.from({ length:Math.ceil(items.length / 2) }, (_, index) => items.slice(index * 2, index * 2 + 2)); let sceneIndex = 0; let activeId = null; let visibleKeys = []; let locked = false;
+    items.forEach((item) => {
+      const main = document.createElement("button"); main.type = "button"; main.className = "product-showcase__card"; main.dataset.key = `${item.id}:main`; main.dataset.itemId = item.id;
+      main.innerHTML = `<i data-lucide="${item.icon}" class="product-showcase__icon" aria-hidden="true"></i><span class="product-showcase__eyebrow">${item.eyebrow}</span><h3>${item.title}</h3><p>${item.text}</p><ul>${item.points.map((point) => `<li>${point}</li>`).join("")}</ul>`; track.append(main); cards.set(main.dataset.key, main);
+      const detail = document.createElement("button"); detail.type = "button"; detail.className = "product-showcase__card product-showcase__detail"; detail.dataset.key = `${item.id}:detail`; detail.dataset.itemId = item.id;
+      detail.innerHTML = item.detail.type === "image" ? `<img src="${item.detail.src}" alt="${item.detail.alt}" loading="lazy">` : ""; track.append(detail); cards.set(detail.dataset.key, detail);
+    });
+    const sceneKeys = () => { const pageItems = scenes[sceneIndex]; if (!activeId) return ["intro", ...pageItems.map((item) => `${item.id}:main`)]; return pageItems.flatMap((item) => item.id === activeId ? [`${item.id}:main`, `${item.id}:detail`] : [`${item.id}:main`]); };
+    const render = (immediate = false, direction = "state") => {
+      const nextKeys = sceneKeys(); const viewportWidth = viewport.clientWidth; const gap = 0; const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      const weights = nextKeys.map((key) => key === "intro" || key.endsWith(":detail") ? 1.65 : 1); const availableWidth = viewportWidth - Math.max(0, nextKeys.length - 1) * gap; const weightTotal = weights.reduce((total, weight) => total + weight, 0); const layout = new Map(); let cursor = 0;
+      nextKeys.forEach((key, index) => { const width = availableWidth * (weights[index] / weightTotal); layout.set(key, { x:cursor, width }); cursor += width + gap; });
+      const trackLeft = track.getBoundingClientRect().left; const sourcePositions = new Map(items.map((item) => [item.id, cards.get(`${item.id}:main`).getBoundingClientRect().left - trackLeft]));
+      cards.forEach((card, key) => { const slot = layout.get(key); const wasVisible = visibleKeys.includes(key); const visible = Boolean(slot); const entering = visible && !wasVisible; const currentWidth = card.getBoundingClientRect().width; const width = visible ? slot.width : currentWidth; let targetX = visible ? slot.x : viewportWidth + gap; let targetOpacity = 1; const closingDetail = !visible && wasVisible && key.endsWith(":detail") && direction === "state"; if (!visible && wasVisible) { if (closingDetail) { const mainSlot = layout.get(`${card.dataset.itemId}:main`); targetX = mainSlot ? mainSlot.x : -width - gap; targetOpacity = 0; } else { targetX = direction === "next" ? -width - gap : direction === "previous" ? viewportWidth + gap : -width - gap; } } if (entering && key.endsWith(":detail") && !immediate) { const sourceX = sourcePositions.get(card.dataset.itemId); if (Number.isFinite(sourceX)) gsap.set(card, { x:sourceX, opacity:1 }); } card.style.width = `${width}px`; card.style.zIndex = entering || !visible ? "1" : "3"; card.style.pointerEvents = visible ? "auto" : "none"; card.tabIndex = visible ? 0 : -1; card.setAttribute("aria-hidden", String(!visible)); card.setAttribute("aria-pressed", String(Boolean(activeId) && card.dataset.itemId === activeId && !key.endsWith(":detail"))); gsap.to(card, { x:targetX, opacity:targetOpacity, duration:immediate || reducedMotion ? 0 : .72, ease:"power3.inOut", overwrite:"auto" }); });
+      visibleKeys = nextKeys; counter.textContent = `Escena ${sceneIndex + 1} de ${scenes.length}`; previous.disabled = sceneIndex === 0; next.disabled = sceneIndex === scenes.length - 1; if (immediate || reducedMotion) locked = false;
+    };
+    const update = (direction = "state") => { if (locked) return; locked = true; render(false, direction); gsap.delayedCall(.74, () => { locked = false; }); };
+    track.addEventListener("click", (event) => { const card = event.target.closest("button[data-item-id]"); if (!card || locked) return; const id = card.dataset.itemId; activeId = activeId === id ? null : id; update(); });
+    next.addEventListener("click", () => { if (locked || sceneIndex === scenes.length - 1) return; sceneIndex += 1; activeId = null; update("next"); });
+    previous.addEventListener("click", () => { if (locked || sceneIndex === 0) return; sceneIndex -= 1; activeId = null; update("previous"); });
+    window.addEventListener("resize", () => render(true), { passive:true }); render(true);
+  }
+</script>

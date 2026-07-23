@@ -1,6 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import DemoForm from '../components/DemoForm.astro';
+import StackedSections from '../components/StackedSections.astro';
 ---
 
 <Layout
@@ -25,8 +26,9 @@ import DemoForm from '../components/DemoForm.astro';
     </script>
   </Fragment>
 
+  <StackedSections>
   <!-- Main Content -->
-  <main class="pt-32 pb-24 flex-1 flex items-center justify-center text-left">
+  <main data-stack-section class="pt-32 pb-24 flex-1 flex items-center justify-center text-left">
       <div class="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16 items-start">
 
           <div class="reveal-left">
@@ -69,4 +71,5 @@ import DemoForm from '../components/DemoForm.astro';
 
       </div>
   </main>
+  </StackedSections>
 </Layout>

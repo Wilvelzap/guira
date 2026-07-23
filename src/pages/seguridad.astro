@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import StackedSections from '../components/StackedSections.astro';
 ---
 
 <Layout
@@ -24,8 +25,10 @@ import Layout from '../layouts/Layout.astro';
     </script>
   </Fragment>
 
+  <StackedSections>
+
   <!-- Hero Visual Seguridad -->
-  <div class="relative h-56 md:h-72 overflow-hidden mt-16">
+  <div data-stack-section class="relative h-56 md:h-72 overflow-hidden mt-16">
       <picture class="w-full h-full block">
           <source srcset="/assets/images/seguridad-shield.webp" type="image/webp">
           <img src="/assets/images/seguridad-shield.jpg" alt="Infraestructura de seguridad Guira" class="w-full h-full object-cover object-center">
@@ -35,7 +38,7 @@ import Layout from '../layouts/Layout.astro';
   </div>
 
   <!-- Content -->
-  <main class="pt-8 pb-24 flex-1 text-left">
+  <main data-stack-section class="pt-8 pb-24 flex-1 text-left">
       <div class="max-w-4xl mx-auto px-6">
           <div class="text-center mb-16 reveal">
               <h1 class="text-4xl md:text-5xl font-extrabold text-slate-900 mb-6">Seguridad y confianza para la operación internacional de tu empresa</h1>
@@ -115,4 +118,6 @@ import Layout from '../layouts/Layout.astro';
           </div>
       </div>
   </main>
+
+  </StackedSections>
 </Layout>

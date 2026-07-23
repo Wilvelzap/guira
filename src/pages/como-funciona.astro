@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import StackedSections from '../components/StackedSections.astro';
 ---
 
 <Layout
@@ -54,8 +55,10 @@ import Layout from '../layouts/Layout.astro';
     </script>
   </Fragment>
 
+  <StackedSections>
+
   <!-- Header Section -->
-  <header class="relative pt-36 pb-20 overflow-hidden bg-white border-b border-slate-200">
+  <header data-stack-section class="relative pt-36 pb-20 overflow-hidden bg-white border-b border-slate-200">
       <div class="absolute inset-0">
           <picture class="w-full h-full block">
               <source srcset="/assets/images/como-funciona-flujo.webp" type="image/webp" fetchpriority="high">
@@ -75,7 +78,7 @@ import Layout from '../layouts/Layout.astro';
   </header>
 
   <!-- Ecosistema -->
-  <section class="py-20 bg-white border-b border-slate-200">
+  <section data-stack-section class="py-20 bg-white border-b border-slate-200">
       <div class="max-w-7xl mx-auto px-6">
           <div class="text-center mb-14 reveal">
               <p class="text-xs font-bold tracking-widest text-guira-teal uppercase mb-3">Ecosistema operativo</p>
@@ -117,100 +120,208 @@ import Layout from '../layouts/Layout.astro';
   </section>
 
   <!-- Pasos de Operación -->
-  <section class="py-24 bg-white relative">
-      <div class="max-w-5xl mx-auto px-6">
-          <div class="grid gap-12 relative">
-              <!-- Línea conectora visual -->
-              <div class="hidden md:block absolute left-[3.25rem] top-10 bottom-10 w-0.5 bg-gradient-to-b from-guira-teal/50 via-slate-200 to-transparent z-0"></div>
+  <section data-stack-section class="py-24 md:py-32 bg-white relative overflow-hidden">
+      <div class="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(0,81,255,0.06),transparent_60%)] pointer-events-none"></div>
+      <div class="max-w-5xl mx-auto px-6 relative">
+          <div class="text-center mb-16 md:mb-20 reveal">
+              <p class="text-xs font-bold tracking-widest text-guira-teal uppercase mb-3">Cómo empezar</p>
+              <h2 class="text-3xl md:text-5xl font-extrabold text-slate-900 mb-5">El proceso, paso a paso</h2>
+              <p class="text-slate-600 max-w-2xl mx-auto font-medium text-lg">
+                  Desde el registro de tu empresa hasta la ejecución de pagos, cuatro etapas claras conectan tu operación internacional.
+              </p>
+              <p class="mt-6 text-sm font-bold text-slate-400 uppercase tracking-widest" data-steps-counter>Paso 1 de 4</p>
+          </div>
 
-              <!-- Paso 1 -->
-              <div class="flex flex-col md:flex-row gap-8 items-start relative z-10 reveal group">
-                  <div class="w-16 h-16 rounded-2xl bg-white flex items-center justify-center border-2 border-slate-200 text-2xl font-extrabold text-slate-900 group-hover:border-guira-teal group-hover:text-guira-teal transition-colors shadow-sm shrink-0 relative mt-1">
-                      1
-                      <!-- Punto conector -->
-                      <div class="hidden md:block absolute -right-[2.1rem] w-3 h-3 rounded-full bg-slate-200 group-hover:bg-guira-teal transition-colors"></div>
-                  </div>
-                  <div class="bg-slate-50 p-8 rounded-3xl border border-slate-200 shadow-sm flex-1 group-hover:shadow-md transition-shadow">
-                      <div class="mb-4 inline-flex items-center justify-center w-12 h-12 rounded-xl bg-white border border-slate-200 shadow-sm text-slate-700">
-                          <i data-lucide="file-text" class="w-6 h-6"></i>
+          <div class="relative" data-steps>
+              <!-- Rail conector con progreso -->
+              <div class="hidden md:block absolute left-8 top-2 bottom-2 w-px bg-slate-200" aria-hidden="true">
+                  <div class="absolute inset-x-0 top-0 w-px bg-guira-teal" data-steps-fill></div>
+              </div>
+
+              <div class="grid gap-14 md:gap-16">
+                  <!-- Paso 1 -->
+                  <div class="step flex flex-col md:flex-row gap-6 md:gap-10 items-start relative reveal" data-step data-step-index="1">
+                      <div class="step-badge w-16 h-16 rounded-full bg-white flex items-center justify-center border-2 border-slate-200 text-xl font-extrabold text-slate-400 shrink-0 relative z-10 mt-1">
+                          <span class="step-badge-number">1</span>
+                          <i data-lucide="check" class="step-badge-check hidden w-6 h-6"></i>
                       </div>
-                      <h3 class="text-2xl font-bold text-slate-900 mb-3">Registra tu empresa</h3>
-                      <p class="text-slate-600 text-lg font-medium leading-relaxed mb-6">
-                          Completa tu solicitud y comparte la documentación básica de tu empresa, sus representantes y su actividad operativa. Este paso nos permite entender tu perfil y evaluar la elegibilidad del servicio.
-                      </p>
-                      <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm flex items-start gap-4">
-                          <div class="mt-1"><i data-lucide="info" class="w-5 h-5 text-guira-teal"></i></div>
-                          <div>
-                              <h4 class="text-sm font-bold text-slate-900 mb-1">Documentos habituales</h4>
-                              <p class="text-sm text-slate-600 font-medium">Constitución de la empresa, identificación de representantes, información de actividad económica y soporte de operación comercial.</p>
+                      <div class="step-card bg-slate-50 p-8 rounded-3xl border border-slate-200 flex-1">
+                          <div class="mb-4 inline-flex items-center justify-center w-12 h-12 rounded-xl bg-white border border-slate-200 shadow-sm text-slate-700">
+                              <i data-lucide="file-text" class="w-6 h-6"></i>
+                          </div>
+                          <h3 class="text-2xl font-bold text-slate-900 mb-3">Registra tu empresa</h3>
+                          <p class="text-slate-600 text-lg font-medium leading-relaxed mb-6">
+                              Completa tu solicitud y comparte la documentación básica de tu empresa, sus representantes y su actividad operativa. Este paso nos permite entender tu perfil y evaluar la elegibilidad del servicio.
+                          </p>
+                          <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm flex items-start gap-4">
+                              <div class="mt-1"><i data-lucide="info" class="w-5 h-5 text-guira-teal"></i></div>
+                              <div>
+                                  <h4 class="text-sm font-bold text-slate-900 mb-1">Documentos habituales</h4>
+                                  <p class="text-sm text-slate-600 font-medium">Constitución de la empresa, identificación de representantes, información de actividad económica y soporte de operación comercial.</p>
+                              </div>
                           </div>
                       </div>
                   </div>
-              </div>
 
-              <!-- Paso 2 -->
-              <div class="flex flex-col md:flex-row gap-8 items-start relative z-10 reveal reveal-delay-1 group">
-                  <div class="w-16 h-16 rounded-2xl bg-white flex items-center justify-center border-2 border-slate-200 text-2xl font-extrabold text-slate-900 group-hover:border-guira-teal group-hover:text-guira-teal transition-colors shadow-sm shrink-0 relative mt-1">
-                      2
-                      <div class="hidden md:block absolute -right-[2.1rem] w-3 h-3 rounded-full bg-slate-200 group-hover:bg-guira-teal transition-colors"></div>
-                  </div>
-                  <div class="bg-slate-50 p-8 rounded-3xl border border-slate-200 shadow-sm flex-1 group-hover:shadow-md transition-shadow">
-                      <div class="mb-4 inline-flex items-center justify-center w-12 h-12 rounded-xl bg-white border border-slate-200 shadow-sm text-slate-700">
-                          <i data-lucide="shield-check" class="w-6 h-6"></i>
+                  <!-- Paso 2 -->
+                  <div class="step flex flex-col md:flex-row gap-6 md:gap-10 items-start relative reveal" data-step data-step-index="2">
+                      <div class="step-badge w-16 h-16 rounded-full bg-white flex items-center justify-center border-2 border-slate-200 text-xl font-extrabold text-slate-400 shrink-0 relative z-10 mt-1">
+                          <span class="step-badge-number">2</span>
+                          <i data-lucide="check" class="step-badge-check hidden w-6 h-6"></i>
                       </div>
-                      <h3 class="text-2xl font-bold text-slate-900 mb-3">Completa la validación empresarial</h3>
-                      <p class="text-slate-600 text-lg font-medium leading-relaxed">
-                          Nuestro equipo y los proveedores aplicables revisan la información de tu empresa para habilitar una operación alineada con criterios de cumplimiento y riesgo. La aprobación depende del perfil, la jurisdicción y el tipo de actividad.
-                      </p>
-                  </div>
-              </div>
-
-              <!-- Paso 3 -->
-              <div class="flex flex-col md:flex-row gap-8 items-start relative z-10 reveal reveal-delay-2 group">
-                  <div class="w-16 h-16 rounded-2xl bg-white flex items-center justify-center border-2 border-slate-200 text-2xl font-extrabold text-slate-900 group-hover:border-guira-teal group-hover:text-guira-teal transition-colors shadow-sm shrink-0 relative mt-1">
-                      3
-                      <div class="hidden md:block absolute -right-[2.1rem] w-3 h-3 rounded-full bg-slate-200 group-hover:bg-guira-teal transition-colors"></div>
-                  </div>
-                  <div class="bg-slate-50 p-8 rounded-3xl border border-slate-200 shadow-sm flex-1 group-hover:shadow-md transition-shadow">
-                      <div class="mb-4 inline-flex items-center justify-center w-12 h-12 rounded-xl bg-white border border-slate-200 shadow-sm text-slate-700">
-                          <i data-lucide="arrow-down-to-line" class="w-6 h-6"></i>
+                      <div class="step-card bg-slate-50 p-8 rounded-3xl border border-slate-200 flex-1">
+                          <div class="mb-4 inline-flex items-center justify-center w-12 h-12 rounded-xl bg-white border border-slate-200 shadow-sm text-slate-700">
+                              <i data-lucide="shield-check" class="w-6 h-6"></i>
+                          </div>
+                          <h3 class="text-2xl font-bold text-slate-900 mb-3">Completa la validación empresarial</h3>
+                          <p class="text-slate-600 text-lg font-medium leading-relaxed">
+                              Nuestro equipo y los proveedores aplicables revisan la información de tu empresa para habilitar una operación alineada con criterios de cumplimiento y riesgo. La aprobación depende del perfil, la jurisdicción y el tipo de actividad.
+                          </p>
                       </div>
-                      <h3 class="text-2xl font-bold text-slate-900 mb-3">Habilita la recepción en USD</h3>
-                      <p class="text-slate-600 text-lg font-medium leading-relaxed mb-6">
-                          Una vez aprobada tu empresa, podrás acceder a los datos operativos para recibir pagos en USD desde Estados Unidos y visualizar tus movimientos dentro de una experiencia centralizada.
-                      </p>
-                      <p class="text-sm text-slate-500 font-medium">
-                          Esto puede incluir la habilitación de datos de recepción en USD, historial de movimientos y mayor visibilidad sobre ingresos operativos, según disponibilidad del servicio y estructura aplicable.
-                      </p>
                   </div>
-              </div>
 
-              <!-- Paso 4 -->
-              <div class="flex flex-col md:flex-row gap-8 items-start relative z-10 reveal reveal-delay-3 group">
-                  <div class="w-16 h-16 rounded-2xl bg-white flex items-center justify-center border-2 border-slate-200 text-2xl font-extrabold text-slate-900 group-hover:border-guira-teal group-hover:text-guira-teal transition-colors shadow-sm shrink-0 relative mt-1">
-                      4
-                      <div class="hidden md:block absolute -right-[2.1rem] w-3 h-3 rounded-full bg-slate-200 group-hover:bg-guira-teal transition-colors"></div>
-                  </div>
-                  <div class="bg-slate-50 p-8 rounded-3xl border border-slate-200 shadow-sm flex-1 group-hover:shadow-md transition-shadow">
-                      <div class="mb-4 inline-flex items-center justify-center w-12 h-12 rounded-xl bg-white border border-slate-200 shadow-sm text-slate-700">
-                          <i data-lucide="arrow-right-left" class="w-6 h-6"></i>
+                  <!-- Paso 3 -->
+                  <div class="step flex flex-col md:flex-row gap-6 md:gap-10 items-start relative reveal" data-step data-step-index="3">
+                      <div class="step-badge w-16 h-16 rounded-full bg-white flex items-center justify-center border-2 border-slate-200 text-xl font-extrabold text-slate-400 shrink-0 relative z-10 mt-1">
+                          <span class="step-badge-number">3</span>
+                          <i data-lucide="check" class="step-badge-check hidden w-6 h-6"></i>
                       </div>
-                      <h3 class="text-2xl font-bold text-slate-900 mb-3">Centraliza la visibilidad e instruye pagos</h3>
-                      <p class="text-slate-600 text-lg font-medium leading-relaxed mb-6">
-                          Con tu operación activa, podrás visibilizar tu saldo operativo, solicitar salidas según tu estructura e instruir pagos empresariales a proveedores mediante ACH o Wire, de acuerdo con los rieles disponibles y habilitados.
-                      </p>
-                      <p class="text-sm text-slate-500 font-medium">
-                          Dependiendo del caso de uso y la estructura aprobada, tu empresa puede realizar pagos a proveedores o partners mediante ACH o Wire, además de acceder a opciones de salida estructuradas según el riel aplicable.
-                      </p>
+                      <div class="step-card bg-slate-50 p-8 rounded-3xl border border-slate-200 flex-1">
+                          <div class="mb-4 inline-flex items-center justify-center w-12 h-12 rounded-xl bg-white border border-slate-200 shadow-sm text-slate-700">
+                              <i data-lucide="arrow-down-to-line" class="w-6 h-6"></i>
+                          </div>
+                          <h3 class="text-2xl font-bold text-slate-900 mb-3">Habilita la recepción en USD</h3>
+                          <p class="text-slate-600 text-lg font-medium leading-relaxed mb-6">
+                              Una vez aprobada tu empresa, podrás acceder a los datos operativos para recibir pagos en USD desde Estados Unidos y visualizar tus movimientos dentro de una experiencia centralizada.
+                          </p>
+                          <p class="text-sm text-slate-500 font-medium">
+                              Esto puede incluir la habilitación de datos de recepción en USD, historial de movimientos y mayor visibilidad sobre ingresos operativos, según disponibilidad del servicio y estructura aplicable.
+                          </p>
+                      </div>
+                  </div>
+
+                  <!-- Paso 4 -->
+                  <div class="step flex flex-col md:flex-row gap-6 md:gap-10 items-start relative reveal" data-step data-step-index="4">
+                      <div class="step-badge w-16 h-16 rounded-full bg-white flex items-center justify-center border-2 border-slate-200 text-xl font-extrabold text-slate-400 shrink-0 relative z-10 mt-1">
+                          <span class="step-badge-number">4</span>
+                          <i data-lucide="check" class="step-badge-check hidden w-6 h-6"></i>
+                      </div>
+                      <div class="step-card bg-slate-50 p-8 rounded-3xl border border-slate-200 flex-1">
+                          <div class="mb-4 inline-flex items-center justify-center w-12 h-12 rounded-xl bg-white border border-slate-200 shadow-sm text-slate-700">
+                              <i data-lucide="arrow-right-left" class="w-6 h-6"></i>
+                          </div>
+                          <h3 class="text-2xl font-bold text-slate-900 mb-3">Centraliza la visibilidad e instruye pagos</h3>
+                          <p class="text-slate-600 text-lg font-medium leading-relaxed mb-6">
+                              Con tu operación activa, podrás visibilizar tu saldo operativo, solicitar salidas según tu estructura e instruir pagos empresariales a proveedores mediante ACH o Wire, de acuerdo con los rieles disponibles y habilitados.
+                          </p>
+                          <p class="text-sm text-slate-500 font-medium">
+                              Dependiendo del caso de uso y la estructura aprobada, tu empresa puede realizar pagos a proveedores o partners mediante ACH o Wire, además de acceder a opciones de salida estructuradas según el riel aplicable.
+                          </p>
+                      </div>
                   </div>
               </div>
-
           </div>
       </div>
   </section>
 
+  <style>
+      .step-badge,
+      .step-card {
+          transition: border-color .5s ease, background-color .5s ease, color .5s ease, box-shadow .5s ease, transform .5s ease, opacity .5s ease;
+      }
+      .step:not(.is-active) .step-card { opacity: .72; }
+      .step.is-active .step-card {
+          opacity: 1;
+          border-color: rgba(0, 81, 255, .35);
+          background: #fff;
+          box-shadow: 0 22px 48px -30px rgba(0, 81, 255, .35);
+      }
+      .step.is-active .step-badge {
+          border-color: #0051ff;
+          background: #0051ff;
+          color: #fff;
+          transform: scale(1.08);
+          box-shadow: 0 0 0 8px rgba(0, 81, 255, .12);
+      }
+      .step.is-done .step-badge {
+          border-color: #0f172a;
+          background: #0f172a;
+          color: #fff;
+      }
+      .step.is-done .step-badge-number { display: none; }
+      .step.is-done .step-badge-check { display: block; }
+      [data-steps-fill] {
+          height: 0%;
+          transition: height .1s linear;
+      }
+  </style>
+
+  <script>
+      import { gsap } from "gsap";
+      import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+      gsap.registerPlugin(ScrollTrigger);
+
+      const stepsWrap = document.querySelector("[data-steps]");
+
+      if (stepsWrap) {
+          const steps = Array.from(stepsWrap.querySelectorAll("[data-step]"));
+          const fill = stepsWrap.querySelector("[data-steps-fill]");
+          const counter = document.querySelector("[data-steps-counter]");
+          const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+          steps.forEach((step) => {
+              ScrollTrigger.create({
+                  trigger: step,
+                  start: "top 65%",
+                  end: "bottom 45%",
+                  onEnter: () => setActive(step),
+                  onEnterBack: () => setActive(step),
+                  onLeave: () => setDone(step),
+                  onLeaveBack: () => clearState(step),
+              });
+          });
+
+          function setActive(step) {
+              step.classList.add("is-active");
+              step.classList.remove("is-done");
+              updateCounter(step);
+          }
+
+          function setDone(step) {
+              step.classList.remove("is-active");
+              step.classList.add("is-done");
+          }
+
+          function clearState(step) {
+              step.classList.remove("is-active", "is-done");
+              updateCounter(step);
+          }
+
+          function updateCounter(step) {
+              if (!counter) return;
+              counter.textContent = `Paso ${step.dataset.stepIndex} de ${steps.length}`;
+          }
+
+          if (fill && !reducedMotion) {
+              gsap.to(fill, {
+                  height: "100%",
+                  ease: "none",
+                  scrollTrigger: {
+                      trigger: stepsWrap,
+                      start: "top 55%",
+                      end: "bottom 55%",
+                      scrub: true,
+                  },
+              });
+          } else if (fill) {
+              fill.style.height = "100%";
+          }
+      }
+  </script>
+
   <!-- Qué necesita normalmente una empresa para empezar -->
-  <section class="py-24 bg-slate-900 text-white relative overflow-hidden">
+  <section data-stack-section class="py-24 bg-slate-900 text-white relative overflow-hidden">
       <div class="absolute top-0 right-0 w-96 h-96 bg-guira-teal opacity-10 blur-[100px] rounded-full pointer-events-none"></div>
       <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
           <div class="reveal">
@@ -245,7 +356,7 @@ import Layout from '../layouts/Layout.astro';
   </section>
 
   <!-- Qué puede hacer tu empresa una vez activada -->
-  <section class="py-24 bg-slate-50 border-y border-slate-200">
+  <section data-stack-section class="py-24 bg-slate-50 border-y border-slate-200">
       <div class="max-w-7xl mx-auto px-6">
           <div class="text-center mb-16 reveal">
               <h2 class="text-3xl md:text-5xl font-extrabold mb-6 text-slate-900">Qué puede hacer tu empresa una vez activada</h2>
@@ -290,7 +401,7 @@ import Layout from '../layouts/Layout.astro';
   </section>
 
   <!-- CTA Final -->
-  <section class="py-32 relative overflow-hidden bg-white border-t border-slate-200">
+  <section data-stack-section class="py-32 relative overflow-hidden bg-white border-t border-slate-200">
       <div class="absolute inset-0 bg-gradient-to-b from-slate-50 to-white"></div>
       <div class="max-w-4xl mx-auto px-6 text-center relative z-10 reveal">
           <h2 class="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-8 text-slate-900">Evalúa si Guira encaja con la operación internacional de tu empresa</h2>
@@ -302,4 +413,6 @@ import Layout from '../layouts/Layout.astro';
           </div>
       </div>
   </section>
+
+  </StackedSections>
 </Layout>
