@@ -88,8 +88,8 @@ import StackedSections from '../components/StackedSections.astro';
               </p>
           </div>
 
-          <div class="grid md:grid-cols-3 gap-6">
-              <article class="bg-slate-50 border border-slate-200 rounded-2xl p-7 hover:shadow-md transition-shadow">
+          <div class="grid md:grid-cols-3 gap-6" data-folder-stack>
+              <article class="bg-slate-50 border border-slate-200 rounded-2xl p-7 hover:shadow-md transition-shadow" data-folder-card>
                   <div class="w-12 h-12 rounded-xl bg-guira-teal/10 text-guira-teal flex items-center justify-center mb-5">
                       <i data-lucide="badge-dollar-sign" class="w-6 h-6"></i>
                   </div>
@@ -98,7 +98,7 @@ import StackedSections from '../components/StackedSections.astro';
                   <a href="/blog/como-funciona-cuenta-virtual-usd-empresas" class="text-guira-teal font-bold inline-flex items-center gap-2">Leer guía <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
               </article>
 
-              <article class="bg-slate-50 border border-slate-200 rounded-2xl p-7 hover:shadow-md transition-shadow">
+              <article class="bg-slate-50 border border-slate-200 rounded-2xl p-7 hover:shadow-md transition-shadow" data-folder-card>
                   <div class="w-12 h-12 rounded-xl bg-guira-teal/10 text-guira-teal flex items-center justify-center mb-5">
                       <i data-lucide="shield-check" class="w-6 h-6"></i>
                   </div>
@@ -107,7 +107,7 @@ import StackedSections from '../components/StackedSections.astro';
                   <a href="/blog/que-es-kyb-por-que-empresas-deben-completarlo" class="text-guira-teal font-bold inline-flex items-center gap-2">Ver requisitos <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
               </article>
 
-              <article class="bg-slate-50 border border-slate-200 rounded-2xl p-7 hover:shadow-md transition-shadow">
+              <article class="bg-slate-50 border border-slate-200 rounded-2xl p-7 hover:shadow-md transition-shadow" data-folder-card>
                   <div class="w-12 h-12 rounded-xl bg-guira-teal/10 text-guira-teal flex items-center justify-center mb-5">
                       <i data-lucide="folder-check" class="w-6 h-6"></i>
                   </div>
@@ -117,6 +117,50 @@ import StackedSections from '../components/StackedSections.astro';
               </article>
           </div>
       </div>
+
+      <style>
+          [data-folder-stack] { perspective: 1200px; }
+          [data-folder-card] { transform-origin: 50% 100%; will-change: transform; }
+      </style>
+
+      <script>
+          import { gsap } from "gsap";
+          import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+          gsap.registerPlugin(ScrollTrigger);
+
+          const folderStack = document.querySelector("[data-folder-stack]");
+
+          if (folderStack) {
+              const cards = Array.from(folderStack.querySelectorAll("[data-folder-card]"));
+              const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+              if (!reducedMotion && cards.length) {
+                  gsap.set(cards, {
+                      x: (i) => (cards.length - 1 - i) * 10,
+                      y: (i) => (cards.length - 1 - i) * 22,
+                      rotate: (i) => (i - (cards.length - 1) / 2) * -5,
+                      scale: 0.94,
+                      zIndex: (i) => i,
+                  });
+
+                  gsap.to(cards, {
+                      x: 0,
+                      y: 0,
+                      rotate: 0,
+                      scale: 1,
+                      duration: 0.9,
+                      ease: "power3.out",
+                      stagger: 0.12,
+                      scrollTrigger: {
+                          trigger: folderStack,
+                          start: "top 78%",
+                          toggleActions: "play none none reverse",
+                      },
+                  });
+              }
+          }
+      </script>
   </section>
 
   <!-- Pasos de Operación -->
