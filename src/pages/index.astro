@@ -542,37 +542,21 @@ import Flag from "../components/Flag.astro";
             data-stack-section
             class="relative h-72 md:h-96 overflow-hidden"
         >
-            <picture class="w-full h-full block">
-                <source
-                    srcset="/assets/images/sobre-ciudad-latam.webp"
-                    type="image/webp"
-                />
-                <img
-                    src="/assets/images/sobre-ciudad-latam.jpg"
-                    alt="Infraestructura operativa para empresas de LATAM"
-                    class="w-full h-full object-cover object-center"
-                    loading="lazy"
-                />
-            </picture>
-            <div
-                class="absolute inset-0 bg-gradient-to-r from-guira-navy/90 via-guira-navy/60 to-transparent"
+            <video
+                class="w-full h-full object-cover object-center"
+                autoplay
+                muted
+                loop
+                playsinline
+                preload="metadata"
+                aria-label="Infraestructura operativa para empresas de LATAM"
+                data-restart-on-view
             >
-            </div>
-            <div class="absolute inset-0 flex items-center">
-                <div class="max-w-7xl mx-auto px-6">
-                    <p
-                        class="text-xs font-bold tracking-widest text-guira-teal uppercase mb-3"
-                    >
-                        Presencia en LATAM
-                    </p>
-                    <h2
-                        class="text-2xl md:text-4xl font-extrabold text-white max-w-xl leading-tight"
-                    >
-                        Conectando empresas de la región con la economía global
-                        en USD.
-                    </h2>
-                </div>
-            </div>
+                <source
+                    src="https://res.cloudinary.com/dbrkedvyp/video/upload/v1784908883/BusquedaGuira_ew64og.webm"
+                    type="video/webm"
+                />
+            </video>
         </section>
 
         <!-- Problema / Solución -->
@@ -934,11 +918,13 @@ import Flag from "../components/Flag.astro";
         <!-- Plataforma en Acción -->
         <section
             data-stack-section
-            class="py-24 bg-slate-900 border-t border-slate-800"
+            class="relative overflow-hidden bg-slate-900 border-t border-slate-800"
         >
-            <div class="max-w-7xl mx-auto px-6">
-                <div class="grid lg:grid-cols-2 gap-16 items-center">
-                    <div class="reveal">
+            <div class="grid lg:grid-cols-2 lg:min-h-[720px]">
+                <div
+                    class="reveal flex items-center px-6 py-24 sm:px-10 lg:px-16 xl:px-24"
+                >
+                    <div class="max-w-xl">
                         <span
                             class="text-guira-teal font-bold tracking-widest uppercase text-xs mb-4 block"
                             >Plataforma</span
@@ -1025,21 +1011,30 @@ import Flag from "../components/Flag.astro";
                             <i data-lucide="arrow-right" class="w-5 h-5"></i>
                         </a>
                     </div>
-                    <div class="reveal-right relative">
-                        <div
-                            class="absolute inset-0 bg-guira-teal/10 blur-[100px] rounded-full"
-                        >
-                        </div>
-                        <img
-                            src="/assets/images/producto-dashboard.webp"
-                            alt="Plataforma Guira - Dashboard de operaciones"
-                            class="relative rounded-2xl shadow-2xl border border-slate-700 w-full"
+                </div>
+                <div class="reveal-right relative min-h-[420px]">
+                    <video
+                        class="absolute inset-0 h-full w-full object-cover"
+                        autoplay
+                        muted
+                        loop
+                        playsinline
+                        preload="metadata"
+                    >
+                        <source
+                            src="https://res.cloudinary.com/dbrkedvyp/video/upload/v1784907440/DocumentacionGuira_us5x9a.webm"
+                            type="video/webm"
                         />
-                        <div
-                            class="absolute -bottom-4 -right-4 bg-guira-teal text-white px-4 py-2 rounded-xl font-bold text-sm"
-                        >
-                            Plataforma en vivo
-                        </div>
+                    </video>
+                    <div
+                        class="absolute inset-y-0 left-0 w-1/3 bg-gradient-to-r from-slate-900/60 to-transparent"
+                        aria-hidden="true"
+                    >
+                    </div>
+                    <div
+                        class="absolute bottom-6 right-6 z-10 bg-guira-teal text-white px-4 py-2 rounded-xl font-bold text-sm shadow-lg"
+                    >
+                        Plataforma en vivo
                     </div>
                 </div>
             </div>
@@ -1233,11 +1228,132 @@ import Flag from "../components/Flag.astro";
             </div>
         </section>
 
-        <!-- Banner Corporativo -->
-        {
-            /*
-             */
-        }
+        <!-- Cobertura -->
+        <section
+            data-stack-section
+            class="relative overflow-hidden bg-guira-navy border-t border-slate-800"
+        >
+            <div class="max-w-7xl mx-auto px-6 py-24">
+                <div class="max-w-2xl reveal">
+                    <p class="section-kicker text-guira-teal">
+                        Cobertura operativa
+                    </p>
+                    <h2
+                        class="mt-5 text-3xl md:text-5xl font-extrabold text-white leading-tight"
+                    >
+                        Alcance regional de Guira
+                    </h2>
+                    <p
+                        class="mt-5 text-slate-400 text-lg font-medium leading-relaxed"
+                    >
+                        Guira está pensado para empresas de estas geografías,
+                        que cobran y pagan en dólares con el exterior.
+                    </p>
+                </div>
+            </div>
+
+            <div
+                class="grid grid-cols-1 gap-px bg-white/10 border-t border-white/10 sm:grid-cols-2 md:grid-cols-4"
+            >
+                <div class="reveal bg-guira-navy px-8 py-10">
+                    <span class="font-mono text-xs tracking-wider text-slate-600"
+                        >01</span
+                    >
+                    <h3 class="mt-4 text-lg font-bold text-white">Bolivia</h3>
+                    <p class="mt-2 text-sm font-medium leading-relaxed text-slate-400">
+                        Presencia local con asesoría comercial de Guiraglobal
+                        SRL, sin custodia de fondos.
+                    </p>
+                    <div class="mt-4 flex flex-wrap gap-2">
+                        <span
+                            class="inline-flex items-center rounded-full border border-white/15 bg-white/5 px-3 py-1 text-xs font-semibold tracking-wide text-slate-300"
+                            >Guiraglobal SRL</span
+                        >
+                    </div>
+                </div>
+
+                <div class="reveal reveal-delay-1 bg-guira-navy px-8 py-10">
+                    <span class="font-mono text-xs tracking-wider text-slate-600"
+                        >02</span
+                    >
+                    <h3 class="mt-4 text-lg font-bold text-white">
+                        Colombia
+                    </h3>
+                    <p class="mt-2 text-sm font-medium leading-relaxed text-slate-400">
+                        Empresas exportadoras que facturan en dólares a
+                        clientes en el exterior.
+                    </p>
+                </div>
+
+                <div class="reveal reveal-delay-2 bg-guira-navy px-8 py-10">
+                    <span class="font-mono text-xs tracking-wider text-slate-600"
+                        >03</span
+                    >
+                    <h3 class="mt-4 text-lg font-bold text-white">Brasil</h3>
+                    <p class="mt-2 text-sm font-medium leading-relaxed text-slate-400">
+                        Compañías que cobran en dólares a clientes
+                        internacionales.
+                    </p>
+                </div>
+
+                <div class="reveal reveal-delay-3 bg-guira-navy px-8 py-10">
+                    <span class="font-mono text-xs tracking-wider text-slate-600"
+                        >04</span
+                    >
+                    <h3 class="mt-4 text-lg font-bold text-white">México</h3>
+                    <p class="mt-2 text-sm font-medium leading-relaxed text-slate-400">
+                        Negocios con clientes y proveedores fuera del país.
+                    </p>
+                </div>
+
+                <div class="reveal bg-guira-navy px-8 py-10">
+                    <span class="font-mono text-xs tracking-wider text-slate-600"
+                        >05</span
+                    >
+                    <h3 class="mt-4 text-lg font-bold text-white">
+                        Estados Unidos
+                    </h3>
+                    <p class="mt-2 text-sm font-medium leading-relaxed text-slate-400">
+                        Cuenta operativa en dólares, habilitada por un partner
+                        tecnológico licenciado en EE.UU.
+                    </p>
+                    <div class="mt-4 flex flex-wrap gap-2">
+                        <span
+                            class="inline-flex items-center rounded-full border border-white/15 bg-white/5 px-3 py-1 text-xs font-semibold tracking-wide text-slate-300"
+                            >ACH</span
+                        >
+                        <span
+                            class="inline-flex items-center rounded-full border border-white/15 bg-white/5 px-3 py-1 text-xs font-semibold tracking-wide text-slate-300"
+                            >Wire</span
+                        >
+                    </div>
+                </div>
+
+                <div class="reveal reveal-delay-1 bg-guira-navy px-8 py-10">
+                    <span class="font-mono text-xs tracking-wider text-slate-600"
+                        >06</span
+                    >
+                    <h3 class="mt-4 text-lg font-bold text-white">Europa</h3>
+                    <p class="mt-2 text-sm font-medium leading-relaxed text-slate-400">
+                        Clientes y proveedores de empresas latinoamericanas
+                        con operación internacional.
+                    </p>
+                </div>
+
+                <div class="reveal reveal-delay-2 bg-guira-navy px-8 py-10">
+                    <span class="font-mono text-xs tracking-wider text-slate-600"
+                        >07</span
+                    >
+                    <h3 class="mt-4 text-lg font-bold text-white">
+                        Otras regiones
+                    </h3>
+                    <p class="mt-2 text-sm font-medium leading-relaxed text-slate-400">
+                        Empresas de otros países de LATAM que operan con el
+                        exterior.
+                    </p>
+                </div>
+            </div>
+        </section>
 
         <!-- Elegibilidad del Servicio -->
         <section data-stack-section class="relative overflow-hidden">
@@ -1422,7 +1538,7 @@ import Flag from "../components/Flag.astro";
             >
             </div>
             <div class="max-w-7xl mx-auto px-6 relative z-10">
-                <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <div class="grid lg:grid-cols-2 gap-16 items-stretch">
                     <div class="reveal">
                         <span
                             class="text-guira-teal font-bold tracking-widest uppercase text-xs mb-4 block"
@@ -1545,74 +1661,127 @@ import Flag from "../components/Flag.astro";
                     </div>
 
                     <!-- Columna visual de comprobación (Prueba Estructural) -->
-                    <div class="relative reveal-right">
+                    <div class="relative reveal-right h-full">
                         <div
                             class="absolute inset-0 bg-guira-teal/10 blur-[100px] rounded-full"
                         >
                         </div>
                         <div
-                            class="bg-slate-800/80 backdrop-blur-md border border-slate-700/50 p-8 rounded-3xl relative z-10 shadow-2xl"
+                            class="h-full flex flex-col bg-slate-800/60 backdrop-blur-md border border-slate-700/50 rounded-3xl relative z-10 shadow-2xl overflow-hidden"
                         >
-                            <h3
-                                class="font-bold text-white mb-6 flex items-center gap-2 text-lg"
+                            <!-- Encabezado del documento -->
+                            <div
+                                class="flex items-center justify-between gap-4 px-8 py-6 border-b border-slate-700/60"
                             >
-                                <i
-                                    data-lucide="list-checks"
-                                    class="w-5 h-5 text-guira-teal"></i> Perfil Operativo
-                                Confiable
-                            </h3>
-                            <div class="space-y-3">
-                                <div
-                                    class="bg-slate-900 border border-slate-700 p-4 rounded-xl flex items-center justify-between"
-                                >
-                                    <span
-                                        class="text-sm font-medium text-slate-300"
-                                        >Identidad Corporativa Verificada (KYB)</span
+                                <div class="flex items-center gap-4">
+                                    <div
+                                        class="w-11 h-11 rounded-xl bg-guira-teal/10 border border-guira-teal/20 flex items-center justify-center shrink-0"
                                     >
+                                        <i
+                                            data-lucide="shield-check"
+                                            class="w-5 h-5 text-guira-teal"></i>
+                                    </div>
+                                    <div>
+                                        <p
+                                            class="text-[10px] font-bold uppercase tracking-widest text-slate-500 mb-0.5"
+                                        >
+                                            Documento de verificación
+                                        </p>
+                                        <h3 class="font-bold text-white text-lg">
+                                            Perfil Operativo Confiable
+                                        </h3>
+                                    </div>
+                                </div>
+                                <span
+                                    class="shrink-0 bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 text-[10px] font-extrabold px-2.5 py-1 rounded-full uppercase tracking-wider"
+                                    >Vigente</span
+                                >
+                            </div>
+
+                            <!-- Criterios: filas numeradas separadas por líneas -->
+                            <div class="flex-1 divide-y divide-slate-700/60">
+                                <div
+                                    class="flex items-center justify-between gap-4 px-8 py-5"
+                                >
+                                    <span class="flex items-center gap-4">
+                                        <span
+                                            class="text-xs font-bold text-slate-600"
+                                            >01</span
+                                        >
+                                        <span
+                                            class="text-sm font-medium text-slate-300"
+                                            >Identidad Corporativa Verificada
+                                            (KYB)</span
+                                        >
+                                    </span>
                                     <span
-                                        class="bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 text-[10px] font-extrabold px-2.5 py-1 rounded uppercase tracking-wider"
+                                        class="shrink-0 bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 text-[10px] font-extrabold px-2.5 py-1 rounded uppercase tracking-wider"
                                         >Cumplido</span
                                     >
                                 </div>
                                 <div
-                                    class="bg-slate-900 border border-slate-700 p-4 rounded-xl flex items-center justify-between"
+                                    class="flex items-center justify-between gap-4 px-8 py-5"
                                 >
+                                    <span class="flex items-center gap-4">
+                                        <span
+                                            class="text-xs font-bold text-slate-600"
+                                            >02</span
+                                        >
+                                        <span
+                                            class="text-sm font-medium text-slate-300"
+                                            >Invoice y Soporte Asociado</span
+                                        >
+                                    </span>
                                     <span
-                                        class="text-sm font-medium text-slate-300"
-                                        >Invoice y Soporte Asociado</span
-                                    >
-                                    <span
-                                        class="bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 text-[10px] font-extrabold px-2.5 py-1 rounded uppercase tracking-wider"
+                                        class="shrink-0 bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 text-[10px] font-extrabold px-2.5 py-1 rounded uppercase tracking-wider"
                                         >Requerido</span
                                     >
                                 </div>
                                 <div
-                                    class="bg-slate-900 border border-slate-700 p-4 rounded-xl flex items-center justify-between"
+                                    class="flex items-center justify-between gap-4 px-8 py-5"
                                 >
+                                    <span class="flex items-center gap-4">
+                                        <span
+                                            class="text-xs font-bold text-slate-600"
+                                            >03</span
+                                        >
+                                        <span
+                                            class="text-sm font-medium text-slate-300"
+                                            >Instrucción de Pagos a Terceros</span
+                                        >
+                                    </span>
                                     <span
-                                        class="text-sm font-medium text-slate-300"
-                                        >Instrucción de Pagos a Terceros</span
-                                    >
-                                    <span
-                                        class="bg-amber-500/10 text-amber-500 border border-amber-500/20 text-[10px] font-extrabold px-2.5 py-1 rounded uppercase tracking-wider"
+                                        class="shrink-0 bg-amber-500/10 text-amber-500 border border-amber-500/20 text-[10px] font-extrabold px-2.5 py-1 rounded uppercase tracking-wider"
                                         >Restringido</span
                                     >
                                 </div>
                                 <div
-                                    class="bg-slate-900 border border-slate-700 p-4 rounded-xl flex items-center justify-between"
+                                    class="flex items-center justify-between gap-4 px-8 py-5"
                                 >
+                                    <span class="flex items-center gap-4">
+                                        <span
+                                            class="text-xs font-bold text-slate-600"
+                                            >04</span
+                                        >
+                                        <span
+                                            class="text-sm font-medium text-slate-300"
+                                            >Uso Individual o de Consumo</span
+                                        >
+                                    </span>
                                     <span
-                                        class="text-sm font-medium text-slate-300"
-                                        >Uso Individual o de Consumo</span
-                                    >
-                                    <span
-                                        class="bg-rose-500/10 text-rose-400 border border-rose-500/20 text-[10px] font-extrabold px-2.5 py-1 rounded uppercase tracking-wider"
+                                        class="shrink-0 bg-rose-500/10 text-rose-400 border border-rose-500/20 text-[10px] font-extrabold px-2.5 py-1 rounded uppercase tracking-wider"
                                         >Rechazado</span
                                     >
                                 </div>
                             </div>
-                            <div class="mt-6 text-center">
-                                <p class="text-xs text-slate-400 font-medium">
+
+                            <!-- Nota al pie -->
+                            <div
+                                class="px-8 py-6 border-t border-slate-700/60 bg-slate-900/40"
+                            >
+                                <p
+                                    class="text-xs text-slate-400 font-medium leading-relaxed"
+                                >
                                     La firmeza de nuestros criterios de
                                     habilitación es nuestra principal métrica de
                                     madurez y seguridad en LATAM.
