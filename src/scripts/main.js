@@ -73,6 +73,29 @@ document.addEventListener('DOMContentLoaded', () => {
         revealObserver.observe(el);
     });
 
+    // 4.1 Reinicia videos de fondo al entrar al viewport (siempre desde el inicio)
+    const restartVideos = document.querySelectorAll('video[data-restart-on-view]');
+
+    if (restartVideos.length) {
+        const restartVideoCallback = (entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const video = entry.target;
+                    video.currentTime = 0;
+                    video.play().catch(() => {});
+                }
+            });
+        };
+
+        const restartVideoObserver = new IntersectionObserver(restartVideoCallback, {
+            threshold: 0.25,
+        });
+
+        restartVideos.forEach(video => {
+            restartVideoObserver.observe(video);
+        });
+    }
+
     // 5. Premium tilt interaction for hero/cards
     const tiltCards = document.querySelectorAll('[data-tilt]');
     tiltCards.forEach(card => {

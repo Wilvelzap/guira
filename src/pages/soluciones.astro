@@ -256,14 +256,20 @@ import StackedSections from '../components/StackedSections.astro';
                   <i data-lucide="arrow-right" class="w-4 h-4"></i>
               </a>
           </div>
-          <div class="reveal relative h-64 md:h-auto bg-white/5 flex items-center justify-center">
-              <div class="text-center p-10">
-                  <div class="w-20 h-20 rounded-full bg-white/10 flex items-center justify-center mx-auto mb-4">
-                      <i data-lucide="map-pin" class="w-10 h-10 text-guira-emerald"></i>
-                  </div>
-                  <p class="text-white font-bold text-lg">Bolivia</p>
-                  <p class="text-slate-400 text-sm font-medium mt-1">Soporte y presencia local</p>
-              </div>
+          <div class="reveal relative h-64 md:h-auto bg-white/5">
+              <video
+                  class="absolute inset-0 h-full w-full object-cover"
+                  autoplay
+                  muted
+                  loop
+                  playsinline
+                  preload="metadata"
+              >
+                  <source
+                      src="https://res.cloudinary.com/dbrkedvyp/video/upload/v1784908890/Guira_to_world_zzjcss.webm"
+                      type="video/webm"
+                  />
+              </video>
           </div>
       </div>
   </section>

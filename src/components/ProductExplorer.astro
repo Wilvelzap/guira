@@ -15,7 +15,7 @@
       </article>
     </div>
   </div>
-  <p class="product-showcase__hint">Selecciona una capacidad para ver una imagen de referencia. Vuelve a seleccionarla para restaurar la escena.</p>
+  <p class="product-showcase__hint">Selecciona una capacidad para ver su descripción completa y una imagen de referencia. Vuelve a seleccionarla para restaurar la escena.</p>
 </div>
 
 <style is:global>
@@ -31,24 +31,39 @@
   .product-showcase__track { position:relative; height:34rem; }
   .product-showcase__intro, .product-showcase__card { position:absolute; top:0; left:0; display:flex; height:34rem; flex-direction:column; border-radius:0; will-change:transform; }
   .product-showcase__intro { justify-content:flex-end; padding:clamp(2rem, 4vw, 4rem); background:none; color:#0f172a; }
-  .product-showcase__eyebrow { margin-bottom:1rem; color:#0d9488; font-size:.7rem; font-weight:800; letter-spacing:.1em; text-transform:uppercase; }
+  .product-showcase__eyebrow { margin-bottom:1rem; color:#0051ff; font-size:.7rem; font-weight:800; letter-spacing:.1em; text-transform:uppercase; }
   .product-showcase__intro h2 { margin:0; font-size:clamp(1.75rem, 2.5vw, 2.6rem); font-weight:800; line-height:1.1; letter-spacing:-.04em; color:#0f172a; }
   .product-showcase__intro p { margin:1.25rem 0 0; color:#475569; font-size:1rem; font-weight:500; line-height:1.65; }
-  .product-showcase__card { padding:clamp(1.75rem, 3vw, 3rem); border-top:0; border-bottom:0; border-left:1px solid #e2e8f0; border-right:1px solid #e2e8f0; background:#f8fafc; color:#0f172a; text-align:left; transition:border-color .2s ease, background .2s ease, box-shadow .2s ease; }
-  .product-showcase__card:hover, .product-showcase__card:focus-visible { border-color:#0051ff; background:#f5f8ff; box-shadow:0 18px 40px -32px rgba(0,81,255,.45); outline:none; }
-  .product-showcase__card[aria-pressed="true"] { border-color:#0051ff; background:#f5f8ff; box-shadow:0 0 0 3px rgba(0,81,255,.78), 0 24px 56px -38px rgba(0,81,255,.7); }
-  .product-showcase__icon { width:1.85rem; height:1.85rem; margin-bottom:auto; stroke-width:1.7; }
-  .product-showcase__card .product-showcase__eyebrow { margin:1.7rem 0 .65rem; color:#0d9488; }
-  .product-showcase__card h3 { margin:0; font-size:1.45rem; font-weight:800; line-height:1.25; }
-  .product-showcase__card p { margin:1rem 0 1.75rem; color:#475569; font-size:.94rem; font-weight:500; line-height:1.65; }
-  .product-showcase__card ul { margin:auto 0 0; padding:1.25rem 0 0; border-top:1px solid #dbe3ed; list-style:none; color:#334155; font-size:.83rem; font-weight:700; line-height:1.8; }
+  .product-showcase__card { padding:clamp(1.5rem, 2.6vw, 2.5rem); border:1px solid rgba(15,23,42,.08); border-radius:1.75rem; background:linear-gradient(180deg, #ffffff 0%, #fbfcfe 100%); color:#0f172a; text-align:left; cursor:pointer; overflow:hidden; box-shadow:0 1px 2px rgba(15,23,42,.04), 0 20px 40px -30px rgba(15,23,42,.22); transition:border-color .2s ease, box-shadow .3s ease, transform .3s ease; }
+  .product-showcase__card:hover, .product-showcase__card:focus-visible { border-color:rgba(0,81,255,.35); box-shadow:0 1px 2px rgba(15,23,42,.04), 0 24px 48px -26px rgba(0,81,255,.32); outline:none; transform:translateY(-3px); }
+  .product-showcase__card[aria-pressed="true"] { border-color:rgba(0,81,255,.45); box-shadow:0 0 0 3px rgba(0,81,255,.16), 0 28px 56px -30px rgba(0,81,255,.4); transform:translateY(-3px); }
+  .product-showcase__icon-panel { position:relative; display:flex; align-items:center; justify-content:center; width:100%; height:14rem; margin-bottom:1.5rem; border-radius:1.25rem; overflow:hidden; background:linear-gradient(150deg, #0b1120 0%, #101c34 55%, #0b1120 100%); transition:height .35s ease, margin .35s ease; }
+  .product-showcase__icon-panel::before { content:""; position:absolute; top:50%; left:50%; width:11rem; height:11rem; border-radius:999px; background:radial-gradient(circle, rgba(0,216,255,.4), rgba(0,81,255,.12) 55%, transparent 72%); filter:blur(18px); transform:translate(-50%,-50%) scale(1); transition:transform .35s ease; }
+  .product-showcase__icon-panel::after { content:""; position:absolute; inset:0; opacity:.5; background-image:radial-gradient(circle at 1px 1px, rgba(255,255,255,.16) 1px, transparent 0); background-size:14px 14px; }
+  .product-showcase__card[aria-pressed="true"] .product-showcase__icon-panel { height:4rem; margin-bottom:1rem; }
+  .product-showcase__card[aria-pressed="true"] .product-showcase__icon-panel::before { transform:translate(-50%,-50%) scale(.4); }
+  .product-showcase__icon-badge { position:relative; z-index:1; display:flex; align-items:center; justify-content:center; width:5.5rem; height:5.5rem; border-radius:999px; background:rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.16); backdrop-filter:blur(6px); transition:width .35s ease, height .35s ease; }
+  .product-showcase__card[aria-pressed="true"] .product-showcase__icon-badge { width:2.75rem; height:2.75rem; }
+  .product-showcase__icon { width:2.75rem; height:2.75rem; stroke-width:1.5; color:#00d8ff; transition:width .3s ease, height .3s ease; }
+  .product-showcase__card[aria-pressed="true"] .product-showcase__icon { width:1.5rem; height:1.5rem; }
+  .product-showcase__card h3 { margin:0; font-size:1.4rem; font-weight:800; line-height:1.25; }
+  .product-showcase__card p { max-height:0; margin:0; opacity:0; overflow:hidden; color:#475569; font-size:.94rem; font-weight:500; line-height:1.65; transition:max-height .35s ease, opacity .25s ease, margin .35s ease; }
+  .product-showcase__card[aria-pressed="true"] p { max-height:11rem; margin:.85rem 0 1.25rem; opacity:1; }
+  .product-showcase__card ul { margin:.85rem 0 1.5rem; padding:1.1rem 0 0; border-top:1px solid #e7ecf3; list-style:none; color:#334155; font-size:.83rem; font-weight:700; line-height:1.8; }
   .product-showcase__card li + li { margin-top:.45rem; }
-  .product-showcase__card li::before { content:"✓"; margin-right:.65rem; color:#0d9488; }
-  .product-showcase__detail { padding:0; overflow:hidden; border:0; background:#e2e8f0; box-shadow:0 28px 80px -48px rgba(15,23,42,.55); }
+  .product-showcase__card li::before { content:"✓"; margin-right:.65rem; color:#0051ff; }
+  .product-showcase__toggle { display:flex; align-items:center; justify-content:center; width:2.4rem; height:2.4rem; margin-top:auto; border:1px solid #dbe3ed; border-radius:999px; background:#fff; transition:border-color .2s ease, background .2s ease, box-shadow .2s ease; }
+  .product-showcase__card:hover .product-showcase__toggle,
+  .product-showcase__card[aria-pressed="true"] .product-showcase__toggle { border-color:#0051ff; background:linear-gradient(135deg, #0051ff, #00d8ff); box-shadow:0 8px 20px -8px rgba(0,81,255,.55); }
+  .product-showcase__toggle-icon { width:1.1rem; height:1.1rem; color:#0051ff; stroke-width:2; transition:transform .3s ease, color .2s ease; }
+  .product-showcase__card:hover .product-showcase__toggle-icon,
+  .product-showcase__card[aria-pressed="true"] .product-showcase__toggle-icon { color:#fff; }
+  .product-showcase__card[aria-pressed="true"] .product-showcase__toggle-icon { transform:rotate(45deg); }
+  .product-showcase__detail { padding:0; overflow:hidden; border:0; border-radius:1.5rem; background:#e2e8f0; box-shadow:0 28px 80px -48px rgba(15,23,42,.55); }
   .product-showcase__detail:hover, .product-showcase__detail:focus-visible { background:#e2e8f0; }
   .product-showcase__detail img { width:100%; height:100%; object-fit:cover; }
   .product-showcase__hint { margin:1.2rem 0 0; color:#64748b; font-size:.875rem; font-weight:600; text-align:center; }
-  @media (max-width:767px) { .product-showcase { padding:0 1rem; } .product-showcase__track, .product-showcase__intro, .product-showcase__card { height:31rem; } .product-showcase__intro { padding:1.75rem; } }
+  @media (max-width:767px) { .product-showcase { padding:0 1rem; } .product-showcase__track, .product-showcase__intro, .product-showcase__card { height:31rem; } .product-showcase__intro { padding:1.75rem; } .product-showcase__icon-panel { height:10rem; } }
 </style>
 
 <script>
@@ -56,15 +71,15 @@
   const showcase = document.querySelector("[data-product-showcase]");
   if (showcase) {
     const items = [
-      { id:"usd", icon:"landmark", eyebrow:"Cuenta operativa en USD", title:"Infraestructura operativa en USD", text:"Centraliza la recepci&oacute;n de pagos desde USA al integrarte con estructuras de pago reguladas, facilitando la visibilidad de tu flujo operativo internacional de inicio a fin.", points:["Datos de recepci&oacute;n en USD", "Recepci&oacute;n de pagos desde USA"], detail:{ type:"image", src:"/assets/images/blog/dashboard-cobros-internacionales-trazabilidad.webp", alt:"Panel de cobros internacionales" } },
-      { id:"payments", icon:"globe-2", eyebrow:"Pagos internacionales", title:"Pagos empresariales", text:"Ejecuta pagos ACH y Wire a proveedores y partners clave en Estados Unidos con total visibilidad, orden y trazabilidad operativa.", points:["Pagos ACH y Wire transfer", "Mayor orden y trazabilidad"], detail:{ type:"image", src:"/assets/images/blog/factura-proveedor-internacional-banco.webp", alt:"Factura de proveedor internacional" } },
-      { id:"routing", icon:"refresh-cw", eyebrow:"Flexibilidad operativa", title:"Flexibilidad de salida", text:"Instruye transferencias seg&uacute;n la estructura aprobada hacia cuentas locales o canales digitales mediante una interfaz orientada al control documental.", points:["Opciones de enrutamiento operativo", "Soporte documental trazable por transacci&oacute;n"], detail:{ type:"image", src:"/assets/images/blog/transferencia-internacional-documentos-usd.webp", alt:"Documentos de transferencia internacional" } }
+      { id:"usd", icon:"wallet", eyebrow:"Cuenta operativa en USD", title:"Infraestructura operativa en USD", text:"Centraliza la recepci&oacute;n de pagos desde USA al integrarte con estructuras de pago reguladas, facilitando la visibilidad de tu flujo operativo internacional de inicio a fin.", points:["Datos de recepci&oacute;n en USD", "Recepci&oacute;n de pagos desde USA"], detail:{ type:"image", src:"/assets/images/blog/dashboard-cobros-internacionales-trazabilidad.webp", alt:"Panel de cobros internacionales" } },
+      { id:"payments", icon:"arrow-left-right", eyebrow:"Pagos internacionales", title:"Pagos empresariales", text:"Ejecuta pagos ACH y Wire a proveedores y partners clave en Estados Unidos con total visibilidad, orden y trazabilidad operativa.", points:["Pagos ACH y Wire transfer", "Mayor orden y trazabilidad"], detail:{ type:"image", src:"/assets/images/blog/factura-proveedor-internacional-banco.webp", alt:"Factura de proveedor internacional" } },
+      { id:"routing", icon:"route", eyebrow:"Flexibilidad operativa", title:"Flexibilidad de salida", text:"Instruye transferencias seg&uacute;n la estructura aprobada hacia cuentas locales o canales digitales mediante una interfaz orientada al control documental.", points:["Opciones de enrutamiento operativo", "Soporte documental trazable por transacci&oacute;n"], detail:{ type:"image", src:"/assets/images/blog/transferencia-internacional-documentos-usd.webp", alt:"Documentos de transferencia internacional" } }
     ];
     const viewport = showcase.querySelector("[data-product-viewport]"); const track = showcase.querySelector("[data-product-track]"); const previous = showcase.querySelector("[data-product-prev]"); const next = showcase.querySelector("[data-product-next]"); const counter = showcase.querySelector("[data-product-counter]");
     const cards = new Map([["intro", track.querySelector("[data-key='intro']")]]); const scenes = Array.from({ length:Math.ceil(items.length / 2) }, (_, index) => items.slice(index * 2, index * 2 + 2)); let sceneIndex = 0; let activeId = null; let visibleKeys = []; let locked = false;
     items.forEach((item) => {
       const main = document.createElement("button"); main.type = "button"; main.className = "product-showcase__card"; main.dataset.key = `${item.id}:main`; main.dataset.itemId = item.id;
-      main.innerHTML = `<i data-lucide="${item.icon}" class="product-showcase__icon" aria-hidden="true"></i><span class="product-showcase__eyebrow">${item.eyebrow}</span><h3>${item.title}</h3><p>${item.text}</p><ul>${item.points.map((point) => `<li>${point}</li>`).join("")}</ul>`; track.append(main); cards.set(main.dataset.key, main);
+      main.innerHTML = `<div class="product-showcase__icon-panel"><span class="product-showcase__icon-badge"><i data-lucide="${item.icon}" class="product-showcase__icon" aria-hidden="true"></i></span></div><h3>${item.title}</h3><p>${item.text}</p><ul>${item.points.map((point) => `<li>${point}</li>`).join("")}</ul><span class="product-showcase__toggle" aria-hidden="true"><i data-lucide="plus" class="product-showcase__toggle-icon"></i></span>`; track.append(main); cards.set(main.dataset.key, main);
       const detail = document.createElement("button"); detail.type = "button"; detail.className = "product-showcase__card product-showcase__detail"; detail.dataset.key = `${item.id}:detail`; detail.dataset.itemId = item.id;
       detail.innerHTML = item.detail.type === "image" ? `<img src="${item.detail.src}" alt="${item.detail.alt}" loading="lazy">` : ""; track.append(detail); cards.set(detail.dataset.key, detail);
     });
