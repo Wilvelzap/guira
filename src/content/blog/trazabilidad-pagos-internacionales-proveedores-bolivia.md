@@ -107,7 +107,7 @@ La trazabilidad se ha convertido en un elemento clave para las empresas que real
 
 ## ¿Qué plataforma puede ayudarte a mejorar la trazabilidad?
 
-**Guira** es una plataforma orientada a la gestión, trazabilidad y administración de operaciones internacionales para empresas. Permite centralizar documentación, consultar información relevante de cada operación y mantener una mayor visibilidad sobre los procesos asociados.
+**Guira** es la plataforma donde una PYME boliviana paga a sus proveedores, cobra de sus clientes y opera cuentas en la moneda que necesite en el exterior (dólares, euros, pesos mexicanos, pesos colombianos o reales) con la trazabilidad documental que su contador y su auditor necesitan en cada operación. Permite centralizar documentación, consultar información relevante de cada operación y mantener una mayor visibilidad sobre los procesos asociados.
 
 A través de Guira, las organizaciones acceden a una interfaz donde finanzas y contabilidad pueden asociar la documentación comercial a cada transferencia en tiempo real, visualizar flujos y estados de pago, y mantener el control sobre múltiples operaciones desde un solo entorno unificado.
 

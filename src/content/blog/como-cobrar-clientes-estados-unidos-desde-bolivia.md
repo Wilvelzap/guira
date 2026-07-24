@@ -166,15 +166,15 @@ Por eso, muchas empresas evalúan herramientas que permitan gestionar operacione
 
 ## Cómo puede ayudar Guira
 
-Guira es una plataforma orientada a la gestión, trazabilidad y administración de operaciones internacionales para empresas. A través de la plataforma, las organizaciones pueden centralizar información relacionada con sus operaciones, documentación y procesos asociados, facilitando mayor visibilidad y control operativo.
+Guira es la plataforma donde una PYME boliviana paga a sus proveedores, cobra de sus clientes y opera cuentas en la moneda que necesite en el exterior (dólares, euros, pesos mexicanos, pesos colombianos o reales) con la trazabilidad documental que su contador y su auditor necesitan en cada operación.
 
-La disponibilidad de funcionalidades específicas puede depender de cada operación y de terceros involucrados en el proceso. Por eso, antes de definir una ruta de cobro, es recomendable revisar el tipo de operación, la documentación disponible y las necesidades administrativas de la empresa.
+La disponibilidad de funcionalidades específicas depende de cada operación y de los partners involucrados. Por eso, antes de definir una ruta de cobro, es recomendable revisar el tipo de operación, la documentación disponible y las necesidades administrativas de la empresa.
 
 ## Preguntas frecuentes
 
 ### ¿Cuál es la mejor forma de cobrar clientes de Estados Unidos desde Bolivia?
 
-Depende del monto, frecuencia y nivel de documentación requerido. Wire suele utilizarse para pagos empresariales de mayor monto; ACH puede servir si existe una estructura de recepción en Estados Unidos; y una plataforma B2B puede aportar trazabilidad, seguimiento y control documental.
+Depende del monto, frecuencia y nivel de documentación requerido. Wire suele utilizarse para pagos empresariales de mayor monto. ACH puede servir si existe una estructura de recepción en Estados Unidos. Una plataforma B2B aporta trazabilidad, seguimiento y control documental.
 
 ### ¿ACH sirve para recibir pagos directamente en una cuenta boliviana?
 

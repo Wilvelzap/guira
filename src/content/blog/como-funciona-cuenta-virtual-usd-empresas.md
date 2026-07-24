@@ -117,7 +117,7 @@ Una cuenta virtual USD puede ser una herramienta útil para empresas que reciben
 
 Más allá de la recepción de fondos, su principal aporte está en facilitar la conciliación, mejorar la visibilidad sobre los cobros y mantener la información operativa centralizada.
 
-**Guira** es una plataforma orientada a la gestión, trazabilidad y administración de operaciones internacionales para empresas. Permite centralizar información, documentación y seguimiento de las operaciones desde un único entorno.
+**Guira** es la plataforma donde una PYME boliviana paga a sus proveedores, cobra de sus clientes y opera cuentas en la moneda que necesite en el exterior (dólares, euros, pesos mexicanos, pesos colombianos o reales) con la trazabilidad documental que su contador y su auditor necesitan en cada operación. Permite centralizar información, documentación y seguimiento de las operaciones desde un único entorno.
 
 *La disponibilidad de funcionalidades específicas puede depender de cada operación y de terceros involucrados en el proceso.*
 

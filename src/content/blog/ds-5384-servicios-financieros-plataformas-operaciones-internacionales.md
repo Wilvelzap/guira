@@ -92,7 +92,7 @@ Antes de elegir una solución, evalúa qué procesos de incorporación, document
 
 ## Qué rol cumple Guira
 
-**Guira** es una plataforma orientada a la gestión, trazabilidad y administración de operaciones internacionales para empresas. Ayuda a centralizar información, documentación y seguimiento para que los equipos financieros y administrativos trabajen con mayor visibilidad.
+**Guira** es la plataforma donde una PYME boliviana paga a sus proveedores, cobra de sus clientes y opera cuentas en la moneda que necesite en el exterior (dólares, euros, pesos mexicanos, pesos colombianos o reales) con la trazabilidad documental que su contador y su auditor necesitan en cada operación. Ayuda a centralizar información, documentación y seguimiento para que los equipos financieros y administrativos trabajen con mayor visibilidad.
 
 La disponibilidad de funcionalidades específicas puede depender de cada operación y de terceros involucrados en el proceso.
 

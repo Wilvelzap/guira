@@ -87,7 +87,7 @@ Estas prácticas contribuyen a reducir consultas internas, mejorar el control op
 
 Cuando una empresa realiza pagos internacionales de forma recurrente, disponer de herramientas que permitan organizar documentos, registrar operaciones y consultar el estado de cada proceso puede mejorar significativamente la eficiencia administrativa.
 
-**Guira** es una plataforma orientada a la gestión, trazabilidad y administración de operaciones internacionales para empresas. Permite centralizar información, documentación y seguimiento de las operaciones desde un único entorno.
+**Guira** es la plataforma donde una PYME boliviana paga a sus proveedores, cobra de sus clientes y opera cuentas en la moneda que necesite en el exterior (dólares, euros, pesos mexicanos, pesos colombianos o reales) con la trazabilidad documental que su contador y su auditor necesitan en cada operación. Permite centralizar información, documentación y seguimiento de las operaciones desde un único entorno.
 
 Con Guira, las empresas bolivianas pueden gestionar sus envíos de transferencias internacionales B2B con total claridad, asociando cada orden de pago con su respectiva factura comercial y contrato de respaldo en un solo panel corporativo. Esto agiliza la aprobación del equipo financiero y provee un historial completo listo para auditorías internas.
 

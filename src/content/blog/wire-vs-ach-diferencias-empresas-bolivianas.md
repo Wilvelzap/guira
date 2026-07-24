@@ -20,7 +20,7 @@ Entender la diferencia entre Wire vs ACH no solo es útil para saber qué espera
 
 ## ¿Qué es una Wire Transfer?
 
-Una Wire Transfer —también llamada transferencia bancaria internacional o telegráfica— es un método de envío de fondos entre entidades financieras a través de redes como SWIFT. Es el mecanismo estándar para mover dinero entre bancos de distintos países.
+Una Wire Transfer (también llamada transferencia bancaria internacional o telegráfica) es un método de envío de fondos entre entidades financieras a través de redes como SWIFT. Es el mecanismo estándar para mover dinero entre bancos de distintos países.
 
 ### Características principales de una Wire
 
@@ -54,7 +54,7 @@ ACH (Automated Clearing House) es una red de pagos electrónicos que opera **den
 
 ### ¿Cuándo usan ACH tus clientes en EE.UU.?
 
-Una empresa en EE.UU. usa ACH cuando paga a otra entidad con cuenta bancaria en ese país. Si tu empresa boliviana cuenta con una cuenta bancaria en EE.UU. —ya sea directamente o a través de una plataforma que la provea— puede recibir pagos por esta vía.
+Una empresa en EE.UU. usa ACH cuando paga a otra entidad con cuenta bancaria en ese país. Si tu empresa boliviana cuenta con una cuenta bancaria en EE.UU. (ya sea directamente o a través de una plataforma que la provea), puede recibir pagos por esta vía.
 
 ## Wire vs ACH: diferencias clave para empresas bolivianas
 
@@ -77,7 +77,7 @@ La respuesta depende de tu situación:
 
 **Wire Transfer** es la opción más directa si tu empresa tiene cuenta en un banco boliviano habilitado para recibir divisas. El cliente en EE.UU. envía los fondos a través de SWIFT y, luego de pasar por los bancos corresponsales, el dinero llega a tu cuenta.
 
-**ACH** puede ser más eficiente para recibir pagos frecuentes o de menor monto desde EE.UU. —especialmente si trabajas con muchos clientes pequeños o tienes un flujo recurrente— pero requiere contar con una cuenta bancaria en EE.UU. o usar una plataforma que la provea como parte del servicio.
+**ACH** puede ser más eficiente para recibir pagos frecuentes o de menor monto desde EE.UU. (especialmente si trabajas con clientes pequeños o un flujo recurrente), pero requiere contar con una cuenta bancaria en EE.UU. o usar una plataforma que la provea como parte del servicio.
 
 > **Punto clave:** Si tu cliente en EE.UU. prefiere pagar por ACH porque es más barato y rápido para ellos, no significa que tú debas recibir el dinero directamente en Bolivia por ese canal. Puedes usar una plataforma intermediaria que reciba el ACH en EE.UU. y luego gestione la disponibilidad de los fondos para tu empresa.
 
@@ -92,14 +92,14 @@ Saber exactamente qué pago corresponde a qué factura, cliente y contrato es fu
 Cada ingreso de divisas debe tener su comprobante de transferencia, factura emitida y tipo de cambio BCB del día. Sin esta documentación, la operación queda expuesta a observaciones tributarias.
 
 ### Conciliación ágil
-Cuando los pagos llegan de forma desordenada —sin referencia clara, a cuentas distintas o con descuentos por comisiones intermediarias— el área contable pierde horas valiosas en identificar cada movimiento.
+Cuando los pagos llegan de forma desordenada (sin referencia clara, a cuentas distintas o con descuentos por comisiones intermediarias), el área contable pierde horas valiosas en identificar cada movimiento.
 
 ### Visibilidad en tiempo real
 Saber cuándo llega el dinero, por qué monto exacto y con qué referencia, permite tomar decisiones operativas más rápido y sin depender de llamadas al banco.
 
 ## Cómo Guira simplifica la gestión de pagos desde EE.UU.
 
-Guira es una plataforma orientada a la gestión, trazabilidad y administración de operaciones internacionales para empresas. A través de un único entorno, permite:
+Guira es la plataforma donde una PYME boliviana paga a sus proveedores, cobra de sus clientes y opera cuentas en la moneda que necesite en el exterior (dólares, euros, pesos mexicanos, pesos colombianos o reales) con la trazabilidad documental que su contador y su auditor necesitan en cada operación. A través de un único entorno, permite:
 
 - **Centralizar la información** de cada operación de cobro internacional
 - **Vincular cada pago con su factura**, cliente y contrato correspondiente

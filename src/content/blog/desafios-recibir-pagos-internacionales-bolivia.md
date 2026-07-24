@@ -65,7 +65,7 @@ Para ilustrar mejor cómo afectan estos desafíos al día a día de una empresa 
 
 | Aspecto operativo | Flujo Bancario Tradicional | Flujo con Plataforma Integrada |
 | :--- | :--- | :--- |
-| **Identificación de origen** | Manual; depende de referencias bancarias recortadas. | Automática; cada cobro se vincula a un pagador único. |
+| **Identificación de origen** | Manual; depende de referencias bancarias recortadas. | Automática. Cada cobro se vincula a un pagador único. |
 | **Acceso a documentos** | Disperso en carpetas locales e hilos de correo. | Centralizado en la nube junto a la transacción. |
 | **Seguimiento del estado** | Depende de llamadas al banco y correos. | Panel con actualizaciones de estado en tiempo real. |
 | **Tiempo de conciliación** | Horas o días de validación manual. | Segundos a través de coincidencia de facturas. |
@@ -90,7 +90,7 @@ A continuación, compartimos una guía rápida de buenas prácticas para mitigar
 
 A medida que las **operaciones internacionales de las empresas** aumentan, administrar la información mediante múltiples correos, archivos y sistemas puede dificultar el seguimiento y el control.
 
-**Guira** es una plataforma orientada a la gestión, trazabilidad y administración de operaciones internacionales para empresas. Permite centralizar documentación, consultar información relevante de cada operación y mantener una mayor visibilidad sobre los procesos asociados.
+**Guira** es la plataforma donde una PYME boliviana paga a sus proveedores, cobra de sus clientes y opera cuentas en la moneda que necesite en el exterior (dólares, euros, pesos mexicanos, pesos colombianos o reales) con la trazabilidad documental que su contador y su auditor necesitan en cada operación. Permite centralizar documentación, consultar información relevante de cada operación y mantener una mayor visibilidad sobre los procesos asociados.
 
 Con Guira, los equipos financieros de las empresas bolivianas acceden a un entorno unificado de control que simplifica la conciliación de cada cobro con su respectiva factura comercial y contrato de respaldo, eliminando el papeleo disperso y automatizando la trazabilidad documental de cada transacción.
 

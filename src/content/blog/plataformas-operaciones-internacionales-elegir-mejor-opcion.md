@@ -89,7 +89,7 @@ Antes de comparar proveedores, también conviene revisar [5 aspectos que una emp
 
 No existe una plataforma que sea la mejor para todas las empresas. La elección dependerá de los procesos que cada organización necesite gestionar y del nivel de visibilidad, coordinación y control que requieran sus operaciones internacionales.
 
-**Guira** es una plataforma orientada a la gestión, trazabilidad y administración de operaciones internacionales para empresas. Permite centralizar documentación, consultar información relevante de cada operación y mantener una mayor visibilidad sobre los procesos asociados.
+**Guira** es la plataforma donde una PYME boliviana paga a sus proveedores, cobra de sus clientes y opera cuentas en la moneda que necesite en el exterior (dólares, euros, pesos mexicanos, pesos colombianos o reales) con la trazabilidad documental que su contador y su auditor necesitan en cada operación. Permite centralizar documentación, consultar información relevante de cada operación y mantener una mayor visibilidad sobre los procesos asociados.
 
 *La disponibilidad de funcionalidades específicas puede depender de cada operación y de terceros involucrados en el proceso.*
 
