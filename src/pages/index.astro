@@ -103,7 +103,7 @@ import Flag from "../components/Flag.astro";
         <!-- Hero -->
         <header
             data-stack-section
-            class="relative pt-36 pb-24 overflow-hidden border-b border-slate-200"
+            class="relative pt-20 md:pt-24 pb-24 overflow-hidden border-b border-slate-200"
         >
             <div class="absolute inset-0">
                 <picture class="w-full h-full block">
@@ -121,40 +121,13 @@ import Flag from "../components/Flag.astro";
                     />
                 </picture>
                 <div
-                    class="absolute inset-0 bg-gradient-to-r from-white via-white/95 to-white/60"
+                    class="absolute inset-0 bg-gradient-to-r from-white via-white/96 to-white/55"
                 >
                 </div>
-                <div
-                    class="absolute inset-0 bg-gradient-to-b from-white/80 via-transparent to-white/80"
-                >
-                </div>
-            </div>
-            <div
-                class="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(0,81,255,0.07),transparent_32%),radial-gradient(circle_at_80%_10%,rgba(0,216,255,0.06),transparent_26%)]"
-            >
-            </div>
-            <div
-                class="absolute inset-0 opacity-60 bg-[linear-gradient(rgba(15,23,42,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(15,23,42,0.03)_1px,transparent_1px)] bg-[size:72px_72px] animate-pulse-grid"
-            >
-            </div>
-            <div
-                class="fintech-orb w-72 h-72 bg-guira-teal/30 top-24 left-8"
-                data-parallax="26"
-            >
-            </div>
-            <div
-                class="fintech-orb w-64 h-64 bg-guira-cyan/30 top-20 right-10 [animation-delay:1.2s]"
-                data-parallax="18"
-            >
-            </div>
-            <div
-                class="fintech-orb w-52 h-52 bg-slate-200/70 bottom-12 right-1/4 [animation-delay:2.2s]"
-                data-parallax="12"
-            >
             </div>
 
             <div
-                class="max-w-7xl mx-auto px-6 relative z-10 grid lg:grid-cols-[1.1fr_0.9fr] gap-14 items-center"
+                class="max-w-7xl mx-auto px-6 relative z-10 grid xl:grid-cols-[1.1fr_0.9fr] gap-14 items-center"
             >
                 <div class="text-left">
                     <div class="reveal">
@@ -162,32 +135,30 @@ import Flag from "../components/Flag.astro";
                             class="fintech-badge inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-bold text-guira-teal mb-8"
                         >
                             <span
-                                class="signal-dot w-2 h-2 rounded-full bg-guira-teal"
+                                class="w-1.5 h-1.5 rounded-full bg-guira-teal"
                             ></span>
                             Plataforma tecnológica para empresas de LATAM · Presencia
                             en Bolivia
                         </span>
                     </div>
 
-                    <!-- Hero Headline Actualizado -->
                     <h1
-                        class="reveal reveal-delay-1 text-4xl md:text-6xl font-extrabold tracking-tight mb-6 leading-[1.12] text-slate-900 max-w-3xl"
+                        class="reveal reveal-delay-1 text-3xl md:text-4xl font-extrabold tracking-tight mb-6 leading-[1.2] text-slate-900 max-w-3xl"
                     >
                         Plataforma operativa para pagos empresariales
                         internacionales
                     </h1>
 
-                    <!-- Hero Subheadline Actualizado -->
                     <p
                         class="reveal reveal-delay-2 text-base md:text-lg text-slate-500 mb-10 max-w-xl font-medium leading-relaxed"
                     >
-                        Centraliza la recepción, visibilidad y las instrucciones
-                        de pago de tu empresa, soportado por una infraestructura
+                        Centraliza la recepción, visibilidad y las
+                        instrucciones de pago de tu empresa con respaldo
                         documental y partners internacionales calificados.
                     </p>
 
                     <div
-                        class="reveal reveal-delay-3 flex flex-col sm:flex-row items-center sm:items-stretch gap-4 mb-10"
+                        class="reveal reveal-delay-3 flex flex-col sm:flex-row items-center sm:items-stretch gap-4 mb-12"
                     >
                         <a
                             href="https://app.guiracorp.com"
@@ -205,397 +176,71 @@ import Flag from "../components/Flag.astro";
                     </div>
 
                     <div
-                        class="reveal reveal-delay-4 grid sm:grid-cols-3 gap-4 max-w-3xl"
+                        class="reveal reveal-delay-4 flex flex-wrap items-center gap-x-10 gap-y-6 max-w-xl"
                     >
-                        <div
-                            class="premium-card fintech-stat rounded-2xl p-5 tilt-card"
-                            data-tilt
-                        >
+                        <div class="pr-10 border-r border-slate-200">
                             <p
-                                class="text-xs font-bold text-slate-400 section-kicker mb-3"
+                                class="text-xs font-bold text-slate-400 section-kicker mb-2"
                             >
                                 Onboarding
                             </p>
-                            <p
-                                class="text-2xl font-extrabold text-slate-900 mb-1"
-                            >
+                            <p class="text-lg font-extrabold text-slate-900">
                                 Empresarial
                             </p>
-                            <p class="text-sm font-medium text-slate-500">
-                                Validación KYB diseñada para negocios de LATAM.
-                            </p>
                         </div>
-                        <div
-                            class="premium-card fintech-stat rounded-2xl p-5 tilt-card"
-                            data-tilt
-                        >
+                        <div class="pr-10 border-r border-slate-200">
                             <p
-                                class="text-xs font-bold text-slate-400 section-kicker mb-3"
+                                class="text-xs font-bold text-slate-400 section-kicker mb-2"
                             >
                                 Canales
                             </p>
-                            <p
-                                class="text-2xl font-extrabold text-slate-900 mb-1"
-                            >
+                            <p class="text-lg font-extrabold text-slate-900">
                                 ACH / Wire
                             </p>
-                            <p class="text-sm font-medium text-slate-500">
-                                Estructura para habilitar la recepción y envío
-                                de pagos.
-                            </p>
                         </div>
-                        <div
-                            class="premium-card fintech-stat rounded-2xl p-5 tilt-card"
-                            data-tilt
-                        >
+                        <div>
                             <p
-                                class="text-xs font-bold text-slate-400 section-kicker mb-3"
+                                class="text-xs font-bold text-slate-400 section-kicker mb-2"
                             >
                                 Control
                             </p>
-                            <p
-                                class="text-2xl font-extrabold text-slate-900 mb-1"
-                            >
+                            <p class="text-lg font-extrabold text-slate-900">
                                 Trazabilidad
-                            </p>
-                            <p class="text-sm font-medium text-slate-500">
-                                Visibilidad clara y estructurada de cada flujo.
                             </p>
                         </div>
                     </div>
                 </div>
 
-                <!-- Hero Mockup Protagonista -->
                 <div
-                    class="mt-20 lg:mt-0 relative mx-auto max-w-5xl reveal reveal-delay-4"
+                    class="hidden xl:block relative h-[420px] reveal reveal-delay-4"
                 >
                     <div
-                        class="absolute -top-10 -left-6 fintech-badge rounded-2xl p-4 w-56 animate-float-soft z-20 tilt-card"
-                        data-tilt
+                        class="premium-card absolute bottom-0 right-0 rounded-2xl p-6 w-72 border border-slate-200"
                     >
-                        <div class="flex items-center justify-between mb-3">
+                        <div class="flex items-center justify-between mb-4">
                             <span
                                 class="text-xs font-bold text-slate-400 section-kicker"
                                 >Conciliación</span
                             >
                             <span
-                                class="inline-flex items-center gap-1 text-[11px] font-bold text-emerald-600"
+                                class="inline-flex items-center gap-1.5 text-[11px] font-bold text-emerald-600"
                             >
                                 <span
-                                    class="w-2 h-2 rounded-full bg-emerald-500"
+                                    class="w-1.5 h-1.5 rounded-full bg-emerald-500"
                                 ></span> Activo
                             </span>
                         </div>
-                        <div class="text-2xl font-extrabold text-slate-900">
-                            $248K
+                        <div class="text-3xl font-extrabold text-slate-900">
+                            $248,000 <span class="text-sm text-slate-400"
+                                >USD *</span
+                            >
                         </div>
-                        <div class="text-xs font-medium text-slate-500 mt-1">
+                        <div class="text-sm font-medium text-slate-500 mt-2">
                             Operaciones conciliadas esta semana
                         </div>
-                    </div>
-                    <div
-                        class="absolute -bottom-8 -right-4 fintech-badge rounded-2xl p-5 w-64 animate-float-soft [animation-delay:1.2s] z-20 tilt-card"
-                        data-tilt
-                    >
-                        <div
-                            class="text-xs font-bold text-slate-400 section-kicker mb-3"
-                        >
-                            Soporte Documental
-                        </div>
-                        <div class="flex items-center gap-3">
-                            <div
-                                class="w-12 h-12 rounded-2xl bg-emerald-100 text-emerald-600 flex items-center justify-center"
-                            >
-                                <i data-lucide="file-check-2" class="w-6 h-6"
-                                ></i>
-                            </div>
-                            <div>
-                                <div class="text-sm font-bold text-slate-900">
-                                    Invoice Asociado
-                                </div>
-                                <div class="text-xs text-slate-500 font-medium">
-                                    Trazabilidad por operación
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div
-                        class="premium-card rounded-[32px] border border-slate-200 shadow-[0_30px_80px_-32px_rgba(15,23,42,0.45)] overflow-hidden tilt-card"
-                        data-tilt
-                        role="img"
-                        aria-label="Mockup de la plataforma corporativa Guira Empresas"
-                    >
-                        <div
-                            class="h-12 border-b border-slate-100 flex items-center px-4 bg-slate-50"
-                        >
-                            <div class="flex gap-2">
-                                <div class="w-3 h-3 rounded-full bg-slate-300">
-                                </div>
-                                <div class="w-3 h-3 rounded-full bg-slate-300">
-                                </div>
-                                <div class="w-3 h-3 rounded-full bg-slate-300">
-                                </div>
-                            </div>
-                            <div class="mx-auto flex-1 max-w-md mx-4">
-                                <div
-                                    class="bg-white rounded-md px-3 py-1.5 flex items-center gap-2 border border-slate-200 shadow-sm justify-center"
-                                >
-                                    <i
-                                        data-lucide="lock"
-                                        class="w-3 h-3 text-slate-400"></i>
-                                    <span
-                                        class="text-xs font-medium text-slate-500"
-                                        >app.guiracorp.com/dashboard</span
-                                    >
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Mockup Body -->
-                        <div class="flex h-[470px]">
-                            <!-- Sidebar -->
-                            <div
-                                class="w-64 border-r border-slate-100 p-6 hidden md:block bg-slate-50/50"
-                            >
-                                <div class="flex items-center gap-3 mb-8">
-                                    <div
-                                        class="w-10 h-10 rounded-xl bg-slate-900 flex items-center justify-center font-bold text-white shadow-md"
-                                    >
-                                        AE
-                                    </div>
-                                    <div>
-                                        <div
-                                            class="text-sm font-bold text-slate-900"
-                                        >
-                                            Agencia Export
-                                        </div>
-                                        <div
-                                            class="text-xs text-slate-500 font-medium"
-                                        >
-                                            Business #4829
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="space-y-1">
-                                    <div
-                                        class="px-4 py-2.5 rounded-lg text-sm font-bold bg-slate-900 text-white shadow-md flex items-center gap-3"
-                                    >
-                                        <i
-                                            data-lucide="layout-dashboard"
-                                            class="w-4 h-4 text-guira-teal"></i> Dashboard
-                                    </div>
-                                    <div
-                                        class="px-4 py-2.5 rounded-lg text-sm font-medium text-slate-600 flex items-center gap-3"
-                                    >
-                                        <i
-                                            data-lucide="landmark"
-                                            class="w-4 h-4"></i> Flujos Operativos
-                                    </div>
-                                    <div
-                                        class="px-4 py-2.5 rounded-lg text-sm font-medium text-slate-600 flex items-center gap-3"
-                                    >
-                                        <i
-                                            data-lucide="arrow-right-left"
-                                            class="w-4 h-4"></i> Transferencias
-                                    </div>
-                                    <div
-                                        class="px-4 py-2.5 rounded-lg text-sm font-medium text-slate-600 flex items-center gap-3"
-                                    >
-                                        <i
-                                            data-lucide="shield-check"
-                                            class="w-4 h-4"></i> Compliance
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Main Content -->
-                            <div
-                                class="flex-1 p-8 bg-white text-left relative overflow-hidden"
-                            >
-                                <div
-                                    class="absolute top-5 right-6 flex items-center gap-2 text-[11px] font-bold text-emerald-600 bg-emerald-50 px-4 py-2 rounded-full border border-emerald-100 whitespace-nowrap"
-                                >
-                                    <span
-                                        class="w-2 h-2 rounded-full bg-emerald-500"
-                                    ></span>
-                                    Operación estable
-                                </div>
-                                <h2
-                                    class="text-slate-500 text-sm font-bold mb-1 uppercase tracking-wider"
-                                >
-                                    Balance Operativo Digital
-                                </h2>
-                                <div
-                                    class="text-4xl font-extrabold text-slate-900 flex items-center gap-3 mb-1"
-                                >
-                                    $124,500.00 <span
-                                        class="text-xs font-bold text-guira-teal bg-guira-teal/10 px-2 py-1 rounded"
-                                        >USD *</span
-                                    >
-                                </div>
-                                <p class="text-[10px] text-slate-400 mb-8">
-                                    * Valores de simulación referenciales
-                                </p>
-
-                                <div class="grid grid-cols-3 gap-3 mb-6">
-                                    <div
-                                        class="rounded-xl bg-slate-50 border border-slate-200 p-4"
-                                    >
-                                        <p
-                                            class="text-[10px] font-bold uppercase tracking-[0.22em] text-slate-400 mb-1"
-                                        >
-                                            Red Operativa
-                                        </p>
-                                        <p
-                                            class="text-sm font-bold text-slate-900"
-                                        >
-                                            ACH / Wire
-                                        </p>
-                                    </div>
-                                    <div
-                                        class="rounded-xl bg-slate-50 border border-slate-200 p-4"
-                                    >
-                                        <p
-                                            class="text-[10px] font-bold uppercase tracking-[0.22em] text-slate-400 mb-1"
-                                        >
-                                            Risk
-                                        </p>
-                                        <p
-                                            class="text-sm font-bold text-slate-900"
-                                        >
-                                            Monitoreado
-                                        </p>
-                                    </div>
-                                    <div
-                                        class="rounded-xl bg-slate-50 border border-slate-200 p-4"
-                                    >
-                                        <p
-                                            class="text-[10px] font-bold uppercase tracking-[0.22em] text-slate-400 mb-1"
-                                        >
-                                            Desk
-                                        </p>
-                                        <p
-                                            class="text-sm font-bold text-slate-900"
-                                        >
-                                            Corporate
-                                        </p>
-                                    </div>
-                                </div>
-
-                                <div class="grid grid-cols-2 gap-6 mb-8">
-                                    <div
-                                        class="p-5 rounded-xl border border-slate-200 bg-slate-50/50"
-                                    >
-                                        <div
-                                            class="text-sm font-bold text-slate-700 mb-1"
-                                        >
-                                            Recibir de EE.UU.
-                                        </div>
-                                        <div
-                                            class="text-xs text-slate-500 mb-3"
-                                        >
-                                            Vía ACH o Wire Transfer
-                                        </div>
-                                        <button
-                                            class="w-full py-2 bg-white border border-slate-200 rounded-lg text-xs font-bold shadow-sm hover:bg-slate-50 transition-colors"
-                                            >Ver Detalles de Recepción</button
-                                        >
-                                    </div>
-                                    <div
-                                        class="p-5 rounded-xl border border-slate-200 bg-slate-50/50"
-                                    >
-                                        <div
-                                            class="text-sm font-bold text-slate-700 mb-1"
-                                        >
-                                            Enrutar Fondos
-                                        </div>
-                                        <div
-                                            class="text-xs text-slate-500 mb-3"
-                                        >
-                                            A Cuenta Local o Proveedores
-                                        </div>
-                                        <button
-                                            class="w-full py-2 bg-slate-900 text-white border border-slate-900 rounded-lg text-xs font-bold shadow-sm hover:bg-slate-800 transition-colors"
-                                            >Instruir Salida</button
-                                        >
-                                    </div>
-                                </div>
-
-                                <div>
-                                    <h3
-                                        class="text-sm font-bold text-slate-900 mb-3"
-                                    >
-                                        Últimas Transacciones
-                                    </h3>
-                                    <div class="space-y-3">
-                                        <div
-                                            class="flex justify-between items-center pb-3 border-b border-slate-100"
-                                        >
-                                            <div
-                                                class="flex items-center gap-3"
-                                            >
-                                                <div
-                                                    class="w-8 h-8 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center"
-                                                >
-                                                    <i
-                                                        data-lucide="arrow-down-left"
-                                                        class="w-4 h-4"></i>
-                                                </div>
-                                                <div>
-                                                    <div
-                                                        class="text-sm font-bold text-slate-900"
-                                                    >
-                                                        Transferencia Entrante
-                                                        (Stripe)
-                                                    </div>
-                                                    <div
-                                                        class="text-xs text-slate-500"
-                                                    >
-                                                        ACH In • Hoy
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div
-                                                class="text-sm font-bold text-emerald-600"
-                                            >
-                                                +$12,450.00
-                                            </div>
-                                        </div>
-                                        <div
-                                            class="flex justify-between items-center"
-                                        >
-                                            <div
-                                                class="flex items-center gap-3"
-                                            >
-                                                <div
-                                                    class="w-8 h-8 rounded-full bg-slate-100 text-slate-600 flex items-center justify-center"
-                                                >
-                                                    <i
-                                                        data-lucide="arrow-up-right"
-                                                        class="w-4 h-4"></i>
-                                                </div>
-                                                <div>
-                                                    <div
-                                                        class="text-sm font-bold text-slate-900"
-                                                    >
-                                                        Instrucción de salida
-                                                        operativa
-                                                    </div>
-                                                    <div
-                                                        class="text-xs text-slate-500"
-                                                    >
-                                                        Operación B2B • Ayer
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div
-                                                class="text-sm font-bold text-slate-900"
-                                            >
-                                                -$5,000.00
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        <p class="text-[11px] text-slate-400 mt-3">
+                            * Valor de simulación referencial
+                        </p>
                     </div>
                 </div>
             </div>
@@ -657,9 +302,7 @@ import Flag from "../components/Flag.astro";
                     <p class="section-kicker text-slate-400 mb-3">
                         Elige el destino
                     </p>
-                    <div
-                        class="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-8"
-                    >
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-8">
                         <button
                             type="button"
                             class="quote-destination-btn active"
@@ -729,15 +372,16 @@ import Flag from "../components/Flag.astro";
                             >
                             <span
                                 class="text-sm font-bold text-guira-cyan"
-                                data-quote-currency-label>USD · Cuenta Guira</span
+                                data-quote-currency-label
+                                >USD · Cuenta Guira</span
                             >
                         </div>
                         <p
                             class="text-xs text-slate-400 font-medium mt-3"
                             data-quote-note
                         >
-                            Sin conversión de moneda. El saldo se mantiene en
-                            tu cuenta Guira.
+                            Sin conversión de moneda. El saldo se mantiene en tu
+                            cuenta Guira.
                         </p>
                     </div>
 
@@ -745,8 +389,8 @@ import Flag from "../components/Flag.astro";
                         class="text-[11px] text-slate-400 font-medium mt-5 text-center"
                     >
                         * Simulación referencial. El tipo de cambio y las
-                        condiciones finales se confirman en cada operación
-                        según la estructura habilitada.
+                        condiciones finales se confirman en cada operación según
+                        la estructura habilitada.
                     </p>
                 </div>
             </div>
@@ -934,12 +578,12 @@ import Flag from "../components/Flag.astro";
         <!-- Problema / Solución -->
         <section
             data-stack-section
-            class="relative overflow-hidden bg-guira-navy"
+            class="relative flex min-h-[100dvh] flex-col overflow-hidden bg-guira-navy"
         >
-            <div class="grid min-h-[680px] md:min-h-[720px] md:grid-cols-2">
-                <!-- Operación tradicional -->
-                <article
-                    class="relative flex min-h-[520px] overflow-hidden bg-guira-navy px-6 py-14 sm:px-10 md:min-h-0 md:px-16 lg:px-[clamp(4rem,8vw,10rem)]"
+            <div class="grid shrink-0 md:grid-cols-2">
+                <!-- Encabezado: Operación tradicional -->
+                <div
+                    class="relative overflow-hidden bg-guira-navy px-6 pb-8 pt-14 sm:px-10 md:px-16 lg:px-[clamp(4rem,8vw,10rem)]"
                 >
                     <div
                         class="absolute inset-0 opacity-40 [background-image:radial-gradient(circle_at_1px_1px,rgba(148,163,184,0.18)_1px,transparent_0)] [background-size:24px_24px]"
@@ -947,68 +591,29 @@ import Flag from "../components/Flag.astro";
                     >
                     </div>
                     <div
-                        class="relative z-10 mx-auto flex w-full max-w-xl flex-col justify-between"
+                        class="relative z-10 mx-auto max-w-xl pair-reveal-left"
+                        data-replay-reveal
                     >
                         <p class="section-kicker text-slate-500">
                             Operación tradicional
                         </p>
-                        <div class="my-12 reveal-left">
-                            <h2
-                                class="max-w-lg text-3xl font-extrabold leading-[1.08] tracking-tight text-white sm:text-4xl lg:text-5xl"
-                            >
-                                Desafíos de la operación tradicional
-                            </h2>
-                            <p
-                                class="mt-5 max-w-md text-base font-medium leading-relaxed text-slate-400 sm:text-lg"
-                            >
-                                Abrir una cuenta bancaria internacional requiere
-                                presencia física, tiempo y altos costos.
-                            </p>
-                        </div>
-                        <ul class="space-y-5 reveal-left">
-                            <li
-                                class="flex gap-4 text-sm font-medium leading-relaxed text-slate-300 sm:text-base"
-                            >
-                                <i
-                                    data-lucide="minus"
-                                    class="mt-0.5 h-5 w-5 shrink-0 text-rose-400"
-                                ></i>
-                                <span
-                                    >Dificultad para recibir pagos en USD desde
-                                    LATAM de forma fluida.</span
-                                >
-                            </li>
-                            <li
-                                class="flex gap-4 text-sm font-medium leading-relaxed text-slate-300 sm:text-base"
-                            >
-                                <i
-                                    data-lucide="minus"
-                                    class="mt-0.5 h-5 w-5 shrink-0 text-rose-400"
-                                ></i>
-                                <span
-                                    >Fricción operativa por múltiples
-                                    intermediarios y procesos lentos.</span
-                                >
-                            </li>
-                            <li
-                                class="flex gap-4 text-sm font-medium leading-relaxed text-slate-300 sm:text-base"
-                            >
-                                <i
-                                    data-lucide="minus"
-                                    class="mt-0.5 h-5 w-5 shrink-0 text-rose-400"
-                                ></i>
-                                <span
-                                    >Baja visibilidad y falta de una interfaz
-                                    operativa centralizada.</span
-                                >
-                            </li>
-                        </ul>
+                        <h2
+                            class="mt-5 max-w-lg text-3xl font-extrabold leading-[1.08] tracking-tight text-white sm:text-4xl lg:text-5xl"
+                        >
+                            Desafíos de la operación tradicional
+                        </h2>
+                        <p
+                            class="mt-5 max-w-md text-base font-medium leading-relaxed text-slate-400 sm:text-lg"
+                        >
+                            Abrir una cuenta bancaria internacional requiere
+                            presencia física, tiempo y altos costos.
+                        </p>
                     </div>
-                </article>
+                </div>
 
-                <!-- Guira Empresas -->
-                <article
-                    class="relative flex min-h-[520px] overflow-hidden bg-guira-petrol px-6 py-14 sm:px-10 md:min-h-0 md:px-16 lg:px-[clamp(4rem,8vw,10rem)]"
+                <!-- Encabezado: Guira Empresas -->
+                <div
+                    class="relative overflow-hidden bg-guira-petrol px-6 pb-8 pt-14 sm:px-10 md:px-16 lg:px-[clamp(4rem,8vw,10rem)]"
                 >
                     <div
                         class="absolute -right-32 -top-24 h-[430px] w-[430px] rounded-full bg-guira-teal/20 blur-[110px]"
@@ -1016,69 +621,151 @@ import Flag from "../components/Flag.astro";
                     >
                     </div>
                     <div
-                        class="absolute bottom-0 left-0 h-px w-full bg-guira-teal/40 md:bottom-auto md:top-0"
-                        aria-hidden="true"
-                    >
-                    </div>
-                    <div
-                        class="relative z-10 mx-auto flex w-full max-w-xl flex-col justify-between"
+                        class="relative z-10 mx-auto max-w-xl pair-reveal-right"
+                        data-replay-reveal
                     >
                         <p class="section-kicker text-guira-cyan">
                             La alternativa Guira
                         </p>
-                        <div class="my-12 reveal-right">
-                            <h2
-                                class="max-w-lg text-3xl font-extrabold leading-[1.08] tracking-tight text-white sm:text-4xl lg:text-5xl"
-                            >
-                                Guira Empresas
-                            </h2>
-                            <p
-                                class="mt-5 max-w-md text-base font-medium leading-relaxed text-slate-300 sm:text-lg"
-                            >
-                                Una cuenta operativa en dólares para cobrar,
-                                pagar y tener control de cada operación.
-                            </p>
-                        </div>
-                        <ul class="space-y-5 reveal-right">
-                            <li
-                                class="flex gap-4 text-sm font-medium leading-relaxed text-slate-200 sm:text-base"
-                            >
-                                <i
-                                    data-lucide="check"
-                                    class="mt-0.5 h-5 w-5 shrink-0 text-guira-cyan"
-                                ></i>
-                                <span
-                                    >Interfaz operativa centralizada para
-                                    gestionar cobros, saldo y pagos.</span
-                                >
-                            </li>
-                            <li
-                                class="flex gap-4 text-sm font-medium leading-relaxed text-slate-200 sm:text-base"
-                            >
-                                <i
-                                    data-lucide="check"
-                                    class="mt-0.5 h-5 w-5 shrink-0 text-guira-cyan"
-                                ></i>
-                                <span
-                                    >Estructura habilitada mediante partners
-                                    para la recepción de fondos.</span
-                                >
-                            </li>
-                            <li
-                                class="flex gap-4 text-sm font-medium leading-relaxed text-slate-200 sm:text-base"
-                            >
-                                <i
-                                    data-lucide="check"
-                                    class="mt-0.5 h-5 w-5 shrink-0 text-guira-cyan"
-                                ></i>
-                                <span
-                                    >Capa empresarial para una operación
-                                    internacional con trazabilidad real.</span
-                                >
-                            </li>
-                        </ul>
+                        <h2
+                            class="mt-5 max-w-lg text-3xl font-extrabold leading-[1.08] tracking-tight text-white sm:text-4xl lg:text-5xl"
+                        >
+                            Guira Empresas
+                        </h2>
+                        <p
+                            class="mt-5 max-w-md text-base font-medium leading-relaxed text-slate-300 sm:text-lg"
+                        >
+                            Una cuenta operativa en dólares para cobrar, pagar
+                            y tener control de cada operación.
+                        </p>
                     </div>
-                </article>
+                </div>
+            </div>
+
+            <!-- Pares problema → solución -->
+            <div class="relative flex flex-1 flex-col border-t border-white/5">
+                <div
+                    class="grid flex-1 grid-cols-1 border-b border-white/5 md:grid-cols-2"
+                >
+                    <div
+                        class="pair-reveal-left flex h-full items-center gap-5 bg-guira-navy px-6 py-8 sm:px-10 md:px-16 lg:px-[clamp(4rem,8vw,10rem)]"
+                        data-replay-reveal
+                    >
+                        <span
+                            class="font-mono text-xs tracking-wider text-slate-600"
+                            >01</span
+                        >
+                        <span
+                            class="h-px flex-1 max-w-6 bg-slate-700/60"
+                            aria-hidden="true"
+                        ></span>
+                        <span
+                            class="text-sm font-medium leading-relaxed text-slate-300 sm:text-base"
+                            >Dificultad para recibir pagos en USD desde LATAM
+                            de forma fluida.</span
+                        >
+                    </div>
+                    <div
+                        class="pair-reveal-right flex h-full items-center gap-5 bg-guira-petrol px-6 py-8 sm:px-10 md:px-16 lg:px-[clamp(4rem,8vw,10rem)]"
+                        data-replay-reveal
+                    >
+                        <span
+                            class="font-mono text-xs tracking-wider text-guira-cyan/70"
+                            >01</span
+                        >
+                        <span
+                            class="h-px flex-1 max-w-6 bg-guira-cyan/30"
+                            aria-hidden="true"
+                        ></span>
+                        <span
+                            class="text-sm font-medium leading-relaxed text-slate-200 sm:text-base"
+                            >Estructura habilitada mediante partners para la
+                            recepción de fondos.</span
+                        >
+                    </div>
+                </div>
+
+                <div
+                    class="reveal-delay-1 grid flex-1 grid-cols-1 border-b border-white/5 md:grid-cols-2"
+                >
+                    <div
+                        class="pair-reveal-left flex h-full items-center gap-5 bg-guira-navy px-6 py-8 sm:px-10 md:px-16 lg:px-[clamp(4rem,8vw,10rem)]"
+                        data-replay-reveal
+                    >
+                        <span
+                            class="font-mono text-xs tracking-wider text-slate-600"
+                            >02</span
+                        >
+                        <span
+                            class="h-px flex-1 max-w-6 bg-slate-700/60"
+                            aria-hidden="true"
+                        ></span>
+                        <span
+                            class="text-sm font-medium leading-relaxed text-slate-300 sm:text-base"
+                            >Fricción operativa por múltiples intermediarios y
+                            procesos lentos.</span
+                        >
+                    </div>
+                    <div
+                        class="pair-reveal-right flex h-full items-center gap-5 bg-guira-petrol px-6 py-8 sm:px-10 md:px-16 lg:px-[clamp(4rem,8vw,10rem)]"
+                        data-replay-reveal
+                    >
+                        <span
+                            class="font-mono text-xs tracking-wider text-guira-cyan/70"
+                            >02</span
+                        >
+                        <span
+                            class="h-px flex-1 max-w-6 bg-guira-cyan/30"
+                            aria-hidden="true"
+                        ></span>
+                        <span
+                            class="text-sm font-medium leading-relaxed text-slate-200 sm:text-base"
+                            >Capa empresarial para una operación internacional
+                            con trazabilidad real.</span
+                        >
+                    </div>
+                </div>
+
+                <div
+                    class="reveal-delay-2 grid flex-1 grid-cols-1 md:grid-cols-2"
+                >
+                    <div
+                        class="pair-reveal-left flex h-full items-center gap-5 bg-guira-navy px-6 py-8 sm:px-10 md:px-16 lg:px-[clamp(4rem,8vw,10rem)]"
+                        data-replay-reveal
+                    >
+                        <span
+                            class="font-mono text-xs tracking-wider text-slate-600"
+                            >03</span
+                        >
+                        <span
+                            class="h-px flex-1 max-w-6 bg-slate-700/60"
+                            aria-hidden="true"
+                        ></span>
+                        <span
+                            class="text-sm font-medium leading-relaxed text-slate-300 sm:text-base"
+                            >Baja visibilidad y falta de una interfaz
+                            operativa centralizada.</span
+                        >
+                    </div>
+                    <div
+                        class="pair-reveal-right flex h-full items-center gap-5 bg-guira-petrol px-6 py-8 sm:px-10 md:px-16 lg:px-[clamp(4rem,8vw,10rem)]"
+                        data-replay-reveal
+                    >
+                        <span
+                            class="font-mono text-xs tracking-wider text-guira-cyan/70"
+                            >03</span
+                        >
+                        <span
+                            class="h-px flex-1 max-w-6 bg-guira-cyan/30"
+                            aria-hidden="true"
+                        ></span>
+                        <span
+                            class="text-sm font-medium leading-relaxed text-slate-200 sm:text-base"
+                            >Interfaz operativa centralizada para gestionar
+                            cobros, saldo y pagos.</span
+                        >
+                    </div>
+                </div>
             </div>
         </section>
 
@@ -1369,124 +1056,356 @@ import Flag from "../components/Flag.astro";
                 >
                     Plataforma financiera para operaciones de alto impacto
                 </h2>
-                <div class="divide-y divide-slate-200 lg:grid lg:grid-cols-4 lg:divide-y-0">
-                    <div class="flex flex-col items-center px-4 py-10 text-center lg:border-l lg:border-slate-200 lg:px-9 lg:first:border-l-0 reveal">
-                        <div class="mb-6 flex h-12 w-12 items-center justify-center text-guira-teal">
-                            <i data-lucide="laptop" class="h-8 w-8"></i>
+            </div>
+
+            <!-- Wrapper de ancho completo: líneas van de borde a borde de la ventana -->
+            <div class="w-full border-t border-slate-200 reveal">
+                <a
+                    href="/soluciones#exportadores"
+                    class="use-case-row group flex items-center justify-between gap-6 max-w-7xl mx-auto px-6 py-10 border-b border-slate-200 transition-colors hover:bg-white"
+                >
+                    <div class="flex items-baseline gap-6">
+                        <span class="text-xs font-bold text-guira-teal shrink-0"
+                            >01</span
+                        >
+                        <div>
+                            <h3
+                                class="text-2xl md:text-4xl font-extrabold text-slate-900 transition-colors group-hover:text-guira-teal"
+                            >
+                                Exportadores de Servicios
+                            </h3>
+                            <p
+                                class="mt-2 max-w-xl text-sm md:text-base font-medium text-slate-500"
+                            >
+                                Agencias y estudios que cobran en USD desde el
+                                exterior con trazabilidad total.
+                            </p>
                         </div>
-                        <h3 class="mb-3 text-lg font-bold text-slate-900">Exportadores de Servicios</h3>
-                        <p class="max-w-xs text-sm font-medium leading-relaxed text-slate-600">Agencias y estudios que perciben dólares por sus operaciones en el exterior y requieren instruir salidas con total claridad.</p>
                     </div>
-                    <div class="flex flex-col items-center px-4 py-10 text-center lg:border-l lg:border-slate-200 lg:px-9 reveal reveal-delay-1">
-                        <div class="mb-6 flex h-12 w-12 items-center justify-center text-guira-teal">
-                            <i data-lucide="package" class="h-8 w-8"></i>
-                        </div>
-                        <h3 class="mb-3 text-lg font-bold text-slate-900">Importadoras y Comerciales</h3>
-                        <p class="max-w-xs text-sm font-medium leading-relaxed text-slate-600">Proveedores con saldos pendientes en USA que necesitan instruir pagos ACH/Wire de forma trazable.</p>
-                    </div>
-                    <div class="flex flex-col items-center px-4 py-10 text-center lg:border-l lg:border-slate-200 lg:px-9 reveal reveal-delay-2">
-                        <div class="mb-6 flex h-12 w-12 items-center justify-center text-guira-teal">
-                            <i data-lucide="briefcase" class="h-8 w-8"></i>
-                        </div>
-                        <h3 class="mb-3 text-lg font-bold text-slate-900">Agencias y Software Devs</h3>
-                        <p class="max-w-xs text-sm font-medium leading-relaxed text-slate-600">Empresas con clientes globales que buscan centralizar su facturación y administración de flujos en USD.</p>
-                    </div>
-                    <div class="flex flex-col items-center px-4 py-10 text-center lg:border-l lg:border-slate-200 lg:px-9 reveal reveal-delay-3">
-                        <div class="mb-6 flex h-12 w-12 items-center justify-center text-guira-teal">
-                            <i data-lucide="globe-2" class="h-8 w-8"></i>
-                        </div>
-                        <h3 class="mb-3 text-lg font-bold text-slate-900">Operaciones Regionales</h3>
-                        <p class="max-w-xs text-sm font-medium leading-relaxed text-slate-600">Negocios con presencia en múltiples países de LATAM que necesitan una plataforma operativa internacional.</p>
-                    </div>
-                </div>
-                <div class="mt-12 text-center">
-                    <a
-                        href="/soluciones"
-                        class="inline-flex items-center gap-2 text-guira-teal font-bold hover:text-guira-cyan transition-colors"
-                        >Explora las soluciones por industria <i
-                            data-lucide="arrow-right"
-                            class="w-4 h-4"></i></a
+                    <div
+                        class="flex h-12 w-12 shrink-0 items-center justify-center rounded-full border border-slate-200 transition-colors group-hover:border-guira-teal group-hover:bg-guira-teal"
                     >
-                </div>
+                        <i
+                            data-lucide="arrow-up-right"
+                            class="h-5 w-5 text-slate-900 transition-colors group-hover:text-white"
+                        ></i>
+                    </div>
+                </a>
+
+                <a
+                    href="/soluciones#importadores"
+                    class="use-case-row group flex items-center justify-between gap-6 max-w-7xl mx-auto px-6 py-10 border-b border-slate-200 transition-colors hover:bg-white"
+                >
+                    <div class="flex items-baseline gap-6">
+                        <span class="text-xs font-bold text-guira-teal shrink-0"
+                            >02</span
+                        >
+                        <div>
+                            <h3
+                                class="text-2xl md:text-4xl font-extrabold text-slate-900 transition-colors group-hover:text-guira-teal"
+                            >
+                                Importadores y Operaciones Regionales
+                            </h3>
+                            <p
+                                class="mt-2 max-w-xl text-sm md:text-base font-medium text-slate-500"
+                            >
+                                Pagos a proveedores en el exterior con tiempos
+                                predecibles e historial integrado.
+                            </p>
+                        </div>
+                    </div>
+                    <div
+                        class="flex h-12 w-12 shrink-0 items-center justify-center rounded-full border border-slate-200 transition-colors group-hover:border-guira-teal group-hover:bg-guira-teal"
+                    >
+                        <i
+                            data-lucide="arrow-up-right"
+                            class="h-5 w-5 text-slate-900 transition-colors group-hover:text-white"
+                        ></i>
+                    </div>
+                </a>
+
+                <a
+                    href="/soluciones#operaciones-regionales"
+                    class="use-case-row group flex items-center justify-between gap-6 max-w-7xl mx-auto px-6 py-10 border-b border-slate-200 transition-colors hover:bg-white"
+                >
+                    <div class="flex items-baseline gap-6">
+                        <span class="text-xs font-bold text-guira-teal shrink-0"
+                            >03</span
+                        >
+                        <div>
+                            <h3
+                                class="text-2xl md:text-4xl font-extrabold text-slate-900 transition-colors group-hover:text-guira-teal"
+                            >
+                                Empresas que trabajan con el exterior
+                            </h3>
+                            <p
+                                class="mt-2 max-w-xl text-sm md:text-base font-medium text-slate-500"
+                            >
+                                Centraliza cobros y pagos cross-border entre
+                                múltiples entidades regionales.
+                            </p>
+                        </div>
+                    </div>
+                    <div
+                        class="flex h-12 w-12 shrink-0 items-center justify-center rounded-full border border-slate-200 transition-colors group-hover:border-guira-teal group-hover:bg-guira-teal"
+                    >
+                        <i
+                            data-lucide="arrow-up-right"
+                            class="h-5 w-5 text-slate-900 transition-colors group-hover:text-white"
+                        ></i>
+                    </div>
+                </a>
+
+                <a
+                    href="/soluciones#ongs"
+                    class="use-case-row group flex items-center justify-between gap-6 max-w-7xl mx-auto px-6 py-10 border-b border-slate-200 transition-colors hover:bg-white"
+                >
+                    <div class="flex items-baseline gap-6">
+                        <span class="text-xs font-bold text-guira-teal shrink-0"
+                            >04</span
+                        >
+                        <div>
+                            <h3
+                                class="text-2xl md:text-4xl font-extrabold text-slate-900 transition-colors group-hover:text-guira-teal"
+                            >
+                                ONGs y Organizaciones Sin Fines de Lucro
+                            </h3>
+                            <p
+                                class="mt-2 max-w-xl text-sm md:text-base font-medium text-slate-500"
+                            >
+                                Recepción de fondos de donantes con
+                                trazabilidad documental para reportes de
+                                impacto.
+                            </p>
+                        </div>
+                    </div>
+                    <div
+                        class="flex h-12 w-12 shrink-0 items-center justify-center rounded-full border border-slate-200 transition-colors group-hover:border-guira-teal group-hover:bg-guira-teal"
+                    >
+                        <i
+                            data-lucide="arrow-up-right"
+                            class="h-5 w-5 text-slate-900 transition-colors group-hover:text-white"
+                        ></i>
+                    </div>
+                </a>
+
+                <a
+                    href="/soluciones#bolivia"
+                    class="use-case-row group flex items-center justify-between gap-6 max-w-7xl mx-auto px-6 py-10 border-b border-slate-200 transition-colors hover:bg-white"
+                >
+                    <div class="flex items-baseline gap-6">
+                        <span class="text-xs font-bold text-guira-teal shrink-0"
+                            >05</span
+                        >
+                        <div>
+                            <h3
+                                class="text-2xl md:text-4xl font-extrabold text-slate-900 transition-colors group-hover:text-guira-teal"
+                            >
+                                Empresas bolivianas que pagan proveedores
+                            </h3>
+                            <p
+                                class="mt-2 max-w-xl text-sm md:text-base font-medium text-slate-500"
+                            >
+                                Asesoría local en Bolivia para instruir pagos
+                                ACH y Wire a proveedores internacionales.
+                            </p>
+                        </div>
+                    </div>
+                    <div
+                        class="flex h-12 w-12 shrink-0 items-center justify-center rounded-full border border-slate-200 transition-colors group-hover:border-guira-teal group-hover:bg-guira-teal"
+                    >
+                        <i
+                            data-lucide="arrow-up-right"
+                            class="h-5 w-5 text-slate-900 transition-colors group-hover:text-white"
+                        ></i>
+                    </div>
+                </a>
+            </div>
+
+            <div class="max-w-7xl mx-auto px-6 mt-12 text-center">
+                <a
+                    href="/soluciones"
+                    class="inline-flex items-center gap-2 text-guira-teal font-bold hover:text-guira-cyan transition-colors"
+                    >Explora las soluciones por industria <i
+                        data-lucide="arrow-right"
+                        class="w-4 h-4"></i></a
+                >
             </div>
         </section>
 
         <!-- Banner Corporativo -->
-        <section
-            data-stack-section
-            class="relative h-56 md:h-72 overflow-hidden border-t border-slate-200"
-        >
-            <picture class="w-full h-full block">
-                <source
-                    srcset="/assets/images/soluciones-corporativo.webp"
-                    type="image/webp"
-                />
-                <img
-                    src="/assets/images/soluciones-corporativo.jpg"
-                    alt="Reunión corporativa empresas LATAM"
-                    class="w-full h-full object-cover object-top"
-                    loading="lazy"
-                />
-            </picture>
-            <div
-                class="absolute inset-0 bg-gradient-to-l from-white/95 via-white/60 to-transparent"
-            >
-            </div>
-            <div class="absolute inset-0 flex items-center justify-end">
-                <div class="max-w-7xl mx-auto px-6 text-right">
-                    <p
-                        class="text-xs font-bold tracking-widest text-guira-teal uppercase mb-3"
-                    >
-                        Empresas B2B
-                    </p>
-                    <h2
-                        class="text-xl md:text-3xl font-extrabold text-slate-900 max-w-md ml-auto leading-tight"
-                    >
-                        Diseñado para equipos corporativos con operación
-                        internacional activa.
-                    </h2>
-                </div>
-            </div>
-        </section>
+        {
+            /*
+             */
+        }
 
         <!-- Elegibilidad del Servicio -->
         <section data-stack-section class="relative overflow-hidden">
             <div class="grid md:min-h-[760px] md:grid-cols-2">
                 <!-- Para quién sí -->
-                <article class="flex bg-white px-6 py-16 sm:px-10 md:px-16 lg:px-[clamp(4rem,8vw,10rem)]">
-                    <div class="mx-auto flex w-full max-w-xl flex-col justify-between text-center">
-                        <p class="section-kicker text-guira-teal">Elegibilidad del servicio</p>
+                <article
+                    class="flex bg-white px-6 py-16 sm:px-10 md:px-16 lg:px-[clamp(4rem,8vw,10rem)]"
+                >
+                    <div
+                        class="mx-auto flex w-full max-w-xl flex-col justify-between text-center"
+                    >
+                        <p class="section-kicker text-guira-teal">
+                            Elegibilidad del servicio
+                        </p>
                         <div class="my-12 reveal-left">
-                            <h2 class="mx-auto max-w-lg text-3xl font-extrabold leading-[1.08] tracking-tight text-slate-900 sm:text-4xl lg:text-5xl">¿Tu empresa encaja con Guira?</h2>
-                            <p class="mx-auto mt-5 max-w-md text-base font-medium leading-relaxed text-slate-600 sm:text-lg">Mantenemos altos estándares de cumplimiento para asegurar operaciones robustas.</p>
+                            <h2
+                                class="mx-auto max-w-lg text-3xl font-extrabold leading-[1.08] tracking-tight text-slate-900 sm:text-4xl lg:text-5xl"
+                            >
+                                ¿Tu empresa encaja con Guira?
+                            </h2>
+                            <p
+                                class="mx-auto mt-5 max-w-md text-base font-medium leading-relaxed text-slate-600 sm:text-lg"
+                            >
+                                Mantenemos altos estándares de cumplimiento para
+                                asegurar operaciones robustas.
+                            </p>
                         </div>
                         <div class="reveal-left">
-                            <h3 class="mb-6 text-xl font-bold text-slate-900">Para quién sí es Guira</h3>
-                            <ul class="mx-auto w-full max-w-md space-y-5 text-left">
-                                <li class="flex gap-4 text-sm font-medium leading-relaxed text-slate-700 sm:text-base"><i data-lucide="check" class="mt-0.5 h-5 w-5 shrink-0 text-guira-teal"></i><span><strong>Exportadores de servicios</strong> que cobran en USD.</span></li>
-                                <li class="flex gap-4 text-sm font-medium leading-relaxed text-slate-700 sm:text-base"><i data-lucide="check" class="mt-0.5 h-5 w-5 shrink-0 text-guira-teal"></i><span><strong>Agencias y estudios</strong> con clientes globales.</span></li>
-                                <li class="flex gap-4 text-sm font-medium leading-relaxed text-slate-700 sm:text-base"><i data-lucide="check" class="mt-0.5 h-5 w-5 shrink-0 text-guira-teal"></i><span><strong>Importadores y comercializadoras</strong> B2B.</span></li>
-                                <li class="flex gap-4 text-sm font-medium leading-relaxed text-slate-700 sm:text-base"><i data-lucide="check" class="mt-0.5 h-5 w-5 shrink-0 text-guira-teal"></i><span><strong>Empresas con proveedores en USA</strong> que requieren pagar ACH/Wire.</span></li>
-                                <li class="flex gap-4 text-sm font-medium leading-relaxed text-slate-700 sm:text-base"><i data-lucide="check" class="mt-0.5 h-5 w-5 shrink-0 text-guira-teal"></i><span><strong>Negocios con operación regional</strong> en LATAM.</span></li>
+                            <h3 class="mb-6 text-xl font-bold text-slate-900">
+                                Para quién sí es Guira
+                            </h3>
+                            <ul
+                                class="mx-auto w-full max-w-md space-y-5 text-left"
+                            >
+                                <li
+                                    class="flex gap-4 text-sm font-medium leading-relaxed text-slate-700 sm:text-base"
+                                >
+                                    <i
+                                        data-lucide="check"
+                                        class="mt-0.5 h-5 w-5 shrink-0 text-guira-teal"
+                                    ></i><span
+                                        ><strong
+                                            >Exportadores de servicios</strong
+                                        > que cobran en USD.</span>
+                                </li>
+                                <li
+                                    class="flex gap-4 text-sm font-medium leading-relaxed text-slate-700 sm:text-base"
+                                >
+                                    <i
+                                        data-lucide="check"
+                                        class="mt-0.5 h-5 w-5 shrink-0 text-guira-teal"
+                                    ></i><span
+                                        ><strong>Agencias y estudios</strong> con
+                                        clientes globales.</span>
+                                </li>
+                                <li
+                                    class="flex gap-4 text-sm font-medium leading-relaxed text-slate-700 sm:text-base"
+                                >
+                                    <i
+                                        data-lucide="check"
+                                        class="mt-0.5 h-5 w-5 shrink-0 text-guira-teal"
+                                    ></i><span
+                                        ><strong
+                                            >Importadores y comercializadoras</strong
+                                        > B2B.</span>
+                                </li>
+                                <li
+                                    class="flex gap-4 text-sm font-medium leading-relaxed text-slate-700 sm:text-base"
+                                >
+                                    <i
+                                        data-lucide="check"
+                                        class="mt-0.5 h-5 w-5 shrink-0 text-guira-teal"
+                                    ></i><span
+                                        ><strong
+                                            >Empresas con proveedores en USA</strong
+                                        > que requieren pagar ACH/Wire.</span>
+                                </li>
+                                <li
+                                    class="flex gap-4 text-sm font-medium leading-relaxed text-slate-700 sm:text-base"
+                                >
+                                    <i
+                                        data-lucide="check"
+                                        class="mt-0.5 h-5 w-5 shrink-0 text-guira-teal"
+                                    ></i><span
+                                        ><strong
+                                            >Negocios con operación regional</strong
+                                        > en LATAM.</span>
+                                </li>
                             </ul>
                         </div>
                     </div>
                 </article>
 
                 <!-- Para quién no -->
-                <article class="relative flex overflow-hidden bg-guira-navy px-6 py-16 sm:px-10 md:px-16 lg:px-[clamp(4rem,8vw,10rem)]">
-                    <div class="absolute -right-32 -top-24 h-[430px] w-[430px] rounded-full bg-guira-teal/20 blur-[110px]" aria-hidden="true"></div>
-                    <div class="relative z-10 mx-auto flex w-full max-w-xl flex-col justify-between text-center">
-                        <p class="section-kicker text-guira-cyan">Antes de empezar</p>
+                <article
+                    class="relative flex overflow-hidden bg-guira-navy px-6 py-16 sm:px-10 md:px-16 lg:px-[clamp(4rem,8vw,10rem)]"
+                >
+                    <div
+                        class="absolute -right-32 -top-24 h-[430px] w-[430px] rounded-full bg-guira-teal/20 blur-[110px]"
+                        aria-hidden="true"
+                    >
+                    </div>
+                    <div
+                        class="relative z-10 mx-auto flex w-full max-w-xl flex-col justify-between text-center"
+                    >
+                        <p class="section-kicker text-guira-cyan">
+                            Antes de empezar
+                        </p>
                         <div class="my-12 reveal-right">
-                            <h2 class="mx-auto max-w-lg text-3xl font-extrabold leading-[1.08] tracking-tight text-white sm:text-4xl lg:text-5xl">Para quién puede no aplicar</h2>
-                            <p class="mx-auto mt-5 max-w-md text-base font-medium leading-relaxed text-slate-300 sm:text-lg">Revisamos cada solicitud para operar con claridad, respaldo y los rieles habilitados.</p>
+                            <h2
+                                class="mx-auto max-w-lg text-3xl font-extrabold leading-[1.08] tracking-tight text-white sm:text-4xl lg:text-5xl"
+                            >
+                                Para quién puede no aplicar
+                            </h2>
+                            <p
+                                class="mx-auto mt-5 max-w-md text-base font-medium leading-relaxed text-slate-300 sm:text-lg"
+                            >
+                                Revisamos cada solicitud para operar con
+                                claridad, respaldo y los rieles habilitados.
+                            </p>
                         </div>
-                        <ul class="reveal-right mx-auto w-full max-w-md space-y-5 text-left">
-                            <li class="flex gap-4 text-sm font-medium leading-relaxed text-slate-200 sm:text-base"><i data-lucide="x" class="mt-0.5 h-5 w-5 shrink-0 text-rose-400"></i><span>Interesados en cuentas para <strong>uso individual o consumo</strong>.</span></li>
-                            <li class="flex gap-4 text-sm font-medium leading-relaxed text-slate-200 sm:text-base"><i data-lucide="x" class="mt-0.5 h-5 w-5 shrink-0 text-rose-400"></i><span>Operaciones que no cuentan con <strong>soporte documental</strong> y de flujo lógico.</span></li>
-                            <li class="flex gap-4 text-sm font-medium leading-relaxed text-slate-200 sm:text-base"><i data-lucide="x" class="mt-0.5 h-5 w-5 shrink-0 text-rose-400"></i><span>Actividades restringidas o <strong>de alto riesgo no compatibles</strong>.</span></li>
-                            <li class="flex gap-4 text-sm font-medium leading-relaxed text-slate-200 sm:text-base"><i data-lucide="x" class="mt-0.5 h-5 w-5 shrink-0 text-rose-400"></i><span>Perfiles fuera de las <strong>jurisdicciones o rieles habilitados</strong>.</span></li>
+                        <ul
+                            class="reveal-right mx-auto w-full max-w-md space-y-5 text-left"
+                        >
+                            <li
+                                class="flex gap-4 text-sm font-medium leading-relaxed text-slate-200 sm:text-base"
+                            >
+                                <i
+                                    data-lucide="x"
+                                    class="mt-0.5 h-5 w-5 shrink-0 text-rose-400"
+                                ></i><span
+                                    >Interesados en cuentas para <strong
+                                        >uso individual o consumo</strong
+                                    >.</span>
+                            </li>
+                            <li
+                                class="flex gap-4 text-sm font-medium leading-relaxed text-slate-200 sm:text-base"
+                            >
+                                <i
+                                    data-lucide="x"
+                                    class="mt-0.5 h-5 w-5 shrink-0 text-rose-400"
+                                ></i><span
+                                    >Operaciones que no cuentan con <strong
+                                        >soporte documental</strong
+                                    > y de flujo lógico.</span>
+                            </li>
+                            <li
+                                class="flex gap-4 text-sm font-medium leading-relaxed text-slate-200 sm:text-base"
+                            >
+                                <i
+                                    data-lucide="x"
+                                    class="mt-0.5 h-5 w-5 shrink-0 text-rose-400"
+                                ></i><span
+                                    >Actividades restringidas o <strong
+                                        >de alto riesgo no compatibles</strong
+                                    >.</span>
+                            </li>
+                            <li
+                                class="flex gap-4 text-sm font-medium leading-relaxed text-slate-200 sm:text-base"
+                            >
+                                <i
+                                    data-lucide="x"
+                                    class="mt-0.5 h-5 w-5 shrink-0 text-rose-400"
+                                ></i><span
+                                    >Perfiles fuera de las <strong
+                                        >jurisdicciones o rieles habilitados</strong
+                                    >.</span>
+                            </li>
                         </ul>
                     </div>
                 </article>
@@ -1720,7 +1639,7 @@ import Flag from "../components/Flag.astro";
 
             <!-- Wrapper de ancho completo: líneas y fondo van de borde a borde de la ventana -->
             <div class="w-full border-t border-slate-200">
-                <details class="group border-b border-slate-200">
+                <details class="group faq-item border-b border-slate-200">
                     <summary
                         class="max-w-3xl mx-auto px-6 flex justify-between items-center gap-6 font-bold cursor-pointer list-none py-6 text-slate-900"
                     >
@@ -1734,24 +1653,26 @@ import Flag from "../components/Flag.astro";
                             ></i>
                         </div>
                     </summary>
-                    <div
-                        class="max-w-3xl mx-auto px-6 text-slate-600 pb-8 font-medium leading-relaxed"
-                    >
-                        Exclusivamente a empresas, agencias y entidades
-                        corporativas debidamente registradas en sus países
-                        base que requieran herramientas de recepción de
-                        pagos B2B internacionales. Aplicamos procesos
-                        formales de Know Your Business.
+                    <div class="faq-panel">
+                        <div
+                            class="faq-panel-inner max-w-3xl mx-auto px-6 text-slate-600 pb-8 font-medium leading-relaxed"
+                        >
+                            Exclusivamente a empresas, agencias y entidades
+                            corporativas debidamente registradas en sus países base
+                            que requieran herramientas de recepción de pagos B2B
+                            internacionales. Aplicamos procesos formales de Know
+                            Your Business.
+                        </div>
                     </div>
                 </details>
 
-                <details class="group border-b border-slate-200">
+                <details class="group faq-item border-b border-slate-200">
                     <summary
                         class="max-w-3xl mx-auto px-6 flex justify-between items-center gap-6 font-bold cursor-pointer list-none py-6 text-slate-900"
                     >
                         <span
-                            >¿La cuenta internacional se registra a nombre
-                            de mi empresa?</span
+                            >¿La cuenta internacional se registra a nombre de mi
+                            empresa?</span
                         >
                         <div
                             class="w-9 h-9 rounded-full border border-slate-200 flex items-center justify-center shrink-0"
@@ -1762,18 +1683,20 @@ import Flag from "../components/Flag.astro";
                             ></i>
                         </div>
                     </summary>
-                    <div
-                        class="max-w-3xl mx-auto px-6 text-slate-600 pb-8 font-medium leading-relaxed"
-                    >
-                        Así es, nuestra arquitectura te otorga una Cuenta
-                        Virtual Empresarial ("Virtual Account") donde la
-                        razón social de tu empresa figura como beneficiaria,
-                        esencial para integraciones con Stripe, Amazon o
-                        clientes institucionales corporativos.
+                    <div class="faq-panel">
+                        <div
+                            class="faq-panel-inner max-w-3xl mx-auto px-6 text-slate-600 pb-8 font-medium leading-relaxed"
+                        >
+                            Así es, nuestra arquitectura te otorga una Cuenta
+                            Virtual Empresarial ("Virtual Account") donde la razón
+                            social de tu empresa figura como beneficiaria, esencial
+                            para integraciones con Stripe, Amazon o clientes
+                            institucionales corporativos.
+                        </div>
                     </div>
                 </details>
 
-                <details class="group border-b border-slate-200">
+                <details class="group faq-item border-b border-slate-200">
                     <summary
                         class="max-w-3xl mx-auto px-6 flex justify-between items-center gap-6 font-bold cursor-pointer list-none py-6 text-slate-900"
                     >
@@ -1789,17 +1712,18 @@ import Flag from "../components/Flag.astro";
                             ></i>
                         </div>
                     </summary>
-                    <div
-                        class="max-w-3xl mx-auto px-6 text-slate-600 pb-8 font-medium leading-relaxed"
-                    >
-                        No. Guira provee infraestructura de software y
-                        visibilidad operativa. Todos los servicios
-                        financieros aplicables, resguardo de capitales y
-                        movimiento de fondos son operados, soportados y
-                        delegados estructuralmente en instituciones o
-                        partners regulados, según corresponda. La
-                        disponibilidad se condiciona al perfil comercial y
-                        jurisdicción aplicable.
+                    <div class="faq-panel">
+                        <div
+                            class="faq-panel-inner max-w-3xl mx-auto px-6 text-slate-600 pb-8 font-medium leading-relaxed"
+                        >
+                            No. Guira provee infraestructura de software y
+                            visibilidad operativa. Todos los servicios financieros
+                            aplicables, resguardo de capitales y movimiento de
+                            fondos son operados, soportados y delegados
+                            estructuralmente en instituciones o partners regulados,
+                            según corresponda. La disponibilidad se condiciona al
+                            perfil comercial y jurisdicción aplicable.
+                        </div>
                     </div>
                 </details>
             </div>
@@ -1812,6 +1736,26 @@ import Flag from "../components/Flag.astro";
                 >
             </div>
         </section>
+
+        <style>
+            .faq-item > .faq-panel {
+                display: grid !important;
+                grid-template-rows: minmax(0, 0fr);
+                transition: grid-template-rows 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+            }
+            .faq-item[open] > .faq-panel {
+                grid-template-rows: minmax(0, 1fr);
+            }
+            .faq-panel-inner {
+                overflow: hidden;
+                min-height: 0;
+            }
+            @media (prefers-reduced-motion: reduce) {
+                .faq-item > .faq-panel {
+                    transition: none;
+                }
+            }
+        </style>
 
         <!-- Final CTA (Fondo Oscuro Alto Contraste) -->
         <section
@@ -1863,32 +1807,185 @@ import Flag from "../components/Flag.astro";
             </div>
         </section>
         <style>
-            .quote-destination-btn { display: flex; align-items: center; gap: 0.75rem; padding: 0.9rem 1.1rem; border-radius: 1rem; border: 1px solid rgb(226 232 240); background: #ffffff; color: rgb(51 65 85); text-align: left; transition: border-color 180ms ease, box-shadow 180ms ease, background-color 180ms ease; }
-            .quote-destination-btn:hover { border-color: rgb(148 163 184); }
-            .quote-destination-btn.active { border-color: #0051ff; background: rgba(0, 81, 255, 0.05); box-shadow: 0 8px 24px -12px rgba(0, 81, 255, 0.25); color: #0051ff; }
-            .quote-destination-btn__title { display: block; font-size: 0.875rem; font-weight: 700; }
-            .quote-destination-btn__meta { display: block; font-size: 0.75rem; font-weight: 600; color: rgb(148 163 184); }
-            .quote-destination-btn.active .quote-destination-btn__meta { color: #0051ff; opacity: 0.7; }
-            .product-explorer__grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.5rem; }
-            .product-explorer__card { min-height: 29rem; overflow: hidden; border: 1px solid rgb(226 232 240); border-radius: 1.5rem; background: white; text-align: left; transition: border-color 180ms ease, box-shadow 180ms ease, background-color 180ms ease; }
-            .product-explorer__card:hover, .product-explorer__card:focus-visible { border-color: rgb(148 163 184); box-shadow: 0 20px 45px -32px rgba(15, 23, 42, 0.3); outline: none; }
-            .product-explorer__card[aria-pressed="true"] { border-color: rgb(13 148 136); background: rgb(252 255 255); box-shadow: 0 20px 45px -30px rgba(13, 148, 136, 0.32); }
-            .product-explorer__media { position: relative; height: 12.5rem; overflow: hidden; background: rgb(15 23 42); }
-            .product-explorer__media::after { position: absolute; inset: 0; content: ""; background: linear-gradient(180deg, transparent 45%, rgba(15, 23, 42, 0.55)); }
-            .product-explorer__media img, .product-explorer__media video { width: 100%; height: 100%; object-fit: cover; }
-            .product-explorer__icon-wrap { display: flex; width: 2rem; height: 2rem; margin: 2rem 2rem 0; align-items: center; color: rgb(15 23 42); }
-            .product-explorer__icon-wrap svg { width: 1.7rem; height: 1.7rem; stroke-width: 1.7; }
-            .product-explorer__body { display: flex; min-height: 20rem; padding: 1.6rem 2rem 2rem; flex-direction: column; }
-            .product-explorer__media + .product-explorer__body { min-height: 16.5rem; }
-            .product-explorer__eyebrow { margin-bottom: 0.7rem; color: rgb(13 148 136); font-size: 0.68rem; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; }
-            .product-explorer__title { margin: 0; color: rgb(15 23 42); font-size: 1.45rem; font-weight: 750; line-height: 1.25; }
-            .product-explorer__text { margin: 1rem 0 1.5rem; color: rgb(71 85 105); font-size: 0.94rem; font-weight: 500; line-height: 1.65; }
-            .product-explorer__points { margin-top: auto; padding-top: 1.25rem; border-top: 1px solid rgb(226 232 240); color: rgb(51 65 85); font-size: 0.82rem; font-weight: 700; line-height: 1.8; }
-            .product-explorer__points span { display: block; }
-            .product-explorer__points span::before { content: "✓"; margin-right: 0.55rem; color: rgb(13 148 136); }
-            .product-explorer__hint { margin-top: 1.25rem; color: rgb(100 116 139); font-size: 0.875rem; font-weight: 600; text-align: center; }
-            @media (max-width: 767px) { .product-explorer__grid { display: flex; overflow-x: auto; gap: 1rem; padding: 0.25rem 0.5rem 1rem; scroll-snap-type: x mandatory; scrollbar-width: none; } .product-explorer__grid::-webkit-scrollbar { display: none; } .product-explorer__card { min-width: min(84vw, 25rem); scroll-snap-align: center; } }
-            @media (prefers-reduced-motion: reduce) { .product-explorer__card { transition: none; } }
+            .quote-destination-btn {
+                display: flex;
+                align-items: center;
+                gap: 0.75rem;
+                padding: 0.9rem 1.1rem;
+                border-radius: 1rem;
+                border: 1px solid rgb(226 232 240);
+                background: #ffffff;
+                color: rgb(51 65 85);
+                text-align: left;
+                transition:
+                    border-color 180ms ease,
+                    box-shadow 180ms ease,
+                    background-color 180ms ease;
+            }
+            .quote-destination-btn:hover {
+                border-color: rgb(148 163 184);
+            }
+            .quote-destination-btn.active {
+                border-color: #0051ff;
+                background: rgba(0, 81, 255, 0.05);
+                box-shadow: 0 8px 24px -12px rgba(0, 81, 255, 0.25);
+                color: #0051ff;
+            }
+            .quote-destination-btn__title {
+                display: block;
+                font-size: 0.875rem;
+                font-weight: 700;
+            }
+            .quote-destination-btn__meta {
+                display: block;
+                font-size: 0.75rem;
+                font-weight: 600;
+                color: rgb(148 163 184);
+            }
+            .quote-destination-btn.active .quote-destination-btn__meta {
+                color: #0051ff;
+                opacity: 0.7;
+            }
+            .product-explorer__grid {
+                display: grid;
+                grid-template-columns: repeat(3, minmax(0, 1fr));
+                gap: 1.5rem;
+            }
+            .product-explorer__card {
+                min-height: 29rem;
+                overflow: hidden;
+                border: 1px solid rgb(226 232 240);
+                border-radius: 1.5rem;
+                background: white;
+                text-align: left;
+                transition:
+                    border-color 180ms ease,
+                    box-shadow 180ms ease,
+                    background-color 180ms ease;
+            }
+            .product-explorer__card:hover,
+            .product-explorer__card:focus-visible {
+                border-color: rgb(148 163 184);
+                box-shadow: 0 20px 45px -32px rgba(15, 23, 42, 0.3);
+                outline: none;
+            }
+            .product-explorer__card[aria-pressed="true"] {
+                border-color: rgb(13 148 136);
+                background: rgb(252 255 255);
+                box-shadow: 0 20px 45px -30px rgba(13, 148, 136, 0.32);
+            }
+            .product-explorer__media {
+                position: relative;
+                height: 12.5rem;
+                overflow: hidden;
+                background: rgb(15 23 42);
+            }
+            .product-explorer__media::after {
+                position: absolute;
+                inset: 0;
+                content: "";
+                background: linear-gradient(
+                    180deg,
+                    transparent 45%,
+                    rgba(15, 23, 42, 0.55)
+                );
+            }
+            .product-explorer__media img,
+            .product-explorer__media video {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+            .product-explorer__icon-wrap {
+                display: flex;
+                width: 2rem;
+                height: 2rem;
+                margin: 2rem 2rem 0;
+                align-items: center;
+                color: rgb(15 23 42);
+            }
+            .product-explorer__icon-wrap svg {
+                width: 1.7rem;
+                height: 1.7rem;
+                stroke-width: 1.7;
+            }
+            .product-explorer__body {
+                display: flex;
+                min-height: 20rem;
+                padding: 1.6rem 2rem 2rem;
+                flex-direction: column;
+            }
+            .product-explorer__media + .product-explorer__body {
+                min-height: 16.5rem;
+            }
+            .product-explorer__eyebrow {
+                margin-bottom: 0.7rem;
+                color: rgb(13 148 136);
+                font-size: 0.68rem;
+                font-weight: 800;
+                letter-spacing: 0.1em;
+                text-transform: uppercase;
+            }
+            .product-explorer__title {
+                margin: 0;
+                color: rgb(15 23 42);
+                font-size: 1.45rem;
+                font-weight: 750;
+                line-height: 1.25;
+            }
+            .product-explorer__text {
+                margin: 1rem 0 1.5rem;
+                color: rgb(71 85 105);
+                font-size: 0.94rem;
+                font-weight: 500;
+                line-height: 1.65;
+            }
+            .product-explorer__points {
+                margin-top: auto;
+                padding-top: 1.25rem;
+                border-top: 1px solid rgb(226 232 240);
+                color: rgb(51 65 85);
+                font-size: 0.82rem;
+                font-weight: 700;
+                line-height: 1.8;
+            }
+            .product-explorer__points span {
+                display: block;
+            }
+            .product-explorer__points span::before {
+                content: "✓";
+                margin-right: 0.55rem;
+                color: rgb(13 148 136);
+            }
+            .product-explorer__hint {
+                margin-top: 1.25rem;
+                color: rgb(100 116 139);
+                font-size: 0.875rem;
+                font-weight: 600;
+                text-align: center;
+            }
+            @media (max-width: 767px) {
+                .product-explorer__grid {
+                    display: flex;
+                    overflow-x: auto;
+                    gap: 1rem;
+                    padding: 0.25rem 0.5rem 1rem;
+                    scroll-snap-type: x mandatory;
+                    scrollbar-width: none;
+                }
+                .product-explorer__grid::-webkit-scrollbar {
+                    display: none;
+                }
+                .product-explorer__card {
+                    min-width: min(84vw, 25rem);
+                    scroll-snap-align: center;
+                }
+            }
+            @media (prefers-reduced-motion: reduce) {
+                .product-explorer__card {
+                    transition: none;
+                }
+            }
         </style>
 
         <script>
@@ -1898,11 +1995,11 @@ import Flag from "../components/Flag.astro";
                 const input = quoteWidget.querySelector("[data-quote-input]");
                 const output = quoteWidget.querySelector("[data-quote-output]");
                 const currencyLabel = quoteWidget.querySelector(
-                    "[data-quote-currency-label]"
+                    "[data-quote-currency-label]",
                 );
                 const note = quoteWidget.querySelector("[data-quote-note]");
                 const destinationButtons = quoteWidget.querySelectorAll(
-                    "[data-quote-destination]"
+                    "[data-quote-destination]",
                 );
 
                 const formatAmount = (value) =>
@@ -1913,18 +2010,18 @@ import Flag from "../components/Flag.astro";
 
                 const recalculate = () => {
                     const active = quoteWidget.querySelector(
-                        "[data-quote-destination].active"
+                        "[data-quote-destination].active",
                     );
                     if (!active) return;
 
                     const rawAmount = parseFloat(
-                        (input.value || "0").replace(",", ".")
+                        (input.value || "0").replace(",", "."),
                     );
                     const amount = Number.isNaN(rawAmount) ? 0 : rawAmount;
                     const rate = parseFloat(active.dataset.rate || "1");
                     const currency = active.dataset.currency || "USD";
                     const title = active.querySelector(
-                        ".quote-destination-btn__title"
+                        ".quote-destination-btn__title",
                     ).textContent;
 
                     output.textContent = formatAmount(amount * rate);
@@ -1937,7 +2034,7 @@ import Flag from "../components/Flag.astro";
                 destinationButtons.forEach((button) => {
                     button.addEventListener("click", () => {
                         destinationButtons.forEach((b) =>
-                            b.classList.remove("active")
+                            b.classList.remove("active"),
                         );
                         button.classList.add("active");
                         recalculate();
@@ -1974,10 +2071,22 @@ import Flag from "../components/Flag.astro";
                         eyebrow: "Cuenta operativa en USD",
                         title: "Infraestructura operativa en USD",
                         text: "Centraliza la recepción de pagos desde USA al integrarte con estructuras de pago reguladas, facilitando la visibilidad de tu flujo operativo internacional de inicio a fin.",
-                        points: ["Datos de recepción en USD", "Recepción de pagos desde USA"],
+                        points: [
+                            "Datos de recepción en USD",
+                            "Recepción de pagos desde USA",
+                        ],
                         mediaType: "image",
                         image: "/assets/images/plataforma-dashboard-monitor.webp",
-                        detail: { mediaType: "image", image: "/assets/images/blog/dashboard-cobros-internacionales-trazabilidad.webp", title: "Cada cobro, con contexto", text: "Revisa la información de cada recepción y conserva una vista ordenada de tu operación internacional.", points: ["Referencia por operación", "Visibilidad de movimientos"] }
+                        detail: {
+                            mediaType: "image",
+                            image: "/assets/images/blog/dashboard-cobros-internacionales-trazabilidad.webp",
+                            title: "Cada cobro, con contexto",
+                            text: "Revisa la información de cada recepción y conserva una vista ordenada de tu operación internacional.",
+                            points: [
+                                "Referencia por operación",
+                                "Visibilidad de movimientos",
+                            ],
+                        },
                     },
                     {
                         id: "payments",
@@ -1985,10 +2094,22 @@ import Flag from "../components/Flag.astro";
                         eyebrow: "Pagos internacionales",
                         title: "Pagos empresariales",
                         text: "Ejecuta pagos ACH y Wire a proveedores y partners clave en Estados Unidos con total visibilidad, orden y trazabilidad operativa.",
-                        points: ["Pagos ACH y Wire transfer", "Mayor orden y trazabilidad"],
+                        points: [
+                            "Pagos ACH y Wire transfer",
+                            "Mayor orden y trazabilidad",
+                        ],
                         mediaType: "image",
                         image: "/assets/images/blog/pagar-proveedores-internacionales-bolivia.webp",
-                        detail: { mediaType: "image", image: "/assets/images/blog/factura-proveedor-internacional-banco.webp", title: "Del proveedor al comprobante", text: "Concentra los datos necesarios para preparar y seguir un pago internacional de tu empresa.", points: ["Datos del proveedor", "Soporte documental"] }
+                        detail: {
+                            mediaType: "image",
+                            image: "/assets/images/blog/factura-proveedor-internacional-banco.webp",
+                            title: "Del proveedor al comprobante",
+                            text: "Concentra los datos necesarios para preparar y seguir un pago internacional de tu empresa.",
+                            points: [
+                                "Datos del proveedor",
+                                "Soporte documental",
+                            ],
+                        },
                     },
                     {
                         id: "routing",
@@ -1996,41 +2117,61 @@ import Flag from "../components/Flag.astro";
                         eyebrow: "Flexibilidad operativa",
                         title: "Flexibilidad de salida",
                         text: "Instruye transferencias según la estructura aprobada hacia cuentas locales o canales digitales mediante una interfaz orientada al control documental.",
-                        points: ["Opciones de enrutamiento operativo", "Soporte documental trazable por transacción"],
+                        points: [
+                            "Opciones de enrutamiento operativo",
+                            "Soporte documental trazable por transacción",
+                        ],
                         mediaType: "image",
                         image: "/assets/images/blog/seguimiento-operaciones-plataforma-digital.webp",
-                        detail: { mediaType: "image", image: "/assets/images/blog/transferencia-internacional-documentos-usd.webp", title: "Una salida definida para cada caso", text: "Mantén el seguimiento de la instrucción y la documentación que corresponde a cada operación.", points: ["Seguimiento de instrucciones", "Documentación organizada"] }
-                    }
+                        detail: {
+                            mediaType: "image",
+                            image: "/assets/images/blog/transferencia-internacional-documentos-usd.webp",
+                            title: "Una salida definida para cada caso",
+                            text: "Mantén el seguimiento de la instrucción y la documentación que corresponde a cada operación.",
+                            points: [
+                                "Seguimiento de instrucciones",
+                                "Documentación organizada",
+                            ],
+                        },
+                    },
                 ];
 
                 const nodes = new Map();
 
                 const media = (product, type) => {
-                    const content = type === "detail" ? product.detail : product;
+                    const content =
+                        type === "detail" ? product.detail : product;
                     const source = content.image;
-                    const asset = content.mediaType === "video"
-                        ? `<video src="${source}" muted playsinline loop autoplay preload="metadata"></video>`
-                        : `<img src="${source}" alt="" loading="lazy" />`;
+                    const asset =
+                        content.mediaType === "video"
+                            ? `<video src="${source}" muted playsinline loop autoplay preload="metadata"></video>`
+                            : `<img src="${source}" alt="" loading="lazy" />`;
                     return `<div class="product-explorer__media">${asset}</div>`;
                 };
 
                 const createCard = (product, type, node) => {
-                    const content = type === "detail" ? product.detail : product;
+                    const content =
+                        type === "detail" ? product.detail : product;
                     const card = node || document.createElement("button");
                     card.type = "button";
                     card.className = activeClass;
                     card.dataset.productId = product.id;
                     card.dataset.productType = type;
                     card.setAttribute("aria-pressed", "false");
-                    const header = type === "detail"
-                        ? media(product, type)
-                        : `<div class="product-explorer__icon-wrap"><i data-lucide="${product.icon}" aria-hidden="true"></i></div>`;
+                    const header =
+                        type === "detail"
+                            ? media(product, type)
+                            : `<div class="product-explorer__icon-wrap"><i data-lucide="${product.icon}" aria-hidden="true"></i></div>`;
                     card.innerHTML = `${header}<div class="product-explorer__body"><p class="product-explorer__eyebrow">${type === "detail" ? "Detalle de la capacidad" : product.eyebrow}</p><h3 class="product-explorer__title">${content.title}</h3><p class="product-explorer__text">${content.text}</p><div class="product-explorer__points">${content.points.map((point) => `<span>${point}</span>`).join("")}</div></div>`;
                     return card;
                 };
 
                 products.forEach((product, index) => {
-                    const main = createCard(product, "main", initialCards[index]);
+                    const main = createCard(
+                        product,
+                        "main",
+                        initialCards[index],
+                    );
                     const detail = createCard(product, "detail");
                     nodes.set(`${product.id}:main`, main);
                     nodes.set(`${product.id}:detail`, detail);
@@ -2038,7 +2179,9 @@ import Flag from "../components/Flag.astro";
 
                 if (window.lucide) window.lucide.createIcons();
 
-                const originalOrder = products.map((product) => `${product.id}:main`);
+                const originalOrder = products.map(
+                    (product) => `${product.id}:main`,
+                );
 
                 const render = (order, source = null) => {
                     const state = Flip.getState(grid.children);
@@ -2049,11 +2192,14 @@ import Flag from "../components/Flag.astro";
                     });
                     order.forEach((key) => grid.appendChild(nodes.get(key)));
                     grid.querySelectorAll("button").forEach((card) => {
-                        const selected = source && card.dataset.productId === source;
+                        const selected =
+                            source && card.dataset.productId === source;
                         card.setAttribute("aria-pressed", String(selected));
                     });
 
-                    const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+                    const reducedMotion = window.matchMedia(
+                        "(prefers-reduced-motion: reduce)",
+                    ).matches;
                     if (reducedMotion) {
                         isTransitioning = false;
                         return;
@@ -2063,14 +2209,33 @@ import Flag from "../components/Flag.astro";
                         duration: 0.62,
                         ease: "power3.inOut",
                         absolute: true,
-                        onEnter: (elements) => gsap.fromTo(elements, { autoAlpha: 0, x: 30 }, { autoAlpha: 1, x: 0, duration: 0.38, ease: "power2.out" }),
-                        onLeave: (elements) => gsap.to(elements, { autoAlpha: 0, x: -30, duration: 0.22 }),
-                        onComplete: () => { isTransitioning = false; }
+                        onEnter: (elements) =>
+                            gsap.fromTo(
+                                elements,
+                                { autoAlpha: 0, x: 30 },
+                                {
+                                    autoAlpha: 1,
+                                    x: 0,
+                                    duration: 0.38,
+                                    ease: "power2.out",
+                                },
+                            ),
+                        onLeave: (elements) =>
+                            gsap.to(elements, {
+                                autoAlpha: 0,
+                                x: -30,
+                                duration: 0.22,
+                            }),
+                        onComplete: () => {
+                            isTransitioning = false;
+                        },
                     });
                 };
 
                 grid.addEventListener("click", (event) => {
-                    const card = event.target.closest("button[data-product-id]");
+                    const card = event.target.closest(
+                        "button[data-product-id]",
+                    );
                     if (!card || isTransitioning) return;
 
                     const source = card.dataset.productId;
@@ -2078,7 +2243,8 @@ import Flag from "../components/Flag.astro";
 
                     if (activeSource === source) {
                         activeSource = null;
-                        status.textContent = "Vista inicial de capacidades restaurada.";
+                        status.textContent =
+                            "Vista inicial de capacidades restaurada.";
                         render(originalOrder);
                         return;
                     }
@@ -2088,8 +2254,16 @@ import Flag from "../components/Flag.astro";
                         // La tarjeta elegida se desplaza y su pieza asociada ocupa su lugar.
                         // Solo hay tres espacios visibles. La cuarta tarjeta sale por un borde.
                         usd: ["usd:detail", "payments:main", "usd:main"],
-                        payments: ["payments:main", "payments:detail", "routing:main"],
-                        routing: ["payments:main", "routing:main", "routing:detail"]
+                        payments: [
+                            "payments:main",
+                            "payments:detail",
+                            "routing:main",
+                        ],
+                        routing: [
+                            "payments:main",
+                            "routing:main",
+                            "routing:detail",
+                        ],
                     };
                     const order = selectedOrders[source];
                     status.textContent = `Mostrando el detalle de ${products.find((product) => product.id === source).title}.`;
@@ -2097,6 +2271,62 @@ import Flag from "../components/Flag.astro";
                 });
 
                 render(originalOrder);
+            }
+        </script>
+
+        <script>
+            import { gsap } from "gsap";
+            import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+            gsap.registerPlugin(ScrollTrigger);
+
+            const useCaseRows = gsap.utils.toArray(".use-case-row");
+            const reducedMotion = window.matchMedia(
+                "(prefers-reduced-motion: reduce)",
+            ).matches;
+
+            if (useCaseRows.length && !reducedMotion) {
+                ScrollTrigger.batch(useCaseRows, {
+                    start: "top 88%",
+                    onEnter: (batch) =>
+                        gsap.to(batch, {
+                            opacity: 1,
+                            y: 0,
+                            duration: 0.7,
+                            ease: "power2.out",
+                            stagger: 0.12,
+                            overwrite: true,
+                        }),
+                    onLeave: (batch) =>
+                        gsap.to(batch, {
+                            opacity: 0,
+                            y: -24,
+                            duration: 0.45,
+                            ease: "power2.in",
+                            stagger: 0.06,
+                            overwrite: true,
+                        }),
+                    onEnterBack: (batch) =>
+                        gsap.to(batch, {
+                            opacity: 1,
+                            y: 0,
+                            duration: 0.7,
+                            ease: "power2.out",
+                            stagger: 0.12,
+                            overwrite: true,
+                        }),
+                    onLeaveBack: (batch) =>
+                        gsap.to(batch, {
+                            opacity: 0,
+                            y: 28,
+                            duration: 0.45,
+                            ease: "power2.in",
+                            stagger: 0.06,
+                            overwrite: true,
+                        }),
+                });
+            } else if (useCaseRows.length) {
+                gsap.set(useCaseRows, { clearProps: "opacity,transform" });
             }
         </script>
     </StackedSections>

@@ -43,10 +43,17 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // 4. Reveal on Scroll Animation (Intersection Observer)
-    const revealElements = document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .fade-in, .reveal-up');
+    const revealElements = document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .fade-in, .reveal-up, .pair-reveal-left, .pair-reveal-right');
     
     const revealCallback = (entries, observer) => {
         entries.forEach(entry => {
+            if (entry.target.hasAttribute('data-replay-reveal')) {
+                // Se reactiva cada vez que entra o sale del viewport,
+                // en cualquier dirección de scroll.
+                entry.target.classList.toggle('active', entry.isIntersecting);
+                return;
+            }
+
             if (entry.isIntersecting) {
                 entry.target.classList.add('active');
                 // Optional: Stop observing once revealed
