@@ -1,6 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import StackedSections from "../components/StackedSections.astro";
+import RadioCard from "../components/RadioCard.astro";
 ---
 
 <Layout
@@ -661,148 +662,6 @@ import StackedSections from "../components/StackedSections.astro";
             </div>
         </div>
 
-        <!-- Simulador Visual B2B (Inspirado en Mesa de Pagos) -->
-        <section
-            data-stack-section
-            class="py-20 bg-guira-navy border-t border-white/5 relative z-10 overflow-hidden"
-        >
-            <div class="max-w-7xl mx-auto px-6">
-                <div class="text-center mb-16 reveal-up">
-                    <h2 class="text-3xl font-extrabold text-white mb-4">
-                        Simula el enrutamiento operativo
-                    </h2>
-                    <p class="text-slate-400 max-w-2xl mx-auto">
-                        Visualiza cómo Guira coordina e instruye operaciones
-                        empresariales apoyándose en instituciones y partners
-                        aplicables.
-                    </p>
-                </div>
-
-                <div
-                    class="bg-guira-petrol rounded-3xl border border-white/10 p-8 md:p-12 shadow-2xl relative overflow-hidden reveal-up"
-                >
-                    <div
-                        class="absolute inset-0 bg-gradient-to-br from-guira-emerald/10 to-transparent opacity-50"
-                    >
-                    </div>
-
-                    <div
-                        class="grid md:grid-cols-3 gap-8 relative z-10 items-center"
-                    >
-                        <!-- Entrada -->
-                        <div
-                            class="simulator-step active p-6 rounded-xl border border-guira-emerald/50 bg-white/5 text-center"
-                            id="sim-in"
-                        >
-                            <div
-                                class="mx-auto w-12 h-12 bg-guira-emerald/20 text-guira-emerald rounded-full flex items-center justify-center mb-4"
-                            >
-                                <i
-                                    data-lucide="arrow-down-to-line"
-                                    class="w-6 h-6"></i>
-                            </div>
-                            <h4 class="text-white font-bold mb-2">
-                                Recepción de pagos internacionales
-                            </h4>
-                            <select
-                                class="bg-guira-dark border border-white/10 text-white text-sm rounded-lg w-full p-2.5 outline-none focus:border-guira-emerald"
-                                aria-label="Seleccionar vía de entrada"
-                            >
-                                <option value="ach"
-                                    >Factura a Cliente USA (ACH)</option
-                                >
-                                <option value="wire"
-                                    >Cobro Internacional (Wire)</option
-                                >
-                                <option value="platform"
-                                    >Recepción desde Plataforma Comercial</option
-                                >
-                            </select>
-                        </div>
-
-                        <!-- Process -->
-                        <div class="flex flex-col items-center justify-center">
-                            <div
-                                class="hidden md:flex w-full items-center justify-center mb-2"
-                            >
-                                <div
-                                    class="h-1 bg-white/10 w-full rounded-l-full relative overflow-hidden"
-                                >
-                                    <div
-                                        class="absolute inset-y-0 left-0 bg-guira-emerald w-1/2 animate-[marquee_2s_linear_infinite]"
-                                    >
-                                    </div>
-                                </div>
-                                <i
-                                    data-lucide="arrow-right"
-                                    class="text-guira-emerald mx-4 w-6 h-6 shrink-0 animate-pulse"
-                                ></i>
-                                <div
-                                    class="h-1 bg-white/10 w-full rounded-r-full relative overflow-hidden"
-                                >
-                                    <div
-                                        class="absolute inset-y-0 left-0 bg-guira-emerald w-1/2 animate-[marquee_2s_linear_infinite_reverse]"
-                                    >
-                                    </div>
-                                </div>
-                            </div>
-                            <div
-                                class="bg-guira-navy border border-white/10 p-4 rounded-xl text-center shadow-lg transform hover:scale-105 transition-transform cursor-default"
-                            >
-                                <img
-                                    src="/guira-logo.svg"
-                                    class="h-6 mx-auto mb-2"
-                                    alt="Guira"
-                                />
-                                <span
-                                    class="text-[10px] text-guira-emerald uppercase font-bold tracking-widest block"
-                                    >Validación de Soporte Documental</span
-                                >
-                            </div>
-                            <div
-                                class="md:hidden w-1 h-8 bg-guira-emerald/30 my-4 mx-auto"
-                            >
-                            </div>
-                        </div>
-
-                        <!-- Salida -->
-                        <div
-                            class="simulator-step p-6 rounded-xl border border-white/10 bg-white/5 hover:border-white/30 text-center"
-                            id="sim-out"
-                        >
-                            <div
-                                class="mx-auto w-12 h-12 bg-white/10 text-slate-400 rounded-full flex items-center justify-center mb-4 transition-colors"
-                            >
-                                <i data-lucide="arrow-up-right" class="w-6 h-6"
-                                ></i>
-                            </div>
-                            <h4 class="text-white font-bold mb-2">
-                                Instrucción de Pago B2B
-                            </h4>
-                            <select
-                                class="bg-guira-dark border border-white/10 text-white text-sm rounded-lg w-full p-2.5 outline-none focus:border-guira-emerald"
-                                id="sim-out-select"
-                                aria-label="Seleccionar destino de salida"
-                            >
-                                <option value="" disabled selected
-                                    >Selecciona destino...</option
-                                >
-                                <option value="us"
-                                    >Pago a Proveedor Extranjero (ACH/Wire)</option
-                                >
-                                <option value="bob"
-                                    >Transferencia a Cuenta Local B2B</option
-                                >
-                                <option value="digital"
-                                    >Salida a Canal Digital Validado</option
-                                >
-                            </select>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
         <!-- 4. Cómo funciona (3 simples pasos rediseñado en Claro) -->
         <section
             data-stack-section
@@ -865,9 +724,9 @@ import StackedSections from "../components/StackedSections.astro";
                             Recepción Estructurada
                         </h3>
                         <p class="text-slate-600 text-sm font-medium">
-                            Centralizas los pagos internacionales corporativos de forma
-                            trazable. La visibilidad de tu remesa depende del
-                            soporte documental validado.
+                            Centralizas los pagos internacionales corporativos
+                            de forma trazable. La visibilidad de tu remesa
+                            depende del soporte documental validado.
                         </p>
                     </div>
 
@@ -1037,40 +896,28 @@ import StackedSections from "../components/StackedSections.astro";
                 </div>
 
                 <div class="grid sm:grid-cols-2 max-w-4xl mx-auto gap-8">
-                    <div
-                        class="bg-white p-8 rounded-2xl border border-slate-200 shadow-sm reveal-up"
+                    <RadioCard
+                        icon="laptop"
+                        title="Exportadores de Servicios"
+                        class="reveal-up"
                     >
-                        <h3
-                            class="text-lg font-bold text-slate-900 mb-4 flex items-center gap-2"
-                        >
-                            <i
-                                data-lucide="laptop"
-                                class="w-5 h-5 text-guira-emerald"></i> Exportadores
-                            de Servicios
-                        </h3>
                         <p class="text-sm text-slate-600 leading-relaxed">
                             Agencias de software, consultoras y profesionales
-                            que facturan a clientes en el exterior y necesitan recibir
-                            pagos internacionales de forma trazable.
+                            que facturan a clientes en el exterior y necesitan
+                            recibir pagos internacionales de forma trazable.
                         </p>
-                    </div>
-                    <div
-                        class="bg-white p-8 rounded-2xl border border-slate-200 shadow-sm reveal-up delay-100"
+                    </RadioCard>
+                    <RadioCard
+                        icon="ship"
+                        title="Importadoras y Comerciales"
+                        class="reveal-up delay-100"
                     >
-                        <h3
-                            class="text-lg font-bold text-slate-900 mb-4 flex items-center gap-2"
-                        >
-                            <i
-                                data-lucide="ship"
-                                class="w-5 h-5 text-guira-emerald"></i> Importadoras
-                            y Comerciales
-                        </h3>
                         <p class="text-sm text-slate-600 leading-relaxed">
                             Empresas que gestionan inventarios internacionales y
                             requieren pagar a proveedores en el exterior con
                             rapidez y claridad.
                         </p>
-                    </div>
+                    </RadioCard>
                 </div>
             </div>
         </section>
@@ -1247,35 +1094,6 @@ import StackedSections from "../components/StackedSections.astro";
             </div>
         </section>
     </StackedSections>
-
-    <script is:inline>
-        document.addEventListener("DOMContentLoaded", () => {
-            const select = document.getElementById("sim-out-select");
-            if (select) {
-                select.addEventListener("change", () => {
-                    const simOut = document.getElementById("sim-out");
-                    if (simOut) {
-                        simOut.classList.add("active");
-                        simOut.style.borderColor = "#0051ff";
-                        const badge = simOut.querySelector(".bg-white\\/10");
-                        if (badge) {
-                            badge.classList.replace(
-                                "bg-white/10",
-                                "bg-guira-emerald/20",
-                            );
-                        }
-                        const icon = simOut.querySelector(".text-slate-400");
-                        if (icon) {
-                            icon.classList.replace(
-                                "text-slate-400",
-                                "text-guira-emerald",
-                            );
-                        }
-                    }
-                });
-            }
-        });
-    </script>
 </Layout>
 
 <style>
@@ -1337,18 +1155,5 @@ import StackedSections from "../components/StackedSections.astro";
             transparent
         );
         box-shadow: 0 0 10px rgba(0, 81, 255, 0.5);
-    }
-
-    /* Interactive Simulator Styling */
-    .simulator-step {
-        cursor: pointer;
-        transition: all 0.3s ease;
-    }
-    .simulator-step.active {
-        border-color: #0051ff;
-        background: rgba(0, 81, 255, 0.1);
-    }
-    .simulator-step.active .lucide {
-        color: #0051ff;
     }
 </style>

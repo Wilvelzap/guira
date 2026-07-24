@@ -134,8 +134,7 @@ import Flag from "../components/Flag.astro";
                         <span
                             class="fintech-badge inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-bold text-guira-teal mb-8"
                         >
-                            <span
-                                class="w-1.5 h-1.5 rounded-full bg-guira-teal"
+                            <span class="w-1.5 h-1.5 rounded-full bg-guira-teal"
                             ></span>
                             Plataforma tecnológica para empresas de LATAM · Presencia
                             en Bolivia
@@ -152,9 +151,9 @@ import Flag from "../components/Flag.astro";
                     <p
                         class="reveal reveal-delay-2 text-base md:text-lg text-slate-500 mb-10 max-w-xl font-medium leading-relaxed"
                     >
-                        Centraliza la recepción, visibilidad y las
-                        instrucciones de pago de tu empresa con respaldo
-                        documental y partners internacionales calificados.
+                        Centraliza la recepción, visibilidad y las instrucciones
+                        de pago de tu empresa con respaldo documental y partners
+                        internacionales calificados.
                     </p>
 
                     <div
@@ -544,12 +543,12 @@ import Flag from "../components/Flag.astro";
         <!-- Problema / Solución -->
         <section
             data-stack-section
-            class="relative flex min-h-[100dvh] flex-col overflow-hidden bg-guira-navy"
+            class="relative flex min-h-[100dvh] lg:h-[100dvh] flex-col overflow-hidden bg-guira-navy"
         >
             <div class="grid shrink-0 md:grid-cols-2">
                 <!-- Encabezado: Operación tradicional -->
                 <div
-                    class="relative overflow-hidden bg-guira-navy px-6 pb-8 pt-14 sm:px-10 md:px-16 lg:px-[clamp(4rem,8vw,10rem)]"
+                    class="relative overflow-hidden bg-guira-navy px-6 pb-8 pt-14 sm:px-10 md:px-16 lg:px-[clamp(4rem,8vw,10rem)] lg:pt-10 lg:pb-6"
                 >
                     <div
                         class="absolute inset-0 opacity-40 [background-image:radial-gradient(circle_at_1px_1px,rgba(148,163,184,0.18)_1px,transparent_0)] [background-size:24px_24px]"
@@ -579,7 +578,7 @@ import Flag from "../components/Flag.astro";
 
                 <!-- Encabezado: Guira Empresas -->
                 <div
-                    class="relative overflow-hidden bg-guira-petrol px-6 pb-8 pt-14 sm:px-10 md:px-16 lg:px-[clamp(4rem,8vw,10rem)]"
+                    class="relative overflow-hidden bg-guira-petrol px-6 pb-8 pt-14 sm:px-10 md:px-16 lg:px-[clamp(4rem,8vw,10rem)] lg:pt-10 lg:pb-6"
                 >
                     <div
                         class="absolute -right-32 -top-24 h-[430px] w-[430px] rounded-full bg-guira-teal/20 blur-[110px]"
@@ -601,20 +600,22 @@ import Flag from "../components/Flag.astro";
                         <p
                             class="mt-5 max-w-md text-base font-medium leading-relaxed text-slate-300 sm:text-lg"
                         >
-                            Una plataforma operativa multi-moneda para cobrar, pagar
-                            y tener control de cada operación.
+                            Una plataforma operativa multi-moneda para cobrar,
+                            pagar y tener control de cada operación.
                         </p>
                     </div>
                 </div>
             </div>
 
             <!-- Pares problema → solución -->
-            <div class="relative flex flex-1 flex-col border-t border-white/5">
+            <div
+                class="relative flex flex-1 min-h-0 flex-col border-t border-white/5"
+            >
                 <div
-                    class="grid flex-1 grid-cols-1 border-b border-white/5 md:grid-cols-2"
+                    class="grid flex-1 min-h-0 grid-cols-1 border-b border-white/5 md:grid-cols-2"
                 >
                     <div
-                        class="pair-reveal-left flex h-full items-center gap-5 bg-guira-navy px-6 py-8 sm:px-10 md:px-16 lg:px-[clamp(4rem,8vw,10rem)]"
+                        class="pair-reveal-left flex h-full items-center gap-5 bg-guira-navy px-6 py-4 sm:px-10 md:px-16 lg:px-[clamp(4rem,8vw,10rem)] lg:py-3"
                         data-replay-reveal
                     >
                         <span
@@ -623,16 +624,15 @@ import Flag from "../components/Flag.astro";
                         >
                         <span
                             class="h-px flex-1 max-w-6 bg-slate-700/60"
-                            aria-hidden="true"
-                        ></span>
+                            aria-hidden="true"></span>
                         <span
                             class="text-sm font-medium leading-relaxed text-slate-300 sm:text-base"
-                            >Dificultad para recibir pagos en USD desde LATAM
-                            de forma fluida.</span
+                            >Dificultad para recibir pagos en USD desde LATAM de
+                            forma fluida.</span
                         >
                     </div>
                     <div
-                        class="pair-reveal-right flex h-full items-center gap-5 bg-guira-petrol px-6 py-8 sm:px-10 md:px-16 lg:px-[clamp(4rem,8vw,10rem)]"
+                        class="pair-reveal-right flex h-full items-center gap-5 bg-guira-petrol px-6 py-4 sm:px-10 md:px-16 lg:px-[clamp(4rem,8vw,10rem)] lg:py-3"
                         data-replay-reveal
                     >
                         <span
@@ -641,8 +641,7 @@ import Flag from "../components/Flag.astro";
                         >
                         <span
                             class="h-px flex-1 max-w-6 bg-guira-cyan/30"
-                            aria-hidden="true"
-                        ></span>
+                            aria-hidden="true"></span>
                         <span
                             class="text-sm font-medium leading-relaxed text-slate-200 sm:text-base"
                             >Estructura habilitada mediante partners para la
@@ -652,10 +651,10 @@ import Flag from "../components/Flag.astro";
                 </div>
 
                 <div
-                    class="reveal-delay-1 grid flex-1 grid-cols-1 border-b border-white/5 md:grid-cols-2"
+                    class="reveal-delay-1 grid flex-1 min-h-0 grid-cols-1 border-b border-white/5 md:grid-cols-2"
                 >
                     <div
-                        class="pair-reveal-left flex h-full items-center gap-5 bg-guira-navy px-6 py-8 sm:px-10 md:px-16 lg:px-[clamp(4rem,8vw,10rem)]"
+                        class="pair-reveal-left flex h-full items-center gap-5 bg-guira-navy px-6 py-8 sm:px-10 md:px-16 lg:px-[clamp(4rem,8vw,10rem)] lg:py-3"
                         data-replay-reveal
                     >
                         <span
@@ -664,8 +663,7 @@ import Flag from "../components/Flag.astro";
                         >
                         <span
                             class="h-px flex-1 max-w-6 bg-slate-700/60"
-                            aria-hidden="true"
-                        ></span>
+                            aria-hidden="true"></span>
                         <span
                             class="text-sm font-medium leading-relaxed text-slate-300 sm:text-base"
                             >Fricción operativa por múltiples intermediarios y
@@ -673,7 +671,7 @@ import Flag from "../components/Flag.astro";
                         >
                     </div>
                     <div
-                        class="pair-reveal-right flex h-full items-center gap-5 bg-guira-petrol px-6 py-8 sm:px-10 md:px-16 lg:px-[clamp(4rem,8vw,10rem)]"
+                        class="pair-reveal-right flex h-full items-center gap-5 bg-guira-petrol px-6 py-8 sm:px-10 md:px-16 lg:px-[clamp(4rem,8vw,10rem)] lg:py-3"
                         data-replay-reveal
                     >
                         <span
@@ -682,8 +680,7 @@ import Flag from "../components/Flag.astro";
                         >
                         <span
                             class="h-px flex-1 max-w-6 bg-guira-cyan/30"
-                            aria-hidden="true"
-                        ></span>
+                            aria-hidden="true"></span>
                         <span
                             class="text-sm font-medium leading-relaxed text-slate-200 sm:text-base"
                             >Capa empresarial para una operación internacional
@@ -693,10 +690,10 @@ import Flag from "../components/Flag.astro";
                 </div>
 
                 <div
-                    class="reveal-delay-2 grid flex-1 grid-cols-1 md:grid-cols-2"
+                    class="reveal-delay-2 grid flex-1 min-h-0 grid-cols-1 md:grid-cols-2"
                 >
                     <div
-                        class="pair-reveal-left flex h-full items-center gap-5 bg-guira-navy px-6 py-8 sm:px-10 md:px-16 lg:px-[clamp(4rem,8vw,10rem)]"
+                        class="pair-reveal-left flex h-full items-center gap-5 bg-guira-navy px-6 py-8 sm:px-10 md:px-16 lg:px-[clamp(4rem,8vw,10rem)] lg:py-3"
                         data-replay-reveal
                     >
                         <span
@@ -705,16 +702,15 @@ import Flag from "../components/Flag.astro";
                         >
                         <span
                             class="h-px flex-1 max-w-6 bg-slate-700/60"
-                            aria-hidden="true"
-                        ></span>
+                            aria-hidden="true"></span>
                         <span
                             class="text-sm font-medium leading-relaxed text-slate-300 sm:text-base"
-                            >Baja visibilidad y falta de una interfaz
-                            operativa centralizada.</span
+                            >Baja visibilidad y falta de una interfaz operativa
+                            centralizada.</span
                         >
                     </div>
                     <div
-                        class="pair-reveal-right flex h-full items-center gap-5 bg-guira-petrol px-6 py-8 sm:px-10 md:px-16 lg:px-[clamp(4rem,8vw,10rem)]"
+                        class="pair-reveal-right flex h-full items-center gap-5 bg-guira-petrol px-6 py-8 sm:px-10 md:px-16 lg:px-[clamp(4rem,8vw,10rem)] lg:py-3"
                         data-replay-reveal
                     >
                         <span
@@ -723,8 +719,7 @@ import Flag from "../components/Flag.astro";
                         >
                         <span
                             class="h-px flex-1 max-w-6 bg-guira-cyan/30"
-                            aria-hidden="true"
-                        ></span>
+                            aria-hidden="true"></span>
                         <span
                             class="text-sm font-medium leading-relaxed text-slate-200 sm:text-base"
                             >Interfaz operativa centralizada para gestionar
@@ -1150,9 +1145,8 @@ import Flag from "../components/Flag.astro";
                             <p
                                 class="mt-2 max-w-xl text-sm md:text-base font-medium text-slate-500"
                             >
-                                Recepción de fondos de donantes con
-                                trazabilidad documental para reportes de
-                                impacto.
+                                Recepción de fondos de donantes con trazabilidad
+                                documental para reportes de impacto.
                             </p>
                         </div>
                     </div>
@@ -1234,105 +1228,198 @@ import Flag from "../components/Flag.astro";
                 </div>
             </div>
 
-            <div
-                class="grid grid-cols-1 gap-px bg-white/10 border-t border-white/10 sm:grid-cols-2 md:grid-cols-4"
-            >
-                <div class="reveal bg-guira-navy px-8 py-10">
-                    <span class="font-mono text-xs tracking-wider text-slate-600"
-                        >01</span
-                    >
-                    <h3 class="mt-4 text-lg font-bold text-white">Bolivia</h3>
-                    <p class="mt-2 text-sm font-medium leading-relaxed text-slate-400">
-                        Presencia local con asesoría comercial de Guiraglobal
-                        SRL, sin custodia de fondos.
-                    </p>
-                    <div class="mt-4 flex flex-wrap gap-2">
-                        <span
-                            class="inline-flex items-center rounded-full border border-white/15 bg-white/5 px-3 py-1 text-xs font-semibold tracking-wide text-slate-300"
-                            >Guiraglobal SRL</span
+            <div class="max-w-7xl mx-auto px-6 pb-24">
+                <div
+                    class="grid grid-cols-1 gap-px bg-white/10 border border-white/10 rounded-2xl overflow-hidden sm:grid-cols-2 md:grid-cols-4"
+                >
+                    <div class="reveal bg-guira-navy px-8 py-10">
+                        <div class="flex items-center gap-2">
+                            <img
+                                src="https://cdn.jsdelivr.net/gh/hatscripts/circle-flags/flags/bo.svg"
+                                alt=""
+                                class="w-6 h-6 rounded-full"
+                                loading="lazy"
+                                aria-hidden="true"
+                            />
+                            <span
+                                class="font-mono text-xs tracking-wider text-slate-600"
+                                >01</span
+                            >
+                        </div>
+                        <h3 class="mt-4 text-lg font-bold text-white">
+                            Bolivia
+                        </h3>
+                        <p
+                            class="mt-2 text-sm font-medium leading-relaxed text-slate-400"
                         >
+                            Presencia local con asesoría comercial de
+                            Guiraglobal SRL, sin custodia de fondos.
+                        </p>
+                        <div class="mt-4 flex flex-wrap gap-2">
+                            <span
+                                class="inline-flex items-center rounded-full border border-white/15 bg-white/5 px-3 py-1 text-xs font-semibold tracking-wide text-slate-300"
+                                >Guiraglobal SRL</span
+                            >
+                        </div>
                     </div>
-                </div>
 
-                <div class="reveal reveal-delay-1 bg-guira-navy px-8 py-10">
-                    <span class="font-mono text-xs tracking-wider text-slate-600"
-                        >02</span
-                    >
-                    <h3 class="mt-4 text-lg font-bold text-white">
-                        Colombia
-                    </h3>
-                    <p class="mt-2 text-sm font-medium leading-relaxed text-slate-400">
-                        Empresas exportadoras que facturan en dólares a
-                        clientes en el exterior.
-                    </p>
-                </div>
-
-                <div class="reveal reveal-delay-2 bg-guira-navy px-8 py-10">
-                    <span class="font-mono text-xs tracking-wider text-slate-600"
-                        >03</span
-                    >
-                    <h3 class="mt-4 text-lg font-bold text-white">Brasil</h3>
-                    <p class="mt-2 text-sm font-medium leading-relaxed text-slate-400">
-                        Compañías que cobran en dólares a clientes
-                        internacionales.
-                    </p>
-                </div>
-
-                <div class="reveal reveal-delay-3 bg-guira-navy px-8 py-10">
-                    <span class="font-mono text-xs tracking-wider text-slate-600"
-                        >04</span
-                    >
-                    <h3 class="mt-4 text-lg font-bold text-white">México</h3>
-                    <p class="mt-2 text-sm font-medium leading-relaxed text-slate-400">
-                        Negocios con clientes y proveedores fuera del país.
-                    </p>
-                </div>
-
-                <div class="reveal bg-guira-navy px-8 py-10">
-                    <span class="font-mono text-xs tracking-wider text-slate-600"
-                        >05</span
-                    >
-                    <h3 class="mt-4 text-lg font-bold text-white">
-                        Estados Unidos
-                    </h3>
-                    <p class="mt-2 text-sm font-medium leading-relaxed text-slate-400">
-                        Plataforma operativa multi-moneda, habilitada por un partner
-                        tecnológico licenciado en EE.UU.
-                    </p>
-                    <div class="mt-4 flex flex-wrap gap-2">
-                        <span
-                            class="inline-flex items-center rounded-full border border-white/15 bg-white/5 px-3 py-1 text-xs font-semibold tracking-wide text-slate-300"
-                            >ACH</span
+                    <div class="reveal reveal-delay-1 bg-guira-navy px-8 py-10">
+                        <div class="flex items-center gap-2">
+                            <img
+                                src="https://cdn.jsdelivr.net/gh/hatscripts/circle-flags/flags/co.svg"
+                                alt=""
+                                class="w-6 h-6 rounded-full"
+                                loading="lazy"
+                                aria-hidden="true"
+                            />
+                            <span
+                                class="font-mono text-xs tracking-wider text-slate-600"
+                                >02</span
+                            >
+                        </div>
+                        <h3 class="mt-4 text-lg font-bold text-white">
+                            Colombia
+                        </h3>
+                        <p
+                            class="mt-2 text-sm font-medium leading-relaxed text-slate-400"
                         >
-                        <span
-                            class="inline-flex items-center rounded-full border border-white/15 bg-white/5 px-3 py-1 text-xs font-semibold tracking-wide text-slate-300"
-                            >Wire</span
-                        >
+                            Empresas exportadoras que facturan en dólares a
+                            clientes en el exterior.
+                        </p>
                     </div>
-                </div>
 
-                <div class="reveal reveal-delay-1 bg-guira-navy px-8 py-10">
-                    <span class="font-mono text-xs tracking-wider text-slate-600"
-                        >06</span
-                    >
-                    <h3 class="mt-4 text-lg font-bold text-white">Europa</h3>
-                    <p class="mt-2 text-sm font-medium leading-relaxed text-slate-400">
-                        Clientes y proveedores de empresas latinoamericanas
-                        con operación internacional.
-                    </p>
-                </div>
+                    <div class="reveal reveal-delay-2 bg-guira-navy px-8 py-10">
+                        <div class="flex items-center gap-2">
+                            <img
+                                src="https://cdn.jsdelivr.net/gh/hatscripts/circle-flags/flags/br.svg"
+                                alt=""
+                                class="w-6 h-6 rounded-full"
+                                loading="lazy"
+                                aria-hidden="true"
+                            />
+                            <span
+                                class="font-mono text-xs tracking-wider text-slate-600"
+                                >03</span
+                            >
+                        </div>
+                        <h3 class="mt-4 text-lg font-bold text-white">
+                            Brasil
+                        </h3>
+                        <p
+                            class="mt-2 text-sm font-medium leading-relaxed text-slate-400"
+                        >
+                            Compañías que cobran en dólares a clientes
+                            internacionales.
+                        </p>
+                    </div>
 
-                <div class="reveal reveal-delay-2 bg-guira-navy px-8 py-10">
-                    <span class="font-mono text-xs tracking-wider text-slate-600"
-                        >07</span
-                    >
-                    <h3 class="mt-4 text-lg font-bold text-white">
-                        Otras regiones
-                    </h3>
-                    <p class="mt-2 text-sm font-medium leading-relaxed text-slate-400">
-                        Empresas de otros países de LATAM que operan con el
-                        exterior.
-                    </p>
+                    <div class="reveal reveal-delay-3 bg-guira-navy px-8 py-10">
+                        <div class="flex items-center gap-2">
+                            <img
+                                src="https://cdn.jsdelivr.net/gh/hatscripts/circle-flags/flags/mx.svg"
+                                alt=""
+                                class="w-6 h-6 rounded-full"
+                                loading="lazy"
+                                aria-hidden="true"
+                            />
+                            <span
+                                class="font-mono text-xs tracking-wider text-slate-600"
+                                >04</span
+                            >
+                        </div>
+                        <h3 class="mt-4 text-lg font-bold text-white">
+                            México
+                        </h3>
+                        <p
+                            class="mt-2 text-sm font-medium leading-relaxed text-slate-400"
+                        >
+                            Negocios con clientes y proveedores fuera del país.
+                        </p>
+                    </div>
+
+                    <div class="reveal bg-guira-navy px-8 py-10">
+                        <div class="flex items-center gap-2">
+                            <img
+                                src="https://cdn.jsdelivr.net/gh/hatscripts/circle-flags/flags/us.svg"
+                                alt=""
+                                class="w-6 h-6 rounded-full"
+                                loading="lazy"
+                                aria-hidden="true"
+                            />
+                            <span
+                                class="font-mono text-xs tracking-wider text-slate-600"
+                                >05</span
+                            >
+                        </div>
+                        <h3 class="mt-4 text-lg font-bold text-white">
+                            Estados Unidos
+                        </h3>
+                        <p
+                            class="mt-2 text-sm font-medium leading-relaxed text-slate-400"
+                        >
+                            Plataforma operativa multi-moneda, habilitada por un
+                            partner tecnológico licenciado en EE.UU.
+                        </p>
+                        <div class="mt-4 flex flex-wrap gap-2">
+                            <span
+                                class="inline-flex items-center rounded-full border border-white/15 bg-white/5 px-3 py-1 text-xs font-semibold tracking-wide text-slate-300"
+                                >ACH</span
+                            >
+                            <span
+                                class="inline-flex items-center rounded-full border border-white/15 bg-white/5 px-3 py-1 text-xs font-semibold tracking-wide text-slate-300"
+                                >Wire</span
+                            >
+                        </div>
+                    </div>
+
+                    <div class="reveal reveal-delay-1 bg-guira-navy px-8 py-10">
+                        <div class="flex items-center gap-2">
+                            <img
+                                src="https://cdn.jsdelivr.net/gh/hatscripts/circle-flags/flags/european_union.svg"
+                                alt=""
+                                class="w-6 h-6 rounded-full"
+                                loading="lazy"
+                                aria-hidden="true"
+                            />
+                            <span
+                                class="font-mono text-xs tracking-wider text-slate-600"
+                                >06</span
+                            >
+                        </div>
+                        <h3 class="mt-4 text-lg font-bold text-white">
+                            Europa
+                        </h3>
+                        <p
+                            class="mt-2 text-sm font-medium leading-relaxed text-slate-400"
+                        >
+                            Clientes y proveedores de empresas latinoamericanas
+                            con operación internacional.
+                        </p>
+                    </div>
+
+                    <div class="reveal reveal-delay-2 bg-guira-navy px-8 py-10">
+                        <div class="flex items-center gap-2">
+                            <span
+                                class="w-6 h-6 rounded-full bg-white/10 text-slate-300 flex items-center justify-center"
+                                aria-hidden="true"
+                            >
+                                <i data-lucide="globe" class="w-3.5 h-3.5"></i>
+                            </span>
+                            <span
+                                class="font-mono text-xs tracking-wider text-slate-600"
+                                >07</span
+                            >
+                        </div>
+                        <h3 class="mt-4 text-lg font-bold text-white">
+                            Otras regiones
+                        </h3>
+                        <p
+                            class="mt-2 text-sm font-medium leading-relaxed text-slate-400"
+                        >
+                            Empresas de otros países de LATAM que operan con el
+                            exterior.
+                        </p>
+                    </div>
                 </div>
             </div>
         </section>
@@ -1379,7 +1466,8 @@ import Flag from "../components/Flag.astro";
                                     ></i><span
                                         ><strong
                                             >Exportadores de servicios</strong
-                                        > que cobran en USD.</span>
+                                        > que cobran en USD.</span
+                                    >
                                 </li>
                                 <li
                                     class="flex gap-4 text-sm font-medium leading-relaxed text-slate-700 sm:text-base"
@@ -1389,7 +1477,8 @@ import Flag from "../components/Flag.astro";
                                         class="mt-0.5 h-5 w-5 shrink-0 text-guira-teal"
                                     ></i><span
                                         ><strong>Agencias y estudios</strong> con
-                                        clientes globales.</span>
+                                        clientes globales.</span
+                                    >
                                 </li>
                                 <li
                                     class="flex gap-4 text-sm font-medium leading-relaxed text-slate-700 sm:text-base"
@@ -1400,7 +1489,8 @@ import Flag from "../components/Flag.astro";
                                     ></i><span
                                         ><strong
                                             >Importadores y comercializadoras</strong
-                                        > B2B.</span>
+                                        > B2B.</span
+                                    >
                                 </li>
                                 <li
                                     class="flex gap-4 text-sm font-medium leading-relaxed text-slate-700 sm:text-base"
@@ -1411,7 +1501,8 @@ import Flag from "../components/Flag.astro";
                                     ></i><span
                                         ><strong
                                             >Empresas con proveedores en USA</strong
-                                        > que requieren pagar ACH/Wire.</span>
+                                        > que requieren pagar ACH/Wire.</span
+                                    >
                                 </li>
                                 <li
                                     class="flex gap-4 text-sm font-medium leading-relaxed text-slate-700 sm:text-base"
@@ -1422,7 +1513,8 @@ import Flag from "../components/Flag.astro";
                                     ></i><span
                                         ><strong
                                             >Negocios con operación regional</strong
-                                        > en LATAM.</span>
+                                        > en LATAM.</span
+                                    >
                                 </li>
                             </ul>
                         </div>
@@ -1469,7 +1561,8 @@ import Flag from "../components/Flag.astro";
                                 ></i><span
                                     >Interesados en cuentas para <strong
                                         >uso individual o consumo</strong
-                                    >.</span>
+                                    >.</span
+                                >
                             </li>
                             <li
                                 class="flex gap-4 text-sm font-medium leading-relaxed text-slate-200 sm:text-base"
@@ -1480,7 +1573,8 @@ import Flag from "../components/Flag.astro";
                                 ></i><span
                                     >Operaciones que no cuentan con <strong
                                         >soporte documental</strong
-                                    > y de flujo lógico.</span>
+                                    > y de flujo lógico.</span
+                                >
                             </li>
                             <li
                                 class="flex gap-4 text-sm font-medium leading-relaxed text-slate-200 sm:text-base"
@@ -1491,7 +1585,8 @@ import Flag from "../components/Flag.astro";
                                 ></i><span
                                     >Actividades restringidas o <strong
                                         >de alto riesgo no compatibles</strong
-                                    >.</span>
+                                    >.</span
+                                >
                             </li>
                             <li
                                 class="flex gap-4 text-sm font-medium leading-relaxed text-slate-200 sm:text-base"
@@ -1502,7 +1597,8 @@ import Flag from "../components/Flag.astro";
                                 ></i><span
                                     >Perfiles fuera de las <strong
                                         >jurisdicciones o rieles habilitados</strong
-                                    >.</span>
+                                    >.</span
+                                >
                             </li>
                         </ul>
                     </div>
@@ -1520,7 +1616,9 @@ import Flag from "../components/Flag.astro";
             >
             </div>
             <div class="max-w-7xl mx-auto px-6 relative z-10">
-                <div class="grid lg:grid-cols-2 gap-16 items-stretch">
+                <div
+                    class="grid lg:grid-cols-2 gap-16 items-stretch divide-y divide-slate-700/60 lg:divide-y-0 lg:divide-x"
+                >
                     <div class="reveal">
                         <span
                             class="text-guira-teal font-bold tracking-widest uppercase text-xs mb-4 block"
@@ -1643,13 +1741,15 @@ import Flag from "../components/Flag.astro";
                     </div>
 
                     <!-- Columna visual de comprobación (Prueba Estructural) -->
-                    <div class="relative reveal-right h-full">
+                    <div
+                        class="relative reveal-right h-full flex items-center justify-center"
+                    >
                         <div
                             class="absolute inset-0 bg-guira-teal/10 blur-[100px] rounded-full"
                         >
                         </div>
                         <div
-                            class="h-full flex flex-col bg-slate-800/60 backdrop-blur-md border border-slate-700/50 rounded-3xl relative z-10 shadow-2xl overflow-hidden"
+                            class="flex flex-col bg- relative z-10 shadow-2xl overflow-hidden"
                         >
                             <!-- Encabezado del documento -->
                             <div
@@ -1669,7 +1769,9 @@ import Flag from "../components/Flag.astro";
                                         >
                                             Documento de verificación
                                         </p>
-                                        <h3 class="font-bold text-white text-lg">
+                                        <h3
+                                            class="font-bold text-white text-lg"
+                                        >
                                             Perfil Operativo Confiable
                                         </h3>
                                     </div>
@@ -1809,10 +1911,10 @@ import Flag from "../components/Flag.astro";
                             class="faq-panel-inner max-w-3xl mx-auto px-6 text-slate-600 pb-8 font-medium leading-relaxed"
                         >
                             Exclusivamente a empresas, agencias y entidades
-                            corporativas debidamente registradas en sus países base
-                            que requieran herramientas de recepción de pagos B2B
-                            internacionales. Aplicamos procesos formales de Know
-                            Your Business.
+                            corporativas debidamente registradas en sus países
+                            base que requieran herramientas de recepción de
+                            pagos B2B internacionales. Aplicamos procesos
+                            formales de Know Your Business.
                         </div>
                     </div>
                 </details>
@@ -1839,10 +1941,10 @@ import Flag from "../components/Flag.astro";
                             class="faq-panel-inner max-w-3xl mx-auto px-6 text-slate-600 pb-8 font-medium leading-relaxed"
                         >
                             Así es, nuestra arquitectura te otorga una Cuenta
-                            Virtual Empresarial ("Virtual Account") donde la razón
-                            social de tu empresa figura como beneficiaria, esencial
-                            para integraciones con Stripe, Amazon o clientes
-                            institucionales corporativos.
+                            Virtual Empresarial ("Virtual Account") donde la
+                            razón social de tu empresa figura como beneficiaria,
+                            esencial para integraciones con Stripe, Amazon o
+                            clientes institucionales corporativos.
                         </div>
                     </div>
                 </details>
@@ -1868,12 +1970,13 @@ import Flag from "../components/Flag.astro";
                             class="faq-panel-inner max-w-3xl mx-auto px-6 text-slate-600 pb-8 font-medium leading-relaxed"
                         >
                             No. Guira provee infraestructura de software y
-                            visibilidad operativa. Todos los servicios financieros
-                            aplicables, resguardo de capitales y movimiento de
-                            fondos son operados, soportados y delegados
-                            estructuralmente en instituciones o partners regulados,
-                            según corresponda. La disponibilidad se condiciona al
-                            perfil comercial y jurisdicción aplicable.
+                            visibilidad operativa. Todos los servicios
+                            financieros aplicables, resguardo de capitales y
+                            movimiento de fondos son operados, soportados y
+                            delegados estructuralmente en instituciones o
+                            partners regulados, según corresponda. La
+                            disponibilidad se condiciona al perfil comercial y
+                            jurisdicción aplicable.
                         </div>
                     </div>
                 </details>
@@ -1892,7 +1995,8 @@ import Flag from "../components/Flag.astro";
             .faq-item > .faq-panel {
                 display: grid !important;
                 grid-template-rows: minmax(0, 0fr);
-                transition: grid-template-rows 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+                transition: grid-template-rows 0.4s
+                    cubic-bezier(0.22, 1, 0.36, 1);
             }
             .faq-item[open] > .faq-panel {
                 grid-template-rows: minmax(0, 1fr);

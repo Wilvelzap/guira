@@ -1,75 +1,86 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import StackedSections from "../components/StackedSections.astro";
+
+const letters = (text: string) =>
+    text.split("").map((ch, i) => ({ ch: ch === " " ? " " : ch, i }));
 ---
 
 <Layout
-  title="Contacto y Asesoría B2B | Guira Empresas"
-  description="Habla con el equipo de Guira Empresas sobre recibir pagos en USD, pagar proveedores internacionales ACH/Wire o habilitar tu operación B2B desde LATAM. Asesores en Bolivia y EE.UU."
-  keywords="contacto guira, hablar con asesores guira, acompañamiento corporativo guira, asesoría B2B pagos internacionales, oficinas guira bolivia"
-  canonicalUrl="https://www.guiracorp.com/contacto"
-  footerTheme="light"
-  copyright="Acompañamiento Corporativo. © 2026 Guira System LLC. Representado en Bolivia por Guiraglobal SRL. Todos los derechos reservados."
+    title="Contacto y Asesoría B2B | Guira Empresas"
+    description="Habla con el equipo de Guira Empresas sobre recibir pagos en USD, pagar proveedores internacionales ACH/Wire o habilitar tu operación B2B desde LATAM. Asesores en Bolivia y EE.UU."
+    keywords="contacto guira, hablar con asesores guira, acompañamiento corporativo guira, asesoría B2B pagos internacionales, oficinas guira bolivia"
+    canonicalUrl="https://www.guiracorp.com/contacto"
+    footerTheme="light"
+    copyright="Acompañamiento Corporativo. © 2026 Guira System LLC. Representado en Bolivia por Guiraglobal SRL. Todos los derechos reservados."
 >
-  <Fragment slot="head">
-    <!-- Schema: ContactPage + BreadcrumbList -->
-    <script type="application/ld+json" is:inline>
-    {
-      "@context": "https://schema.org",
-      "@type": "ContactPage",
-      "name": "Contacto y Asesoría B2B | Guira Empresas",
-      "description": "Habla con el equipo de Guira para recibir pagos en USD o pagar proveedores internacionales desde LATAM.",
-      "url": "https://www.guiracorp.com/contacto",
-      "breadcrumb": {
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-          {"@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://www.guiracorp.com/"},
-          {"@type": "ListItem", "position": 2, "name": "Contacto", "item": "https://www.guiracorp.com/contacto"}
-        ]
-      },
-      "mainEntity": {
-        "@type": "Organization",
-        "name": "Guira System LLC",
-        "url": "https://www.guiracorp.com",
-        "telephone": "+13057681048",
-        "email": "administracion@guiracorp.com",
-        "address": {
-          "@type": "PostalAddress",
-          "streetAddress": "1201 North Market Street #111",
-          "addressLocality": "Wilmington",
-          "addressRegion": "Delaware",
-          "postalCode": "19801",
-          "addressCountry": "US"
-        }
-      }
-    }
-    </script>
-  </Fragment>
+    <Fragment slot="head">
+        <!-- Schema: ContactPage + BreadcrumbList -->
+        <script type="application/ld+json" is:inline>
+            {
+                "@context": "https://schema.org",
+                "@type": "ContactPage",
+                "name": "Contacto y Asesoría B2B | Guira Empresas",
+                "description": "Habla con el equipo de Guira para recibir pagos en USD o pagar proveedores internacionales desde LATAM.",
+                "url": "https://www.guiracorp.com/contacto",
+                "breadcrumb": {
+                    "@type": "BreadcrumbList",
+                    "itemListElement": [
+                        {
+                            "@type": "ListItem",
+                            "position": 1,
+                            "name": "Inicio",
+                            "item": "https://www.guiracorp.com/"
+                        },
+                        {
+                            "@type": "ListItem",
+                            "position": 2,
+                            "name": "Contacto",
+                            "item": "https://www.guiracorp.com/contacto"
+                        }
+                    ]
+                },
+                "mainEntity": {
+                    "@type": "Organization",
+                    "name": "Guira System LLC",
+                    "url": "https://www.guiracorp.com",
+                    "telephone": "+13057681048",
+                    "email": "administracion@guiracorp.com",
+                    "address": {
+                        "@type": "PostalAddress",
+                        "streetAddress": "1201 North Market Street #111",
+                        "addressLocality": "Wilmington",
+                        "addressRegion": "Delaware",
+                        "postalCode": "19801",
+                        "addressCountry": "US"
+                    }
+                }
+            }
+        </script>
+    </Fragment>
 
     <StackedSections>
         <!-- Content -->
         <main data-stack-section class="pt-32 pb-24 flex-1 text-left">
+            <div class="max-w-5xl mx-auto px-6">
+                <h1 class="text-4xl font-extrabold text-slate-900 mb-4">
+                    Contacto: Recibe Pagos en USD o Paga Proveedores
+                    Internacionales desde LATAM
+                </h1>
+                <p class="text-slate-600 font-medium mb-8 text-lg">
+                    Cuéntanos tu caso de uso y revisaremos si Guira puede ayudar
+                    a tu empresa a recibir pagos en USD, instruir pagos
+                    empresariales B2B vía ACH o Wire, y operar
+                    internacionalmente con más claridad y trazabilidad.
+                </p>
+            </div>
             <div
                 class="max-w-5xl mx-auto px-6 grid grid-cols-1 md:grid-cols-5 gap-10 md:gap-14"
             >
-                <div class="md:col-span-2 reveal-left space-y-8 mt-4">
-                    <div>
-                        <h1 class="text-4xl font-extrabold text-slate-900 mb-4">
-                            Contacto: Recibe Pagos en USD o Paga Proveedores
-                            Internacionales desde LATAM
-                        </h1>
-                        <p class="text-slate-600 font-medium mb-8 text-lg">
-                            Cuéntanos tu caso de uso y revisaremos si Guira
-                            puede ayudar a tu empresa a recibir pagos en USD,
-                            instruir pagos empresariales B2B vía ACH o Wire, y
-                            operar internacionalmente con más claridad y
-                            trazabilidad.
-                        </p>
-                    </div>
-
-                    <div
-                        class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm space-y-6"
-                    >
+                <div
+                    class="md:col-span-2 reveal-left space-y-8 mt-4 pb-8 border-b border-slate-200 md:pb-0 md:border-b-0 md:border-r md:pr-7"
+                >
+                    <div class="bg-white p-6 shadow-sm space-y-6">
                         <div class="flex gap-4">
                             <i
                                 data-lucide="mail"
@@ -177,9 +188,7 @@ import StackedSections from "../components/StackedSections.astro";
                 </div>
 
                 <!-- Form -->
-                <div
-                    class="md:col-span-3 bg-white p-8 rounded-3xl border border-slate-200 shadow-sm reveal-right"
-                >
+                <div class="md:col-span-3 bg-white p-8 shadow-sm reveal-right">
                     <h2 class="text-2xl font-bold text-slate-900 mb-6">
                         Déjanos tu mensaje
                     </h2>
@@ -211,7 +220,16 @@ import StackedSections from "../components/StackedSections.astro";
                                     class="field-input"
                                 />
                                 <label for="name" class="field-label"
-                                    >Nombre</label
+                                    >{
+                                        letters("Nombre").map(({ ch, i }) => (
+                                            <span
+                                                class="letter"
+                                                style={`--i:${i}`}
+                                            >
+                                                {ch}
+                                            </span>
+                                        ))
+                                    }</label
                                 >
                             </div>
                             <div class="field-float">
@@ -224,7 +242,16 @@ import StackedSections from "../components/StackedSections.astro";
                                     class="field-input"
                                 />
                                 <label for="company" class="field-label"
-                                    >Empresa</label
+                                    >{
+                                        letters("Empresa").map(({ ch, i }) => (
+                                            <span
+                                                class="letter"
+                                                style={`--i:${i}`}
+                                            >
+                                                {ch}
+                                            </span>
+                                        ))
+                                    }</label
                                 >
                             </div>
                         </div>
@@ -240,7 +267,18 @@ import StackedSections from "../components/StackedSections.astro";
                                     class="field-input"
                                 />
                                 <label for="email" class="field-label"
-                                    >Email Corporativo</label
+                                    >{
+                                        letters("Email Corporativo").map(
+                                            ({ ch, i }) => (
+                                                <span
+                                                    class="letter"
+                                                    style={`--i:${i}`}
+                                                >
+                                                    {ch}
+                                                </span>
+                                            ),
+                                        )
+                                    }</label
                                 >
                             </div>
                             <div class="field-float">
@@ -253,35 +291,92 @@ import StackedSections from "../components/StackedSections.astro";
                                     class="field-input"
                                 />
                                 <label for="country" class="field-label"
-                                    >País</label
+                                    >{
+                                        letters("País").map(({ ch, i }) => (
+                                            <span
+                                                class="letter"
+                                                style={`--i:${i}`}
+                                            >
+                                                {ch}
+                                            </span>
+                                        ))
+                                    }</label
                                 >
                             </div>
                         </div>
 
-                        <div class="field-float">
-                            <select
-                                id="topic"
-                                name="topic"
-                                required
-                                class="field-input field-select"
+                        <div
+                            class="field-float accordion-field"
+                            id="topic-accordion"
+                        >
+                            <button
+                                type="button"
+                                class="field-input field-select accordion-trigger"
+                                aria-expanded="false"
                             >
-                                <option value="" disabled selected></option>
-                                <option value="cobros"
-                                    >Recibir pagos internacionales en USD</option
-                                >
-                                <option value="pagos"
-                                    >Pagar a proveedores externos</option
-                                >
-                                <option value="ambos"
-                                    >Cobros y pagos unificados</option
-                                >
-                                <option value="otro"
-                                    >Otras consultas empresariales</option
-                                >
-                            </select>
-                            <label for="topic" class="field-label"
-                                >Tipo de Operación</label
+                                <span class="accordion-value"></span>
+                                <i
+                                    data-lucide="chevron-down"
+                                    class="accordion-chevron w-4 h-4"></i>
+                            </button>
+                            <label for="topic-accordion" class="field-label"
+                                >{
+                                    letters("Tipo de Operación").map(
+                                        ({ ch, i }) => (
+                                            <span
+                                                class="letter"
+                                                style={`--i:${i}`}
+                                            >
+                                                {ch}
+                                            </span>
+                                        ),
+                                    )
+                                }</label
                             >
+                            <div class="accordion-panel">
+                                <div class="accordion-panel-inner">
+                                    <label class="accordion-option"
+                                        ><input
+                                            type="radio"
+                                            name="topic"
+                                            value="cobros"
+                                            required
+                                        /><span
+                                            >Recibir pagos internacionales en
+                                            USD</span
+                                        ></label
+                                    >
+                                    <label class="accordion-option"
+                                        ><input
+                                            type="radio"
+                                            name="topic"
+                                            value="pagos"
+                                            required
+                                        /><span
+                                            >Pagar a proveedores externos</span
+                                        ></label
+                                    >
+                                    <label class="accordion-option"
+                                        ><input
+                                            type="radio"
+                                            name="topic"
+                                            value="ambos"
+                                            required
+                                        /><span>Cobros y pagos unificados</span
+                                        ></label
+                                    >
+                                    <label class="accordion-option"
+                                        ><input
+                                            type="radio"
+                                            name="topic"
+                                            value="otro"
+                                            required
+                                        /><span
+                                            >Otras consultas empresariales</span
+                                        ></label
+                                    >
+                                </div>
+                            </div>
                         </div>
 
                         <div class="field-float">
@@ -291,10 +386,15 @@ import StackedSections from "../components/StackedSections.astro";
                                 rows="4"
                                 required
                                 placeholder=" "
-                                class="field-input resize-none"
-                            ></textarea>
+                                class="field-input resize-none"></textarea>
                             <label for="message" class="field-label"
-                                >Mensaje</label
+                                >{
+                                    letters("Mensaje").map(({ ch, i }) => (
+                                        <span class="letter" style={`--i:${i}`}>
+                                            {ch}
+                                        </span>
+                                    ))
+                                }</label
                             >
                         </div>
 
@@ -330,9 +430,16 @@ import StackedSections from "../components/StackedSections.astro";
 
                         <button
                             type="submit"
-                            class="w-full py-4 bg-slate-900 text-white rounded-xl font-bold text-lg hover:bg-slate-800 transition-all shadow-md active:scale-[0.98]"
-                            >Enviar consulta</button
+                            class="guira-submit-btn w-full py-4 rounded-xl font-bold text-lg transition-all active:scale-[0.98]"
                         >
+                            <span class="guira-frame" aria-hidden="true">
+                                <span class="corner corner-tl"></span>
+                                <span class="corner corner-tr"></span>
+                                <span class="corner corner-bl"></span>
+                                <span class="corner corner-br"></span>
+                            </span>
+                            <span class="btn-label">Enviar consulta</span>
+                        </button>
                     </form>
                 </div>
             </div>
@@ -345,7 +452,7 @@ import StackedSections from "../components/StackedSections.astro";
                     e.preventDefault();
                     const form = this;
                     const btn = form.querySelector('button[type="submit"]');
-                    const originalText = btn.innerText;
+                    const originalHTML = btn.innerHTML;
 
                     // Comprobar si se ha configurado Formspree u otro servicio
                     const action = form.getAttribute("action");
@@ -358,20 +465,20 @@ import StackedSections from "../components/StackedSections.astro";
                         // Comportamiento de demostración por defecto con aviso instructivo
                         btn.innerHTML =
                             '<i data-lucide="loader-2" class="w-5 h-5 animate-spin mx-auto"></i>';
+                        btn.classList.add("is-filled");
                         if (typeof lucide !== "undefined") lucide.createIcons();
 
                         setTimeout(() => {
                             btn.innerHTML =
                                 '<i data-lucide="check" class="w-5 h-5 mx-auto"></i> ¡Simulado con éxito! (Reemplaza el ID de Formspree en el HTML)';
-                            btn.classList.add("bg-emerald-600");
-                            btn.classList.remove("bg-slate-900");
+                            btn.classList.add("is-filled", "is-success");
+
                             if (typeof lucide !== "undefined")
                                 lucide.createIcons();
 
                             setTimeout(() => {
-                                btn.innerHTML = originalText;
-                                btn.classList.remove("bg-emerald-600");
-                                btn.classList.add("bg-slate-900");
+                                btn.innerHTML = originalHTML;
+                                btn.classList.remove("is-filled", "is-success");
                                 form.reset();
                             }, 4000);
                         }, 1000);
@@ -382,6 +489,7 @@ import StackedSections from "../components/StackedSections.astro";
                     btn.disabled = true;
                     btn.innerHTML =
                         '<i data-lucide="loader-2" class="w-5 h-5 animate-spin mx-auto"></i> Enviando...';
+                    btn.classList.add("is-filled");
                     if (typeof lucide !== "undefined") lucide.createIcons();
 
                     fetch(action, {
@@ -406,8 +514,7 @@ import StackedSections from "../components/StackedSections.astro";
                                 );
                                 btn.innerHTML =
                                     '<i data-lucide="check" class="w-5 h-5 mx-auto"></i> ¡Mensaje enviado con éxito!';
-                                btn.classList.add("bg-emerald-600");
-                                btn.classList.remove("bg-slate-900");
+                                btn.classList.add("is-success");
                                 if (typeof lucide !== "undefined")
                                     lucide.createIcons();
                                 form.reset();
@@ -420,16 +527,15 @@ import StackedSections from "../components/StackedSections.astro";
                                     "Error: " +
                                     (data.message ||
                                         "Verifica tu clave de formulario.");
-                                btn.classList.add("bg-rose-600");
-                                btn.classList.remove("bg-slate-900");
+                                btn.classList.add("is-error");
                             }
                             setTimeout(() => {
-                                btn.innerHTML = originalText;
+                                btn.innerHTML = originalHTML;
                                 btn.classList.remove(
-                                    "bg-emerald-600",
-                                    "bg-rose-600",
+                                    "is-filled",
+                                    "is-success",
+                                    "is-error",
                                 );
-                                btn.classList.add("bg-slate-900");
                                 btn.disabled = false;
                             }, 4000);
                         })
@@ -440,16 +546,44 @@ import StackedSections from "../components/StackedSections.astro";
                             });
                             window.posthog?.captureException(error);
                             btn.innerHTML = "Error de conexión.";
-                            btn.classList.add("bg-rose-600");
-                            btn.classList.remove("bg-slate-900");
+                            btn.classList.add("is-error");
                             setTimeout(() => {
-                                btn.innerHTML = originalText;
-                                btn.classList.remove("bg-rose-600");
-                                btn.classList.add("bg-slate-900");
+                                btn.innerHTML = originalHTML;
+                                btn.classList.remove("is-filled", "is-error");
                                 btn.disabled = false;
                             }, 4000);
                         });
                 });
+
+            const topicAccordion = document.getElementById("topic-accordion");
+            const topicTrigger =
+                topicAccordion.querySelector(".accordion-trigger");
+            const topicValue = topicAccordion.querySelector(".accordion-value");
+            const topicOptions = topicAccordion.querySelectorAll(
+                '.accordion-option input[type="radio"]',
+            );
+
+            topicTrigger.addEventListener("click", () => {
+                const isOpen =
+                    topicTrigger.getAttribute("aria-expanded") === "true";
+                topicTrigger.setAttribute("aria-expanded", String(!isOpen));
+            });
+
+            topicOptions.forEach((input) => {
+                input.addEventListener("change", () => {
+                    topicValue.textContent = input
+                        .closest(".accordion-option")
+                        .querySelector("span").textContent;
+                    topicAccordion.classList.add("has-value");
+                    topicTrigger.setAttribute("aria-expanded", "false");
+                });
+            });
+
+            document.addEventListener("click", (e) => {
+                if (!topicAccordion.contains(e.target)) {
+                    topicTrigger.setAttribute("aria-expanded", "false");
+                }
+            });
         </script>
 
         <style>
@@ -472,8 +606,9 @@ import StackedSections from "../components/StackedSections.astro";
             }
 
             .field-input:focus {
-                border-color: var(--guira-teal, #0f766e);
-                box-shadow: 0 1px 0 0 var(--guira-teal, #0f766e);
+                outline: none;
+                border-color: var(--guira-teal, #0f766e) !important;
+                box-shadow: none !important;
             }
 
             .field-select {
@@ -493,21 +628,193 @@ import StackedSections from "../components/StackedSections.astro";
                 font-weight: 500;
                 color: rgb(148 163 184);
                 pointer-events: none;
-                transform-origin: left top;
-                transition:
-                    transform 0.2s ease,
-                    color 0.2s ease;
             }
 
-            .field-input:focus + .field-label,
-            .field-input:not(:placeholder-shown) + .field-label,
-            select.field-input:valid + .field-label {
+            .field-label .letter {
+                display: inline-block;
+                transform-origin: left bottom;
+                transition:
+                    transform 0.35s ease,
+                    color 0.35s ease;
+                transition-delay: calc(var(--i, 0) * 22ms);
+            }
+
+            .field-input:focus + .field-label .letter,
+            .field-input:not(:placeholder-shown) + .field-label .letter,
+            select.field-input:valid + .field-label .letter {
                 transform: translateY(-1.15rem) scale(0.8);
                 color: var(--guira-teal, #0f766e);
             }
 
-            .field-input:focus + .field-label {
+            .accordion-field {
+                margin-bottom: 0.5rem;
+            }
+
+            button.accordion-trigger {
+                font: inherit;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                gap: 0.75rem;
+                text-align: left;
+                cursor: pointer;
+                color: rgb(15 23 42);
+            }
+
+            .accordion-value {
+                display: block;
+                min-height: 1.2em;
+            }
+
+            .accordion-chevron {
+                flex-shrink: 0;
+                color: rgb(148 163 184);
+                transition: transform 0.25s ease;
+            }
+
+            .accordion-trigger[aria-expanded="true"] .accordion-chevron {
+                transform: rotate(180deg);
+            }
+
+            .accordion-panel {
+                display: grid;
+                grid-template-rows: 0fr;
+                transition: grid-template-rows 0.3s ease;
+            }
+
+            .accordion-trigger[aria-expanded="true"]
+                + .field-label
+                + .accordion-panel {
+                grid-template-rows: 1fr;
+            }
+
+            .accordion-panel-inner {
+                overflow: hidden;
+            }
+
+            .accordion-option {
+                display: flex;
+                align-items: center;
+                gap: 0.6rem;
+                padding: 0.65rem 0.25rem;
+                font-size: 0.9375rem;
+                font-weight: 500;
+                color: rgb(51 65 85);
+                cursor: pointer;
+                border-top: 1px solid rgb(241 245 249);
+                transition:
+                    color 0.2s ease,
+                    padding-left 0.2s ease;
+            }
+
+            .accordion-option:first-child {
+                border-top: none;
+            }
+
+            .accordion-option:hover {
                 color: var(--guira-teal, #0f766e);
+                padding-left: 0.5rem;
+            }
+
+            .accordion-option input {
+                accent-color: var(--guira-teal, #0f766e);
+            }
+
+            .accordion-field.has-value .field-label .letter,
+            .accordion-trigger:focus + .field-label .letter,
+            .accordion-trigger[aria-expanded="true"] + .field-label .letter {
+                transform: translateY(-1.15rem) scale(0.8);
+                color: var(--guira-teal, #0f766e);
+            }
+
+            .guira-submit-btn {
+                position: relative;
+                background-color: transparent;
+                color: rgb(15 23 42);
+                transition:
+                    background-color 0.4s ease,
+                    color 0.4s ease,
+                    box-shadow 0.4s ease;
+            }
+
+            .guira-submit-btn:hover,
+            .guira-submit-btn:focus-visible,
+            .guira-submit-btn.is-filled {
+                background-color: rgb(15 23 42);
+                color: #fff;
+                box-shadow: 0 12px 28px -12px rgba(15, 23, 42, 0.5);
+            }
+
+            .guira-submit-btn.is-success {
+                background-color: rgb(5 150 105) !important;
+                box-shadow: 0 12px 28px -12px rgba(5, 150, 105, 0.5) !important;
+            }
+
+            .guira-submit-btn.is-error {
+                background-color: rgb(225 29 72) !important;
+                box-shadow: 0 12px 28px -12px rgba(225, 29, 72, 0.5) !important;
+            }
+
+            .guira-submit-btn .btn-label {
+                position: relative;
+                z-index: 1;
+            }
+
+            .guira-submit-btn .guira-frame {
+                position: absolute;
+                inset: 0;
+                pointer-events: none;
+            }
+
+            .guira-submit-btn .corner {
+                position: absolute;
+                width: 18px;
+                height: 18px;
+                border: 0 solid rgba(15, 23, 42, 0.85);
+                transition:
+                    width 0.45s ease,
+                    height 0.45s ease,
+                    border-color 0.4s ease;
+            }
+
+            .guira-submit-btn .corner-tl {
+                top: 8px;
+                left: 8px;
+                border-top-width: 2px;
+                border-left-width: 2px;
+                border-top-left-radius: 10px;
+            }
+
+            .guira-submit-btn .corner-tr {
+                top: 8px;
+                right: 8px;
+                border-top-width: 2px;
+                border-right-width: 2px;
+                border-top-right-radius: 10px;
+            }
+
+            .guira-submit-btn .corner-bl {
+                bottom: 8px;
+                left: 8px;
+                border-bottom-width: 2px;
+                border-left-width: 2px;
+                border-bottom-left-radius: 10px;
+            }
+
+            .guira-submit-btn .corner-br {
+                bottom: 8px;
+                right: 8px;
+                border-bottom-width: 2px;
+                border-right-width: 2px;
+                border-bottom-right-radius: 10px;
+            }
+
+            .guira-submit-btn:hover .corner,
+            .guira-submit-btn:focus-visible .corner,
+            .guira-submit-btn.is-filled .corner {
+                width: calc(50% - 8px);
+                height: calc(50% - 8px);
+                border-color: rgba(255, 255, 255, 0.85);
             }
         </style>
     </StackedSections>
