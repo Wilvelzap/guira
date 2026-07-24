@@ -26,6 +26,10 @@ http://www.guiracorp.com/* https://www.guiracorp.com/:splat 301!
 /compliance.html /seguridad 301!
 /compliance /seguridad 301!
 
+# Enforce no trailing slash (matches astro.config trailingSlash: 'never')
+/blog/:slug/ /blog/:slug 301!
+/:page/ /:page 301!
+
 # Return custom 404 page with 404 HTTP status for any non-existent page
 /* /404.html 404
 

@@ -1,7 +1,7 @@
 ---
 title: "5 aspectos que una empresa debería evaluar antes de elegir una plataforma de pagos internacionales"
-metaTitle: "5 aspectos para elegir una plataforma de pagos internacionales para empresas"
-description: "Descubre los cinco aspectos clave que una empresa debería evaluar antes de elegir una plataforma de pagos internacionales y mejorar la gestión de sus operaciones internacionales."
+metaTitle: "5 aspectos para elegir tu plataforma de pagos internacionales"
+description: "Descubre los cinco aspectos clave que tu empresa debería evaluar antes de elegir una plataforma de pagos internacionales."
 pubDate: 2026-07-02
 author: "Equipo Guira"
 authorRole: "Finanzas Corporativas"
