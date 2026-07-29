@@ -20,6 +20,7 @@ interface Props {
   twitterTitle?: string;
   twitterDescription?: string;
   twitterImage?: string;
+  robots?: string;
   activeLink?: string;
   footerTheme?: 'dark' | 'light' | 'rich-dark';
 }
@@ -38,14 +39,18 @@ const {
   twitterTitle = title,
   twitterDescription = description,
   twitterImage = ogImage,
+  robots = "index, follow",
   activeLink,
   footerTheme
 } = Astro.props;
 
 const siteOrigin = 'https://www.guiracorp.com';
 const rawPath = Astro.url.pathname.replace(/\/$/, '');
-const computedCanonical = `${siteOrigin}${rawPath === '' ? '/' : rawPath}`;
-const finalCanonicalUrl = canonicalUrl || computedCanonical;
+const computedCanonical = `${siteOrigin}${rawPath === '' ? '/' : `${rawPath}/`}`;
+const canonicalBase = canonicalUrl || computedCanonical;
+const finalCanonicalUrl = canonicalBase === siteOrigin || canonicalBase.endsWith('/')
+  ? canonicalBase === siteOrigin ? `${siteOrigin}/` : canonicalBase
+  : `${canonicalBase}/`;
 ---
 
 <!DOCTYPE html>
@@ -53,7 +58,7 @@ const finalCanonicalUrl = canonicalUrl || computedCanonical;
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="robots" content="index, follow" />
+    <meta name="robots" content={robots} />
     <PostHog />
 
     <!-- Consent-based Analytics & Marketing Scripts -->
