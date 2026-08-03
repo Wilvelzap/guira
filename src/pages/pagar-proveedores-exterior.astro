@@ -3,12 +3,14 @@ import Layout from '../layouts/Layout.astro';
 import DemoForm from '../components/DemoForm.astro';
 ---
 
-<!-- 
-  /* Hallmark · pre-emit critique: P5 H5 E5 S5 R5 V5
-   * macrostructure: Marquee Hero
-   * theme: Cobalt (modern-minimal cluster)
-   * nav: N6 Masthead minimal
-   * footer: Ft5 Statement
+<!--
+  /* Hallmark · pre-emit critique: P5 H4 E5 S4 R5 V5
+   * genre: modern-minimal
+   * macrostructure: Split Studio (diptych alternating)
+   * theme: Guira Brand (white paper · blue accent · Inter throughout)
+   * enrichment: E1 clipped-edge demo video, Tier-A CSS-art mockup
+   * nav: N5 Floating pill
+   * footer: Ft2 Inline single line
    * contrast: pass (4.8:1 - 14:1)
    */
 -->
@@ -22,533 +24,1430 @@ import DemoForm from '../components/DemoForm.astro';
   hideFooter={true}
 >
   <Fragment slot="head">
-    <link rel="preload" as="image" href="/assets/images/plataforma-dashboard-macbook.webp" type="image/webp" fetchpriority="high" />
-    <link rel="preload" as="image" href="/assets/images/logo-horizontal-color-blanco.png" type="image/png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="preload" as="image" href="/assets/images/plataforma-dashboard-monitor.webp" type="image/webp" fetchpriority="high" />
     <style is:inline>
-      html { 
-        scroll-behavior: smooth; 
+      :root {
+        /* Guira Brand Colors — matching the home page */
+        --color-paper: #ffffff;
+        --color-paper-dark: #f8fafc;
+        --color-ink: #0f172a;
+        --color-ink-muted: #64748b;
+        --color-accent: #0051ff;
+        --color-accent-muted: #3b82f6;
+        --color-accent-light: #eff6ff;
+        --color-rule: #e2e8f0;
+        --color-rule-strong: #cbd5e1;
+
+        /* Typography — Inter (matching Guira brand) */
+        --font-display: 'Inter', system-ui, -apple-system, sans-serif;
+        --font-body: 'Inter', system-ui, -apple-system, sans-serif;
+        --font-mono: 'Courier New', ui-monospace, monospace;
+
+        /* Spacing — 4pt scale */
+        --space-xs: 0.25rem;
+        --space-sm: 0.5rem;
+        --space-md: 1rem;
+        --space-lg: 1.5rem;
+        --space-xl: 2rem;
+        --space-2xl: 3rem;
+        --space-3xl: 4.5rem;
+        --space-4xl: 6rem;
+
+        /* Easing */
+        --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+        --ease-in: cubic-bezier(0.64, 0, 0.78, 0);
+        --ease-in-out: cubic-bezier(0.22, 0.61, 0.36, 1);
+
+        /* Radii */
+        --radius-pill: 9999px;
+        --radius-sm: 6px;
+        --radius-md: 8px;
+        --radius-lg: 12px;
+        --radius-xl: 16px;
+
+        /* Text sizes — major third scale */
+        --text-xs: 0.64rem;
+        --text-sm: 0.8rem;
+        --text-base: 1rem;
+        --text-md: 1.25rem;
+        --text-lg: 1.5625rem;
+        --text-xl: 1.9531rem;
+        --text-2xl: 2.4414rem;
+        --text-3xl: 3.0518rem;
+        --text-4xl: 3.8147rem;
+        --text-display: clamp(2.75rem, 5vw + 1rem, 5.25rem);
+        --text-display-s: clamp(2.2rem, 4vw + 0.8rem, 4rem);
+      }
+
+      html, body {
         overflow-x: clip;
       }
+
       body {
-        overflow-x: clip;
+        font-family: var(--font-body);
+        background: var(--color-paper);
+        color: var(--color-ink);
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
       }
-      /* Ocultar el widget global de WhatsApp inyectado por main.js */
+
+      /* Hide global WhatsApp widget */
       body > a.bg-emerald-500[href*="wa.me"]:not(.p-6) {
         display: none !important;
       }
     </style>
   </Fragment>
 
-  <!-- HERO (Marquee Hero - Modern Minimal) -->
-  <header class="relative pt-8 pb-20 md:pb-28 overflow-hidden bg-[#090d16] text-white">
-    <!-- Subtle grid overlay -->
-    <div class="absolute inset-0 opacity-[0.05] pointer-events-none" style="background-image: linear-gradient(rgba(255,255,255,0.4) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.4) 1px, transparent 1px); background-size: 64px 64px;"></div>
-    
-    <div class="max-w-6xl mx-auto px-6 relative z-10">
-      <!-- ENCABEZADO: Logo oficial de Guira + badge -->
-      <div class="flex items-center justify-between mb-12 md:mb-16">
-        <img src="/assets/images/logo-horizontal-color-blanco.png" alt="Guira" class="h-8 md:h-9 object-contain" />
-        <span class="hidden sm:inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/5 border border-white/10 text-xs font-semibold text-cyan-300 tracking-wide">
-          <i data-lucide="building-2" class="w-3.5 h-3.5 text-cyan-400"></i>
-          Para empresas importadoras de Bolivia
-        </span>
+  <!-- NAV: N5 Floating Pill -->
+  <nav class="nav-pill" aria-label="Navegación principal">
+    <a href="/" class="wordmark">Guira</a>
+    <ul class="nav-pill__links">
+      <li><a href="/pagos-cobros-internacionales/">Soluciones</a></li>
+      <li><a href="/como-funciona/">Cómo funciona</a></li>
+    </ul>
+    <a href="https://wa.me/59175245845?text=Hola,%20quiero%20pagar%20a%20mis%20proveedores%20del%20exterior%20con%20Guira"
+       target="_blank" rel="noopener noreferrer"
+       class="cta-fill">Contactar →</a>
+  </nav>
+
+  <!-- HERO: H2 Split Diptych -->
+  <header class="hero-split">
+    <div class="hero-split__text">
+      <span class="hero-kicker">Para empresas importadoras de Bolivia</span>
+      <h1 class="hero-title">
+        Paga a tus proveedores en el exterior
+      </h1>
+      <p class="hero-lede">
+        Desde una sola cuenta operativa, en la moneda que tu proveedor necesita recibir. Con respaldo documental en cada operación.
+      </p>
+      <div class="hero-destinations">
+        <span class="destination-chip">Estados Unidos</span>
+        <span class="destination-chip">Brasil</span>
+        <span class="destination-chip">México</span>
+        <span class="destination-chip">Colombia</span>
+        <span class="destination-chip">Europa</span>
       </div>
-
-      <!-- HERO HEADLINE & INTRO -->
-      <div class="max-w-3xl mb-10">
-        <p class="sm:hidden inline-flex items-center gap-2 text-xs font-semibold text-cyan-300 mb-4">
-          <i data-lucide="building-2" class="w-3.5 h-3.5 text-cyan-400"></i>
-          Para empresas importadoras de Bolivia
-        </p>
-        <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight leading-[1.06] text-white mb-6">
-          Paga a tus proveedores en el exterior
-        </h1>
-        <p class="text-lg md:text-xl text-slate-300 max-w-2xl font-normal leading-relaxed">
-          Desde una sola cuenta operativa, en la moneda que tu proveedor necesita recibir. Con respaldo documental en cada operación.
-        </p>
-      </div>
-
-      <!-- CORREDORES PILL & CTA -->
-      <div class="grid lg:grid-cols-12 gap-12 items-center">
-        <div class="lg:col-span-7">
-          <div class="inline-flex flex-wrap items-center gap-2.5 px-4 py-2.5 rounded-xl bg-white/[0.04] border border-white/[0.08] text-slate-200 text-sm font-semibold mb-8">
-            <i data-lucide="globe-2" class="w-4 h-4 text-cyan-400 shrink-0"></i>
-            <span>Estados Unidos · Brasil · México · Colombia · Europa</span>
-          </div>
-
-          <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 mb-3">
-            <a href="https://wa.me/59175245845?text=Hola,%20quiero%20pagar%20a%20mis%20proveedores%20del%20exterior%20con%20Guira"
-              target="_blank" rel="noopener noreferrer"
-              class="inline-flex px-8 py-4 bg-teal-600 text-white rounded-xl font-bold text-base md:text-lg hover:bg-teal-500 transition-[background-color,transform] duration-200 shadow-lg shadow-teal-900/30 active:translate-y-0.5 items-center justify-center gap-2.5 text-center">
-              <i data-lucide="message-circle" class="w-5 h-5"></i>
-              <span>Quiero pagar a mi proveedor</span>
-            </a>
-          </div>
-          <p class="text-slate-400 text-xs md:text-sm font-medium">Escríbenos y revisamos tu operación. Sin compromiso.</p>
-        </div>
-
-        <div class="lg:col-span-5">
-          <figure class="relative rounded-2xl border border-slate-700/80 bg-slate-900/60 shadow-2xl overflow-hidden">
-            <img src="/assets/images/plataforma-dashboard-macbook.webp"
-              alt="Plataforma Guira, panel de operaciones y trazabilidad"
-              class="w-full h-auto object-cover block"
-              fetchpriority="high">
-          </figure>
-        </div>
-      </div>
+      <a href="https://wa.me/59175245845?text=Hola,%20quiero%20pagar%20a%20un%20proveedor%20del%20exterior%20con%20Guira"
+         target="_blank" rel="noopener noreferrer"
+         class="hero-cta">
+        <span>Quiero pagar a mi proveedor</span>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M22 2L11 13M22 2l-8 9-8-9 11 11M22 2L15 22l-7-7"/>
+        </svg>
+      </a>
+      <p class="hero-note">Escríbenos y revisamos tu operación. Sin compromiso.</p>
     </div>
+    <figure class="hero-split__visual">
+      <div class="mockup-frame">
+        <img src="/assets/images/plataforma-dashboard-monitor.webp"
+             alt="Plataforma Guira, panel de operaciones y trazabilidad"
+             class="mockup-img"
+             fetchpriority="high"
+             width="1200"
+             height="800">
+      </div>
+    </figure>
   </header>
 
-  <!-- SECCION 2: CORREDORES (Bento Grid Asimétrico) -->
-  <section class="py-20 md:py-24 bg-slate-50 border-y border-slate-200/80">
-    <div class="max-w-6xl mx-auto px-6">
-      <div class="max-w-2xl mb-14">
-        <h2 class="text-3xl md:text-4xl font-extrabold text-slate-900 tracking-tight mb-4">
-          Un solo lugar para pagar a tus proveedores
-        </h2>
-        <p class="text-slate-600 text-base md:text-lg font-normal leading-relaxed">
-          Elige el destino y la moneda según lo que tu proveedor necesite recibir.
-        </p>
-      </div>
-
-      <!-- Bento Grid Asimétrico -->
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
-        <!-- EE.UU. (Featured Tile - Span 2) -->
-        <article class="md:col-span-2 bg-slate-900 text-white border border-slate-800 rounded-2xl p-8 shadow-sm flex flex-col justify-between relative overflow-hidden group">
-          <div class="absolute top-0 right-0 p-8 opacity-10 text-cyan-400 pointer-events-none">
-            <i data-lucide="dollar-sign" class="w-32 h-32"></i>
+  <!-- SECTION: Problem → Solution (Split Studio alternating) -->
+  <section class="section-split">
+    <div class="section-split__visual">
+      <div class="problem-grid">
+        <div class="problem-card">
+          <div class="problem-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+              <path d="M7 11V7a5 5 0 0110 0v4"/>
+            </svg>
           </div>
-          <div>
-            <span class="inline-block px-3 py-1 rounded-md bg-teal-500/20 text-teal-300 text-xs font-bold uppercase tracking-wider mb-4">Corredor Principal</span>
-            <h3 class="font-extrabold text-2xl md:text-3xl mb-3 text-white">Estados Unidos</h3>
-            <p class="text-slate-300 text-base md:text-lg max-w-lg font-normal leading-relaxed">
-              Pagos en dólares estadounidenses a proveedores, fabricantes y socios comerciales en EE.UU. con trazabilidad completa.
-            </p>
-          </div>
-          <div class="mt-8 pt-6 border-t border-slate-800 flex items-center gap-2 text-sm text-slate-400 font-semibold">
-            <i data-lucide="check" class="w-4 h-4 text-teal-400"></i>
-            <span>Transferencias en USD directamente a cuentas corporativas</span>
-          </div>
-        </article>
-
-        <!-- Brasil -->
-        <article class="bg-white border border-slate-200/90 rounded-2xl p-7 shadow-sm flex flex-col justify-between">
-          <div>
-            <span class="inline-block w-8 h-8 rounded-lg bg-teal-50 text-teal-700 flex items-center justify-center font-bold text-xs mb-4">BR</span>
-            <h3 class="font-bold text-slate-900 text-xl mb-2">Brasil</h3>
-            <p class="text-slate-600 text-sm leading-relaxed">Pagos en reales a proveedores brasileños de insumos y maquinaria.</p>
-          </div>
-          <div class="mt-6 pt-4 border-t border-slate-100 text-xs font-semibold text-slate-500">
-            Moneda local o USD
-          </div>
-        </article>
-
-        <!-- México -->
-        <article class="bg-white border border-slate-200/90 rounded-2xl p-7 shadow-sm flex flex-col justify-between">
-          <div>
-            <span class="inline-block w-8 h-8 rounded-lg bg-teal-50 text-teal-700 flex items-center justify-center font-bold text-xs mb-4">MX</span>
-            <h3 class="font-bold text-slate-900 text-xl mb-2">México</h3>
-            <p class="text-slate-600 text-sm leading-relaxed">Pagos en pesos mexicanos directamente a cuentas bancarias en México.</p>
-          </div>
-          <div class="mt-6 pt-4 border-t border-slate-100 text-xs font-semibold text-slate-500">
-            Moneda local o USD
-          </div>
-        </article>
-
-        <!-- Colombia -->
-        <article class="bg-white border border-slate-200/90 rounded-2xl p-7 shadow-sm flex flex-col justify-between">
-          <div>
-            <span class="inline-block w-8 h-8 rounded-lg bg-teal-50 text-teal-700 flex items-center justify-center font-bold text-xs mb-4">CO</span>
-            <h3 class="font-bold text-slate-900 text-xl mb-2">Colombia</h3>
-            <p class="text-slate-600 text-sm leading-relaxed">Pagos en pesos colombianos para abastecimiento y servicios en Colombia.</p>
-          </div>
-          <div class="mt-6 pt-4 border-t border-slate-100 text-xs font-semibold text-slate-500">
-            Moneda local o USD
-          </div>
-        </article>
-
-        <!-- Europa & Operaciones Recurrentes (Span 2 / Integrated) -->
-        <article class="bg-gradient-to-br from-slate-900 to-slate-800 text-white border border-slate-800 rounded-2xl p-7 shadow-sm flex flex-col justify-between">
-          <div>
-            <div class="flex items-center justify-between mb-4">
-              <span class="inline-block w-8 h-8 rounded-lg bg-white/10 text-cyan-300 flex items-center justify-center font-bold text-xs">EU</span>
-              <span class="text-xs text-slate-400 font-semibold uppercase tracking-wider">Zona Euro</span>
-            </div>
-            <h3 class="font-bold text-xl mb-2">Europa</h3>
-            <p class="text-slate-300 text-sm leading-relaxed">Pagos en euros a proveedores de la zona europea con respaldo documental.</p>
-          </div>
-          <div class="mt-6 pt-4 border-t border-slate-700/60 text-xs font-semibold text-teal-300">
-            Operaciones recurrentes sin empezar desde cero
-          </div>
-        </article>
-      </div>
-
-      <div class="p-6 rounded-2xl bg-white border border-slate-200/80 text-center max-w-3xl mx-auto shadow-sm">
-        <p class="text-slate-900 text-base md:text-lg font-bold">
-          Fondeas tu cuenta operativa y el pago sale en la moneda que tu proveedor necesita.
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <!-- SECCION 3: EL PROBLEMA & SOLUCION -->
-  <section class="py-20 md:py-24 bg-white">
-    <div class="max-w-5xl mx-auto px-6">
-      <div class="max-w-3xl mx-auto text-center mb-14">
-        <h2 class="text-3xl md:text-4xl font-extrabold text-slate-900 tracking-tight mb-4">
-          Pagar afuera no debería frenar tu operación
-        </h2>
-        <p class="text-slate-600 text-base md:text-lg font-normal leading-relaxed">
-          Cuando el pago se demora, no se demora un trámite. Se demora tu mercadería, tu producción y tu compromiso con el cliente.
-        </p>
-      </div>
-
-      <div class="grid md:grid-cols-2 gap-6 mb-12">
-        <div class="bg-slate-50 border border-slate-200/90 p-7 rounded-2xl flex gap-4">
-          <div class="w-10 h-10 rounded-xl bg-slate-900 text-teal-400 flex items-center justify-center shrink-0">
-            <i data-lucide="lock" class="w-5 h-5"></i>
-          </div>
-          <div>
-            <h3 class="font-bold text-slate-900 text-base mb-1.5">El proveedor no libera el pedido</h3>
-            <p class="text-slate-600 text-sm leading-relaxed font-normal">
-              Hasta confirmar que el pago salió, y esa confirmación depende de un proceso que tu empresa necesita controlar.
-            </p>
-          </div>
+          <h3>El proveedor no libera el pedido</h3>
+          <p>Hasta confirmar que el pago salió, y esa confirmación depende de un proceso que tu empresa necesita controlar.</p>
         </div>
-
-        <div class="bg-slate-50 border border-slate-200/90 p-7 rounded-2xl flex gap-4">
-          <div class="w-10 h-10 rounded-xl bg-slate-900 text-teal-400 flex items-center justify-center shrink-0">
-            <i data-lucide="file-question" class="w-5 h-5"></i>
+        <div class="problem-card">
+          <div class="problem-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/>
+              <path d="M14 2v6h6M16 13H8M16 17H8M10 9H8"/>
+            </svg>
           </div>
-          <div>
-            <h3 class="font-bold text-slate-900 text-base mb-1.5">Requisitos cambiantes por operación</h3>
-            <p class="text-slate-600 text-sm leading-relaxed font-normal">
-              Cada operación solicita datos distintos y las observaciones surgen cuando la carga ya está esperando.
-            </p>
-          </div>
-        </div>
-
-        <div class="bg-slate-50 border border-slate-200/90 p-7 rounded-2xl flex gap-4">
-          <div class="w-10 h-10 rounded-xl bg-slate-900 text-teal-400 flex items-center justify-center shrink-0">
-            <i data-lucide="eye-off" class="w-5 h-5"></i>
-          </div>
-          <div>
-            <h3 class="font-bold text-slate-900 text-base mb-1.5">Falta de visibilidad del estado</h3>
-            <p class="text-slate-600 text-sm leading-relaxed font-normal">
-              No sabes en qué etapa exacta está la transferencia hasta que alguien responde un correo o un mensaje.
-            </p>
-          </div>
-        </div>
-
-        <div class="bg-slate-50 border border-slate-200/90 p-7 rounded-2xl flex gap-4">
-          <div class="w-10 h-10 rounded-xl bg-slate-900 text-teal-400 flex items-center justify-center shrink-0">
-            <i data-lucide="file-x" class="w-5 h-5"></i>
-          </div>
-          <div>
-            <h3 class="font-bold text-slate-900 text-base mb-1.5">Dificultad en la conciliación</h3>
-            <p class="text-slate-600 text-sm leading-relaxed font-normal">
-              El comprobante tradicional no conecta directamente el pago ejecutado con la factura del proveedor.
-            </p>
-          </div>
-        </div>
-      </div>
-
-      <div class="text-center">
-        <a href="https://wa.me/59175245845?text=Hola,%20necesito%20pagar%20a%20un%20proveedor%20del%20exterior%20y%20quiero%20orientaci%C3%B3n"
-          target="_blank" rel="noopener noreferrer"
-          class="inline-flex items-center gap-2.5 px-8 py-4 bg-slate-900 text-white rounded-xl font-bold text-base hover:bg-slate-800 transition-[background-color] duration-200">
-          <span>Quiero resolver esto</span>
-          <i data-lucide="arrow-right" class="w-4 h-4 text-cyan-400"></i>
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- SECCION 4: COMO FUNCIONA (Proceso Ordinal 3 Pasos) -->
-  <section class="py-20 md:py-24 bg-slate-50 border-t border-slate-200/80">
-    <div class="max-w-5xl mx-auto px-6">
-      <div class="max-w-2xl mx-auto text-center mb-16">
-        <h2 class="text-3xl md:text-4xl font-extrabold text-slate-900 tracking-tight mb-4">
-          Cómo se ordena un pago con Guira
-        </h2>
-        <p class="text-slate-600 text-base md:text-lg font-normal">
-          Tres pasos claros con acompañamiento operativo antes de ejecutar la transferencia.
-        </p>
-      </div>
-
-      <div class="grid md:grid-cols-3 gap-8 mb-14">
-        <!-- Paso 1 -->
-        <div class="bg-white border border-slate-200/90 rounded-2xl p-8 shadow-sm relative">
-          <div class="text-4xl font-black text-slate-200 mb-4">01</div>
-          <h3 class="font-bold text-slate-900 text-xl mb-3">Preparamos la operación</h3>
-          <p class="text-slate-600 text-sm leading-relaxed font-normal">
-            Revisamos la factura, datos bancarios del proveedor y destino para asegurar que el pago salga completo desde el primer intento.
-          </p>
-        </div>
-
-        <!-- Paso 2 -->
-        <div class="bg-white border border-slate-200/90 rounded-2xl p-8 shadow-sm relative">
-          <div class="text-4xl font-black text-slate-200 mb-4">02</div>
-          <h3 class="font-bold text-slate-900 text-xl mb-3">Ejecutamos el corredor</h3>
-          <p class="text-slate-600 text-sm leading-relaxed font-normal">
-            Definimos la ruta según el país del proveedor, el monto y la moneda que necesita recibir en su cuenta.
-          </p>
-        </div>
-
-        <!-- Paso 3 -->
-        <div class="bg-white border border-slate-200/90 rounded-2xl p-8 shadow-sm relative">
-          <div class="text-4xl font-black text-slate-200 mb-4">03</div>
-          <h3 class="font-bold text-slate-900 text-xl mb-3">Entregamos el respaldo</h3>
-          <p class="text-slate-600 text-sm leading-relaxed font-normal">
-            Comprobante, referencia y soporte de conciliación disponibles para tu equipo administrativo y contable.
-          </p>
-        </div>
-      </div>
-
-      <div class="text-center">
-        <a href="https://wa.me/59175245845?text=Hola,%20quiero%20empezar%20a%20pagar%20a%20mis%20proveedores%20del%20exterior%20con%20Guira"
-          target="_blank" rel="noopener noreferrer"
-          class="inline-flex items-center justify-center gap-2.5 px-9 py-4 bg-teal-600 text-white rounded-xl font-bold text-base hover:bg-teal-500 transition-[background-color] duration-200 shadow-md">
-          <span>Empezar mi primera operación</span>
-          <i data-lucide="arrow-right" class="w-4 h-4"></i>
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- SECCION 5: RESPALDO POR OPERACION -->
-  <section class="py-20 md:py-24 bg-white border-t border-slate-200/80">
-    <div class="max-w-6xl mx-auto px-6">
-      <div class="grid lg:grid-cols-12 gap-12 items-center">
-        <!-- Panel de demostración de respaldo -->
-        <div class="lg:col-span-5">
-          <div class="bg-slate-900 text-white rounded-2xl border border-slate-800 p-6 md:p-8 shadow-xl">
-            <div class="flex items-center justify-between pb-6 mb-6 border-b border-slate-800">
-              <div>
-                <p class="text-cyan-400 text-xs font-bold uppercase tracking-wider">Operación B2B</p>
-                <p class="text-white font-bold text-lg mt-0.5">Pago a proveedor internacional</p>
-              </div>
-              <span class="text-xs font-bold text-emerald-300 bg-emerald-950/80 border border-emerald-500/30 px-3 py-1 rounded-full">
-                Completada
-              </span>
-            </div>
-
-            <div class="space-y-4">
-              <div class="flex items-center justify-between text-sm py-2 border-b border-slate-800/60">
-                <span class="text-slate-300 font-medium">Comprobante de operación</span>
-                <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-400"></i>
-              </div>
-              <div class="flex items-center justify-between text-sm py-2 border-b border-slate-800/60">
-                <span class="text-slate-300 font-medium">Referencia vinculada a factura</span>
-                <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-400"></i>
-              </div>
-              <div class="flex items-center justify-between text-sm py-2 border-b border-slate-800/60">
-                <span class="text-slate-300 font-medium">Trazabilidad de estado</span>
-                <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-400"></i>
-              </div>
-              <div class="flex items-center justify-between text-sm py-2">
-                <span class="text-slate-300 font-medium">Historial descargable</span>
-                <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-400"></i>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Descripción -->
-        <div class="lg:col-span-7">
-          <h2 class="text-3xl md:text-4xl font-extrabold text-slate-900 tracking-tight mb-5">
-            Cada pago con su respaldo
-          </h2>
-          <p class="text-slate-600 text-base md:text-lg font-normal leading-relaxed mb-8">
-            Tu contador no debería reconstruir la historia de un pago meses después. El respaldo documental se organiza cuando la operación se genera.
-          </p>
-
-          <div class="space-y-5 mb-8">
-            <div class="flex gap-3.5 items-start">
-              <div class="w-6 h-6 rounded-md bg-teal-100 text-teal-700 flex items-center justify-center shrink-0 mt-0.5">
-                <i data-lucide="check" class="w-4 h-4"></i>
-              </div>
-              <div>
-                <h3 class="font-bold text-slate-900 text-base">Comprobante oficial de la operación</h3>
-                <p class="text-slate-600 text-sm font-normal">Registro del pago ejecutado con detalles bancarios completos.</p>
-              </div>
-            </div>
-
-            <div class="flex gap-3.5 items-start">
-              <div class="w-6 h-6 rounded-md bg-teal-100 text-teal-700 flex items-center justify-center shrink-0 mt-0.5">
-                <i data-lucide="check" class="w-4 h-4"></i>
-              </div>
-              <div>
-                <h3 class="font-bold text-slate-900 text-base">Referencia conectada a tu factura</h3>
-                <p class="text-slate-600 text-sm font-normal">Relación directa entre la salida del pago y el documento comercial de origen.</p>
-              </div>
-            </div>
-
-            <div class="flex gap-3.5 items-start">
-              <div class="w-6 h-6 rounded-md bg-teal-100 text-teal-700 flex items-center justify-center shrink-0 mt-0.5">
-                <i data-lucide="check" class="w-4 h-4"></i>
-              </div>
-              <div>
-                <h3 class="font-bold text-slate-900 text-base">Estado visible en todo momento</h3>
-                <p class="text-slate-600 text-sm font-normal">Control claro para saber si la operación está en preparación, en curso o finalizada.</p>
-              </div>
-            </div>
-          </div>
-
-          <p class="text-slate-900 text-lg font-bold mb-6">
-            Y si te preguntan, lo puedes mostrar.
-          </p>
-
-          <a href="https://wa.me/59175245845?text=Hola,%20quiero%20conocer%20el%20respaldo%20documental%20de%20los%20pagos%20con%20Guira"
-            target="_blank" rel="noopener noreferrer"
-            class="inline-flex items-center gap-2.5 px-8 py-4 bg-slate-900 text-white rounded-xl font-bold text-base hover:bg-slate-800 transition-[background-color] duration-200">
-            <span>Quiero ver el respaldo por operación</span>
-            <i data-lucide="arrow-right" class="w-4 h-4 text-cyan-400"></i>
-          </a>
+          <h3>Requisitos cambiantes</h3>
+          <p>Cada operación solicita datos distintos y las observaciones surgen cuando la carga ya está esperando.</p>
         </div>
       </div>
     </div>
-  </section>
-
-  <!-- SECCION 6: PREGUNTAS FRECUENTES -->
-  <section class="py-20 md:py-24 bg-slate-50 border-t border-slate-200/80">
-    <div class="max-w-4xl mx-auto px-6">
-      <div class="text-center mb-12">
-        <h2 class="text-3xl md:text-4xl font-extrabold text-slate-900 tracking-tight mb-3">
-          Antes de empezar
-        </h2>
-        <p class="text-slate-600 text-base font-normal">Respuestas claras sobre la operativa y el alcance.</p>
-      </div>
-
-      <div class="bg-white border border-slate-200/90 rounded-2xl shadow-sm divide-y divide-slate-200/80 overflow-hidden">
-        <details class="group" open>
-          <summary class="flex justify-between items-center gap-4 font-bold cursor-pointer list-none p-6 text-slate-900 hover:bg-slate-50/80 transition-colors">
-            <span class="text-base md:text-lg">¿Quién opera la plataforma?</span>
-            <div class="w-8 h-8 rounded-full border border-slate-200 flex items-center justify-center shrink-0 group-open:bg-slate-900 group-open:text-white transition-colors">
-              <i data-lucide="plus" class="w-4 h-4 group-open:rotate-45 transition-transform duration-200"></i>
-            </div>
-          </summary>
-          <div class="px-6 pb-6 text-slate-600 text-sm md:text-base leading-relaxed font-normal">
-            Guira es una plataforma tecnológica creada y operada por Guira System LLC, constituida en Delaware, Estados Unidos. En Bolivia, Guiraglobal SRL brinda asesoría comercial y acompañamiento operativo a las empresas.
-          </div>
-        </details>
-
-        <details class="group" open>
-          <summary class="flex justify-between items-center gap-4 font-bold cursor-pointer list-none p-6 text-slate-900 hover:bg-slate-50/80 transition-colors">
-            <span class="text-base md:text-lg">¿Sirve para lo que mi equipo contable necesita?</span>
-            <div class="w-8 h-8 rounded-full border border-slate-200 flex items-center justify-center shrink-0 group-open:bg-slate-900 group-open:text-white transition-colors">
-              <i data-lucide="plus" class="w-4 h-4 group-open:rotate-45 transition-transform duration-200"></i>
-            </div>
-          </summary>
-          <div class="px-6 pb-6 text-slate-600 text-sm md:text-base leading-relaxed font-normal">
-            Cada operación se entrega con comprobante, referencia vinculada a la factura de origen y registro de estado. Es el respaldo solicitado en revisiones contables o auditorías internas.
-          </div>
-        </details>
-
-        <details class="group" open>
-          <summary class="flex justify-between items-center gap-4 font-bold cursor-pointer list-none p-6 text-slate-900 hover:bg-slate-50/80 transition-colors">
-            <span class="text-base md:text-lg">¿Cuánto demora iniciar una operación?</span>
-            <div class="w-8 h-8 rounded-full border border-slate-200 flex items-center justify-center shrink-0 group-open:bg-slate-900 group-open:text-white transition-colors">
-              <i data-lucide="plus" class="w-4 h-4 group-open:rotate-45 transition-transform duration-200"></i>
-            </div>
-          </summary>
-          <div class="px-6 pb-6 text-slate-600 text-sm md:text-base leading-relaxed font-normal">
-            Comienza con una breve conversación. Revisamos los datos de tu proveedor y te indicamos el flujo conveniente para tu empresa.
-          </div>
-        </details>
-      </div>
-    </div>
-  </section>
-
-  <!-- SECCION 7: FORMULARIO DE CONTACTO -->
-  <section class="py-20 md:py-24 bg-white border-t border-slate-200/80">
-    <div class="max-w-4xl mx-auto px-6">
-      <div class="text-center mb-12">
-        <h2 class="text-3xl md:text-4xl font-extrabold text-slate-900 tracking-tight mb-4">
-          Cuéntanos qué necesitas pagar
-        </h2>
-        <p class="text-slate-600 text-base md:text-lg font-normal max-w-2xl mx-auto">
-          Déjanos tus datos y un especialista te contacta para revisar tu operación, los corredores que necesitas y los siguientes pasos.
-        </p>
-      </div>
-
-      <DemoForm defaultUseCase="pagos" submitLabel="Quiero que me contacten" />
-
-      <p class="text-center text-slate-500 text-sm font-medium mt-8">
-        Si prefieres escribir, también puedes hacerlo por WhatsApp.
-        <a href="https://wa.me/59175245845?text=Hola,%20quiero%20hablar%20sobre%20pagos%20a%20proveedores%20del%20exterior%20con%20Guira"
-          target="_blank" rel="noopener noreferrer"
-          class="text-teal-600 font-bold hover:underline ml-1">Escribir por WhatsApp</a>
+    <div class="section-split__text">
+      <span class="section-kicker">El problema</span>
+      <h2 class="section-title">Pagar afuera no debería frenar tu operación</h2>
+      <p class="section-body">
+        Cuando el pago se demora, no se demora un trámite. Se demora tu mercadería, tu producción y tu compromiso con el cliente.
       </p>
+      <div class="solution-cta">
+        <a href="https://wa.me/59175245845?text=Hola,%20necesito%20pagar%20a%20un%20proveedor%20del%20exterior%20y%20quiero%20orientaci%C3%B3n"
+           target="_blank" rel="noopener noreferrer"
+           class="link-cta">
+          Quiero resolver esto
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M5 12h14M12 5l7 7-7 7"/>
+          </svg>
+        </a>
+      </div>
     </div>
   </section>
 
-  <!-- PIE DE PAGINA (Ft5 Statement - Modern Minimal) -->
-  <footer class="bg-[#090d16] text-white py-16 border-t border-slate-800">
-    <div class="max-w-6xl mx-auto px-6">
-      <div class="grid md:grid-cols-12 gap-10 pb-12 border-b border-slate-800/80">
-        <div class="md:col-span-7">
-          <img src="/assets/images/logo-horizontal-color-blanco.png" alt="Guira" class="h-7 object-contain mb-6" />
-          <p class="text-slate-300 text-sm font-normal leading-relaxed mb-4 max-w-xl">
-            Guira es una plataforma operada por Guira System LLC (Estados Unidos). En Bolivia, Guiraglobal SRL brinda asesoría comercial y acompañamiento operativo.
-          </p>
-          <p class="text-slate-400 text-xs leading-relaxed max-w-xl font-normal">
-            Guira es una plataforma tecnológica B2B. No somos banco, entidad financiera, casa de cambio, billetera de consumo ni custodio directo de fondos. Los servicios financieros, rieles de pago, cuentas de recepción, custodia o movimiento de fondos son provistos por terceros o partners autorizados bajo sus propios términos y licencias.
-          </p>
-        </div>
+  <!-- SECTION: How it works (Step sequence) -->
+  <section class="section-steps">
+    <div class="steps-header">
+      <h2 class="steps-title">Cómo se ordena un pago con Guira</h2>
+      <p class="steps-subtitle">Tres pasos claros con acompañamiento operativo antes de ejecutar la transferencia.</p>
+    </div>
+    <div class="steps-grid">
+      <article class="step-card">
+        <div class="step-number">01</div>
+        <h3 class="step-title">Preparamos la operación</h3>
+        <p class="step-body">Revisamos la factura, datos bancarios del proveedor y destino para asegurar que el pago salga completo desde el primer intento.</p>
+      </article>
+      <article class="step-card">
+        <div class="step-number">02</div>
+        <h3 class="step-title">Ejecutamos el corredor</h3>
+        <p class="step-body">Definimos la ruta según el país del proveedor, el monto y la moneda que necesita recibir en su cuenta.</p>
+      </article>
+      <article class="step-card">
+        <div class="step-number">03</div>
+        <h3 class="step-title">Entregamos el respaldo</h3>
+        <p class="step-body">Comprobante, referencia y soporte de conciliación disponibles para tu equipo administrativo y contable.</p>
+      </article>
+    </div>
+    <div class="steps-cta">
+      <a href="https://wa.me/59175245845?text=Hola,%20quiero%20empezar%20a%20pagar%20a%20mis%20proveedores%20del%20exterior%20con%20Guira"
+         target="_blank" rel="noopener noreferrer"
+         class="cta-primary">
+        <span>Empezar mi primera operación</span>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M5 12h14M12 5l7 7-7 7"/>
+        </svg>
+      </a>
+    </div>
+  </section>
 
-        <div class="md:col-span-5 flex flex-col md:items-end justify-between gap-6">
-          <div class="flex flex-col gap-3 md:items-end">
-            <a href="https://wa.me/59175245845" target="_blank" rel="noopener noreferrer" class="text-cyan-400 hover:text-cyan-300 font-bold flex items-center gap-2 text-base">
-              <i data-lucide="phone" class="w-4 h-4"></i>
-              <span>+591 75 245845</span>
-            </a>
-            <a href="mailto:administracion@guiracorp.com" class="text-slate-400 hover:text-white text-sm font-medium">
-              administracion@guiracorp.com
-            </a>
+  <!-- SECTION: Proof Panel (Split Studio reverse) -->
+  <section class="section-split section-split--reverse">
+    <div class="section-split__text">
+      <span class="section-kicker">Respaldo por operación</span>
+      <h2 class="section-title">Cada pago con su respaldo</h2>
+      <p class="section-body">
+        Tu contador no debería reconstruir la historia de un pago meses después. El respaldo documental se organiza cuando la operación se genera.
+      </p>
+      <ul class="feature-list">
+        <li class="feature-item">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="20 6 9 17 4 12"/>
+          </svg>
+          <div>
+            <strong>Comprobante oficial de la operación</strong>
+            <span>Registro del pago ejecutado con detalles bancarios completos.</span>
           </div>
-
-          <div class="flex items-center gap-6 text-xs text-slate-400 font-medium">
-            <a href="/terminos/" class="hover:text-white transition-colors">Términos</a>
-            <a href="/privacidad/" class="hover:text-white transition-colors">Privacidad</a>
-            <a href="/cookies/" class="hover:text-white transition-colors">Cookies</a>
+        </li>
+        <li class="feature-item">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="20 6 9 17 4 12"/>
+          </svg>
+          <div>
+            <strong>Referencia conectada a tu factura</strong>
+            <span>Relación directa entre la salida del pago y el documento comercial de origen.</span>
+          </div>
+        </li>
+        <li class="feature-item">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="20 6 9 17 4 12"/>
+          </svg>
+          <div>
+            <strong>Estado visible en todo momento</strong>
+            <span>Control claro para saber si la operación está en preparación, en curso o finalizada.</span>
+          </div>
+        </li>
+      </ul>
+      <p class="section-highlight">Y si te preguntan, lo puedes mostrar.</p>
+      <a href="https://wa.me/59175245845?text=Hola,%20quiero%20conocer%20el%20respaldo%20documental%20de%20los%20pagos%20con%20Guira"
+         target="_blank" rel="noopener noreferrer"
+         class="link-cta">
+        Quiero ver el respaldo por operación
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M5 12h14M12 5l7 7-7 7"/>
+        </svg>
+      </a>
+    </div>
+    <div class="section-split__visual">
+      <div class="proof-panel">
+        <div class="proof-header">
+          <div>
+            <span class="proof-tag">Operación B2B</span>
+            <p class="proof-title">Pago a proveedor internacional</p>
+          </div>
+          <span class="proof-status">Completada</span>
+        </div>
+        <div class="proof-list">
+          <div class="proof-row">
+            <span>Comprobante de operación</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M22 11.08V12a10 10 0 11-5.93-9.14"/>
+              <polyline points="22 4 12 14.01 9 11.01"/>
+            </svg>
+          </div>
+          <div class="proof-row">
+            <span>Referencia vinculada a factura</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M22 11.08V12a10 10 0 11-5.93-9.14"/>
+              <polyline points="22 4 12 14.01 9 11.01"/>
+            </svg>
+          </div>
+          <div class="proof-row">
+            <span>Trazabilidad de estado</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M22 11.08V12a10 10 0 11-5.93-9.14"/>
+              <polyline points="22 4 12 14.01 9 11.01"/>
+            </svg>
+          </div>
+          <div class="proof-row">
+            <span>Historial descargable</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M22 11.08V12a10 10 0 11-5.93-9.14"/>
+              <polyline points="22 4 12 14.01 9 11.01"/>
+            </svg>
           </div>
         </div>
-      </div>
-
-      <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-400 font-normal">
-        <p>© 2026 Guira System LLC. Representado en Bolivia por Guiraglobal SRL. Todos los derechos reservados.</p>
       </div>
     </div>
+  </section>
+
+  <!-- SECTION: Corridors (Bento-style grid) -->
+  <section class="section-corridors">
+    <div class="corridors-header">
+      <h2 class="corridors-title">Un solo lugar para pagar a tus proveedores</h2>
+      <p class="corridors-subtitle">Elige el destino y la moneda según lo que tu proveedor necesite recibir.</p>
+    </div>
+    <div class="corridors-grid">
+      <article class="corridor-card corridor-card--featured">
+        <div class="corridor-badge">Corredor principal</div>
+        <h3 class="corridor-title">Estados Unidos</h3>
+        <p class="corridor-body">Pagos en dólares estadounidenses a proveedores, fabricantes y socios comerciales en EE.UU. con trazabilidad completa.</p>
+        <div class="corridor-footer">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="20 6 9 17 4 12"/>
+          </svg>
+          <span>Transferencias en USD directamente a cuentas corporativas</span>
+        </div>
+      </article>
+      <article class="corridor-card">
+        <span class="corridor-flag">BR</span>
+        <h3 class="corridor-title">Brasil</h3>
+        <p class="corridor-body">Pagos en reales a proveedores brasileños de insumos y maquinaria.</p>
+        <span class="corridor-meta">Moneda local o USD</span>
+      </article>
+      <article class="corridor-card">
+        <span class="corridor-flag">MX</span>
+        <h3 class="corridor-title">México</h3>
+        <p class="corridor-body">Pagos en pesos mexicanos directamente a cuentas bancarias en México.</p>
+        <span class="corridor-meta">Moneda local o USD</span>
+      </article>
+      <article class="corridor-card">
+        <span class="corridor-flag">CO</span>
+        <h3 class="corridor-title">Colombia</h3>
+        <p class="corridor-body">Pagos en pesos colombianos para abastecimiento y servicios en Colombia.</p>
+        <span class="corridor-meta">Moneda local o USD</span>
+      </article>
+      <article class="corridor-card corridor-card--euro">
+        <span class="corridor-flag">EU</span>
+        <span class="corridor-zone">Zona Euro</span>
+        <h3 class="corridor-title">Europa</h3>
+        <p class="corridor-body">Pagos en euros a proveedores de la zona europea con respaldo documental.</p>
+        <span class="corridor-meta">Operaciones recurrentes sin empezar desde cero</span>
+      </article>
+    </div>
+    <div class="corridors-summary">
+      <p>Fondeas tu cuenta operativa y el pago sale en la moneda que tu proveedor necesita.</p>
+    </div>
+  </section>
+
+  <!-- SECTION: FAQ -->
+  <section class="section-faq">
+    <div class="faq-header">
+      <h2 class="faq-title">Antes de empezar</h2>
+      <p class="faq-subtitle">Respuestas claras sobre la operativa y el alcance.</p>
+    </div>
+    <div class="faq-list">
+      <details class="faq-item" open>
+        <summary class="faq-question">
+          ¿Quién opera la plataforma?
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="10"/>
+            <path d="M12 8v8M8 12h8"/>
+          </svg>
+        </summary>
+        <div class="faq-answer">
+          Guira es una plataforma tecnológica creada y operada por Guira System LLC, constituida en Delaware, Estados Unidos. En Bolivia, Guiraglobal SRL brinda asesoría comercial y acompañamiento operativo a las empresas.
+        </div>
+      </details>
+      <details class="faq-item" open>
+        <summary class="faq-question">
+          ¿Sirve para lo que mi equipo contable necesita?
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="10"/>
+            <path d="M12 8v8M8 12h8"/>
+          </svg>
+        </summary>
+        <div class="faq-answer">
+          Cada operación se entrega con comprobante, referencia vinculada a la factura de origen y registro de estado. Es el respaldo solicitado en revisiones contables o auditorías internas.
+        </div>
+      </details>
+      <details class="faq-item" open>
+        <summary class="faq-question">
+          ¿Cuánto demora iniciar una operación?
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="10"/>
+            <path d="M12 8v8M8 12h8"/>
+          </svg>
+        </summary>
+        <div class="faq-answer">
+          Comienza con una breve conversación. Revisamos los datos de tu proveedor y te indicamos el flujo conveniente para tu empresa.
+        </div>
+      </details>
+    </div>
+  </section>
+
+  <!-- SECTION: Contact Form -->
+  <section class="section-contact">
+    <div class="contact-header">
+      <h2 class="contact-title">Cuéntanos qué necesitas pagar</h2>
+      <p class="contact-subtitle">Déjanos tus datos y un especialista te contacta para revisar tu operación, los corredores que necesitas y los siguientes pasos.</p>
+    </div>
+    <DemoForm defaultUseCase="pagos" submitLabel="Quiero que me contacten" />
+    <p class="contact-whatsapp">
+      Si prefieres escribir, también puedes hacerlo por WhatsApp.
+      <a href="https://wa.me/59175245845?text=Hola,%20quiero%20hablar%20sobre%20pagos%20a%20proveedores%20del%20exterior%20con%20Guira"
+         target="_blank" rel="noopener noreferrer">Escribir por WhatsApp →</a>
+    </p>
+  </section>
+
+  <!-- FOOTER: Ft2 Inline single line -->
+  <footer class="footer-line">
+    <p>© 2026 Guira System LLC · Representado en Bolivia por Guiraglobal SRL · <a href="/terminos/">Términos</a> · <a href="/privacidad/">Privacidad</a></p>
   </footer>
 
-  <!-- BOTON FLOTANTE WHATSAPP -->
+  <!-- WhatsApp Floating Button -->
   <a id="wa-floating-btn"
      href="https://wa.me/59175245845?text=Hola,%20quiero%20pagar%20a%20un%20proveedor%20del%20exterior%20con%20Guira"
      target="_blank"
      rel="noopener noreferrer"
-     class="fixed bottom-6 right-6 z-50 bg-emerald-500 text-white p-4 sm:p-5 rounded-full shadow-xl shadow-emerald-950/40 hover:bg-emerald-400 transition-all group">
-    <svg class="w-7 h-7 sm:w-8 sm:h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+     class="wa-floating">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+    </svg>
   </a>
 
   <style is:inline>
-    #wa-floating-btn {
-      transition: opacity 200ms ease, transform 200ms ease;
+    /* Nav Pill */
+    .nav-pill {
+      position: fixed;
+      inset-inline: var(--space-md) auto auto 50%;
+      transform: translateX(-50%);
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-md);
+      padding: 0.625rem 1rem;
+      background: rgba(255, 255, 255, 0.78);
+      backdrop-filter: blur(14px) saturate(120%);
+      -webkit-backdrop-filter: blur(14px) saturate(120%);
+      border: 1px solid var(--color-rule);
+      border-radius: var(--radius-pill);
+      box-shadow: 0 8px 24px -12px rgba(15, 23, 42, 0.18);
+      z-index: 20;
+      font-size: var(--text-sm);
+      font-weight: 500;
     }
-    #wa-floating-btn.wa-floating-btn--hidden {
+
+    .nav-pill .wordmark {
+      font-weight: 700;
+      color: var(--color-ink);
+      text-decoration: none;
+    }
+
+    .nav-pill__links {
+      display: flex;
+      gap: var(--space-md);
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .nav-pill__links a {
+      color: var(--color-ink-muted);
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.15s ease;
+    }
+
+    .nav-pill__links a:hover {
+      color: var(--color-ink);
+    }
+
+    .nav-pill .cta-fill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.375rem;
+      padding: 0.5rem 1rem;
+      background: var(--color-ink);
+      color: var(--color-paper);
+      border-radius: var(--radius-pill);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: var(--text-sm);
+      transition: background 0.15s ease, transform 0.1s ease;
+    }
+
+    .nav-pill .cta-fill:hover {
+      background: var(--color-ink-muted);
+      transform: translateY(-1px);
+    }
+
+    .nav-pill .cta-fill:active {
+      transform: translateY(0);
+    }
+
+    /* Hero Split Diptych — Premium layout */
+    .hero-split {
+      display: grid;
+      grid-template-columns: minmax(0, 7fr) minmax(0, 5fr);
+      gap: var(--space-3xl);
+      align-items: center;
+      padding: 8rem var(--space-xl) var(--space-4xl);
+      min-height: 100dvh;
+      min-h-[100dvh];
+    }
+
+    @media (max-width: 56rem) {
+      .hero-split {
+        grid-template-columns: 1fr;
+        padding: 6rem var(--space-lg) var(--space-3xl);
+        gap: var(--space-2xl);
+      }
+    }
+
+    .hero-split__text {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-lg);
+    }
+
+    .hero-kicker {
+      display: inline-flex;
+      align-items: center;
+      font-size: var(--text-xs);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--color-accent);
+      padding: 0.375rem 0.75rem;
+      background: var(--color-accent-light);
+      border-radius: var(--radius-pill);
+      width-fit-content;
+    }
+
+    .hero-title {
+      font-family: var(--font-display);
+      font-size: var(--text-display);
+      font-weight: 700;
+      line-height: 1.05;
+      letter-spacing: -0.025em;
+      color: var(--color-ink);
+      margin: 0;
+    }
+
+    @media (max-width: 40rem) {
+      .hero-title {
+        font-size: var(--text-display-s);
+      }
+    }
+
+    .hero-lede {
+      font-size: var(--text-md);
+      line-height: 1.6;
+      color: var(--color-ink-muted);
+      max-width: 32ch;
+      margin: 0;
+    }
+
+    .hero-destinations {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-sm);
+    }
+
+    .destination-chip {
+      display: inline-flex;
+      align-items: center;
+      padding: 0.375rem 0.75rem;
+      background: var(--color-paper-dark);
+      border: 1px solid var(--color-rule-strong);
+      border-radius: var(--radius-pill);
+      font-size: var(--text-sm);
+      font-weight: 600;
+      color: var(--color-ink);
+    }
+
+    .hero-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.875rem 1.75rem;
+      background: var(--color-accent);
+      color: white;
+      border: none;
+      border-radius: var(--radius-pill);
+      font-size: var(--text-base);
+      font-weight: 600;
+      text-decoration: none;
+      transition: background 0.15s ease, transform 0.1s ease;
+      box-shadow: 0 4px 14px rgba(0, 81, 255, 0.3);
+      width-fit-content;
+    }
+
+    .hero-cta:hover {
+      background: #0041cc;
+      transform: translateY(-1px);
+    }
+
+    .hero-cta:active {
+      transform: translateY(0);
+    }
+
+    .hero-cta:focus-visible {
+      outline: 2px solid var(--color-accent);
+      outline-offset: 2px;
+    }
+
+    .hero-note {
+      font-size: var(--text-sm);
+      color: var(--color-ink-muted);
+      margin: 0;
+    }
+
+    .hero-split__visual {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .mockup-frame {
+      position: relative;
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+      border: 1px solid var(--color-rule);
+      box-shadow: 0 20px 50px -12px rgba(15, 23, 42, 0.15);
+      background: var(--color-paper);
+      max-width: 100%;
+      max-height: 500px;
+    }
+
+    .mockup-img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      max-width: 600px;
+      max-height: 500px;
+      object-fit: contain;
+    }
+
+    /* Section Split (Problem/Solution & Proof) */
+    .section-split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-3xl);
+      padding: var(--space-4xl) var(--space-xl);
+      align-items: center;
+    }
+
+    .section-split--reverse {
+      direction: rtl;
+    }
+
+    .section-split--reverse > * {
+      direction: ltr;
+    }
+
+    @media (max-width: 56rem) {
+      .section-split {
+        grid-template-columns: 1fr;
+        gap: var(--space-2xl);
+      }
+
+      .section-split--reverse {
+        direction: ltr;
+      }
+    }
+
+    .section-split__text {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-lg);
+    }
+
+    .section-kicker {
+      font-size: var(--text-xs);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--color-accent);
+    }
+
+    .section-title {
+      font-family: var(--font-display);
+      font-size: var(--text-3xl);
+      font-weight: 700;
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      color: var(--color-ink);
+      margin: 0;
+    }
+
+    @media (max-width: 40rem) {
+      .section-title {
+        font-size: var(--text-2xl);
+      }
+    }
+
+    .section-body {
+      font-size: var(--text-base);
+      line-height: 1.6;
+      color: var(--color-ink-muted);
+      max-width: 40ch;
+    }
+
+    .link-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--color-ink);
+      font-weight: 600;
+      text-decoration: none;
+      font-size: var(--text-base);
+      transition: color 0.15s ease;
+      width-fit-content;
+    }
+
+    .link-cta:hover {
+      color: var(--color-accent);
+    }
+
+    .link-cta:focus-visible {
+      outline: 2px solid var(--color-accent);
+      outline-offset: 2px;
+      border-radius: 2px;
+    }
+
+    .section-highlight {
+      font-size: var(--text-lg);
+      font-weight: 700;
+      color: var(--color-ink);
+      margin: 0;
+    }
+
+    /* Problem Grid */
+    .problem-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-lg);
+    }
+
+    @media (max-width: 40rem) {
+      .problem-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .problem-card {
+      padding: var(--space-lg);
+      background: var(--color-paper);
+      border: 1px solid var(--color-rule);
+      border-radius: var(--radius-lg);
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-sm);
+    }
+
+    .problem-icon {
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--color-accent);
+      background: var(--color-accent-light);
+      border-radius: var(--radius-md);
+    }
+
+    .problem-card h3 {
+      font-family: var(--font-display);
+      font-size: var(--text-base);
+      font-weight: 700;
+      color: var(--color-ink);
+      margin: 0;
+    }
+
+    .problem-card p {
+      font-size: var(--text-sm);
+      line-height: 1.5;
+      color: var(--color-ink-muted);
+      margin: 0;
+    }
+
+    /* Feature List */
+    .feature-list {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-md);
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .feature-item {
+      display: flex;
+      gap: var(--space-md);
+      align-items: flex-start;
+    }
+
+    .feature-item svg {
+      flex-shrink: 0;
+      width: 20px;
+      height: 20px;
+      color: var(--color-accent);
+      background: var(--color-accent-light);
+      border-radius: 50%;
+      padding: 2px;
+      margin-top: 2px;
+    }
+
+    .feature-item div {
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+    }
+
+    .feature-item strong {
+      font-size: var(--text-base);
+      font-weight: 600;
+      color: var(--color-ink);
+    }
+
+    .feature-item span {
+      font-size: var(--text-sm);
+      line-height: 1.5;
+      color: var(--color-ink-muted);
+    }
+
+    /* Proof Panel */
+    .proof-panel {
+      background: var(--color-ink);
+      color: var(--color-paper);
+      padding: var(--space-xl);
+      border-radius: var(--radius-xl);
+    }
+
+    .proof-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      padding-bottom: var(--space-lg);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      margin-bottom: var(--space-lg);
+    }
+
+    .proof-tag {
+      font-size: var(--text-xs);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #60a5fa;
+    }
+
+    .proof-title {
+      font-family: var(--font-display);
+      font-size: var(--text-lg);
+      font-weight: 700;
+      color: white;
+      margin: 0.25rem 0 0 0;
+    }
+
+    .proof-status {
+      font-size: var(--text-xs);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #60a5fa;
+      padding: 0.25rem 0.625rem;
+      background: rgba(30, 64, 175, 0.4);
+      border: 1px solid rgba(96, 165, 250, 0.3);
+      border-radius: var(--radius-pill);
+    }
+
+    .proof-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .proof-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: var(--space-md) 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      font-size: var(--text-sm);
+      color: #f1f5f9;
+    }
+
+    .proof-row:last-child {
+      border-bottom: none;
+    }
+
+    .proof-row svg {
+      color: #60a5fa;
+    }
+
+    /* Steps Section */
+    .section-steps {
+      padding: var(--space-4xl) var(--space-xl);
+      background: var(--color-paper-dark);
+    }
+
+    .steps-header {
+      text-align: center;
+      max-width: 42ch;
+      margin: 0 auto var(--space-3xl);
+    }
+
+    .steps-title {
+      font-family: var(--font-display);
+      font-size: var(--text-3xl);
+      font-weight: 700;
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      color: var(--color-ink);
+      margin: 0 0 var(--space-md) 0;
+    }
+
+    @media (max-width: 40rem) {
+      .steps-title {
+        font-size: var(--text-2xl);
+      }
+    }
+
+    .steps-subtitle {
+      font-size: var(--text-base);
+      line-height: 1.5;
+      color: var(--color-ink-muted);
+      margin: 0;
+    }
+
+    .steps-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--space-xl);
+      margin-bottom: var(--space-3xl);
+    }
+
+    @media (max-width: 56rem) {
+      .steps-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .step-card {
+      padding: var(--space-xl);
+      background: var(--color-paper);
+      border: 1px solid var(--color-rule);
+      border-radius: var(--radius-lg);
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-md);
+    }
+
+    .step-number {
+      font-family: var(--font-display);
+      font-size: var(--text-4xl);
+      font-weight: 800;
+      color: var(--color-rule-strong);
+      line-height: 1;
+      margin: 0;
+    }
+
+    .step-title {
+      font-family: var(--font-display);
+      font-size: var(--text-lg);
+      font-weight: 700;
+      color: var(--color-ink);
+      margin: 0;
+    }
+
+    .step-body {
+      font-size: var(--text-sm);
+      line-height: 1.5;
+      color: var(--color-ink-muted);
+      margin: 0;
+    }
+
+    .steps-cta {
+      text-align: center;
+    }
+
+    .cta-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.875rem 1.75rem;
+      background: var(--color-accent);
+      color: white;
+      border: none;
+      border-radius: var(--radius-pill);
+      font-size: var(--text-base);
+      font-weight: 600;
+      text-decoration: none;
+      transition: background 0.15s ease, transform 0.1s ease;
+      box-shadow: 0 4px 14px rgba(0, 81, 255, 0.3);
+    }
+
+    .cta-primary:hover {
+      background: #0041cc;
+      transform: translateY(-1px);
+    }
+
+    .cta-primary:active {
+      transform: translateY(0);
+    }
+
+    .cta-primary:focus-visible {
+      outline: 2px solid var(--color-accent);
+      outline-offset: 2px;
+    }
+
+    /* Corridors Section */
+    .section-corridors {
+      padding: var(--space-4xl) var(--space-xl);
+    }
+
+    .corridors-header {
+      text-align: center;
+      max-width: 42ch;
+      margin: 0 auto var(--space-3xl);
+    }
+
+    .corridors-title {
+      font-family: var(--font-display);
+      font-size: var(--text-3xl);
+      font-weight: 700;
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      color: var(--color-ink);
+      margin: 0 0 var(--space-md) 0;
+    }
+
+    @media (max-width: 40rem) {
+      .corridors-title {
+        font-size: var(--text-2xl);
+      }
+    }
+
+    .corridors-subtitle {
+      font-size: var(--text-base);
+      line-height: 1.5;
+      color: var(--color-ink-muted);
+      margin: 0;
+    }
+
+    .corridors-grid {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      grid-template-rows: repeat(2, 1fr);
+      gap: var(--space-lg);
+      margin-bottom: var(--space-3xl);
+    }
+
+    @media (max-width: 56rem) {
+      .corridors-grid {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+      }
+    }
+
+    .corridor-card {
+      grid-column: span 2;
+      padding: var(--space-xl);
+      background: var(--color-paper);
+      border: 1px solid var(--color-rule);
+      border-radius: var(--radius-lg);
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-md);
+      position: relative;
+    }
+
+    .corridor-card--featured {
+      grid-column: span 2;
+      grid-row: span 2;
+      background: var(--color-ink);
+      color: var(--color-paper);
+    }
+
+    @media (max-width: 56rem) {
+      .corridor-card,
+      .corridor-card--featured {
+        grid-column: span 1;
+        grid-row: span 1;
+      }
+    }
+
+    .corridor-badge {
+      position: absolute;
+      top: var(--space-lg);
+      right: var(--space-lg);
+      font-size: var(--text-xs);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #60a5fa;
+      padding: 0.25rem 0.625rem;
+      background: rgba(30, 64, 175, 0.4);
+      border: 1px solid rgba(96, 165, 250, 0.3);
+      border-radius: var(--radius-pill);
+    }
+
+    .corridor-flag {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 32px;
+      height: 32px;
+      background: var(--color-accent-light);
+      color: var(--color-accent);
+      font-weight: 700;
+      font-size: var(--text-xs);
+      border-radius: var(--radius-md);
+    }
+
+    .corridor-zone {
+      font-size: var(--text-xs);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--color-accent);
+    }
+
+    .corridor-card--euro {
+      background: var(--color-ink);
+      color: var(--color-paper);
+    }
+
+    .corridor-card--euro .corridor-flag {
+      background: rgba(30, 64, 175, 0.4);
+      color: var(--color-accent-muted);
+    }
+
+    .corridor-card--euro .corridor-zone {
+      color: var(--color-accent-muted);
+    }
+
+    .corridor-title {
+      font-family: var(--font-display);
+      font-size: var(--text-xl);
+      font-weight: 700;
+      color: inherit;
+      margin: 0;
+    }
+
+    .corridor-body {
+      font-size: var(--text-sm);
+      line-height: 1.5;
+      color: var(--color-ink-muted);
+      margin: 0;
+    }
+
+    .corridor-card--featured .corridor-body,
+    .corridor-card--euro .corridor-body {
+      color: #f1f5f9;
+    }
+
+    .corridor-footer {
+      display: flex;
+      align-items: center;
+      gap: var(--space-sm);
+      margin-top: auto;
+      padding-top: var(--space-lg);
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .corridor-footer svg {
+      flex-shrink: 0;
+      color: var(--color-accent);
+    }
+
+    .corridor-footer span {
+      font-size: var(--text-sm);
+      color: #f1f5f9;
+    }
+
+    .corridor-meta {
+      font-size: var(--text-xs);
+      font-weight: 600;
+      color: var(--color-ink-muted);
+      margin-top: auto;
+    }
+
+    .corridor-card--featured .corridor-meta,
+    .corridor-card--euro .corridor-meta {
+      color: #94a3b8;
+    }
+
+    .corridors-summary {
+      text-align: center;
+      max-width: 42ch;
+      margin: 0 auto;
+      padding: var(--space-xl);
+      background: var(--color-paper);
+      border: 1px solid var(--color-rule);
+      border-radius: var(--radius-lg);
+    }
+
+    .corridors-summary p {
+      font-family: var(--font-display);
+      font-size: var(--text-base);
+      font-weight: 700;
+      color: var(--color-ink);
+      margin: 0;
+    }
+
+    /* FAQ Section */
+    .section-faq {
+      padding: var(--space-4xl) var(--space-xl);
+      background: var(--color-paper-dark);
+    }
+
+    .faq-header {
+      text-align: center;
+      max-width: 42ch;
+      margin: 0 auto var(--space-3xl);
+    }
+
+    .faq-title {
+      font-family: var(--font-display);
+      font-size: var(--text-3xl);
+      font-weight: 700;
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      color: var(--color-ink);
+      margin: 0 0 var(--space-md) 0;
+    }
+
+    @media (max-width: 40rem) {
+      .faq-title {
+        font-size: var(--text-2xl);
+      }
+    }
+
+    .faq-subtitle {
+      font-size: var(--text-base);
+      color: var(--color-ink-muted);
+      margin: 0;
+    }
+
+    .faq-list {
+      max-width: 48ch;
+      margin: 0 auto;
+    }
+
+    .faq-item {
+      background: var(--color-paper);
+      border: 1px solid var(--color-rule);
+      border-radius: var(--radius-lg);
+      margin-bottom: var(--space-md);
+    }
+
+    .faq-item:last-child {
+      margin-bottom: 0;
+    }
+
+    .faq-question {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: var(--space-md);
+      padding: var(--space-lg);
+      font-family: var(--font-display);
+      font-size: var(--text-base);
+      font-weight: 600;
+      color: var(--color-ink);
+      cursor: pointer;
+      user-select: none;
+      list-style: none;
+    }
+
+    .faq-question::-webkit-details-marker {
+      display: none;
+    }
+
+    .faq-question svg {
+      flex-shrink: 0;
+      width: 20px;
+      height: 20px;
+      color: var(--color-ink-muted);
+      transition: transform 0.2s ease;
+    }
+
+    details[open] .faq-question svg {
+      transform: rotate(45deg);
+    }
+
+    .faq-answer {
+      padding: 0 var(--space-lg) var(--space-lg);
+      font-size: var(--text-sm);
+      line-height: 1.6;
+      color: var(--color-ink-muted);
+    }
+
+    .faq-answer p {
+      margin: 0;
+    }
+
+    /* Contact Section */
+    .section-contact {
+      padding: var(--space-4xl) var(--space-xl);
+    }
+
+    .contact-header {
+      text-align: center;
+      max-width: 42ch;
+      margin: 0 auto var(--space-3xl);
+    }
+
+    .contact-title {
+      font-family: var(--font-display);
+      font-size: var(--text-3xl);
+      font-weight: 700;
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      color: var(--color-ink);
+      margin: 0 0 var(--space-md) 0;
+    }
+
+    @media (max-width: 40rem) {
+      .contact-title {
+        font-size: var(--text-2xl);
+      }
+    }
+
+    .contact-subtitle {
+      font-size: var(--text-base);
+      line-height: 1.5;
+      color: var(--color-ink-muted);
+      margin: 0;
+    }
+
+    .contact-whatsapp {
+      text-align: center;
+      font-size: var(--text-sm);
+      color: var(--color-ink-muted);
+      margin-top: var(--space-xl);
+    }
+
+    .contact-whatsapp a {
+      color: var(--color-accent);
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    .contact-whatsapp a:hover {
+      text-decoration: underline;
+    }
+
+    /* Footer Line */
+    .footer-line {
+      padding: var(--space-xl) var(--space-xl);
+      border-top: 1px solid var(--color-rule);
+      text-align: center;
+    }
+
+    .footer-line p {
+      font-size: var(--text-sm);
+      color: var(--color-ink-muted);
+      margin: 0;
+    }
+
+    .footer-line a {
+      color: var(--color-ink-muted);
+      text-decoration: none;
+    }
+
+    .footer-line a:hover {
+      color: var(--color-ink);
+    }
+
+    @media (max-width: 40rem) {
+      .footer-line p {
+        font-size: var(--text-xs);
+      }
+    }
+
+    /* WhatsApp Floating Button */
+    .wa-floating {
+      position: fixed;
+      bottom: var(--space-lg);
+      right: var(--space-lg);
+      z-index: 50;
+      width: 56px;
+      height: 56px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--color-accent);
+      color: white;
+      border-radius: 50%;
+      box-shadow: 0 8px 24px -8px rgba(0, 81, 255, 0.5);
+      transition: opacity 0.2s ease, transform 0.2s ease;
+    }
+
+    .wa-floating:hover {
+      transform: translateY(-2px);
+    }
+
+    .wa-floating:active {
+      transform: translateY(0);
+    }
+
+    .wa-floating.wa-floating--hidden {
       opacity: 0;
       pointer-events: none;
     }
+
+    @media (max-width: 40rem) {
+      .wa-floating {
+        width: 48px;
+        height: 48px;
+        bottom: var(--space-md);
+        right: var(--space-md);
+      }
+    }
   </style>
 
-  <script>
+  <script is:inline>
     const waFloatingBtn = document.getElementById('wa-floating-btn');
-    const waFloatingObstacles = document.querySelectorAll('#demo-form, footer');
+    const waFloatingObstacles = document.querySelectorAll('#demo-form, .footer-line');
 
     if (waFloatingBtn && waFloatingObstacles.length) {
       const waFloatingObserver = new IntersectionObserver((entries) => {
         const shouldHide = entries.some((entry) => entry.isIntersecting);
-        waFloatingBtn.classList.toggle('wa-floating-btn--hidden', shouldHide);
+        waFloatingBtn.classList.toggle('wa-floating--hidden', shouldHide);
       }, { threshold: 0.2 });
 
       waFloatingObstacles.forEach((el) => waFloatingObserver.observe(el));
