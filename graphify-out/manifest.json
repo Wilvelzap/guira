@@ -1,0 +1,197 @@
+{
+  ".astro/collections/blog.schema.json": {
+    "mtime": 1784859793.0878904,
+    "ast_hash": "07665fc0f76a7f1bf3cf1f9dd622a9e7",
+    "semantic_hash": "07665fc0f76a7f1bf3cf1f9dd622a9e7"
+  },
+  ".astro/content-assets.mjs": {
+    "mtime": 1784859794.0127785,
+    "ast_hash": "1afb7b42d00d1ad00ec1321350c6cc50",
+    "semantic_hash": "1afb7b42d00d1ad00ec1321350c6cc50"
+  },
+  ".astro/content-modules.mjs": {
+    "mtime": 1782661125.2737978,
+    "ast_hash": "8aeea624d36ca2b4c7d0e0748b76ba28",
+    "semantic_hash": "8aeea624d36ca2b4c7d0e0748b76ba28"
+  },
+  ".astro/content.d.ts": {
+    "mtime": 1784859794.0237799,
+    "ast_hash": "7451054e7bd738671904ee3ec7ee25b0",
+    "semantic_hash": "7451054e7bd738671904ee3ec7ee25b0"
+  },
+  ".astro/data-store.json": {
+    "mtime": 1784526210.7747867,
+    "ast_hash": "afb1d4639b5a26ca8dfd684cc9f686fb",
+    "semantic_hash": "afb1d4639b5a26ca8dfd684cc9f686fb"
+  },
+  ".astro/settings.json": {
+    "mtime": 1783870736.6688783,
+    "ast_hash": "e69c8ed541b975b6fa52bf4875f0ba8f",
+    "semantic_hash": "e69c8ed541b975b6fa52bf4875f0ba8f"
+  },
+  ".astro/types.d.ts": {
+    "mtime": 1784859794.0237799,
+    "ast_hash": "f3d48b2aa569815a445d3509aa161559",
+    "semantic_hash": "f3d48b2aa569815a445d3509aa161559"
+  },
+  "astro.config.mjs": {
+    "mtime": 1784690140.269457,
+    "ast_hash": "575d5d2f86ead2e45b17c1afc84ddd52",
+    "semantic_hash": "575d5d2f86ead2e45b17c1afc84ddd52"
+  },
+  "package.json": {
+    "mtime": 1784690143.5986454,
+    "ast_hash": "72579f71af0acb826854989dd41fe557",
+    "semantic_hash": "72579f71af0acb826854989dd41fe557"
+  },
+  "src/components/CookieBanner.astro": {
+    "mtime": 1784526210.8178682,
+    "ast_hash": "e437430514360ab741910b6caa394395",
+    "semantic_hash": "e437430514360ab741910b6caa394395"
+  },
+  "src/components/DemoForm.astro": {
+    "mtime": 1784690143.6006453,
+    "ast_hash": "0c097d44750d76052ca7d57ffeb94656",
+    "semantic_hash": "0c097d44750d76052ca7d57ffeb94656"
+  },
+  "src/components/Flag.astro": {
+    "mtime": 1783909313.8152988,
+    "ast_hash": "9e3448664ea9218337f7d7a21392a782",
+    "semantic_hash": "9e3448664ea9218337f7d7a21392a782"
+  },
+  "src/components/Footer.astro": {
+    "mtime": 1783870736.7087193,
+    "ast_hash": "2468d534e3b335b6356b388c2f44c0d5",
+    "semantic_hash": "2468d534e3b335b6356b388c2f44c0d5"
+  },
+  "src/components/Navbar.astro": {
+    "mtime": 1783870736.7087193,
+    "ast_hash": "6abdfa715a3c552d4068cbdf862cb232",
+    "semantic_hash": "6abdfa715a3c552d4068cbdf862cb232"
+  },
+  "src/components/posthog.astro": {
+    "mtime": 1784690143.6006453,
+    "ast_hash": "ff2cad50c194b4390e5e5fdd1dfa4184",
+    "semantic_hash": "ff2cad50c194b4390e5e5fdd1dfa4184"
+  },
+  "src/content.config.ts": {
+    "mtime": 1782706622.8451602,
+    "ast_hash": "8bae336186f2321250946d5a23daf9ec",
+    "semantic_hash": "8bae336186f2321250946d5a23daf9ec"
+  },
+  "src/layouts/Layout.astro": {
+    "mtime": 1784690143.6021495,
+    "ast_hash": "0837f4be7c04d6e7a4dba4faa15f6cbf",
+    "semantic_hash": "0837f4be7c04d6e7a4dba4faa15f6cbf"
+  },
+  "src/pages/404.astro": {
+    "mtime": 1783870736.7097185,
+    "ast_hash": "2411eb7290525998058b459ff1371515",
+    "semantic_hash": "2411eb7290525998058b459ff1371515"
+  },
+  "src/pages/blog/[slug].astro": {
+    "mtime": 1784690143.6031547,
+    "ast_hash": "ef6d8aee0f2f7ad8c968a2120bea153e",
+    "semantic_hash": "ef6d8aee0f2f7ad8c968a2120bea153e"
+  },
+  "src/pages/blog/index.astro": {
+    "mtime": 1783870736.7107184,
+    "ast_hash": "ed9010ea148b9ba58ba689e20328e5d5",
+    "semantic_hash": "ed9010ea148b9ba58ba689e20328e5d5"
+  },
+  "src/pages/como-funciona.astro": {
+    "mtime": 1783872868.3496225,
+    "ast_hash": "64d6547d5c62aff953a51c964a5da7f3",
+    "semantic_hash": "64d6547d5c62aff953a51c964a5da7f3"
+  },
+  "src/pages/contacto.astro": {
+    "mtime": 1784859728.3833165,
+    "ast_hash": "e7583101006f183772cd29b360fb185d",
+    "semantic_hash": "e7583101006f183772cd29b360fb185d"
+  },
+  "src/pages/cookies.astro": {
+    "mtime": 1783870736.7127192,
+    "ast_hash": "676040222431c07ea5d1d3994938c12d",
+    "semantic_hash": "676040222431c07ea5d1d3994938c12d"
+  },
+  "src/pages/demo.astro": {
+    "mtime": 1784690143.6071591,
+    "ast_hash": "4928d58c420ebd8e0d543d8335b2cf19",
+    "semantic_hash": "4928d58c420ebd8e0d543d8335b2cf19"
+  },
+  "src/pages/faq.astro": {
+    "mtime": 1784859724.009337,
+    "ast_hash": "bb1333a1f3233f3b3d9b3cdb4e9cf02b",
+    "semantic_hash": "bb1333a1f3233f3b3d9b3cdb4e9cf02b"
+  },
+  "src/pages/guiraglobal.astro": {
+    "mtime": 1784859733.0965116,
+    "ast_hash": "33b13d2a5552e9e2d10911a5c5b44ffa",
+    "semantic_hash": "33b13d2a5552e9e2d10911a5c5b44ffa"
+  },
+  "src/pages/index.astro": {
+    "mtime": 1784859718.5498412,
+    "ast_hash": "615f63398290e292b6ef8448f64fe91a",
+    "semantic_hash": "615f63398290e292b6ef8448f64fe91a"
+  },
+  "src/pages/pagos-cobros-internacionales.astro": {
+    "mtime": 1784690143.6071591,
+    "ast_hash": "9838b1129fc386d9ae43e75814465e51",
+    "semantic_hash": "9838b1129fc386d9ae43e75814465e51"
+  },
+  "src/pages/pagos-proveedores-bolivia.astro": {
+    "mtime": 1784859729.8969111,
+    "ast_hash": "bfd7b9227faabd8a2579c314b57d786e",
+    "semantic_hash": "bfd7b9227faabd8a2579c314b57d786e"
+  },
+  "src/pages/privacidad.astro": {
+    "mtime": 1784859731.359154,
+    "ast_hash": "4c1caa784fbe748b569253318f0dcef8",
+    "semantic_hash": "4c1caa784fbe748b569253318f0dcef8"
+  },
+  "src/pages/producto.astro": {
+    "mtime": 1784859595.964037,
+    "ast_hash": "290b9cd4ff39aca413a23f81f9adebd0",
+    "semantic_hash": "290b9cd4ff39aca413a23f81f9adebd0"
+  },
+  "src/pages/seguridad.astro": {
+    "mtime": 1784859722.9143765,
+    "ast_hash": "329f79f44bb54eb8476da3e1fc5d3d2a",
+    "semantic_hash": "329f79f44bb54eb8476da3e1fc5d3d2a"
+  },
+  "src/pages/sobre-guira.astro": {
+    "mtime": 1784859726.5518446,
+    "ast_hash": "1602427ff293ecc98e112395b027e4d0",
+    "semantic_hash": "1602427ff293ecc98e112395b027e4d0"
+  },
+  "src/pages/soluciones.astro": {
+    "mtime": 1784859720.8333366,
+    "ast_hash": "a019e97d3ab8de8261d6df3a365c14e2",
+    "semantic_hash": "a019e97d3ab8de8261d6df3a365c14e2"
+  },
+  "src/pages/terminos.astro": {
+    "mtime": 1784690143.6081588,
+    "ast_hash": "67cc4dd59445783b219a11898dc378a7",
+    "semantic_hash": "67cc4dd59445783b219a11898dc378a7"
+  },
+  "src/scripts/main.js": {
+    "mtime": 1781152575.7248342,
+    "ast_hash": "b211c33e2fea3dc5f7125f3b954711de",
+    "semantic_hash": "b211c33e2fea3dc5f7125f3b954711de"
+  },
+  "tailwind.config.js": {
+    "mtime": 1779944408.899155,
+    "ast_hash": "1bf24c07431611b55f63c086da42c96b",
+    "semantic_hash": "1bf24c07431611b55f63c086da42c96b"
+  },
+  "tailwind.config.mjs": {
+    "mtime": 1781152575.7258384,
+    "ast_hash": "3b4793feefe2f840ae51f6243bd92248",
+    "semantic_hash": "3b4793feefe2f840ae51f6243bd92248"
+  },
+  "tsconfig.json": {
+    "mtime": 1781152575.7258384,
+    "ast_hash": "c7185ceecfca9742919923611c1b377a",
+    "semantic_hash": "c7185ceecfca9742919923611c1b377a"
+  }
+}
