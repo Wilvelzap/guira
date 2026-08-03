@@ -20,8 +20,12 @@ con trazabilidad y control por operación.
 
 - Nunca atribuir custodia de fondos a Guira ni a Guiraglobal SRL. Custodia = "partner
   tecnológico licenciado en EE.UU." (no nombrar a Bridge).
-- Default: "cuenta operativa en dólares". USDC/USDT solo al describir la opción de
-  enviar a una wallet EXTERNA y propia del cliente (ej. Binance), ahí sí está permitido.
+- Default: "cuenta operativa en dólares".
+- Regla permanente (agosto 2026): prohibido mencionar activos virtuales, stablecoins,
+  exchanges o billeteras (USDC, USDT, Binance, wallet, cripto, criptomoneda, blockchain,
+  etc.) en cualquier página pública del sitio, incluida la opción de enviar a una wallet
+  externa del cliente. Esta regla reemplaza y anula cualquier excepción anterior sobre
+  ese tema en este archivo o en `guia_palabras_prohibidas.md`.
 - No citar ASFI ni DS 5384 como autoridad de Guira. No implicar que Guiraglobal SRL
   ejecuta la conversión BOB↔USDT/USDC bajo su propio registro PSAV.
 - Mensaje de función antes que trazabilidad: pagar/cobrar/cuenta en dólares abre,

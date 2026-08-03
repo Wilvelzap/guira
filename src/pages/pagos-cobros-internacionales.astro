@@ -6,8 +6,8 @@ import StackedSections from '../components/StackedSections.astro';
 ---
 
 <Layout
-  title="Pagos y cobros internacionales que tu contador puede defender | Guira"
-  description="Paga a tus proveedores y cobra a tus clientes en el exterior desde una misma cuenta en dólares. Con el respaldo que tu contador necesita."
+  title="Paga a tus proveedores y cobra del exterior desde una cuenta en dólares | Guira"
+  description="Paga a proveedores en Estados Unidos, Brasil, México, Colombia y Europa y cobra de tus clientes del exterior desde una misma cuenta operativa en dólares. Con respaldo documental en cada operación."
   keywords="recepción de pagos USD Bolivia, cobrar clientes de Estados Unidos desde Bolivia, cobros internacionales empresas, Wire vs ACH, pagos internacionales Bolivia, trazabilidad de pagos internacionales"
   canonicalUrl="https://www.guiracorp.com/pagos-cobros-internacionales"
   activeLink="pagos-cobros-internacionales"
@@ -34,6 +34,7 @@ import StackedSections from '../components/StackedSections.astro';
     <div class="max-w-6xl mx-auto px-6 relative z-10">
       <div class="grid lg:grid-cols-2 gap-12 items-center">
         <div class="text-left">
+          <p class="text-sm font-semibold text-guira-cyan mb-3">Para empresas importadoras y exportadoras de Bolivia</p>
           <h1 class="text-3xl md:text-5xl lg:text-6xl font-extrabold tracking-tight mb-6 leading-tight text-white">
             Paga a tus proveedores y cobra a tus clientes en el exterior
           </h1>
@@ -51,11 +52,6 @@ import StackedSections from '../components/StackedSections.astro';
               class="w-full sm:w-auto px-8 py-4 bg-slate-700 text-white rounded-xl font-bold text-lg hover:bg-slate-600 transition-all shadow-xl shadow-slate-700/30 hover:-translate-y-1 flex items-center justify-center gap-2">
               Solicitar demostración
               <i data-lucide="arrow-right" class="w-5 h-5"></i>
-            </a>
-          </div>
-          <div class="mt-4">
-            <a href="https://app.guiracorp.com/registro" class="inline-flex items-center justify-center w-full sm:w-auto px-8 py-4 text-guira-cyan border border-guira-cyan/30 rounded-xl font-bold text-sm hover:bg-guira-cyan/10 hover:border-guira-cyan hover:text-white transition-all">
-              ¿Ya sabes que quieres empezar? Crea tu cuenta
             </a>
           </div>
           <p class="text-slate-400 text-sm mt-4 font-medium">Te orientamos según tu tipo de cliente, monto y documentación disponible.</p>
@@ -159,7 +155,6 @@ import StackedSections from '../components/StackedSections.astro';
               <div class="destination-cell"><Flag code="br" /><span>Brasil</span></div>
               <div class="destination-cell"><Flag code="co" /><span>Colombia</span></div>
               <div class="destination-cell"><Flag code="mx" /><span>México</span></div>
-              <div class="destination-cell"><i data-lucide="coins" class="w-4 h-4"></i><span>USDC/USDT</span></div>
             </div>
           </div>
         </div>
@@ -176,7 +171,7 @@ import StackedSections from '../components/StackedSections.astro';
             <div class="ux-icon"><i data-lucide="mouse-pointer-click" class="w-4 h-4"></i></div>
             <div>
               <p>Salidas según el caso</p>
-              <span>Bolivia BOB, proveedor internacional o wallet digital.</span>
+              <span>Bolivia en bolivianos, proveedor internacional o cuenta de destino definida por tu empresa.</span>
             </div>
           </div>
           <div class="ux-outcome">
@@ -219,8 +214,8 @@ import StackedSections from '../components/StackedSections.astro';
                 <i data-lucide="coins" class="w-5 h-5 text-guira-cyan"></i>
               </div>
               <div>
-                <p class="font-bold text-white text-sm">Tu propia billetera de stablecoins</p>
-                <p class="text-slate-400 text-xs font-medium">Envía a tu wallet en USDC o USDT, en Binance u otro exchange de tu preferencia.</p>
+                <p class="font-bold text-white text-sm">El destino que tu empresa defina</p>
+                <p class="text-slate-400 text-xs font-medium">Envía tus fondos a la cuenta de destino que tu empresa determine, según tu operación.</p>
               </div>
             </div>
             <div class="flex items-center gap-4 bg-white/5 border border-white/10 rounded-2xl p-4 hover:border-guira-teal/50 transition-colors">
@@ -271,16 +266,9 @@ import StackedSections from '../components/StackedSections.astro';
               <p class="font-bold text-sm">México</p>
             </div>
           </div>
-          <p class="text-slate-400 text-xs font-bold uppercase tracking-widest mb-3">Paga el envío en</p>
-          <div class="grid grid-cols-2 gap-3">
-            <div class="flex items-center gap-3 bg-guira-teal/10 border border-guira-teal/30 rounded-2xl p-4">
-              <i data-lucide="banknote" class="w-5 h-5 text-guira-cyan shrink-0"></i>
-              <p class="font-bold text-white text-sm">Bolivianos (BOB)</p>
-            </div>
-            <div class="flex items-center gap-3 bg-guira-teal/10 border border-guira-teal/30 rounded-2xl p-4">
-              <i data-lucide="coins" class="w-5 h-5 text-guira-cyan shrink-0"></i>
-              <p class="font-bold text-white text-sm">Stablecoins (USDC/USDT)</p>
-            </div>
+          <div class="flex items-center gap-3 bg-guira-teal/10 border border-guira-teal/30 rounded-2xl p-4">
+            <i data-lucide="banknote" class="w-5 h-5 text-guira-cyan shrink-0"></i>
+            <p class="font-bold text-white text-sm">Paga el envío en bolivianos.</p>
           </div>
         </div>
       </div>
@@ -631,7 +619,7 @@ import StackedSections from '../components/StackedSections.astro';
           </div>
         </summary>
         <div class="max-w-4xl mx-auto px-6 text-slate-600 font-medium leading-relaxed pb-8">
-          Depende del monto, frecuencia, tipo de cliente y documentación requerida. Wire suele usarse en pagos corporativos internacionales; ACH puede servir si existe una estructura habilitada en Estados Unidos; y una plataforma especializada ayuda a ordenar seguimiento y respaldo.
+          Depende del monto, frecuencia, tipo de cliente y documentación requerida. Wire suele usarse en pagos corporativos internacionales, ACH puede servir si existe una estructura habilitada en Estados Unidos y una plataforma especializada ayuda a ordenar seguimiento y respaldo.
         </div>
       </details>
 
@@ -643,7 +631,7 @@ import StackedSections from '../components/StackedSections.astro';
           </div>
         </summary>
         <div class="max-w-4xl mx-auto px-6 text-slate-600 font-medium leading-relaxed pb-8">
-          ACH es una red de pagos de Estados Unidos. Para una empresa boliviana puede ser útil cuando cuenta con una cuenta, partner o plataforma que pueda recibir fondos por esa vía dentro de EE. UU.; no funciona como una transferencia internacional directa a Bolivia.
+          ACH es una red de pagos de Estados Unidos. Para una empresa boliviana puede ser útil cuando cuenta con una cuenta, partner o plataforma que pueda recibir fondos por esa vía dentro de EE. UU. No funciona como una transferencia internacional directa a Bolivia.
         </div>
       </details>
 
@@ -1202,4 +1190,20 @@ import StackedSections from '../components/StackedSections.astro';
       }
     }
   </style>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const utmContent = params.get('utm_content');
+
+    if (utmContent) {
+      const suffix = ` [ref: ${utmContent}]`;
+      document.querySelectorAll('a[href*="wa.me"]').forEach((link) => {
+        const url = new URL(link.href);
+        const text = url.searchParams.get('text');
+        if (text === null) return;
+        url.searchParams.set('text', text + suffix);
+        link.setAttribute('href', url.toString());
+      });
+    }
+  </script>
 </Layout>
