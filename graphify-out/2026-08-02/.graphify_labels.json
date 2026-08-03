@@ -1,0 +1,23 @@
+{
+  "0": "properties",
+  "1": "content.d.ts",
+  "2": "Layout.astro",
+  "3": "package.json",
+  "4": "[]",
+  "5": "paths",
+  "6": "required",
+  "7": "dependencies",
+  "8": "scripts",
+  "9": "Navbar.astro",
+  "10": "tags",
+  "11": "content.config.ts",
+  "12": "astro.config.mjs",
+  "13": "content-assets.mjs",
+  "14": "content-modules.mjs",
+  "15": "types.d.ts",
+  "16": "main.js",
+  "17": "tailwind.config.js",
+  "18": "tailwind.config.mjs",
+  "19": "rules/graphify.md",
+  "20": "workflows/graphify.md"
+}
