@@ -13,7 +13,9 @@ export default defineConfig({
     tailwind({
       configFile: './tailwind.config.mjs',
     }),
-    sitemap(),
+    sitemap({
+      filter: (page) => !page.includes('/pagar-proveedores-exterior/'),
+    }),
   ],
   build: {
     format: 'directory',

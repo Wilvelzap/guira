@@ -192,7 +192,9 @@ Sí. Este artículo es una guía operativa general y no reemplaza asesoría banc
 
 Cobrar clientes de Estados Unidos desde Bolivia implica mucho más que recibir una transferencia. También requiere definir el método de pago, organizar documentación, conciliar cada operación y mantener visibilidad sobre el proceso completo.
 
-Contar con procesos claros y herramientas adecuadas permite administrar cobros internacionales con mayor eficiencia, trazabilidad y control. Si tu empresa trabaja con organizaciones de Estados Unidos y necesita ordenar sus operaciones internacionales, [solicita una demostración de Guira](/demo) y conoce cómo centralizar la gestión de tus cobros, documentos y seguimiento operativo.
+Contar con procesos claros y herramientas adecuadas permite administrar cobros internacionales con mayor eficiencia, trazabilidad y control. Conoce en detalle cómo funcionan los [pagos y cobros internacionales](/pagos-cobros-internacionales) con Guira.
+
+Si tu empresa trabaja con organizaciones de Estados Unidos y necesita ordenar sus operaciones internacionales, [solicita una demostración de Guira](/demo) y conoce cómo centralizar la gestión de tus cobros, documentos y seguimiento operativo.
 
 ## Fuentes consultadas
 

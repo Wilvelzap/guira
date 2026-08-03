@@ -61,7 +61,17 @@ const onProduct = isCurrent('producto');
 
         <div class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-600">
             <a href="/producto/" class={getLinkClass('producto')}>Producto</a>
-            <a href="/soluciones/" class={getLinkClass('soluciones')}>Soluciones</a>
+            <div class="relative group py-2 -my-2">
+                <a href="/soluciones/" class:list={[getLinkClass('soluciones'), 'inline-flex items-center gap-1']}>
+                    Soluciones
+                    <i data-lucide="chevron-down" class="w-3.5 h-3.5"></i>
+                </a>
+                <div class="absolute top-full left-0 pt-2 hidden group-hover:block">
+                    <div class="bg-white border border-slate-200 rounded-xl shadow-lg py-2 min-w-[260px]">
+                        <a href="/pagos-cobros-internacionales/" class="block px-4 py-2.5 text-sm font-medium text-slate-600 hover:bg-slate-50 hover:text-guira-teal transition-colors">Pagos y cobros internacionales</a>
+                    </div>
+                </div>
+            </div>
             <a href="/como-funciona/" class={getLinkClass('como-funciona')}>Cómo funciona</a>
             <a href="/seguridad/" class={getLinkClass('seguridad')}>Seguridad</a>
             <a href="/blog/" class={getLinkClass('blog')}>Blog</a>
@@ -97,6 +107,7 @@ const onProduct = isCurrent('producto');
         class="hidden absolute top-full left-0 w-full bg-white shadow-xl border-t border-slate-100 p-6 flex flex-col gap-4">
         <a href="/producto/" class={getMobileLinkClass('producto')}>Producto</a>
         <a href="/soluciones/" class={getMobileLinkClass('soluciones')}>Soluciones</a>
+        <a href="/pagos-cobros-internacionales/" class:list={[getMobileLinkClass('pagos-cobros-internacionales'), 'pl-4 text-sm']}>Pagos y cobros internacionales</a>
         <a href="/como-funciona/" class={getMobileLinkClass('como-funciona')}>Cómo funciona</a>
         <a href="/seguridad/" class={getMobileLinkClass('seguridad')}>Seguridad</a>
         <a href="/blog/" class={getMobileLinkClass('blog')}>Blog</a>

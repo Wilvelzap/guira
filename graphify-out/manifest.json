@@ -1,46 +1,11 @@
 {
-  ".astro/collections/blog.schema.json": {
-    "mtime": 1785725777.9507635,
-    "ast_hash": "07665fc0f76a7f1bf3cf1f9dd622a9e7",
-    "semantic_hash": "07665fc0f76a7f1bf3cf1f9dd622a9e7"
-  },
-  ".astro/content-assets.mjs": {
-    "mtime": 1785725845.7697942,
-    "ast_hash": "8aeea624d36ca2b4c7d0e0748b76ba28",
-    "semantic_hash": ""
-  },
-  ".astro/content-modules.mjs": {
-    "mtime": 1782661125.2737978,
-    "ast_hash": "8aeea624d36ca2b4c7d0e0748b76ba28",
-    "semantic_hash": "8aeea624d36ca2b4c7d0e0748b76ba28"
-  },
-  ".astro/content.d.ts": {
-    "mtime": 1785725778.6427057,
-    "ast_hash": "7451054e7bd738671904ee3ec7ee25b0",
-    "semantic_hash": "7451054e7bd738671904ee3ec7ee25b0"
-  },
-  ".astro/data-store.json": {
-    "mtime": 1785723832.1082106,
-    "ast_hash": "59b5f8f891e5b78fc639c3910a1c50ee",
-    "semantic_hash": ""
-  },
-  ".astro/settings.json": {
-    "mtime": 1785723832.1082106,
-    "ast_hash": "b4bad10dc852d358ebc4f24b82e9bc68",
-    "semantic_hash": ""
-  },
-  ".astro/types.d.ts": {
-    "mtime": 1785725778.6437073,
-    "ast_hash": "f3d48b2aa569815a445d3509aa161559",
-    "semantic_hash": "f3d48b2aa569815a445d3509aa161559"
-  },
   "astro.config.mjs": {
-    "mtime": 1785723832.1942565,
-    "ast_hash": "dbc56f917adeda0fabd4e4b4301e31f8",
+    "mtime": 1785732692.135789,
+    "ast_hash": "cbc0563931927d558e3cf896e6e5f343",
     "semantic_hash": ""
   },
   "package.json": {
-    "mtime": 1785723832.6519406,
+    "mtime": 1785734265.8375523,
     "ast_hash": "db23b8299497ef54a28a8481fe77d6ca",
     "semantic_hash": ""
   },
@@ -50,8 +15,8 @@
     "semantic_hash": ""
   },
   "src/components/DemoForm.astro": {
-    "mtime": 1785723832.6604526,
-    "ast_hash": "fcf83ac4d289f41b14ffafe886b25ced",
+    "mtime": 1785734716.2438903,
+    "ast_hash": "4a552ba49b4f71e0da3596a1940e4f1a",
     "semantic_hash": ""
   },
   "src/components/Flag.astro": {
@@ -65,8 +30,8 @@
     "semantic_hash": ""
   },
   "src/components/Navbar.astro": {
-    "mtime": 1785723832.6614509,
-    "ast_hash": "ef3f14c7515e710dc3eb699a3a82bc95",
+    "mtime": 1785728544.8319955,
+    "ast_hash": "6b454e974d5410d3d11a1b47d6ae6f50",
     "semantic_hash": ""
   },
   "src/components/posthog.astro": {
@@ -80,8 +45,8 @@
     "semantic_hash": "8bae336186f2321250946d5a23daf9ec"
   },
   "src/layouts/Layout.astro": {
-    "mtime": 1785723832.6719604,
-    "ast_hash": "ba554775abbb82548c0ed53ddd2b937f",
+    "mtime": 1785732483.3211174,
+    "ast_hash": "a5a6336bb456ca89d2a3c8395a3075f5",
     "semantic_hash": ""
   },
   "src/pages/404.astro": {
@@ -100,8 +65,8 @@
     "semantic_hash": ""
   },
   "src/pages/como-funciona.astro": {
-    "mtime": 1785723832.6744635,
-    "ast_hash": "3dd6a689afd2371c39ab48247d976126",
+    "mtime": 1785728544.8355038,
+    "ast_hash": "bee1f86a585420c312ddafaa38e7c07a",
     "semantic_hash": ""
   },
   "src/pages/contacto.astro": {
@@ -150,8 +115,8 @@
     "semantic_hash": ""
   },
   "src/pages/producto.astro": {
-    "mtime": 1785723832.6804714,
-    "ast_hash": "4eef678ff6cdcce88e3882d9aad46909",
+    "mtime": 1785728544.836504,
+    "ast_hash": "8d485f3c9636ec61dade1e16b262238b",
     "semantic_hash": ""
   },
   "src/pages/seguridad.astro": {
@@ -165,8 +130,8 @@
     "semantic_hash": ""
   },
   "src/pages/soluciones.astro": {
-    "mtime": 1785723832.6824713,
-    "ast_hash": "4c3c72b2be37130ec1a5e92e8c4fc763",
+    "mtime": 1785728544.8375049,
+    "ast_hash": "b0842ac6fb8d70e6cbdec221f0ba10a4",
     "semantic_hash": ""
   },
   "src/pages/terminos.astro": {
@@ -205,8 +170,8 @@
     "semantic_hash": ""
   },
   "CLAUDE.md": {
-    "mtime": 1785725756.4179065,
-    "ast_hash": "7fe97d92deb27cf7e9116543e188c5e8",
+    "mtime": 1785732702.3714044,
+    "ast_hash": "1203b8bdd359563bf9ad2296b6d5d1fe",
     "semantic_hash": ""
   },
   "guia_palabras_prohibidas.md": {
@@ -235,8 +200,8 @@
     "semantic_hash": ""
   },
   "src/content/blog/como-cobrar-clientes-estados-unidos-desde-bolivia.md": {
-    "mtime": 1785723832.6644518,
-    "ast_hash": "bd488579b7ea36cb3119c7ba6553c534",
+    "mtime": 1785728544.8334992,
+    "ast_hash": "855fe33ec0ba385dff6707abc24a44f6",
     "semantic_hash": ""
   },
   "src/content/blog/como-enviar-wire-proveedor-eeuu-desde-bolivia.md": {
@@ -275,8 +240,8 @@
     "semantic_hash": ""
   },
   "src/content/blog/desafios-recibir-pagos-internacionales-bolivia.md": {
-    "mtime": 1785723832.6679592,
-    "ast_hash": "6d9f3319e49b65cc0275eac36a62f3fa",
+    "mtime": 1785728544.8334992,
+    "ast_hash": "b9e21bee59e97abad1ff46db5e428dd9",
     "semantic_hash": ""
   },
   "src/content/blog/errores-observaciones-auditoria-financiera.md": {
@@ -310,48 +275,8 @@
     "semantic_hash": ""
   },
   "src/content/blog/wire-vs-ach-diferencias-empresas-bolivianas.md": {
-    "mtime": 1785723832.6709597,
-    "ast_hash": "d81016a5e78ade43ff13b53a59bc34c2",
-    "semantic_hash": ""
-  },
-  "LOGO GUIRRA CON LETRA HORIZONTAL.svg": {
-    "mtime": 1779423093.9445102,
-    "ast_hash": "1ed8b8a7d60e3e31285f54fa3a997bb7",
-    "semantic_hash": ""
-  },
-  "LOGO GUIRRA CON LETRA VERTICAL.svg": {
-    "mtime": 1779423093.9450264,
-    "ast_hash": "afc6f5439b498251c1d6b18c1433a0e0",
-    "semantic_hash": ""
-  },
-  "LOGO GUIRRA HORIZONTAL BLANCO.png": {
-    "mtime": 1779423093.9460528,
-    "ast_hash": "b1ea8c59b0a4f7de89b930864d4920ba",
-    "semantic_hash": ""
-  },
-  "LOGO GUIRRA HORIZONTAL COLOR BLANCO.png": {
-    "mtime": 1779423093.9476008,
-    "ast_hash": "f64f08bbf348f06cbb97758d4443f80a",
-    "semantic_hash": ""
-  },
-  "LOGO GUIRRA HORIZONTAL COLOR OSCURO.png": {
-    "mtime": 1779423093.9486353,
-    "ast_hash": "68166173aa6b8ba568b8d17168713037",
-    "semantic_hash": ""
-  },
-  "LOGO GUIRRA ISOTIPO BLANCO.png": {
-    "mtime": 1779423093.9501634,
-    "ast_hash": "0f2ef68be061c907cd2973749dbd133d",
-    "semantic_hash": ""
-  },
-  "LOGO GUIRRA ISOTIPO COLOR.png": {
-    "mtime": 1779423093.9517627,
-    "ast_hash": "e3df7b9491ddff8bbda1061d191dcf9b",
-    "semantic_hash": ""
-  },
-  "LOGO GUIRRA ISOTIPO.svg": {
-    "mtime": 1779423093.952277,
-    "ast_hash": "4fa1f5d62da423300b24f46138b5b526",
+    "mtime": 1785728544.8345032,
+    "ast_hash": "9785aa6b1db0790e365bc5290805a384",
     "semantic_hash": ""
   },
   "assets/ads-facebook/guira-facebook-a5-visual-v2.png": {
@@ -532,46 +457,6 @@
   "logo.png": {
     "mtime": 1779423094.0030906,
     "ast_hash": "e3df7b9491ddff8bbda1061d191dcf9b",
-    "semantic_hash": ""
-  },
-  "public/LOGO GUIRRA CON LETRA HORIZONTAL.svg": {
-    "mtime": 1781152575.671913,
-    "ast_hash": "1ed8b8a7d60e3e31285f54fa3a997bb7",
-    "semantic_hash": ""
-  },
-  "public/LOGO GUIRRA CON LETRA VERTICAL.svg": {
-    "mtime": 1781152575.671913,
-    "ast_hash": "afc6f5439b498251c1d6b18c1433a0e0",
-    "semantic_hash": ""
-  },
-  "public/LOGO GUIRRA HORIZONTAL BLANCO.png": {
-    "mtime": 1781152575.6724153,
-    "ast_hash": "b1ea8c59b0a4f7de89b930864d4920ba",
-    "semantic_hash": ""
-  },
-  "public/LOGO GUIRRA HORIZONTAL COLOR BLANCO.png": {
-    "mtime": 1781152575.67342,
-    "ast_hash": "f64f08bbf348f06cbb97758d4443f80a",
-    "semantic_hash": ""
-  },
-  "public/LOGO GUIRRA HORIZONTAL COLOR OSCURO.png": {
-    "mtime": 1781152575.67342,
-    "ast_hash": "68166173aa6b8ba568b8d17168713037",
-    "semantic_hash": ""
-  },
-  "public/LOGO GUIRRA ISOTIPO BLANCO.png": {
-    "mtime": 1781152575.6744187,
-    "ast_hash": "0f2ef68be061c907cd2973749dbd133d",
-    "semantic_hash": ""
-  },
-  "public/LOGO GUIRRA ISOTIPO COLOR.png": {
-    "mtime": 1781152575.6754181,
-    "ast_hash": "e3df7b9491ddff8bbda1061d191dcf9b",
-    "semantic_hash": ""
-  },
-  "public/LOGO GUIRRA ISOTIPO.svg": {
-    "mtime": 1781152575.6754181,
-    "ast_hash": "4fa1f5d62da423300b24f46138b5b526",
     "semantic_hash": ""
   },
   "public/assets/images/blog/cobrar-clientes-estados-unidos-bolivia-hero.png": {
@@ -1387,11 +1272,6 @@
   ".agents/skills/impeccable/scripts/surface-brief.mjs": {
     "mtime": 1785723832.10621,
     "ast_hash": "260688296b81a47f6d14707512b4187f",
-    "semantic_hash": ""
-  },
-  ".astro/dev.json": {
-    "mtime": 1785723832.1082106,
-    "ast_hash": "21fd88a30a01c3a03dbb9a6107cfe1ca",
     "semantic_hash": ""
   },
   ".claude/launch.json": {
@@ -2362,6 +2242,91 @@
   "public/assets/images/telefono_guira_sin_fondo.png": {
     "mtime": 1785723832.6584518,
     "ast_hash": "9866cebef6f7cb6998080ce62520fa7c",
+    "semantic_hash": ""
+  },
+  "src/pages/pagar-proveedores-exterior.astro": {
+    "mtime": 1785735028.9393716,
+    "ast_hash": "051a411b62a010aff254b975619dd813",
+    "semantic_hash": ""
+  },
+  "LOGO GUIRA CON LETRA HORIZONTAL.svg": {
+    "mtime": 1779423093.9445102,
+    "ast_hash": "1ed8b8a7d60e3e31285f54fa3a997bb7",
+    "semantic_hash": ""
+  },
+  "LOGO GUIRA CON LETRA VERTICAL.svg": {
+    "mtime": 1779423093.9450264,
+    "ast_hash": "afc6f5439b498251c1d6b18c1433a0e0",
+    "semantic_hash": ""
+  },
+  "LOGO GUIRA HORIZONTAL BLANCO.png": {
+    "mtime": 1779423093.9460528,
+    "ast_hash": "b1ea8c59b0a4f7de89b930864d4920ba",
+    "semantic_hash": ""
+  },
+  "LOGO GUIRA HORIZONTAL COLOR BLANCO.png": {
+    "mtime": 1779423093.9476008,
+    "ast_hash": "f64f08bbf348f06cbb97758d4443f80a",
+    "semantic_hash": ""
+  },
+  "LOGO GUIRA HORIZONTAL COLOR OSCURO.png": {
+    "mtime": 1779423093.9486353,
+    "ast_hash": "68166173aa6b8ba568b8d17168713037",
+    "semantic_hash": ""
+  },
+  "LOGO GUIRA ISOTIPO BLANCO.png": {
+    "mtime": 1779423093.9501634,
+    "ast_hash": "0f2ef68be061c907cd2973749dbd133d",
+    "semantic_hash": ""
+  },
+  "LOGO GUIRA ISOTIPO COLOR.png": {
+    "mtime": 1779423093.9517627,
+    "ast_hash": "e3df7b9491ddff8bbda1061d191dcf9b",
+    "semantic_hash": ""
+  },
+  "LOGO GUIRA ISOTIPO.svg": {
+    "mtime": 1779423093.952277,
+    "ast_hash": "4fa1f5d62da423300b24f46138b5b526",
+    "semantic_hash": ""
+  },
+  "public/LOGO GUIRA CON LETRA HORIZONTAL.svg": {
+    "mtime": 1781152575.671913,
+    "ast_hash": "1ed8b8a7d60e3e31285f54fa3a997bb7",
+    "semantic_hash": ""
+  },
+  "public/LOGO GUIRA CON LETRA VERTICAL.svg": {
+    "mtime": 1781152575.671913,
+    "ast_hash": "afc6f5439b498251c1d6b18c1433a0e0",
+    "semantic_hash": ""
+  },
+  "public/LOGO GUIRA HORIZONTAL BLANCO.png": {
+    "mtime": 1781152575.6724153,
+    "ast_hash": "b1ea8c59b0a4f7de89b930864d4920ba",
+    "semantic_hash": ""
+  },
+  "public/LOGO GUIRA HORIZONTAL COLOR BLANCO.png": {
+    "mtime": 1781152575.67342,
+    "ast_hash": "f64f08bbf348f06cbb97758d4443f80a",
+    "semantic_hash": ""
+  },
+  "public/LOGO GUIRA HORIZONTAL COLOR OSCURO.png": {
+    "mtime": 1781152575.67342,
+    "ast_hash": "68166173aa6b8ba568b8d17168713037",
+    "semantic_hash": ""
+  },
+  "public/LOGO GUIRA ISOTIPO BLANCO.png": {
+    "mtime": 1781152575.6744187,
+    "ast_hash": "0f2ef68be061c907cd2973749dbd133d",
+    "semantic_hash": ""
+  },
+  "public/LOGO GUIRA ISOTIPO COLOR.png": {
+    "mtime": 1781152575.6754181,
+    "ast_hash": "e3df7b9491ddff8bbda1061d191dcf9b",
+    "semantic_hash": ""
+  },
+  "public/LOGO GUIRA ISOTIPO.svg": {
+    "mtime": 1781152575.6754181,
+    "ast_hash": "4fa1f5d62da423300b24f46138b5b526",
     "semantic_hash": ""
   }
 }

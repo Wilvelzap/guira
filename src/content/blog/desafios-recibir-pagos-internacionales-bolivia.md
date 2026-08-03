@@ -94,6 +94,8 @@ A medida que las **operaciones internacionales de las empresas** aumentan, admin
 
 Con Guira, los equipos financieros de las empresas bolivianas acceden a un entorno unificado de control que simplifica la conciliación de cada cobro con su respectiva factura comercial y contrato de respaldo, eliminando el papeleo disperso y automatizando la trazabilidad documental de cada transacción.
 
+Conoce en detalle cómo funcionan los [pagos y cobros internacionales](/pagos-cobros-internacionales) con Guira.
+
 *La disponibilidad de funcionalidades específicas puede depender de cada operación y de terceros involucrados en el proceso.*
 
 ¿Quieres conocer cómo centralizar la gestión de tus operaciones internacionales?

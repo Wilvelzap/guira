@@ -1,6 +1,13 @@
 ---
 // DemoForm.astro - Componente compartido de formulario de demo
 // Usado en: /demo (página independiente) y /pagos-cobros-internacionales (embebido)
+
+interface Props {
+    defaultUseCase?: string;
+    submitLabel?: string;
+}
+
+const { defaultUseCase = '', submitLabel = 'Solicitar demo' } = Astro.props;
 ---
 
 <div
@@ -44,24 +51,30 @@
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div class="space-y-1">
                 <label for="volume" class="text-xs font-bold text-slate-500 uppercase tracking-wider">Volumen Estimado USD</label>
-                <select id="volume" name="volume"
-                    class="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 focus:bg-white focus:border-guira-teal focus:ring-2 focus:ring-guira-teal/20 transition-all outline-none font-medium text-slate-900">
-                    <option value="">Selecciona volumen</option>
-                    <option value="menos-10k">Menos de $10k / mes</option>
-                    <option value="10k-50k">$10k - $50k / mes</option>
-                    <option value="50k-500k">$50k - $500k / mes</option>
-                    <option value="500k+">Más de $500k</option>
-                </select>
+                <div class="relative">
+                    <select id="volume" name="volume"
+                        class="w-full appearance-none pl-4 pr-10 py-3 rounded-xl bg-slate-50 border border-slate-200 focus:bg-white focus:border-guira-teal focus:ring-2 focus:ring-guira-teal/20 transition-all outline-none font-medium text-slate-900">
+                        <option value="">Selecciona volumen</option>
+                        <option value="menos-10k">Menos de $10k / mes</option>
+                        <option value="10k-50k">$10k - $50k / mes</option>
+                        <option value="50k-500k">$50k - $500k / mes</option>
+                        <option value="500k+">Más de $500k</option>
+                    </select>
+                    <i data-lucide="chevron-down" class="w-4 h-4 text-slate-400 absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none"></i>
+                </div>
             </div>
             <div class="space-y-1">
                 <label for="usecase" class="text-xs font-bold text-slate-500 uppercase tracking-wider">Caso de Uso Principal</label>
-                <select id="usecase" name="usecase"
-                    class="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 focus:bg-white focus:border-guira-teal focus:ring-2 focus:ring-guira-teal/20 transition-all outline-none font-medium text-slate-900">
-                    <option value="">Selecciona caso</option>
-                    <option value="cobros">Cobros internacionales</option>
-                    <option value="pagos">Pago a proveedores</option>
-                    <option value="ambos">Cobros y pagos unificados</option>
-                </select>
+                <div class="relative">
+                    <select id="usecase" name="usecase"
+                        class="w-full appearance-none pl-4 pr-10 py-3 rounded-xl bg-slate-50 border border-slate-200 focus:bg-white focus:border-guira-teal focus:ring-2 focus:ring-guira-teal/20 transition-all outline-none font-medium text-slate-900">
+                        <option value="" selected={defaultUseCase === ''}>Selecciona caso</option>
+                        <option value="cobros" selected={defaultUseCase === 'cobros'}>Cobros internacionales</option>
+                        <option value="pagos" selected={defaultUseCase === 'pagos'}>Pago a proveedores</option>
+                        <option value="ambos" selected={defaultUseCase === 'ambos'}>Cobros y pagos unificados</option>
+                    </select>
+                    <i data-lucide="chevron-down" class="w-4 h-4 text-slate-400 absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none"></i>
+                </div>
             </div>
         </div>
 
@@ -81,7 +94,7 @@
         </div>
 
         <button type="submit"
-            class="w-full py-4 bg-slate-900 text-white rounded-xl font-bold text-lg hover:bg-slate-800 transition-all shadow-md active:scale-[0.98]">Solicitar demo</button>
+            class="w-full py-4 bg-slate-900 text-white rounded-xl font-bold text-lg hover:bg-slate-800 transition-all shadow-md active:scale-[0.98]">{submitLabel}</button>
 
         <p class="text-center text-xs text-slate-400 font-medium pt-2">Toda la información viaja sobre HTTPS
             seguro y es estrictamente comercial.</p>

@@ -23,6 +23,8 @@ interface Props {
   robots?: string;
   activeLink?: string;
   footerTheme?: 'dark' | 'light' | 'rich-dark';
+  hideNav?: boolean;
+  hideFooter?: boolean;
 }
 
 const {
@@ -41,7 +43,9 @@ const {
   twitterImage = ogImage,
   robots = "index, follow",
   activeLink,
-  footerTheme
+  footerTheme,
+  hideNav = false,
+  hideFooter = false
 } = Astro.props;
 
 const siteOrigin = 'https://www.guiracorp.com';
@@ -162,11 +166,11 @@ const finalCanonicalUrl = canonicalBase === siteOrigin || canonicalBase.endsWith
     </noscript>
     <!-- End Google Tag Manager (noscript) -->
 
-    <Navbar activeLink={activeLink} />
+    {!hideNav && <Navbar activeLink={activeLink} />}
 
     <slot />
 
-    <Footer theme={footerTheme} />
+    {!hideFooter && <Footer theme={footerTheme} />}
 
     <CookieBanner />
 

@@ -76,3 +76,14 @@ que sigue pendiente:
 
 No publicar cambios en `/terminos` o `/privacidad` sin aprobación explícita de
 Wilmar o del abogado interno.
+
+## Landings de tráfico pago (regla permanente, agosto 2026)
+
+- Toda landing creada para tráfico pago (campañas, anuncios, utm_content) se crea
+  con meta robots "noindex, nofollow" y se excluye del sitemap. No debe competir
+  por indexación orgánica con las páginas comerciales del sitio.
+- Prohibido afirmar en copy público que el cliente mantiene saldo o fondos en
+  Guira. Guira describe función (pagar, cobrar, operar) nunca posesión. Evitar
+  también en estas landings: saldo, fondos, mantener, guardar, almacenar,
+  retener, disponible, custodiar, resguardar, tener dinero, dejar dinero,
+  aplicado a la cuenta operativa o a cualquier cuenta del cliente.

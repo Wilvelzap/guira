@@ -117,4 +117,6 @@ Entender la diferencia entre **Wire vs ACH** ayuda a las empresas bolivianas a c
 
 Pero el método de transferencia es solo una pieza del proceso. La trazabilidad, la documentación, la conciliación y el control operativo son los factores que realmente determinan si una empresa puede escalar sus operaciones internacionales con orden y confianza.
 
+Conoce en detalle cómo funcionan los [pagos y cobros internacionales](/pagos-cobros-internacionales) con Guira.
+
 ¿Quieres saber cómo gestionar tus cobros internacionales desde EE.UU. con mayor visibilidad y control? [Solicita una demostración de Guira](/demo) y conoce cómo centralizar la información de tus operaciones internacionales desde una sola plataforma.
