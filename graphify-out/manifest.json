@@ -1,11 +1,11 @@
 {
   ".astro/collections/blog.schema.json": {
-    "mtime": 1784859793.0878904,
+    "mtime": 1785725777.9507635,
     "ast_hash": "07665fc0f76a7f1bf3cf1f9dd622a9e7",
     "semantic_hash": "07665fc0f76a7f1bf3cf1f9dd622a9e7"
   },
   ".astro/content-assets.mjs": {
-    "mtime": 1785723832.10621,
+    "mtime": 1785725845.7697942,
     "ast_hash": "8aeea624d36ca2b4c7d0e0748b76ba28",
     "semantic_hash": ""
   },
@@ -15,7 +15,7 @@
     "semantic_hash": "8aeea624d36ca2b4c7d0e0748b76ba28"
   },
   ".astro/content.d.ts": {
-    "mtime": 1784859794.0237799,
+    "mtime": 1785725778.6427057,
     "ast_hash": "7451054e7bd738671904ee3ec7ee25b0",
     "semantic_hash": "7451054e7bd738671904ee3ec7ee25b0"
   },
@@ -30,7 +30,7 @@
     "semantic_hash": ""
   },
   ".astro/types.d.ts": {
-    "mtime": 1784859794.0237799,
+    "mtime": 1785725778.6437073,
     "ast_hash": "f3d48b2aa569815a445d3509aa161559",
     "semantic_hash": "f3d48b2aa569815a445d3509aa161559"
   },
@@ -135,8 +135,8 @@
     "semantic_hash": ""
   },
   "src/pages/pagos-cobros-internacionales.astro": {
-    "mtime": 1785723832.6784708,
-    "ast_hash": "fd63ee33e6582071e712aa07f993a600",
+    "mtime": 1785725740.3158572,
+    "ast_hash": "6adbcf5fbb8566ef8326b96166c4e088",
     "semantic_hash": ""
   },
   "src/pages/pagos-proveedores-bolivia.astro": {
@@ -205,8 +205,8 @@
     "semantic_hash": ""
   },
   "CLAUDE.md": {
-    "mtime": 1784690140.268458,
-    "ast_hash": "2f5194e0eeef55e58cbec1775fbffe27",
+    "mtime": 1785725756.4179065,
+    "ast_hash": "7fe97d92deb27cf7e9116543e188c5e8",
     "semantic_hash": ""
   },
   "guia_palabras_prohibidas.md": {
