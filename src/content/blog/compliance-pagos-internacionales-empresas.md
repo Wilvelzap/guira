@@ -75,7 +75,7 @@ Comprender estos procesos y contar con una adecuada organización documental pue
 
 ## Cómo acompaña Guira estos procesos
 
-**Guira** es una plataforma orientada a la gestión, trazabilidad y administración de operaciones internacionales para empresas. Permite centralizar documentación, facilitar el seguimiento de procesos y mantener una mayor visibilidad sobre la información relacionada con cada operación.
+**Guira** es la plataforma donde una PYME boliviana paga a sus proveedores, cobra de sus clientes y opera cuentas en la moneda que necesite en el exterior (dólares, euros, pesos mexicanos, pesos colombianos o reales) con la trazabilidad documental que su contador y su auditor necesitan en cada operación. Permite centralizar documentación, facilitar el seguimiento de procesos y mantener una mayor visibilidad sobre la información relacionada con cada operación.
 
 *La disponibilidad de funcionalidades específicas puede depender de cada operación y de terceros involucrados en el proceso.*
 

@@ -1,0 +1,41 @@
+---
+interface Props {
+  icon: string;
+  title: string;
+  selected?: boolean;
+  padding?: string;
+  class?: string;
+}
+
+const {
+  icon,
+  title,
+  selected = true,
+  padding = 'p-8',
+  class: className = '',
+  ...rest
+} = Astro.props;
+---
+
+<article
+  class:list={[
+    'relative bg-white border-2 border-guira-teal rounded-2xl hover:shadow-lg transition-shadow',
+    padding,
+    className,
+  ]}
+  {...rest}
+>
+  <span
+    class="absolute top-5 right-5 w-5 h-5 rounded-full border-2 border-guira-teal flex items-center justify-center"
+    aria-hidden="true"
+  >
+    {selected && <span class="w-2 h-2 rounded-full bg-guira-teal"></span>}
+  </span>
+  <div
+    class="w-12 h-12 rounded-full bg-guira-teal text-white flex items-center justify-center mb-5"
+  >
+    <i data-lucide={icon} class="w-6 h-6"></i>
+  </div>
+  <h3 class="text-lg font-bold text-slate-900 mb-2">{title}</h3>
+  <slot />
+</article>

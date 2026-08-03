@@ -111,6 +111,60 @@ body::after {
 .reveal-delay-3 { transition-delay: 0.24s; }
 .reveal-delay-4 { transition-delay: 0.32s; }
 
+/*
+ * Entrada/salida direccional para pares que se reactivan (data-replay-reveal).
+ * A diferencia de .reveal-left/.reveal-right, combina desplazamiento vertical
+ * y horizontal para que el movimiento se note con claridad al entrar Y al
+ * salir del viewport, en cualquier sentido del scroll.
+ */
+.pair-reveal-left {
+    opacity: 0;
+    transform: translate3d(-28px, 20px, 0);
+    transition: opacity 0.5s cubic-bezier(0.22, 1, 0.36, 1),
+                transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.pair-reveal-left.active {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+}
+
+.pair-reveal-right {
+    opacity: 0;
+    transform: translate3d(28px, 20px, 0);
+    transition: opacity 0.5s cubic-bezier(0.22, 1, 0.36, 1),
+                transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.pair-reveal-right.active {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .pair-reveal-left,
+    .pair-reveal-right {
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
+}
+
+/*
+ * Estado inicial de las filas de "Casos de uso". GSAP ScrollTrigger.batch
+ * anima entrada/salida (ver script en index.astro); esto evita el parpadeo
+ * antes de que el script se ejecute.
+ */
+.use-case-row {
+    opacity: 0;
+    transform: translateY(28px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .use-case-row {
+        opacity: 1;
+        transform: none;
+    }
+}
+
 /* ─── Custom Scrollbar ─────────────────────────────────────── */
 ::-webkit-scrollbar { width: 6px; }
 ::-webkit-scrollbar-track { background: #f1f5f9; }

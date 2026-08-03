@@ -105,7 +105,7 @@ Elegir una plataforma de pagos internacionales implica analizar mucho más que l
 
 Las empresas que evalúan aspectos como visibilidad, gestión documental, integración con sus procesos, escalabilidad y centralización de la información suelen estar mejor preparadas para acompañar su crecimiento internacional.
 
-**Guira** es una plataforma orientada a la gestión, trazabilidad y administración de operaciones internacionales para empresas. Permite centralizar documentación, consultar información relevante de cada operación y mantener una mayor visibilidad sobre los procesos asociados.
+**Guira** es la plataforma donde una PYME boliviana paga a sus proveedores, cobra de sus clientes y opera cuentas en la moneda que necesite en el exterior (dólares, euros, pesos mexicanos, pesos colombianos o reales) con la trazabilidad documental que su contador y su auditor necesitan en cada operación. Permite centralizar documentación, consultar información relevante de cada operación y mantener una mayor visibilidad sobre los procesos asociados.
 
 *La disponibilidad de funcionalidades específicas puede depender de cada operación y de terceros involucrados en el proceso.*
 

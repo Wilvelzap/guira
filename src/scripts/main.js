@@ -43,10 +43,17 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // 4. Reveal on Scroll Animation (Intersection Observer)
-    const revealElements = document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .fade-in, .reveal-up');
+    const revealElements = document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .fade-in, .reveal-up, .pair-reveal-left, .pair-reveal-right');
     
     const revealCallback = (entries, observer) => {
         entries.forEach(entry => {
+            if (entry.target.hasAttribute('data-replay-reveal')) {
+                // Se reactiva cada vez que entra o sale del viewport,
+                // en cualquier dirección de scroll.
+                entry.target.classList.toggle('active', entry.isIntersecting);
+                return;
+            }
+
             if (entry.isIntersecting) {
                 entry.target.classList.add('active');
                 // Optional: Stop observing once revealed
@@ -65,6 +72,29 @@ document.addEventListener('DOMContentLoaded', () => {
     revealElements.forEach(el => {
         revealObserver.observe(el);
     });
+
+    // 4.1 Reinicia videos de fondo al entrar al viewport (siempre desde el inicio)
+    const restartVideos = document.querySelectorAll('video[data-restart-on-view]');
+
+    if (restartVideos.length) {
+        const restartVideoCallback = (entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const video = entry.target;
+                    video.currentTime = 0;
+                    video.play().catch(() => {});
+                }
+            });
+        };
+
+        const restartVideoObserver = new IntersectionObserver(restartVideoCallback, {
+            threshold: 0.25,
+        });
+
+        restartVideos.forEach(video => {
+            restartVideoObserver.observe(video);
+        });
+    }
 
     // 5. Premium tilt interaction for hero/cards
     const tiltCards = document.querySelectorAll('[data-tilt]');
@@ -99,35 +129,6 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
     }
-
-    // 7. FAQ Accordion Logic
-    const faqItems = document.querySelectorAll('.faq-item');
-    faqItems.forEach(item => {
-        const button = item.querySelector('.faq-button');
-        const content = item.querySelector('.faq-content');
-        const icon = item.querySelector('.faq-icon');
-        
-        if (button && content) {
-            button.addEventListener('click', () => {
-                const isOpen = !content.classList.contains('hidden');
-                
-                document.querySelectorAll('.faq-content').forEach(c => {
-                    if (c !== content) c.classList.add('hidden');
-                });
-                document.querySelectorAll('.faq-icon').forEach(i => {
-                    if (i !== icon) i.style.transform = 'rotate(0deg)';
-                });
-
-                if (!isOpen) {
-                    content.classList.remove('hidden');
-                    if (icon) icon.style.transform = 'rotate(180deg)';
-                } else {
-                    content.classList.add('hidden');
-                    if (icon) icon.style.transform = 'rotate(0deg)';
-                }
-            });
-        }
-    });
 
     // 8. WhatsApp Floating Widget
     const waWidget = document.createElement('a');

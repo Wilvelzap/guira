@@ -23,16 +23,15 @@ Hoy, la gestión de pagos internacionales va mucho más allá del movimiento de 
 
 Las áreas de finanzas, administración y tesorería enfrentan un entorno más dinámico que hace algunos años. Como resultado, muchas empresas han comenzado a replantear la forma en que administran sus operaciones internacionales y las herramientas que utilizan para acompañar ese crecimiento.
 
-Antes, el objetivo principal era completar una transferencia. Hoy, las organizaciones también necesitan organizar información, documentar procesos y facilitar el seguimiento de cada operación.
+Antes, mover fondos era el objetivo principal. Hoy, las empresas necesitan mover fondos Y gestionar toda la operación en un mismo lugar.
 
 | Antes | Ahora |
 |---|---|
-| Ejecutar una transferencia | Gestionar toda la operación |
-| El foco estaba en el movimiento de fondos | El foco está en la visibilidad del proceso |
-| Seguimiento mediante correos y consultas manuales | Información organizada y centralizada |
-| Documentación distribuida en diferentes lugares | Documentación vinculada a cada operación |
-| Trabajo independiente entre áreas | Mayor coordinación entre equipos |
-| Control limitado a la ejecución del pago | Seguimiento integral de principio a fin |
+| Ejecutar una transferencia era el foco principal | Mover fondos sigue siendo el centro, pero ahora con visibilidad completa |
+| Seguimiento mediante correos y consultas manuales | Información organizada y centralizada por operación |
+| Documentación distribuida en diferentes lugares | Documentación vinculada a cada movimiento de fondos |
+| Trabajo independiente entre áreas | Mayor coordinación entre equipos con un mismo lenguaje |
+| Control limitado a la ejecución del pago | Seguimiento integral de cada movimiento, del inicio al fin |
 
 Si tu empresa realiza pagos a proveedores, también puede ayudarte leer [cómo mejorar la trazabilidad de los pagos internacionales a proveedores desde Bolivia](/blog/trazabilidad-pagos-internacionales-proveedores-bolivia).
 
@@ -75,7 +74,7 @@ La evolución de los pagos internacionales no se limita a nuevas tecnologías pa
 
 A medida que aumenta la complejidad de los negocios internacionales, disponer de herramientas que permitan organizar información, centralizar documentación y dar seguimiento a los procesos se convierte en un elemento cada vez más relevante.
 
-**Guira** es una plataforma orientada a la gestión, trazabilidad y administración de operaciones internacionales para empresas. Permite centralizar información, documentación y seguimiento de las operaciones desde un único entorno.
+**Guira** es la plataforma donde una PYME boliviana paga a sus proveedores, cobra de sus clientes y opera cuentas en la moneda que necesite en el exterior, con la trazabilidad documental que su contador y su auditor necesitan en cada operación.
 
 *La disponibilidad de funcionalidades específicas puede depender de cada operación y de terceros involucrados en el proceso.*
 

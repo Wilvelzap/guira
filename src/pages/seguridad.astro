@@ -1,10 +1,11 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import StackedSections from '../components/StackedSections.astro';
 ---
 
 <Layout
-  title="Seguridad y Compliance para Pagos B2B Internacionales | Guira"
-  description="Conoce cómo Guira ayuda a empresas de LATAM a operar con validación empresarial, trazabilidad y controles conectados a partners regulados."
+  title="Compliance y Seguridad Operativa para Pagos B2B Internacionales | Guira Empresas"
+  description="Conoce cómo Guira ayuda a empresas de LATAM a operar con validación empresarial, trazabilidad, controles de acceso e infraestructura conectada a partners aplicables."
   keywords="seguridad para pagos empresariales, plataforma tecnológica segura para empresas, trazabilidad operativa, validación empresarial, compliance para empresas, operación internacional segura, controles para pagos internacionales"
   canonicalUrl="https://www.guiracorp.com/seguridad"
   footerTheme="light"
@@ -24,8 +25,10 @@ import Layout from '../layouts/Layout.astro';
     </script>
   </Fragment>
 
+  <StackedSections>
+
   <!-- Hero Visual Seguridad -->
-  <div class="relative h-56 md:h-72 overflow-hidden mt-16">
+  <div data-stack-section class="relative h-56 md:h-72 overflow-hidden mt-16">
       <picture class="w-full h-full block">
           <source srcset="/assets/images/seguridad-shield.webp" type="image/webp">
           <img src="/assets/images/seguridad-shield.jpg" alt="Infraestructura de seguridad Guira" class="w-full h-full object-cover object-center">
@@ -35,7 +38,7 @@ import Layout from '../layouts/Layout.astro';
   </div>
 
   <!-- Content -->
-  <main class="pt-8 pb-24 flex-1 text-left">
+  <main data-stack-section class="pt-8 pb-24 flex-1 text-left">
       <div class="max-w-4xl mx-auto px-6">
           <div class="text-center mb-16 reveal">
               <h1 class="text-4xl md:text-5xl font-extrabold text-slate-900 mb-6">Seguridad y confianza para la operación internacional de tu empresa</h1>
@@ -105,14 +108,16 @@ import Layout from '../layouts/Layout.astro';
               <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-4">Conoce cómo opera Guira para empresas de LATAM</h2>
               <p class="text-slate-600 font-medium mb-8 max-w-2xl mx-auto">Solicita una demo para revisar el proceso, los criterios de validación y cómo Guira puede ayudarte a operar con más trazabilidad y control.</p>
               <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-                  <a href="/demo" class="w-full sm:w-auto px-8 py-3.5 bg-slate-900 text-white rounded-xl font-bold hover:bg-slate-800 transition-all shadow-md hover:-translate-y-0.5">Solicitar demo</a>
-                  <a href="/contacto" class="w-full sm:w-auto px-8 py-3.5 bg-white text-slate-700 border border-slate-200 rounded-xl font-bold hover:bg-slate-50 transition-all shadow-sm hover:-translate-y-0.5">Hablar con ventas</a>
+                  <a href="/demo/" class="w-full sm:w-auto px-8 py-3.5 bg-slate-900 text-white rounded-xl font-bold hover:bg-slate-800 transition-all shadow-md hover:-translate-y-0.5">Solicitar demo</a>
+                  <a href="/contacto/" class="w-full sm:w-auto px-8 py-3.5 bg-white text-slate-700 border border-slate-200 rounded-xl font-bold hover:bg-slate-50 transition-all shadow-sm hover:-translate-y-0.5">Hablar con ventas</a>
               </div>
           </div>
           
           <div class="mt-12 text-center pb-8">
-              <a href="/faq" class="font-bold text-slate-500 hover:text-guira-teal transition-colors">¿Tienes dudas adicionales? Consulta las FAQ &rarr;</a>
+              <a href="/faq/" class="font-bold text-slate-500 hover:text-guira-teal transition-colors">¿Tienes dudas adicionales? Consulta las FAQ &rarr;</a>
           </div>
       </div>
   </main>
+
+  </StackedSections>
 </Layout>
