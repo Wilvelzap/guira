@@ -4,15 +4,10 @@ import DemoForm from '../components/DemoForm.astro';
 ---
 
 <!--
-  /* Hallmark · pre-emit critique: P5 H4 E5 S4 R5 V5
-   * genre: modern-minimal
-   * macrostructure: Split Studio (diptych alternating)
-   * theme: Guira Brand (white paper · blue accent · Inter throughout)
-   * enrichment: E1 clipped-edge demo video, Tier-A CSS-art mockup
-   * nav: N5 Floating pill
-   * footer: Ft2 Inline single line
-   * contrast: pass (4.8:1 - 14:1)
-   */
+REDESIGN: Workbench macrostructure · N1b SaaS nav · Ft5 Statement footer
+THESIS: Product-led tour showing the operational control panel for paying international suppliers.
+OWN-WORLD: Institutional Control Panel following DESIGN.md — Inter font, guira-teal (#0051ff) as sole accent, slate neutrals, ambient shadows with blue tint on hover.
+STORY: Visitor sees the platform in action — loading payment data, validating operations, tracking status — then understands the problem it solves and acts.
 -->
 
 <Layout
@@ -26,25 +21,51 @@ import DemoForm from '../components/DemoForm.astro';
   <Fragment slot="head">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="preload" as="image" href="/assets/images/plataforma-dashboard-monitor.webp" type="image/webp" fetchpriority="high" />
     <style is:inline>
+      /* Hallmark · redesign · macrostructure: Workbench · nav: N1b SaaS three-section · footer: Ft5 Statement
+       * Design system: DESIGN.md locked (Inter font, guira-teal #0051ff, slate neutrals)
+       * Diversification from last: Workbench ≠ Split Studio · N1b ≠ N5 · Ft5 ≠ Ft2
+       */
       :root {
-        /* Guira Brand Colors — matching the home page */
-        --color-paper: #ffffff;
-        --color-paper-dark: #f8fafc;
-        --color-ink: #0f172a;
-        --color-ink-muted: #64748b;
-        --color-accent: #0051ff;
-        --color-accent-muted: #3b82f6;
-        --color-accent-light: #eff6ff;
-        --color-rule: #e2e8f0;
-        --color-rule-strong: #cbd5e1;
+        /* DESIGN.md locked tokens */
+        --color-guira-teal: #0051ff;
+        --color-guira-cyan: #00d8ff;
+        --color-guira-neon: #00f6ff;
+        --color-guira-navy: #0B1120;
+        --color-guira-petrol: #0F172A;
+        --color-guira-dark: #020617;
 
-        /* Typography — Inter (matching Guira brand) */
-        --font-display: 'Inter', system-ui, -apple-system, sans-serif;
-        --font-body: 'Inter', system-ui, -apple-system, sans-serif;
-        --font-mono: 'Courier New', ui-monospace, monospace;
+        --color-surface-white: #ffffff;
+        --color-slate-50: #f8fafc;
+        --color-slate-100: #f1f5f9;
+        --color-slate-200: #e2e8f0;
+        --color-slate-400: #94a3b8;
+        --color-slate-500: #64748b;
+        --color-slate-600: #475569;
+        --color-slate-700: #334155;
+        --color-slate-800: #1e293b;
+        --color-slate-900: #0f172a;
+
+        /* Semantic mapping */
+        --color-paper: var(--color-surface-white);
+        --color-paper-dark: var(--color-slate-50);
+        --color-ink: var(--color-slate-900);
+        --color-ink-muted: var(--color-slate-500);
+        --color-accent: var(--color-guira-teal);
+        --color-accent-hover: var(--color-slate-800);
+        --color-accent-muted: var(--color-slate-400);
+        --color-accent-light: rgba(0, 81, 255, 0.08);
+        --color-rule: var(--color-slate-200);
+        --color-rule-strong: #cbd5e1;
+        --color-focus: rgba(0, 81, 255, 0.25);
+
+        /* Typography — Inter only */
+        --font-display: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+        --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+        --font-mono: 'SF Mono', 'Menlo', 'Monaco', 'Courier New', monospace;
+        --font-label: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 
         /* Spacing — 4pt scale */
         --space-xs: 0.25rem;
@@ -53,33 +74,31 @@ import DemoForm from '../components/DemoForm.astro';
         --space-lg: 1.5rem;
         --space-xl: 2rem;
         --space-2xl: 3rem;
-        --space-3xl: 4.5rem;
-        --space-4xl: 6rem;
+        --space-3xl: 4rem;
+        --space-4xl: 5rem;
+        --space-5xl: 6rem;
 
         /* Easing */
-        --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
-        --ease-in: cubic-bezier(0.64, 0, 0.78, 0);
-        --ease-in-out: cubic-bezier(0.22, 0.61, 0.36, 1);
+        --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
 
         /* Radii */
         --radius-pill: 9999px;
-        --radius-sm: 6px;
-        --radius-md: 8px;
-        --radius-lg: 12px;
-        --radius-xl: 16px;
+        --radius-sm: 8px;
+        --radius-md: 12px;
+        --radius-lg: 16px;
+        --radius-xl: 24px;
+        --radius-2xl: 32px;
 
-        /* Text sizes — major third scale */
-        --text-xs: 0.64rem;
-        --text-sm: 0.8rem;
-        --text-base: 1rem;
-        --text-md: 1.25rem;
-        --text-lg: 1.5625rem;
-        --text-xl: 1.9531rem;
-        --text-2xl: 2.4414rem;
-        --text-3xl: 3.0518rem;
-        --text-4xl: 3.8147rem;
-        --text-display: clamp(2.75rem, 5vw + 1rem, 5.25rem);
-        --text-display-s: clamp(2.2rem, 4vw + 0.8rem, 4rem);
+        /* Shadows — ambient with blue tint */
+        --shadow-card: 0 1px 3px rgba(15, 23, 42, 0.06), 0 8px 32px -8px rgba(15, 23, 42, 0.10);
+        --shadow-card-hover: 0 1px 3px rgba(15, 23, 42, 0.06), 0 16px 48px -12px rgba(0, 81, 255, 0.14);
+        --shadow-btn-primary: 0 4px 16px rgba(15, 23, 42, 0.20);
+        --shadow-btn-primary-hover: 0 8px 24px rgba(15, 23, 42, 0.24);
+        --shadow-badge: 0 2px 16px rgba(0, 81, 255, 0.08);
+
+        /* Layout */
+        --page-max: 86rem;
+        --page-gutter: 1.5rem;
       }
 
       html, body {
@@ -98,342 +117,1156 @@ import DemoForm from '../components/DemoForm.astro';
       body > a.bg-emerald-500[href*="wa.me"]:not(.p-6) {
         display: none !important;
       }
+
+      /* ========================================
+         N1b · CANONICAL SAAS THREE-SECTION NAV
+         ======================================== */
+
+      .nav {
+        position: fixed;
+        inset: 0 0 auto;
+        z-index: 500;
+        background: transparent;
+        border-bottom: 1px solid transparent;
+        transition: background 240ms, border-color 240ms, box-shadow 240ms;
+      }
+
+      .nav.is-scrolled {
+        background: color-mix(in srgb, var(--color-surface-white) 90%, transparent);
+        backdrop-filter: blur(18px) saturate(160%);
+        -webkit-backdrop-filter: blur(18px) saturate(160%);
+        border-bottom-color: var(--color-rule);
+        box-shadow: 0 8px 28px -18px rgba(15, 23, 42, 0.15);
+      }
+
+      .nav__inner {
+        max-width: var(--page-max);
+        margin: 0 auto;
+        padding: 0 var(--page-gutter);
+        height: 64px;
+        display: grid;
+        grid-template-columns: 1fr auto 1fr;
+        align-items: center;
+      }
+
+      .nav__brand {
+        justify-self: start;
+        font-family: var(--font-display);
+        font-weight: 800;
+        font-size: 1rem;
+        color: var(--color-ink);
+        text-decoration: none;
+        letter-spacing: -0.02em;
+      }
+
+      .nav__center {
+        justify-self: center;
+        display: flex;
+        gap: 0.5rem;
+      }
+
+      .nav__link {
+        color: var(--color-slate-600);
+        text-decoration: none;
+        font-weight: 500;
+        font-size: 1rem;
+        padding: 0.5rem 0.75rem;
+        border-radius: var(--radius-sm);
+        transition: color 150ms var(--ease-out), background 150ms var(--ease-out);
+      }
+
+      .nav__link:hover {
+        color: var(--color-accent);
+        background: var(--color-accent-light);
+      }
+
+      .nav__right {
+        justify-self: end;
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+      }
+
+      .nav__sign-in {
+        color: var(--color-slate-700);
+        font-weight: 600;
+        font-size: 1rem;
+        text-decoration: none;
+        padding: 0.5rem 0.75rem;
+        border-radius: var(--radius-sm);
+        transition: color 150ms var(--ease-out), background 150ms var(--ease-out);
+      }
+
+      .nav__sign-in:hover {
+        color: var(--color-ink);
+        background: var(--color-slate-100);
+      }
+
+      .nav__cta {
+        display: inline-flex;
+        align-items: center;
+        padding: 0.625rem 1.25rem;
+        background: var(--color-ink);
+        color: var(--color-paper);
+        border-radius: var(--radius-md);
+        text-decoration: none;
+        font-weight: 700;
+        font-size: 1rem;
+        box-shadow: var(--shadow-btn-primary);
+        transition: all 200ms var(--ease-out);
+      }
+
+      .nav__cta:hover {
+        background: var(--color-accent-hover);
+        transform: translateY(-2px);
+        box-shadow: var(--shadow-btn-primary-hover);
+      }
+
+      .nav__cta:active {
+        transform: translateY(0) scale(0.97);
+      }
+
+      @media (max-width: 56rem) {
+        .nav__center {
+          display: none;
+        }
+      }
+
+      /* ========================================
+         WORKBENCH LITE HERO
+         ======================================== */
+
+      .hero-lite {
+        padding: 9rem var(--page-gutter) 5rem;
+        max-width: var(--page-max);
+        margin: 0 auto;
+      }
+
+      .hero-lite__kicker {
+        font-family: var(--font-label);
+        font-size: 0.6875rem;
+        font-weight: 700;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: var(--color-accent);
+        margin: 0 0 1rem 0;
+      }
+
+      .hero-lite__title {
+        font-family: var(--font-display);
+        font-size: clamp(1.875rem, 5vw, 3rem);
+        font-weight: 800;
+        line-height: 1.1;
+        letter-spacing: -0.02em;
+        color: var(--color-ink);
+        margin: 0 0 1.25rem 0;
+        max-width: 18ch;
+      }
+
+      .hero-lite__lede {
+        font-size: 1rem;
+        line-height: 1.6;
+        color: var(--color-ink-muted);
+        max-width: 52ch;
+        margin: 0 0 2rem 0;
+      }
+
+      .hero-lite__cta {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 1rem 2rem;
+        background: var(--color-accent);
+        color: var(--color-paper);
+        border-radius: var(--radius-lg);
+        text-decoration: none;
+        font-weight: 700;
+        font-size: 1rem;
+        box-shadow: 0 4px 16px rgba(0, 81, 255, 0.25);
+        transition: all 200ms var(--ease-out);
+      }
+
+      .hero-lite__cta:hover {
+        background: var(--color-accent-hover);
+        transform: translateY(-2px);
+        box-shadow: 0 8px 24px rgba(0, 81, 255, 0.35);
+      }
+
+      .hero-lite__cta:active {
+        transform: translateY(0) scale(0.97);
+      }
+
+      .hero-lite__cta svg {
+        transition: transform 200ms var(--ease-out);
+      }
+
+      .hero-lite__cta:hover svg {
+        transform: translateX(3px);
+      }
+
+      @media (max-width: 48rem) {
+        .hero-lite {
+          padding: 7rem var(--page-gutter) 4rem;
+        }
+
+        .hero-lite__title {
+          font-size: clamp(1.5rem, 8vw, 2.25rem);
+        }
+      }
+
+      /* ========================================
+         SCREENSHOT FRAME SEQUENCE
+         ======================================== */
+
+      .screenshot-section {
+        padding: 4rem var(--page-gutter);
+        background: var(--color-slate-50);
+        border-top: 1px solid var(--color-rule);
+        border-bottom: 1px solid var(--color-rule);
+      }
+
+      .screenshot-frame {
+        max-width: var(--page-max);
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 1fr auto;
+        gap: 2rem;
+        align-items: start;
+      }
+
+      .screenshot-frame__caption {
+        font-family: var(--font-display);
+        font-size: 1.5rem;
+        font-weight: 700;
+        line-height: 1.3;
+        letter-spacing: -0.01em;
+        color: var(--color-ink);
+        margin: 0 0 0.75rem 0;
+        padding-top: 0.5rem;
+      }
+
+      .screenshot-frame__step {
+        font-family: var(--font-label);
+        font-size: 0.6875rem;
+        font-weight: 700;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: var(--color-accent);
+        margin: 0 0 0.5rem 0;
+      }
+
+      .screenshot-frame__body {
+        font-size: 1rem;
+        line-height: 1.6;
+        color: var(--color-ink-muted);
+        max-width: 42ch;
+        margin: 0;
+      }
+
+      .screenshot-frame__visual {
+        position: relative;
+        width: min(100%, 42rem);
+      }
+
+      .browser-frame {
+        background: var(--color-slate-900);
+        border-radius: var(--radius-xl);
+        overflow: hidden;
+        box-shadow: 0 32px 64px -24px rgba(15, 23, 42, 0.4);
+        border: 1px solid var(--color-slate-700);
+      }
+
+      .browser-frame__toolbar {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.75rem 1rem;
+        background: var(--color-accent-hover);
+        border-bottom: 1px solid var(--color-slate-700);
+      }
+
+      .browser-frame__dot {
+        width: 0.75rem;
+        height: 0.75rem;
+        border-radius: 50%;
+        background: var(--color-slate-600);
+      }
+
+      .browser-frame__dot:first-child { background: #ef4444; }
+      .browser-frame__dot:nth-child(2) { background: #f59e0b; }
+      .browser-frame__dot:nth-child(3) { background: #22c55e; }
+
+      .browser-frame__url {
+        flex: 1;
+        font-size: 0.6875rem;
+        color: var(--color-slate-400);
+        text-align: center;
+        font-family: var(--font-mono);
+      }
+
+      .browser-frame__img {
+        display: block;
+        width: 100%;
+        aspect-ratio: 16 / 10;
+        object-fit: cover;
+      }
+
+      .screenshot-frame--reverse {
+        grid-template-columns: auto 1fr;
+      }
+
+      .screenshot-frame--reverse .screenshot-frame__content {
+        order: 2;
+      }
+
+      .screenshot-frame--reverse .screenshot-frame__visual {
+        order: 1;
+      }
+
+      @media (max-width: 64rem) {
+        .screenshot-frame,
+        .screenshot-frame--reverse {
+          grid-template-columns: 1fr;
+        }
+
+        .screenshot-frame__content {
+          order: 1;
+        }
+
+        .screenshot-frame__visual {
+          order: 2;
+        }
+      }
+
+      /* ========================================
+         PROBLEM SECTION (text-led)
+         ======================================== */
+
+      .section-problem {
+        padding: 6rem var(--page-gutter);
+        max-width: var(--page-max);
+        margin: 0 auto;
+      }
+
+      .section-problem__header {
+        margin-bottom: 3rem;
+      }
+
+      .section-problem__kicker {
+        font-family: var(--font-label);
+        font-size: 0.6875rem;
+        font-weight: 700;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: var(--color-accent);
+        margin: 0 0 1rem 0;
+      }
+
+      .section-problem__title {
+        font-family: var(--font-display);
+        font-size: clamp(1.875rem, 4vw, 3rem);
+        font-weight: 800;
+        line-height: 1.1;
+        letter-spacing: -0.02em;
+        color: var(--color-ink);
+        margin: 0 0 1.25rem 0;
+      }
+
+      .section-problem__body {
+        font-size: 1rem;
+        line-height: 1.6;
+        color: var(--color-ink-muted);
+        max-width: 58ch;
+      }
+
+      .problem-list {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+        margin-top: 3rem;
+      }
+
+      .problem-item {
+        padding: 1.5rem;
+        background: var(--color-slate-50);
+        border: 1px solid var(--color-rule);
+        border-radius: var(--radius-lg);
+      }
+
+      .problem-item__title {
+        font-family: var(--font-display);
+        font-size: 1rem;
+        font-weight: 700;
+        color: var(--color-ink);
+        margin: 0 0 0.5rem 0;
+      }
+
+      .problem-item__body {
+        font-size: 1rem;
+        line-height: 1.5;
+        color: var(--color-ink-muted);
+        margin: 0;
+      }
+
+      @media (max-width: 48rem) {
+        .problem-list {
+          grid-template-columns: 1fr;
+          gap: 1rem;
+        }
+      }
+
+      /* ========================================
+         CORRIDORS SECTION
+         ======================================== */
+
+      .section-corridors {
+        padding: 6rem var(--page-gutter);
+        background: var(--color-slate-50);
+        border-top: 1px solid var(--color-rule);
+        border-bottom: 1px solid var(--color-rule);
+      }
+
+      .section-corridors__header {
+        max-width: var(--page-max);
+        margin: 0 auto 3rem;
+      }
+
+      .section-corridors__title {
+        font-family: var(--font-display);
+        font-size: clamp(1.875rem, 4vw, 3rem);
+        font-weight: 800;
+        line-height: 1.1;
+        letter-spacing: -0.02em;
+        color: var(--color-ink);
+        margin: 0 0 0.75rem 0;
+      }
+
+      .section-corridors__subtitle {
+        font-size: 1rem;
+        color: var(--color-ink-muted);
+        margin: 0;
+      }
+
+      .corridors-grid {
+        max-width: var(--page-max);
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 1rem;
+      }
+
+      .corridor-card {
+        padding: 1.5rem;
+        background: var(--color-paper);
+        border: 1px solid var(--color-rule);
+        border-radius: var(--radius-lg);
+        box-shadow: var(--shadow-card);
+        transition: all 200ms var(--ease-out);
+      }
+
+      .corridor-card:hover {
+        box-shadow: var(--shadow-card-hover);
+        border-color: rgba(0, 81, 255, 0.2);
+        transform: translateY(-2px);
+      }
+
+      .corridor-card--featured {
+        grid-column: span 2;
+        background: var(--color-slate-900);
+        color: var(--color-paper);
+      }
+
+      .corridor-card__flag {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 2.25rem;
+        height: 2.25rem;
+        background: var(--color-accent-light);
+        color: var(--color-accent);
+        font-weight: 800;
+        font-size: 0.6875rem;
+        border-radius: var(--radius-sm);
+      }
+
+      .corridor-card--featured .corridor-card__flag {
+        background: rgba(96, 165, 250, 0.2);
+        color: #60a5fa;
+      }
+
+      .corridor-card__title {
+        font-family: var(--font-display);
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: inherit;
+        margin: 0.75rem 0 0.5rem 0;
+      }
+
+      .corridor-card__body {
+        font-size: 1rem;
+        line-height: 1.5;
+        color: var(--color-ink-muted);
+        margin: 0;
+      }
+
+      .corridor-card--featured .corridor-card__body {
+        color: var(--color-slate-300);
+      }
+
+      @media (max-width: 64rem) {
+        .corridors-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+
+        .corridor-card--featured {
+          grid-column: span 2;
+        }
+      }
+
+      @media (max-width: 40rem) {
+        .corridors-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .corridor-card--featured {
+          grid-column: span 1;
+        }
+      }
+
+      /* ========================================
+         FAQ SECTION
+         ======================================== */
+
+      .section-faq {
+        padding: 6rem var(--page-gutter);
+        max-width: var(--page-max);
+        margin: 0 auto;
+      }
+
+      .section-faq__header {
+        margin-bottom: 3rem;
+      }
+
+      .section-faq__title {
+        font-family: var(--font-display);
+        font-size: 1.875rem;
+        font-weight: 800;
+        color: var(--color-ink);
+        margin: 0 0 0.5rem 0;
+      }
+
+      .section-faq__subtitle {
+        font-size: 1rem;
+        color: var(--color-ink-muted);
+        margin: 0;
+      }
+
+      .faq-list {
+        max-width: 56ch;
+      }
+
+      .faq-item {
+        border-bottom: 1px solid var(--color-rule);
+      }
+
+      .faq-item:last-child {
+        border-bottom: none;
+      }
+
+      .faq-question {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 1rem;
+        padding: 1.5rem 0;
+        font-family: var(--font-display);
+        font-size: 1.0625rem;
+        font-weight: 700;
+        color: var(--color-ink);
+        cursor: pointer;
+        list-style: none;
+        transition: color 150ms var(--ease-out);
+      }
+
+      .faq-question::-webkit-details-marker {
+        display: none;
+      }
+
+      .faq-question:hover {
+        color: var(--color-accent);
+      }
+
+      .faq-question svg {
+        flex-shrink: 0;
+        width: 1.25rem;
+        height: 1.25rem;
+        color: var(--color-slate-400);
+        transition: transform 300ms var(--ease-out);
+      }
+
+      details[open] .faq-question svg {
+        transform: rotate(45deg);
+      }
+
+      .faq-answer {
+        padding: 0 0 1.5rem 0;
+        font-size: 1rem;
+        line-height: 1.6;
+        color: var(--color-ink-muted);
+      }
+
+      .faq-answer p {
+        margin: 0;
+      }
+
+      /* ========================================
+         CONTACT SECTION
+         ======================================== */
+
+      .section-contact {
+        padding: 6rem var(--page-gutter);
+        background: var(--color-slate-900);
+        color: var(--color-paper);
+      }
+
+      .contact-layout {
+        max-width: var(--page-max);
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 4rem;
+        align-items: start;
+      }
+
+      .contact-header__kicker {
+        font-family: var(--font-label);
+        font-size: 0.6875rem;
+        font-weight: 700;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: #60a5fa;
+        margin: 0 0 1rem 0;
+      }
+
+      .contact-header__title {
+        font-family: var(--font-display);
+        font-size: 1.875rem;
+        font-weight: 800;
+        color: var(--color-paper);
+        margin: 0 0 0.75rem 0;
+      }
+
+      .contact-header__body {
+        font-size: 1rem;
+        line-height: 1.6;
+        color: var(--color-slate-300);
+        margin: 0 0 2rem 0;
+      }
+
+      .contact-whatsapp {
+        font-size: 1rem;
+        color: var(--color-slate-400);
+        margin-top: 1.5rem;
+      }
+
+      .contact-whatsapp a {
+        color: #60a5fa;
+        font-weight: 600;
+        text-decoration: none;
+      }
+
+      .contact-whatsapp a:hover {
+        text-decoration: underline;
+      }
+
+      .contact-form-shell > div {
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: var(--radius-xl);
+        padding: 2rem;
+      }
+
+      @media (max-width: 64rem) {
+        .contact-layout {
+          grid-template-columns: 1fr;
+          gap: 3rem;
+        }
+      }
+
+      /* ========================================
+         FT5 · STATEMENT FOOTER
+         ======================================== */
+
+      .foot-stmt {
+        padding: var(--space-3xl) var(--page-gutter) var(--space-2xl);
+        background: var(--color-slate-900);
+        border-top: 1px solid var(--color-slate-700);
+        display: grid;
+        gap: var(--space-xl);
+      }
+
+      .foot-stmt__line {
+        font-family: var(--font-display);
+        font-size: clamp(1.5rem, 5vw, 3rem);
+        font-weight: 800;
+        line-height: 1;
+        letter-spacing: -0.02em;
+        color: var(--color-paper);
+        margin: 0;
+        max-width: 38ch;
+      }
+
+      .foot-stmt__meta {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        padding-top: var(--space-md);
+        border-top: 1px solid var(--color-slate-700);
+      }
+
+      .foot-stmt__wordmark {
+        font-family: var(--font-display);
+        font-weight: 800;
+        font-size: 1rem;
+        color: var(--color-slate-300);
+      }
+
+      .foot-stmt__credits {
+        font-size: 1rem;
+        color: var(--color-slate-500);
+      }
+
+      .foot-stmt__credits a {
+        color: var(--color-slate-400);
+        text-decoration: none;
+      }
+
+      .foot-stmt__credits a:hover {
+        color: var(--color-slate-300);
+      }
+
+      @media (max-width: 40rem) {
+        .foot-stmt__meta {
+          flex-direction: column;
+          gap: 0.5rem;
+        }
+      }
+
+      /* ========================================
+         STICKY CTA BAR (after 3rd screenshot)
+         ======================================== */
+
+      .sticky-cta {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: 100;
+        padding: 1rem var(--page-gutter);
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(16px);
+        -webkit-backdrop-filter: blur(16px);
+        border-top: 1px solid var(--color-rule);
+        box-shadow: 0 -4px 20px rgba(15, 23, 42, 0.08);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 2rem;
+        transform: translateY(100%);
+        transition: transform 300ms var(--ease-out);
+      }
+
+      .sticky-cta.is-visible {
+        transform: translateY(0);
+      }
+
+      .sticky-cta__text {
+        font-size: 1rem;
+        color: var(--color-ink-muted);
+      }
+
+      .sticky-cta__btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.75rem 1.5rem;
+        background: var(--color-accent);
+        color: var(--color-paper);
+        border-radius: var(--radius-md);
+        text-decoration: none;
+        font-weight: 700;
+        font-size: 1rem;
+        box-shadow: 0 4px 16px rgba(0, 81, 255, 0.25);
+        transition: all 200ms var(--ease-out);
+      }
+
+      .sticky-cta__btn:hover {
+        background: var(--color-accent-hover);
+        transform: translateY(-2px);
+        box-shadow: 0 8px 24px rgba(0, 81, 255, 0.35);
+      }
+
+      @media (max-width: 48rem) {
+        .sticky-cta {
+          flex-direction: column;
+          gap: 0.75rem;
+          text-align: center;
+        }
+      }
+
+      /* ========================================
+         WHATSAPP FLOATING BUTTON
+         ======================================== */
+
+      .wa-floating {
+        position: fixed;
+        bottom: 1.5rem;
+        right: 1.5rem;
+        z-index: 90;
+        width: 3.5rem;
+        height: 3.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: var(--color-accent);
+        color: var(--color-paper);
+        border-radius: 50%;
+        box-shadow: 0 8px 24px -8px rgba(0, 81, 255, 0.5);
+        transition: all 200ms var(--ease-out);
+      }
+
+      .wa-floating:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 12px 32px -8px rgba(0, 81, 255, 0.6);
+      }
+
+      .wa-floating:active {
+        transform: translateY(0) scale(0.95);
+      }
+
+      .wa-floating.wa-floating--hidden {
+        opacity: 0;
+        pointer-events: none;
+      }
+
+      /* Skip link */
+      .skip-link {
+        position: fixed;
+        z-index: 100;
+        top: 0.75rem;
+        left: 0.75rem;
+        padding: 0.75rem 1rem;
+        color: var(--color-paper);
+        background: var(--color-ink);
+        border-radius: var(--radius-sm);
+        text-decoration: none;
+        transform: translateY(-150%);
+        transition: transform 200ms var(--ease-out);
+      }
+
+      .skip-link:focus {
+        transform: translateY(0);
+      }
+
+      /* Focus visible */
+      :is(a, button, summary):focus-visible {
+        outline: 3px solid var(--color-focus);
+        outline-offset: 2px;
+      }
+
+      /* Reduced motion */
+      @media (prefers-reduced-motion: reduce) {
+        * {
+          animation: none !important;
+          transition: none !important;
+        }
+      }
+
+      @media (max-width: 40rem) {
+        .wa-floating {
+          width: 3rem;
+          height: 3rem;
+          bottom: 1rem;
+          right: 1rem;
+        }
+      }
     </style>
   </Fragment>
 
-  <!-- NAV: N5 Floating Pill -->
-  <nav class="nav-pill" aria-label="Navegación principal">
-    <a href="/" class="wordmark">Guira</a>
-    <ul class="nav-pill__links">
-      <li><a href="/pagos-cobros-internacionales/">Soluciones</a></li>
-      <li><a href="/como-funciona/">Cómo funciona</a></li>
-    </ul>
-    <a href="https://wa.me/59175245845?text=Hola,%20quiero%20pagar%20a%20mis%20proveedores%20del%20exterior%20con%20Guira"
-       target="_blank" rel="noopener noreferrer"
-       class="cta-fill">Contactar →</a>
-  </nav>
+  <a class="skip-link" href="#contenido">Ir al contenido principal</a>
 
-  <!-- HERO: H2 Split Diptych -->
-  <header class="hero-split">
-    <div class="hero-split__text">
-      <span class="hero-kicker">Para empresas importadoras de Bolivia</span>
-      <h1 class="hero-title">
-        Paga a tus proveedores en el exterior
-      </h1>
-      <p class="hero-lede">
-        Desde una sola cuenta operativa, en la moneda que tu proveedor necesita recibir. Con respaldo documental en cada operación.
-      </p>
-      <div class="hero-destinations">
-        <span class="destination-chip">Estados Unidos</span>
-        <span class="destination-chip">Brasil</span>
-        <span class="destination-chip">México</span>
-        <span class="destination-chip">Colombia</span>
-        <span class="destination-chip">Europa</span>
+  <nav class="nav" id="nav">
+    <div class="nav__inner">
+      <a href="/" class="nav__brand">Guira</a>
+      <div class="nav__center">
+        <a href="/pagos-cobros-internacionales/" class="nav__link">Soluciones</a>
+        <a href="/como-funciona/" class="nav__link">Cómo funciona</a>
+        <a href="/producto/" class="nav__link">Producto</a>
       </div>
-      <a href="https://wa.me/59175245845?text=Hola,%20quiero%20pagar%20a%20un%20proveedor%20del%20exterior%20con%20Guira"
-         target="_blank" rel="noopener noreferrer"
-         class="hero-cta">
-        <span>Quiero pagar a mi proveedor</span>
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <path d="M22 2L11 13M22 2l-8 9-8-9 11 11M22 2L15 22l-7-7"/>
-        </svg>
-      </a>
-      <p class="hero-note">Escríbenos y revisamos tu operación. Sin compromiso.</p>
-    </div>
-    <figure class="hero-split__visual">
-      <div class="mockup-frame">
-        <img src="/assets/images/plataforma-dashboard-monitor.webp"
-             alt="Plataforma Guira, panel de operaciones y trazabilidad"
-             class="mockup-img"
-             fetchpriority="high"
-             width="1200"
-             height="800">
-      </div>
-    </figure>
-  </header>
-
-  <!-- SECTION: Problem → Solution (Split Studio alternating) -->
-  <section class="section-split">
-    <div class="section-split__visual">
-      <div class="problem-grid">
-        <div class="problem-card">
-          <div class="problem-icon">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
-              <path d="M7 11V7a5 5 0 0110 0v4"/>
-            </svg>
-          </div>
-          <h3>El proveedor no libera el pedido</h3>
-          <p>Hasta confirmar que el pago salió, y esa confirmación depende de un proceso que tu empresa necesita controlar.</p>
-        </div>
-        <div class="problem-card">
-          <div class="problem-icon">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/>
-              <path d="M14 2v6h6M16 13H8M16 17H8M10 9H8"/>
-            </svg>
-          </div>
-          <h3>Requisitos cambiantes</h3>
-          <p>Cada operación solicita datos distintos y las observaciones surgen cuando la carga ya está esperando.</p>
-        </div>
-      </div>
-    </div>
-    <div class="section-split__text">
-      <span class="section-kicker">El problema</span>
-      <h2 class="section-title">Pagar afuera no debería frenar tu operación</h2>
-      <p class="section-body">
-        Cuando el pago se demora, no se demora un trámite. Se demora tu mercadería, tu producción y tu compromiso con el cliente.
-      </p>
-      <div class="solution-cta">
-        <a href="https://wa.me/59175245845?text=Hola,%20necesito%20pagar%20a%20un%20proveedor%20del%20exterior%20y%20quiero%20orientaci%C3%B3n"
-           target="_blank" rel="noopener noreferrer"
-           class="link-cta">
-          Quiero resolver esto
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M5 12h14M12 5l7 7-7 7"/>
-          </svg>
+      <div class="nav__right">
+        <a href="#contacto" class="nav__sign-in">Contactar</a>
+        <a href="https://wa.me/59175245845?text=Hola,%20quiero%20pagar%20a%20un%20proveedor%20del%20exterior%20con%20Guira"
+           target="_blank"
+           rel="noopener noreferrer"
+           class="nav__cta">
+          Empezar
         </a>
       </div>
     </div>
-  </section>
+  </nav>
 
-  <!-- SECTION: How it works (Step sequence) -->
-  <section class="section-steps">
-    <div class="steps-header">
-      <h2 class="steps-title">Cómo se ordena un pago con Guira</h2>
-      <p class="steps-subtitle">Tres pasos claros con acompañamiento operativo antes de ejecutar la transferencia.</p>
-    </div>
-    <div class="steps-grid">
-      <article class="step-card">
-        <div class="step-number">01</div>
-        <h3 class="step-title">Preparamos la operación</h3>
-        <p class="step-body">Revisamos la factura, datos bancarios del proveedor y destino para asegurar que el pago salga completo desde el primer intento.</p>
-      </article>
-      <article class="step-card">
-        <div class="step-number">02</div>
-        <h3 class="step-title">Ejecutamos el corredor</h3>
-        <p class="step-body">Definimos la ruta según el país del proveedor, el monto y la moneda que necesita recibir en su cuenta.</p>
-      </article>
-      <article class="step-card">
-        <div class="step-number">03</div>
-        <h3 class="step-title">Entregamos el respaldo</h3>
-        <p class="step-body">Comprobante, referencia y soporte de conciliación disponibles para tu equipo administrativo y contable.</p>
-      </article>
-    </div>
-    <div class="steps-cta">
-      <a href="https://wa.me/59175245845?text=Hola,%20quiero%20empezar%20a%20pagar%20a%20mis%20proveedores%20del%20exterior%20con%20Guira"
-         target="_blank" rel="noopener noreferrer"
-         class="cta-primary">
-        <span>Empezar mi primera operación</span>
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <path d="M5 12h14M12 5l7 7-7 7"/>
-        </svg>
-      </a>
-    </div>
-  </section>
-
-  <!-- SECTION: Proof Panel (Split Studio reverse) -->
-  <section class="section-split section-split--reverse">
-    <div class="section-split__text">
-      <span class="section-kicker">Respaldo por operación</span>
-      <h2 class="section-title">Cada pago con su respaldo</h2>
-      <p class="section-body">
-        Tu contador no debería reconstruir la historia de un pago meses después. El respaldo documental se organiza cuando la operación se genera.
+  <main id="contenido">
+    <!-- WORKBENCH LITE HERO -->
+    <header class="hero-lite">
+      <p class="hero-lite__kicker">Pagos internacionales para empresas</p>
+      <h1 class="hero-lite__title">Paga a tus proveedores en el exterior desde una sola cuenta operativa</h1>
+      <p class="hero-lite__lede">
+        Tu proveedor recibe en la moneda que necesita. Tu equipo conserva el respaldo documental de cada operación.
       </p>
-      <ul class="feature-list">
-        <li class="feature-item">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <polyline points="20 6 9 17 4 12"/>
-          </svg>
-          <div>
-            <strong>Comprobante oficial de la operación</strong>
-            <span>Registro del pago ejecutado con detalles bancarios completos.</span>
-          </div>
-        </li>
-        <li class="feature-item">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <polyline points="20 6 9 17 4 12"/>
-          </svg>
-          <div>
-            <strong>Referencia conectada a tu factura</strong>
-            <span>Relación directa entre la salida del pago y el documento comercial de origen.</span>
-          </div>
-        </li>
-        <li class="feature-item">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <polyline points="20 6 9 17 4 12"/>
-          </svg>
-          <div>
-            <strong>Estado visible en todo momento</strong>
-            <span>Control claro para saber si la operación está en preparación, en curso o finalizada.</span>
-          </div>
-        </li>
-      </ul>
-      <p class="section-highlight">Y si te preguntan, lo puedes mostrar.</p>
-      <a href="https://wa.me/59175245845?text=Hola,%20quiero%20conocer%20el%20respaldo%20documental%20de%20los%20pagos%20con%20Guira"
-         target="_blank" rel="noopener noreferrer"
-         class="link-cta">
-        Quiero ver el respaldo por operación
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <a href="https://wa.me/59175245845?text=Hola,%20quiero%20pagar%20a%20un%20proveedor%20del%20exterior%20con%20Guira"
+         target="_blank"
+         rel="noopener noreferrer"
+         class="hero-lite__cta">
+        <span>Revisar mi próxima operación</span>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
           <path d="M5 12h14M12 5l7 7-7 7"/>
         </svg>
       </a>
-    </div>
-    <div class="section-split__visual">
-      <div class="proof-panel">
-        <div class="proof-header">
-          <div>
-            <span class="proof-tag">Operación B2B</span>
-            <p class="proof-title">Pago a proveedor internacional</p>
-          </div>
-          <span class="proof-status">Completada</span>
+    </header>
+
+    <!-- SCREENSHOT 1: Carga de datos -->
+    <section class="screenshot-section">
+      <div class="screenshot-frame">
+        <div class="screenshot-frame__content">
+          <p class="screenshot-frame__step">Paso 01</p>
+          <h2 class="screenshot-frame__caption">Carga los datos del pago</h2>
+          <p class="screenshot-frame__body">
+            Tu empresa reúne la factura, los datos bancarios del proveedor y el destino en un solo lugar.
+          </p>
         </div>
-        <div class="proof-list">
-          <div class="proof-row">
-            <span>Comprobante de operación</span>
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M22 11.08V12a10 10 0 11-5.93-9.14"/>
-              <polyline points="22 4 12 14.01 9 11.01"/>
-            </svg>
-          </div>
-          <div class="proof-row">
-            <span>Referencia vinculada a factura</span>
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M22 11.08V12a10 10 0 11-5.93-9.14"/>
-              <polyline points="22 4 12 14.01 9 11.01"/>
-            </svg>
-          </div>
-          <div class="proof-row">
-            <span>Trazabilidad de estado</span>
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M22 11.08V12a10 10 0 11-5.93-9.14"/>
-              <polyline points="22 4 12 14.01 9 11.01"/>
-            </svg>
-          </div>
-          <div class="proof-row">
-            <span>Historial descargable</span>
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M22 11.08V12a10 10 0 11-5.93-9.14"/>
-              <polyline points="22 4 12 14.01 9 11.01"/>
-            </svg>
-          </div>
+        <div class="screenshot-frame__visual">
+          <figure class="browser-frame">
+            <div class="browser-frame__toolbar">
+              <span class="browser-frame__dot"></span>
+              <span class="browser-frame__dot"></span>
+              <span class="browser-frame__dot"></span>
+              <span class="browser-frame__url">app.guiracorp.com</span>
+            </div>
+            <img src="/assets/images/plataforma-dashboard-monitor.webp"
+                 alt="Panel de Guira mostrando el formulario de carga de datos de pago"
+                 class="browser-frame__img"
+                 loading="lazy"
+                 width="840"
+                 height="525">
+          </figure>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- SECTION: Corridors (Bento-style grid) -->
-  <section class="section-corridors">
-    <div class="corridors-header">
-      <h2 class="corridors-title">Un solo lugar para pagar a tus proveedores</h2>
-      <p class="corridors-subtitle">Elige el destino y la moneda según lo que tu proveedor necesite recibir.</p>
-    </div>
-    <div class="corridors-grid">
-      <article class="corridor-card corridor-card--featured">
-        <div class="corridor-badge">Corredor principal</div>
-        <h3 class="corridor-title">Estados Unidos</h3>
-        <p class="corridor-body">Pagos en dólares estadounidenses a proveedores, fabricantes y socios comerciales en EE.UU. con trazabilidad completa.</p>
-        <div class="corridor-footer">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <polyline points="20 6 9 17 4 12"/>
-          </svg>
-          <span>Transferencias en USD directamente a cuentas corporativas</span>
+    <!-- SCREENSHOT 2: Validación -->
+    <section class="screenshot-section" style="background: var(--color-paper);">
+      <div class="screenshot-frame screenshot-frame--reverse">
+        <div class="screenshot-frame__content">
+          <p class="screenshot-frame__step">Paso 02</p>
+          <h2 class="screenshot-frame__caption">Valida la operación</h2>
+          <p class="screenshot-frame__body">
+            La información se revisa antes del envío para reducir observaciones y confirmar moneda, monto y beneficiario.
+          </p>
         </div>
-      </article>
-      <article class="corridor-card">
-        <span class="corridor-flag">BR</span>
-        <h3 class="corridor-title">Brasil</h3>
-        <p class="corridor-body">Pagos en reales a proveedores brasileños de insumos y maquinaria.</p>
-        <span class="corridor-meta">Moneda local o USD</span>
-      </article>
-      <article class="corridor-card">
-        <span class="corridor-flag">MX</span>
-        <h3 class="corridor-title">México</h3>
-        <p class="corridor-body">Pagos en pesos mexicanos directamente a cuentas bancarias en México.</p>
-        <span class="corridor-meta">Moneda local o USD</span>
-      </article>
-      <article class="corridor-card">
-        <span class="corridor-flag">CO</span>
-        <h3 class="corridor-title">Colombia</h3>
-        <p class="corridor-body">Pagos en pesos colombianos para abastecimiento y servicios en Colombia.</p>
-        <span class="corridor-meta">Moneda local o USD</span>
-      </article>
-      <article class="corridor-card corridor-card--euro">
-        <span class="corridor-flag">EU</span>
-        <span class="corridor-zone">Zona Euro</span>
-        <h3 class="corridor-title">Europa</h3>
-        <p class="corridor-body">Pagos en euros a proveedores de la zona europea con respaldo documental.</p>
-        <span class="corridor-meta">Operaciones recurrentes sin empezar desde cero</span>
-      </article>
-    </div>
-    <div class="corridors-summary">
-      <p>Fondeas tu cuenta operativa y el pago sale en la moneda que tu proveedor necesita.</p>
-    </div>
-  </section>
+        <div class="screenshot-frame__visual">
+          <figure class="browser-frame">
+            <div class="browser-frame__toolbar">
+              <span class="browser-frame__dot"></span>
+              <span class="browser-frame__dot"></span>
+              <span class="browser-frame__dot"></span>
+              <span class="browser-frame__url">app.guiracorp.com</span>
+            </div>
+            <img src="/assets/images/plataforma-dashboard-monitor.webp"
+                 alt="Panel de validación de operación en Guira"
+                 class="browser-frame__img"
+                 loading="lazy"
+                 width="840"
+                 height="525">
+          </figure>
+        </div>
+      </div>
+    </section>
 
-  <!-- SECTION: FAQ -->
-  <section class="section-faq">
-    <div class="faq-header">
-      <h2 class="faq-title">Antes de empezar</h2>
-      <p class="faq-subtitle">Respuestas claras sobre la operativa y el alcance.</p>
-    </div>
-    <div class="faq-list">
-      <details class="faq-item" open>
-        <summary class="faq-question">
-          ¿Quién opera la plataforma?
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <circle cx="12" cy="12" r="10"/>
-            <path d="M12 8v8M8 12h8"/>
-          </svg>
-        </summary>
-        <div class="faq-answer">
-          Guira es una plataforma tecnológica creada y operada por Guira System LLC, constituida en Delaware, Estados Unidos. En Bolivia, Guiraglobal SRL brinda asesoría comercial y acompañamiento operativo a las empresas.
+    <!-- SCREENSHOT 3: Seguimiento + Sticky CTA -->
+    <section class="screenshot-section" id="trigger-sticky-cta">
+      <div class="screenshot-frame">
+        <div class="screenshot-frame__content">
+          <p class="screenshot-frame__step">Paso 03</p>
+          <h2 class="screenshot-frame__caption">Sigue y concilia</h2>
+          <p class="screenshot-frame__body">
+            Consulta el estado y conserva el comprobante, la referencia y el historial para tu equipo contable.
+          </p>
         </div>
-      </details>
-      <details class="faq-item" open>
-        <summary class="faq-question">
-          ¿Sirve para lo que mi equipo contable necesita?
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <circle cx="12" cy="12" r="10"/>
-            <path d="M12 8v8M8 12h8"/>
-          </svg>
-        </summary>
-        <div class="faq-answer">
-          Cada operación se entrega con comprobante, referencia vinculada a la factura de origen y registro de estado. Es el respaldo solicitado en revisiones contables o auditorías internas.
+        <div class="screenshot-frame__visual">
+          <figure class="browser-frame">
+            <div class="browser-frame__toolbar">
+              <span class="browser-frame__dot"></span>
+              <span class="browser-frame__dot"></span>
+              <span class="browser-frame__dot"></span>
+              <span class="browser-frame__url">app.guiracorp.com</span>
+            </div>
+            <img src="/assets/images/plataforma-dashboard-monitor.webp"
+                 alt="Panel de seguimiento de operaciones en Guira"
+                 class="browser-frame__img"
+                 loading="lazy"
+                 width="840"
+                 height="525">
+          </figure>
         </div>
-      </details>
-      <details class="faq-item" open>
-        <summary class="faq-question">
-          ¿Cuánto demora iniciar una operación?
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <circle cx="12" cy="12" r="10"/>
-            <path d="M12 8v8M8 12h8"/>
-          </svg>
-        </summary>
-        <div class="faq-answer">
-          Comienza con una breve conversación. Revisamos los datos de tu proveedor y te indicamos el flujo conveniente para tu empresa.
-        </div>
-      </details>
-    </div>
-  </section>
+      </div>
+    </section>
 
-  <!-- SECTION: Contact Form -->
-  <section class="section-contact">
-    <div class="contact-header">
-      <h2 class="contact-title">Cuéntanos qué necesitas pagar</h2>
-      <p class="contact-subtitle">Déjanos tus datos y un especialista te contacta para revisar tu operación, los corredores que necesitas y los siguientes pasos.</p>
-    </div>
-    <DemoForm defaultUseCase="pagos" submitLabel="Quiero que me contacten" />
-    <p class="contact-whatsapp">
-      Si prefieres escribir, también puedes hacerlo por WhatsApp.
-      <a href="https://wa.me/59175245845?text=Hola,%20quiero%20hablar%20sobre%20pagos%20a%20proveedores%20del%20exterior%20con%20Guira"
-         target="_blank" rel="noopener noreferrer">Escribir por WhatsApp →</a>
-    </p>
-  </section>
+    <!-- STICKY CTA BAR -->
+    <aside class="sticky-cta" id="sticky-cta">
+      <span class="sticky-cta__text">¿Lista tu próxima operación?</span>
+      <a href="https://wa.me/59175245845?text=Hola,%20quiero%20pagar%20a%20un%20proveedor%20del%20exterior%20con%20Guira"
+         target="_blank"
+         rel="noopener noreferrer"
+         class="sticky-cta__btn">
+        Empezar ahora →
+      </a>
+    </aside>
 
-  <!-- FOOTER: Ft2 Inline single line -->
-  <footer class="footer-line">
-    <p>© 2026 Guira System LLC · Representado en Bolivia por Guiraglobal SRL · <a href="/terminos/">Términos</a> · <a href="/privacidad/">Privacidad</a></p>
+    <!-- PROBLEM SECTION -->
+    <section class="section-problem">
+      <div class="section-problem__header">
+        <p class="section-problem__kicker">El problema operativo</p>
+        <h2 class="section-problem__title">Pagar afuera no debería frenar tu operación</h2>
+        <p class="section-problem__body">
+          Cuando el pago se demora, no se demora un trámite. Se demora tu mercadería, tu producción y tu compromiso con el cliente.
+        </p>
+      </div>
+      <div class="problem-list">
+        <article class="problem-item">
+          <h3 class="problem-item__title">El proveedor no libera el pedido</h3>
+          <p class="problem-item__body">Hasta confirmar que el pago salió, y esa confirmación depende de un proceso que tu empresa necesita controlar.</p>
+        </article>
+        <article class="problem-item">
+          <h3 class="problem-item__title">Requisitos cambiantes</h3>
+          <p class="problem-item__body">Cada operación solicita datos distintos y las observaciones surgen cuando la carga ya está esperando.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- CORRIDORS SECTION -->
+    <section class="section-corridors">
+      <div class="section-corridors__header">
+        <h2 class="section-corridors__title">Un solo lugar para pagar a tus proveedores</h2>
+        <p class="section-corridors__subtitle">Elige el destino y la moneda según lo que tu proveedor necesite recibir.</p>
+      </div>
+      <div class="corridors-grid">
+        <article class="corridor-card corridor-card--featured">
+          <span class="corridor-card__flag">US</span>
+          <h3 class="corridor-card__title">Estados Unidos</h3>
+          <p class="corridor-card__body">Pagos en dólares estadounidenses a proveedores, fabricantes y socios comerciales en EE.UU. con trazabilidad completa.</p>
+        </article>
+        <article class="corridor-card">
+          <span class="corridor-card__flag">BR</span>
+          <h3 class="corridor-card__title">Brasil</h3>
+          <p class="corridor-card__body">Pagos en reales a proveedores brasileños de insumos y maquinaria.</p>
+        </article>
+        <article class="corridor-card">
+          <span class="corridor-card__flag">MX</span>
+          <h3 class="corridor-card__title">México</h3>
+          <p class="corridor-card__body">Pagos en pesos mexicanos directamente a cuentas bancarias en México.</p>
+        </article>
+        <article class="corridor-card">
+          <span class="corridor-card__flag">CO</span>
+          <h3 class="corridor-card__title">Colombia</h3>
+          <p class="corridor-card__body">Pagos en pesos colombianos para abastecimiento y servicios en Colombia.</p>
+        </article>
+        <article class="corridor-card">
+          <span class="corridor-card__flag">EU</span>
+          <h3 class="corridor-card__title">Europa</h3>
+          <p class="corridor-card__body">Pagos en euros a proveedores de la zona europea con respaldo documental.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- FAQ SECTION -->
+    <section class="section-faq">
+      <div class="section-faq__header">
+        <h2 class="section-faq__title">Antes de empezar</h2>
+        <p class="section-faq__subtitle">Respuestas claras sobre la operativa y el alcance.</p>
+      </div>
+      <div class="faq-list">
+        <details class="faq-item">
+          <summary class="faq-question">
+            ¿Quién opera la plataforma?
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"/>
+              <path d="M12 8v8M8 12h8"/>
+            </svg>
+          </summary>
+          <div class="faq-answer">
+            <p>Guira es una plataforma tecnológica creada y operada por Guira System LLC, constituida en Delaware, Estados Unidos. En Bolivia, Guiraglobal SRL brinda asesoría comercial y acompañamiento operativo a las empresas.</p>
+          </div>
+        </details>
+        <details class="faq-item">
+          <summary class="faq-question">
+            ¿Sirve para lo que mi equipo contable necesita?
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"/>
+              <path d="M12 8v8M8 12h8"/>
+            </svg>
+          </summary>
+          <div class="faq-answer">
+            <p>Cada operación se entrega con comprobante, referencia vinculada a la factura de origen y registro de estado. Es el respaldo solicitado en revisiones contables o auditorías internas.</p>
+          </div>
+        </details>
+        <details class="faq-item" open>
+          <summary class="faq-question">
+            ¿Cuánto demora iniciar una operación?
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"/>
+              <path d="M12 8v8M8 12h8"/>
+            </svg>
+          </summary>
+          <div class="faq-answer">
+            <p>Comienza con una breve conversación. Revisamos los datos de tu proveedor y te indicamos el flujo conveniente para tu empresa.</p>
+          </div>
+        </details>
+      </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section id="contacto" class="section-contact">
+      <div class="contact-layout">
+        <div class="contact-header">
+          <p class="contact-header__kicker">Revisemos tu caso</p>
+          <h2 class="contact-header__title">Cuéntanos qué necesitas pagar</h2>
+          <p class="contact-header__body">
+            Déjanos tus datos y un especialista te contacta para revisar tu operación, los corredores que necesitas y los siguientes pasos.
+          </p>
+          <p class="contact-whatsapp">
+            Si prefieres escribir, también puedes hacerlo por WhatsApp.
+            <a href="https://wa.me/59175245845?text=Hola,%20quiero%20hablar%20sobre%20pagos%20a%20proveedores%20del%20exterior%20con%20Guira"
+               target="_blank"
+               rel="noopener noreferrer">Escribir por WhatsApp →</a>
+          </p>
+        </div>
+        <div class="contact-form-shell">
+          <DemoForm defaultUseCase="pagos" submitLabel="Quiero que me contacten" />
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FT5 STATEMENT FOOTER -->
+  <footer class="foot-stmt">
+    <p class="foot-stmt__line">Pagos que dejan huella.</p>
+    <div class="foot-stmt__meta">
+      <span class="foot-stmt__wordmark">Guira</span>
+      <span class="foot-stmt__credits">
+        © 2026 Guira System LLC · Asesoría comercial en Bolivia: Guiraglobal SRL ·
+        <a href="/terminos/">Términos</a> · <a href="/privacidad/">Privacidad</a>
+      </span>
+    </div>
   </footer>
 
   <!-- WhatsApp Floating Button -->
@@ -447,1002 +1280,48 @@ import DemoForm from '../components/DemoForm.astro';
     </svg>
   </a>
 
-  <style is:inline>
-    /* Nav Pill */
-    .nav-pill {
-      position: fixed;
-      inset-inline: var(--space-md) auto auto 50%;
-      transform: translateX(-50%);
-      display: inline-flex;
-      align-items: center;
-      gap: var(--space-md);
-      padding: 0.625rem 1rem;
-      background: rgba(255, 255, 255, 0.78);
-      backdrop-filter: blur(14px) saturate(120%);
-      -webkit-backdrop-filter: blur(14px) saturate(120%);
-      border: 1px solid var(--color-rule);
-      border-radius: var(--radius-pill);
-      box-shadow: 0 8px 24px -12px rgba(15, 23, 42, 0.18);
-      z-index: 20;
-      font-size: var(--text-sm);
-      font-weight: 500;
-    }
-
-    .nav-pill .wordmark {
-      font-weight: 700;
-      color: var(--color-ink);
-      text-decoration: none;
-    }
-
-    .nav-pill__links {
-      display: flex;
-      gap: var(--space-md);
-      list-style: none;
-      margin: 0;
-      padding: 0;
-    }
-
-    .nav-pill__links a {
-      color: var(--color-ink-muted);
-      text-decoration: none;
-      font-weight: 500;
-      transition: color 0.15s ease;
-    }
-
-    .nav-pill__links a:hover {
-      color: var(--color-ink);
-    }
-
-    .nav-pill .cta-fill {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.375rem;
-      padding: 0.5rem 1rem;
-      background: var(--color-ink);
-      color: var(--color-paper);
-      border-radius: var(--radius-pill);
-      text-decoration: none;
-      font-weight: 600;
-      font-size: var(--text-sm);
-      transition: background 0.15s ease, transform 0.1s ease;
-    }
-
-    .nav-pill .cta-fill:hover {
-      background: var(--color-ink-muted);
-      transform: translateY(-1px);
-    }
-
-    .nav-pill .cta-fill:active {
-      transform: translateY(0);
-    }
-
-    /* Hero Split Diptych — Premium layout */
-    .hero-split {
-      display: grid;
-      grid-template-columns: minmax(0, 7fr) minmax(0, 5fr);
-      gap: var(--space-3xl);
-      align-items: center;
-      padding: 8rem var(--space-xl) var(--space-4xl);
-      min-height: 100dvh;
-      min-h-[100dvh];
-    }
-
-    @media (max-width: 56rem) {
-      .hero-split {
-        grid-template-columns: 1fr;
-        padding: 6rem var(--space-lg) var(--space-3xl);
-        gap: var(--space-2xl);
-      }
-    }
-
-    .hero-split__text {
-      display: flex;
-      flex-direction: column;
-      gap: var(--space-lg);
-    }
-
-    .hero-kicker {
-      display: inline-flex;
-      align-items: center;
-      font-size: var(--text-xs);
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      color: var(--color-accent);
-      padding: 0.375rem 0.75rem;
-      background: var(--color-accent-light);
-      border-radius: var(--radius-pill);
-      width-fit-content;
-    }
-
-    .hero-title {
-      font-family: var(--font-display);
-      font-size: var(--text-display);
-      font-weight: 700;
-      line-height: 1.05;
-      letter-spacing: -0.025em;
-      color: var(--color-ink);
-      margin: 0;
-    }
-
-    @media (max-width: 40rem) {
-      .hero-title {
-        font-size: var(--text-display-s);
-      }
-    }
-
-    .hero-lede {
-      font-size: var(--text-md);
-      line-height: 1.6;
-      color: var(--color-ink-muted);
-      max-width: 32ch;
-      margin: 0;
-    }
-
-    .hero-destinations {
-      display: flex;
-      flex-wrap: wrap;
-      gap: var(--space-sm);
-    }
-
-    .destination-chip {
-      display: inline-flex;
-      align-items: center;
-      padding: 0.375rem 0.75rem;
-      background: var(--color-paper-dark);
-      border: 1px solid var(--color-rule-strong);
-      border-radius: var(--radius-pill);
-      font-size: var(--text-sm);
-      font-weight: 600;
-      color: var(--color-ink);
-    }
-
-    .hero-cta {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      padding: 0.875rem 1.75rem;
-      background: var(--color-accent);
-      color: white;
-      border: none;
-      border-radius: var(--radius-pill);
-      font-size: var(--text-base);
-      font-weight: 600;
-      text-decoration: none;
-      transition: background 0.15s ease, transform 0.1s ease;
-      box-shadow: 0 4px 14px rgba(0, 81, 255, 0.3);
-      width-fit-content;
-    }
-
-    .hero-cta:hover {
-      background: #0041cc;
-      transform: translateY(-1px);
-    }
-
-    .hero-cta:active {
-      transform: translateY(0);
-    }
-
-    .hero-cta:focus-visible {
-      outline: 2px solid var(--color-accent);
-      outline-offset: 2px;
-    }
-
-    .hero-note {
-      font-size: var(--text-sm);
-      color: var(--color-ink-muted);
-      margin: 0;
-    }
-
-    .hero-split__visual {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-
-    .mockup-frame {
-      position: relative;
-      border-radius: var(--radius-xl);
-      overflow: hidden;
-      border: 1px solid var(--color-rule);
-      box-shadow: 0 20px 50px -12px rgba(15, 23, 42, 0.15);
-      background: var(--color-paper);
-      max-width: 100%;
-      max-height: 500px;
-    }
-
-    .mockup-img {
-      display: block;
-      width: 100%;
-      height: 100%;
-      max-width: 600px;
-      max-height: 500px;
-      object-fit: contain;
-    }
-
-    /* Section Split (Problem/Solution & Proof) */
-    .section-split {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: var(--space-3xl);
-      padding: var(--space-4xl) var(--space-xl);
-      align-items: center;
-    }
-
-    .section-split--reverse {
-      direction: rtl;
-    }
-
-    .section-split--reverse > * {
-      direction: ltr;
-    }
-
-    @media (max-width: 56rem) {
-      .section-split {
-        grid-template-columns: 1fr;
-        gap: var(--space-2xl);
-      }
-
-      .section-split--reverse {
-        direction: ltr;
-      }
-    }
-
-    .section-split__text {
-      display: flex;
-      flex-direction: column;
-      gap: var(--space-lg);
-    }
-
-    .section-kicker {
-      font-size: var(--text-xs);
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      color: var(--color-accent);
-    }
-
-    .section-title {
-      font-family: var(--font-display);
-      font-size: var(--text-3xl);
-      font-weight: 700;
-      line-height: 1.1;
-      letter-spacing: -0.02em;
-      color: var(--color-ink);
-      margin: 0;
-    }
-
-    @media (max-width: 40rem) {
-      .section-title {
-        font-size: var(--text-2xl);
-      }
-    }
-
-    .section-body {
-      font-size: var(--text-base);
-      line-height: 1.6;
-      color: var(--color-ink-muted);
-      max-width: 40ch;
-    }
-
-    .link-cta {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      color: var(--color-ink);
-      font-weight: 600;
-      text-decoration: none;
-      font-size: var(--text-base);
-      transition: color 0.15s ease;
-      width-fit-content;
-    }
-
-    .link-cta:hover {
-      color: var(--color-accent);
-    }
-
-    .link-cta:focus-visible {
-      outline: 2px solid var(--color-accent);
-      outline-offset: 2px;
-      border-radius: 2px;
-    }
-
-    .section-highlight {
-      font-size: var(--text-lg);
-      font-weight: 700;
-      color: var(--color-ink);
-      margin: 0;
-    }
-
-    /* Problem Grid */
-    .problem-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: var(--space-lg);
-    }
-
-    @media (max-width: 40rem) {
-      .problem-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    .problem-card {
-      padding: var(--space-lg);
-      background: var(--color-paper);
-      border: 1px solid var(--color-rule);
-      border-radius: var(--radius-lg);
-      display: flex;
-      flex-direction: column;
-      gap: var(--space-sm);
-    }
-
-    .problem-icon {
-      width: 40px;
-      height: 40px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--color-accent);
-      background: var(--color-accent-light);
-      border-radius: var(--radius-md);
-    }
-
-    .problem-card h3 {
-      font-family: var(--font-display);
-      font-size: var(--text-base);
-      font-weight: 700;
-      color: var(--color-ink);
-      margin: 0;
-    }
-
-    .problem-card p {
-      font-size: var(--text-sm);
-      line-height: 1.5;
-      color: var(--color-ink-muted);
-      margin: 0;
-    }
-
-    /* Feature List */
-    .feature-list {
-      display: flex;
-      flex-direction: column;
-      gap: var(--space-md);
-      margin: 0;
-      padding: 0;
-      list-style: none;
-    }
-
-    .feature-item {
-      display: flex;
-      gap: var(--space-md);
-      align-items: flex-start;
-    }
-
-    .feature-item svg {
-      flex-shrink: 0;
-      width: 20px;
-      height: 20px;
-      color: var(--color-accent);
-      background: var(--color-accent-light);
-      border-radius: 50%;
-      padding: 2px;
-      margin-top: 2px;
-    }
-
-    .feature-item div {
-      display: flex;
-      flex-direction: column;
-      gap: 0.25rem;
-    }
-
-    .feature-item strong {
-      font-size: var(--text-base);
-      font-weight: 600;
-      color: var(--color-ink);
-    }
-
-    .feature-item span {
-      font-size: var(--text-sm);
-      line-height: 1.5;
-      color: var(--color-ink-muted);
-    }
-
-    /* Proof Panel */
-    .proof-panel {
-      background: var(--color-ink);
-      color: var(--color-paper);
-      padding: var(--space-xl);
-      border-radius: var(--radius-xl);
-    }
-
-    .proof-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      padding-bottom: var(--space-lg);
-      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-      margin-bottom: var(--space-lg);
-    }
-
-    .proof-tag {
-      font-size: var(--text-xs);
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      color: #60a5fa;
-    }
-
-    .proof-title {
-      font-family: var(--font-display);
-      font-size: var(--text-lg);
-      font-weight: 700;
-      color: white;
-      margin: 0.25rem 0 0 0;
-    }
-
-    .proof-status {
-      font-size: var(--text-xs);
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      color: #60a5fa;
-      padding: 0.25rem 0.625rem;
-      background: rgba(30, 64, 175, 0.4);
-      border: 1px solid rgba(96, 165, 250, 0.3);
-      border-radius: var(--radius-pill);
-    }
-
-    .proof-list {
-      display: flex;
-      flex-direction: column;
-      gap: 0;
-    }
-
-    .proof-row {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: var(--space-md) 0;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-      font-size: var(--text-sm);
-      color: #f1f5f9;
-    }
-
-    .proof-row:last-child {
-      border-bottom: none;
-    }
-
-    .proof-row svg {
-      color: #60a5fa;
-    }
-
-    /* Steps Section */
-    .section-steps {
-      padding: var(--space-4xl) var(--space-xl);
-      background: var(--color-paper-dark);
-    }
-
-    .steps-header {
-      text-align: center;
-      max-width: 42ch;
-      margin: 0 auto var(--space-3xl);
-    }
-
-    .steps-title {
-      font-family: var(--font-display);
-      font-size: var(--text-3xl);
-      font-weight: 700;
-      line-height: 1.1;
-      letter-spacing: -0.02em;
-      color: var(--color-ink);
-      margin: 0 0 var(--space-md) 0;
-    }
-
-    @media (max-width: 40rem) {
-      .steps-title {
-        font-size: var(--text-2xl);
-      }
-    }
-
-    .steps-subtitle {
-      font-size: var(--text-base);
-      line-height: 1.5;
-      color: var(--color-ink-muted);
-      margin: 0;
-    }
-
-    .steps-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: var(--space-xl);
-      margin-bottom: var(--space-3xl);
-    }
-
-    @media (max-width: 56rem) {
-      .steps-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    .step-card {
-      padding: var(--space-xl);
-      background: var(--color-paper);
-      border: 1px solid var(--color-rule);
-      border-radius: var(--radius-lg);
-      display: flex;
-      flex-direction: column;
-      gap: var(--space-md);
-    }
-
-    .step-number {
-      font-family: var(--font-display);
-      font-size: var(--text-4xl);
-      font-weight: 800;
-      color: var(--color-rule-strong);
-      line-height: 1;
-      margin: 0;
-    }
-
-    .step-title {
-      font-family: var(--font-display);
-      font-size: var(--text-lg);
-      font-weight: 700;
-      color: var(--color-ink);
-      margin: 0;
-    }
-
-    .step-body {
-      font-size: var(--text-sm);
-      line-height: 1.5;
-      color: var(--color-ink-muted);
-      margin: 0;
-    }
-
-    .steps-cta {
-      text-align: center;
-    }
-
-    .cta-primary {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      padding: 0.875rem 1.75rem;
-      background: var(--color-accent);
-      color: white;
-      border: none;
-      border-radius: var(--radius-pill);
-      font-size: var(--text-base);
-      font-weight: 600;
-      text-decoration: none;
-      transition: background 0.15s ease, transform 0.1s ease;
-      box-shadow: 0 4px 14px rgba(0, 81, 255, 0.3);
-    }
-
-    .cta-primary:hover {
-      background: #0041cc;
-      transform: translateY(-1px);
-    }
-
-    .cta-primary:active {
-      transform: translateY(0);
-    }
-
-    .cta-primary:focus-visible {
-      outline: 2px solid var(--color-accent);
-      outline-offset: 2px;
-    }
-
-    /* Corridors Section */
-    .section-corridors {
-      padding: var(--space-4xl) var(--space-xl);
-    }
-
-    .corridors-header {
-      text-align: center;
-      max-width: 42ch;
-      margin: 0 auto var(--space-3xl);
-    }
-
-    .corridors-title {
-      font-family: var(--font-display);
-      font-size: var(--text-3xl);
-      font-weight: 700;
-      line-height: 1.1;
-      letter-spacing: -0.02em;
-      color: var(--color-ink);
-      margin: 0 0 var(--space-md) 0;
-    }
-
-    @media (max-width: 40rem) {
-      .corridors-title {
-        font-size: var(--text-2xl);
-      }
-    }
-
-    .corridors-subtitle {
-      font-size: var(--text-base);
-      line-height: 1.5;
-      color: var(--color-ink-muted);
-      margin: 0;
-    }
-
-    .corridors-grid {
-      display: grid;
-      grid-template-columns: repeat(6, 1fr);
-      grid-template-rows: repeat(2, 1fr);
-      gap: var(--space-lg);
-      margin-bottom: var(--space-3xl);
-    }
-
-    @media (max-width: 56rem) {
-      .corridors-grid {
-        grid-template-columns: 1fr;
-        grid-template-rows: auto;
-      }
-    }
-
-    .corridor-card {
-      grid-column: span 2;
-      padding: var(--space-xl);
-      background: var(--color-paper);
-      border: 1px solid var(--color-rule);
-      border-radius: var(--radius-lg);
-      display: flex;
-      flex-direction: column;
-      gap: var(--space-md);
-      position: relative;
-    }
-
-    .corridor-card--featured {
-      grid-column: span 2;
-      grid-row: span 2;
-      background: var(--color-ink);
-      color: var(--color-paper);
-    }
-
-    @media (max-width: 56rem) {
-      .corridor-card,
-      .corridor-card--featured {
-        grid-column: span 1;
-        grid-row: span 1;
-      }
-    }
-
-    .corridor-badge {
-      position: absolute;
-      top: var(--space-lg);
-      right: var(--space-lg);
-      font-size: var(--text-xs);
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      color: #60a5fa;
-      padding: 0.25rem 0.625rem;
-      background: rgba(30, 64, 175, 0.4);
-      border: 1px solid rgba(96, 165, 250, 0.3);
-      border-radius: var(--radius-pill);
-    }
-
-    .corridor-flag {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 32px;
-      height: 32px;
-      background: var(--color-accent-light);
-      color: var(--color-accent);
-      font-weight: 700;
-      font-size: var(--text-xs);
-      border-radius: var(--radius-md);
-    }
-
-    .corridor-zone {
-      font-size: var(--text-xs);
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      color: var(--color-accent);
-    }
-
-    .corridor-card--euro {
-      background: var(--color-ink);
-      color: var(--color-paper);
-    }
-
-    .corridor-card--euro .corridor-flag {
-      background: rgba(30, 64, 175, 0.4);
-      color: var(--color-accent-muted);
-    }
-
-    .corridor-card--euro .corridor-zone {
-      color: var(--color-accent-muted);
-    }
-
-    .corridor-title {
-      font-family: var(--font-display);
-      font-size: var(--text-xl);
-      font-weight: 700;
-      color: inherit;
-      margin: 0;
-    }
-
-    .corridor-body {
-      font-size: var(--text-sm);
-      line-height: 1.5;
-      color: var(--color-ink-muted);
-      margin: 0;
-    }
-
-    .corridor-card--featured .corridor-body,
-    .corridor-card--euro .corridor-body {
-      color: #f1f5f9;
-    }
-
-    .corridor-footer {
-      display: flex;
-      align-items: center;
-      gap: var(--space-sm);
-      margin-top: auto;
-      padding-top: var(--space-lg);
-      border-top: 1px solid rgba(255, 255, 255, 0.1);
-    }
-
-    .corridor-footer svg {
-      flex-shrink: 0;
-      color: var(--color-accent);
-    }
-
-    .corridor-footer span {
-      font-size: var(--text-sm);
-      color: #f1f5f9;
-    }
-
-    .corridor-meta {
-      font-size: var(--text-xs);
-      font-weight: 600;
-      color: var(--color-ink-muted);
-      margin-top: auto;
-    }
-
-    .corridor-card--featured .corridor-meta,
-    .corridor-card--euro .corridor-meta {
-      color: #94a3b8;
-    }
-
-    .corridors-summary {
-      text-align: center;
-      max-width: 42ch;
-      margin: 0 auto;
-      padding: var(--space-xl);
-      background: var(--color-paper);
-      border: 1px solid var(--color-rule);
-      border-radius: var(--radius-lg);
-    }
-
-    .corridors-summary p {
-      font-family: var(--font-display);
-      font-size: var(--text-base);
-      font-weight: 700;
-      color: var(--color-ink);
-      margin: 0;
-    }
-
-    /* FAQ Section */
-    .section-faq {
-      padding: var(--space-4xl) var(--space-xl);
-      background: var(--color-paper-dark);
-    }
-
-    .faq-header {
-      text-align: center;
-      max-width: 42ch;
-      margin: 0 auto var(--space-3xl);
-    }
-
-    .faq-title {
-      font-family: var(--font-display);
-      font-size: var(--text-3xl);
-      font-weight: 700;
-      line-height: 1.1;
-      letter-spacing: -0.02em;
-      color: var(--color-ink);
-      margin: 0 0 var(--space-md) 0;
-    }
-
-    @media (max-width: 40rem) {
-      .faq-title {
-        font-size: var(--text-2xl);
-      }
-    }
-
-    .faq-subtitle {
-      font-size: var(--text-base);
-      color: var(--color-ink-muted);
-      margin: 0;
-    }
-
-    .faq-list {
-      max-width: 48ch;
-      margin: 0 auto;
-    }
-
-    .faq-item {
-      background: var(--color-paper);
-      border: 1px solid var(--color-rule);
-      border-radius: var(--radius-lg);
-      margin-bottom: var(--space-md);
-    }
-
-    .faq-item:last-child {
-      margin-bottom: 0;
-    }
-
-    .faq-question {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: var(--space-md);
-      padding: var(--space-lg);
-      font-family: var(--font-display);
-      font-size: var(--text-base);
-      font-weight: 600;
-      color: var(--color-ink);
-      cursor: pointer;
-      user-select: none;
-      list-style: none;
-    }
-
-    .faq-question::-webkit-details-marker {
-      display: none;
-    }
-
-    .faq-question svg {
-      flex-shrink: 0;
-      width: 20px;
-      height: 20px;
-      color: var(--color-ink-muted);
-      transition: transform 0.2s ease;
-    }
-
-    details[open] .faq-question svg {
-      transform: rotate(45deg);
-    }
-
-    .faq-answer {
-      padding: 0 var(--space-lg) var(--space-lg);
-      font-size: var(--text-sm);
-      line-height: 1.6;
-      color: var(--color-ink-muted);
-    }
-
-    .faq-answer p {
-      margin: 0;
-    }
-
-    /* Contact Section */
-    .section-contact {
-      padding: var(--space-4xl) var(--space-xl);
-    }
-
-    .contact-header {
-      text-align: center;
-      max-width: 42ch;
-      margin: 0 auto var(--space-3xl);
-    }
-
-    .contact-title {
-      font-family: var(--font-display);
-      font-size: var(--text-3xl);
-      font-weight: 700;
-      line-height: 1.1;
-      letter-spacing: -0.02em;
-      color: var(--color-ink);
-      margin: 0 0 var(--space-md) 0;
-    }
-
-    @media (max-width: 40rem) {
-      .contact-title {
-        font-size: var(--text-2xl);
-      }
-    }
-
-    .contact-subtitle {
-      font-size: var(--text-base);
-      line-height: 1.5;
-      color: var(--color-ink-muted);
-      margin: 0;
-    }
-
-    .contact-whatsapp {
-      text-align: center;
-      font-size: var(--text-sm);
-      color: var(--color-ink-muted);
-      margin-top: var(--space-xl);
-    }
-
-    .contact-whatsapp a {
-      color: var(--color-accent);
-      font-weight: 600;
-      text-decoration: none;
-    }
-
-    .contact-whatsapp a:hover {
-      text-decoration: underline;
-    }
-
-    /* Footer Line */
-    .footer-line {
-      padding: var(--space-xl) var(--space-xl);
-      border-top: 1px solid var(--color-rule);
-      text-align: center;
-    }
-
-    .footer-line p {
-      font-size: var(--text-sm);
-      color: var(--color-ink-muted);
-      margin: 0;
-    }
-
-    .footer-line a {
-      color: var(--color-ink-muted);
-      text-decoration: none;
-    }
-
-    .footer-line a:hover {
-      color: var(--color-ink);
-    }
-
-    @media (max-width: 40rem) {
-      .footer-line p {
-        font-size: var(--text-xs);
-      }
-    }
-
-    /* WhatsApp Floating Button */
-    .wa-floating {
-      position: fixed;
-      bottom: var(--space-lg);
-      right: var(--space-lg);
-      z-index: 50;
-      width: 56px;
-      height: 56px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: var(--color-accent);
-      color: white;
-      border-radius: 50%;
-      box-shadow: 0 8px 24px -8px rgba(0, 81, 255, 0.5);
-      transition: opacity 0.2s ease, transform 0.2s ease;
-    }
-
-    .wa-floating:hover {
-      transform: translateY(-2px);
-    }
-
-    .wa-floating:active {
-      transform: translateY(0);
-    }
-
-    .wa-floating.wa-floating--hidden {
-      opacity: 0;
-      pointer-events: none;
-    }
-
-    @media (max-width: 40rem) {
-      .wa-floating {
-        width: 48px;
-        height: 48px;
-        bottom: var(--space-md);
-        right: var(--space-md);
-      }
-    }
-  </style>
-
   <script is:inline>
+    // Nav scroll behavior
+    const nav = document.getElementById('nav');
+    let ticking = false;
+
+    function updateNav() {
+      if (window.scrollY > 24) {
+        nav.classList.add('is-scrolled');
+      } else {
+        nav.classList.remove('is-scrolled');
+      }
+      ticking = false;
+    }
+
+    window.addEventListener('scroll', () => {
+      if (!ticking) {
+        requestAnimationFrame(updateNav);
+        ticking = true;
+      }
+    }, { passive: true });
+
+    // Sticky CTA reveal
+    const stickyCta = document.getElementById('sticky-cta');
+    const trigger = document.getElementById('trigger-sticky-cta');
+
+    if (stickyCta && trigger) {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (!entry.isIntersecting) {
+            stickyCta.classList.add('is-visible');
+          } else {
+            stickyCta.classList.remove('is-visible');
+          }
+        });
+      }, { threshold: 0, rootMargin: '-100px 0px 0px 0px' });
+
+      observer.observe(trigger);
+    }
+
+    // WhatsApp floating button hide on contact/footer
     const waFloatingBtn = document.getElementById('wa-floating-btn');
-    const waFloatingObstacles = document.querySelectorAll('#demo-form, .footer-line');
+    const waFloatingObstacles = document.querySelectorAll('#contacto, .foot-stmt');
 
     if (waFloatingBtn && waFloatingObstacles.length) {
       const waFloatingObserver = new IntersectionObserver((entries) => {
@@ -1453,6 +1332,7 @@ import DemoForm from '../components/DemoForm.astro';
       waFloatingObstacles.forEach((el) => waFloatingObserver.observe(el));
     }
 
+    // UTM tracking
     const params = new URLSearchParams(window.location.search);
     const utmContent = params.get('utm_content');
 
@@ -1467,6 +1347,7 @@ import DemoForm from '../components/DemoForm.astro';
       });
     }
 
+    // WhatsApp click tracking
     document.querySelectorAll('a[href*="wa.me"]').forEach((link) => {
       link.addEventListener('click', () => {
         window.dataLayer = window.dataLayer || [];
