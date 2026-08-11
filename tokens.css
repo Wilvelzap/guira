@@ -1,0 +1,79 @@
+/**
+ * Hallmark Design Tokens — Coral Theme (modern-minimal)
+ * Warm-grey paper · Coral accent · Geist throughout
+ */
+
+:root {
+  /* ═══════════════════════════════════════════════════════════════
+     COLOUR — Coral theme (warm-grey paper, coral accent)
+     ═══════════════════════════════════════════════════════════════ */
+
+  /* Paper surface */
+  --color-paper: oklch(97% 0.01 75);
+  --color-paper-dark: oklch(92% 0.015 75);
+
+  /* Ink (text) */
+  --color-ink: oklch(15% 0.02 75);
+  --color-ink-muted: oklch(35% 0.015 75);
+
+  /* Coral accent */
+  --color-accent: oklch(65% 0.18 25);
+  --color-accent-muted: oklch(75% 0.12 25);
+  --color-accent-light: oklch(92% 0.06 25);
+
+  /* Rules (borders, dividers) */
+  --color-rule: oklch(85% 0.01 75);
+  --color-rule-strong: oklch(75% 0.02 75);
+
+  /* ═══════════════════════════════════════════════════════════════
+     TYPOGRAPHY — Geist throughout
+     ═══════════════════════════════════════════════════════════════ */
+
+  --font-display: 'Geist', system-ui, -apple-system, sans-serif;
+  --font-body: 'Geist', system-ui, -apple-system, sans-serif;
+  --font-mono: 'Geist Mono', ui-monospace, monospace;
+
+  /* Text sizes — major third scale (1.25) */
+  --text-xs: 0.64rem;      /* 10.24px */
+  --text-sm: 0.8rem;       /* 12.8px  */
+  --text-base: 1rem;       /* 16px    */
+  --text-md: 1.25rem;      /* 20px    */
+  --text-lg: 1.5625rem;    /* 25px    */
+  --text-xl: 1.9531rem;    /* 31.25px */
+  --text-2xl: 2.4414rem;   /* 39.06px */
+  --text-3xl: 3.0518rem;   /* 48.83px */
+  --text-4xl: 3.8147rem;   /* 61.02px */
+  --text-display: clamp(2.75rem, 5vw + 1rem, 5.25rem);
+  --text-display-s: clamp(2.2rem, 4vw + 0.8rem, 4rem);
+
+  /* ═══════════════════════════════════════════════════════════════
+     SPACING — 4pt scale
+     ═══════════════════════════════════════════════════════════════ */
+
+  --space-xs: 0.25rem;     /* 4px  */
+  --space-sm: 0.5rem;      /* 8px  */
+  --space-md: 1rem;        /* 16px */
+  --space-lg: 1.5rem;      /* 24px */
+  --space-xl: 2rem;        /* 32px */
+  --space-2xl: 3rem;       /* 48px */
+  --space-3xl: 4.5rem;     /* 72px */
+  --space-4xl: 6rem;       /* 96px */
+
+  /* ═══════════════════════════════════════════════════════════════
+     EASING
+     ═══════════════════════════════════════════════════════════════ */
+
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-in: cubic-bezier(0.64, 0, 0.78, 0);
+  --ease-in-out: cubic-bezier(0.22, 0.61, 0.36, 1);
+
+  /* ═══════════════════════════════════════════════════════════════
+     RADII
+     ═══════════════════════════════════════════════════════════════ */
+
+  --radius-pill: 9999px;
+  --radius-sm: 6px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+}

@@ -1,0 +1,22 @@
+[
+  {
+    "date": "2026-08-03",
+    "macrostructure": "Workbench",
+    "theme": "DESIGN.md locked",
+    "enrichment": "none",
+    "brief": "Pagar proveedores exterior — Workbench redesign",
+    "genre": "modern-minimal",
+    "nav": "N1b SaaS three-section",
+    "footer": "Ft5 Statement"
+  },
+  {
+    "date": "2026-08-03",
+    "macrostructure": "Split Studio",
+    "theme": "Coral",
+    "enrichment": "E1 clipped-edge demo video",
+    "brief": "Pagar proveedores exterior — PyMEs importadoras bolivianas",
+    "genre": "modern-minimal",
+    "nav": "N5 Floating pill",
+    "footer": "Ft2 Inline single line"
+  }
+]
