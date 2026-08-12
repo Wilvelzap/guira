@@ -1,0 +1,123 @@
+---
+interface Props {
+  href: string;
+  label: string;
+  target?: string;
+  rel?: string;
+  ariaLabel?: string;
+}
+
+const { href, label, target, rel, ariaLabel = label } = Astro.props;
+---
+
+<a
+  class="guira-button"
+  href={href}
+  target={target}
+  rel={rel}
+  aria-label={ariaLabel}
+>
+  <span class="guira-button__label">{label}</span>
+  <span class="guira-button__icon-wrap" aria-hidden="true">
+    <span class="guira-button__icon-circle">
+      <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <path d="M5 12h14M13 6l6 6-6 6" />
+      </svg>
+    </span>
+  </span>
+</a>
+
+<style>
+  .guira-button {
+    --guira-blue: #0051ff;
+    display: inline-grid;
+    grid-template-columns: minmax(0, 1fr) 3.35rem;
+    align-items: center;
+    min-height: 4.1rem;
+    padding: 0.45rem 0.45rem 0.45rem 1.5rem;
+    overflow: hidden;
+    border: 2px solid var(--guira-blue);
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.72);
+    box-shadow: 0 10px 28px -18px rgba(0, 81, 255, 0.55);
+    color: #0f172a;
+    font-size: 1rem;
+    font-weight: 800;
+    line-height: 1.15;
+    text-decoration: none;
+    transition:
+      grid-template-columns 360ms cubic-bezier(0.16, 1, 0.3, 1),
+      padding 360ms cubic-bezier(0.16, 1, 0.3, 1),
+      background-color 200ms ease,
+      border-color 200ms ease,
+      box-shadow 200ms ease,
+      transform 200ms ease;
+  }
+
+  .guira-button__label {
+    white-space: nowrap;
+  }
+
+  .guira-button__icon-wrap {
+    display: grid;
+    min-width: 0;
+    overflow: hidden;
+    place-items: center;
+  }
+
+  .guira-button__icon-circle {
+    display: grid;
+    width: 2.65rem;
+    height: 2.65rem;
+    place-items: center;
+    flex: none;
+    border: 1px solid rgba(0, 81, 255, 0.72);
+    border-radius: 999px;
+    background: rgba(0, 81, 255, 0.06);
+    color: var(--guira-blue);
+    transition:
+      opacity 180ms ease,
+      transform 300ms cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .guira-button svg {
+    width: 1.2rem;
+    height: 1.2rem;
+    stroke: currentColor;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 2;
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    .guira-button:hover {
+      grid-template-columns: minmax(0, 1fr) 0rem;
+      padding-right: 1.5rem;
+      border-color: var(--guira-blue);
+      background: rgba(0, 81, 255, 0.035);
+      box-shadow: 0 14px 30px -18px rgba(0, 81, 255, 0.64);
+      transform: translateY(-1px);
+    }
+
+    .guira-button:hover .guira-button__icon-circle {
+      opacity: 0;
+      transform: scale(0.68);
+    }
+  }
+
+  .guira-button:active {
+    transform: scale(0.985);
+  }
+
+  .guira-button:focus-visible {
+    outline: 3px solid rgba(0, 81, 255, 0.26);
+    outline-offset: 4px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .guira-button,
+    .guira-button__icon-circle {
+      transition-duration: 1ms;
+    }
+  }
+</style>

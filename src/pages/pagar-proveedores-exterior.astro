@@ -1,6 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import DemoForm from "../components/DemoForm.astro";
+import GuiraButton from "../components/GuiraButton.astro";
 ---
 
 <!--
@@ -27,9 +28,9 @@ FORM: Recorrido operativo asimétrico, séptima estructura del concepto d4a56fbd
     />
     <link
       rel="preload"
-      as="image"
-      href="/assets/images/plataforma-login-macbook.webp"
-      type="image/webp"
+      as="video"
+      href="https://res.cloudinary.com/dbrkedvyp/video/upload/v1784908890/Guira_to_world_zzjcss.webm"
+      type="video/webm"
     />
     <style is:inline>
       html {
@@ -63,15 +64,12 @@ FORM: Recorrido operativo asimétrico, séptima estructura del concepto d4a56fbd
               necesita recibir. Con respaldo documental en cada operación.
             </p>
             <div class="hero-actions">
-              <a
+              <GuiraButton
                 href="https://wa.me/59175245845?text=Hola,%20quiero%20pagar%20a%20mis%20proveedores%20del%20exterior%20con%20Guira"
                 target="_blank"
                 rel="noopener noreferrer"
-                class="button button-primary"
-                >Quiero pagar a mi proveedor <i
-                  data-lucide="arrow-right"
-                  class="w-5 h-5"></i></a
-              >
+                label="Quiero pagar a mi proveedor"
+              />
             </div>
             <p class="hero-support">
               Escríbenos y revisamos tu operación. Sin compromiso.
@@ -87,27 +85,34 @@ FORM: Recorrido operativo asimétrico, séptima estructura del concepto d4a56fbd
 
           <div class="hero-device" aria-label="Plataforma Guira">
             <div class="device-halo" aria-hidden="true"></div>
-            <img
-              src="/assets/images/plataforma-login-macbook.webp"
-              alt="Pantalla de acceso a la plataforma Guira en una computadora"
-              class="hero-tablet"
-              width="819"
-              height="1024"
-              fetchpriority="high"
-              decoding="async"
-            />
+            <video
+              class="hero-video"
+              autoplay
+              muted
+              loop
+              playsinline
+              preload="auto"
+              aria-label="Video de la plataforma Guira conectando pagos internacionales"
+            >
+              <source
+                src="https://res.cloudinary.com/dbrkedvyp/video/upload/v1784908890/Guira_to_world_zzjcss.webm"
+                type="video/webm"
+              />
+              Tu navegador no puede reproducir este video.
+            </video>
           </div>
         </div>
       </header>
 
       <section class="corridors" aria-label="Destinos habilitados">
         <div class="page-wrap corridor-inner">
-          <p>Un flujo para tus pagos frecuentes</p>
+          <p class="corridor-title">Un flujo para tus pagos frecuentes</p>
           <div class="country-list">
-            <span>Estados Unidos <b>Wire</b></span><span>Europa <b>EUR</b></span
-            ><span>Brasil <b>BRL</b></span><span>México <b>MXN</b></span><span
-              >Colombia <b>COP</b></span
-            >
+            <span><strong>Estados Unidos</strong><b>Wire</b></span>
+            <span><strong>Europa</strong><b>EUR</b></span>
+            <span><strong>Brasil</strong><b>BRL</b></span>
+            <span><strong>México</strong><b>MXN</b></span>
+            <span><strong>Colombia</strong><b>COP</b></span>
           </div>
         </div>
       </section>
@@ -115,13 +120,20 @@ FORM: Recorrido operativo asimétrico, séptima estructura del concepto d4a56fbd
       <section class="problem-section section-space">
         <div class="page-wrap">
           <div class="problem-grid">
-            <div class="section-heading sticky-heading">
-              <span class="section-label">El problema operativo</span>
-              <h2>
+            <div class="">
+              <span
+                class="block mb-[18px] text-[#0051ff] text-[0.72rem] font-extrabold"
+                >El problema operativo</span
+              >
+              <h2
+                class="max-w-[700px] mx-auto text-[clamp(2rem,4vw,3.55rem)] leading-[1.08] tracking-tight font-extrabold text-balance"
+              >
                 Un pago no debería detener una compra, un embarque o una
                 entrega.
               </h2>
-              <p>
+              <p
+                class="max-w-[620px] mx-auto mt-[22px] text-slate-500 text-[1.06rem] leading-[1.7] font-medium"
+              >
                 Cuando la información está dispersa, finanzas pierde tiempo
                 reconstruyendo el estado de cada operación.
               </p>
@@ -154,14 +166,12 @@ FORM: Recorrido operativo asimétrico, séptima estructura del concepto d4a56fbd
             </div>
           </div>
           <div class="section-cta">
-            <a
+            <GuiraButton
               href="https://wa.me/59175245845?text=Hola,%20necesito%20pagar%20a%20un%20proveedor%20del%20exterior%20y%20quiero%20orientaci%C3%B3n"
               target="_blank"
               rel="noopener noreferrer"
-              class="button button-secondary"
-              >Quiero resolver esto <i data-lucide="arrow-right" class="w-5 h-5"
-              ></i></a
-            >
+              label="Quiero resolver esto"
+            />
           </div>
         </div>
       </section>
@@ -169,9 +179,18 @@ FORM: Recorrido operativo asimétrico, séptima estructura del concepto d4a56fbd
       <section id="como-funciona" class="process-section section-space">
         <div class="page-wrap">
           <div class="section-heading process-heading">
-            <span class="section-label">Cómo funciona</span>
-            <h2>De la factura al respaldo, en una sola secuencia.</h2>
-            <p>
+            <span
+              class="block mb-[18px] text-[#0051ff] text-[0.72rem] font-extrabold"
+              >Cómo funciona</span
+            >
+            <h2
+              class="max-w-[700px] mx-auto text-[clamp(2rem,4vw,3.55rem)] leading-[1.08] tracking-tight font-extrabold text-balance"
+            >
+              De la factura al respaldo, en una sola secuencia.
+            </h2>
+            <p
+              class="max-w-[620px] mx-auto mt-[22px] text-slate-500 text-[1.06rem] leading-[1.7] font-medium"
+            >
               Un especialista acompaña la preparación de la operación y tu
               equipo mantiene la visibilidad.
             </p>
@@ -271,15 +290,12 @@ FORM: Recorrido operativo asimétrico, séptima estructura del concepto d4a56fbd
             </div>
           </div>
           <div class="section-cta">
-            <a
+            <GuiraButton
               href="https://wa.me/59175245845?text=Hola,%20quiero%20empezar%20a%20pagar%20a%20mis%20proveedores%20del%20exterior%20con%20Guira"
               target="_blank"
               rel="noopener noreferrer"
-              class="button button-secondary"
-              >Empezar mi primera operación <i
-                data-lucide="arrow-right"
-                class="w-5 h-5"></i></a
-            >
+              label="Empezar mi primera operación"
+            />
           </div>
         </div>
       </section>
@@ -310,9 +326,18 @@ FORM: Recorrido operativo asimétrico, séptima estructura del concepto d4a56fbd
             </div>
           </div>
           <div class="section-heading control-copy">
-            <span class="section-label">Control por operación</span>
-            <h2>La misma información para compras, finanzas y contabilidad.</h2>
-            <p>
+            <span
+              class="block mb-[18px] text-[#0051ff] text-[0.72rem] font-extrabold"
+              >Control por operación</span
+            >
+            <h2
+              class="max-w-[700px] mx-auto text-[clamp(2rem,4vw,3.55rem)] leading-[1.08] tracking-tight font-extrabold text-balance"
+            >
+              La misma información para compras, finanzas y contabilidad.
+            </h2>
+            <p
+              class="max-w-[620px] mx-auto mt-[22px] text-slate-500 text-[1.06rem] leading-[1.7] font-medium"
+            >
               Cada pago conserva su contexto. Tu equipo puede consultar qué se
               pagó, a quién, por qué concepto y con qué respaldo.
             </p>
@@ -330,15 +355,12 @@ FORM: Recorrido operativo asimétrico, séptima estructura del concepto d4a56fbd
         </div>
         <div class="page-wrap">
           <div class="section-cta">
-            <a
+            <GuiraButton
               href="https://wa.me/59175245845?text=Hola,%20quiero%20conocer%20el%20respaldo%20documental%20de%20los%20pagos%20con%20Guira"
               target="_blank"
               rel="noopener noreferrer"
-              class="button button-secondary"
-              >Quiero ver el respaldo por operación <i
-                data-lucide="arrow-right"
-                class="w-5 h-5"></i></a
-            >
+              label="Quiero ver el respaldo por operación"
+            />
           </div>
         </div>
       </section>
@@ -364,7 +386,11 @@ FORM: Recorrido operativo asimétrico, séptima estructura del concepto d4a56fbd
       <section class="faq-section section-space">
         <div class="page-wrap faq-wrap">
           <div class="section-heading faq-heading">
-            <h2>Antes de empezar</h2>
+            <h2
+              class="max-w-[700px] mx-auto text-[clamp(2rem,4vw,3.55rem)] leading-[1.08] tracking-tight font-extrabold text-balance"
+            >
+              Antes de empezar
+            </h2>
           </div>
           <div class="faq-list">
             <details>
@@ -533,6 +559,112 @@ FORM: Recorrido operativo asimétrico, séptima estructura del concepto d4a56fbd
       window.dataLayer.push({ event: "click-whatsapp" });
     });
   </script>
+
+  <script>
+    import { gsap } from "gsap";
+    import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+    gsap.registerPlugin(ScrollTrigger);
+
+    const reducedMotion = window.matchMedia(
+      "(prefers-reduced-motion: reduce)",
+    ).matches;
+
+    if (!reducedMotion) {
+      // Entrada del hero al cargar
+      const heroTimeline = gsap.timeline({
+        defaults: { ease: "power3.out" },
+      });
+      heroTimeline
+        .from(".audience-tag", { opacity: 0, y: 16, duration: 0.6 })
+        .from(".hero h1", { opacity: 0, y: 22, duration: 0.75 }, "-=0.4")
+        .from(".hero-lead", { opacity: 0, y: 20, duration: 0.7 }, "-=0.55")
+        .from(".hero-actions", { opacity: 0, y: 16, duration: 0.6 }, "-=0.5")
+        .from(".hero-support", { opacity: 0, y: 12, duration: 0.5 }, "-=0.4")
+        .from(".trust-line", { opacity: 0, y: 16, duration: 0.6 }, "-=0.4")
+        .from(
+          ".hero-device",
+          { opacity: 0, x: 40, scale: 0.96, duration: 0.9 },
+          "-=0.7",
+        );
+
+      // Parallax sutil del halo del hero al hacer scroll
+      gsap.to(".hero-wash", {
+        y: 130,
+        ease: "none",
+        scrollTrigger: {
+          trigger: ".hero",
+          start: "top top",
+          end: "bottom top",
+          scrub: 1,
+        },
+      });
+
+      // Tarjetas de "Cómo funciona": entran y se reactivan al subir/bajar
+      const processCards = gsap.utils.toArray("#como-funciona .group");
+      if (processCards.length) {
+        gsap.set(processCards, { opacity: 0, y: 30, scale: 0.94 });
+        gsap.to(processCards, {
+          opacity: 1,
+          y: 0,
+          scale: 1,
+          duration: 0.7,
+          ease: "power3.out",
+          stagger: 0.12,
+          scrollTrigger: {
+            trigger: "#como-funciona .grid",
+            start: "top 78%",
+            toggleActions: "play none none reverse",
+          },
+          onComplete: () => gsap.set(processCards, { clearProps: "all" }),
+          onReverseComplete: () =>
+            gsap.set(processCards, { opacity: 0, y: 30, scale: 0.94 }),
+        });
+      }
+
+      // Filas de la tabla de operaciones: entran y se reactivan al subir/bajar
+      const tableRows = gsap.utils.toArray(".table-row");
+      if (tableRows.length) {
+        gsap.set(tableRows, { opacity: 0, x: -24 });
+        gsap.to(tableRows, {
+          opacity: 1,
+          x: 0,
+          duration: 0.6,
+          ease: "power3.out",
+          stagger: 0.12,
+          scrollTrigger: {
+            trigger: ".control-demo",
+            start: "top 75%",
+            toggleActions: "play none none reverse",
+          },
+          onComplete: () =>
+            gsap.set(tableRows, { clearProps: "opacity,transform" }),
+          onReverseComplete: () => gsap.set(tableRows, { opacity: 0, x: -24 }),
+        });
+      }
+
+      // Preguntas de "Antes de empezar": suben desde abajo y se reactivan al subir/bajar
+      const faqItems = gsap.utils.toArray(".faq-list details");
+      if (faqItems.length) {
+        gsap.set(faqItems, { opacity: 0, y: 44 });
+        gsap.to(faqItems, {
+          opacity: 1,
+          y: 0,
+          duration: 0.65,
+          ease: "power3.out",
+          stagger: 0.14,
+          scrollTrigger: {
+            trigger: ".faq-list",
+            start: "top 82%",
+            toggleActions: "play none none reverse",
+          },
+          onComplete: () =>
+            gsap.set(faqItems, { clearProps: "opacity,transform" }),
+          onReverseComplete: () => gsap.set(faqItems, { opacity: 0, y: 44 }),
+        });
+      }
+    }
+  </script>
 </Layout>
 
 <style>
@@ -559,9 +691,7 @@ FORM: Recorrido operativo asimétrico, séptima estructura del concepto d4a56fbd
   .nav-inner,
   .nav-actions,
   .hero-actions,
-  .trust-line,
-  .corridor-inner,
-  .country-list {
+  .trust-line {
     display: flex;
     align-items: center;
   }
@@ -577,50 +707,10 @@ FORM: Recorrido operativo asimétrico, séptima estructura del concepto d4a56fbd
     font-weight: 700;
     font-size: 0.92rem;
   }
-  .button {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    border-radius: 12px;
-    font-weight: 800;
-    transition:
-      transform 0.2s ease,
-      box-shadow 0.2s ease,
-      background 0.2s ease;
-  }
-  .button:hover {
-    transform: translateY(-2px);
-  }
-  .button:active {
-    transform: scale(0.98);
-  }
-  .button:focus-visible,
   .text-action:focus-visible,
   .nav-link:focus-visible {
     outline: 3px solid rgba(0, 81, 255, 0.25);
     outline-offset: 3px;
-  }
-  .button-small {
-    padding: 11px 18px;
-    color: white;
-    background: #0f172a;
-    font-size: 0.86rem;
-  }
-  .button-primary {
-    padding: 16px 23px;
-    color: white;
-    background: #0051ff;
-    box-shadow: 0 12px 30px -12px rgba(0, 81, 255, 0.6);
-  }
-  .button-secondary {
-    padding: 14px 22px;
-    color: white;
-    background: #0f172a;
-    box-shadow: 0 10px 24px -14px rgba(15, 23, 42, 0.55);
-  }
-  .button-secondary:hover {
-    background: #1e293b;
   }
   .section-cta {
     margin-top: 42px;
@@ -647,8 +737,8 @@ FORM: Recorrido operativo asimétrico, séptima estructura del concepto d4a56fbd
   }
   .hero-grid {
     display: grid;
-    grid-template-columns: 1.02fr 0.98fr;
-    gap: 70px;
+    grid-template-columns: minmax(0, 0.88fr) minmax(0, 1.12fr);
+    gap: clamp(38px, 5vw, 76px);
     align-items: center;
     position: relative;
   }
@@ -721,7 +811,15 @@ FORM: Recorrido operativo asimétrico, séptima estructura del concepto d4a56fbd
   }
   .hero-device {
     position: relative;
-    min-height: 500px;
+    width: 100%;
+    max-width: 780px;
+    aspect-ratio: 16 / 10;
+    min-height: 0;
+    justify-self: end;
+    overflow: hidden;
+    border-radius: 24px;
+    background: #0b1120;
+    box-shadow: 0 34px 72px -38px rgba(15, 23, 42, 0.46);
     display: grid;
     place-items: center;
     isolation: isolate;
@@ -729,7 +827,7 @@ FORM: Recorrido operativo asimétrico, séptima estructura del concepto d4a56fbd
   .device-halo {
     position: absolute;
     z-index: -1;
-    width: 86%;
+    width: 108%;
     aspect-ratio: 1;
     border-radius: 50%;
     background: radial-gradient(
@@ -739,14 +837,12 @@ FORM: Recorrido operativo asimétrico, séptima estructura del concepto d4a56fbd
       transparent 70%
     );
   }
-  .hero-tablet {
+  .hero-video {
     display: block;
-    width: 108%;
-    max-width: none;
-    height: auto;
-    transform: translateX(10%);
-    border-radius: 16px;
-    filter: drop-shadow(0 34px 38px rgba(15, 23, 42, 0.22));
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
   }
   .operation-stage {
     position: relative;
@@ -911,60 +1007,56 @@ FORM: Recorrido operativo asimétrico, séptima estructura del concepto d4a56fbd
     color: #60a5fa;
   }
   .corridors {
-    border-block: 1px solid #e6ebf2;
-    background: #f8fafc;
+    background: #07101f;
+    color: #f8fafc;
   }
   .corridor-inner {
-    min-height: 88px;
-    justify-content: space-between;
-    gap: 30px;
+    display: grid;
+    grid-template-columns: minmax(180px, 0.85fr) minmax(0, 3.15fr);
+    align-items: stretch;
+    min-height: 214px;
+    gap: 3rem;
+    padding: 30px 0;
+    border-block: 1px solid rgba(226, 232, 240, 0.24);
   }
-  .corridor-inner > p {
-    color: #475569;
-    font-size: 0.77rem;
+  .corridor-title {
+    align-self: center;
+    max-width: 12ch;
+    color: #f8fafc;
+    font-size: clamp(1.35rem, 2.1vw, 2rem);
     font-weight: 800;
-    white-space: nowrap;
+    line-height: 1.04;
+    letter-spacing: -0.04em;
   }
   .country-list {
-    justify-content: flex-end;
-    gap: 26px;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    align-items: center;
   }
   .country-list span {
-    color: #334155;
-    font-size: 0.78rem;
-    font-weight: 700;
+    display: grid;
+    align-content: center;
+    min-height: 84px;
+    padding: 0.75rem clamp(0.8rem, 1.6vw, 1.5rem);
+    border-left: 1px solid rgba(226, 232, 240, 0.16);
+    color: #f8fafc;
+  }
+  .country-list strong {
+    font-size: clamp(0.92rem, 1.25vw, 1.18rem);
+    font-weight: 800;
+    line-height: 1.12;
+    letter-spacing: -0.025em;
   }
   .country-list b {
-    margin-left: 5px;
-    color: #0051ff;
-    font-size: 0.64rem;
+    margin-top: 0.55rem;
+    color: #b8edff;
+    font-size: 0.68rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
   }
   .section-space {
     padding: 120px 0;
-  }
-  .section-label {
-    display: block;
-    margin-bottom: 18px;
-    color: #0051ff;
-    font-size: 0.72rem;
-    font-weight: 850;
-  }
-  .section-heading h2 {
-    max-width: 700px;
-    font-size: clamp(2rem, 4vw, 3.55rem);
-    line-height: 1.08;
-    letter-spacing: -0.035em;
-    font-weight: 850;
-    text-wrap: balance;
-  }
-  .section-heading > p {
-    max-width: 620px;
-    margin-top: 22px;
-    color: #64748b;
-    font-size: 1.06rem;
-    line-height: 1.7;
-    font-weight: 500;
   }
   .problem-section {
     background: white;
@@ -1351,11 +1443,8 @@ FORM: Recorrido operativo asimétrico, séptima estructura del concepto d4a56fbd
       gap: 34px;
     }
     .hero-device {
-      min-height: 430px;
-    }
-    .hero-tablet {
-      width: 112%;
-      transform: none;
+      width: min(100%, 680px);
+      justify-self: center;
     }
     .problem-grid,
     .control-grid,
@@ -1374,12 +1463,13 @@ FORM: Recorrido operativo asimétrico, séptima estructura del concepto d4a56fbd
       margin-top: 20px;
     }
     .corridor-inner {
-      align-items: flex-start;
-      flex-direction: column;
-      padding: 24px 0;
+      grid-template-columns: 1fr;
+      min-height: 0;
+      gap: 28px;
+      padding: 32px 0;
     }
     .country-list {
-      justify-content: flex-start;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
     }
     .footer-inner {
       grid-template-columns: 1fr;
@@ -1396,10 +1486,6 @@ FORM: Recorrido operativo asimétrico, séptima estructura del concepto d4a56fbd
     .nav-link {
       display: none;
     }
-    .button-small {
-      padding: 10px 12px;
-      font-size: 0.72rem;
-    }
     .hero {
       padding: 62px 0 54px;
     }
@@ -1407,14 +1493,15 @@ FORM: Recorrido operativo asimétrico, séptima estructura del concepto d4a56fbd
       align-items: stretch;
       flex-direction: column;
     }
+    .country-list {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+    .country-list span {
+      min-height: 76px;
+      padding-inline: 1rem;
+    }
     .text-action {
       justify-content: center;
-    }
-    .hero-device {
-      min-height: 290px;
-    }
-    .hero-tablet {
-      width: 122%;
     }
     .operation-stage {
       padding: 22px 18px;
