@@ -1,0 +1,1 @@
+import{t as e}from"./rolldown-runtime.Czjbc987.js";var t=e((()=>{var e=new URLSearchParams(window.location.search).get(`utm_content`);if(e){let t=` [ref: ${e}]`;document.querySelectorAll(`a[href*="wa.me"]`).forEach(e=>{let n=new URL(e.href),r=n.searchParams.get(`text`);r!==null&&(n.searchParams.set(`text`,r+t),e.setAttribute(`href`,n.toString()))})}}));export default t();

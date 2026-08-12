@@ -1,123 +1,418 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import StackedSections from '../components/StackedSections.astro';
+import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout
-  title="Compliance y Seguridad Operativa para Pagos B2B Internacionales | Guira Empresas"
-  description="Conoce cómo Guira ayuda a empresas de LATAM a operar con validación empresarial, trazabilidad, controles de acceso e infraestructura conectada a partners aplicables."
-  keywords="seguridad para pagos empresariales, plataforma tecnológica segura para empresas, trazabilidad operativa, validación empresarial, compliance para empresas, operación internacional segura, controles para pagos internacionales"
-  canonicalUrl="https://www.guiracorp.com/seguridad"
-  footerTheme="light"
-  copyright="Compliance y Legal. © 2026 Guira System LLC. Representado en Bolivia por Guiraglobal SRL. Todos los derechos reservados."
+    title="Compliance y Seguridad Operativa para Pagos B2B Internacionales | Guira Empresas"
+    description="Conoce cómo Guira ayuda a empresas de LATAM a operar con validación empresarial, trazabilidad, controles de acceso e infraestructura conectada a partners aplicables."
+    keywords="seguridad para pagos empresariales, plataforma tecnológica segura para empresas, trazabilidad operativa, validación empresarial, compliance para empresas, operación internacional segura, controles para pagos internacionales"
+    canonicalUrl="https://www.guiracorp.com/seguridad"
+    footerTheme="light"
+    copyright="Compliance y Legal. © 2026 Guira System LLC. Representado en Bolivia por Guiraglobal SRL. Todos los derechos reservados."
 >
-  <Fragment slot="head">
-    <!-- Schema: BreadcrumbList -->
-    <script type="application/ld+json" is:inline>
-    {
-      "@context": "https://schema.org",
-      "@type": "BreadcrumbList",
-      "itemListElement": [
-        {"@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://www.guiracorp.com/"},
-        {"@type": "ListItem", "position": 2, "name": "Seguridad y Compliance", "item": "https://www.guiracorp.com/seguridad"}
-      ]
-    }
-    </script>
-  </Fragment>
+    <Fragment slot="head">
+        <!-- Schema: BreadcrumbList -->
+        <script type="application/ld+json" is:inline>
+            {
+                "@context": "https://schema.org",
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                    {
+                        "@type": "ListItem",
+                        "position": 1,
+                        "name": "Inicio",
+                        "item": "https://www.guiracorp.com/"
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 2,
+                        "name": "Seguridad y Compliance",
+                        "item": "https://www.guiracorp.com/seguridad"
+                    }
+                ]
+            }
+        </script>
+    </Fragment>
 
-  <StackedSections>
+    <!-- Hero -->
+    <header
+        data-stack-section
+        class="pt-28 md:pt-32 pb-16 md:pb-20 relative z-10 bg-white border-b border-slate-200"
+    >
+        <div
+            class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-12 items-center"
+        >
+            <div class="text-left reveal-up">
+                <div
+                    class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white border border-slate-200 shadow-sm text-xs font-bold text-slate-600 mb-6 cursor-default"
+                >
+                    <span
+                        class="w-2 h-2 rounded-full bg-guira-teal animate-pulse"
+                    ></span>
+                    Seguridad y compliance
+                </div>
+                <h1
+                    class="text-4xl md:text-5xl font-extrabold text-slate-900 mb-6 leading-[1.1] tracking-tight"
+                >
+                    Seguridad y confianza para la operación internacional de tu
+                    empresa
+                </h1>
+                <p
+                    class="text-lg text-slate-600 font-medium max-w-xl leading-relaxed"
+                >
+                    Guira combina validación empresarial, trazabilidad operativa
+                    y controles tecnológicos para ofrecer una experiencia más
+                    segura, clara y confiable a empresas de LATAM.
+                </p>
+            </div>
 
-  <!-- Hero Visual Seguridad -->
-  <div data-stack-section class="relative h-56 md:h-72 overflow-hidden mt-16">
-      <picture class="w-full h-full block">
-          <source srcset="/assets/images/seguridad-shield.webp" type="image/webp">
-          <img src="/assets/images/seguridad-shield.jpg" alt="Infraestructura de seguridad Guira" class="w-full h-full object-cover object-center">
-      </picture>
-      <div class="absolute inset-0 bg-gradient-to-b from-slate-50/0 via-transparent to-slate-50"></div>
-      <div class="absolute inset-0 bg-gradient-to-r from-slate-50 via-transparent to-transparent"></div>
-  </div>
+            <!-- Panel de estado de seguridad -->
+            <div
+                class="relative lg:ml-auto w-full max-w-lg mt-4 lg:mt-0 reveal-up delay-100"
+            >
+                <div
+                    class="bg-white border border-slate-200 rounded-2xl p-6 shadow-2xl relative z-20 hover:border-slate-300 transition-colors duration-500"
+                >
+                    <div
+                        class="flex items-center justify-between mb-6 border-b border-slate-100 pb-4"
+                    >
+                        <div class="flex items-center gap-3">
+                            <div
+                                class="w-8 h-8 rounded bg-slate-100 flex items-center justify-center"
+                            >
+                                <i
+                                    data-lucide="shield"
+                                    class="w-4 h-4 text-slate-700"></i>
+                            </div>
+                            <h2 class="font-bold text-slate-900 text-sm">
+                                Estado de seguridad operativa
+                            </h2>
+                        </div>
+                        <span class="flex h-2 w-2 relative">
+                            <span
+                                class="animate-ping absolute inline-flex h-full w-full rounded-full bg-guira-teal opacity-75"
+                            ></span>
+                            <span
+                                class="relative inline-flex rounded-full h-2 w-2 bg-guira-teal"
+                            ></span>
+                        </span>
+                    </div>
 
-  <!-- Content -->
-  <main data-stack-section class="pt-8 pb-24 flex-1 text-left">
-      <div class="max-w-4xl mx-auto px-6">
-          <div class="text-center mb-16 reveal">
-              <h1 class="text-4xl md:text-5xl font-extrabold text-slate-900 mb-6">Seguridad y confianza para la operación internacional de tu empresa</h1>
-              <p class="text-lg text-slate-600 font-medium max-w-3xl mx-auto leading-relaxed">Guira combina validación empresarial, trazabilidad operativa y controles tecnológicos para ofrecer una experiencia más segura, clara y confiable a empresas de LATAM.</p>
-          </div>
+                    <div class="space-y-3">
+                        <div
+                            class="flex items-center justify-between bg-slate-50 rounded-lg p-3 border border-slate-100"
+                        >
+                            <div class="flex items-center gap-3">
+                                <i
+                                    data-lucide="file-check"
+                                    class="w-4 h-4 text-guira-teal shrink-0"
+                                ></i>
+                                <span class="text-xs text-slate-900 font-bold"
+                                    >Validación empresarial</span
+                                >
+                            </div>
+                            <span
+                                class="text-[10px] font-bold text-slate-500 uppercase tracking-wider"
+                                >Activa</span
+                            >
+                        </div>
+                        <div
+                            class="flex items-center justify-between bg-slate-50 rounded-lg p-3 border border-slate-100"
+                        >
+                            <div class="flex items-center gap-3">
+                                <i
+                                    data-lucide="activity"
+                                    class="w-4 h-4 text-guira-teal shrink-0"
+                                ></i>
+                                <span class="text-xs text-slate-900 font-bold"
+                                    >Trazabilidad operativa</span
+                                >
+                            </div>
+                            <span
+                                class="text-[10px] font-bold text-slate-500 uppercase tracking-wider"
+                                >Habilitada</span
+                            >
+                        </div>
+                        <div
+                            class="flex items-center justify-between bg-slate-50 rounded-lg p-3 border border-slate-100"
+                        >
+                            <div class="flex items-center gap-3">
+                                <i
+                                    data-lucide="lock"
+                                    class="w-4 h-4 text-guira-teal shrink-0"
+                                ></i>
+                                <span class="text-xs text-slate-900 font-bold"
+                                    >Cifrado y controles</span
+                                >
+                            </div>
+                            <span
+                                class="text-[10px] font-bold text-slate-500 uppercase tracking-wider"
+                                >Aplicados</span
+                            >
+                        </div>
+                    </div>
 
-          <div class="space-y-8">
-              <!-- Bloque 1 -->
-              <div class="bg-white p-8 rounded-2xl border border-slate-200 shadow-sm reveal group hover:border-guira-teal transition-colors">
-                  <div class="flex items-center gap-4 mb-4">
-                      <div class="w-12 h-12 rounded-xl bg-slate-50 border border-slate-100 flex items-center justify-center shrink-0 group-hover:bg-guira-teal/10 group-hover:border-guira-teal/20 transition-colors">
-                          <i data-lucide="file-check" class="text-guira-teal w-6 h-6"></i>
-                      </div>
-                      <h2 class="text-2xl font-bold text-slate-900">Validación empresarial y revisión de perfil</h2>
-                  </div>
-                  <p class="text-slate-600 mb-4 font-medium leading-relaxed">Antes de activar una operación, Guira y los proveedores aplicables revisan la información básica de la empresa, sus representantes y su actividad. Esto ayuda a habilitar una operación alineada con criterios de cumplimiento, riesgo y elegibilidad del servicio.</p>
-                  <p class="text-sm text-slate-500 font-medium leading-relaxed">La disponibilidad del servicio depende del perfil operativo de la empresa, la jurisdicción, la actividad comercial y la documentación de respaldo presentada, sujeta a criterios de prevención corporativa.</p>
-              </div>
+                    <div
+                        class="mt-5 pt-4 border-t border-slate-100 flex items-center gap-2"
+                    >
+                        <i
+                            data-lucide="info"
+                            class="w-3.5 h-3.5 text-slate-400 shrink-0"></i>
+                        <p
+                            class="text-[11px] text-slate-500 font-medium leading-snug"
+                        >
+                            Depende del perfil operativo, jurisdicción y
+                            documentación de cada empresa.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
 
-              <!-- Bloque 2 -->
-              <div class="bg-white p-8 rounded-2xl border border-slate-200 shadow-sm reveal group hover:border-guira-teal transition-colors">
-                  <div class="flex items-center gap-4 mb-4">
-                      <div class="w-12 h-12 rounded-xl bg-slate-50 border border-slate-100 flex items-center justify-center shrink-0 group-hover:bg-guira-teal/10 group-hover:border-guira-teal/20 transition-colors">
-                          <i data-lucide="activity" class="text-guira-teal w-6 h-6"></i>
-                      </div>
-                      <h2 class="text-2xl font-bold text-slate-900">Trazabilidad y monitoreo operativo</h2>
-                  </div>
-                  <p class="text-slate-600 mb-4 font-medium leading-relaxed">Guira está diseñado para ofrecer mayor visibilidad sobre movimientos, estados operativos y flujos empresariales. Esto permite a cada empresa operar con más claridad documental y mejor seguimiento sobre ingresos, pagos y solicitudes asociadas a su actividad.</p>
-                  <p class="text-sm text-slate-500 font-medium leading-relaxed">La trazabilidad es parte central de una operación internacional más ordenada y confiable.</p>
-              </div>
+    <!-- Content -->
+    <main
+        data-stack-section
+        class="pt-16 pb-24 flex-1 text-left bg-slate-50 border-b border-slate-200"
+    >
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="px-6 md:px-8 divide-y divide-sky-200">
+                <!-- Bloque 1 -->
+                <div
+                    class="flex flex-col md:flex-row md:items-center gap-4 md:gap-6 py-8 reveal group"
+                >
+                    <div
+                        class="w-12 h-12 rounded-xl bg-slate-50 border border-slate-100 flex items-center justify-center shrink-0 group-hover:bg-guira-teal/10 group-hover:border-guira-teal/20 transition-colors"
+                    >
+                        <i
+                            data-lucide="file-check"
+                            class="text-guira-teal w-6 h-6"></i>
+                    </div>
+                    <div>
+                        <h2 class="text-xl font-bold text-slate-900 mb-2">
+                            Validación empresarial y revisión de perfil
+                        </h2>
+                        <p
+                            class="text-slate-600 mb-2 font-medium leading-relaxed"
+                        >
+                            Antes de activar una operación, Guira y los
+                            proveedores aplicables revisan la información básica
+                            de la empresa, sus representantes y su actividad.
+                            Esto ayuda a habilitar una operación alineada con
+                            criterios de cumplimiento, riesgo y elegibilidad del
+                            servicio.
+                        </p>
+                        <p
+                            class="text-sm text-slate-500 font-medium leading-relaxed"
+                        >
+                            La disponibilidad del servicio depende del perfil
+                            operativo de la empresa, la jurisdicción, la
+                            actividad comercial y la documentación de respaldo
+                            presentada, sujeta a criterios de prevención
+                            corporativa.
+                        </p>
+                    </div>
+                    <div class="flex items-center gap-2 shrink-0 md:ml-auto">
+                        <span
+                            class="fi fi-bo rounded-sm shadow-sm"
+                            title="Bolivia"></span>
+                        <span
+                            class="fi fi-us rounded-sm shadow-sm"
+                            title="Estados Unidos"></span>
+                    </div>
+                </div>
 
-              <!-- Bloque 3 -->
-              <div class="bg-white p-8 rounded-2xl border border-slate-200 shadow-sm reveal group hover:border-guira-teal transition-colors">
-                  <div class="flex items-center gap-4 mb-4">
-                      <div class="w-12 h-12 rounded-xl bg-slate-50 border border-slate-100 flex items-center justify-center shrink-0 group-hover:bg-guira-teal/10 group-hover:border-guira-teal/20 transition-colors">
-                          <i data-lucide="lock" class="text-guira-teal w-6 h-6"></i>
-                      </div>
-                      <h2 class="text-2xl font-bold text-slate-900">Controles de acceso y seguridad tecnológica</h2>
-                  </div>
-                  <p class="text-slate-600 mb-4 font-medium leading-relaxed">La plataforma incorpora controles de acceso, buenas prácticas de autenticación y capas de seguridad orientadas a proteger el entorno operativo y la información sensible de cada empresa, incluyendo cifrado y protección de datos estructurada.</p>
-                  <p class="text-sm text-slate-500 font-medium leading-relaxed">Según el flujo y la configuración del servicio, pueden aplicarse mecanismos adicionales de verificación y autorización para acciones sensibles.</p>
-              </div>
+                <!-- Bloque 2 -->
+                <div
+                    class="flex flex-col md:flex-row md:items-center gap-4 md:gap-6 py-8 reveal group"
+                >
+                    <div
+                        class="w-12 h-12 rounded-xl bg-slate-50 border border-slate-100 flex items-center justify-center shrink-0 group-hover:bg-guira-teal/10 group-hover:border-guira-teal/20 transition-colors"
+                    >
+                        <i
+                            data-lucide="activity"
+                            class="text-guira-teal w-6 h-6"></i>
+                    </div>
+                    <div>
+                        <h2 class="text-xl font-bold text-slate-900 mb-2">
+                            Trazabilidad y monitoreo operativo
+                        </h2>
+                        <p
+                            class="text-slate-600 mb-2 font-medium leading-relaxed"
+                        >
+                            Guira está diseñado para ofrecer mayor visibilidad
+                            sobre movimientos, estados operativos y flujos
+                            empresariales. Esto permite a cada empresa operar
+                            con más claridad documental y mejor seguimiento
+                            sobre ingresos, pagos y solicitudes asociadas a su
+                            actividad.
+                        </p>
+                        <p
+                            class="text-sm text-slate-500 font-medium leading-relaxed"
+                        >
+                            La trazabilidad es parte central de una operación
+                            internacional más ordenada y confiable.
+                        </p>
+                    </div>
+                    <div class="flex items-center gap-2 shrink-0 md:ml-auto">
+                        <span
+                            class="fi fi-bo rounded-sm shadow-sm"
+                            title="Bolivia"></span>
+                        <span
+                            class="fi fi-us rounded-sm shadow-sm"
+                            title="Estados Unidos"></span>
+                    </div>
+                </div>
 
-              <!-- Bloque 4 -->
-              <div class="bg-white p-8 rounded-2xl border border-slate-200 shadow-sm reveal group hover:border-guira-teal transition-colors">
-                  <div class="flex items-center gap-4 mb-4">
-                      <div class="w-12 h-12 rounded-xl bg-slate-50 border border-slate-100 flex items-center justify-center shrink-0 group-hover:bg-guira-teal/10 group-hover:border-guira-teal/20 transition-colors">
-                          <i data-lucide="building" class="text-guira-teal w-6 h-6"></i>
-                      </div>
-                      <h2 class="text-2xl font-bold text-slate-900">Infraestructura y partners aplicables</h2>
-                  </div>
-                  <p class="text-slate-600 mb-4 font-medium leading-relaxed">Guira provee software e infraestructura operativa para facilitar flujos financieros empresariales. Los servicios financieros aplicables pueden involucrar instituciones o partners especializados, según el riel, la jurisdicción y el caso de uso correspondiente.</p>
-                  <p class="text-sm text-slate-500 font-medium leading-relaxed">Esto permite ofrecer a las empresas una operación ágil y estructurada, respaldada por la solidez institucional de nuestra red operativa.</p>
-              </div>
+                <!-- Bloque 3 -->
+                <div
+                    class="flex flex-col md:flex-row md:items-center gap-4 md:gap-6 py-8 reveal group"
+                >
+                    <div
+                        class="w-12 h-12 rounded-xl bg-slate-50 border border-slate-100 flex items-center justify-center shrink-0 group-hover:bg-guira-teal/10 group-hover:border-guira-teal/20 transition-colors"
+                    >
+                        <i data-lucide="lock" class="text-guira-teal w-6 h-6"
+                        ></i>
+                    </div>
+                    <div>
+                        <h2 class="text-xl font-bold text-slate-900 mb-2">
+                            Controles de acceso y seguridad tecnológica
+                        </h2>
+                        <p
+                            class="text-slate-600 mb-2 font-medium leading-relaxed"
+                        >
+                            La plataforma incorpora controles de acceso, buenas
+                            prácticas de autenticación y capas de seguridad
+                            orientadas a proteger el entorno operativo y la
+                            información sensible de cada empresa, incluyendo
+                            cifrado y protección de datos estructurada.
+                        </p>
+                        <p
+                            class="text-sm text-slate-500 font-medium leading-relaxed"
+                        >
+                            Según el flujo y la configuración del servicio,
+                            pueden aplicarse mecanismos adicionales de
+                            verificación y autorización para acciones sensibles.
+                        </p>
+                    </div>
+                    <div class="flex items-center gap-2 shrink-0 md:ml-auto">
+                        <span
+                            class="fi fi-bo rounded-sm shadow-sm"
+                            title="Bolivia"></span>
+                        <span
+                            class="fi fi-us rounded-sm shadow-sm"
+                            title="Estados Unidos"></span>
+                    </div>
+                </div>
 
-              <!-- Disclaimer -->
-              <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200 reveal mt-8">
-                  <div class="flex gap-3">
-                      <i data-lucide="info" class="w-5 h-5 text-slate-400 shrink-0 mt-0.5"></i>
-                      <p class="text-slate-500 text-xs leading-relaxed font-medium">Guira es una plataforma tecnológica B2B. No somos banco, entidad financiera, casa de cambio, billetera de consumo ni custodio directo de fondos. Los servicios financieros, rieles de pago, cuentas de recepción, custodia, movimiento de fondos o procesamiento transaccional, cuando correspondan, son provistos exclusivamente por terceros o partners aplicables bajo sus propias autorizaciones, términos, límites, jurisdicciones y criterios de aprobación. La disponibilidad del servicio depende del perfil de la empresa, documentación presentada, jurisdicción, caso de uso y revisión correspondiente.</p>
-                  </div>
-              </div>
+                <!-- Bloque 4 -->
+                <div
+                    class="flex flex-col md:flex-row md:items-center gap-4 md:gap-6 py-8 reveal group"
+                >
+                    <div
+                        class="w-12 h-12 rounded-xl bg-slate-50 border border-slate-100 flex items-center justify-center shrink-0 group-hover:bg-guira-teal/10 group-hover:border-guira-teal/20 transition-colors"
+                    >
+                        <i
+                            data-lucide="building"
+                            class="text-guira-teal w-6 h-6"></i>
+                    </div>
+                    <div>
+                        <h2 class="text-xl font-bold text-slate-900 mb-2">
+                            Infraestructura y partners aplicables
+                        </h2>
+                        <p
+                            class="text-slate-600 mb-2 font-medium leading-relaxed"
+                        >
+                            Guira provee software e infraestructura operativa
+                            para facilitar flujos financieros empresariales. Los
+                            servicios financieros aplicables pueden involucrar
+                            instituciones o partners especializados, según el
+                            riel, la jurisdicción y el caso de uso
+                            correspondiente.
+                        </p>
+                        <p
+                            class="text-sm text-slate-500 font-medium leading-relaxed"
+                        >
+                            Esto permite ofrecer a las empresas una operación
+                            ágil y estructurada, respaldada por la solidez
+                            institucional de nuestra red operativa.
+                        </p>
+                    </div>
+                    <div class="flex items-center gap-2 shrink-0 md:ml-auto">
+                        <span
+                            class="fi fi-bo rounded-sm shadow-sm"
+                            title="Bolivia"></span>
+                        <span
+                            class="fi fi-us rounded-sm shadow-sm"
+                            title="Estados Unidos"></span>
+                    </div>
+                </div>
+            </div>
 
-          </div>
-          
-          <div class="mt-20 pt-10 border-t border-slate-200 text-center reveal">
-              <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-4">Conoce cómo opera Guira para empresas de LATAM</h2>
-              <p class="text-slate-600 font-medium mb-8 max-w-2xl mx-auto">Solicita una demo para revisar el proceso, los criterios de validación y cómo Guira puede ayudarte a operar con más trazabilidad y control.</p>
-              <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-                  <a href="/demo/" class="w-full sm:w-auto px-8 py-3.5 bg-slate-900 text-white rounded-xl font-bold hover:bg-slate-800 transition-all shadow-md hover:-translate-y-0.5">Solicitar demo</a>
-                  <a href="/contacto/" class="w-full sm:w-auto px-8 py-3.5 bg-white text-slate-700 border border-slate-200 rounded-xl font-bold hover:bg-slate-50 transition-all shadow-sm hover:-translate-y-0.5">Hablar con ventas</a>
-              </div>
-          </div>
-          
-          <div class="mt-12 text-center pb-8">
-              <a href="/faq/" class="font-bold text-slate-500 hover:text-guira-teal transition-colors">¿Tienes dudas adicionales? Consulta las FAQ &rarr;</a>
-          </div>
-      </div>
-  </main>
+            <!-- Disclaimer -->
+            <div
+                class="bg-white p-6 rounded-2xl border border-slate-200 reveal mt-6"
+            >
+                <div class="flex gap-3">
+                    <i
+                        data-lucide="info"
+                        class="w-5 h-5 text-slate-400 shrink-0 mt-0.5"></i>
+                    <p
+                        class="text-slate-500 text-xs leading-relaxed font-medium"
+                    >
+                        Guira es una plataforma tecnológica B2B. No somos banco,
+                        entidad financiera, casa de cambio, billetera de consumo
+                        ni custodio directo de fondos. Los servicios
+                        financieros, rieles de pago, cuentas de recepción,
+                        custodia, movimiento de fondos o procesamiento
+                        transaccional, cuando correspondan, son provistos
+                        exclusivamente por terceros o partners aplicables bajo
+                        sus propias autorizaciones, términos, límites,
+                        jurisdicciones y criterios de aprobación. La
+                        disponibilidad del servicio depende del perfil de la
+                        empresa, documentación presentada, jurisdicción, caso de
+                        uso y revisión correspondiente.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </main>
 
-  </StackedSections>
+    <!-- Cierre -->
+    <section
+        data-stack-section
+        class="py-20 bg-guira-navy text-center relative overflow-hidden z-10"
+    >
+        <div class="max-w-3xl mx-auto px-6 relative z-10 reveal-up">
+            <h2 class="text-2xl md:text-3xl font-extrabold text-white mb-4">
+                Conoce cómo opera Guira para empresas de LATAM
+            </h2>
+            <p class="text-slate-400 font-medium mb-8 max-w-2xl mx-auto">
+                Solicita una demo para revisar el proceso, los criterios de
+                validación y cómo Guira puede ayudarte a operar con más
+                trazabilidad y control.
+            </p>
+            <div
+                class="flex flex-col sm:flex-row items-center justify-center gap-4"
+            >
+                <a
+                    href="/demo"
+                    class="w-full sm:w-auto px-8 py-3.5 bg-guira-teal text-white rounded-xl font-bold hover:bg-guira-teal/90 transition-all shadow-lg hover:-translate-y-0.5"
+                    >Solicitar demo</a
+                >
+                <a
+                    href="/contacto"
+                    class="w-full sm:w-auto px-8 py-3.5 bg-white/5 text-white border border-white/10 rounded-xl font-bold hover:bg-white/10 transition-all hover:-translate-y-0.5"
+                    >Hablar con ventas</a
+                >
+            </div>
+            <div class="mt-10">
+                <a
+                    href="/faq"
+                    class="font-bold text-slate-400 hover:text-guira-teal transition-colors text-sm"
+                    >¿Tienes dudas adicionales? Consulta las FAQ &rarr;</a
+                >
+            </div>
+        </div>
+    </section>
 </Layout>
