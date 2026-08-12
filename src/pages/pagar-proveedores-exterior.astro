@@ -28,9 +28,9 @@ FORM: Recorrido operativo asimétrico, séptima estructura del concepto d4a56fbd
     />
     <link
       rel="preload"
-      as="video"
-      href="https://res.cloudinary.com/dbrkedvyp/video/upload/v1784908890/Guira_to_world_zzjcss.webm"
-      type="video/webm"
+      as="image"
+      href="/assets/images/logo-isotipo-color.png"
+      type="image/png"
     />
     <style is:inline>
       html {
@@ -83,23 +83,173 @@ FORM: Recorrido operativo asimétrico, séptima estructura del concepto d4a56fbd
             </div>
           </div>
 
-          <div class="hero-device" aria-label="Plataforma Guira">
+          <div
+            class="hero-device hero-network"
+            role="img"
+            aria-label="Guira conecta una operación con proveedores internacionales en dólares, euros, reales, pesos mexicanos y pesos colombianos"
+          >
             <div class="device-halo" aria-hidden="true"></div>
-            <video
-              class="hero-video"
-              autoplay
-              muted
-              loop
-              playsinline
-              preload="auto"
-              aria-label="Video de la plataforma Guira conectando pagos internacionales"
+            <svg
+              class="network-routes"
+              viewBox="0 0 760 500"
+              fill="none"
+              aria-hidden="true"
+              preserveAspectRatio="xMidYMid meet"
             >
-              <source
-                src="https://res.cloudinary.com/dbrkedvyp/video/upload/v1784908890/Guira_to_world_zzjcss.webm"
-                type="video/webm"
+              <defs>
+                <marker
+                  id="arrow-blue"
+                  viewBox="0 0 10 10"
+                  refX="9"
+                  refY="5"
+                  markerWidth="7"
+                  markerHeight="7"
+                  orient="auto-start-reverse"
+                >
+                  <path d="M 0 0 L 10 5 L 0 10 z" fill="#0051ff"></path>
+                </marker>
+                <marker
+                  id="arrow-cyan"
+                  viewBox="0 0 10 10"
+                  refX="9"
+                  refY="5"
+                  markerWidth="7"
+                  markerHeight="7"
+                  orient="auto-start-reverse"
+                >
+                  <path d="M 0 0 L 10 5 L 0 10 z" fill="#00cfe8"></path>
+                </marker>
+              </defs>
+              <path
+                class="network-route network-route-blue"
+                d="M380 260 C380 195 394 152 390 102"
+                marker-end="url(#arrow-blue)"></path>
+              <path
+                class="network-route network-route-cyan"
+                d="M335 265 C270 248 222 214 161 204"
+                marker-end="url(#arrow-cyan)"></path>
+              <path
+                class="network-route network-route-cyan"
+                d="M340 295 C282 326 240 355 198 382"
+                marker-end="url(#arrow-cyan)"></path>
+              <path
+                class="network-route network-route-blue"
+                d="M420 252 C490 210 530 196 588 192"
+                marker-end="url(#arrow-blue)"></path>
+              <path
+                class="network-route network-route-blue"
+                d="M425 297 C492 309 529 342 555 391"
+                marker-end="url(#arrow-blue)"></path>
+
+              <circle class="network-signal network-signal-blue" r="5">
+                <animateMotion
+                  dur="3.8s"
+                  repeatCount="indefinite"
+                  path="M380 260 C380 195 394 152 390 102"></animateMotion>
+                <animate
+                  attributeName="opacity"
+                  values="0;1;1;0"
+                  keyTimes="0;0.12;0.8;1"
+                  dur="3.8s"
+                  repeatCount="indefinite"></animate>
+              </circle>
+              <circle
+                class="network-signal network-signal-cyan"
+                r="5"
+                opacity="0"
+              >
+                <animateMotion
+                  dur="4.6s"
+                  begin="-1.3s"
+                  repeatCount="indefinite"
+                  path="M335 265 C270 248 222 214 161 204"></animateMotion>
+                <animate
+                  attributeName="opacity"
+                  values="0;1;1;0"
+                  keyTimes="0;0.12;0.8;1"
+                  dur="4.6s"
+                  begin="-1.3s"
+                  repeatCount="indefinite"></animate>
+              </circle>
+              <circle
+                class="network-signal network-signal-cyan"
+                r="4.5"
+                opacity="0"
+              >
+                <animateMotion
+                  dur="4.2s"
+                  begin="-2.5s"
+                  repeatCount="indefinite"
+                  path="M340 295 C282 326 240 355 198 382"></animateMotion>
+                <animate
+                  attributeName="opacity"
+                  values="0;1;1;0"
+                  keyTimes="0;0.12;0.8;1"
+                  dur="4.2s"
+                  begin="-2.5s"
+                  repeatCount="indefinite"></animate>
+              </circle>
+              <circle
+                class="network-signal network-signal-blue"
+                r="4.5"
+                opacity="0"
+              >
+                <animateMotion
+                  dur="4.1s"
+                  begin="-0.8s"
+                  repeatCount="indefinite"
+                  path="M420 252 C490 210 530 196 588 192"></animateMotion>
+                <animate
+                  attributeName="opacity"
+                  values="0;1;1;0"
+                  keyTimes="0;0.12;0.8;1"
+                  dur="4.1s"
+                  begin="-0.8s"
+                  repeatCount="indefinite"></animate>
+              </circle>
+              <circle
+                class="network-signal network-signal-blue"
+                r="5"
+                opacity="0"
+              >
+                <animateMotion
+                  dur="4.5s"
+                  begin="-3.1s"
+                  repeatCount="indefinite"
+                  path="M425 297 C492 309 529 342 555 391"></animateMotion>
+                <animate
+                  attributeName="opacity"
+                  values="0;1;1;0"
+                  keyTimes="0;0.12;0.8;1"
+                  dur="4.5s"
+                  begin="-3.1s"
+                  repeatCount="indefinite"></animate>
+              </circle>
+            </svg>
+
+            <div class="network-center" aria-hidden="true">
+              <img
+                src="/assets/images/logo-isotipo-color.png"
+                alt=""
+                width="98"
+                height="98"
               />
-              Tu navegador no puede reproducir este video.
-            </video>
+            </div>
+            <span class="network-node network-node-usd" aria-hidden="true"
+              >USD</span
+            >
+            <span class="network-node network-node-eur" aria-hidden="true"
+              >EUR</span
+            >
+            <span class="network-node network-node-cop" aria-hidden="true"
+              >COP</span
+            >
+            <span class="network-node network-node-brl" aria-hidden="true"
+              >BRL</span
+            >
+            <span class="network-node network-node-mxn" aria-hidden="true"
+              >MXN</span
+            >
           </div>
         </div>
       </header>
@@ -178,13 +328,13 @@ FORM: Recorrido operativo asimétrico, séptima estructura del concepto d4a56fbd
 
       <section id="como-funciona" class="process-section section-space">
         <div class="page-wrap">
-          <div class="section-heading process-heading">
+          <div class="max-w-[700px] mx-auto text-center">
             <span
               class="block mb-[18px] text-[#0051ff] text-[0.72rem] font-extrabold"
               >Cómo funciona</span
             >
             <h2
-              class="max-w-[700px] mx-auto text-[clamp(2rem,4vw,3.55rem)] leading-[1.08] tracking-tight font-extrabold text-balance"
+              class="text-[clamp(2rem,4vw,3.55rem)] leading-[1.08] tracking-tight font-extrabold text-balance"
             >
               De la factura al respaldo, en una sola secuencia.
             </h2>
@@ -302,28 +452,15 @@ FORM: Recorrido operativo asimétrico, séptima estructura del concepto d4a56fbd
 
       <section class="control-section section-space">
         <div class="page-wrap control-grid">
-          <div class="control-demo">
-            <div class="control-toolbar">
-              <span>Operaciones</span><span class="live-label">Actualizado</span
-              >
-            </div>
-            <div class="table-head">
-              <span>Proveedor</span><span>Destino</span><span>Estado</span>
-            </div>
-            <div class="table-row" tabindex="0">
-              <span><b>Proveedor A</b><small>Factura vinculada</small></span
-              ><span>Estados Unidos</span><span class="state review"
-                >En revisión</span
-              >
-            </div>
-            <div class="table-row" tabindex="0">
-              <span><b>Proveedor B</b><small>Comprobante listo</small></span
-              ><span>Brasil</span><span class="state complete">Completada</span>
-            </div>
-            <div class="table-row" tabindex="0">
-              <span><b>Proveedor C</b><small>Datos verificados</small></span
-              ><span>Europa</span><span class="state course">En curso</span>
-            </div>
+          <div class="">
+            <img
+              src="/DOCUMENTACION2.png"
+              alt="Documentación de una operación internacional"
+              width="1768"
+              height="890"
+              loading="lazy"
+              decoding="async"
+            />
           </div>
           <div class="section-heading control-copy">
             <span
@@ -586,6 +723,21 @@ FORM: Recorrido operativo asimétrico, séptima estructura del concepto d4a56fbd
           ".hero-device",
           { opacity: 0, x: 40, scale: 0.96, duration: 0.9 },
           "-=0.7",
+        )
+        .from(
+          ".network-route",
+          { opacity: 0, duration: 0.45, stagger: 0.07 },
+          "-=0.48",
+        )
+        .from(
+          ".network-center",
+          { autoAlpha: 0, scale: 0.78, duration: 0.55 },
+          "-=0.42",
+        )
+        .from(
+          ".network-node",
+          { autoAlpha: 0, scale: 0.72, duration: 0.45, stagger: 0.08 },
+          "-=0.36",
         );
 
       // Parallax sutil del halo del hero al hacer scroll
@@ -619,27 +771,6 @@ FORM: Recorrido operativo asimétrico, séptima estructura del concepto d4a56fbd
           onComplete: () => gsap.set(processCards, { clearProps: "all" }),
           onReverseComplete: () =>
             gsap.set(processCards, { opacity: 0, y: 30, scale: 0.94 }),
-        });
-      }
-
-      // Filas de la tabla de operaciones: entran y se reactivan al subir/bajar
-      const tableRows = gsap.utils.toArray(".table-row");
-      if (tableRows.length) {
-        gsap.set(tableRows, { opacity: 0, x: -24 });
-        gsap.to(tableRows, {
-          opacity: 1,
-          x: 0,
-          duration: 0.6,
-          ease: "power3.out",
-          stagger: 0.12,
-          scrollTrigger: {
-            trigger: ".control-demo",
-            start: "top 75%",
-            toggleActions: "play none none reverse",
-          },
-          onComplete: () =>
-            gsap.set(tableRows, { clearProps: "opacity,transform" }),
-          onReverseComplete: () => gsap.set(tableRows, { opacity: 0, x: -24 }),
         });
       }
 
@@ -812,14 +943,10 @@ FORM: Recorrido operativo asimétrico, séptima estructura del concepto d4a56fbd
   .hero-device {
     position: relative;
     width: 100%;
-    max-width: 780px;
-    aspect-ratio: 16 / 10;
+    max-width: 760px;
+    aspect-ratio: 38 / 25;
     min-height: 0;
     justify-self: end;
-    overflow: hidden;
-    border-radius: 24px;
-    background: #0b1120;
-    box-shadow: 0 34px 72px -38px rgba(15, 23, 42, 0.46);
     display: grid;
     place-items: center;
     isolation: isolate;
@@ -837,12 +964,87 @@ FORM: Recorrido operativo asimétrico, séptima estructura del concepto d4a56fbd
       transparent 70%
     );
   }
-  .hero-video {
-    display: block;
+  .network-routes {
+    position: absolute;
+    inset: 0;
     width: 100%;
     height: 100%;
-    object-fit: cover;
-    object-position: center;
+    overflow: visible;
+  }
+  .network-route {
+    fill: none;
+    stroke-width: 3;
+    stroke-linecap: round;
+  }
+  .network-route-blue {
+    stroke: #0051ff;
+  }
+  .network-route-cyan {
+    stroke: #00cfe8;
+  }
+  .network-signal-blue {
+    fill: #0051ff;
+  }
+  .network-signal-cyan {
+    fill: #00cfe8;
+  }
+  .network-signal {
+    filter: drop-shadow(0 0 5px rgba(0, 216, 255, 0.8));
+  }
+  .network-center,
+  .network-node {
+    position: absolute;
+    display: grid;
+    place-items: center;
+    transform: translate(-50%, -50%);
+  }
+  .network-center {
+    z-index: 2;
+    left: 50%;
+    top: 55%;
+    width: clamp(104px, 15vw, 146px);
+    aspect-ratio: 1;
+    padding: clamp(18px, 2vw, 25px);
+    border-radius: 50%;
+    background: white;
+    box-shadow: 0 20px 42px -22px rgba(15, 23, 42, 0.42);
+  }
+  .network-center img {
+    width: 100%;
+    height: auto;
+  }
+  .network-node {
+    z-index: 1;
+    width: clamp(58px, 8vw, 82px);
+    aspect-ratio: 1;
+    border: 3px solid white;
+    border-radius: 50%;
+    color: white;
+    background: #0b1120;
+    box-shadow: 0 14px 30px -18px rgba(15, 23, 42, 0.5);
+    font-size: clamp(0.83rem, 1.45vw, 1.05rem);
+    font-weight: 800;
+    letter-spacing: -0.04em;
+  }
+  .network-node-usd {
+    left: 51.3%;
+    top: 10%;
+  }
+  .network-node-eur {
+    left: 14.5%;
+    top: 36%;
+  }
+  .network-node-cop {
+    left: 19%;
+    top: 80%;
+  }
+  .network-node-brl {
+    left: 84%;
+    top: 37%;
+  }
+  .network-node-mxn {
+    left: 78%;
+    top: 82%;
   }
   .operation-stage {
     position: relative;
@@ -862,10 +1064,7 @@ FORM: Recorrido operativo asimétrico, séptima estructura del concepto d4a56fbd
   }
   .operation-head,
   .route-line,
-  .document-row,
-  .control-toolbar,
-  .table-head,
-  .table-row {
+  .document-row {
     display: flex;
     align-items: center;
   }
@@ -1138,18 +1337,6 @@ FORM: Recorrido operativo asimétrico, séptima estructura del concepto d4a56fbd
   .process-section {
     background: #f5f8fd;
   }
-  .process-heading {
-    display: grid;
-    grid-template-columns: 1fr 0.75fr;
-    column-gap: 60px;
-  }
-  .process-heading .section-label {
-    grid-column: 1/-1;
-  }
-  .process-heading p {
-    margin-top: 0;
-    align-self: end;
-  }
   .control-grid {
     display: grid;
     grid-template-columns: 1.08fr 0.92fr;
@@ -1158,99 +1345,14 @@ FORM: Recorrido operativo asimétrico, séptima estructura del concepto d4a56fbd
   }
   .control-demo {
     border-radius: 8px;
-    background: #fff;
     box-shadow: 0 28px 80px -45px rgba(15, 23, 42, 0.42);
     border: 1px solid #e5eaf2;
     overflow: hidden;
   }
-  .control-toolbar {
-    justify-content: space-between;
-    padding: 22px 24px;
-    font-weight: 850;
-    border-bottom: 1px solid #e5eaf2;
-  }
-  .live-label {
-    color: #166534;
-    background: #ecfdf5;
-    border-radius: 999px;
-    padding: 6px 9px;
-    font-size: 0.62rem;
-  }
-  .table-head,
-  .table-row {
-    display: grid;
-    grid-template-columns: 1.35fr 0.9fr 0.8fr;
-    gap: 12px;
-    padding: 15px 24px;
-  }
-  .table-head {
-    color: #94a3b8;
-    background: #f8fafc;
-    font-size: 0.62rem;
-    font-weight: 800;
-  }
-  .table-row {
-    position: relative;
-    z-index: 1;
-    min-height: 70px;
-    border-top: 1px solid #eef2f7;
-    font-size: 0.72rem;
-    color: #475569;
-    cursor: default;
-    transition:
-      transform 0.3s cubic-bezier(0.16, 1, 0.3, 1),
-      box-shadow 0.3s ease,
-      background 0.3s ease;
-  }
-  .table-row.active {
-    box-shadow: inset 3px 0 #0051ff;
-    background: #f8fbff;
-  }
-  .table-row:hover,
-  .table-row:focus-visible {
-    z-index: 2;
-    background: #fff;
-    box-shadow: 0 20px 38px -22px rgba(15, 23, 42, 0.38);
-    transform: scale(1.035);
-  }
-  .table-row.active:hover,
-  .table-row.active:focus-visible {
-    box-shadow:
-      inset 3px 0 #0051ff,
-      0 20px 38px -22px rgba(15, 23, 42, 0.38);
-  }
-  .table-row:focus-visible {
-    outline: 3px solid rgba(0, 81, 255, 0.22);
-    outline-offset: -3px;
-  }
-  .table-row > span:first-child {
-    display: grid;
-    gap: 4px;
-  }
-  .table-row b {
-    color: #0f172a;
-  }
-  .table-row small {
-    color: #94a3b8;
-  }
-  .state {
-    justify-self: start;
-    border-radius: 999px;
-    padding: 6px 8px;
-    font-weight: 800;
-    font-size: 0.59rem;
-  }
-  .review {
-    color: #1d4ed8;
-    background: #eff6ff;
-  }
-  .complete {
-    color: #166534;
-    background: #ecfdf5;
-  }
-  .course {
-    color: #854d0e;
-    background: #fefce8;
+  .control-demo img {
+    display: block;
+    width: 100%;
+    height: auto;
   }
   .control-copy ul {
     display: grid;
@@ -1431,6 +1533,11 @@ FORM: Recorrido operativo asimétrico, séptima estructura del concepto d4a56fbd
     font-size: 0.875rem;
     padding-right: 2.75rem;
   }
+  @media (prefers-reduced-motion: reduce) {
+    .network-signal {
+      display: none;
+    }
+  }
   @media (max-width: 900px) {
     .hero-grid,
     .problem-grid,
@@ -1514,14 +1621,6 @@ FORM: Recorrido operativo asimétrico, séptima estructura del concepto d4a56fbd
     }
     .section-space {
       padding: 84px 0;
-    }
-    .table-head,
-    .table-row {
-      grid-template-columns: 1.3fr 0.8fr;
-    }
-    .table-head span:nth-child(2),
-    .table-row > span:nth-child(2) {
-      display: none;
     }
     .trust-grid {
       gap: 44px;
