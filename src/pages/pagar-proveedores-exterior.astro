@@ -1,6 +1,6 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import DemoForm from '../components/DemoForm.astro';
+import Layout from "../layouts/Layout.astro";
+import DemoForm from "../components/DemoForm.astro";
 ---
 
 <!--
@@ -10,7 +10,6 @@ STORY: La empresa entiende qué puede pagar, ve cómo avanza una operación y so
 FIRST VIEWPORT: Promesa y CTA a la izquierda. A la derecha, una operación realista que conecta proveedor, corredor y respaldo.
 FORM: Recorrido operativo asimétrico, séptima estructura del concepto d4a56fbd, con la operación como hilo conductor.
 -->
-
 <Layout
   title="Paga a tus proveedores en el exterior desde una sola cuenta operativa | Guira"
   description="Desde una sola cuenta operativa, en la moneda que tu proveedor necesita recibir. Con respaldo documental en cada operación."
@@ -20,15 +19,33 @@ FORM: Recorrido operativo asimétrico, séptima estructura del concepto d4a56fbd
   hideFooter={true}
 >
   <Fragment slot="head">
-    <link rel="preload" as="image" href="/assets/images/logo-horizontal-color-oscuro.png" type="image/png" />
-    <link rel="preload" as="image" href="/assets/images/plataforma-login-macbook.webp" type="image/webp" />
-    <style is:inline>html { scroll-behavior: smooth; }</style>
+    <link
+      rel="preload"
+      as="image"
+      href="/assets/images/logo-horizontal-color-oscuro.png"
+      type="image/png"
+    />
+    <link
+      rel="preload"
+      as="image"
+      href="/assets/images/plataforma-login-macbook.webp"
+      type="image/webp"
+    />
+    <style is:inline>
+      html {
+        scroll-behavior: smooth;
+      }
+    </style>
   </Fragment>
 
   <div class="landing-shell">
     <nav class="landing-nav" aria-label="Encabezado">
       <div class="page-wrap nav-inner">
-        <img src="/assets/images/logo-horizontal-color-oscuro.png" alt="Guira" class="h-8 md:h-9 w-auto" />
+        <img
+          src="/assets/images/logo-horizontal-color-oscuro.png"
+          alt="Guira"
+          class="h-8 md:h-9 w-auto"
+        />
       </div>
     </nav>
 
@@ -37,16 +54,33 @@ FORM: Recorrido operativo asimétrico, séptima estructura del concepto d4a56fbd
         <div class="hero-wash" aria-hidden="true"></div>
         <div class="page-wrap hero-grid">
           <div class="hero-copy">
-            <div class="audience-tag"><span></span> Para empresas importadoras de Bolivia</div>
-            <h1>Paga a tus proveedores en el exterior</h1>
-            <p class="hero-lead">Desde una sola cuenta operativa, en la moneda que tu proveedor necesita recibir. Con respaldo documental en cada operación.</p>
-            <div class="hero-actions">
-              <a href="https://wa.me/59175245845?text=Hola,%20quiero%20pagar%20a%20mis%20proveedores%20del%20exterior%20con%20Guira" target="_blank" rel="noopener noreferrer" class="button button-primary">Quiero pagar a mi proveedor <i data-lucide="arrow-right" class="w-5 h-5"></i></a>
+            <div class="audience-tag">
+              <span></span> Para empresas importadoras de Bolivia
             </div>
-            <p class="hero-support">Escríbenos y revisamos tu operación. Sin compromiso.</p>
+            <h1>Paga a tus proveedores en el exterior</h1>
+            <p class="hero-lead">
+              Desde una sola cuenta operativa, en la moneda que tu proveedor
+              necesita recibir. Con respaldo documental en cada operación.
+            </p>
+            <div class="hero-actions">
+              <a
+                href="https://wa.me/59175245845?text=Hola,%20quiero%20pagar%20a%20mis%20proveedores%20del%20exterior%20con%20Guira"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="button button-primary"
+                >Quiero pagar a mi proveedor <i
+                  data-lucide="arrow-right"
+                  class="w-5 h-5"></i></a
+              >
+            </div>
+            <p class="hero-support">
+              Escríbenos y revisamos tu operación. Sin compromiso.
+            </p>
             <div class="trust-line" aria-label="Características principales">
               <span><i data-lucide="building-2"></i> Solo empresas</span>
-              <span><i data-lucide="file-check-2"></i> Respaldo por operación</span>
+              <span
+                ><i data-lucide="file-check-2"></i> Respaldo por operación</span
+              >
               <span><i data-lucide="headphones"></i> Acompañamiento local</span>
             </div>
           </div>
@@ -70,7 +104,10 @@ FORM: Recorrido operativo asimétrico, séptima estructura del concepto d4a56fbd
         <div class="page-wrap corridor-inner">
           <p>Un flujo para tus pagos frecuentes</p>
           <div class="country-list">
-            <span>Estados Unidos <b>Wire</b></span><span>Europa <b>EUR</b></span><span>Brasil <b>BRL</b></span><span>México <b>MXN</b></span><span>Colombia <b>COP</b></span>
+            <span>Estados Unidos <b>Wire</b></span><span>Europa <b>EUR</b></span
+            ><span>Brasil <b>BRL</b></span><span>México <b>MXN</b></span><span
+              >Colombia <b>COP</b></span
+            >
           </div>
         </div>
       </section>
@@ -80,16 +117,52 @@ FORM: Recorrido operativo asimétrico, séptima estructura del concepto d4a56fbd
           <div class="problem-grid">
             <div class="section-heading sticky-heading">
               <span class="section-label">El problema operativo</span>
-              <h2>Un pago no debería detener una compra, un embarque o una entrega.</h2>
-              <p>Cuando la información está dispersa, finanzas pierde tiempo reconstruyendo el estado de cada operación.</p>
+              <h2>
+                Un pago no debería detener una compra, un embarque o una
+                entrega.
+              </h2>
+              <p>
+                Cuando la información está dispersa, finanzas pierde tiempo
+                reconstruyendo el estado de cada operación.
+              </p>
             </div>
             <div class="friction-list">
-              <article tabindex="0"><span>01</span><div><h3>Requisitos que aparecen tarde</h3><p>Los datos del proveedor o la documentación se corrigen cuando el pago ya debería estar en curso.</p></div></article>
-              <article tabindex="0"><span>02</span><div><h3>Seguimiento por mensajes</h3><p>Compras, finanzas y gerencia dependen de respuestas aisladas para saber qué está pasando.</p></div></article>
-              <article tabindex="0"><span>03</span><div><h3>Respaldo difícil de conciliar</h3><p>El comprobante llega separado de la factura y obliga a reconstruir la historia después.</p></div></article>
+              <article tabindex="0">
+                <span>01</span><div>
+                  <h3>Requisitos que aparecen tarde</h3><p>
+                    Los datos del proveedor o la documentación se corrigen
+                    cuando el pago ya debería estar en curso.
+                  </p>
+                </div>
+              </article>
+              <article tabindex="0">
+                <span>02</span><div>
+                  <h3>Seguimiento por mensajes</h3><p>
+                    Compras, finanzas y gerencia dependen de respuestas aisladas
+                    para saber qué está pasando.
+                  </p>
+                </div>
+              </article>
+              <article tabindex="0">
+                <span>03</span><div>
+                  <h3>Respaldo difícil de conciliar</h3><p>
+                    El comprobante llega separado de la factura y obliga a
+                    reconstruir la historia después.
+                  </p>
+                </div>
+              </article>
             </div>
           </div>
-          <div class="section-cta"><a href="https://wa.me/59175245845?text=Hola,%20necesito%20pagar%20a%20un%20proveedor%20del%20exterior%20y%20quiero%20orientaci%C3%B3n" target="_blank" rel="noopener noreferrer" class="button button-secondary">Quiero resolver esto <i data-lucide="arrow-right" class="w-5 h-5"></i></a></div>
+          <div class="section-cta">
+            <a
+              href="https://wa.me/59175245845?text=Hola,%20necesito%20pagar%20a%20un%20proveedor%20del%20exterior%20y%20quiero%20orientaci%C3%B3n"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="button button-secondary"
+              >Quiero resolver esto <i data-lucide="arrow-right" class="w-5 h-5"
+              ></i></a
+            >
+          </div>
         </div>
       </section>
 
@@ -98,64 +171,236 @@ FORM: Recorrido operativo asimétrico, séptima estructura del concepto d4a56fbd
           <div class="section-heading process-heading">
             <span class="section-label">Cómo funciona</span>
             <h2>De la factura al respaldo, en una sola secuencia.</h2>
-            <p>Un especialista acompaña la preparación de la operación y tu equipo mantiene la visibilidad.</p>
+            <p>
+              Un especialista acompaña la preparación de la operación y tu
+              equipo mantiene la visibilidad.
+            </p>
           </div>
-          <div class="process-flow">
-            <article><div class="step-mark">1</div><i data-lucide="scan-search"></i><h3>Revisamos</h3><p>Validamos la factura, los datos bancarios del proveedor y el destino.</p></article>
-            <article><div class="step-mark">2</div><i data-lucide="route"></i><h3>Definimos la ruta</h3><p>La operación se prepara según el país, la moneda y el tipo de transferencia.</p></article>
-            <article><div class="step-mark">3</div><i data-lucide="send"></i><h3>Gestionamos el pago</h3><p>El pago avanza a través de la infraestructura habilitada para la operación.</p></article>
-            <article><div class="step-mark">4</div><i data-lucide="folder-check"></i><h3>Consolidamos el respaldo</h3><p>Estado, referencia y comprobante quedan asociados a la misma operación.</p></article>
+          <div
+            class="grid md:grid-cols-2 lg:grid-cols-4 divide-y divide-slate-200 md:divide-y-0 md:divide-x mt-16"
+          >
+            <div class="group px-6 py-8 md:py-0 text-center">
+              <div class="relative inline-flex mb-6">
+                <div
+                  class="w-14 h-14 rounded-xl bg-white border border-slate-200 flex items-center justify-center transition-colors group-hover:bg-blue-600 group-hover:border-blue-600"
+                >
+                  <i
+                    data-lucide="scan-search"
+                    class="w-6 h-6 text-slate-700 transition-colors group-hover:text-white"
+                  ></i>
+                </div>
+                <span
+                  class="absolute -top-2 -right-2 w-5 h-5 rounded-full bg-slate-900 text-white text-[11px] font-bold flex items-center justify-center"
+                  >1</span
+                >
+              </div>
+              <h3 class="text-lg font-bold text-slate-900 mb-3">Revisamos</h3>
+              <p class="text-slate-600 text-sm font-medium max-w-xs mx-auto">
+                Validamos la factura, los datos bancarios del proveedor y el
+                destino.
+              </p>
+            </div>
+            <div class="group px-6 py-8 md:py-0 text-center">
+              <div class="relative inline-flex mb-6">
+                <div
+                  class="w-14 h-14 rounded-xl bg-white border border-slate-200 flex items-center justify-center transition-colors group-hover:bg-blue-600 group-hover:border-blue-600"
+                >
+                  <i
+                    data-lucide="route"
+                    class="w-6 h-6 text-slate-700 transition-colors group-hover:text-white"
+                  ></i>
+                </div>
+                <span
+                  class="absolute -top-2 -right-2 w-5 h-5 rounded-full bg-slate-900 text-white text-[11px] font-bold flex items-center justify-center"
+                  >2</span
+                >
+              </div>
+              <h3 class="text-lg font-bold text-slate-900 mb-3">
+                Definimos la ruta
+              </h3>
+              <p class="text-slate-600 text-sm font-medium max-w-xs mx-auto">
+                La operación se prepara según el país, la moneda y el tipo de
+                transferencia.
+              </p>
+            </div>
+            <div class="group px-6 py-8 md:py-0 text-center">
+              <div class="relative inline-flex mb-6">
+                <div
+                  class="w-14 h-14 rounded-xl bg-white border border-slate-200 flex items-center justify-center transition-colors group-hover:bg-blue-600 group-hover:border-blue-600"
+                >
+                  <i
+                    data-lucide="send"
+                    class="w-6 h-6 text-slate-700 transition-colors group-hover:text-white"
+                  ></i>
+                </div>
+                <span
+                  class="absolute -top-2 -right-2 w-5 h-5 rounded-full bg-slate-900 text-white text-[11px] font-bold flex items-center justify-center"
+                  >3</span
+                >
+              </div>
+              <h3 class="text-lg font-bold text-slate-900 mb-3">
+                Gestionamos el pago
+              </h3>
+              <p class="text-slate-600 text-sm font-medium max-w-xs mx-auto">
+                El pago avanza a través de la infraestructura habilitada para la
+                operación.
+              </p>
+            </div>
+            <div class="group px-6 py-8 md:py-0 text-center">
+              <div class="relative inline-flex mb-6">
+                <div
+                  class="w-14 h-14 rounded-xl bg-white border border-slate-200 flex items-center justify-center transition-colors group-hover:bg-blue-600 group-hover:border-blue-600"
+                >
+                  <i
+                    data-lucide="folder-check"
+                    class="w-6 h-6 text-slate-700 transition-colors group-hover:text-white"
+                  ></i>
+                </div>
+                <span
+                  class="absolute -top-2 -right-2 w-5 h-5 rounded-full bg-slate-900 text-white text-[11px] font-bold flex items-center justify-center"
+                  >4</span
+                >
+              </div>
+              <h3 class="text-lg font-bold text-slate-900 mb-3">
+                Consolidamos el respaldo
+              </h3>
+              <p class="text-slate-600 text-sm font-medium max-w-xs mx-auto">
+                Estado, referencia y comprobante quedan asociados a la misma
+                operación.
+              </p>
+            </div>
           </div>
-          <div class="section-cta"><a href="https://wa.me/59175245845?text=Hola,%20quiero%20empezar%20a%20pagar%20a%20mis%20proveedores%20del%20exterior%20con%20Guira" target="_blank" rel="noopener noreferrer" class="button button-secondary">Empezar mi primera operación <i data-lucide="arrow-right" class="w-5 h-5"></i></a></div>
+          <div class="section-cta">
+            <a
+              href="https://wa.me/59175245845?text=Hola,%20quiero%20empezar%20a%20pagar%20a%20mis%20proveedores%20del%20exterior%20con%20Guira"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="button button-secondary"
+              >Empezar mi primera operación <i
+                data-lucide="arrow-right"
+                class="w-5 h-5"></i></a
+            >
+          </div>
         </div>
       </section>
 
       <section class="control-section section-space">
         <div class="page-wrap control-grid">
           <div class="control-demo">
-            <div class="control-toolbar"><span>Operaciones</span><span class="live-label">Actualizado</span></div>
-            <div class="table-head"><span>Proveedor</span><span>Destino</span><span>Estado</span></div>
-            <div class="table-row active"><span><b>Proveedor A</b><small>Factura vinculada</small></span><span>Estados Unidos</span><span class="state review">En revisión</span></div>
-            <div class="table-row"><span><b>Proveedor B</b><small>Comprobante listo</small></span><span>Brasil</span><span class="state complete">Completada</span></div>
-            <div class="table-row"><span><b>Proveedor C</b><small>Datos verificados</small></span><span>Europa</span><span class="state course">En curso</span></div>
+            <div class="control-toolbar">
+              <span>Operaciones</span><span class="live-label">Actualizado</span
+              >
+            </div>
+            <div class="table-head">
+              <span>Proveedor</span><span>Destino</span><span>Estado</span>
+            </div>
+            <div class="table-row" tabindex="0">
+              <span><b>Proveedor A</b><small>Factura vinculada</small></span
+              ><span>Estados Unidos</span><span class="state review"
+                >En revisión</span
+              >
+            </div>
+            <div class="table-row" tabindex="0">
+              <span><b>Proveedor B</b><small>Comprobante listo</small></span
+              ><span>Brasil</span><span class="state complete">Completada</span>
+            </div>
+            <div class="table-row" tabindex="0">
+              <span><b>Proveedor C</b><small>Datos verificados</small></span
+              ><span>Europa</span><span class="state course">En curso</span>
+            </div>
           </div>
           <div class="section-heading control-copy">
             <span class="section-label">Control por operación</span>
             <h2>La misma información para compras, finanzas y contabilidad.</h2>
-            <p>Cada pago conserva su contexto. Tu equipo puede consultar qué se pagó, a quién, por qué concepto y con qué respaldo.</p>
+            <p>
+              Cada pago conserva su contexto. Tu equipo puede consultar qué se
+              pagó, a quién, por qué concepto y con qué respaldo.
+            </p>
             <ul>
-              <li><i data-lucide="check"></i> Estado visible de principio a fin</li>
-              <li><i data-lucide="check"></i> Factura y comprobante relacionados</li>
+              <li>
+                <i data-lucide="check"></i> Estado visible de principio a fin
+              </li>
+              <li>
+                <i data-lucide="check"></i> Factura y comprobante relacionados
+              </li>
               <li><i data-lucide="check"></i> Historial para conciliación</li>
             </ul>
             <p class="control-close">Y si te preguntan, lo puedes mostrar.</p>
           </div>
         </div>
-        <div class="page-wrap"><div class="section-cta"><a href="https://wa.me/59175245845?text=Hola,%20quiero%20conocer%20el%20respaldo%20documental%20de%20los%20pagos%20con%20Guira" target="_blank" rel="noopener noreferrer" class="button button-secondary">Quiero ver el respaldo por operación <i data-lucide="arrow-right" class="w-5 h-5"></i></a></div></div>
+        <div class="page-wrap">
+          <div class="section-cta">
+            <a
+              href="https://wa.me/59175245845?text=Hola,%20quiero%20conocer%20el%20respaldo%20documental%20de%20los%20pagos%20con%20Guira"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="button button-secondary"
+              >Quiero ver el respaldo por operación <i
+                data-lucide="arrow-right"
+                class="w-5 h-5"></i></a
+            >
+          </div>
+        </div>
       </section>
 
       <section class="trust-section">
         <div class="page-wrap trust-grid">
-          <div><span class="section-label section-label-light">Estructura y acompañamiento</span><h2>Una plataforma global con asesoría comercial en Bolivia.</h2></div>
-          <div class="trust-copy"><p>Guira es una plataforma tecnológica creada y operada por Guira System LLC, constituida en Delaware, Estados Unidos. En Bolivia, Guiraglobal SRL es el equipo de asesoría comercial que acompaña a las empresas en su uso.</p></div>
+          <div>
+            <span class="section-label section-label-light"
+              >Estructura y acompañamiento</span
+            ><h2>Una plataforma global con asesoría comercial en Bolivia.</h2>
+          </div>
+          <div class="trust-copy">
+            <p>
+              Guira es una plataforma tecnológica creada y operada por Guira
+              System LLC, constituida en Delaware, Estados Unidos. En Bolivia,
+              Guiraglobal SRL es el equipo de asesoría comercial que acompaña a
+              las empresas en su uso.
+            </p>
+          </div>
         </div>
       </section>
 
       <section class="faq-section section-space">
         <div class="page-wrap faq-wrap">
-          <div class="section-heading faq-heading"><h2>Antes de empezar</h2></div>
+          <div class="section-heading faq-heading">
+            <h2>Antes de empezar</h2>
+          </div>
           <div class="faq-list">
-            <details open>
-              <summary><span>¿Quién opera la plataforma?</span><i data-lucide="plus"></i></summary>
-              <p>Guira es una plataforma tecnológica creada y operada por Guira System LLC, constituida en Delaware, Estados Unidos. En Bolivia, Guiraglobal SRL es el equipo de asesoría comercial que acompaña a las empresas en su uso.</p>
+            <details>
+              <summary
+                ><span>¿Quién opera la plataforma?</span><i data-lucide="plus"
+                ></i></summary
+              >
+              <p>
+                Guira es una plataforma tecnológica creada y operada por Guira
+                System LLC, constituida en Delaware, Estados Unidos. En Bolivia,
+                Guiraglobal SRL es el equipo de asesoría comercial que acompaña
+                a las empresas en su uso.
+              </p>
             </details>
-            <details open>
-              <summary><span>¿Sirve para lo que mi contador necesita?</span><i data-lucide="plus"></i></summary>
-              <p>Cada operación se entrega con comprobante, referencia asociada a la factura y registro del estado. Es la información que se solicita habitualmente en una conciliación o en una revisión interna.</p>
+            <details>
+              <summary
+                ><span>¿Sirve para lo que mi contador necesita?</span><i
+                  data-lucide="plus"></i></summary
+              >
+              <p>
+                Cada operación se entrega con comprobante, referencia asociada a
+                la factura y registro del estado. Es la información que se
+                solicita habitualmente en una conciliación o en una revisión
+                interna.
+              </p>
             </details>
-            <details open>
-              <summary><span>¿Cuánto demora empezar?</span><i data-lucide="plus"></i></summary>
-              <p>Empieza con una conversación. Escríbenos, revisamos tu operación y te decimos con claridad si Guira encaja con lo que tu empresa necesita.</p>
+            <details>
+              <summary
+                ><span>¿Cuánto demora empezar?</span><i data-lucide="plus"
+                ></i></summary
+              >
+              <p>
+                Empieza con una conversación. Escríbenos, revisamos tu operación
+                y te decimos con claridad si Guira encaja con lo que tu empresa
+                necesita.
+              </p>
             </details>
           </div>
         </div>
@@ -166,31 +411,83 @@ FORM: Recorrido operativo asimétrico, séptima estructura del concepto d4a56fbd
           <div class="contact-copy">
             <span class="section-label">Revisa tu operación</span>
             <h2>Cuéntanos a quién necesitas pagar.</h2>
-            <p>Compártenos el destino, la moneda y el volumen estimado. Un especialista evaluará el caso y te explicará los siguientes pasos.</p>
-            <div class="contact-note"><i data-lucide="clock-3"></i><div><strong>Una conversación concreta</strong><span>Sin compromiso y enfocada en la operación de tu empresa.</span></div></div>
+            <p>
+              Compártenos el destino, la moneda y el volumen estimado. Un
+              especialista evaluará el caso y te explicará los siguientes pasos.
+            </p>
+            <div class="contact-note">
+              <i data-lucide="clock-3"></i><div>
+                <strong>Una conversación concreta</strong><span
+                  >Sin compromiso y enfocada en la operación de tu empresa.</span
+                >
+              </div>
+            </div>
           </div>
-          <DemoForm defaultUseCase="pagos" submitLabel="Quiero que me contacten" />
+          <DemoForm
+            defaultUseCase="pagos"
+            submitLabel="Quiero que me contacten"
+          />
         </div>
       </section>
     </main>
 
-    <footer class="landing-footer bg-slate-900 text-white py-12 border-t border-slate-800">
+    <footer
+      class="landing-footer bg-slate-900 text-white py-12 border-t border-slate-800"
+    >
       <div class="page-wrap">
         <div class="grid md:grid-cols-2 gap-8 mb-8">
           <div>
-            <p class="text-slate-300 font-medium leading-relaxed mb-4">Guira es una plataforma operada por Guira System LLC (Estados Unidos). En Bolivia, Guiraglobal SRL brinda asesoría comercial y acompañamiento operativo.</p>
-            <p class="text-white/70 text-xs leading-relaxed">Guira es una plataforma tecnológica B2B. No somos banco, entidad financiera, casa de cambio, billetera de consumo ni custodio directo de fondos. Los servicios financieros, rieles de pago, cuentas de recepción, custodia, movimiento de fondos o procesamiento transaccional, cuando correspondan, son provistos exclusivamente por terceros o partners aplicables bajo sus propias autorizaciones, términos, límites, jurisdicciones y criterios de aprobación. La disponibilidad del servicio depende del perfil de la empresa, documentación presentada, jurisdicción, caso de uso y revisión correspondiente.</p>
+            <p class="text-slate-300 font-medium leading-relaxed mb-4">
+              Guira es una plataforma operada por Guira System LLC (Estados
+              Unidos). En Bolivia, Guiraglobal SRL brinda asesoría comercial y
+              acompañamiento operativo.
+            </p>
+            <p class="text-white/70 text-xs leading-relaxed">
+              Guira es una plataforma tecnológica B2B. No somos banco, entidad
+              financiera, casa de cambio, billetera de consumo ni custodio
+              directo de fondos. Los servicios financieros, rieles de pago,
+              cuentas de recepción, custodia, movimiento de fondos o
+              procesamiento transaccional, cuando correspondan, son provistos
+              exclusivamente por terceros o partners aplicables bajo sus propias
+              autorizaciones, términos, límites, jurisdicciones y criterios de
+              aprobación. La disponibilidad del servicio depende del perfil de
+              la empresa, documentación presentada, jurisdicción, caso de uso y
+              revisión correspondiente.
+            </p>
           </div>
           <div class="flex flex-col gap-4 md:items-end">
-            <a href="https://wa.me/59175245845" target="_blank" rel="noopener noreferrer" class="text-guira-cyan hover:text-guira-neon font-bold">+591 75 245845</a>
-            <a href="mailto:administracion@guiracorp.com" class="text-slate-400 hover:text-white font-medium">administracion@guiracorp.com</a>
+            <a
+              href="https://wa.me/59175245845"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="text-guira-cyan hover:text-guira-neon font-bold"
+              >+591 75 245845</a
+            >
+            <a
+              href="mailto:administracion@guiracorp.com"
+              class="text-slate-400 hover:text-white font-medium"
+              >administracion@guiracorp.com</a
+            >
           </div>
         </div>
-        <div class="flex items-center justify-center gap-6 pt-6 border-t border-slate-800">
-          <a href="/terminos/" class="text-slate-400 hover:text-white text-sm font-medium">Términos</a>
-          <a href="/privacidad/" class="text-slate-400 hover:text-white text-sm font-medium">Privacidad</a>
+        <div
+          class="flex items-center justify-center gap-6 pt-6 border-t border-slate-800"
+        >
+          <a
+            href="/terminos/"
+            class="text-slate-400 hover:text-white text-sm font-medium"
+            >Términos</a
+          >
+          <a
+            href="/privacidad/"
+            class="text-slate-400 hover:text-white text-sm font-medium"
+            >Privacidad</a
+          >
         </div>
-        <p class="text-slate-500 text-sm text-center mt-4">© 2026 Guira System LLC. Representado en Bolivia por Guiraglobal SRL. Todos los derechos reservados.</p>
+        <p class="text-slate-500 text-sm text-center mt-4">
+          © 2026 Guira System LLC. Representado en Bolivia por Guiraglobal SRL.
+          Todos los derechos reservados.
+        </p>
       </div>
     </footer>
   </div>
@@ -198,107 +495,959 @@ FORM: Recorrido operativo asimétrico, séptima estructura del concepto d4a56fbd
   <script>
     const prepareWhatsAppLinks = () => {
       const links = document.querySelectorAll('a[href*="wa.me"]');
-      const floatingLink = Array.from(links).find((link) => link.getAttribute('aria-label') === 'Chat en WhatsApp');
+      const floatingLink = Array.from(links).find(
+        (link) => link.getAttribute("aria-label") === "Chat en WhatsApp",
+      );
 
       if (floatingLink) {
         const floatingUrl = new URL(floatingLink.href);
-        if (floatingUrl.searchParams.get('text') === null) {
-          floatingUrl.searchParams.set('text', 'Hola, quiero pagar a mis proveedores del exterior con Guira');
-          floatingLink.setAttribute('href', floatingUrl.toString());
+        if (floatingUrl.searchParams.get("text") === null) {
+          floatingUrl.searchParams.set(
+            "text",
+            "Hola, quiero pagar a mis proveedores del exterior con Guira",
+          );
+          floatingLink.setAttribute("href", floatingUrl.toString());
         }
       }
 
-      const reference = new URLSearchParams(window.location.search).get('utm_content');
+      const reference = new URLSearchParams(window.location.search).get(
+        "utm_content",
+      );
       if (!reference) return;
       const suffix = ` [ref: ${reference}]`;
 
       links.forEach((link) => {
         const url = new URL(link.href);
-        const originalText = url.searchParams.get('text');
+        const originalText = url.searchParams.get("text");
         if (originalText === null || originalText.endsWith(suffix)) return;
-        url.searchParams.set('text', originalText + suffix);
-        link.setAttribute('href', url.toString());
+        url.searchParams.set("text", originalText + suffix);
+        link.setAttribute("href", url.toString());
       });
     };
 
-    window.addEventListener('load', prepareWhatsAppLinks);
-    document.addEventListener('click', (event) => {
+    window.addEventListener("load", prepareWhatsAppLinks);
+    document.addEventListener("click", (event) => {
       const link = event.target.closest('a[href*="wa.me"]');
       if (!link) return;
       window.dataLayer = window.dataLayer || [];
-      window.dataLayer.push({ event: 'click-whatsapp' });
+      window.dataLayer.push({ event: "click-whatsapp" });
     });
   </script>
 </Layout>
 
 <style>
-  :global(body) { background: #fff; }
-  .landing-shell { color: #0f172a; overflow: clip; }
-  .page-wrap { width: min(1180px, calc(100% - 40px)); margin-inline: auto; }
-  .landing-nav { height: 76px; display: flex; align-items: center; background: rgba(255,255,255,.92); border-bottom: 1px solid #e8edf5; position: relative; z-index: 20; }
-  .nav-inner,.nav-actions,.hero-actions,.trust-line,.corridor-inner,.country-list { display: flex; align-items: center; }
-  .nav-inner { justify-content: space-between; }
-  .nav-actions { gap: 28px; }
-  .nav-link,.text-action { color: #334155; font-weight: 700; font-size: .92rem; }
-  .button { display: inline-flex; align-items: center; justify-content: center; gap: 10px; border-radius: 12px; font-weight: 800; transition: transform .2s ease, box-shadow .2s ease, background .2s ease; }
-  .button:hover { transform: translateY(-2px); }
-  .button:active { transform: scale(.98); }
-  .button:focus-visible,.text-action:focus-visible,.nav-link:focus-visible { outline: 3px solid rgba(0,81,255,.25); outline-offset: 3px; }
-  .button-small { padding: 11px 18px; color: white; background: #0f172a; font-size: .86rem; }
-  .button-primary { padding: 16px 23px; color: white; background: #0051ff; box-shadow: 0 12px 30px -12px rgba(0,81,255,.6); }
-  .button-secondary { padding: 14px 22px; color: white; background: #0f172a; box-shadow: 0 10px 24px -14px rgba(15,23,42,.55); }
-  .button-secondary:hover { background: #1e293b; }
-  .section-cta { margin-top: 42px; text-align: center; }
-  .hero { position: relative; padding: 88px 0 82px; background: #fff; }
-  .hero-wash { position: absolute; width: 720px; height: 720px; border-radius: 50%; right: -300px; top: -320px; background: radial-gradient(circle,rgba(0,81,255,.11),rgba(0,216,255,.04) 44%,transparent 68%); }
-  .hero-grid { display: grid; grid-template-columns: 1.02fr .98fr; gap: 70px; align-items: center; position: relative; }
-  .audience-tag { display: inline-flex; align-items: center; gap: 10px; margin-bottom: 24px; padding: 8px 12px; border-radius: 999px; background: #eef4ff; color: #1648ad; font-weight: 800; font-size: .78rem; }
-  .audience-tag span { width: 7px; height: 7px; border-radius: 50%; background: #0051ff; }
-  h1 { max-width: 760px; font-size: clamp(2.65rem,3.35vw,3rem); line-height: .98; letter-spacing: -.04em; font-weight: 850; text-wrap: balance; }
-  .hero-lead { max-width: 630px; margin-top: 28px; color: #475569; font-size: clamp(1.08rem,2vw,1.26rem); line-height: 1.65; font-weight: 500; }
-  .hero-actions { gap: 22px; margin-top: 34px; }
-  .hero-support { margin-top: 12px; color: #64748b; font-size: .82rem; font-weight: 650; }
-  .text-action { display: inline-flex; align-items: center; gap: 8px; }
-  .trust-line { flex-wrap: wrap; gap: 14px 24px; margin-top: 42px; color: #64748b; font-size: .78rem; font-weight: 750; }
-  .trust-line span { display: flex; align-items: center; gap: 7px; }
-  .trust-line :global(svg) { width: 16px; height: 16px; color: #0051ff; }
-  .hero-device { position: relative; min-height: 500px; display: grid; place-items: center; isolation: isolate; }
-  .device-halo { position: absolute; z-index: -1; width: 86%; aspect-ratio: 1; border-radius: 50%; background: radial-gradient(circle,rgba(0,81,255,.16),rgba(0,216,255,.06) 45%,transparent 70%); }
-  .hero-tablet { display: block; width: 108%; max-width: none; height: auto; transform: translateX(10%); border-radius: 16px; filter: drop-shadow(0 34px 38px rgba(15,23,42,.22)); }
-  .operation-stage { position: relative; border-radius: 16px; background: #0b1120; color: white; padding: 30px; box-shadow: 0 36px 90px -42px rgba(15,23,42,.7); }
-  .stage-caption { position: absolute; top: -26px; right: 2px; color: #64748b; font-size: .68rem; font-weight: 700; }
-  .operation-head,.route-line,.document-row,.control-toolbar,.table-head,.table-row { display: flex; align-items: center; }
-  .operation-head { justify-content: space-between; gap: 20px; }
-  .micro-label { display: block; color: #8ba8e8; font-size: .62rem; letter-spacing: .14em; font-weight: 800; }
-  .operation-head h2 { font-size: 1.15rem; margin-top: 5px; font-weight: 800; }
-  .status { display: inline-flex; align-items: center; gap: 7px; color: #dbeafe; background: rgba(0,81,255,.18); padding: 7px 10px; border-radius: 999px; font-size: .68rem; font-weight: 800; }
-  .status span { width: 6px; height: 6px; border-radius: 50%; background: #60a5fa; }
-  .route-line { margin: 34px 0 30px; }
-  .route-node { display: grid; justify-items: center; gap: 8px; }
-  .route-node > span { width: 46px; height: 46px; display: grid; place-items: center; border-radius: 14px; font-size: .76rem; font-weight: 900; }
-  .route-origin > span { background: #0051ff; }.route-destination > span { color: #0f172a; background: white; }
-  .route-node small { color: #94a3b8; font-size: .65rem; font-weight: 700; }
-  .route-track { flex: 1; position: relative; height: 1px; margin: 0 18px 22px; background: #334155; }
-  .route-track span { position: absolute; width: 34%; height: 3px; top: -1px; border-radius: 3px; background: #0051ff; }
-  .route-track :global(svg) { position: absolute; right: -2px; top: -8px; width: 16px; color: #64748b; }
-  .operation-data { display: grid; grid-template-columns: .8fr .7fr 1.4fr; border-block: 1px solid #253047; padding: 20px 0; gap: 14px; }
-  .operation-data div { display: grid; gap: 5px; }.operation-data span { color: #94a3b8; font-size: .63rem; }.operation-data strong { font-size: .78rem; }
-  .document-row { margin-top: 20px; padding: 13px; border-radius: 12px; background: #141d30; gap: 12px; }
-  .doc-icon { width: 34px; height: 34px; border-radius: 9px; display: grid; place-items: center; color: #7dd3fc; background: rgba(0,81,255,.18); }.doc-icon :global(svg),.doc-check { width: 17px; }.document-row div:nth-child(2) { display: grid; flex: 1; gap: 3px; }.document-row strong { font-size: .74rem; }.document-row span { color: #94a3b8; font-size: .62rem; }.doc-check { color: #60a5fa; }
-  .corridors { border-block: 1px solid #e6ebf2; background: #f8fafc; }
-  .corridor-inner { min-height: 88px; justify-content: space-between; gap: 30px; }.corridor-inner > p { color: #475569; font-size: .77rem; font-weight: 800; white-space: nowrap; }.country-list { justify-content: flex-end; gap: 26px; flex-wrap: wrap; }.country-list span { color: #334155; font-size: .78rem; font-weight: 700; }.country-list b { margin-left: 5px; color: #0051ff; font-size: .64rem; }
-  .section-space { padding: 120px 0; }.section-label { display: block; margin-bottom: 18px; color: #0051ff; font-size: .72rem; font-weight: 850; }.section-heading h2 { max-width: 700px; font-size: clamp(2rem,4vw,3.55rem); line-height: 1.08; letter-spacing: -.035em; font-weight: 850; text-wrap: balance; }.section-heading > p { max-width: 620px; margin-top: 22px; color: #64748b; font-size: 1.06rem; line-height: 1.7; font-weight: 500; }
-  .problem-section { background: white; }.problem-grid { display: grid; grid-template-columns: .95fr 1.05fr; gap: 110px; }.sticky-heading { align-self: start; position: sticky; top: 120px; }.friction-list { align-self: center; }.friction-list article { display: grid; grid-template-columns: 56px 1fr; gap: 24px; padding: 30px 0; border-top: 1px solid #e2e8f0; cursor: default; }.friction-list article:last-child { border-bottom: 1px solid #e2e8f0; }.friction-list article > span { color: #0051ff; font-size: 1.15rem; line-height: 1.25; font-weight: 850; transition: color .24s ease, transform .32s cubic-bezier(.16,1,.3,1); }.friction-list h3 { font-size: clamp(1.32rem,2vw,1.55rem); line-height: 1.2; font-weight: 800; transition: color .24s ease; }.friction-list p { max-height: 0; margin-top: 0; overflow: hidden; opacity: 0; color: #64748b; line-height: 1.65; transform: translateY(-8px); transition: max-height .38s cubic-bezier(.16,1,.3,1), margin-top .38s cubic-bezier(.16,1,.3,1), opacity .2s ease, transform .38s cubic-bezier(.16,1,.3,1); }.friction-list article:hover > span,.friction-list article:focus-visible > span { color: #003ec7; transform: translateX(4px); }.friction-list article:hover h3,.friction-list article:focus-visible h3 { color: #0051ff; }.friction-list article:hover p,.friction-list article:focus-visible p { max-height: 140px; margin-top: 14px; opacity: 1; transform: translateY(0); }.friction-list article:focus-visible { outline: 3px solid rgba(0,81,255,.22); outline-offset: 6px; border-radius: 8px; }
-  .process-section { background: #f5f8fd; }.process-heading { display: grid; grid-template-columns: 1fr .75fr; column-gap: 60px; }.process-heading .section-label { grid-column: 1/-1; }.process-heading p { margin-top: 0; align-self: end; }.process-flow { display: grid; grid-template-columns: repeat(4,1fr); margin-top: 68px; }.process-flow article { position: relative; display: flex; flex-direction: column; align-items: center; padding: 34px 28px 28px; text-align: center; transition: background .28s ease, box-shadow .28s ease, transform .28s cubic-bezier(.16,1,.3,1); }.process-flow article + article { border-left: 1px solid #d7e0ed; }.process-flow article:hover { background: #0051ff; box-shadow: 0 18px 36px -22px rgba(0,81,255,.72); transform: translateY(-4px); }.step-mark { position: absolute; top: 22px; right: 24px; display: grid; place-items: center; min-width: 25px; height: 25px; border-radius: 999px; color: #0051ff; background: #e8f0ff; font-size: .68rem; font-weight: 850; transition: color .28s ease, background .28s ease; }.process-flow :global(svg) { display: block; width: 64px; height: 64px; margin-bottom: 24px; padding: 18px; border-radius: 16px; color: #0051ff; background: #fff; box-shadow: 0 12px 26px -18px rgba(15,23,42,.38); transition: color .28s ease, background .28s ease, box-shadow .28s ease; }.process-flow h3 { font-size: 1.05rem; font-weight: 850; transition: color .28s ease; }.process-flow p { margin-top: 11px; color: #64748b; font-size: .88rem; line-height: 1.65; transition: color .28s ease; }.process-flow article:hover .step-mark { color: #fff; background: rgba(255,255,255,.18); }.process-flow article:hover :global(svg) { color: #0051ff; background: #fff; box-shadow: 0 14px 30px -18px rgba(2,6,23,.52); }.process-flow article:hover h3 { color: #fff; }.process-flow article:hover p { color: #dbeafe; }
-  .control-grid { display: grid; grid-template-columns: 1.08fr .92fr; gap: 90px; align-items: center; }.control-demo { border-radius: 16px; background: #fff; box-shadow: 0 28px 80px -45px rgba(15,23,42,.42); border: 1px solid #e5eaf2; overflow: hidden; }.control-toolbar { justify-content: space-between; padding: 22px 24px; font-weight: 850; border-bottom: 1px solid #e5eaf2; }.live-label { color: #166534; background: #ecfdf5; border-radius: 999px; padding: 6px 9px; font-size: .62rem; }.table-head,.table-row { display: grid; grid-template-columns: 1.35fr .9fr .8fr; gap: 12px; padding: 15px 24px; }.table-head { color: #94a3b8; background: #f8fafc; font-size: .62rem; font-weight: 800; }.table-row { min-height: 70px; border-top: 1px solid #eef2f7; font-size: .72rem; color: #475569; }.table-row.active { box-shadow: inset 3px 0 #0051ff; background: #f8fbff; }.table-row > span:first-child { display: grid; gap: 4px; }.table-row b { color: #0f172a; }.table-row small { color: #94a3b8; }.state { justify-self: start; border-radius: 999px; padding: 6px 8px; font-weight: 800; font-size: .59rem; }.review { color: #1d4ed8; background: #eff6ff; }.complete { color: #166534; background: #ecfdf5; }.course { color: #854d0e; background: #fefce8; }.control-copy ul { display: grid; gap: 15px; margin-top: 30px; color: #334155; font-weight: 700; }.control-copy li { display: flex; gap: 11px; align-items: center; }.control-copy li :global(svg) { width: 18px; color: #0051ff; }
-  .control-close { margin-top: 30px; color: #0f172a; font-size: 1.2rem; font-weight: 850; }
-  .trust-section { padding: 92px 0; color: white; background: #07101f; }.trust-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 100px; }.section-label-light { color: #7dd3fc; }.trust-section h2 { font-size: clamp(2rem,4vw,3.4rem); line-height: 1.08; letter-spacing: -.035em; font-weight: 850; text-wrap: balance; }.trust-copy { display: grid; gap: 20px; color: #cbd5e1; line-height: 1.7; }.trust-copy strong { color: white; }
-  .faq-section { background: #fff; }.faq-wrap { max-width: 880px; }.faq-heading { margin-bottom: 42px; }.faq-list { border-top: 1px solid #e2e8f0; }.faq-list details { border-bottom: 1px solid #e2e8f0; }.faq-list summary { display: flex; align-items: center; justify-content: space-between; gap: 24px; padding: 24px 0; color: #0f172a; font-weight: 800; cursor: pointer; list-style: none; }.faq-list summary::-webkit-details-marker { display: none; }.faq-list summary :global(svg) { width: 20px; flex: 0 0 auto; color: #0051ff; transition: transform .2s ease; }.faq-list details[open] summary :global(svg) { transform: rotate(45deg); }.faq-list details p { max-width: 72ch; padding: 0 48px 26px 0; color: #64748b; line-height: 1.7; }
-  .contact-section { background: #f5f8fd; }.contact-grid { display: grid; grid-template-columns: .72fr 1fr; gap: 90px; align-items: start; }.contact-copy { position: sticky; top: 120px; }.contact-copy h2 { font-size: clamp(2.2rem,4vw,3.7rem); line-height: 1.02; letter-spacing: -.035em; font-weight: 850; }.contact-copy > p { margin-top: 24px; color: #64748b; font-size: 1.06rem; line-height: 1.7; }.contact-note { display: flex; gap: 14px; margin-top: 32px; padding-top: 25px; border-top: 1px solid #d8e1ee; }.contact-note :global(svg) { color: #0051ff; width: 21px; }.contact-note div { display: grid; gap: 4px; }.contact-note strong { font-size: .9rem; }.contact-note span { color: #64748b; font-size: .78rem; line-height: 1.5; }
-  .landing-footer { color: #94a3b8; background: #020617; border-top: 1px solid #172033; padding: 44px 0; }.footer-inner { display: grid; grid-template-columns: .5fr 1.5fr auto; gap: 50px; align-items: center; }.footer-inner p { font-size: .66rem; line-height: 1.6; }.footer-inner div { display: flex; gap: 18px; font-size: .7rem; font-weight: 700; }.footer-inner a:hover { color: white; }
-  :global(#demo-form .grid), :global(#demo-form .grid > div), :global(#demo-form select) { min-width: 0; }
-  :global(#demo-form select) { width: 100%; font-size: .875rem; padding-right: 2.75rem; }
-  @media (max-width: 900px) { .hero-grid,.problem-grid,.control-grid,.trust-grid,.contact-grid { grid-template-columns: 1fr; }.hero-grid { gap: 34px; }.hero-device { min-height: 430px; }.hero-tablet { width: 112%; transform: none; }.problem-grid,.control-grid,.trust-grid,.contact-grid { gap: 55px; }.sticky-heading,.contact-copy { position: static; }.process-heading { display: block; }.process-heading p { margin-top: 20px; }.process-flow { grid-template-columns: 1fr 1fr; }.process-flow article:nth-child(3) { border-top: 1px solid #d7e0ed; }.process-flow article:last-child { border-top: 1px solid #d7e0ed; }.corridor-inner { align-items: flex-start; flex-direction: column; padding: 24px 0; }.country-list { justify-content: flex-start; }.footer-inner { grid-template-columns: 1fr; gap: 22px; } }
-  @media (max-width: 640px) { .page-wrap { width: min(100% - 32px,1180px); }.landing-nav { height: 68px; }.nav-link { display: none; }.button-small { padding: 10px 12px; font-size: .72rem; }.hero { padding: 62px 0 54px; }.hero-actions { align-items: stretch; flex-direction: column; }.text-action { justify-content: center; }.hero-device { min-height: 290px; }.hero-tablet { width: 122%; }.operation-stage { padding: 22px 18px; }.operation-data { grid-template-columns: 1fr 1fr; }.operation-data div:last-child { grid-column: 1/-1; }.section-space { padding: 84px 0; }.process-flow { grid-template-columns: 1fr; }.process-flow article + article { border-left: 0; border-top: 1px solid #d7e0ed; }.process-flow article { padding-bottom: 28px; }.table-head,.table-row { grid-template-columns: 1.3fr .8fr; }.table-head span:nth-child(2),.table-row > span:nth-child(2) { display: none; }.trust-grid { gap: 44px; }.footer-inner div { flex-wrap: wrap; } }
-  @media (prefers-reduced-motion: reduce) { * { scroll-behavior: auto !important; transition-duration: .01ms !important; animation-duration: .01ms !important; } }
+  :global(body) {
+    background: #fff;
+  }
+  .landing-shell {
+    color: #0f172a;
+    overflow: clip;
+  }
+  .page-wrap {
+    width: min(1180px, calc(100% - 40px));
+    margin-inline: auto;
+  }
+  .landing-nav {
+    height: 76px;
+    display: flex;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.92);
+    border-bottom: 1px solid #e8edf5;
+    position: relative;
+    z-index: 20;
+  }
+  .nav-inner,
+  .nav-actions,
+  .hero-actions,
+  .trust-line,
+  .corridor-inner,
+  .country-list {
+    display: flex;
+    align-items: center;
+  }
+  .nav-inner {
+    justify-content: space-between;
+  }
+  .nav-actions {
+    gap: 28px;
+  }
+  .nav-link,
+  .text-action {
+    color: #334155;
+    font-weight: 700;
+    font-size: 0.92rem;
+  }
+  .button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    border-radius: 12px;
+    font-weight: 800;
+    transition:
+      transform 0.2s ease,
+      box-shadow 0.2s ease,
+      background 0.2s ease;
+  }
+  .button:hover {
+    transform: translateY(-2px);
+  }
+  .button:active {
+    transform: scale(0.98);
+  }
+  .button:focus-visible,
+  .text-action:focus-visible,
+  .nav-link:focus-visible {
+    outline: 3px solid rgba(0, 81, 255, 0.25);
+    outline-offset: 3px;
+  }
+  .button-small {
+    padding: 11px 18px;
+    color: white;
+    background: #0f172a;
+    font-size: 0.86rem;
+  }
+  .button-primary {
+    padding: 16px 23px;
+    color: white;
+    background: #0051ff;
+    box-shadow: 0 12px 30px -12px rgba(0, 81, 255, 0.6);
+  }
+  .button-secondary {
+    padding: 14px 22px;
+    color: white;
+    background: #0f172a;
+    box-shadow: 0 10px 24px -14px rgba(15, 23, 42, 0.55);
+  }
+  .button-secondary:hover {
+    background: #1e293b;
+  }
+  .section-cta {
+    margin-top: 42px;
+    text-align: center;
+  }
+  .hero {
+    position: relative;
+    padding: 88px 0 82px;
+    background: #fff;
+  }
+  .hero-wash {
+    position: absolute;
+    width: 720px;
+    height: 720px;
+    border-radius: 50%;
+    right: -300px;
+    top: -320px;
+    background: radial-gradient(
+      circle,
+      rgba(0, 81, 255, 0.11),
+      rgba(0, 216, 255, 0.04) 44%,
+      transparent 68%
+    );
+  }
+  .hero-grid {
+    display: grid;
+    grid-template-columns: 1.02fr 0.98fr;
+    gap: 70px;
+    align-items: center;
+    position: relative;
+  }
+  .audience-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 24px;
+    padding: 8px 12px;
+    border-radius: 999px;
+    background: #eef4ff;
+    color: #1648ad;
+    font-weight: 800;
+    font-size: 0.78rem;
+  }
+  .audience-tag span {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #0051ff;
+  }
+  h1 {
+    max-width: 760px;
+    font-size: clamp(2.65rem, 3.35vw, 3rem);
+    line-height: 0.98;
+    letter-spacing: -0.04em;
+    font-weight: 850;
+    text-wrap: balance;
+  }
+  .hero-lead {
+    max-width: 630px;
+    margin-top: 28px;
+    color: #475569;
+    font-size: clamp(1.08rem, 2vw, 1.26rem);
+    line-height: 1.65;
+    font-weight: 500;
+  }
+  .hero-actions {
+    gap: 22px;
+    margin-top: 34px;
+  }
+  .hero-support {
+    margin-top: 12px;
+    color: #64748b;
+    font-size: 0.82rem;
+    font-weight: 650;
+  }
+  .text-action {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .trust-line {
+    flex-wrap: wrap;
+    gap: 14px 24px;
+    margin-top: 42px;
+    color: #64748b;
+    font-size: 0.78rem;
+    font-weight: 750;
+  }
+  .trust-line span {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+  }
+  .trust-line :global(svg) {
+    width: 16px;
+    height: 16px;
+    color: #0051ff;
+  }
+  .hero-device {
+    position: relative;
+    min-height: 500px;
+    display: grid;
+    place-items: center;
+    isolation: isolate;
+  }
+  .device-halo {
+    position: absolute;
+    z-index: -1;
+    width: 86%;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background: radial-gradient(
+      circle,
+      rgba(0, 81, 255, 0.16),
+      rgba(0, 216, 255, 0.06) 45%,
+      transparent 70%
+    );
+  }
+  .hero-tablet {
+    display: block;
+    width: 108%;
+    max-width: none;
+    height: auto;
+    transform: translateX(10%);
+    border-radius: 16px;
+    filter: drop-shadow(0 34px 38px rgba(15, 23, 42, 0.22));
+  }
+  .operation-stage {
+    position: relative;
+    border-radius: 16px;
+    background: #0b1120;
+    color: white;
+    padding: 30px;
+    box-shadow: 0 36px 90px -42px rgba(15, 23, 42, 0.7);
+  }
+  .stage-caption {
+    position: absolute;
+    top: -26px;
+    right: 2px;
+    color: #64748b;
+    font-size: 0.68rem;
+    font-weight: 700;
+  }
+  .operation-head,
+  .route-line,
+  .document-row,
+  .control-toolbar,
+  .table-head,
+  .table-row {
+    display: flex;
+    align-items: center;
+  }
+  .operation-head {
+    justify-content: space-between;
+    gap: 20px;
+  }
+  .micro-label {
+    display: block;
+    color: #8ba8e8;
+    font-size: 0.62rem;
+    letter-spacing: 0.14em;
+    font-weight: 800;
+  }
+  .operation-head h2 {
+    font-size: 1.15rem;
+    margin-top: 5px;
+    font-weight: 800;
+  }
+  .status {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    color: #dbeafe;
+    background: rgba(0, 81, 255, 0.18);
+    padding: 7px 10px;
+    border-radius: 999px;
+    font-size: 0.68rem;
+    font-weight: 800;
+  }
+  .status span {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #60a5fa;
+  }
+  .route-line {
+    margin: 34px 0 30px;
+  }
+  .route-node {
+    display: grid;
+    justify-items: center;
+    gap: 8px;
+  }
+  .route-node > span {
+    width: 46px;
+    height: 46px;
+    display: grid;
+    place-items: center;
+    border-radius: 14px;
+    font-size: 0.76rem;
+    font-weight: 900;
+  }
+  .route-origin > span {
+    background: #0051ff;
+  }
+  .route-destination > span {
+    color: #0f172a;
+    background: white;
+  }
+  .route-node small {
+    color: #94a3b8;
+    font-size: 0.65rem;
+    font-weight: 700;
+  }
+  .route-track {
+    flex: 1;
+    position: relative;
+    height: 1px;
+    margin: 0 18px 22px;
+    background: #334155;
+  }
+  .route-track span {
+    position: absolute;
+    width: 34%;
+    height: 3px;
+    top: -1px;
+    border-radius: 3px;
+    background: #0051ff;
+  }
+  .route-track :global(svg) {
+    position: absolute;
+    right: -2px;
+    top: -8px;
+    width: 16px;
+    color: #64748b;
+  }
+  .operation-data {
+    display: grid;
+    grid-template-columns: 0.8fr 0.7fr 1.4fr;
+    border-block: 1px solid #253047;
+    padding: 20px 0;
+    gap: 14px;
+  }
+  .operation-data div {
+    display: grid;
+    gap: 5px;
+  }
+  .operation-data span {
+    color: #94a3b8;
+    font-size: 0.63rem;
+  }
+  .operation-data strong {
+    font-size: 0.78rem;
+  }
+  .document-row {
+    margin-top: 20px;
+    padding: 13px;
+    border-radius: 12px;
+    background: #141d30;
+    gap: 12px;
+  }
+  .doc-icon {
+    width: 34px;
+    height: 34px;
+    border-radius: 9px;
+    display: grid;
+    place-items: center;
+    color: #7dd3fc;
+    background: rgba(0, 81, 255, 0.18);
+  }
+  .doc-icon :global(svg),
+  .doc-check {
+    width: 17px;
+  }
+  .document-row div:nth-child(2) {
+    display: grid;
+    flex: 1;
+    gap: 3px;
+  }
+  .document-row strong {
+    font-size: 0.74rem;
+  }
+  .document-row span {
+    color: #94a3b8;
+    font-size: 0.62rem;
+  }
+  .doc-check {
+    color: #60a5fa;
+  }
+  .corridors {
+    border-block: 1px solid #e6ebf2;
+    background: #f8fafc;
+  }
+  .corridor-inner {
+    min-height: 88px;
+    justify-content: space-between;
+    gap: 30px;
+  }
+  .corridor-inner > p {
+    color: #475569;
+    font-size: 0.77rem;
+    font-weight: 800;
+    white-space: nowrap;
+  }
+  .country-list {
+    justify-content: flex-end;
+    gap: 26px;
+    flex-wrap: wrap;
+  }
+  .country-list span {
+    color: #334155;
+    font-size: 0.78rem;
+    font-weight: 700;
+  }
+  .country-list b {
+    margin-left: 5px;
+    color: #0051ff;
+    font-size: 0.64rem;
+  }
+  .section-space {
+    padding: 120px 0;
+  }
+  .section-label {
+    display: block;
+    margin-bottom: 18px;
+    color: #0051ff;
+    font-size: 0.72rem;
+    font-weight: 850;
+  }
+  .section-heading h2 {
+    max-width: 700px;
+    font-size: clamp(2rem, 4vw, 3.55rem);
+    line-height: 1.08;
+    letter-spacing: -0.035em;
+    font-weight: 850;
+    text-wrap: balance;
+  }
+  .section-heading > p {
+    max-width: 620px;
+    margin-top: 22px;
+    color: #64748b;
+    font-size: 1.06rem;
+    line-height: 1.7;
+    font-weight: 500;
+  }
+  .problem-section {
+    background: white;
+  }
+  .problem-grid {
+    display: grid;
+    grid-template-columns: 0.95fr 1.05fr;
+    gap: 110px;
+  }
+  .sticky-heading {
+    align-self: start;
+    position: sticky;
+    top: 120px;
+  }
+  .friction-list {
+    align-self: center;
+  }
+  .friction-list article {
+    display: grid;
+    grid-template-columns: 56px 1fr;
+    gap: 24px;
+    padding: 30px 0;
+    border-top: 1px solid #e2e8f0;
+    cursor: default;
+  }
+  .friction-list article:last-child {
+    border-bottom: 1px solid #e2e8f0;
+  }
+  .friction-list article > span {
+    color: #0051ff;
+    font-size: 1.15rem;
+    line-height: 1.25;
+    font-weight: 850;
+    transition:
+      color 0.24s ease,
+      transform 0.32s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .friction-list h3 {
+    font-size: clamp(1.32rem, 2vw, 1.55rem);
+    line-height: 1.2;
+    font-weight: 800;
+    transition: color 0.24s ease;
+  }
+  .friction-list p {
+    max-height: 0;
+    margin-top: 0;
+    overflow: hidden;
+    opacity: 0;
+    color: #64748b;
+    line-height: 1.65;
+    transform: translateY(-8px);
+    transition:
+      max-height 0.38s cubic-bezier(0.16, 1, 0.3, 1),
+      margin-top 0.38s cubic-bezier(0.16, 1, 0.3, 1),
+      opacity 0.2s ease,
+      transform 0.38s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .friction-list article:hover > span,
+  .friction-list article:focus-visible > span {
+    color: #003ec7;
+    transform: translateX(4px);
+  }
+  .friction-list article:hover h3,
+  .friction-list article:focus-visible h3 {
+    color: #0051ff;
+  }
+  .friction-list article:hover p,
+  .friction-list article:focus-visible p {
+    max-height: 140px;
+    margin-top: 14px;
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .friction-list article:focus-visible {
+    outline: 3px solid rgba(0, 81, 255, 0.22);
+    outline-offset: 6px;
+    border-radius: 8px;
+  }
+  .process-section {
+    background: #f5f8fd;
+  }
+  .process-heading {
+    display: grid;
+    grid-template-columns: 1fr 0.75fr;
+    column-gap: 60px;
+  }
+  .process-heading .section-label {
+    grid-column: 1/-1;
+  }
+  .process-heading p {
+    margin-top: 0;
+    align-self: end;
+  }
+  .control-grid {
+    display: grid;
+    grid-template-columns: 1.08fr 0.92fr;
+    gap: 90px;
+    align-items: center;
+  }
+  .control-demo {
+    border-radius: 8px;
+    background: #fff;
+    box-shadow: 0 28px 80px -45px rgba(15, 23, 42, 0.42);
+    border: 1px solid #e5eaf2;
+    overflow: hidden;
+  }
+  .control-toolbar {
+    justify-content: space-between;
+    padding: 22px 24px;
+    font-weight: 850;
+    border-bottom: 1px solid #e5eaf2;
+  }
+  .live-label {
+    color: #166534;
+    background: #ecfdf5;
+    border-radius: 999px;
+    padding: 6px 9px;
+    font-size: 0.62rem;
+  }
+  .table-head,
+  .table-row {
+    display: grid;
+    grid-template-columns: 1.35fr 0.9fr 0.8fr;
+    gap: 12px;
+    padding: 15px 24px;
+  }
+  .table-head {
+    color: #94a3b8;
+    background: #f8fafc;
+    font-size: 0.62rem;
+    font-weight: 800;
+  }
+  .table-row {
+    position: relative;
+    z-index: 1;
+    min-height: 70px;
+    border-top: 1px solid #eef2f7;
+    font-size: 0.72rem;
+    color: #475569;
+    cursor: default;
+    transition:
+      transform 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+      box-shadow 0.3s ease,
+      background 0.3s ease;
+  }
+  .table-row.active {
+    box-shadow: inset 3px 0 #0051ff;
+    background: #f8fbff;
+  }
+  .table-row:hover,
+  .table-row:focus-visible {
+    z-index: 2;
+    background: #fff;
+    box-shadow: 0 20px 38px -22px rgba(15, 23, 42, 0.38);
+    transform: scale(1.035);
+  }
+  .table-row.active:hover,
+  .table-row.active:focus-visible {
+    box-shadow:
+      inset 3px 0 #0051ff,
+      0 20px 38px -22px rgba(15, 23, 42, 0.38);
+  }
+  .table-row:focus-visible {
+    outline: 3px solid rgba(0, 81, 255, 0.22);
+    outline-offset: -3px;
+  }
+  .table-row > span:first-child {
+    display: grid;
+    gap: 4px;
+  }
+  .table-row b {
+    color: #0f172a;
+  }
+  .table-row small {
+    color: #94a3b8;
+  }
+  .state {
+    justify-self: start;
+    border-radius: 999px;
+    padding: 6px 8px;
+    font-weight: 800;
+    font-size: 0.59rem;
+  }
+  .review {
+    color: #1d4ed8;
+    background: #eff6ff;
+  }
+  .complete {
+    color: #166534;
+    background: #ecfdf5;
+  }
+  .course {
+    color: #854d0e;
+    background: #fefce8;
+  }
+  .control-copy ul {
+    display: grid;
+    gap: 15px;
+    margin-top: 30px;
+    color: #334155;
+    font-weight: 700;
+  }
+  .control-copy li {
+    display: flex;
+    gap: 11px;
+    align-items: center;
+  }
+  .control-copy li :global(svg) {
+    width: 18px;
+    color: #0051ff;
+  }
+  .control-close {
+    margin-top: 30px;
+    color: #0f172a;
+    font-size: 1.2rem;
+    font-weight: 850;
+  }
+  .trust-section {
+    padding: 92px 0;
+    color: white;
+    background: #07101f;
+  }
+  .trust-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 100px;
+  }
+  .section-label-light {
+    color: #7dd3fc;
+  }
+  .trust-section h2 {
+    font-size: clamp(2rem, 4vw, 3.4rem);
+    line-height: 1.08;
+    letter-spacing: -0.035em;
+    font-weight: 850;
+    text-wrap: balance;
+  }
+  .trust-copy {
+    display: grid;
+    gap: 20px;
+    align-content: center;
+    color: #cbd5e1;
+    line-height: 1.7;
+  }
+  .trust-copy strong {
+    color: white;
+  }
+  .faq-section {
+    background: #fff;
+  }
+  .faq-wrap {
+    max-width: 880px;
+  }
+  .faq-heading {
+    margin-bottom: 42px;
+  }
+  .faq-list {
+    border-top: 1px solid #e2e8f0;
+  }
+  .faq-list details {
+    border-bottom: 1px solid #e2e8f0;
+  }
+  .faq-list summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    padding: 24px 0;
+    color: #0f172a;
+    font-weight: 800;
+    cursor: pointer;
+    list-style: none;
+  }
+  .faq-list summary::-webkit-details-marker {
+    display: none;
+  }
+  .faq-list summary :global(svg) {
+    width: 20px;
+    flex: 0 0 auto;
+    color: #0051ff;
+    transition: transform 0.2s ease;
+  }
+  .faq-list details[open] summary :global(svg) {
+    transform: rotate(45deg);
+  }
+  .faq-list details p {
+    max-width: 72ch;
+    padding: 0 48px 26px 0;
+    color: #64748b;
+    line-height: 1.7;
+  }
+  .contact-section {
+    background: #f5f8fd;
+  }
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 0.72fr 1fr;
+    gap: 90px;
+    align-items: start;
+  }
+  .contact-copy {
+    position: sticky;
+    top: 120px;
+  }
+  .contact-copy h2 {
+    font-size: clamp(2.2rem, 4vw, 3.7rem);
+    line-height: 1.02;
+    letter-spacing: -0.035em;
+    font-weight: 850;
+  }
+  .contact-copy > p {
+    margin-top: 24px;
+    color: #64748b;
+    font-size: 1.06rem;
+    line-height: 1.7;
+  }
+  .contact-note {
+    display: flex;
+    gap: 14px;
+    margin-top: 32px;
+    padding-top: 25px;
+    border-top: 1px solid #d8e1ee;
+  }
+  .contact-note :global(svg) {
+    color: #0051ff;
+    width: 21px;
+  }
+  .contact-note div {
+    display: grid;
+    gap: 4px;
+  }
+  .contact-note strong {
+    font-size: 0.9rem;
+  }
+  .contact-note span {
+    color: #64748b;
+    font-size: 0.78rem;
+    line-height: 1.5;
+  }
+  .landing-footer {
+    color: #94a3b8;
+    background: #020617;
+    border-top: 1px solid #172033;
+    padding: 44px 0;
+  }
+  .footer-inner {
+    display: grid;
+    grid-template-columns: 0.5fr 1.5fr auto;
+    gap: 50px;
+    align-items: center;
+  }
+  .footer-inner p {
+    font-size: 0.66rem;
+    line-height: 1.6;
+  }
+  .footer-inner div {
+    display: flex;
+    gap: 18px;
+    font-size: 0.7rem;
+    font-weight: 700;
+  }
+  .footer-inner a:hover {
+    color: white;
+  }
+  :global(#demo-form .grid),
+  :global(#demo-form .grid > div),
+  :global(#demo-form select) {
+    min-width: 0;
+  }
+  :global(#demo-form select) {
+    width: 100%;
+    font-size: 0.875rem;
+    padding-right: 2.75rem;
+  }
+  @media (max-width: 900px) {
+    .hero-grid,
+    .problem-grid,
+    .control-grid,
+    .trust-grid,
+    .contact-grid {
+      grid-template-columns: 1fr;
+    }
+    .hero-grid {
+      gap: 34px;
+    }
+    .hero-device {
+      min-height: 430px;
+    }
+    .hero-tablet {
+      width: 112%;
+      transform: none;
+    }
+    .problem-grid,
+    .control-grid,
+    .trust-grid,
+    .contact-grid {
+      gap: 55px;
+    }
+    .sticky-heading,
+    .contact-copy {
+      position: static;
+    }
+    .process-heading {
+      display: block;
+    }
+    .process-heading p {
+      margin-top: 20px;
+    }
+    .corridor-inner {
+      align-items: flex-start;
+      flex-direction: column;
+      padding: 24px 0;
+    }
+    .country-list {
+      justify-content: flex-start;
+    }
+    .footer-inner {
+      grid-template-columns: 1fr;
+      gap: 22px;
+    }
+  }
+  @media (max-width: 640px) {
+    .page-wrap {
+      width: min(100% - 32px, 1180px);
+    }
+    .landing-nav {
+      height: 68px;
+    }
+    .nav-link {
+      display: none;
+    }
+    .button-small {
+      padding: 10px 12px;
+      font-size: 0.72rem;
+    }
+    .hero {
+      padding: 62px 0 54px;
+    }
+    .hero-actions {
+      align-items: stretch;
+      flex-direction: column;
+    }
+    .text-action {
+      justify-content: center;
+    }
+    .hero-device {
+      min-height: 290px;
+    }
+    .hero-tablet {
+      width: 122%;
+    }
+    .operation-stage {
+      padding: 22px 18px;
+    }
+    .operation-data {
+      grid-template-columns: 1fr 1fr;
+    }
+    .operation-data div:last-child {
+      grid-column: 1/-1;
+    }
+    .section-space {
+      padding: 84px 0;
+    }
+    .table-head,
+    .table-row {
+      grid-template-columns: 1.3fr 0.8fr;
+    }
+    .table-head span:nth-child(2),
+    .table-row > span:nth-child(2) {
+      display: none;
+    }
+    .trust-grid {
+      gap: 44px;
+    }
+    .footer-inner div {
+      flex-wrap: wrap;
+    }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    * {
+      scroll-behavior: auto !important;
+      transition-duration: 0.01ms !important;
+      animation-duration: 0.01ms !important;
+    }
+  }
 </style>

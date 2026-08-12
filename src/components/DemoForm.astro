@@ -7,73 +7,225 @@ interface Props {
     submitLabel?: string;
 }
 
-const { defaultUseCase = '', submitLabel = 'Solicitar demo' } = Astro.props;
+const { defaultUseCase = "", submitLabel = "Solicitar demo" } = Astro.props;
+
+const letters = (text: string) =>
+    text.split("").map((ch, i) => ({ ch: ch === " " ? " " : ch, i }));
 ---
 
-<div
-    class="bg-white rounded-3xl border border-slate-200 shadow-[0_20px_50px_-12px_rgba(0,0,0,0.1)] p-8 md:p-10 reveal-right relative z-10">
-    <h2 class="text-2xl font-bold text-slate-900 mb-2">Ingresa tus datos corporativos</h2>
-    <p class="text-sm text-slate-500 mb-8">Un especialista se comunicará a la brevedad.</p>
+<div class="p-8 shadow-sm reveal-right">
+    <h2 class="text-2xl font-bold text-slate-900 mb-6">
+        Ingresa tus datos corporativos
+    </h2>
+    <p class="text-sm text-slate-500 mb-8">
+        Un especialista se comunicará a la brevedad.
+    </p>
 
-    <form id="demo-form" action="https://api.web3forms.com/submit" method="POST" class="space-y-5">
-        <input type="hidden" name="access_key" value="8707452b-a137-481b-ba1b-75d2b548b4eb">
-        <input type="hidden" name="subject" value="Nueva solicitud de demo - Guira Empresas">
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            <div class="space-y-1">
-                <label for="fname" class="text-xs font-bold text-slate-500 uppercase tracking-wider">Nombre</label>
-                <input type="text" id="fname" name="first_name" required
-                    class="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 focus:bg-white focus:border-guira-teal focus:ring-2 focus:ring-guira-teal/20 transition-all outline-none font-medium text-slate-900 placeholder-slate-400"
-                    placeholder="Juan">
+    <form
+        id="demo-form"
+        action="https://api.web3forms.com/submit"
+        method="POST"
+        class="space-y-5"
+    >
+        <input
+            type="hidden"
+            name="access_key"
+            value="8707452b-a137-481b-ba1b-75d2b548b4eb"
+        />
+        <input
+            type="hidden"
+            name="subject"
+            value="Nueva solicitud de demo - Guira Empresas"
+        />
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            <div class="field-float">
+                <input
+                    type="text"
+                    id="fname"
+                    name="first_name"
+                    required
+                    placeholder=" "
+                    class="field-input"
+                />
+                <label for="fname" class="field-label"
+                    >{
+                        letters("Nombre").map(({ ch, i }) => (
+                            <span class="letter" style={`--i:${i}`}>
+                                {ch}
+                            </span>
+                        ))
+                    }</label
+                >
             </div>
-            <div class="space-y-1">
-                <label for="lname" class="text-xs font-bold text-slate-500 uppercase tracking-wider">Apellido</label>
-                <input type="text" id="lname" name="last_name" required
-                    class="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 focus:bg-white focus:border-guira-teal focus:ring-2 focus:ring-guira-teal/20 transition-all outline-none font-medium text-slate-900 placeholder-slate-400"
-                    placeholder="Pérez">
+            <div class="field-float">
+                <input
+                    type="text"
+                    id="lname"
+                    name="last_name"
+                    required
+                    placeholder=" "
+                    class="field-input"
+                />
+                <label for="lname" class="field-label"
+                    >{
+                        letters("Apellido").map(({ ch, i }) => (
+                            <span class="letter" style={`--i:${i}`}>
+                                {ch}
+                            </span>
+                        ))
+                    }</label
+                >
             </div>
         </div>
 
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            <div class="space-y-1">
-                <label for="email" class="text-xs font-bold text-slate-500 uppercase tracking-wider">Email Corporativo</label>
-                <input type="email" id="email" name="email" required
-                    class="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 focus:bg-white focus:border-guira-teal focus:ring-2 focus:ring-guira-teal/20 transition-all outline-none font-medium text-slate-900 placeholder-slate-400"
-                    placeholder="juan@tuempresa.com">
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            <div class="field-float">
+                <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    required
+                    placeholder=" "
+                    class="field-input"
+                />
+                <label for="email" class="field-label"
+                    >{
+                        letters("Email Corporativo").map(({ ch, i }) => (
+                            <span class="letter" style={`--i:${i}`}>
+                                {ch}
+                            </span>
+                        ))
+                    }</label
+                >
             </div>
-            <div class="space-y-1">
-                <label for="company" class="text-xs font-bold text-slate-500 uppercase tracking-wider">Empresa</label>
-                <input type="text" id="company" name="company" required
-                    class="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 focus:bg-white focus:border-guira-teal focus:ring-2 focus:ring-guira-teal/20 transition-all outline-none font-medium text-slate-900 placeholder-slate-400"
-                    placeholder="Empresa Tech LLC">
+            <div class="field-float">
+                <input
+                    type="text"
+                    id="company"
+                    name="company"
+                    required
+                    placeholder=" "
+                    class="field-input"
+                />
+                <label for="company" class="field-label"
+                    >{
+                        letters("Empresa").map(({ ch, i }) => (
+                            <span class="letter" style={`--i:${i}`}>
+                                {ch}
+                            </span>
+                        ))
+                    }</label
+                >
             </div>
         </div>
 
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            <div class="space-y-1">
-                <label for="volume" class="text-xs font-bold text-slate-500 uppercase tracking-wider">Volumen Estimado USD</label>
-                <div class="relative">
-                    <select id="volume" name="volume"
-                        class="w-full appearance-none pl-4 pr-10 py-3 rounded-xl bg-slate-50 border border-slate-200 focus:bg-white focus:border-guira-teal focus:ring-2 focus:ring-guira-teal/20 transition-all outline-none font-medium text-slate-900">
-                        <option value="">Selecciona volumen</option>
-                        <option value="menos-10k">Menos de $10k / mes</option>
-                        <option value="10k-50k">$10k - $50k / mes</option>
-                        <option value="50k-500k">$50k - $500k / mes</option>
-                        <option value="500k+">Más de $500k</option>
-                    </select>
-                    <i data-lucide="chevron-down" class="w-4 h-4 text-slate-400 absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none"></i>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            <div class="field-float accordion-field" id="volume-accordion">
+                <button
+                    type="button"
+                    class="field-input field-select accordion-trigger"
+                    aria-expanded="false"
+                >
+                    <span class="accordion-value"></span>
+                    <i
+                        data-lucide="chevron-down"
+                        class="accordion-chevron w-4 h-4"></i>
+                </button>
+                <label for="volume-accordion" class="field-label"
+                    >{
+                        letters("Volumen Estimado USD").map(({ ch, i }) => (
+                            <span class="letter" style={`--i:${i}`}>
+                                {ch}
+                            </span>
+                        ))
+                    }</label
+                >
+                <div class="accordion-panel">
+                    <div class="accordion-panel-inner">
+                        <label class="accordion-option"
+                            ><input
+                                type="radio"
+                                name="volume"
+                                value="menos-10k"
+                                required
+                            /><span>Menos de $10k / mes</span></label
+                        >
+                        <label class="accordion-option"
+                            ><input
+                                type="radio"
+                                name="volume"
+                                value="10k-50k"
+                                required
+                            /><span>$10k - $50k / mes</span></label
+                        >
+                        <label class="accordion-option"
+                            ><input
+                                type="radio"
+                                name="volume"
+                                value="50k-500k"
+                                required
+                            /><span>$50k - $500k / mes</span></label
+                        >
+                        <label class="accordion-option"
+                            ><input
+                                type="radio"
+                                name="volume"
+                                value="500k+"
+                                required
+                            /><span>Más de $500k</span></label
+                        >
+                    </div>
                 </div>
             </div>
-            <div class="space-y-1">
-                <label for="usecase" class="text-xs font-bold text-slate-500 uppercase tracking-wider">Caso de Uso Principal</label>
-                <div class="relative">
-                    <select id="usecase" name="usecase"
-                        class="w-full appearance-none pl-4 pr-10 py-3 rounded-xl bg-slate-50 border border-slate-200 focus:bg-white focus:border-guira-teal focus:ring-2 focus:ring-guira-teal/20 transition-all outline-none font-medium text-slate-900">
-                        <option value="" selected={defaultUseCase === ''}>Selecciona caso</option>
-                        <option value="cobros" selected={defaultUseCase === 'cobros'}>Cobros internacionales</option>
-                        <option value="pagos" selected={defaultUseCase === 'pagos'}>Pago a proveedores</option>
-                        <option value="ambos" selected={defaultUseCase === 'ambos'}>Cobros y pagos unificados</option>
-                    </select>
-                    <i data-lucide="chevron-down" class="w-4 h-4 text-slate-400 absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none"></i>
+
+            <div class="field-float accordion-field" id="usecase-accordion">
+                <button
+                    type="button"
+                    class="field-input field-select accordion-trigger"
+                    aria-expanded="false"
+                >
+                    <span class="accordion-value"></span>
+                    <i
+                        data-lucide="chevron-down"
+                        class="accordion-chevron w-4 h-4"></i>
+                </button>
+                <label for="usecase-accordion" class="field-label"
+                    >{
+                        letters("Caso de Uso Principal").map(({ ch, i }) => (
+                            <span class="letter" style={`--i:${i}`}>
+                                {ch}
+                            </span>
+                        ))
+                    }</label
+                >
+                <div class="accordion-panel">
+                    <div class="accordion-panel-inner">
+                        <label class="accordion-option"
+                            ><input
+                                type="radio"
+                                name="usecase"
+                                value="cobros"
+                                required
+                            /><span>Cobros internacionales</span></label
+                        >
+                        <label class="accordion-option"
+                            ><input
+                                type="radio"
+                                name="usecase"
+                                value="pagos"
+                                required
+                            /><span>Pago a proveedores</span></label
+                        >
+                        <label class="accordion-option"
+                            ><input
+                                type="radio"
+                                name="usecase"
+                                value="ambos"
+                                required
+                            /><span>Cobros y pagos unificados</span></label
+                        >
+                    </div>
                 </div>
             </div>
         </div>
@@ -81,96 +233,427 @@ const { defaultUseCase = '', submitLabel = 'Solicitar demo' } = Astro.props;
         <div class="pt-2 pb-4">
             <label class="flex items-start gap-3 cursor-pointer group">
                 <div class="relative flex items-center justify-center mt-0.5">
-                    <input type="checkbox" required
-                        class="peer appearance-none w-5 h-5 border-2 border-slate-300 rounded cursor-pointer checked:bg-guira-teal checked:border-guira-teal transition-colors">
-                    <i data-lucide="check"
-                        class="absolute w-3 h-3 text-white opacity-0 peer-checked:opacity-100 pointer-events-none transition-opacity"></i>
+                    <input
+                        type="checkbox"
+                        required
+                        class="peer appearance-none w-5 h-5 border-2 border-slate-300 rounded cursor-pointer checked:bg-guira-teal checked:border-guira-teal transition-colors"
+                    />
+                    <i
+                        data-lucide="check"
+                        class="absolute w-3 h-3 text-white opacity-0 peer-checked:opacity-100 pointer-events-none transition-opacity"
+                    ></i>
                 </div>
                 <span
-                    class="text-xs text-slate-500 font-medium leading-relaxed group-hover:text-slate-700 transition-colors">He
-                    leído la <a href="/privacidad/"
-                        class="text-guira-teal font-bold hover:underline">Política de Privacidad</a> de Guira.</span>
+                    class="text-xs text-slate-500 font-medium leading-relaxed group-hover:text-slate-700 transition-colors"
+                    >He leído la <a
+                        href="/privacidad/"
+                        class="text-guira-teal font-bold hover:underline"
+                        >Política de Privacidad</a
+                    > de Guira.</span
+                >
             </label>
         </div>
 
-        <button type="submit"
-            class="w-full py-4 bg-slate-900 text-white rounded-xl font-bold text-lg hover:bg-slate-800 transition-all shadow-md active:scale-[0.98]">{submitLabel}</button>
+        <button
+            type="submit"
+            class="guira-submit-btn w-full py-4 rounded-xl font-bold text-lg transition-all active:scale-[0.98]"
+        >
+            <span class="guira-frame" aria-hidden="true">
+                <span class="corner corner-tl"></span>
+                <span class="corner corner-tr"></span>
+                <span class="corner corner-bl"></span>
+                <span class="corner corner-br"></span>
+            </span>
+            <span class="btn-label">{submitLabel}</span>
+        </button>
 
-        <p class="text-center text-xs text-slate-400 font-medium pt-2">Toda la información viaja sobre HTTPS
-            seguro y es estrictamente comercial.</p>
+        <p class="text-center text-xs text-slate-400 font-medium pt-2">
+            Toda la información viaja sobre HTTPS seguro y es estrictamente
+            comercial.
+        </p>
     </form>
 </div>
 
 <script>
-    document.getElementById('demo-form').addEventListener('submit', function (e) {
-        e.preventDefault();
-        const form = this;
-        const btn = form.querySelector('button[type="submit"]');
-        const originalText = btn.innerText;
+    const demoForm = document.getElementById("demo-form");
+    if (demoForm) {
+        demoForm.addEventListener("submit", function (e) {
+            e.preventDefault();
+            const form = this;
+            const btn = form.querySelector('button[type="submit"]');
+            if (!btn) return;
 
-        btn.disabled = true;
-        btn.innerHTML = '<i data-lucide="loader-2" class="w-5 h-5 animate-spin mx-auto"></i> Enviando...';
-        if (typeof lucide !== 'undefined') lucide.createIcons();
+            const originalHTML = btn.innerHTML;
 
-        fetch(form.action, {
-            method: 'POST',
-            body: new FormData(form),
-            headers: {
-                'Accept': 'application/json'
-            }
-        })
-        .then(response => response.json())
-        .then(data => {
-            if (data.success) {
-                const volume = form.querySelector('[name="volume"]')?.value || 'not_selected';
-                const useCase = form.querySelector('[name="usecase"]')?.value || 'not_selected';
-                window.posthog?.capture('demo_form_submitted', {
-                    volume_range: volume,
-                    use_case: useCase,
-                    form_path: window.location.pathname
-                });
-                btn.innerHTML = '<i data-lucide="check" class="w-5 h-5 mx-auto"></i> ¡Mensaje enviado con éxito!';
-                btn.classList.add('bg-emerald-600');
-                btn.classList.remove('bg-slate-900');
-                if (typeof lucide !== 'undefined') lucide.createIcons();
-                form.reset();
+            (btn as HTMLButtonElement).disabled = true;
+            btn.innerHTML =
+                '<i data-lucide="loader-2" class="w-5 h-5 animate-spin mx-auto"></i>';
+            btn.classList.add("is-filled");
+            if (typeof lucide !== "undefined") lucide.createIcons();
 
-                window.dataLayer = window.dataLayer || [];
-                window.dataLayer.push({
-                  'event': 'generate_lead',
-                  'lead_type': 'demo_request'
+            fetch(form.action, {
+                method: "POST",
+                body: new FormData(form),
+                headers: {
+                    Accept: "application/json",
+                },
+            })
+                .then((response) => response.json())
+                .then((data) => {
+                    if (data.success) {
+                        const volume =
+                            form.querySelector('[name="volume"]')?.value ||
+                            "not_selected";
+                        const useCase =
+                            form.querySelector('[name="usecase"]')?.value ||
+                            "not_selected";
+                        window.posthog?.capture("demo_form_submitted", {
+                            volume_range: volume,
+                            use_case: useCase,
+                            form_path: window.location.pathname,
+                        });
+                        btn.innerHTML =
+                            '<i data-lucide="check" class="w-5 h-5 mx-auto"></i> ¡Mensaje enviado con éxito!';
+                        btn.classList.add("is-success");
+                        if (typeof lucide !== "undefined") lucide.createIcons();
+                        form.reset();
+
+                        window.dataLayer = window.dataLayer || [];
+                        window.dataLayer.push({
+                            event: "generate_lead",
+                            lead_type: "demo_request",
+                        });
+                    } else {
+                        window.posthog?.capture("demo_form_failed", {
+                            failure_type: "api_response",
+                            form_path: window.location.pathname,
+                        });
+                        btn.innerHTML =
+                            "Error: " +
+                            (data.message ||
+                                "Verifica tu clave de formulario.");
+                        btn.classList.add("is-error");
+                    }
+                    setTimeout(() => {
+                        btn.innerHTML = originalHTML;
+                        btn.classList.remove(
+                            "is-filled",
+                            "is-success",
+                            "is-error",
+                        );
+                        (btn as HTMLButtonElement).disabled = false;
+                    }, 4000);
+                })
+                .catch((error) => {
+                    window.posthog?.capture("demo_form_failed", {
+                        failure_type: "network_error",
+                        form_path: window.location.pathname,
+                    });
+                    window.posthog?.captureException(error);
+                    btn.innerHTML = "Error de conexión.";
+                    btn.classList.add("is-error");
+                    setTimeout(() => {
+                        btn.innerHTML = originalHTML;
+                        btn.classList.remove("is-filled", "is-error");
+                        (btn as HTMLButtonElement).disabled = false;
+                    }, 4000);
                 });
-            } else {
-                window.posthog?.capture('demo_form_failed', {
-                    failure_type: 'api_response',
-                    form_path: window.location.pathname
-                });
-                btn.innerHTML = 'Error: ' + (data.message || 'Verifica tu clave de formulario.');
-                btn.classList.add('bg-rose-600');
-                btn.classList.remove('bg-slate-900');
-            }
-            setTimeout(() => {
-                btn.innerHTML = originalText;
-                btn.classList.remove('bg-emerald-600', 'bg-rose-600');
-                btn.classList.add('bg-slate-900');
-                btn.disabled = false;
-            }, 4000);
-        })
-        .catch(error => {
-            window.posthog?.capture('demo_form_failed', {
-                failure_type: 'network_error',
-                form_path: window.location.pathname
-            });
-            window.posthog?.captureException(error);
-            btn.innerHTML = 'Error de conexión.';
-            btn.classList.add('bg-rose-600');
-            btn.classList.remove('bg-slate-900');
-            setTimeout(() => {
-                btn.innerHTML = originalText;
-                btn.classList.remove('bg-rose-600');
-                btn.classList.add('bg-slate-900');
-                btn.disabled = false;
-            }, 4000);
         });
+    }
+
+    // Accordion functionality
+    const volumeAccordion = document.getElementById("volume-accordion");
+    if (volumeAccordion) {
+        const volumeTrigger =
+            volumeAccordion.querySelector(".accordion-trigger");
+        const volumeValue = volumeAccordion.querySelector(".accordion-value");
+        const volumeOptions = volumeAccordion.querySelectorAll(
+            '.accordion-option input[type="radio"]',
+        );
+
+        volumeTrigger?.addEventListener("click", () => {
+            const isOpen =
+                volumeTrigger.getAttribute("aria-expanded") === "true";
+            volumeTrigger.setAttribute("aria-expanded", String(!isOpen));
+        });
+
+        volumeOptions.forEach((input) => {
+            input.addEventListener("change", () => {
+                const option = input.closest(".accordion-option");
+                const span = option?.querySelector("span");
+                if (volumeValue && span) {
+                    volumeValue.textContent = span.textContent;
+                }
+                volumeAccordion.classList.add("has-value");
+                volumeTrigger?.setAttribute("aria-expanded", "false");
+            });
+        });
+    }
+
+    const usecaseAccordion = document.getElementById("usecase-accordion");
+    if (usecaseAccordion) {
+        const usecaseTrigger =
+            usecaseAccordion.querySelector(".accordion-trigger");
+        const usecaseValue = usecaseAccordion.querySelector(".accordion-value");
+        const usecaseOptions = usecaseAccordion.querySelectorAll(
+            '.accordion-option input[type="radio"]',
+        );
+
+        usecaseTrigger?.addEventListener("click", () => {
+            const isOpen =
+                usecaseTrigger.getAttribute("aria-expanded") === "true";
+            usecaseTrigger.setAttribute("aria-expanded", String(!isOpen));
+        });
+
+        usecaseOptions.forEach((input) => {
+            input.addEventListener("change", () => {
+                const option = input.closest(".accordion-option");
+                const span = option?.querySelector("span");
+                if (usecaseValue && span) {
+                    usecaseValue.textContent = span.textContent;
+                }
+                usecaseAccordion.classList.add("has-value");
+                usecaseTrigger?.setAttribute("aria-expanded", "false");
+            });
+        });
+    }
+
+    document.addEventListener("click", (e) => {
+        if (volumeAccordion && !volumeAccordion.contains(e.target as Node)) {
+            volumeAccordion
+                .querySelector(".accordion-trigger")
+                ?.setAttribute("aria-expanded", "false");
+        }
+        if (usecaseAccordion && !usecaseAccordion.contains(e.target as Node)) {
+            usecaseAccordion
+                .querySelector(".accordion-trigger")
+                ?.setAttribute("aria-expanded", "false");
+        }
     });
 </script>
+
+<style>
+    .field-float {
+        position: relative;
+    }
+
+    .field-input {
+        width: 100%;
+        padding: 0.75rem 0.25rem 0.5rem;
+        background: transparent;
+        border: none;
+        border-bottom: 1.5px solid rgb(203 213 225);
+        outline: none;
+        font-weight: 500;
+        color: rgb(15 23 42);
+        transition:
+            border-color 0.2s ease,
+            box-shadow 0.2s ease;
+    }
+
+    .field-input:focus {
+        outline: none;
+        border-color: var(--guira-teal, #0051ff) !important;
+        box-shadow: none !important;
+    }
+
+    .field-select {
+        appearance: none;
+        cursor: pointer;
+    }
+
+    .field-label {
+        position: absolute;
+        left: 0.25rem;
+        top: 0.75rem;
+        font-size: 0.9375rem;
+        font-weight: 500;
+        color: rgb(148 163 184);
+        pointer-events: none;
+    }
+
+    .field-label .letter {
+        display: inline-block;
+        transform-origin: left bottom;
+        transition:
+            transform 0.35s ease,
+            color 0.35s ease;
+        transition-delay: calc(var(--i, 0) * 22ms);
+    }
+
+    .field-input:focus + .field-label .letter,
+    .field-input:not(:placeholder-shown) + .field-label .letter,
+    select.field-input:valid + .field-label .letter {
+        transform: translateY(-1.15rem) scale(0.8);
+        color: var(--guira-teal, #0051ff);
+    }
+
+    .accordion-field {
+        margin-bottom: 0.5rem;
+    }
+
+    button.accordion-trigger {
+        font: inherit;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 0.75rem;
+        text-align: left;
+        cursor: pointer;
+        color: rgb(15 23 42);
+    }
+
+    .accordion-value {
+        display: block;
+        min-height: 1.2em;
+    }
+
+    .accordion-chevron {
+        flex-shrink: 0;
+        color: rgb(148 163 184);
+        transition: transform 0.25s ease;
+    }
+
+    .accordion-trigger[aria-expanded="true"] .accordion-chevron {
+        transform: rotate(180deg);
+    }
+
+    .accordion-panel {
+        display: grid;
+        grid-template-rows: 0fr;
+        transition: grid-template-rows 0.3s ease;
+    }
+
+    .accordion-trigger[aria-expanded="true"] + .field-label + .accordion-panel {
+        grid-template-rows: 1fr;
+    }
+
+    .accordion-panel-inner {
+        overflow: hidden;
+    }
+
+    .accordion-option {
+        display: flex;
+        align-items: center;
+        gap: 0.6rem;
+        padding: 0.65rem 0.25rem;
+        font-size: 0.9375rem;
+        font-weight: 500;
+        color: rgb(51 65 85);
+        cursor: pointer;
+        border-top: 1px solid rgb(241 245 249);
+        transition:
+            color 0.2s ease,
+            padding-left 0.2s ease;
+    }
+
+    .accordion-option:first-child {
+        border-top: none;
+    }
+
+    .accordion-option:hover {
+        color: var(--guira-teal, #0051ff);
+        padding-left: 0.5rem;
+    }
+
+    .accordion-option input {
+        accent-color: var(--guira-teal, #0051ff);
+    }
+
+    .accordion-field.has-value .field-label .letter,
+    .accordion-trigger:focus + .field-label .letter,
+    .accordion-trigger[aria-expanded="true"] + .field-label .letter {
+        transform: translateY(-1.15rem) scale(0.8);
+        color: var(--guira-teal, #0051ff);
+    }
+
+    .guira-submit-btn {
+        position: relative;
+        background-color: transparent;
+        color: rgb(15 23 42);
+        transition:
+            background-color 0.4s ease,
+            color 0.4s ease,
+            box-shadow 0.4s ease;
+    }
+
+    .guira-submit-btn:hover,
+    .guira-submit-btn:focus-visible,
+    .guira-submit-btn.is-filled {
+        background-color: rgb(15 23 42);
+        color: #fff;
+        box-shadow: 0 12px 28px -12px rgba(15, 23, 42, 0.5);
+    }
+
+    .guira-submit-btn.is-success {
+        background-color: rgb(5 150 105) !important;
+        box-shadow: 0 12px 28px -12px rgba(5, 150, 105, 0.5) !important;
+    }
+
+    .guira-submit-btn.is-error {
+        background-color: rgb(225 29 72) !important;
+        box-shadow: 0 12px 28px -12px rgba(225, 29, 72, 0.5) !important;
+    }
+
+    .guira-submit-btn .btn-label {
+        position: relative;
+        z-index: 1;
+    }
+
+    .guira-submit-btn .guira-frame {
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+    }
+
+    .guira-submit-btn .corner {
+        position: absolute;
+        width: 18px;
+        height: 18px;
+        border: 0 solid rgba(15, 23, 42, 0.85);
+        transition:
+            width 0.45s ease,
+            height 0.45s ease,
+            border-color 0.4s ease;
+    }
+
+    .guira-submit-btn .corner-tl {
+        top: 8px;
+        left: 8px;
+        border-top-width: 2px;
+        border-left-width: 2px;
+        border-top-left-radius: 10px;
+    }
+
+    .guira-submit-btn .corner-tr {
+        top: 8px;
+        right: 8px;
+        border-top-width: 2px;
+        border-right-width: 2px;
+        border-top-right-radius: 10px;
+    }
+
+    .guira-submit-btn .corner-bl {
+        bottom: 8px;
+        left: 8px;
+        border-bottom-width: 2px;
+        border-left-width: 2px;
+        border-bottom-left-radius: 10px;
+    }
+
+    .guira-submit-btn .corner-br {
+        bottom: 8px;
+        right: 8px;
+        border-bottom-width: 2px;
+        border-right-width: 2px;
+        border-bottom-right-radius: 10px;
+    }
+
+    .guira-submit-btn:hover .corner,
+    .guira-submit-btn:focus-visible .corner,
+    .guira-submit-btn.is-filled .corner {
+        width: calc(50% - 8px);
+        height: calc(50% - 8px);
+        border-color: rgba(255, 255, 255, 0.85);
+    }
+</style>
