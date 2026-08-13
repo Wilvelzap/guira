@@ -91,6 +91,9 @@ const finalCanonicalUrl = canonicalBase === siteOrigin || canonicalBase.endsWith
           return false;
         }
 
+        // Share the same regional decision with the cookie banner.
+        window.isEUorUK = isEUorUK;
+
         window.loadNonEssentialTracking = function() {
           if (window.nonEssentialTrackingLoaded) return;
           window.nonEssentialTrackingLoaded = true;

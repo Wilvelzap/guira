@@ -51,7 +51,9 @@
 
     const consent = getCookie('cookie_consent');
 
-    if (!consent) {
+    const requiresConsent = typeof window.isEUorUK === 'function' && window.isEUorUK();
+
+    if (!consent && requiresConsent) {
       // Show the banner with a beautiful micro-animation
       banner.classList.remove('hidden');
       setTimeout(() => {

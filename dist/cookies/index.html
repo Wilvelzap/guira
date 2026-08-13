@@ -31,6 +31,9 @@ const apiHost = "https://us.i.posthog.com";
           return false;
         }
 
+        // Share the same regional decision with the cookie banner.
+        window.isEUorUK = isEUorUK;
+
         window.loadNonEssentialTracking = function() {
           if (window.nonEssentialTrackingLoaded) return;
           window.nonEssentialTrackingLoaded = true;
@@ -108,7 +111,9 @@ const apiHost = "https://us.i.posthog.com";
 
     const consent = getCookie('cookie_consent');
 
-    if (!consent) {
+    const requiresConsent = typeof window.isEUorUK === 'function' && window.isEUorUK();
+
+    if (!consent && requiresConsent) {
       // Show the banner with a beautiful micro-animation
       banner.classList.remove('hidden');
       setTimeout(() => {
