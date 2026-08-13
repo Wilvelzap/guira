@@ -10,13 +10,13 @@
     "semantic_hash": ""
   },
   "src/components/CookieBanner.astro": {
-    "mtime": 1785723832.6604526,
-    "ast_hash": "37026951c9efc75dc864dfb6f1ca96e1",
+    "mtime": 1786594222.0745678,
+    "ast_hash": "009b2192e669b5cd6111891e069d4e55",
     "semantic_hash": ""
   },
   "src/components/DemoForm.astro": {
-    "mtime": 1785734716.2438903,
-    "ast_hash": "4a552ba49b4f71e0da3596a1940e4f1a",
+    "mtime": 1786594132.948931,
+    "ast_hash": "4cc1e6df558505148347ec68b88ed0f1",
     "semantic_hash": ""
   },
   "src/components/Flag.astro": {
@@ -45,8 +45,8 @@
     "semantic_hash": "8bae336186f2321250946d5a23daf9ec"
   },
   "src/layouts/Layout.astro": {
-    "mtime": 1785732483.3211174,
-    "ast_hash": "a5a6336bb456ca89d2a3c8395a3075f5",
+    "mtime": 1786594221.387795,
+    "ast_hash": "236bbc7d57c5d4794e3e62a6831c4c5d",
     "semantic_hash": ""
   },
   "src/pages/404.astro": {
@@ -55,8 +55,8 @@
     "semantic_hash": ""
   },
   "src/pages/blog/[slug].astro": {
-    "mtime": 1785723832.6729598,
-    "ast_hash": "1dea7065386ed32300aca419b95f8494",
+    "mtime": 1786594132.9499326,
+    "ast_hash": "32a503a58b9361723e182e2868de28be",
     "semantic_hash": ""
   },
   "src/pages/blog/index.astro": {
@@ -65,13 +65,13 @@
     "semantic_hash": ""
   },
   "src/pages/como-funciona.astro": {
-    "mtime": 1785728544.8355038,
-    "ast_hash": "bee1f86a585420c312ddafaa38e7c07a",
+    "mtime": 1786594132.9509313,
+    "ast_hash": "78e6e1b62ea1438cdc5c95bd8452f406",
     "semantic_hash": ""
   },
   "src/pages/contacto.astro": {
-    "mtime": 1785723832.6744635,
-    "ast_hash": "3c4963bd7ff989b4329dfe668e18752e",
+    "mtime": 1786594132.9509313,
+    "ast_hash": "16e7f0023bd88da35759e675d8dc17d9",
     "semantic_hash": ""
   },
   "src/pages/cookies.astro": {
@@ -85,8 +85,8 @@
     "semantic_hash": ""
   },
   "src/pages/faq.astro": {
-    "mtime": 1785723832.6764708,
-    "ast_hash": "4cc08a072901d5c589cdabaaf4d22c3e",
+    "mtime": 1786594132.951931,
+    "ast_hash": "10fffda63dd8950632e0dc7749c2648a",
     "semantic_hash": ""
   },
   "src/pages/guiraglobal.astro": {
@@ -100,8 +100,8 @@
     "semantic_hash": ""
   },
   "src/pages/pagos-cobros-internacionales.astro": {
-    "mtime": 1785725740.3158572,
-    "ast_hash": "6adbcf5fbb8566ef8326b96166c4e088",
+    "mtime": 1786594132.952931,
+    "ast_hash": "ad8c793ce54cbe6da05a3313116e8f32",
     "semantic_hash": ""
   },
   "src/pages/pagos-proveedores-bolivia.astro": {
@@ -120,8 +120,8 @@
     "semantic_hash": ""
   },
   "src/pages/seguridad.astro": {
-    "mtime": 1785723832.6814709,
-    "ast_hash": "5e4e10e991d371eb0304f4efdd05209c",
+    "mtime": 1786594132.9539318,
+    "ast_hash": "428a2acd3938abca271d2fd8fe6c6d16",
     "semantic_hash": ""
   },
   "src/pages/sobre-guira.astro": {
@@ -2245,8 +2245,8 @@
     "semantic_hash": ""
   },
   "src/pages/pagar-proveedores-exterior.astro": {
-    "mtime": 1786425255.4031644,
-    "ast_hash": "93761da1c6a5c9bce8bf0ba0ae298865",
+    "mtime": 1786594132.951931,
+    "ast_hash": "c2be25ab7ae20d35b3e2e96ae8c13d08",
     "semantic_hash": ""
   },
   "LOGO GUIRA CON LETRA HORIZONTAL.svg": {
@@ -3732,6 +3732,106 @@
   ".claude/skills/stitch-design-taste/SKILL.md": {
     "mtime": 1786417143.5747228,
     "ast_hash": "fcbb4f37d67a66a53013b484dcfc9f25",
+    "semantic_hash": ""
+  },
+  "src/components/GuiraButton.astro": {
+    "mtime": 1786594132.948931,
+    "ast_hash": "23032e2e1afeca204bd8221d6b8a78ed",
+    "semantic_hash": ""
+  },
+  "src/content/blog/ds-5384-servicios-financieros-plataformas-operaciones-internacionales.md": {
+    "mtime": 1786594132.948931,
+    "ast_hash": "348e1d4ebee3338456914a82eccdbc29",
+    "semantic_hash": ""
+  },
+  "LOGO GUIRRA CON LETRA HORIZONTAL.svg": {
+    "mtime": 1786594132.8879538,
+    "ast_hash": "1ed8b8a7d60e3e31285f54fa3a997bb7",
+    "semantic_hash": ""
+  },
+  "LOGO GUIRRA CON LETRA VERTICAL.svg": {
+    "mtime": 1786594132.8889575,
+    "ast_hash": "afc6f5439b498251c1d6b18c1433a0e0",
+    "semantic_hash": ""
+  },
+  "LOGO GUIRRA HORIZONTAL BLANCO.png": {
+    "mtime": 1786594132.8889575,
+    "ast_hash": "b1ea8c59b0a4f7de89b930864d4920ba",
+    "semantic_hash": ""
+  },
+  "LOGO GUIRRA HORIZONTAL COLOR BLANCO.png": {
+    "mtime": 1786594132.8889575,
+    "ast_hash": "f64f08bbf348f06cbb97758d4443f80a",
+    "semantic_hash": ""
+  },
+  "LOGO GUIRRA HORIZONTAL COLOR OSCURO.png": {
+    "mtime": 1786594132.8904612,
+    "ast_hash": "68166173aa6b8ba568b8d17168713037",
+    "semantic_hash": ""
+  },
+  "LOGO GUIRRA ISOTIPO BLANCO.png": {
+    "mtime": 1786594132.8914666,
+    "ast_hash": "0f2ef68be061c907cd2973749dbd133d",
+    "semantic_hash": ""
+  },
+  "LOGO GUIRRA ISOTIPO COLOR.png": {
+    "mtime": 1786594132.892141,
+    "ast_hash": "e3df7b9491ddff8bbda1061d191dcf9b",
+    "semantic_hash": ""
+  },
+  "LOGO GUIRRA ISOTIPO.svg": {
+    "mtime": 1786594132.893145,
+    "ast_hash": "4fa1f5d62da423300b24f46138b5b526",
+    "semantic_hash": ""
+  },
+  "public/DOCMUENTACION.png": {
+    "mtime": 1786594132.9399028,
+    "ast_hash": "3a65cca92eb3d9185a3f0ff66f3789e2",
+    "semantic_hash": ""
+  },
+  "public/DOCUMENTACION2.png": {
+    "mtime": 1786594132.9434063,
+    "ast_hash": "6cb22e219acad941c9fe86a35b51d9d1",
+    "semantic_hash": ""
+  },
+  "public/LOGO GUIRRA CON LETRA HORIZONTAL.svg": {
+    "mtime": 1786594132.9434063,
+    "ast_hash": "1ed8b8a7d60e3e31285f54fa3a997bb7",
+    "semantic_hash": ""
+  },
+  "public/LOGO GUIRRA CON LETRA VERTICAL.svg": {
+    "mtime": 1786594132.9434063,
+    "ast_hash": "afc6f5439b498251c1d6b18c1433a0e0",
+    "semantic_hash": ""
+  },
+  "public/LOGO GUIRRA HORIZONTAL BLANCO.png": {
+    "mtime": 1786594132.9449232,
+    "ast_hash": "b1ea8c59b0a4f7de89b930864d4920ba",
+    "semantic_hash": ""
+  },
+  "public/LOGO GUIRRA HORIZONTAL COLOR BLANCO.png": {
+    "mtime": 1786594132.9459274,
+    "ast_hash": "f64f08bbf348f06cbb97758d4443f80a",
+    "semantic_hash": ""
+  },
+  "public/LOGO GUIRRA HORIZONTAL COLOR OSCURO.png": {
+    "mtime": 1786594132.9459274,
+    "ast_hash": "68166173aa6b8ba568b8d17168713037",
+    "semantic_hash": ""
+  },
+  "public/LOGO GUIRRA ISOTIPO BLANCO.png": {
+    "mtime": 1786594132.9469335,
+    "ast_hash": "0f2ef68be061c907cd2973749dbd133d",
+    "semantic_hash": ""
+  },
+  "public/LOGO GUIRRA ISOTIPO COLOR.png": {
+    "mtime": 1786594132.9469335,
+    "ast_hash": "e3df7b9491ddff8bbda1061d191dcf9b",
+    "semantic_hash": ""
+  },
+  "public/LOGO GUIRRA ISOTIPO.svg": {
+    "mtime": 1786594132.9479308,
+    "ast_hash": "4fa1f5d62da423300b24f46138b5b526",
     "semantic_hash": ""
   }
 }
