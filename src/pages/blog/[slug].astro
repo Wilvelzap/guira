@@ -1,5 +1,6 @@
 ---
 import Layout from "../../layouts/Layout.astro";
+import KineticButton from "../../components/KineticButton.astro";
 import { getCollection } from "astro:content";
 import { render } from "astro:content";
 
@@ -556,14 +557,18 @@ const postImage = post.data.image
         complejidad del sistema bancario tradicional.
       </p>
       <div class="flex flex-col sm:flex-row gap-3 justify-center">
-        <a href="/demo/" class="btn-primary gap-2">
-          <i data-lucide="calendar" class="w-4 h-4"></i>
-          Solicitar Demo Gratuita
-        </a>
-        <a href="/producto/" class="btn-secondary gap-2">
-          <i data-lucide="arrow-right" class="w-4 h-4"></i>
-          Ver cómo funciona
-        </a>
+        <KineticButton
+          href="/demo/"
+          variant="light"
+          size="md"
+          label="Solicitar Demo Gratuita"
+        />
+        <KineticButton
+          href="/producto/"
+          variant="dark"
+          size="md"
+          label="Ver cómo funciona"
+        />
       </div>
     </div>
   </section>

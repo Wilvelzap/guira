@@ -2,6 +2,27 @@
 import Layout from "../layouts/Layout.astro";
 import StackedSections from "../components/StackedSections.astro";
 import RadioCard from "../components/RadioCard.astro";
+import KineticButton from "../components/KineticButton.astro";
+import FaqSection from "../components/FaqSection.astro";
+
+const productoFaq = [
+    {
+        question: "¿Es Guira un banco tradicional?",
+        answer: "Guira no es un banco, billetera de consumo ni un custodio directo. Es una infraestructura tecnológica que centraliza las instrucciones de pago B2B e integraciones formales para empresas de LATAM, apoyándose en partners financieros debidamente autorizados según la estructura acordada."
+    },
+    {
+        question: "¿Qué documentos se necesitan para recibir USD o pagar a proveedores?",
+        answer: "Durante el onboarding, validamos la constitución legal de tu empresa y el perfil de negocio. Para las operaciones en vivo (cobros o pagos), requieres adjuntar tu factura comercial (invoice) o contrato asociado para sustentar la trazabilidad B2B de los fondos ante los partners financieros."
+    },
+    {
+        question: "¿Pueden empresas bolivianas usar Guira para pagar a proveedores en el exterior?",
+        answer: "Sí. A través del equipo asesor con presencia en Bolivia, las empresas bolivianas pueden acceder a la plataforma Guira (que opera en EE.UU.) para instruir pagos ACH o Wire a sus proveedores internacionales. Los asesores en Bolivia acompañan todo el proceso: onboarding (KYB), operación y seguimiento. <a href=\"/pagos-proveedores-bolivia/\" class=\"text-guira-cyan hover:underline font-bold\">Ver solución específica para Bolivia →</a>"
+    },
+    {
+        question: "¿Cuánto demoran los pagos hacia terceros en Estados Unidos (ACH/Wire)?",
+        answer: "Al contar con un soporte documental previo, las instrucciones de pago a través de la red ACH o las ejecuciones en formato Wire se cursan de acuerdo a los tiempos bancarios habituales de Estados Unidos (usualmente el mismo día o al día siguiente hábil), minimizando así interrupciones injustificadas."
+    }
+];
 ---
 
 <Layout
@@ -56,10 +77,52 @@ import RadioCard from "../components/RadioCard.astro";
         <!-- 1. Hero Principal -->
         <header
             data-stack-section
-            class="pt-28 md:pt-36 pb-16 md:pb-20 relative z-10 bg-white border-b border-slate-200"
+            class="pt-28 md:pt-36 pb-16 md:pb-20 relative z-10 overflow-hidden bg-white border-b border-slate-200"
         >
+            <div class="hero-operation-surface hero-operation-surface--light"></div>
+            <div class="hero-operation-network hero-operation-network--light" aria-hidden="true">
+                <div class="hero-operation-network__halo"></div>
+                <svg class="hero-operation-network__desktop" viewBox="0 0 1440 720" preserveAspectRatio="xMidYMid slice" fill="none">
+                    <path class="hero-operation-network__route" d="M650 616C770 525 806 315 972 286C1110 262 1122 122 1374 78"></path>
+                    <path class="hero-operation-network__route" d="M745 702C836 556 1055 598 1137 427C1195 306 1316 319 1440 242"></path>
+                    <path class="hero-operation-network__route hero-operation-network__route--faint" d="M835 720C916 619 1004 623 1091 580C1208 523 1280 592 1416 555"></path>
+                    <path class="hero-operation-network__signal" d="M650 616C770 525 806 315 972 286C1110 262 1122 122 1374 78"></path>
+                    <path class="hero-operation-network__signal hero-operation-network__signal--delayed" d="M745 702C836 556 1055 598 1137 427C1195 306 1316 319 1440 242"></path>
+                    <g class="hero-operation-network__capsule">
+                        <rect x="-28" y="-13" width="56" height="26" rx="13"></rect>
+                        <text x="0" y="4" text-anchor="middle">US$</text>
+                        <animateMotion dur="13s" begin="-2s" repeatCount="indefinite" path="M650 616C770 525 806 315 972 286C1110 262 1122 122 1374 78"></animateMotion>
+                    </g>
+                    <g class="hero-operation-network__capsule hero-operation-network__capsule--secondary">
+                        <rect x="-28" y="-13" width="56" height="26" rx="13"></rect>
+                        <text x="0" y="4" text-anchor="middle">€</text>
+                        <animateMotion dur="16s" begin="-9s" repeatCount="indefinite" path="M745 702C836 556 1055 598 1137 427C1195 306 1316 319 1440 242"></animateMotion>
+                    </g>
+                    <g class="hero-operation-network__nodes">
+                        <circle cx="972" cy="286" r="4"></circle>
+                        <circle cx="1137" cy="427" r="4"></circle>
+                        <circle cx="1201" cy="161" r="3"></circle>
+                        <circle cx="1351" cy="132" r="3"></circle>
+                        <circle cx="1091" cy="580" r="3"></circle>
+                    </g>
+                </svg>
+                <svg class="hero-operation-network__mobile" viewBox="0 0 390 844" preserveAspectRatio="none" fill="none">
+                    <path class="hero-operation-network__route" d="M342 844C329 693 405 651 367 500C343 407 411 352 390 277"></path>
+                    <path class="hero-operation-network__route hero-operation-network__route--faint" d="M390 786C351 649 422 590 380 443C360 374 416 316 390 213"></path>
+                    <path class="hero-operation-network__signal" d="M342 844C329 693 405 651 367 500C343 407 411 352 390 277"></path>
+                    <g class="hero-operation-network__capsule">
+                        <rect x="-28" y="-13" width="56" height="26" rx="13"></rect>
+                        <text x="0" y="4" text-anchor="middle">US$</text>
+                        <animateMotion dur="14s" begin="-4s" repeatCount="indefinite" path="M342 844C329 693 405 651 367 500C343 407 411 352 390 277"></animateMotion>
+                    </g>
+                    <g class="hero-operation-network__nodes">
+                        <circle cx="367" cy="500" r="3"></circle>
+                        <circle cx="390" cy="277" r="3"></circle>
+                    </g>
+                </svg>
+            </div>
             <div
-                class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-12 items-center"
+                class="max-w-7xl mx-auto px-6 relative z-10 grid lg:grid-cols-2 gap-12 items-center"
             >
                 <div class="text-left reveal-up">
                     <div
@@ -85,18 +148,20 @@ import RadioCard from "../components/RadioCard.astro";
                         contabilidad trabajen con mayor visibilidad.
                     </p>
                     <div class="flex flex-col sm:flex-row gap-4">
-                        <a
+                        <KineticButton
                             href="/demo/"
-                            class="group bg-slate-900 text-white px-8 py-4 rounded-xl font-bold hover:bg-slate-800 transition-all shadow-xl hover:-translate-y-1 text-center flex items-center justify-center gap-2"
-                        >
-                            Solicitar demo
-                        </a>
-                        <a
+                            variant="dark"
+                            size="lg"
+                            label="Solicitar demo"
+                            class="w-full sm:w-auto"
+                        />
+                        <KineticButton
                             href="/blog/aspectos-elegir-plataforma-pagos-internacionales-empresas/"
-                            class="bg-white border border-slate-200 text-slate-700 px-8 py-4 rounded-xl font-bold hover:bg-slate-50 transition-all shadow-sm hover:-translate-y-1 text-center"
-                        >
-                            Qué evaluar antes de elegir
-                        </a>
+                            variant="light"
+                            size="lg"
+                            label="Qué evaluar antes de elegir"
+                            class="w-full sm:w-auto"
+                        />
                     </div>
 
                     <div
@@ -926,136 +991,14 @@ import RadioCard from "../components/RadioCard.astro";
             </div>
         </section>
 
-        <!-- 6. FAQ (Modo Claro) -->
-        <section data-stack-section class="py-24 bg-white relative z-10">
-            <div class="max-w-4xl mx-auto px-6 reveal-up">
-                <h2
-                    class="text-3xl font-extrabold text-slate-900 mb-12 text-center"
-                >
-                    Preguntas Frecuentes Corporativas
-                </h2>
-            </div>
-
-            <!-- Wrapper de ancho completo: las líneas y el fondo van de borde a borde de la ventana -->
-            <div class="w-full border-t border-slate-200">
-                <details class="group border-b border-slate-200">
-                    <summary
-                        class="max-w-4xl mx-auto px-6 flex justify-between items-center gap-6 font-bold cursor-pointer list-none py-6 text-slate-900"
-                    >
-                        <span>¿Es Guira un banco tradicional?</span>
-                        <div
-                            class="w-9 h-9 rounded-full border border-slate-200 flex items-center justify-center shrink-0"
-                        >
-                            <i
-                                data-lucide="plus"
-                                class="w-4 h-4 text-guira-emerald transition-transform duration-300 group-open:rotate-45"
-                            ></i>
-                        </div>
-                    </summary>
-                    <div
-                        class="max-w-4xl mx-auto px-6 text-slate-600 pb-8 text-sm font-medium leading-relaxed"
-                    >
-                        Guira no es un banco, billetera de consumo ni un
-                        custodio directo. Es una infraestructura tecnológica que
-                        centraliza las instrucciones de pago B2B e integraciones
-                        formales para empresas de LATAM, apoyándose en partners
-                        financieros debidamente autorizados según la estructura
-                        acordada.
-                    </div>
-                </details>
-
-                <details class="group border-b border-slate-200">
-                    <summary
-                        class="max-w-4xl mx-auto px-6 flex justify-between items-center gap-6 font-bold cursor-pointer list-none py-6 text-slate-900"
-                    >
-                        <span
-                            >¿Qué documentos se necesitan para recibir USD o
-                            pagar a proveedores?</span
-                        >
-                        <div
-                            class="w-9 h-9 rounded-full border border-slate-200 flex items-center justify-center shrink-0"
-                        >
-                            <i
-                                data-lucide="plus"
-                                class="w-4 h-4 text-guira-emerald transition-transform duration-300 group-open:rotate-45"
-                            ></i>
-                        </div>
-                    </summary>
-                    <div
-                        class="max-w-4xl mx-auto px-6 text-slate-600 pb-8 text-sm font-medium leading-relaxed"
-                    >
-                        Durante el onboarding, validamos la constitución legal
-                        de tu empresa y el perfil de negocio. Para las
-                        operaciones en vivo (cobros o pagos), requieres adjuntar
-                        tu factura comercial (invoice) o contrato asociado para
-                        sustentar la trazabilidad B2B de los fondos ante los
-                        partners financieros.
-                    </div>
-                </details>
-
-                <details class="group border-b border-slate-200">
-                    <summary
-                        class="max-w-4xl mx-auto px-6 flex justify-between items-center gap-6 font-bold cursor-pointer list-none py-6 text-slate-900"
-                    >
-                        <span
-                            >¿Pueden empresas bolivianas usar Guira para pagar a
-                            proveedores en el exterior?</span
-                        >
-                        <div
-                            class="w-9 h-9 rounded-full border border-slate-200 flex items-center justify-center shrink-0"
-                        >
-                            <i
-                                data-lucide="plus"
-                                class="w-4 h-4 text-guira-emerald transition-transform duration-300 group-open:rotate-45"
-                            ></i>
-                        </div>
-                    </summary>
-                    <div
-                        class="max-w-4xl mx-auto px-6 text-slate-600 pb-8 text-sm font-medium leading-relaxed"
-                    >
-                        Sí. A través del equipo asesor con presencia en Bolivia,
-                        las empresas bolivianas pueden acceder a la plataforma
-                        Guira (que opera en EE.UU.) para instruir pagos ACH o
-                        Wire a sus proveedores internacionales. Los asesores en
-                        Bolivia acompañan todo el proceso: onboarding (KYB),
-                        operación y seguimiento. <a
-                            href="/pagos-proveedores-bolivia/"
-                            class="text-guira-emerald hover:underline font-bold"
-                            >Ver solución específica para Bolivia →</a
-                        >
-                    </div>
-                </details>
-
-                <details class="group border-b border-slate-200">
-                    <summary
-                        class="max-w-4xl mx-auto px-6 flex justify-between items-center gap-6 font-bold cursor-pointer list-none py-6 text-slate-900"
-                    >
-                        <span
-                            >¿Cuánto demoran los pagos hacia terceros en Estados
-                            Unidos (ACH/Wire)?</span
-                        >
-                        <div
-                            class="w-9 h-9 rounded-full border border-slate-200 flex items-center justify-center shrink-0"
-                        >
-                            <i
-                                data-lucide="plus"
-                                class="w-4 h-4 text-guira-emerald transition-transform duration-300 group-open:rotate-45"
-                            ></i>
-                        </div>
-                    </summary>
-                    <div
-                        class="max-w-4xl mx-auto px-6 text-slate-600 pb-8 text-sm font-medium leading-relaxed"
-                    >
-                        Al contar con un soporte documental previo, las
-                        instrucciones de pago a través de la red ACH o las
-                        ejecuciones en formato Wire se cursan de acuerdo a los
-                        tiempos bancarios habituales de Estados Unidos
-                        (usualmente el mismo día o al día siguiente hábil),
-                        minimizando así interrupciones injustificadas.
-                    </div>
-                </details>
-            </div>
-        </section>
+        <!-- 6. FAQ -->
+        <FaqSection
+            kicker="Preguntas frecuentes"
+            topBadge="CONSULTAS CORPORATIVAS"
+            title="Preguntas frecuentes corporativas"
+            description="Información clave sobre el modelo tecnológico de Guira, documentación requerida y tiempos de liquidación."
+            items={productoFaq}
+        />
 
         <!-- 7. Cierre Comercial (Tema Oscuro para Alto Contraste) -->
         <section
@@ -1076,24 +1019,27 @@ import RadioCard from "../components/RadioCard.astro";
                 <div
                     class="flex flex-col sm:flex-row flex-wrap justify-center gap-4"
                 >
-                    <a
+                    <KineticButton
                         href="https://app.guiracorp.com"
-                        class="w-full sm:w-auto px-10 py-4 bg-guira-emerald text-white rounded-xl font-bold hover:bg-guira-emerald_dark shadow-lg transition-all flex items-center justify-center"
-                    >
-                        Crear tu cuenta Guira
-                    </a>
-                    <a
+                        variant="teal"
+                        size="lg"
+                        label="Crear tu cuenta Guira"
+                        class="w-full sm:w-auto"
+                    />
+                    <KineticButton
                         href="/demo/"
-                        class="w-full sm:w-auto px-10 py-4 bg-slate-800 text-white border border-slate-700 rounded-xl font-bold hover:bg-slate-700 shadow-sm transition-all flex items-center justify-center"
-                    >
-                        Solicitar demo
-                    </a>
-                    <a
+                        variant="dark"
+                        size="lg"
+                        label="Solicitar demo"
+                        class="w-full sm:w-auto"
+                    />
+                    <KineticButton
                         href="/contacto/"
-                        class="w-full sm:w-auto px-10 py-4 bg-white/5 text-white border border-white/10 rounded-xl font-bold hover:bg-white/10 transition-all flex items-center justify-center"
-                    >
-                        Hablar con ventas
-                    </a>
+                        variant="light"
+                        size="lg"
+                        label="Hablar con ventas"
+                        class="w-full sm:w-auto"
+                    />
                 </div>
             </div>
         </section>

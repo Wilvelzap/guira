@@ -2,6 +2,22 @@
 import Layout from "../layouts/Layout.astro";
 import DemoForm from "../components/DemoForm.astro";
 import GuiraButton from "../components/GuiraButton.astro";
+import FaqSection from "../components/FaqSection.astro";
+
+const pagarExteriorFaq = [
+  {
+    question: "¿Quién opera la plataforma?",
+    answer: "Guira es una plataforma tecnológica creada y operada por Guira System LLC, constituida en Delaware, Estados Unidos. En Bolivia, Guiraglobal SRL es el equipo de asesoría comercial que acompaña a las empresas en su uso."
+  },
+  {
+    question: "¿Sirve para lo que mi contador necesita?",
+    answer: "Cada operación se entrega con comprobante, referencia asociada a la factura y registro del estado. Es la información que se solicita habitualmente en una conciliación o en una revisión interna."
+  },
+  {
+    question: "¿Cuánto demora empezar?",
+    answer: "Empieza con una conversación. Escríbenos, revisamos tu operación y te decimos con claridad si Guira encaja con lo que tu empresa necesita."
+  }
+];
 ---
 
 <!--
@@ -520,54 +536,13 @@ FORM: Recorrido operativo asimétrico, séptima estructura del concepto d4a56fbd
         </div>
       </section>
 
-      <section class="faq-section section-space">
-        <div class="page-wrap faq-wrap">
-          <div class="section-heading faq-heading">
-            <h2
-              class="max-w-[700px] mx-auto text-[clamp(2rem,4vw,3.55rem)] leading-[1.08] tracking-tight font-extrabold text-balance"
-            >
-              Antes de empezar
-            </h2>
-          </div>
-          <div class="faq-list">
-            <details>
-              <summary
-                ><span>¿Quién opera la plataforma?</span><i data-lucide="plus"
-                ></i></summary
-              >
-              <p>
-                Guira es una plataforma tecnológica creada y operada por Guira
-                System LLC, constituida en Delaware, Estados Unidos. En Bolivia,
-                Guiraglobal SRL es el equipo de asesoría comercial que acompaña
-                a las empresas en su uso.
-              </p>
-            </details>
-            <details>
-              <summary
-                ><span>¿Sirve para lo que mi contador necesita?</span><i
-                  data-lucide="plus"></i></summary
-              >
-              <p>
-                Cada operación se entrega con comprobante, referencia asociada a
-                la factura y registro del estado. Es la información que se
-                solicita habitualmente en una conciliación o en una revisión
-                interna.
-              </p>
-            </details>
-            <details>
-              <summary
-                ><span>¿Cuánto demora empezar?</span><i data-lucide="plus"
-                ></i></summary
-              >
-              <p>
-                Empieza con una conversación. Escríbenos, revisamos tu operación
-                y te decimos con claridad si Guira encaja con lo que tu empresa
-                necesita.
-              </p>
-            </details>
-          </div>
-        </div>
-      </section>
+      <FaqSection
+        kicker="Preguntas frecuentes"
+        topBadge="PAGOS INTERNACIONALES"
+        title="Antes de empezar"
+        description="Información clave sobre la plataforma, soporte contable y tiempos de inicio."
+        items={pagarExteriorFaq}
+      />
 
       <section id="contacto" class="contact-section section-space">
         <div class="page-wrap contact-grid">

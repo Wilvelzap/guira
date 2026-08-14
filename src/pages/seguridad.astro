@@ -1,5 +1,6 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import KineticButton from "../components/KineticButton.astro";
 ---
 
 <Layout
@@ -395,16 +396,20 @@ import Layout from "../layouts/Layout.astro";
             <div
                 class="flex flex-col sm:flex-row items-center justify-center gap-4"
             >
-                <a
+                <KineticButton
                     href="/demo/"
-                    class="w-full sm:w-auto px-8 py-3.5 bg-guira-teal text-white rounded-xl font-bold hover:bg-guira-teal/90 transition-all shadow-lg hover:-translate-y-0.5"
-                    >Solicitar demo</a
-                >
-                <a
+                    variant="teal"
+                    size="lg"
+                    label="Solicitar demo"
+                    class="w-full sm:w-auto"
+                />
+                <KineticButton
                     href="/contacto/"
-                    class="w-full sm:w-auto px-8 py-3.5 bg-white/5 text-white border border-white/10 rounded-xl font-bold hover:bg-white/10 transition-all hover:-translate-y-0.5"
-                    >Hablar con ventas</a
-                >
+                    variant="dark"
+                    size="lg"
+                    label="Hablar con ventas"
+                    class="w-full sm:w-auto"
+                />
             </div>
             <div class="mt-10">
                 <a

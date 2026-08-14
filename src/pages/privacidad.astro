@@ -1,6 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import StackedSections from '../components/StackedSections.astro';
+import KineticButton from '../components/KineticButton.astro';
 ---
 
 <Layout
@@ -38,9 +39,12 @@ import StackedSections from '../components/StackedSections.astro';
   <!-- Navbar custom subbar style fallback -->
   <div data-stack-section class="border-b border-slate-200 bg-white py-4 fixed w-full top-0 z-50 text-left">
       <div class="max-w-4xl mx-auto px-6 flex justify-between items-center">
-          <a href="/"
-              class="font-bold text-slate-900 border border-slate-200 px-3 py-1.5 rounded-lg text-xs hover:bg-slate-50 transition-colors">&larr;
-              Volver a Empresa</a>
+          <KineticButton
+              href="/"
+              variant="light"
+              size="sm"
+              label="← Volver a Empresa"
+          />
           <div class="font-semibold text-slate-600">Legal: Política Privacidad</div>
       </div>
   </div>

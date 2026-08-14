@@ -1,6 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import StackedSections from '../components/StackedSections.astro';
+import KineticButton from '../components/KineticButton.astro';
 ---
 
 <Layout
@@ -151,8 +152,20 @@ import StackedSections from '../components/StackedSections.astro';
               <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-4">Conoce si Guira encaja con la operación de tu empresa</h2>
               <p class="text-lg text-slate-600 font-medium max-w-2xl mx-auto mb-10">Solicita una demo para revisar tu caso de uso y descubrir cómo Guira puede ayudarte a recibir pagos en USD e instruir pagos empresariales desde LATAM.</p>
               <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
-                  <a href="/demo/" class="w-full sm:w-auto px-8 py-3.5 bg-slate-900 text-white rounded-xl font-bold hover:bg-slate-800 transition-colors shadow-md">Solicitar demo</a>
-                  <a href="/contacto/" class="w-full sm:w-auto px-8 py-3.5 bg-white text-slate-900 border border-slate-200 rounded-xl font-bold hover:bg-slate-50 transition-colors shadow-sm">Hablar con ventas</a>
+                  <KineticButton
+                      href="/demo/"
+                      variant="dark"
+                      size="md"
+                      label="Solicitar demo"
+                      class="w-full sm:w-auto"
+                  />
+                  <KineticButton
+                      href="/contacto/"
+                      variant="light"
+                      size="md"
+                      label="Hablar con ventas"
+                      class="w-full sm:w-auto"
+                  />
               </div>
           </section>
 

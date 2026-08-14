@@ -1,6 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import StackedSections from '../components/StackedSections.astro';
+import KineticButton from '../components/KineticButton.astro';
 ---
 
 <Layout
@@ -19,12 +20,8 @@ import StackedSections from '../components/StackedSections.astro';
         La dirección a la que intentas acceder no existe, ha cambiado de ubicación o fue movida.
       </p>
       <div class="flex flex-col sm:flex-row gap-3 justify-center">
-        <a href="/" class="px-6 py-3 bg-slate-900 text-white font-bold rounded-xl text-sm hover:bg-slate-800 transition-all shadow-md">
-          Ir a Inicio
-        </a>
-        <a href="/faq/" class="px-6 py-3 bg-white text-slate-700 font-bold rounded-xl text-sm border border-slate-200 hover:bg-slate-50 transition-all">
-          Preguntas Frecuentes
-        </a>
+        <KineticButton href="/" variant="dark" size="md" label="Ir a Inicio" />
+        <KineticButton href="/faq/" variant="light" size="md" label="Preguntas Frecuentes" />
       </div>
     </div>
   </div>

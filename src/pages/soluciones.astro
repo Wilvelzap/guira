@@ -1,6 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import StackedSections from '../components/StackedSections.astro';
+import KineticButton from '../components/KineticButton.astro';
 ---
 
 <Layout
@@ -275,9 +276,12 @@ import StackedSections from '../components/StackedSections.astro';
 
   <!-- CTA final -->
   <section data-stack-section class="relative z-10 py-20 bg-slate-50 text-center">
-      <a href="/demo/"
-          class="inline-flex px-10 py-4 bg-slate-900 text-white rounded-xl font-bold text-lg hover:bg-slate-800 transition-all shadow-md">Consultar
-          para mi tipo de negocio</a>
+      <KineticButton
+          href="/demo/"
+          variant="dark"
+          size="lg"
+          label="Consultar para mi tipo de negocio"
+      />
   </section>
 
   </StackedSections>

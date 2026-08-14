@@ -1,0 +1,221 @@
+---
+interface FaqItem {
+  question: string;
+  answer: string;
+}
+
+interface Props {
+  kicker?: string;
+  topBadge?: string;
+  title?: string;
+  description?: string;
+  contactText?: string;
+  contactLinkText?: string;
+  contactHref?: string;
+  showContact?: boolean;
+  items: FaqItem[];
+  defaultOpenIndex?: number;
+  id?: string;
+  class?: string;
+}
+
+const {
+  kicker = 'Preguntas frecuentes',
+  topBadge = 'RESOLUCIÓN DE DUDAS',
+  title = 'Lo que más nos preguntan',
+  description = 'Todo lo que tu equipo financiero y contable necesita saber antes de comenzar.',
+  contactText = '¿Tienes otra consulta?',
+  contactLinkText = 'Hablar con un asesor local',
+  contactHref = '/contacto/',
+  showContact = true,
+  items = [],
+  defaultOpenIndex = 0,
+  id = 'faq',
+  class: className = '',
+} = Astro.props;
+---
+
+<section
+  id={id}
+  data-stack-section
+  class={`py-20 lg:py-28 bg-white text-slate-900 border-b border-slate-200 relative overflow-hidden ${className}`}
+>
+  <!-- Resplandor sutil de marca -->
+  <div
+    class="pointer-events-none absolute -left-24 top-1/3 w-96 h-96 bg-guira-teal/5 rounded-full blur-3xl"
+    aria-hidden="true"
+  >
+  </div>
+
+  <div class="max-w-7xl mx-auto px-6 relative z-10">
+    <!-- Barra superior con Kicker y Línea Divisoria Prominente -->
+    <div class="reveal mb-10 lg:mb-12">
+      <div class="flex items-center justify-between pb-4 border-b-2 border-slate-900">
+        <p class="section-kicker text-guira-teal text-xs sm:text-sm font-bold tracking-widest uppercase m-0">
+          {kicker}
+        </p>
+        {topBadge && (
+          <span class="font-mono text-xs text-slate-400 tracking-wider hidden sm:inline-block">
+            {topBadge}
+          </span>
+        )}
+      </div>
+    </div>
+
+    <!-- Disposición en 2 Columnas -->
+    <div class="grid lg:grid-cols-12 gap-10 lg:gap-16 items-start">
+      <!-- Columna Izquierda: Contexto y contacto -->
+      <div class="lg:col-span-4 reveal">
+        <h2 class="text-3xl sm:text-4xl font-extrabold uppercase tracking-tight text-slate-900 leading-tight">
+          {title}
+        </h2>
+        {description && (
+          <p class="mt-4 text-slate-600 font-medium text-sm sm:text-base leading-relaxed">
+            {description}
+          </p>
+        )}
+
+        {showContact && (
+          <div class="mt-8 pt-6 border-t border-slate-200 hidden lg:block">
+            <p class="text-xs font-bold text-slate-500 uppercase tracking-wider mb-2">
+              {contactText}
+            </p>
+            <a
+              href={contactHref}
+              class="text-sm font-bold text-guira-teal hover:text-guira-navy transition-colors inline-flex items-center gap-1.5 group/link"
+            >
+              {contactLinkText}
+              <svg class="w-4 h-4 group-hover/link:translate-x-1 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </a>
+          </div>
+        )}
+      </div>
+
+      <!-- Columna Derecha: Acordeón interactivo fluido -->
+      <div
+        data-faq-accordion
+        class="lg:col-span-8 reveal reveal-delay-1 divide-y divide-slate-200 border-t border-b border-slate-200"
+      >
+        {items.map((item, index) => {
+          const isOpen = index === defaultOpenIndex;
+          return (
+            <div class="faq-accordion-item" data-faq-item>
+              <button
+                type="button"
+                class="faq-toggle w-full py-6 sm:py-7 flex items-center justify-between gap-6 text-left group cursor-pointer select-none"
+                aria-expanded={isOpen ? 'true' : 'false'}
+              >
+                <span class="text-lg sm:text-xl lg:text-[1.35rem] font-extrabold uppercase tracking-tight text-slate-900 group-hover:text-guira-teal transition-colors duration-300 leading-snug">
+                  {item.question}
+                </span>
+                <div
+                  class={`faq-icon-circle w-9 h-9 sm:w-10 sm:h-10 rounded-full border flex items-center justify-center shrink-0 transition-all duration-500 ease-[cubic-bezier(0.25,1,0.5,1)] ${
+                    isOpen
+                      ? 'bg-guira-navy text-white border-guira-navy'
+                      : 'bg-slate-100 text-slate-700 border-slate-200 group-hover:border-guira-teal group-hover:text-guira-teal group-hover:bg-teal-50/50'
+                  }`}
+                >
+                  <svg
+                    class="w-4 h-4 transition-transform duration-500 ease-[cubic-bezier(0.25,1,0.5,1)]"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <line
+                      x1="12"
+                      y1="5"
+                      x2="12"
+                      y2="19"
+                      class={`faq-vertical-line transition-all duration-500 ease-[cubic-bezier(0.25,1,0.5,1)] origin-center ${
+                        isOpen ? 'scale-y-0 opacity-0' : 'scale-y-100 opacity-100'
+                      }`}
+                    />
+                    <line x1="5" y1="12" x2="19" y2="12" />
+                  </svg>
+                </div>
+              </button>
+
+              <div
+                class={`faq-collapse grid transition-[grid-template-rows,opacity] duration-700 ease-[cubic-bezier(0.25,1,0.5,1)] ${
+                  isOpen ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0'
+                }`}
+              >
+                <div class="overflow-hidden">
+                  <div
+                    class={`faq-text pb-6 text-slate-600 font-medium leading-relaxed text-sm sm:text-base transition-all duration-500 ease-out transform ${
+                      isOpen ? 'translate-y-0 opacity-100' : '-translate-y-2 opacity-0'
+                    }`}
+                    set:html={item.answer}
+                  />
+                </div>
+              </div>
+            </div>
+          );
+        })}
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  function initAllFaqAccordions() {
+    const containers = document.querySelectorAll('[data-faq-accordion]');
+    containers.forEach((container) => {
+      const items = container.querySelectorAll('[data-faq-item]');
+      if (!items.length) return;
+
+      items.forEach((item) => {
+        const btn = item.querySelector('.faq-toggle');
+        const collapse = item.querySelector('.faq-collapse');
+        const text = item.querySelector('.faq-text');
+        const vLine = item.querySelector('.faq-vertical-line');
+        const circle = item.querySelector('.faq-icon-circle');
+
+        btn?.addEventListener('click', () => {
+          const isOpen = btn.getAttribute('aria-expanded') === 'true';
+
+          // Close all items in this accordion smoothly
+          items.forEach((other) => {
+            const otherBtn = other.querySelector('.faq-toggle');
+            const otherCollapse = other.querySelector('.faq-collapse');
+            const otherText = other.querySelector('.faq-text');
+            const otherVLine = other.querySelector('.faq-vertical-line');
+            const otherCircle = other.querySelector('.faq-icon-circle');
+
+            otherBtn?.setAttribute('aria-expanded', 'false');
+            otherCollapse?.classList.remove('grid-rows-[1fr]', 'opacity-100');
+            otherCollapse?.classList.add('grid-rows-[0fr]', 'opacity-0');
+            otherText?.classList.remove('translate-y-0', 'opacity-100');
+            otherText?.classList.add('-translate-y-2', 'opacity-0');
+            otherVLine?.classList.remove('scale-y-0', 'opacity-0');
+            otherVLine?.classList.add('scale-y-100', 'opacity-100');
+            otherCircle?.classList.remove('bg-guira-navy', 'text-white', 'border-guira-navy');
+            otherCircle?.classList.add('bg-slate-100', 'text-slate-700', 'border-slate-200');
+          });
+
+          // If clicked item was not open, open it smoothly
+          if (!isOpen) {
+            btn.setAttribute('aria-expanded', 'true');
+            collapse?.classList.remove('grid-rows-[0fr]', 'opacity-0');
+            collapse?.classList.add('grid-rows-[1fr]', 'opacity-100');
+            text?.classList.remove('-translate-y-2', 'opacity-0');
+            text?.classList.add('translate-y-0', 'opacity-100');
+            vLine?.classList.remove('scale-y-100', 'opacity-100');
+            vLine?.classList.add('scale-y-0', 'opacity-0');
+            circle?.classList.remove('bg-slate-100', 'text-slate-700', 'border-slate-200');
+            circle?.classList.add('bg-guira-navy', 'text-white', 'border-guira-navy');
+          }
+        });
+      });
+    });
+  }
+
+  document.addEventListener('DOMContentLoaded', initAllFaqAccordions);
+  document.addEventListener('astro:page-load', initAllFaqAccordions);
+</script>

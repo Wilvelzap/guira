@@ -1,6 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import StackedSections from '../components/StackedSections.astro';
+import KineticButton from '../components/KineticButton.astro';
 ---
 
 <Layout
@@ -197,12 +198,20 @@ import StackedSections from '../components/StackedSections.astro';
             Si eres una empresa boliviana interesada en los servicios de Guira, nuestro equipo puede orientarte sobre el proceso, requisitos y casos de uso aplicables.
           </p>
           <div class="flex flex-col sm:flex-row gap-4">
-            <a href="/demo/" class="px-8 py-4 bg-guira-teal text-white rounded-xl font-bold hover:bg-blue-700 transition-all text-center">
-              Solicitar Asesoría
-            </a>
-            <a href="/contacto/" class="px-8 py-4 bg-white text-slate-900 rounded-xl font-bold hover:bg-slate-50 transition-all text-center">
-              Contactar
-            </a>
+            <KineticButton
+              href="/demo/"
+              variant="teal"
+              size="lg"
+              label="Solicitar Asesoría"
+              class="w-full sm:w-auto"
+            />
+            <KineticButton
+              href="/contacto/"
+              variant="light"
+              size="lg"
+              label="Contactar"
+              class="w-full sm:w-auto"
+            />
           </div>
         </div>
       </section>

@@ -3,6 +3,30 @@ import Layout from "../layouts/Layout.astro";
 import Flag from "../components/Flag.astro";
 import DemoForm from "../components/DemoForm.astro";
 import StackedSections from "../components/StackedSections.astro";
+import FaqSection from "../components/FaqSection.astro";
+
+const cobrosFaq = [
+  {
+    question: "¿Cuál es la mejor forma de cobrar clientes de Estados Unidos desde Bolivia?",
+    answer: "Depende del monto, frecuencia, tipo de cliente y documentación requerida. Wire suele usarse en pagos corporativos internacionales, ACH puede servir si existe una estructura habilitada en Estados Unidos y una plataforma especializada ayuda a ordenar seguimiento y respaldo."
+  },
+  {
+    question: "¿ACH sirve para recibir pagos directamente en una cuenta boliviana?",
+    answer: "ACH es una red de pagos de Estados Unidos. Para una empresa boliviana puede ser útil cuando cuenta con una cuenta, partner o plataforma que pueda recibir fondos por esa vía dentro de EE. UU. No funciona como una transferencia internacional directa a Bolivia."
+  },
+  {
+    question: "¿Qué información suele pedir mi cliente para realizar el pago?",
+    answer: "Normalmente solicita nombre legal de la empresa, dirección fiscal, datos de la cuenta o ruta receptora, referencia de factura o contrato, información bancaria necesaria y documentación de respaldo cuando corresponda."
+  },
+  {
+    question: "¿Qué documentos debo conservar por cada cobro internacional?",
+    answer: "Como mínimo conviene conservar factura, contrato u orden de servicio, instrucciones de pago, comprobante del pagador, confirmación de recepción y registro interno de conciliación. Cada operación puede requerir documentos adicionales."
+  },
+  {
+    question: "¿Cómo ayuda Guira en la gestión de cobros internacionales?",
+    answer: "Guira centraliza información, documentación, estado e historial de las operaciones internacionales para que el equipo administrativo y financiero tenga mayor visibilidad y control operativo."
+  }
+];
 ---
 
 <Layout
@@ -917,150 +941,13 @@ import StackedSections from "../components/StackedSections.astro";
     </section>
 
     <!-- FAQ SEGUIMIENTO -->
-    <section data-stack-section class="py-20 bg-slate-50">
-      <div class="max-w-4xl mx-auto px-6">
-        <div class="text-center mb-14">
-          <h2 class="text-2xl md:text-4xl font-extrabold mb-6 text-slate-900">
-            Preguntas sobre recepción de pagos internacionales
-          </h2>
-        </div>
-      </div>
-
-      <!-- Wrapper de ancho completo: líneas y fondo van de borde a borde de la ventana -->
-      <div class="w-full border-t border-slate-200">
-        <details class="group border-b border-slate-200">
-          <summary
-            class="max-w-4xl mx-auto px-6 flex justify-between items-center gap-6 font-bold cursor-pointer list-none py-6 text-slate-900"
-          >
-            <span
-              >¿Cuál es la mejor forma de cobrar clientes de Estados Unidos
-              desde Bolivia?</span
-            >
-            <div
-              class="w-9 h-9 rounded-full border border-slate-200 flex items-center justify-center shrink-0"
-            >
-              <i
-                data-lucide="plus"
-                class="w-4 h-4 text-guira-teal transition-transform duration-300 group-open:rotate-45"
-              ></i>
-            </div>
-          </summary>
-          <div
-            class="max-w-4xl mx-auto px-6 text-slate-600 font-medium leading-relaxed pb-8"
-          >
-            Depende del monto, frecuencia, tipo de cliente y documentación
-            requerida. Wire suele usarse en pagos corporativos internacionales,
-            ACH puede servir si existe una estructura habilitada en Estados
-            Unidos y una plataforma especializada ayuda a ordenar seguimiento y
-            respaldo.
-          </div>
-        </details>
-
-        <details class="group border-b border-slate-200">
-          <summary
-            class="max-w-4xl mx-auto px-6 flex justify-between items-center gap-6 font-bold cursor-pointer list-none py-6 text-slate-900"
-          >
-            <span
-              >¿ACH sirve para recibir pagos directamente en una cuenta
-              boliviana?</span
-            >
-            <div
-              class="w-9 h-9 rounded-full border border-slate-200 flex items-center justify-center shrink-0"
-            >
-              <i
-                data-lucide="plus"
-                class="w-4 h-4 text-guira-teal transition-transform duration-300 group-open:rotate-45"
-              ></i>
-            </div>
-          </summary>
-          <div
-            class="max-w-4xl mx-auto px-6 text-slate-600 font-medium leading-relaxed pb-8"
-          >
-            ACH es una red de pagos de Estados Unidos. Para una empresa
-            boliviana puede ser útil cuando cuenta con una cuenta, partner o
-            plataforma que pueda recibir fondos por esa vía dentro de EE. UU. No
-            funciona como una transferencia internacional directa a Bolivia.
-          </div>
-        </details>
-
-        <details class="group border-b border-slate-200">
-          <summary
-            class="max-w-4xl mx-auto px-6 flex justify-between items-center gap-6 font-bold cursor-pointer list-none py-6 text-slate-900"
-          >
-            <span
-              >¿Qué información suele pedir mi cliente para realizar el pago?</span
-            >
-            <div
-              class="w-9 h-9 rounded-full border border-slate-200 flex items-center justify-center shrink-0"
-            >
-              <i
-                data-lucide="plus"
-                class="w-4 h-4 text-guira-teal transition-transform duration-300 group-open:rotate-45"
-              ></i>
-            </div>
-          </summary>
-          <div
-            class="max-w-4xl mx-auto px-6 text-slate-600 font-medium leading-relaxed pb-8"
-          >
-            Normalmente solicita nombre legal de la empresa, dirección fiscal,
-            datos de la cuenta o ruta receptora, referencia de factura o
-            contrato, información bancaria necesaria y documentación de respaldo
-            cuando corresponda.
-          </div>
-        </details>
-
-        <details class="group border-b border-slate-200">
-          <summary
-            class="max-w-4xl mx-auto px-6 flex justify-between items-center gap-6 font-bold cursor-pointer list-none py-6 text-slate-900"
-          >
-            <span
-              >¿Qué documentos debo conservar por cada cobro internacional?</span
-            >
-            <div
-              class="w-9 h-9 rounded-full border border-slate-200 flex items-center justify-center shrink-0"
-            >
-              <i
-                data-lucide="plus"
-                class="w-4 h-4 text-guira-teal transition-transform duration-300 group-open:rotate-45"
-              ></i>
-            </div>
-          </summary>
-          <div
-            class="max-w-4xl mx-auto px-6 text-slate-600 font-medium leading-relaxed pb-8"
-          >
-            Como mínimo conviene conservar factura, contrato u orden de
-            servicio, instrucciones de pago, comprobante del pagador,
-            confirmación de recepción y registro interno de conciliación. Cada
-            operación puede requerir documentos adicionales.
-          </div>
-        </details>
-
-        <details class="group border-b border-slate-200">
-          <summary
-            class="max-w-4xl mx-auto px-6 flex justify-between items-center gap-6 font-bold cursor-pointer list-none py-6 text-slate-900"
-          >
-            <span
-              >¿Cómo ayuda Guira en la gestión de cobros internacionales?</span
-            >
-            <div
-              class="w-9 h-9 rounded-full border border-slate-200 flex items-center justify-center shrink-0"
-            >
-              <i
-                data-lucide="plus"
-                class="w-4 h-4 text-guira-teal transition-transform duration-300 group-open:rotate-45"
-              ></i>
-            </div>
-          </summary>
-          <div
-            class="max-w-4xl mx-auto px-6 text-slate-600 font-medium leading-relaxed pb-8"
-          >
-            Guira centraliza información, documentación, estado e historial de
-            las operaciones internacionales para que el equipo administrativo y
-            financiero tenga mayor visibilidad y control operativo.
-          </div>
-        </details>
-      </div>
-    </section>
+    <FaqSection
+      kicker="Preguntas frecuentes"
+      topBadge="RECEPCIÓN INTERNACIONAL"
+      title="Preguntas sobre cobros internacionales"
+      description="Resolvemos las principales consultas sobre cómo cobrar a clientes del exterior, requisitos, tiempos y documentación."
+      items={cobrosFaq}
+    />
 
     <!-- FORMULARIO EMBEBIDO DE DEMO -->
     <section data-stack-section id="solicitar-demo" class="py-20 bg-slate-50">

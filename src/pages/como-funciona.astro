@@ -327,8 +327,8 @@ import RadioCard from "../components/RadioCard.astro";
             class="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(0,81,255,0.06),transparent_60%)] pointer-events-none"
         >
         </div>
-        <div class="max-w-5xl mx-auto px-6 relative">
-            <div class="text-center mb-16 md:mb-20 reveal">
+        <div class="relative">
+            <div class="max-w-3xl mx-auto px-6 text-center mb-16 md:mb-20 reveal">
                 <p
                     class="text-xs font-bold tracking-widest text-guira-teal uppercase mb-3"
                 >
@@ -343,50 +343,24 @@ import RadioCard from "../components/RadioCard.astro";
                     Desde el registro de tu empresa hasta la ejecución de pagos,
                     cuatro etapas claras conectan tu operación internacional.
                 </p>
-                <p
-                    class="mt-6 text-sm font-bold text-slate-400 uppercase tracking-widest"
-                    data-steps-counter
-                >
-                    Paso 1 de 4
-                </p>
             </div>
 
-            <div class="relative" data-steps>
-                <!-- Rail conector con progreso -->
-                <div
-                    class="hidden md:block absolute left-8 top-2 bottom-2 w-px bg-slate-200"
-                    aria-hidden="true"
-                >
-                    <div
-                        class="absolute inset-x-0 top-0 w-px bg-guira-teal"
-                        data-steps-fill
-                    >
-                    </div>
-                </div>
-
-                <div class="grid gap-14 md:gap-16">
+            <div class="w-full border-t border-slate-400" data-editorial-steps>
+                <div class="grid">
                     <!-- Paso 1 -->
                     <div
-                        class="step flex flex-col md:flex-row gap-6 md:gap-10 items-start relative reveal"
+                        class="step editorial-step group grid max-w-[90rem] mx-auto gap-8 px-6 py-8 border-b border-slate-400 transition-colors hover:bg-white sm:px-8 lg:px-10 md:grid-cols-[minmax(0,1.15fr)_minmax(20rem,0.85fr)] md:items-stretch md:gap-16 md:py-7"
                         data-step
                         data-step-index="1"
                     >
                         <div
-                            class="step-badge w-16 h-16 rounded-full bg-white flex items-center justify-center border-2 border-slate-200 text-xl font-extrabold text-slate-400 shrink-0 relative z-10 mt-1"
+                            class="step-card flex flex-col justify-between border-0 bg-transparent py-1 md:py-3"
                         >
-                            <span class="step-badge-number">1</span>
-                            <i
-                                data-lucide="check"
-                                class="step-badge-check hidden w-6 h-6"></i>
-                        </div>
-                        <div
-                            class="step-card bg-slate-50 p-8 rounded-3xl border border-slate-200 flex-1"
-                        >
-                            <h3 class="text-2xl font-bold text-slate-900 mb-3">
+                            <h3 class="max-w-2xl text-2xl font-extrabold tracking-tight text-slate-900 transition-colors group-hover:text-guira-teal md:text-4xl">
                                 Registra tu empresa
                             </h3>
                             <p
-                                class="text-slate-600 text-lg font-medium leading-relaxed mb-6"
+                                class="mt-4 max-w-xl text-base font-medium leading-relaxed text-slate-600"
                             >
                                 Completa tu solicitud y comparte la
                                 documentación básica de tu empresa, sus
@@ -395,7 +369,7 @@ import RadioCard from "../components/RadioCard.astro";
                                 elegibilidad del servicio.
                             </p>
                             <div
-                                class="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm flex items-start gap-4"
+                                class="mt-6 max-w-xl border-t border-slate-300 pt-5 flex items-start gap-4"
                             >
                                 <div class="mt-1">
                                     <i
@@ -419,30 +393,23 @@ import RadioCard from "../components/RadioCard.astro";
                                 </div>
                             </div>
                         </div>
+                        <img src="/assets/images/blog/factura-comercial-codigo-swift.webp" alt="Documentación comercial para iniciar una operación" class="h-52 w-full rounded-2xl object-cover md:h-full md:min-h-64" loading="lazy" />
                     </div>
 
                     <!-- Paso 2 -->
                     <div
-                        class="step flex flex-col md:flex-row gap-6 md:gap-10 items-start relative reveal"
+                        class="step editorial-step group grid max-w-[90rem] mx-auto gap-8 px-6 py-8 border-b border-slate-400 transition-colors hover:bg-white sm:px-8 lg:px-10 md:grid-cols-[minmax(0,1.15fr)_minmax(20rem,0.85fr)] md:items-stretch md:gap-16 md:py-7"
                         data-step
                         data-step-index="2"
                     >
                         <div
-                            class="step-badge w-16 h-16 rounded-full bg-white flex items-center justify-center border-2 border-slate-200 text-xl font-extrabold text-slate-400 shrink-0 relative z-10 mt-1"
+                            class="step-card flex flex-col justify-between border-0 bg-transparent py-1 md:py-3"
                         >
-                            <span class="step-badge-number">2</span>
-                            <i
-                                data-lucide="check"
-                                class="step-badge-check hidden w-6 h-6"></i>
-                        </div>
-                        <div
-                            class="step-card bg-slate-50 p-8 rounded-3xl border border-slate-200 flex-1"
-                        >
-                            <h3 class="text-2xl font-bold text-slate-900 mb-3">
+                            <h3 class="max-w-2xl text-2xl font-extrabold tracking-tight text-slate-900 transition-colors group-hover:text-guira-teal md:text-4xl">
                                 Completa la validación empresarial
                             </h3>
                             <p
-                                class="text-slate-600 text-lg font-medium leading-relaxed"
+                                class="mt-4 max-w-xl text-base font-medium leading-relaxed text-slate-600"
                             >
                                 Nuestro equipo y los proveedores aplicables
                                 revisan la información de tu empresa para
@@ -452,67 +419,53 @@ import RadioCard from "../components/RadioCard.astro";
                                 actividad.
                             </p>
                         </div>
+                        <img src="/assets/images/blog/validacion-b2b-empresas-extranjeras-fraude.webp" alt="Validación empresarial y documentación" class="h-52 w-full rounded-2xl object-cover md:h-full md:min-h-64" loading="lazy" />
                     </div>
 
                     <!-- Paso 3 -->
                     <div
-                        class="step flex flex-col md:flex-row gap-6 md:gap-10 items-start relative reveal"
+                        class="step editorial-step group grid max-w-[90rem] mx-auto gap-8 px-6 py-8 border-b border-slate-400 transition-colors hover:bg-white sm:px-8 lg:px-10 md:grid-cols-[minmax(0,1.15fr)_minmax(20rem,0.85fr)] md:items-stretch md:gap-16 md:py-7"
                         data-step
                         data-step-index="3"
                     >
                         <div
-                            class="step-badge w-16 h-16 rounded-full bg-white flex items-center justify-center border-2 border-slate-200 text-xl font-extrabold text-slate-400 shrink-0 relative z-10 mt-1"
+                            class="step-card flex flex-col justify-between border-0 bg-transparent py-1 md:py-3"
                         >
-                            <span class="step-badge-number">3</span>
-                            <i
-                                data-lucide="check"
-                                class="step-badge-check hidden w-6 h-6"></i>
-                        </div>
-                        <div
-                            class="step-card bg-slate-50 p-8 rounded-3xl border border-slate-200 flex-1"
-                        >
-                            <h3 class="text-2xl font-bold text-slate-900 mb-3">
+                            <h3 class="max-w-2xl text-2xl font-extrabold tracking-tight text-slate-900 transition-colors group-hover:text-guira-teal md:text-4xl">
                                 Habilita tu cuenta virtual en otros países
                             </h3>
                             <p
-                                class="text-slate-600 text-lg font-medium leading-relaxed mb-6"
+                                class="mt-4 max-w-xl text-base font-medium leading-relaxed text-slate-600"
                             >
                                 Una vez aprobada tu empresa, activas una cuenta
                                 virtual en dólares para operar con el exterior.
                                 Desde ahí puedes recibir pagos internacionales y
                                 visualizar tus movimientos en un solo lugar.
                             </p>
-                            <p class="text-sm text-slate-500 font-medium">
+                            <p class="mt-5 max-w-xl border-t border-slate-300 pt-5 text-sm text-slate-600 font-medium">
                                 La cuenta virtual queda disponible según el país
                                 y la estructura aplicable a tu empresa, con
                                 historial de movimientos y visibilidad completa
                                 sobre tus ingresos operativos.
                             </p>
                         </div>
+                        <img src="/assets/images/blog/seguimiento-operaciones-plataforma-digital.webp" alt="Cuenta operativa en dólares disponible en la plataforma" class="h-52 w-full rounded-2xl object-cover md:h-full md:min-h-64" loading="lazy" />
                     </div>
 
                     <!-- Paso 4 -->
                     <div
-                        class="step flex flex-col md:flex-row gap-6 md:gap-10 items-start relative reveal"
+                        class="step editorial-step group grid max-w-[90rem] mx-auto gap-8 px-6 py-8 border-b border-slate-400 transition-colors hover:bg-white sm:px-8 lg:px-10 md:grid-cols-[minmax(0,1.15fr)_minmax(20rem,0.85fr)] md:items-stretch md:gap-16 md:py-7"
                         data-step
                         data-step-index="4"
                     >
                         <div
-                            class="step-badge w-16 h-16 rounded-full bg-white flex items-center justify-center border-2 border-slate-200 text-xl font-extrabold text-slate-400 shrink-0 relative z-10 mt-1"
+                            class="step-card flex flex-col justify-between border-0 bg-transparent py-1 md:py-3"
                         >
-                            <span class="step-badge-number">4</span>
-                            <i
-                                data-lucide="check"
-                                class="step-badge-check hidden w-6 h-6"></i>
-                        </div>
-                        <div
-                            class="step-card bg-slate-50 p-8 rounded-3xl border border-slate-200 flex-1"
-                        >
-                            <h3 class="text-2xl font-bold text-slate-900 mb-3">
+                            <h3 class="max-w-2xl text-2xl font-extrabold tracking-tight text-slate-900 transition-colors group-hover:text-guira-teal md:text-4xl">
                                 Centraliza la visibilidad e instruye pagos
                             </h3>
                             <p
-                                class="text-slate-600 text-lg font-medium leading-relaxed mb-6"
+                                class="mt-4 max-w-xl text-base font-medium leading-relaxed text-slate-600"
                             >
                                 Con tu operación activa, podrás visibilizar tu
                                 saldo operativo, solicitar salidas según tu
@@ -520,7 +473,7 @@ import RadioCard from "../components/RadioCard.astro";
                                 proveedores mediante ACH o Wire, de acuerdo con
                                 los rieles disponibles y habilitados.
                             </p>
-                            <p class="text-sm text-slate-500 font-medium">
+                            <p class="mt-5 max-w-xl border-t border-slate-300 pt-5 text-sm text-slate-600 font-medium">
                                 Dependiendo del caso de uso y la estructura
                                 aprobada, tu empresa puede realizar pagos a
                                 proveedores o partners mediante ACH o Wire,
@@ -528,6 +481,7 @@ import RadioCard from "../components/RadioCard.astro";
                                 estructuradas según el riel aplicable.
                             </p>
                         </div>
+                        <img src="/assets/images/blog/wire-vs-ach-empresas-bolivianas.webp" alt="Empresa instruyendo un pago internacional" class="h-52 w-full rounded-2xl object-cover md:h-full md:min-h-64" loading="lazy" />
                     </div>
                 </div>
             </div>
@@ -535,46 +489,16 @@ import RadioCard from "../components/RadioCard.astro";
     </section>
 
     <style>
-        .step-badge,
-        .step-card {
-            transition:
-                border-color 0.5s ease,
-                background-color 0.5s ease,
-                color 0.5s ease,
-                box-shadow 0.5s ease,
-                transform 0.5s ease,
-                opacity 0.5s ease;
+        .editorial-step {
+            opacity: 0;
+            transform: translateY(28px);
         }
-        .step:not(.is-active) .step-card {
-            opacity: 0.72;
-        }
-        .step.is-active .step-card {
-            opacity: 1;
-            border-color: rgba(0, 81, 255, 0.35);
-            background: #fff;
-            box-shadow: 0 22px 48px -30px rgba(0, 81, 255, 0.35);
-        }
-        .step.is-active .step-badge {
-            border-color: #0051ff;
-            background: #0051ff;
-            color: #fff;
-            transform: scale(1.08);
-            box-shadow: 0 0 0 8px rgba(0, 81, 255, 0.12);
-        }
-        .step.is-done .step-badge {
-            border-color: #0f172a;
-            background: #0f172a;
-            color: #fff;
-        }
-        .step.is-done .step-badge-number {
-            display: none;
-        }
-        .step.is-done .step-badge-check {
-            display: block;
-        }
-        [data-steps-fill] {
-            height: 0%;
-            transition: height 0.1s linear;
+
+        @media (prefers-reduced-motion: reduce) {
+            .editorial-step {
+                opacity: 1;
+                transform: none;
+            }
         }
     </style>
 
@@ -584,63 +508,26 @@ import RadioCard from "../components/RadioCard.astro";
 
         gsap.registerPlugin(ScrollTrigger);
 
-        const stepsWrap = document.querySelector("[data-steps]");
+        const editorialSteps = gsap.utils.toArray(".editorial-step");
+        const prefersReducedMotion = window.matchMedia(
+            "(prefers-reduced-motion: reduce)",
+        ).matches;
 
-        if (stepsWrap) {
-            const steps = Array.from(stepsWrap.querySelectorAll("[data-step]"));
-            const fill = stepsWrap.querySelector("[data-steps-fill]");
-            const counter = document.querySelector("[data-steps-counter]");
-            const reducedMotion = window.matchMedia(
-                "(prefers-reduced-motion: reduce)",
-            ).matches;
-
-            steps.forEach((step) => {
-                ScrollTrigger.create({
-                    trigger: step,
-                    start: "top 65%",
-                    end: "bottom 45%",
-                    onEnter: () => setActive(step),
-                    onEnterBack: () => setActive(step),
-                    onLeave: () => setDone(step),
-                    onLeaveBack: () => clearState(step),
-                });
+        if (prefersReducedMotion) {
+            gsap.set(editorialSteps, { autoAlpha: 1, y: 0 });
+        } else {
+            ScrollTrigger.batch(editorialSteps, {
+                start: "top 85%",
+                onEnter: (batch) =>
+                    gsap.to(batch, {
+                        autoAlpha: 1,
+                        y: 0,
+                        duration: 0.7,
+                        stagger: 0.12,
+                        ease: "power3.out",
+                        overwrite: true,
+                    }),
             });
-
-            function setActive(step) {
-                step.classList.add("is-active");
-                step.classList.remove("is-done");
-                updateCounter(step);
-            }
-
-            function setDone(step) {
-                step.classList.remove("is-active");
-                step.classList.add("is-done");
-            }
-
-            function clearState(step) {
-                step.classList.remove("is-active", "is-done");
-                updateCounter(step);
-            }
-
-            function updateCounter(step) {
-                if (!counter) return;
-                counter.textContent = `Paso ${step.dataset.stepIndex} de ${steps.length}`;
-            }
-
-            if (fill && !reducedMotion) {
-                gsap.to(fill, {
-                    height: "100%",
-                    ease: "none",
-                    scrollTrigger: {
-                        trigger: stepsWrap,
-                        start: "top 55%",
-                        end: "bottom 55%",
-                        scrub: true,
-                    },
-                });
-            } else if (fill) {
-                fill.style.height = "100%";
-            }
         }
     </script>
 
