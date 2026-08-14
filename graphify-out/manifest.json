@@ -10,34 +10,34 @@
     "semantic_hash": ""
   },
   "src/components/CookieBanner.astro": {
-    "mtime": 1786594222.0745678,
-    "ast_hash": "009b2192e669b5cd6111891e069d4e55",
+    "mtime": 1786685608.4287004,
+    "ast_hash": "8d4eeba5cf2f647c3566d19a4208ca47",
     "semantic_hash": ""
   },
   "src/components/DemoForm.astro": {
-    "mtime": 1786594132.948931,
-    "ast_hash": "4cc1e6df558505148347ec68b88ed0f1",
+    "mtime": 1786685608.4332726,
+    "ast_hash": "ba2b71cf27be790f6f4faea4c1486eb5",
     "semantic_hash": ""
   },
   "src/components/Flag.astro": {
-    "mtime": 1783909313.8152988,
+    "mtime": 1786685608.4385872,
     "ast_hash": "9e3448664ea9218337f7d7a21392a782",
     "semantic_hash": "9e3448664ea9218337f7d7a21392a782"
   },
   "src/components/Footer.astro": {
-    "mtime": 1785723832.6614509,
-    "ast_hash": "77439c43e7deaa5d08c35982a3383208",
+    "mtime": 1786685710.3726387,
+    "ast_hash": "d8dae6c59df899034581343529081e53",
     "semantic_hash": ""
   },
   "src/components/Navbar.astro": {
-    "mtime": 1785728544.8319955,
-    "ast_hash": "6b454e974d5410d3d11a1b47d6ae6f50",
+    "mtime": 1786685694.2225225,
+    "ast_hash": "2e1f07a2b886004f3d495c92c40352b8",
     "semantic_hash": ""
   },
   "src/components/posthog.astro": {
-    "mtime": 1784690143.6006453,
-    "ast_hash": "ff2cad50c194b4390e5e5fdd1dfa4184",
-    "semantic_hash": "ff2cad50c194b4390e5e5fdd1dfa4184"
+    "mtime": 1786685608.471792,
+    "ast_hash": "bea98743e1df6f7d62248a2cfb06ed88",
+    "semantic_hash": ""
   },
   "src/content.config.ts": {
     "mtime": 1782706622.8451602,
@@ -45,98 +45,98 @@
     "semantic_hash": "8bae336186f2321250946d5a23daf9ec"
   },
   "src/layouts/Layout.astro": {
-    "mtime": 1786594221.387795,
-    "ast_hash": "236bbc7d57c5d4794e3e62a6831c4c5d",
+    "mtime": 1786686643.5749912,
+    "ast_hash": "0e68ffa29c659a6eae6d55f4ebb0cd03",
     "semantic_hash": ""
   },
   "src/pages/404.astro": {
-    "mtime": 1785723832.6719604,
-    "ast_hash": "757c9770d998936d44d9056ecc954f16",
+    "mtime": 1786685608.3285656,
+    "ast_hash": "0a4afe9ded873be43e12c5e2e216ab4b",
     "semantic_hash": ""
   },
   "src/pages/blog/[slug].astro": {
-    "mtime": 1786594132.9499326,
-    "ast_hash": "32a503a58b9361723e182e2868de28be",
+    "mtime": 1786686638.0610557,
+    "ast_hash": "cadfb2906f2cb28692c8fc0bd2084f99",
     "semantic_hash": ""
   },
   "src/pages/blog/index.astro": {
-    "mtime": 1785723832.6729598,
-    "ast_hash": "ab8e7dc81916b75700105ff31ee907c9",
+    "mtime": 1786686641.6106386,
+    "ast_hash": "ef28067d7ba5f2c1bdaf87ccd2ff1bc7",
     "semantic_hash": ""
   },
   "src/pages/como-funciona.astro": {
-    "mtime": 1786594132.9509313,
-    "ast_hash": "78e6e1b62ea1438cdc5c95bd8452f406",
+    "mtime": 1786685608.333416,
+    "ast_hash": "dde9d639d4dbb085e522f006a4291dee",
     "semantic_hash": ""
   },
   "src/pages/contacto.astro": {
-    "mtime": 1786594132.9509313,
-    "ast_hash": "16e7f0023bd88da35759e675d8dc17d9",
+    "mtime": 1786685608.3409278,
+    "ast_hash": "6c6d778fc55a07702c98346ef8a394c2",
     "semantic_hash": ""
   },
   "src/pages/cookies.astro": {
-    "mtime": 1785723832.6754677,
-    "ast_hash": "62d4571e0fc04006ecafd604b9326430",
+    "mtime": 1786685608.3490286,
+    "ast_hash": "667adb3d3c2871f1224a7d48713b768b",
     "semantic_hash": ""
   },
   "src/pages/demo.astro": {
-    "mtime": 1785723832.6764708,
-    "ast_hash": "3d629c01cca85a9924b47388c20af273",
+    "mtime": 1786685608.3530788,
+    "ast_hash": "a39094f2b5f7c68840f68bfa19fa413f",
     "semantic_hash": ""
   },
   "src/pages/faq.astro": {
-    "mtime": 1786594132.951931,
-    "ast_hash": "10fffda63dd8950632e0dc7749c2648a",
+    "mtime": 1786685686.1511927,
+    "ast_hash": "a7600dbdccb8a6e16e96d0fb410ab0b5",
     "semantic_hash": ""
   },
   "src/pages/guiraglobal.astro": {
-    "mtime": 1785723832.6774704,
-    "ast_hash": "62307049859e49bc1684512017245e54",
+    "mtime": 1786685608.3608336,
+    "ast_hash": "e3281416c4bd9bd8ddb8514715996ddc",
     "semantic_hash": ""
   },
   "src/pages/index.astro": {
-    "mtime": 1786417143.6327903,
-    "ast_hash": "77557ccf1823f28a21e212037bebb9ac",
+    "mtime": 1786685641.7168727,
+    "ast_hash": "49aaa1ca6c3498001baf57e6c042e5e7",
     "semantic_hash": ""
   },
   "src/pages/pagos-cobros-internacionales.astro": {
-    "mtime": 1786594132.952931,
-    "ast_hash": "ad8c793ce54cbe6da05a3313116e8f32",
+    "mtime": 1786685649.8505442,
+    "ast_hash": "b71514b05d9f5ed9024734b79179fd43",
     "semantic_hash": ""
   },
   "src/pages/pagos-proveedores-bolivia.astro": {
-    "mtime": 1785723832.6794713,
-    "ast_hash": "4f6d1da655d0f75a2354da42a5ce39a7",
+    "mtime": 1786685608.3856213,
+    "ast_hash": "ff24e6f7d10b3e3749b84a7e6912667f",
     "semantic_hash": ""
   },
   "src/pages/privacidad.astro": {
-    "mtime": 1785723832.6804714,
-    "ast_hash": "55db0f9c3ce3b8b23611a96388e93b17",
+    "mtime": 1786685608.390855,
+    "ast_hash": "77607c0393d1745a46139825df618fa5",
     "semantic_hash": ""
   },
   "src/pages/producto.astro": {
-    "mtime": 1785728544.836504,
-    "ast_hash": "8d485f3c9636ec61dade1e16b262238b",
+    "mtime": 1786685608.395367,
+    "ast_hash": "77b46cae96e92b7077db9a6731f4bfaf",
     "semantic_hash": ""
   },
   "src/pages/seguridad.astro": {
-    "mtime": 1786594132.9539318,
-    "ast_hash": "428a2acd3938abca271d2fd8fe6c6d16",
+    "mtime": 1786685608.4009867,
+    "ast_hash": "64733398c200cb3cb591445940d207db",
     "semantic_hash": ""
   },
   "src/pages/sobre-guira.astro": {
-    "mtime": 1785723832.6814709,
-    "ast_hash": "cdb7aca8bf4e5210d6c7322e4979085c",
+    "mtime": 1786685608.4044924,
+    "ast_hash": "8c22c8a68e9fad790402e223483ff2ec",
     "semantic_hash": ""
   },
   "src/pages/soluciones.astro": {
-    "mtime": 1785728544.8375049,
-    "ast_hash": "b0842ac6fb8d70e6cbdec221f0ba10a4",
+    "mtime": 1786685670.9331918,
+    "ast_hash": "9013c06ef384bc25ed8459fac8c73b13",
     "semantic_hash": ""
   },
   "src/pages/terminos.astro": {
-    "mtime": 1785723832.6824713,
-    "ast_hash": "9eafbda341257a56118ae3774da77b64",
+    "mtime": 1786685608.413504,
+    "ast_hash": "743573b56bc82dc57f4f40ab90ceea82",
     "semantic_hash": ""
   },
   "src/scripts/main.js": {
@@ -190,93 +190,93 @@
     "semantic_hash": ""
   },
   "robots.txt": {
-    "mtime": 1776142982.1826308,
-    "ast_hash": "fc4ac411593ed39344c0a475eafd09c4",
+    "mtime": 1786685585.9879346,
+    "ast_hash": "533bb6f30e067e80a90f02783d9644a4",
     "semantic_hash": ""
   },
   "src/content/blog/aspectos-elegir-plataforma-pagos-internacionales-empresas.md": {
-    "mtime": 1785723832.6634514,
-    "ast_hash": "be66e4aaf814e012aa2e251db10f08c9",
+    "mtime": 1786685838.7152867,
+    "ast_hash": "a7f96b7facbc8771b9b373239fe46e53",
     "semantic_hash": ""
   },
   "src/content/blog/como-cobrar-clientes-estados-unidos-desde-bolivia.md": {
-    "mtime": 1785728544.8334992,
-    "ast_hash": "855fe33ec0ba385dff6707abc24a44f6",
+    "mtime": 1786685838.720795,
+    "ast_hash": "04cd7bfae598ade340892a6c831833c1",
     "semantic_hash": ""
   },
   "src/content/blog/como-enviar-wire-proveedor-eeuu-desde-bolivia.md": {
-    "mtime": 1785723832.6649556,
-    "ast_hash": "d88fc2b0c7e33c1286e815abeb9d566c",
+    "mtime": 1786685838.725303,
+    "ast_hash": "565ac808bfb60a11ff526708dfa403dc",
     "semantic_hash": ""
   },
   "src/content/blog/como-funciona-cuenta-virtual-usd-empresas.md": {
-    "mtime": 1785723832.6649556,
-    "ast_hash": "a805695d1ac3c20a8bbf7e36a2890dbc",
+    "mtime": 1786685838.72881,
+    "ast_hash": "ccd87f0275dd9eff9373cb84ba6ba5d5",
     "semantic_hash": ""
   },
   "src/content/blog/como-pagar-proveedor-exterior-desde-bolivia.md": {
-    "mtime": 1785723832.6659596,
-    "ast_hash": "57522e3948f8ef26200fad917b562b26",
+    "mtime": 1786685850.6570172,
+    "ast_hash": "9140cd0677125fa21343136d04c14f20",
     "semantic_hash": ""
   },
   "src/content/blog/como-recibir-pagos-dolares-desde-extranjero-bolivia.md": {
-    "mtime": 1782707871.628235,
-    "ast_hash": "11e06bd48e235c680012d8a47be0c37d",
+    "mtime": 1786685838.7353213,
+    "ast_hash": "03b8209d87d2188e7feb9b6b2d412cf8",
     "semantic_hash": ""
   },
   "src/content/blog/compliance-pagos-internacionales-empresas.md": {
-    "mtime": 1785723832.6659596,
-    "ast_hash": "2b2afac136e2187b1d58f42748c5dd6b",
+    "mtime": 1786685838.73883,
+    "ast_hash": "709e53c91f15ef72c77cc608c02d872b",
     "semantic_hash": ""
   },
   "src/content/blog/conciliacion-pagos-internacionales-empresas.md": {
-    "mtime": 1783873180.7684445,
-    "ast_hash": "88ba2add6339c2669126c8eed53db4aa",
+    "mtime": 1786685838.742423,
+    "ast_hash": "736195c03421cc95dfff93bb82bc4b52",
     "semantic_hash": ""
   },
   "src/content/blog/de-transferir-dinero-a-gestionar-operaciones-pagos-internacionales-empresas.md": {
-    "mtime": 1785723832.6669607,
-    "ast_hash": "2706004792c68cead4b37dbba3a91381",
+    "mtime": 1786685838.7459383,
+    "ast_hash": "17a18ac38e1192bb690f223b4bd546e3",
     "semantic_hash": ""
   },
   "src/content/blog/desafios-recibir-pagos-internacionales-bolivia.md": {
-    "mtime": 1785728544.8334992,
-    "ast_hash": "b9e21bee59e97abad1ff46db5e428dd9",
+    "mtime": 1786685838.7494469,
+    "ast_hash": "13eb185e996f54395ec2f3ef9e92cffb",
     "semantic_hash": ""
   },
   "src/content/blog/errores-observaciones-auditoria-financiera.md": {
-    "mtime": 1785723832.6679592,
-    "ast_hash": "9a1b48724d0ff07d2deb89346a991575",
+    "mtime": 1786685838.755955,
+    "ast_hash": "c5b6db444c651fcf716c8fb0fc0515b0",
     "semantic_hash": ""
   },
   "src/content/blog/pagos-proveedores-internacionales-desde-bolivia.md": {
-    "mtime": 1785723832.6689599,
-    "ast_hash": "da458ebe1493b30c8e707514416a98ce",
+    "mtime": 1786685847.2262292,
+    "ast_hash": "9feb594b58d99755fa2864137f4af89c",
     "semantic_hash": ""
   },
   "src/content/blog/plataformas-operaciones-internacionales-elegir-mejor-opcion.md": {
-    "mtime": 1785723832.6689599,
-    "ast_hash": "559781388df74966a0730521c434f847",
+    "mtime": 1786685838.7639675,
+    "ast_hash": "603a2529398c7dc57835734cbb2f17df",
     "semantic_hash": ""
   },
   "src/content/blog/que-es-kyb-por-que-empresas-deben-completarlo.md": {
-    "mtime": 1785723832.6699588,
-    "ast_hash": "54057e6a7b0af2da18fd3eb28973ffae",
+    "mtime": 1786685838.7684815,
+    "ast_hash": "84cbc7c7ddd722811bfc47a171557827",
     "semantic_hash": ""
   },
   "src/content/blog/trazabilidad-pagos-internacionales-proveedores-bolivia.md": {
-    "mtime": 1785723832.6699588,
-    "ast_hash": "1e777938b201d93c03ca832c6cd6c497",
+    "mtime": 1786685838.7714846,
+    "ast_hash": "a3e2fd23ebfb49401047820c5aa0b105",
     "semantic_hash": ""
   },
   "src/content/blog/validacion-b2b-como-verificar-empresas-extranjeras.md": {
-    "mtime": 1785723832.6709597,
-    "ast_hash": "8d1e31dff31a1dcf7665f7d504fdabe6",
+    "mtime": 1786685838.774988,
+    "ast_hash": "b2cd2021eb83d98b9fdcc61095edfdbf",
     "semantic_hash": ""
   },
   "src/content/blog/wire-vs-ach-diferencias-empresas-bolivianas.md": {
-    "mtime": 1785728544.8345032,
-    "ast_hash": "9785aa6b1db0790e365bc5290805a384",
+    "mtime": 1786685838.778496,
+    "ast_hash": "fb700e398ba1743009f8c43821e9d02a",
     "semantic_hash": ""
   },
   "assets/ads-facebook/guira-facebook-a5-visual-v2.png": {
@@ -1735,18 +1735,18 @@
     "semantic_hash": ""
   },
   "src/components/ProductExplorer.astro": {
-    "mtime": 1785723832.662452,
-    "ast_hash": "90523e40b31a4596073fd202e57309df",
+    "mtime": 1786685608.4552188,
+    "ast_hash": "b07ec7de3bca23acf6c1a8529128a1df",
     "semantic_hash": ""
   },
   "src/components/RadioCard.astro": {
-    "mtime": 1785723832.662452,
-    "ast_hash": "02801c3ef154db573623d70937a67c04",
+    "mtime": 1786685608.4652367,
+    "ast_hash": "1051afba17ed4beb4b5c9c78bce3b9fa",
     "semantic_hash": ""
   },
   "src/components/StackedSections.astro": {
-    "mtime": 1785723832.6634514,
-    "ast_hash": "9cd9990901686c25c5729c943ccb26f1",
+    "mtime": 1786685608.468283,
+    "ast_hash": "93968dc5663415f173716b06ff0fc17e",
     "semantic_hash": ""
   },
   ".agents/skills/design-taste-frontend/SKILL.md": {
@@ -2245,8 +2245,8 @@
     "semantic_hash": ""
   },
   "src/pages/pagar-proveedores-exterior.astro": {
-    "mtime": 1786594132.951931,
-    "ast_hash": "c2be25ab7ae20d35b3e2e96ae8c13d08",
+    "mtime": 1786685608.371854,
+    "ast_hash": "20b41ada1138a3a6a00c609bb4371b21",
     "semantic_hash": ""
   },
   "LOGO GUIRA CON LETRA HORIZONTAL.svg": {
@@ -3735,13 +3735,13 @@
     "semantic_hash": ""
   },
   "src/components/GuiraButton.astro": {
-    "mtime": 1786594132.948931,
-    "ast_hash": "23032e2e1afeca204bd8221d6b8a78ed",
+    "mtime": 1786685608.4456072,
+    "ast_hash": "83571e2faf66d97f5862ef4a7449a76a",
     "semantic_hash": ""
   },
   "src/content/blog/ds-5384-servicios-financieros-plataformas-operaciones-internacionales.md": {
-    "mtime": 1786594132.948931,
-    "ast_hash": "348e1d4ebee3338456914a82eccdbc29",
+    "mtime": 1786685838.7524471,
+    "ast_hash": "ec3a6a68a25b4085032c06290dca3132",
     "semantic_hash": ""
   },
   "LOGO GUIRRA CON LETRA HORIZONTAL.svg": {
@@ -3972,6 +3972,16 @@
   "public/assets/images/para-ads/Om_pag3.jpeg": {
     "mtime": 1786592623.0,
     "ast_hash": "6c2c98925e668150b66a6f25ee4b9f51",
+    "semantic_hash": ""
+  },
+  "src/pages/cuenta-en-dolares.astro": {
+    "mtime": 1786685820.7846313,
+    "ast_hash": "c3602e57fea4aa1355ec6d9ffb7e5c01",
+    "semantic_hash": ""
+  },
+  "guira-auditoria-seo-agosto-2026.html": {
+    "mtime": 1786684900.2788265,
+    "ast_hash": "8c6beb5156f34a18df3530e462417e8c",
     "semantic_hash": ""
   }
 }
