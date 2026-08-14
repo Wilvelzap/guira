@@ -4,45 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
         lucide.createIcons();
     }
 
-    // 2. Navbar Scroll Effect
-    const navbar = document.getElementById('navbar');
-    if (navbar) {
-        const scrolledClasses = ['glass-panel', 'py-3'];
-        const unscrolledClasses = ['py-5'];
-
-        const updateNavbar = () => {
-            if (window.scrollY > 40) {
-                navbar.classList.add(...scrolledClasses);
-                navbar.classList.remove(...unscrolledClasses);
-            } else {
-                navbar.classList.remove(...scrolledClasses);
-                navbar.classList.add(...unscrolledClasses);
-            }
-        };
-
-        window.addEventListener('scroll', updateNavbar, { passive: true });
-        updateNavbar(); // Run once on load
-    }
-
-    // 3. Mobile Menu Toggle
-    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-    const mobileMenu = document.getElementById('mobile-menu');
-    
-    if (mobileMenuBtn && mobileMenu) {
-        mobileMenuBtn.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
-        
-        // Cierra el menú al hacer clic en un enlace (opcional pero recomendado)
-        const mobileLinks = mobileMenu.querySelectorAll('a');
-        mobileLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                mobileMenu.classList.add('hidden');
-            });
-        });
-    }
-
-    // 4. Reveal on Scroll Animation (Intersection Observer)
+    // 2. Reveal on Scroll Animation (Intersection Observer)
     const revealElements = document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .fade-in, .reveal-up, .pair-reveal-left, .pair-reveal-right');
     
     const revealCallback = (entries, observer) => {

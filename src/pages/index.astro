@@ -3,6 +3,7 @@ import Layout from "../layouts/Layout.astro";
 import StackedSections from "../components/StackedSections.astro";
 import ProductExplorer from "../components/ProductExplorer.astro";
 import Flag from "../components/Flag.astro";
+import KineticButton from "../components/KineticButton.astro";
 ---
 
 <Layout
@@ -102,27 +103,9 @@ import Flag from "../components/Flag.astro";
         <!-- Hero -->
         <header
             data-stack-section
-            class="relative pt-20 md:pt-24 pb-24 overflow-hidden border-b border-slate-200"
+            class="relative min-h-screen overflow-hidden border-b border-slate-200 flex flex-col justify-center"
         >
-            <div class="absolute inset-0">
-                <picture class="w-full h-full block">
-                    <source
-                        srcset="/assets/images/hero-ejecutivo.webp"
-                        type="image/webp"
-                        fetchpriority="high"
-                    />
-                    <img
-                        src="/assets/images/hero-ejecutivo.jpg"
-                        alt=""
-                        class="w-full h-full object-cover object-center"
-                        aria-hidden="true"
-                        fetchpriority="high"
-                    />
-                </picture>
-                <div
-                    class="absolute inset-0 bg-gradient-to-r from-white via-white/96 to-white/55"
-                >
-                </div>
+            <div class="absolute inset-0 bg-[#0B1120]">
             </div>
 
             <div
@@ -141,13 +124,13 @@ import Flag from "../components/Flag.astro";
                     </div>
 
                     <h1
-                        class="reveal reveal-delay-1 text-3xl md:text-4xl font-extrabold tracking-tight mb-6 leading-[1.2] text-slate-900 max-w-3xl"
+                        class="reveal reveal-delay-1 text-3xl md:text-4xl font-extrabold tracking-tight mb-6 leading-[1.2] text-white max-w-3xl"
                     >
                         Paga a tus proveedores y cobra en dólares desde Bolivia
                     </h1>
 
                     <p
-                        class="reveal reveal-delay-2 text-base md:text-lg text-slate-500 mb-10 max-w-xl font-medium leading-relaxed"
+                        class="reveal reveal-delay-2 text-base md:text-lg text-slate-300 mb-10 max-w-xl font-medium leading-relaxed"
                     >
                         Centraliza la recepción, visibilidad y las instrucciones
                         de pago de tu empresa con respaldo documental y partners
@@ -157,41 +140,42 @@ import Flag from "../components/Flag.astro";
                     <div
                         class="reveal reveal-delay-3 flex flex-col sm:flex-row items-center sm:items-stretch gap-4 mb-12"
                     >
-                        <a
+                        <KineticButton
                             href="https://app.guiracorp.com"
-                            class="w-full sm:w-auto px-8 py-4 bg-slate-900 text-white rounded-xl font-bold text-lg hover:bg-slate-800 transition-all shadow-xl shadow-slate-900/20 hover:-translate-y-1 flex items-center justify-center gap-2"
-                        >
-                            Comenzar Onboarding Empresarial
-                            <i data-lucide="arrow-right" class="w-5 h-5"></i>
-                        </a>
-                        <a
+                            variant="light"
+                            size="lg"
+                            label="Comenzar Onboarding Empresarial"
+                            class="w-full sm:w-auto"
+                        />
+                        <KineticButton
                             href="/demo/"
-                            class="w-full sm:w-auto px-8 py-4 bg-white text-slate-700 border border-slate-200 rounded-xl font-bold text-lg hover:bg-slate-50 transition-all shadow-sm hover:-translate-y-1"
-                        >
-                            Hablar con Ventas
-                        </a>
+                            variant="dark"
+                            size="lg"
+                            label="Hablar con Ventas"
+                            class="w-full sm:w-auto"
+                        />
                     </div>
 
                     <div
                         class="reveal reveal-delay-4 flex flex-wrap items-center gap-x-10 gap-y-6 max-w-xl"
                     >
-                        <div class="pr-10 border-r border-slate-200">
+                        <div class="pr-10 border-r border-white/20">
                             <p
                                 class="text-xs font-bold text-slate-400 section-kicker mb-2"
                             >
                                 Onboarding
                             </p>
-                            <p class="text-lg font-extrabold text-slate-900">
+                            <p class="text-lg font-extrabold text-white">
                                 Empresarial
                             </p>
                         </div>
-                        <div class="pr-10 border-r border-slate-200">
+                        <div class="pr-10 border-r border-white/20">
                             <p
                                 class="text-xs font-bold text-slate-400 section-kicker mb-2"
                             >
                                 Canales
                             </p>
-                            <p class="text-lg font-extrabold text-slate-900">
+                            <p class="text-lg font-extrabold text-white">
                                 ACH / Wire
                             </p>
                         </div>
@@ -201,7 +185,7 @@ import Flag from "../components/Flag.astro";
                             >
                                 Control
                             </p>
-                            <p class="text-lg font-extrabold text-slate-900">
+                            <p class="text-lg font-extrabold text-white">
                                 Trazabilidad
                             </p>
                         </div>
@@ -214,12 +198,12 @@ import Flag from "../components/Flag.astro";
                     <img
                         src="/assets/images/tablet_sin_fondo.png"
                         alt="Panel de operaciones de Guira Empresas en tablet"
-                        class="absolute inset-0 w-full h-full object-contain object-center"
+                        class="absolute inset-0 w-full h-full object-contain object-center animate-float-tablet"
                     />
                     <img
                         src="/assets/images/telefono_guira_sin_fondo.png"
                         alt="Panel de operaciones de Guira Empresas en el celular"
-                        class="absolute bottom-0 -right-10 h-[92%] w-auto drop-shadow-2xl rotate-6"
+                        class="absolute bottom-0 -right-10 h-[92%] w-auto drop-shadow-2xl rotate-6 animate-float-phone"
                     />
                 </div>
             </div>
@@ -959,13 +943,14 @@ import Flag from "../components/Flag.astro";
                                 </div>
                             </div>
                         </div>
-                        <a
-                            href="https://app.guiracorp.com"
-                            class="inline-flex items-center gap-2 px-8 py-4 bg-guira-teal text-white rounded-xl font-bold text-lg hover:bg-guira-teal/80 transition-all shadow-xl shadow-guira-teal/30 hover:-translate-y-1"
-                        >
-                            Comenzar a operar
-                            <i data-lucide="arrow-right" class="w-5 h-5"></i>
-                        </a>
+                        <div class="mt-8">
+                            <KineticButton
+                                href="https://app.guiracorp.com"
+                                variant="teal"
+                                size="lg"
+                                label="Comenzar a operar"
+                            />
+                        </div>
                     </div>
                 </div>
                 <div class="reveal-right relative min-h-[420px]">
@@ -1991,6 +1976,41 @@ import Flag from "../components/Flag.astro";
             }
         </style>
 
+        <style>
+            @keyframes float-tablet {
+                0%, 100% {
+                    transform: translateY(0px);
+                }
+                50% {
+                    transform: translateY(-20px);
+                }
+            }
+
+            @keyframes float-phone {
+                0%, 100% {
+                    transform: translateY(0px) rotate(6deg);
+                }
+                50% {
+                    transform: translateY(-25px) rotate(6deg);
+                }
+            }
+
+            .animate-float-tablet {
+                animation: float-tablet 6s ease-in-out infinite;
+            }
+
+            .animate-float-phone {
+                animation: float-phone 5s ease-in-out infinite;
+            }
+
+            @media (prefers-reduced-motion: reduce) {
+                .animate-float-tablet,
+                .animate-float-phone {
+                    animation: none;
+                }
+            }
+        </style>
+
         <!-- Final CTA (Fondo Oscuro Alto Contraste) -->
         <section
             data-stack-section
@@ -2022,21 +2042,27 @@ import Flag from "../components/Flag.astro";
                 <div
                     class="flex flex-col sm:flex-row flex-wrap items-center justify-center gap-4"
                 >
-                    <a
+                    <KineticButton
                         href="https://app.guiracorp.com"
-                        class="w-full sm:w-auto px-10 py-5 bg-guira-teal text-white rounded-2xl font-bold text-lg hover:bg-blue-700 transition-all shadow-xl shadow-blue-900/30 hover:-translate-y-1"
-                        >Crear tu cuenta Guira</a
-                    >
-                    <a
+                        variant="light"
+                        size="lg"
+                        label="Crear tu cuenta Guira"
+                        class="w-full sm:w-auto"
+                    />
+                    <KineticButton
                         href="/demo/"
-                        class="w-full sm:w-auto px-10 py-5 bg-slate-800 text-white border border-slate-700 rounded-2xl font-bold text-lg hover:bg-slate-700 transition-all shadow-sm hover:-translate-y-1"
-                        >Solicitar demo</a
-                    >
-                    <a
+                        variant="teal"
+                        size="lg"
+                        label="Solicitar demo"
+                        class="w-full sm:w-auto"
+                    />
+                    <KineticButton
                         href="/contacto/"
-                        class="w-full sm:w-auto px-10 py-5 bg-white/5 text-white border border-white/10 rounded-2xl font-bold text-lg hover:bg-white/10 transition-all shadow-sm hover:-translate-y-1"
-                        >Hablar con ventas</a
-                    >
+                        variant="dark"
+                        size="lg"
+                        label="Hablar con ventas"
+                        class="w-full sm:w-auto"
+                    />
                 </div>
             </div>
         </section>

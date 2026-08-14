@@ -677,3 +677,194 @@ input:focus, textarea:focus, select:focus {
     opacity: 1;
     transform: translateY(0);
 }
+
+/* ─── Button Kinetic Arrow Effect (.btn-29) ─────────────────────── */
+.btn-29,
+.btn-29 *,
+.btn-29 :after,
+.btn-29 :before,
+.btn-29:after,
+.btn-29:before {
+  border: 0 solid;
+  box-sizing: border-box;
+}
+
+.btn-29,
+.btn-29-dark {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-appearance: button;
+  background-color: #0f172a;
+  background-image: none;
+  color: #ffffff;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 0.75rem;
+  font-weight: 800;
+  line-height: 1.5;
+  margin: 0;
+  -webkit-mask-image: -webkit-radial-gradient(#000, #fff);
+  padding: 0.65rem 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.09em;
+  text-decoration: none;
+  --tilt: 20px;
+  border-width: 1px;
+  border-color: rgba(255, 255, 255, 0.18);
+  display: inline-grid;
+  place-content: center;
+  overflow: hidden;
+  position: relative;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn-29:disabled,
+.btn-29-dark:disabled {
+  cursor: default;
+  opacity: 0.5;
+}
+
+.btn-29 .text-container,
+.btn-29-dark .text-container {
+  display: block;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  overflow: hidden;
+  position: relative;
+  z-index: 1;
+}
+
+.btn-29 .text,
+.btn-29-dark .text {
+  display: block;
+  font-weight: 800;
+  mix-blend-mode: normal;
+  position: relative;
+  color: #ffffff;
+  transition: color 0.2s ease;
+}
+
+.btn-29:hover .text,
+.btn-29-dark:hover .text {
+  -webkit-animation: move-right-alternate 0.32s ease forwards;
+  animation: move-right-alternate 0.32s ease forwards;
+  color: #0B1120 !important;
+}
+
+@-webkit-keyframes move-right-alternate {
+  0% { transform: translateX(0); }
+  50% { transform: translateX(80%); }
+  51% { transform: translateX(-80%); }
+  to { transform: translateX(0); }
+}
+
+@keyframes move-right-alternate {
+  0% { transform: translateX(0); }
+  50% { transform: translateX(80%); }
+  51% { transform: translateX(-80%); }
+  to { transform: translateX(0); }
+}
+
+.btn-29:before,
+.btn-29-dark:before {
+  -webkit-animation: move-out 0.32s ease;
+  animation: move-out 0.32s ease;
+  background: #ffffff;
+  -webkit-clip-path: polygon(
+    0 0,
+    calc(100% - var(--tilt)) 0,
+    100% 50%,
+    calc(100% - var(--tilt)) 100%,
+    0 100%
+  );
+  clip-path: polygon(
+    0 0,
+    calc(100% - var(--tilt)) 0,
+    100% 50%,
+    calc(100% - var(--tilt)) 100%,
+    0 100%
+  );
+  content: "";
+  height: 100%;
+  left: calc(-100% - var(--tilt));
+  position: absolute;
+  top: 0;
+  width: calc(100% + var(--tilt));
+  z-index: 0;
+}
+
+.btn-29:hover:before,
+.btn-29-dark:hover:before {
+  -webkit-animation: move-in 0.32s ease forwards;
+  animation: move-in 0.32s ease forwards;
+}
+
+@-webkit-keyframes move-in {
+  0% { transform: translateX(0); }
+  to { transform: translateX(100%); }
+}
+
+@keyframes move-in {
+  0% { transform: translateX(0); }
+  to { transform: translateX(100%); }
+}
+
+@-webkit-keyframes move-out {
+  0% { transform: translateX(100%); }
+  to { transform: translateX(200%); }
+}
+
+@keyframes move-out {
+  0% { transform: translateX(100%); }
+  to { transform: translateX(200%); }
+}
+
+/* Light Variant (Light background with dark slide -> text turns WHITE) */
+.btn-29-light {
+  background-color: #e2e8f0;
+  border-color: #cbd5e1;
+  color: #0f172a;
+}
+.btn-29-light .text {
+  color: #0f172a;
+  mix-blend-mode: normal;
+  transition: color 0.2s ease;
+}
+.btn-29-light:before {
+  background: #0B1120;
+}
+.btn-29-light:hover .text {
+  color: #ffffff !important;
+}
+
+/* Teal / Brand Variant (Blue background with cyan/white slide -> text turns DARK) */
+.btn-29-teal {
+  background-color: #0051ff;
+  border-color: #0051ff;
+}
+.btn-29-teal .text {
+  color: #ffffff;
+  mix-blend-mode: normal;
+  transition: color 0.2s ease;
+}
+.btn-29-teal:before {
+  background: #00d8ff;
+}
+.btn-29-teal:hover .text {
+  color: #0B1120 !important;
+}
+
+/* Sizing Helpers */
+.btn-29-sm {
+  padding: 0.55rem 1.25rem;
+  font-size: 0.75rem;
+}
+.btn-29-md {
+  padding: 0.7rem 1.6rem;
+  font-size: 0.8125rem;
+}
+.btn-29-lg {
+  padding: 0.9rem 2.2rem;
+  font-size: 0.875rem;
+}
+

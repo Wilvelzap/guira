@@ -1,0 +1,79 @@
+---
+interface Props {
+  href?: string;
+  label?: string;
+  variant?: 'light' | 'dark' | 'teal';
+  size?: 'sm' | 'md' | 'lg';
+  class?: string;
+  type?: 'button' | 'submit' | 'reset';
+  target?: string;
+  rel?: string;
+  id?: string;
+  ariaLabel?: string;
+  disabled?: boolean;
+}
+
+const {
+  href,
+  label,
+  variant = 'light',
+  size = 'md',
+  class: className = '',
+  type = 'button',
+  target,
+  rel,
+  id,
+  ariaLabel,
+  disabled = false,
+  ...rest
+} = Astro.props;
+
+const variantClass = {
+  light: 'btn-29-light',
+  dark: 'btn-29-dark',
+  teal: 'btn-29-teal'
+}[variant];
+
+const sizeClass = {
+  sm: 'btn-29-sm',
+  md: 'btn-29-md',
+  lg: 'btn-29-lg'
+}[size];
+
+const combinedClasses = ['btn-29', variantClass, sizeClass, className].filter(Boolean).join(' ');
+---
+
+{
+  href ? (
+    <a
+      href={href}
+      id={id}
+      class={combinedClasses}
+      target={target}
+      rel={rel}
+      aria-label={ariaLabel}
+      {...rest}
+    >
+      <span class="text-container">
+        <span class="text">
+          {label || <slot />}
+        </span>
+      </span>
+    </a>
+  ) : (
+    <button
+      type={type}
+      id={id}
+      class={combinedClasses}
+      disabled={disabled}
+      aria-label={ariaLabel}
+      {...rest}
+    >
+      <span class="text-container">
+        <span class="text">
+          {label || <slot />}
+        </span>
+      </span>
+    </button>
+  )
+}
