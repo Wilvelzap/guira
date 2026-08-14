@@ -40,7 +40,7 @@ El tema puede ser relevante para empresas que:
 - Trabajan con procesos de validación empresarial, KYB o compliance.
 - Buscan mayor trazabilidad para responder consultas internas, contables o de auditoría.
 
-Si tu empresa realiza pagos al exterior, también puede interesarte la guía sobre [cómo pagar a un proveedor en el exterior desde Bolivia](/blog/como-pagar-proveedor-exterior-desde-bolivia).
+Si tu empresa realiza pagos al exterior, también puede interesarte la guía sobre [cómo pagar a un proveedor en el exterior desde Bolivia](/blog/como-pagar-proveedor-exterior-desde-bolivia/).
 
 ## ¿El DS 5384 impone obligaciones directas a todas las empresas?
 
@@ -64,7 +64,7 @@ Por ejemplo, un pago a un proveedor puede incluir factura comercial, contrato, s
 
 Cuando esa información queda dispersa entre correos o carpetas, la empresa pierde visibilidad. En cambio, cuando se organiza desde el inicio, el equipo financiero puede responder con mayor rapidez ante consultas internas, proveedores, bancos, auditores o áreas administrativas.
 
-Para profundizar en este punto, revisa [cómo mejorar la trazabilidad de los pagos internacionales a proveedores desde Bolivia](/blog/trazabilidad-pagos-internacionales-proveedores-bolivia).
+Para profundizar en este punto, revisa [cómo mejorar la trazabilidad de los pagos internacionales a proveedores desde Bolivia](/blog/trazabilidad-pagos-internacionales-proveedores-bolivia/).
 
 ## Cómo prepararse desde la empresa
 
@@ -96,5 +96,5 @@ Antes de elegir una solución, evalúa qué procesos de incorporación, document
 
 La disponibilidad de funcionalidades específicas puede depender de cada operación y de terceros involucrados en el proceso.
 
-Si tu empresa quiere organizar mejor sus operaciones internacionales, [solicita una demostración de Guira](/demo).
+Si tu empresa quiere organizar mejor sus operaciones internacionales, [solicita una demostración de Guira](/demo/).
 

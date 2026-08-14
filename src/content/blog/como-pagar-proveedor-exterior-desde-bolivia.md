@@ -19,6 +19,8 @@ Pagar a un proveedor en el exterior implica mucho más que realizar una transfer
 
 Si tu empresa realiza pagos internacionales con frecuencia, comprender el proceso te permitirá reducir errores administrativos, mejorar el control interno y mantener una gestión más organizada.
 
+Este artículo explica el proceso paso a paso. Si prefieres ver cómo se resuelve en la práctica, revisa nuestra página sobre [pagos a proveedores desde Bolivia](/pagos-proveedores-bolivia/).
+
 ## ¿Qué se considera un pago internacional a proveedores?
 
 Un pago internacional a proveedores es una operación mediante la cual una empresa envía fondos a otra empresa o persona jurídica ubicada en el exterior como contraprestación por bienes o servicios recibidos. Estas operaciones pueden estar relacionadas con:
@@ -60,7 +62,7 @@ Dependiendo del país y del sistema utilizado, normalmente se requiere:
 - IBAN (cuando aplique).
 - Dirección del banco.
 
-> **Recomendación:** ¿No conoces la diferencia entre un código SWIFT y otros sistemas de transferencia? Lee nuestro artículo [Wire vs ACH: diferencias para empresas bolivianas que reciben pagos internacionales](/blog/wire-vs-ach-diferencias-empresas-bolivianas).
+> **Recomendación:** ¿No conoces la diferencia entre un código SWIFT y otros sistemas de transferencia? Lee nuestro artículo [Wire vs ACH: diferencias para empresas bolivianas que reciben pagos internacionales](/blog/wire-vs-ach-diferencias-empresas-bolivianas/).
 
 ### Moneda de la operación
 
@@ -97,7 +99,7 @@ A medida que aumentan las operaciones internacionales, también crece la cantida
 ### Coordinación entre áreas
 Compras, administración, finanzas, contabilidad y dirección suelen participar en una misma operación. Procesos claros favorecen la coordinación y reducen retrasos.
 
-> **Recomendación:** Si quieres profundizar en este tema, consulta también [Cómo mejorar la trazabilidad de los pagos internacionales a proveedores desde Bolivia](/blog/trazabilidad-pagos-internacionales-proveedores-bolivia).
+> **Recomendación:** Si quieres profundizar en este tema, consulta también [Cómo mejorar la trazabilidad de los pagos internacionales a proveedores desde Bolivia](/blog/trazabilidad-pagos-internacionales-proveedores-bolivia/).
 
 ## ¿Cómo mejorar la trazabilidad del proceso?
 
@@ -111,7 +113,7 @@ La trazabilidad permite registrar y consultar cada etapa de una operación inter
 
 Además, permite que la información dependa de procesos documentados y no únicamente del conocimiento de una persona.
 
-> **Recomendación:** Si tu empresa también recibe pagos internacionales, te puede interesar leer [5 desafíos frecuentes al recibir pagos internacionales para empresas bolivianas](/blog/desafios-recibir-pagos-internacionales-bolivia).
+> **Recomendación:** Si tu empresa también recibe pagos internacionales, te puede interesar leer [5 desafíos frecuentes al recibir pagos internacionales para empresas bolivianas](/blog/desafios-recibir-pagos-internacionales-bolivia/).
 
 ![Equipo administrativo reunido revisando operaciones internacionales desde el dashboard de Guira](/assets/images/blog/equipo-administrativo-dashboard-guira.webp)
 
@@ -139,4 +141,4 @@ A través de Guira, los equipos de administración y finanzas pueden unificar la
 
 ¿Quieres conocer cómo organizar y dar seguimiento a tus pagos internacionales desde un solo entorno?
 
-[Solicita una demostración de Guira](/demo) y descubre cómo centralizar la gestión de tus operaciones internacionales.
+[Solicita una demostración de Guira](/demo/) y descubre cómo centralizar la gestión de tus operaciones internacionales.

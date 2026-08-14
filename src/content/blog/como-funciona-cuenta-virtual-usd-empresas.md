@@ -45,7 +45,7 @@ Cada pago puede asociarse a un cliente, factura u operación específica. Esto f
 
 La empresa puede consultar información relacionada con sus cobros, mantener un historial de operaciones y acceder a una mayor visibilidad sobre los movimientos recibidos.
 
-Si quieres conocer opciones concretas para clientes de Estados Unidos, lee [cómo cobrar clientes de Estados Unidos desde Bolivia](/blog/como-cobrar-clientes-estados-unidos-desde-bolivia).
+Si quieres conocer opciones concretas para clientes de Estados Unidos, lee [cómo cobrar clientes de Estados Unidos desde Bolivia](/blog/como-cobrar-clientes-estados-unidos-desde-bolivia/).
 
 ## Para qué utilizan las empresas una cuenta virtual USD
 
@@ -101,7 +101,7 @@ Antes de incorporar este tipo de solución, es recomendable analizar:
 - Procesos de validación empresarial.
 - Herramientas de seguimiento disponibles.
 
-Si estás comparando distintas soluciones, revisa [plataformas de operaciones internacionales: cómo elegir la mejor opción para tu empresa](/blog/plataformas-operaciones-internacionales-elegir-mejor-opcion).
+Si estás comparando distintas soluciones, revisa [plataformas de operaciones internacionales: cómo elegir la mejor opción para tu empresa](/blog/plataformas-operaciones-internacionales-elegir-mejor-opcion/).
 
 ## El rol del KYB
 
@@ -109,7 +109,7 @@ Antes de habilitar una cuenta virtual USD, es habitual que las empresas deban co
 
 Este procedimiento permite verificar la información de la empresa y la documentación necesaria para utilizar determinadas soluciones relacionadas con operaciones internacionales.
 
-En el siguiente artículo explicamos [qué es el KYB y por qué las empresas deben completar este proceso](/blog/que-es-kyb-por-que-empresas-deben-completarlo).
+En el siguiente artículo explicamos [qué es el KYB y por qué las empresas deben completar este proceso](/blog/que-es-kyb-por-que-empresas-deben-completarlo/).
 
 ## Conclusión
 
@@ -121,5 +121,5 @@ Más allá de la recepción de fondos, su principal aporte está en facilitar la
 
 *La disponibilidad de funcionalidades específicas puede depender de cada operación y de terceros involucrados en el proceso.*
 
-Si quieres conocer cómo una empresa puede organizar la gestión de sus cobros internacionales, [solicita una demostración de Guira](/demo).
+Si quieres conocer cómo una empresa puede organizar la gestión de sus cobros internacionales, [solicita una demostración de Guira](/demo/).
 

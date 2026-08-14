@@ -67,8 +67,10 @@ const onProduct = isCurrent('producto');
                     <i data-lucide="chevron-down" class="w-3.5 h-3.5"></i>
                 </a>
                 <div class="absolute top-full left-0 pt-2 hidden group-hover:block">
-                    <div class="bg-white border border-slate-200 rounded-xl shadow-lg py-2 min-w-[260px]">
-                        <a href="/pagos-cobros-internacionales/" class="block px-4 py-2.5 text-sm font-medium text-slate-600 hover:bg-slate-50 hover:text-guira-teal transition-colors">Pagos y cobros internacionales</a>
+                    <div class="bg-white border border-slate-200 rounded-xl shadow-lg py-2 min-w-[280px]">
+                        <a href="/pagos-proveedores-bolivia/" class="block px-4 py-2.5 text-sm font-medium text-slate-600 hover:bg-slate-50 hover:text-guira-teal transition-colors">Pagos a proveedores desde Bolivia</a>
+                        <a href="/pagos-cobros-internacionales/" class="block px-4 py-2.5 text-sm font-medium text-slate-600 hover:bg-slate-50 hover:text-guira-teal transition-colors">Cobros de clientes del exterior</a>
+                        <a href="/cuenta-en-dolares/" class="block px-4 py-2.5 text-sm font-medium text-slate-600 hover:bg-slate-50 hover:text-guira-teal transition-colors">Cuenta en dólares para empresas</a>
                     </div>
                 </div>
             </div>
@@ -107,7 +109,9 @@ const onProduct = isCurrent('producto');
         class="hidden absolute top-full left-0 w-full bg-white shadow-xl border-t border-slate-100 p-6 flex flex-col gap-4">
         <a href="/producto/" class={getMobileLinkClass('producto')}>Producto</a>
         <a href="/soluciones/" class={getMobileLinkClass('soluciones')}>Soluciones</a>
-        <a href="/pagos-cobros-internacionales/" class:list={[getMobileLinkClass('pagos-cobros-internacionales'), 'pl-4 text-sm']}>Pagos y cobros internacionales</a>
+        <a href="/pagos-proveedores-bolivia/" class:list={[getMobileLinkClass('pagos-proveedores-bolivia'), 'pl-4 text-sm']}>Pagos a proveedores desde Bolivia</a>
+        <a href="/pagos-cobros-internacionales/" class:list={[getMobileLinkClass('pagos-cobros-internacionales'), 'pl-4 text-sm']}>Cobros de clientes del exterior</a>
+        <a href="/cuenta-en-dolares/" class:list={[getMobileLinkClass('cuenta-en-dolares'), 'pl-4 text-sm']}>Cuenta en dólares para empresas</a>
         <a href="/como-funciona/" class={getMobileLinkClass('como-funciona')}>Cómo funciona</a>
         <a href="/seguridad/" class={getMobileLinkClass('seguridad')}>Seguridad</a>
         <a href="/blog/" class={getMobileLinkClass('blog')}>Blog</a>

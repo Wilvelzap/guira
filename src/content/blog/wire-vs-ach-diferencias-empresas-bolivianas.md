@@ -16,7 +16,7 @@ excerpt: "Wire Transfer y ACH son los dos métodos más comunes con que empresas
 
 Cuando una empresa boliviana recibe pagos desde Estados Unidos, es habitual encontrarse con dos términos en los comprobantes o instrucciones de pago: **Wire Transfer** y **ACH**. Aunque ambos permiten enviar fondos de forma electrónica, funcionan de manera diferente y responden a escenarios distintos.
 
-Entender la diferencia entre Wire vs ACH no solo es útil para saber qué esperar al cobrar, sino también para organizar mejor la documentación, los tiempos y los procesos internos de tu empresa. Si vas a realizar transferencias, consulta cómo [enviar un Wire a un proveedor en Estados Unidos desde Bolivia](/blog/como-enviar-wire-proveedor-eeuu-desde-bolivia) o nuestra guía sobre [cómo recibir pagos en dólares desde el extranjero siendo empresa boliviana](/blog/como-recibir-pagos-dolares-desde-extranjero-bolivia).
+Entender la diferencia entre Wire vs ACH no solo es útil para saber qué esperar al cobrar, sino también para organizar mejor la documentación, los tiempos y los procesos internos de tu empresa. Si vas a realizar transferencias, consulta cómo [enviar un Wire a un proveedor en Estados Unidos desde Bolivia](/blog/como-enviar-wire-proveedor-eeuu-desde-bolivia/) o nuestra guía sobre [cómo recibir pagos en dólares desde el extranjero siendo empresa boliviana](/blog/como-recibir-pagos-dolares-desde-extranjero-bolivia/).
 
 ## ¿Qué es una Wire Transfer?
 
@@ -117,6 +117,6 @@ Entender la diferencia entre **Wire vs ACH** ayuda a las empresas bolivianas a c
 
 Pero el método de transferencia es solo una pieza del proceso. La trazabilidad, la documentación, la conciliación y el control operativo son los factores que realmente determinan si una empresa puede escalar sus operaciones internacionales con orden y confianza.
 
-Conoce en detalle cómo funcionan los [pagos y cobros internacionales](/pagos-cobros-internacionales) con Guira.
+Conoce en detalle cómo funcionan los [pagos y cobros internacionales](/pagos-cobros-internacionales/) con Guira.
 
-¿Quieres saber cómo gestionar tus cobros internacionales desde EE.UU. con mayor visibilidad y control? [Solicita una demostración de Guira](/demo) y conoce cómo centralizar la información de tus operaciones internacionales desde una sola plataforma.
+¿Quieres saber cómo gestionar tus cobros internacionales desde EE.UU. con mayor visibilidad y control? [Solicita una demostración de Guira](/demo/) y conoce cómo centralizar la información de tus operaciones internacionales desde una sola plataforma.

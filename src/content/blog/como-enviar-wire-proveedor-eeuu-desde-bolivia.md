@@ -30,7 +30,7 @@ Un Wire Transfer es una transferencia bancaria electrónica utilizada para envia
 
 Cuando estas operaciones son frecuentes, resulta recomendable mantener registros organizados que permitan identificar cada pago y su documentación asociada.
 
-> **Recomendación:** Si deseas conocer el proceso completo de un pago internacional, consulta nuestra guía [Cómo pagar a un proveedor en el exterior desde Bolivia](/blog/como-pagar-proveedor-exterior-desde-bolivia).
+> **Recomendación:** Si deseas conocer el proceso completo de un pago internacional, consulta nuestra guía [Cómo pagar a un proveedor en el exterior desde Bolivia](/blog/como-pagar-proveedor-exterior-desde-bolivia/).
 
 ---
 
@@ -62,7 +62,7 @@ Los datos del proveedor (como la razón social y dirección) deben coincidir exa
 ### Falta de documentación de respaldo
 No contar con la factura de soporte o el contrato respectivo dificulta que el banco local o los partners de cumplimiento liberen la transferencia, lo cual puede congelar los fondos por días.
 
-> **Recomendación:** Si tu empresa también recibe pagos desde el exterior, puede interesarte el artículo [5 desafíos frecuentes al recibir pagos internacionales para empresas bolivianas](/blog/desafios-recibir-pagos-internacionales-bolivia).
+> **Recomendación:** Si tu empresa también recibe pagos desde el exterior, puede interesarte el artículo [5 desafíos frecuentes al recibir pagos internacionales para empresas bolivianas](/blog/desafios-recibir-pagos-internacionales-bolivia/).
 
 ---
 
@@ -77,7 +77,7 @@ A medida que aumenta el número de operaciones internacionales de una empresa, t
 
 Estas prácticas contribuyen a reducir consultas internas, mejorar el control operativo y simplificar futuras auditorías contables.
 
-> **Recomendación:** Si buscas optimizar el seguimiento de todas tus operaciones, te recomendamos leer [Cómo mejorar la trazabilidad de los pagos internacionales a proveedores desde Bolivia](/blog/trazabilidad-pagos-internacionales-proveedores-bolivia).
+> **Recomendación:** Si buscas optimizar el seguimiento de todas tus operaciones, te recomendamos leer [Cómo mejorar la trazabilidad de los pagos internacionales a proveedores desde Bolivia](/blog/trazabilidad-pagos-internacionales-proveedores-bolivia/).
 
 ![Equipo de finanzas revisando un dashboard con el estado de pagos internacionales en la plataforma Guira](/assets/images/blog/equipo-finanzas-dashboard-pagos-internacionales.webp)
 
@@ -101,4 +101,4 @@ Contar con procesos claros y herramientas que centralicen la información ayuda 
 
 ¿Quieres conocer cómo gestionar tus pagos internacionales con mayor trazabilidad y visibilidad?
 
-[Solicita una demostración de Guira](/demo) y descubre cómo centralizar la información de tus operaciones internacionales desde una sola plataforma.
+[Solicita una demostración de Guira](/demo/) y descubre cómo centralizar la información de tus operaciones internacionales desde una sola plataforma.

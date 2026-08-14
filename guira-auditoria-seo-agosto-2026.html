@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Guira · Revisión SEO del sitio frente a la investigación de palabras clave</title>
+<style>
+  :root{
+    color-scheme: light;
+    --paper:#faf9f7; --surface:#ffffff; --surface-2:#f4f2ee;
+    --ink:#141311; --ink-2:#4d4a45; --ink-3:#807b73;
+    --rule:#e2ded7; --rule-2:#c9c3b9;
+    --accent:#c1573a;
+    --s1:#2a78d6; --s2:#eb6834; --s3:#1baf7a;
+    --good:#0ca30c; --warn:#fab219; --serious:#ec835a; --crit:#d03b3b;
+    --mono: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  }
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{
+    margin:0; background:var(--paper); color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,system-ui,sans-serif;
+    font-size:16px; line-height:1.65; letter-spacing:-0.005em;
+  }
+  .wrap{max-width:960px; margin:0 auto; padding:0 28px 120px}
+
+  /* ---------- portada ---------- */
+  header.cover{padding:88px 0 44px; border-bottom:1px solid var(--rule)}
+  .eyebrow{font-family:var(--mono); font-size:11px; letter-spacing:.16em; text-transform:uppercase; color:var(--ink-3); margin:0 0 22px}
+  h1{font-size:clamp(2.1rem,4.4vw,3.1rem); line-height:1.08; letter-spacing:-0.035em; margin:0 0 20px; font-weight:600}
+  .standfirst{font-size:1.14rem; color:var(--ink-2); max-width:70ch; margin:0 0 28px}
+  .meta{display:flex; flex-wrap:wrap; gap:8px 26px; font-family:var(--mono); font-size:11.5px; color:var(--ink-3); text-transform:uppercase; letter-spacing:.08em}
+
+  /* ---------- estructura ---------- */
+  section{padding:60px 0 8px; border-bottom:1px solid var(--rule)}
+  section:last-of-type{border-bottom:0}
+  .sec-num{font-family:var(--mono); font-size:11px; color:var(--accent); letter-spacing:.14em; margin:0 0 10px}
+  h2{font-size:1.72rem; line-height:1.18; letter-spacing:-0.025em; margin:0 0 8px; font-weight:600}
+  h3{font-size:1.06rem; margin:38px 0 12px; font-weight:600; letter-spacing:-0.01em}
+  h4{font-size:.92rem; margin:26px 0 8px; font-weight:600; color:var(--ink-2)}
+  p{margin:0 0 15px; max-width:74ch}
+  .lede{font-size:1.04rem; color:var(--ink-2); max-width:72ch; margin:0 0 26px}
+  strong{font-weight:600}
+  code{font-family:var(--mono); font-size:.86em; background:var(--surface-2); padding:1px 5px; border-radius:3px; border:1px solid var(--rule)}
+
+  /* ---------- tiles ---------- */
+  .tiles{display:grid; grid-template-columns:repeat(auto-fit,minmax(178px,1fr)); gap:1px; background:var(--rule); border:1px solid var(--rule); margin:30px 0 8px}
+  .tile{background:var(--surface); padding:20px 18px 18px}
+  .tile .n{font-size:2.35rem; line-height:1; font-weight:600; letter-spacing:-0.045em; font-variant-numeric:tabular-nums}
+  .tile .n small{font-size:.95rem; font-weight:500; color:var(--ink-3); letter-spacing:-0.01em}
+  .tile .l{font-size:.78rem; color:var(--ink-2); margin-top:9px; line-height:1.42}
+  .tile.bad .n{color:var(--crit)} .tile.warn .n{color:#b07800} .tile.ok .n{color:#087a08}
+
+  /* ---------- figuras ---------- */
+  figure{margin:34px 0; background:var(--surface); border:1px solid var(--rule); padding:22px 22px 16px}
+  figcaption{font-size:.79rem; color:var(--ink-3); margin-top:14px; padding-top:12px; border-top:1px solid var(--rule); line-height:1.5}
+  .fig-title{font-size:.94rem; font-weight:600; margin:0 0 3px}
+  .fig-sub{font-size:.8rem; color:var(--ink-3); margin:0 0 18px}
+  svg{display:block; width:100%; height:auto; overflow:visible}
+  .legend{display:flex; flex-wrap:wrap; gap:7px 20px; margin:14px 0 0; font-size:.79rem; color:var(--ink-2)}
+  .legend i{display:inline-block; width:11px; height:11px; border-radius:2px; margin-right:7px; vertical-align:-1px}
+
+  /* ---------- tablas ---------- */
+  .tbl-wrap{overflow-x:auto; margin:26px 0; border:1px solid var(--rule); background:var(--surface)}
+  table{border-collapse:collapse; width:100%; font-size:.845rem}
+  th{text-align:left; font-family:var(--mono); font-size:10px; letter-spacing:.1em; text-transform:uppercase; color:var(--ink-3); font-weight:500; padding:12px 14px; border-bottom:1px solid var(--rule-2); background:var(--surface-2); white-space:nowrap; vertical-align:bottom}
+  td{padding:11px 14px; border-bottom:1px solid var(--rule); vertical-align:top; line-height:1.5}
+  tr:last-child td{border-bottom:0}
+  td.kw{font-family:var(--mono); font-size:.78rem; color:var(--ink)}
+  .pill{display:inline-flex; align-items:center; gap:5px; font-size:.72rem; font-weight:600; padding:2.5px 8px; border-radius:100px; white-space:nowrap; border:1px solid}
+  .p-no{color:#8f2020; background:#fdf0f0; border-color:#f2cfcf}
+  .p-par{color:#8a6100; background:#fdf6e6; border-color:#f0e0bb}
+  .p-si{color:#0a6b0a; background:#eefaee; border-color:#c6e8c6}
+  .p-evit{color:#4d4a45; background:var(--surface-2); border-color:var(--rule-2)}
+  .dot{width:7px;height:7px;border-radius:50%;display:inline-block}
+
+  /* ---------- antes/después ---------- */
+  .ab{border:1px solid var(--rule); background:var(--surface); margin:16px 0 24px}
+  .ab .row{display:grid; grid-template-columns:76px 1fr; border-bottom:1px solid var(--rule)}
+  .ab .row:last-child{border-bottom:0}
+  .ab .tag{font-family:var(--mono); font-size:10px; letter-spacing:.1em; text-transform:uppercase; padding:13px 12px; color:var(--ink-3); background:var(--surface-2); border-right:1px solid var(--rule)}
+  .ab .val{padding:12px 14px; font-size:.87rem; line-height:1.5}
+  .ab .row.now .val{color:var(--ink-3); text-decoration:line-through; text-decoration-color:#e0b4b4; text-decoration-thickness:1px}
+  .ab .row.next .val{font-weight:500}
+  .ab .why{font-size:.79rem; color:var(--ink-3); padding:10px 14px; background:var(--surface-2); border-top:1px solid var(--rule)}
+  .chars{font-family:var(--mono); font-size:.7rem; color:var(--ink-3); margin-left:8px}
+
+  /* ---------- callouts ---------- */
+  .call{border-left:3px solid var(--accent); background:var(--surface); padding:18px 20px; margin:26px 0; border-top:1px solid var(--rule); border-right:1px solid var(--rule); border-bottom:1px solid var(--rule)}
+  .call .h{font-family:var(--mono); font-size:10px; letter-spacing:.13em; text-transform:uppercase; color:var(--accent); margin:0 0 8px}
+  .call p:last-child{margin-bottom:0}
+  .call.crit{border-left-color:var(--crit)} .call.crit .h{color:#a52c2c}
+
+  /* ---------- olas ---------- */
+  .wave{border:1px solid var(--rule); background:var(--surface); margin:20px 0; overflow:hidden}
+  .wave-hd{display:flex; align-items:baseline; gap:14px; flex-wrap:wrap; padding:15px 20px; background:var(--surface-2); border-bottom:1px solid var(--rule)}
+  .wave-hd .w{font-weight:600; font-size:1rem}
+  .wave-hd .t{font-family:var(--mono); font-size:10.5px; letter-spacing:.1em; text-transform:uppercase; color:var(--ink-3)}
+  .wave-hd .goal{font-size:.8rem; color:var(--ink-2); margin-left:auto}
+  ol.acts{margin:0; padding:6px 0; list-style:none; counter-reset:a}
+  ol.acts li{counter-increment:a; padding:12px 20px 12px 54px; position:relative; border-bottom:1px solid var(--rule); font-size:.875rem; line-height:1.55}
+  ol.acts li:last-child{border-bottom:0}
+  ol.acts li::before{content:counter(a); position:absolute; left:20px; top:12px; font-family:var(--mono); font-size:10px; color:var(--ink-3); border:1px solid var(--rule-2); width:19px; height:19px; display:grid; place-items:center; border-radius:50%}
+  ol.acts li b{font-weight:600}
+  .eff{font-family:var(--mono); font-size:10px; color:var(--ink-3); border:1px solid var(--rule); padding:1px 6px; border-radius:3px; margin-left:8px; white-space:nowrap}
+
+  ul.clean{margin:0 0 18px; padding-left:20px}
+  ul.clean li{margin-bottom:8px; line-height:1.58}
+  footer{padding:44px 0 0; border-top:1px solid var(--rule); margin-top:60px; font-size:.8rem; color:var(--ink-3)}
+  @media (max-width:640px){
+    .wrap{padding:0 18px 80px} header.cover{padding:52px 0 32px}
+    .ab .row{grid-template-columns:1fr} .ab .tag{border-right:0; border-bottom:1px solid var(--rule); padding:8px 12px}
+    .wave-hd .goal{margin-left:0; width:100%}
+  }
+  @media print{ body{background:#fff} section{break-inside:auto} figure,.wave,.tbl-wrap{break-inside:avoid} }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="cover">
+  <p class="eyebrow">Guira · Auditoría de sitio</p>
+  <h1>El sitio está bien construido.<br>Está escrito en un idioma que nadie busca.</h1>
+  <p class="standfirst">Revisión de guiracorp.com contra la Investigación de Palabras Clave del 24 de julio de 2026. El diagnóstico no es de calidad de página: es de <em>encaje</em>. Hay 34 URLs publicadas, sólidas y bien maquetadas, que compiten por vocabulario corporativo sin demanda de búsqueda, mientras los siete clústeres con demanda real y verificada quedan sin página que los reclame.</p>
+  <div class="meta">
+    <span>14 de agosto de 2026</span>
+    <span>Fuentes · GSC + código fuente + verificación en vivo</span>
+    <span>Uso interno</span>
+  </div>
+</header>
+
+<!-- ══════════════ 1. VEREDICTO ══════════════ -->
+<section>
+  <p class="sec-num">01 — Veredicto</p>
+  <h2>Cuatro números que resumen el problema</h2>
+  <p class="lede">Los tres primeros son de Search Console y del sitio en vivo. El cuarto sale de cruzar cada palabra clave prioritaria del informe contra la página que hoy la trabaja.</p>
+
+  <div class="tiles">
+    <div class="tile bad">
+      <div class="n">7<small> / 34</small></div>
+      <div class="l">URLs indexadas por Google. Cuatro de cada cinco páginas publicadas son invisibles para el buscador.</div>
+    </div>
+    <div class="tile bad">
+      <div class="n">42</div>
+      <div class="l">Páginas marcadas «sin indexar» en GSC, creciendo desde mayo. Se publica más rápido de lo que Google absorbe.</div>
+    </div>
+    <div class="tile warn">
+      <div class="n">~2<small>/día</small></div>
+      <div class="l">Impresiones orgánicas promedio. Confirma el dato del informe: la base existe, pero es prácticamente cero.</div>
+    </div>
+    <div class="tile bad">
+      <div class="n">25<small>%</small></div>
+      <div class="l">De las palabras clave prioritarias tiene hoy una página que las trabaje de verdad. Tres de cada cuatro no tienen dueño.</div>
+    </div>
+  </div>
+
+  <div class="call crit">
+    <p class="h">Bloqueo técnico que anula todo lo demás</p>
+    <p><code>robots.txt</code> le indica a Google que el sitemap está en <code>/sitemap.xml</code>. Esa URL devuelve <strong>404</strong>. El sitemap real que genera Astro vive en <code>/sitemap-index.xml</code> y <code>/sitemap-0.xml</code>. Verificado en vivo hoy.</p>
+    <p style="margin-top:10px">Es la vitrina perfecta con la dirección equivocada en la invitación: las 34 URLs existen, están bien hechas, y el mapa que le entregamos al buscador para encontrarlas apunta a una puerta que no abre. Cualquier trabajo de contenido rinde el doble después de arreglar esta línea, y es una línea.</p>
+  </div>
+</section>
+
+<!-- ══════════════ 2. INDEXACIÓN ══════════════ -->
+<section>
+  <p class="sec-num">02 — Estado de indexación</p>
+  <h2>La brecha se abre, no se cierra</h2>
+  <p class="lede">Datos exportados de Search Console (20 may – 9 jul 2026). Cada escalón de la línea gris es una tanda de publicación: el sitio suma páginas, Google no suma indexación.</p>
+
+  <figure>
+    <p class="fig-title">Páginas indexadas vs. no indexadas · guiracorp.com</p>
+    <p class="fig-sub">Google Search Console · cobertura diaria</p>
+    <svg id="chIdx" viewBox="0 0 880 300" role="img" aria-label="Serie temporal: las páginas sin indexar suben de 16 a 42 mientras las indexadas caen de 9 a 7"></svg>
+    <div class="legend">
+      <span><i style="background:var(--s2)"></i>Sin indexar</span>
+      <span><i style="background:var(--s1)"></i>Indexadas</span>
+    </div>
+    <figcaption>El 8 de junio hay un intento de absorción (10 indexadas) que se revierte en cuatro días. El salto del 30 de junio —de 26 a 42 sin indexar— coincide con la publicación del bloque de artículos de julio: contenido nuevo que entra directo a la cola de espera. <strong>Google no está rechazando el contenido; no lo está descubriendo.</strong></figcaption>
+  </figure>
+
+  <h3>Los errores críticos que reporta GSC, traducidos</h3>
+  <div class="tbl-wrap">
+    <table>
+      <thead><tr><th style="width:200px">Motivo en GSC</th><th style="width:64px">Págs.</th><th>Qué significa en este sitio</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Descubierta: sin indexar</strong></td><td>18</td><td>Google conoce la URL pero no le ha dedicado rastreo. Es el síntoma clásico de sitemap no entregado sumado a autoridad baja (DA 3). Se corrige con el sitemap y con enlazado interno desde páginas que sí se rastrean.</td></tr>
+        <tr><td><strong>Página con redirección</strong></td><td>15</td><td>URLs sin barra final (<code>/faq</code>) que redirigen 308 a la versión con barra. Verificado. No es un error grave, pero significa que Google está gastando presupuesto de rastreo en saltos. Vienen de enlaces internos o externos antiguos.</td></tr>
+        <tr><td><strong>No encontrada (404)</strong></td><td>7</td><td>Inventario de URLs viejas que ya no existen y nunca se redirigieron. Cada una es autoridad que se pierde en el aire.</td></tr>
+        <tr><td><strong>Alternativa con canónica adecuada</strong></td><td>1</td><td>Correcto. Es <code>/pagar-proveedores-exterior/</code>, la landing de campañas, marcada <code>noindex</code> y excluida del sitemap a propósito. Bien resuelto.</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- ══════════════ 3. BRECHA DE VOCABULARIO ══════════════ -->
+<section>
+  <p class="sec-num">03 — El hallazgo central</p>
+  <h2>El sitio habla en idioma de directorio; el mercado busca en idioma de problema</h2>
+  <p class="lede">Esta es la lectura más importante del cruce. Los títulos de guiracorp.com están escritos desde adentro hacia afuera —cómo se describe la empresa a sí misma en una reunión de socios— y las búsquedas reales están escritas desde afuera hacia adentro: alguien con un pago atascado, escribiendo lo que le duele.</p>
+
+  <div class="tbl-wrap">
+    <table>
+      <thead><tr><th style="width:47%">Lo que dice el sitio hoy</th><th style="width:8%">Demanda</th><th>Lo que escribe el mercado boliviano</th></tr></thead>
+      <tbody>
+        <tr><td class="kw">plataforma operativa multi-moneda</td><td><span class="pill p-no">nula</span></td><td class="kw">cuenta en dólares bolivia · cuenta en dólares para empresas</td></tr>
+        <tr><td class="kw">gestión de operaciones internacionales</td><td><span class="pill p-no">nula</span></td><td class="kw">transferencias internacionales bolivia</td></tr>
+        <tr><td class="kw">recepción de pagos</td><td><span class="pill p-no">nula</span></td><td class="kw">como cobrar en dólares en bolivia · como cobrar a clientes extranjeros</td></tr>
+        <tr><td class="kw">ecosistema de pagos internacionales</td><td><span class="pill p-no">nula</span></td><td class="kw">como pagar al exterior desde bolivia</td></tr>
+        <tr><td class="kw">trazabilidad operativa</td><td><span class="pill p-no">nula</span></td><td class="kw">comprobantes de pagos al exterior</td></tr>
+        <tr><td class="kw">empresas de LATAM</td><td><span class="pill p-par">difusa</span></td><td class="kw">…bolivia (el 100 % del autocompletado real es país, no región)</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="call">
+    <p class="h">La analogía útil para el equipo</p>
+    <p>Es una farmacia cuyo letrero dice <em>«Soluciones integrales de bienestar molecular»</em>. Es cierto, es sofisticado, y nadie que tiene dolor de cabeza lo escribe en el buscador. Escriben «paracetamol». La corrección no es rebajar la marca: es poner <strong>«paracetamol» en el letrero y «bienestar molecular» adentro</strong>, donde funciona como cierre de confianza. Eso es exactamente lo que ya dictaminó el Brief v1.1 —función primero, trazabilidad como refuerzo— y lo que la investigación de keywords ahora confirma con datos. El copy interior del sitio ya lo aplica bien. <strong>Los títulos y los H1 todavía no.</strong></p>
+  </div>
+
+  <h3>Un detalle geográfico que cuesta caro</h3>
+  <p>Cuatro títulos y la mitad de los <code>keywords</code> del sitio dicen «LATAM». El informe de keywords es 100 % autocompletado real de Bolivia: nadie escribe «LATAM» al buscar cómo pagar a un proveedor. Es una palabra de inversionista, no de comprador. La ambición regional se sostiene en el posicionamiento de marca y en el contenido; el título tiene que decir <strong>Bolivia</strong>, que es donde está la demanda medible y donde el campo está vacío.</p>
+</section>
+
+<!-- ══════════════ 4. MATRIZ DE COBERTURA ══════════════ -->
+<section>
+  <p class="sec-num">04 — Cobertura por pilar</p>
+  <h2>Dónde está el terreno sin ocupar</h2>
+  <p class="lede">Cada pilar de la lista maestra (Secciones 5.A–5.G del informe) contra las páginas que hoy existen. El pilar F —cambio de divisas— se excluye a propósito: la decisión de no disputarlo es correcta y el sitio la cumple sin excepciones.</p>
+
+  <figure>
+    <p class="fig-title">Cobertura real de palabras clave prioritarias, por pilar</p>
+    <p class="fig-sub">Porcentaje de keywords del pilar con una página o artículo que la trabaje como objetivo principal</p>
+    <svg id="chCov" viewBox="0 0 880 330" role="img" aria-label="Barras horizontales de cobertura por pilar: pagos a proveedores 75%, cobros 33%, cuenta en dólares 17%, transferencias 17%, comercio exterior 0%, lenguaje contable 0%"></svg>
+    <figcaption>Los dos pilares que el propio informe marca como prioridad de corto plazo —<strong>cuenta en dólares</strong> y <strong>frustración bancaria</strong>, por tener la señal de intención de compra más fuerte— son justamente los dos casi vacíos. Los dos de cobertura cero son también los más baratos de ganar: competencia baja y ningún competidor boliviano presente.</figcaption>
+  </figure>
+
+  <h3>Detalle por pilar</h3>
+  <div class="tbl-wrap">
+    <table>
+      <thead><tr><th style="width:30%">Pilar y keyword cabeza</th><th style="width:88px">Estado</th><th>Página responsable hoy · lectura</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><strong>A · Pagos a proveedores</strong><br><span class="kw">pago a proveedores internacionales</span></td>
+          <td><span class="pill p-si">Cubierto</span></td>
+          <td><code>/pagos-proveedores-bolivia/</code> apunta bien. <strong>Pero es huérfana:</strong> no está en el menú ni en el pie de página, solo se enlaza desde tres páginas internas. Google la trata como secundaria. Falta además <span class="kw">comprobantes de pagos al exterior</span>, que es el puente natural hacia trazabilidad y no tiene página.</td>
+        </tr>
+        <tr>
+          <td><strong>B · Cobros del exterior</strong><br><span class="kw">como cobrar a clientes extranjeros</span></td>
+          <td><span class="pill p-par">Diluido</span></td>
+          <td><code>/pagos-cobros-internacionales/</code> intenta pagar <em>y</em> cobrar en un solo H1. Dos intenciones opuestas en una URL: el buscador no sabe para qué rankearla y termina sin rankear para ninguna. El pilar 2 del Brief merece página propia.</td>
+        </tr>
+        <tr>
+          <td><strong>C · Cuenta en dólares</strong><br><span class="kw">cuenta en dólares para empresas</span></td>
+          <td><span class="pill p-no">Sin página</span></td>
+          <td><strong>El hueco más caro del sitio.</strong> CPC de $20,08 y tendencia al alza: hay quien ya está pagando por este clic. Solo existe un artículo de blog. Ninguna página del sitio lleva ese término en el título ni en el H1 — el sitio dice «multi-moneda», que tiene demanda cero.</td>
+        </tr>
+        <tr>
+          <td><strong>D · Transferencias y bancos</strong><br><span class="kw">transferencias internacionales bolivia</span></td>
+          <td><span class="pill p-no">Sin página</span></td>
+          <td>Prioridad «muy alta» en el informe y cero cobertura. Incluye la veta de frustración bancaria (<span class="kw">transferencias internacionales bnb / banco unión / bcp</span>) y la comparativa <span class="kw">wise transfer bolivia</span>: intención altísima, competencia inexistente.</td>
+        </tr>
+        <tr>
+          <td><strong>E · Comercio exterior</strong><br><span class="kw">cuánto cuesta importar de china a bolivia</span></td>
+          <td><span class="pill p-no">Sin página</span></td>
+          <td>Todo el tope de embudo está sin construir. Es el clúster que alimenta a los otros seis: quien busca cómo importar de China hoy, busca cómo pagar al proveedor chino en 30 días.</td>
+        </tr>
+        <tr>
+          <td><strong>F · Cambio de divisas</strong><br><span class="kw">casa de cambio · dólar paralelo</span></td>
+          <td><span class="pill p-evit">Evitado ✓</span></td>
+          <td>Correcto y sin fisuras. Ninguna página del sitio usa estos términos como objetivo. La guía de palabras prohibidas se está respetando. <strong>No tocar.</strong></td>
+        </tr>
+        <tr>
+          <td><strong>G · Lenguaje contable</strong><br><span class="kw">cuentas por pagar a proveedores</span></td>
+          <td><span class="pill p-no">Sin página</span></td>
+          <td>La decisión estratégica de entrar por contadores y auditores <strong>no tiene ninguna expresión en el sitio</strong>. Es el pilar con la relación volumen/competencia más favorable de la lista: 30 búsquedas/mes, competencia baja, audiencia que además reenvía el material a su cliente PYME.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>Canibalización a resolver antes de crear nada nuevo</h3>
+  <p>Tres URLs compiten hoy por la misma intención de «pagar a proveedores desde Bolivia», y una cuarta la roza:</p>
+  <ul class="clean">
+    <li><code>/pagos-proveedores-bolivia/</code> — la página comercial, huérfana del menú.</li>
+    <li><code>/blog/pagos-proveedores-internacionales-desde-bolivia/</code> — guía larga, mismo objetivo.</li>
+    <li><code>/blog/como-pagar-proveedor-exterior-desde-bolivia/</code> — guía larga, mismo objetivo.</li>
+    <li><code>/pagos-cobros-internacionales/</code> — cubre pagos en su primera mitad.</li>
+  </ul>
+  <p>Cuando cuatro URLs pujan por la misma frase, la autoridad se reparte en cuatro y ninguna llega. La corrección es jerárquica, no de borrado: <strong>la página comercial es la cabeza</strong> —entra al menú principal— y los dos artículos se convierten en satélites que enlazan hacia arriba con texto ancla exacto. Lo mismo aplica al lado de cobros una vez que exista su página propia.</p>
+</section>
+
+<!-- ══════════════ 5. METADATOS ══════════════ -->
+<section>
+  <p class="sec-num">05 — Metadatos</p>
+  <h2>Cambios concretos de título y descripción</h2>
+  <p class="lede">Cinco reescrituras que se aplican en una sesión y no tocan una línea de contenido visible. Todas pasan el checklist de la guía de palabras prohibidas: función primero, ninguna atribución de custodia, cero vocabulario de casa de cambio o banco.</p>
+
+  <h4>Portada · <code>/</code></h4>
+  <div class="ab">
+    <div class="row now"><div class="tag">Hoy</div><div class="val">Plataforma Operativa Multi-moneda para Empresas de LATAM | Guira Empresas<span class="chars">73</span></div></div>
+    <div class="row next"><div class="tag">Propuesta</div><div class="val">Paga a proveedores y cobra en dólares desde Bolivia | Guira<span class="chars">58</span></div></div>
+    <div class="why">Sustituye dos términos de demanda nula («plataforma operativa multi-moneda», «LATAM») por los dos verbos que el mercado escribe, más el ancla geográfica. La descripción actual tiene 271 caracteres —se corta en el resultado de búsqueda—; recortarla a 155 y abrirla con «Paga a tus proveedores en el exterior y cobra a tus clientes en dólares».</div>
+  </div>
+
+  <h4>Producto · <code>/producto/</code></h4>
+  <div class="ab">
+    <div class="row now"><div class="tag">Hoy</div><div class="val">Plataforma para pagos internacionales empresariales | Guira<span class="chars">59</span></div></div>
+    <div class="row next"><div class="tag">Propuesta</div><div class="val">Cuenta en dólares para empresas en Bolivia | Guira<span class="chars">49</span></div></div>
+    <div class="why">Reasigna la página con más cuerpo del sitio al pilar C, que hoy no tiene dueño y es el de mayor intención de compra. Requiere ajustar el H1 en la misma línea. Si se prefiere no mover <code>/producto/</code>, la alternativa es crear <code>/cuenta-en-dolares/</code> como página nueva — es lo más limpio, pero cuesta más.</div>
+  </div>
+
+  <h4>Cobros · <code>/pagos-cobros-internacionales/</code></h4>
+  <div class="ab">
+    <div class="row now"><div class="tag">Hoy</div><div class="val">Paga a tus proveedores y cobra del exterior desde una cuenta en dólares | Guira<span class="chars">79</span></div></div>
+    <div class="row next"><div class="tag">Propuesta</div><div class="val">Cómo cobrar a clientes del exterior desde Bolivia | Guira<span class="chars">56</span></div></div>
+    <div class="why">Deja de disputar «pagos», que ya tiene página propia, y se queda con una sola intención. Resuelve la canibalización y baja de 79 a 56 caracteres, dentro del límite visible del buscador.</div>
+  </div>
+
+  <h4>Soluciones · <code>/soluciones/</code></h4>
+  <div class="ab">
+    <div class="row now"><div class="tag">Hoy</div><div class="val">Soluciones de Pagos B2B Multi-moneda para Agencias e Importadoras de LATAM | Guira Empresas<span class="chars">91</span></div></div>
+    <div class="row next"><div class="tag">Propuesta</div><div class="val">Transferencias internacionales para empresas en Bolivia | Guira<span class="chars">62</span></div></div>
+    <div class="why">91 caracteres se truncan siempre. Reasigna la página al pilar D —prioridad «muy alta», cobertura cero— aprovechando que la sección de importadores ya está escrita.</div>
+  </div>
+
+  <h4>FAQ · <code>/faq/</code></h4>
+  <div class="ab">
+    <div class="row now"><div class="tag">Hoy</div><div class="val">Preguntas Frecuentes sobre Pagos Internacionales Multi-moneda para Empresas | Guira<span class="chars">83</span></div></div>
+    <div class="row next"><div class="tag">Propuesta</div><div class="val">Preguntas frecuentes sobre pagos y cobros internacionales | Guira<span class="chars">64</span></div></div>
+    <div class="why">Ya tiene <code>FAQPage</code> schema bien montado, que es lo que alimenta los fragmentos destacados. Solo sobra longitud y el término sin demanda.</div>
+  </div>
+
+  <div class="call">
+    <p class="h">Sobre la meta keywords</p>
+    <p>Las 14 páginas cargan un atributo <code>keywords</code> largo y saturado. Google lo ignora desde 2009 —no penaliza, pero no aporta nada— y en cambio le entrega a cualquier competidor la estrategia completa en el código fuente. Recomiendo retirarlo del <code>Layout.astro</code>. Es una línea y cierra una filtración innecesaria.</p>
+  </div>
+</section>
+
+<!-- ══════════════ 6. PLAN ══════════════ -->
+<section>
+  <p class="sec-num">06 — Plan</p>
+  <h2>Tres olas, en este orden</h2>
+  <p class="lede">El orden importa más que el contenido de cada ola: publicar contenido nuevo antes de arreglar el sitemap es agregar libros a una biblioteca cuya dirección nadie tiene.</p>
+
+  <div class="wave">
+    <div class="wave-hd"><span class="w">Ola 1 · Desbloquear</span><span class="t">Días 0–10</span><span class="goal">Objetivo: pasar de 7 a 25+ URLs indexadas</span></div>
+    <ol class="acts">
+      <li><b>Corregir la ruta del sitemap en <code>robots.txt</code>.</b> Apuntar a <code>/sitemap-index.xml</code> y volver a enviarlo desde Search Console. <span class="eff">15 min</span></li>
+      <li><b>Solicitar indexación manual</b> de las 8 URLs comerciales en GSC, una por una, después del paso 1. <span class="eff">1 h</span></li>
+      <li><b>Sacar <code>/pagos-proveedores-bolivia/</code> de la orfandad</b>: al menú principal y al pie de página. Es la página que mejor encaja con el pilar de mayor cobertura y hoy Google no la ve como principal. <span class="eff">30 min</span></li>
+      <li><b>Redirigir 301 las 7 URLs en 404</b> hacia su equivalente actual, y corregir los enlaces internos sin barra final que generan los 15 saltos 308. <span class="eff">2 h</span></li>
+      <li><b>Retirar el atributo <code>keywords</code></b> del layout. <span class="eff">10 min</span></li>
+    </ol>
+  </div>
+
+  <div class="wave">
+    <div class="wave-hd"><span class="w">Ola 2 · Reasignar</span><span class="t">Días 10–30</span><span class="goal">Objetivo: que cada pilar con demanda tenga una página con dueño</span></div>
+    <ol class="acts">
+      <li><b>Aplicar las cinco reescrituras de título, descripción y H1</b> de la sección 05. Sin tocar el cuerpo de las páginas. <span class="eff">1 día</span></li>
+      <li><b>Resolver la canibalización de «pagos a proveedores»</b>: página comercial como cabeza, los dos artículos de blog como satélites que enlazan hacia arriba con ancla exacta. <span class="eff">3 h</span></li>
+      <li><b>Crear la página del pilar C: cuenta en dólares.</b> Si no se reasigna <code>/producto/</code>, va como URL nueva. Es el activo de mayor intención de compra del mapa completo. <span class="eff">3 días</span></li>
+      <li><b>Crear la comparativa «Guira frente a Wise para pagos B2B»</b>, cerrando con el respaldo documental que Wise no ofrece para comercio exterior formal. Capta <span class="kw">wise transfer bolivia</span>, que ya se busca. <span class="eff">2 días</span></li>
+    </ol>
+  </div>
+
+  <div class="wave">
+    <div class="wave-hd"><span class="w">Ola 3 · Ocupar</span><span class="t">Días 30–90</span><span class="goal">Objetivo: llegar primero a los dos clústeres vacíos</span></div>
+    <ol class="acts">
+      <li><b>Clúster de contadores y auditores.</b> Glosario o checklist descargable sobre cuentas por pagar y por cobrar, período medio de pago, previsión para incobrables. Es el canal que el Brief eligió y que el sitio todavía no expresa; el contador lo reenvía a su cliente PYME, que es distribución gratuita. <span class="eff">1 semana</span></li>
+      <li><b>Pieza de frustración bancaria:</b> «qué hacer cuando tu banco no puede resolver un pago a un proveedor en el exterior». Captura la búsqueda por nombre de banco propio, que es intención de compra pura. <span class="eff">3 días</span></li>
+      <li><b>Clúster de importación:</b> guía o calculadora de «cuánto cuesta importar de China a Bolivia». Tope de embudo que alimenta a todos los demás pilares. <span class="eff">1 semana</span></li>
+      <li><b>Página de comprobantes de pagos al exterior.</b> Es la única keyword del mapa donde función y trazabilidad coinciden de forma natural — se puede liderar con trazabilidad sin romper la regla del Brief. <span class="eff">3 días</span></li>
+      <li><b>Repetir la medición de dominio a los 90 días</b> para vigilar si Peyo Pagos reacciona. Hoy su tráfico va en caída desde el pico de noviembre. <span class="eff">2 h</span></li>
+    </ol>
+  </div>
+
+  <div class="call">
+    <p class="h">Lo que no hay que hacer</p>
+    <p>No producir contenido nuevo antes de la Ola 1. Con 42 páginas en cola de indexación, cada artículo adicional entra al final de esa cola y diluye el rastreo de las que sí importan. Y no tocar el pilar F: la disciplina de mantenerse fuera de «casa de cambio» y «dólar paralelo» es un activo de marca, no una limitación.</p>
+  </div>
+</section>
+
+<!-- ══════════════ 7. VERIFICACIÓN ══════════════ -->
+<section>
+  <p class="sec-num">07 — Verificación</p>
+  <h2>Cómo se comprobó cada afirmación</h2>
+  <div class="tbl-wrap">
+    <table>
+      <thead><tr><th style="width:34%">Afirmación</th><th>Método de verificación</th></tr></thead>
+      <tbody>
+        <tr><td>Sitemap en 404</td><td>Petición HTTP directa a las cuatro rutas candidatas. <code>/sitemap.xml</code> → 404; <code>/sitemap-index.xml</code> y <code>/sitemap-0.xml</code> → 200. La línea <code>Sitemap:</code> de <code>robots.txt</code> apunta a la que falla.</td></tr>
+        <tr><td>7 indexadas de 34</td><td>Conteo de <code>&lt;loc&gt;</code> en el sitemap en vivo (34) contra la última fila del export de cobertura de GSC (7 indexadas / 42 sin indexar, 9 jul 2026).</td></tr>
+        <tr><td>Redirecciones 308</td><td>Petición a <code>/pagos-proveedores-bolivia</code> sin barra final → 308 hacia la versión con barra. Coincide con las 15 «páginas con redirección» de GSC.</td></tr>
+        <tr><td>Página huérfana</td><td>Búsqueda de la cadena en todo el código fuente: aparece en <code>index</code>, <code>producto</code> y <code>soluciones</code>, y en ningún caso en <code>Navbar.astro</code> ni <code>Footer.astro</code>.</td></tr>
+        <tr><td>Longitud de títulos</td><td>Medición programática de los atributos <code>title</code> y <code>description</code> de las 14 páginas y los 18 artículos.</td></tr>
+        <tr><td>Cobertura del 25 %</td><td>Mapeo manual de las ~40 keywords prioritarias de las tablas 5.A–5.G contra la página que las trabaja como objetivo principal. Es la única cifra del informe con criterio propio: cuenta como «cubierta» solo si el término aparece en título o H1.</td></tr>
+        <tr><td>Cumplimiento del pilar F</td><td>Búsqueda de «casa de cambio», «dólar paralelo» y «tipo de cambio» en todas las páginas y artículos: sin apariciones como objetivo. Limpio.</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<footer>
+  <p>Guira · Revisión de guiracorp.com frente a la Investigación de Palabras Clave y Estrategia SEO del 24 de julio de 2026.<br>
+  Fuentes: export de cobertura de Google Search Console (20 may – 9 jul 2026), código fuente del proyecto Astro, y verificación HTTP en vivo del 14 de agosto de 2026.<br>
+  Ninguna de las piezas de contenido propuestas debe publicarse citando el DS 5384 o a ASFI como autoridad hasta la validación del abogado interno, conforme a la Sección 10 del Brief v1.2.</p>
+</footer>
+
+</div>
+
+<script>
+(function(){
+  const NS='http://www.w3.org/2000/svg';
+  const el=(n,a)=>{const e=document.createElementNS(NS,n);for(const k in a)e.setAttribute(k,a[k]);return e;};
+  const cs=getComputedStyle(document.documentElement);
+  const C=n=>cs.getPropertyValue(n).trim();
+
+  /* ---------- Gráfico 1 · indexación ---------- */
+  const raw=[["05-21",16,9],["05-22",17,8],["05-23",17,8],["05-24",17,8],["05-25",17,8],["05-26",17,8],["05-27",17,8],["05-28",17,8],["05-29",19,7],["05-30",19,7],["05-31",19,7],["06-01",19,7],["06-02",19,7],["06-03",19,7],["06-04",19,7],["06-05",20,7],["06-06",20,7],["06-07",20,7],["06-08",28,10],["06-09",28,10],["06-10",28,10],["06-11",28,10],["06-12",26,7],["06-13",26,7],["06-14",26,7],["06-15",26,7],["06-16",26,7],["06-17",26,7],["06-18",26,7],["06-19",26,7],["06-20",26,7],["06-21",26,7],["06-22",26,7],["06-23",26,7],["06-24",26,7],["06-25",26,7],["06-26",26,7],["06-27",26,7],["06-28",26,7],["06-29",26,7],["06-30",42,7],["07-01",42,7],["07-02",42,7],["07-03",42,7],["07-04",42,7],["07-05",42,7],["07-06",42,7],["07-07",42,7],["07-08",42,7],["07-09",42,7]];
+  (function(){
+    const svg=document.getElementById('chIdx'); if(!svg) return;
+    const W=880,H=300,ml=44,mr=96,mt=16,mb=40;
+    const pw=W-ml-mr, ph=H-mt-mb, maxY=45;
+    const x=i=>ml+(i/(raw.length-1))*pw, y=v=>mt+ph-(v/maxY)*ph;
+    [0,15,30,45].forEach(v=>{
+      svg.appendChild(el('line',{x1:ml,x2:ml+pw,y1:y(v),y2:y(v),stroke:C('--rule'),'stroke-width':1}));
+      const t=el('text',{x:ml-10,y:y(v)+4,'text-anchor':'end','font-size':11,fill:C('--ink-3')});t.textContent=v;svg.appendChild(t);
+    });
+    [[0,'20 may'],[18,'8 jun'],[40,'30 jun'],[49,'9 jul']].forEach(([i,lab])=>{
+      const t=el('text',{x:x(i),y:H-14,'text-anchor':i===0?'start':(i===49?'end':'middle'),'font-size':11,fill:C('--ink-3')});t.textContent=lab;svg.appendChild(t);
+    });
+    /* anotación del salto */
+    svg.appendChild(el('line',{x1:x(40),x2:x(40),y1:mt,y2:mt+ph,stroke:C('--rule-2'),'stroke-width':1,'stroke-dasharray':'3 4'}));
+    const an=el('text',{x:x(40)-8,y:mt+16,'text-anchor':'end','font-size':11,fill:C('--ink-3')});an.textContent='publicación de julio →';svg.appendChild(an);
+    const series=[[1,C('--s2'),'Sin indexar'],[2,C('--s1'),'Indexadas']];
+    series.forEach(([idx,col,name])=>{
+      const d=raw.map((r,i)=>`${i?'L':'M'}${x(i).toFixed(1)},${y(r[idx]).toFixed(1)}`).join(' ');
+      svg.appendChild(el('path',{d,fill:'none',stroke:col,'stroke-width':2,'stroke-linejoin':'round','stroke-linecap':'round'}));
+      const last=raw.length-1;
+      svg.appendChild(el('circle',{cx:x(last),cy:y(raw[last][idx]),r:4.5,fill:col,stroke:C('--surface'),'stroke-width':2}));
+      const lb=el('text',{x:x(last)+12,y:y(raw[last][idx])+4,'font-size':12,'font-weight':600,fill:C('--ink')});
+      lb.textContent=`${raw[last][idx]} ${name.toLowerCase()}`;svg.appendChild(lb);
+    });
+  })();
+
+  /* ---------- Gráfico 2 · cobertura ---------- */
+  (function(){
+    const svg=document.getElementById('chCov'); if(!svg) return;
+    const data=[
+      ['A · Pagos a proveedores',75,'6 de 8 keywords'],
+      ['B · Cobros del exterior',33,'2 de 6 · página compartida'],
+      ['C · Cuenta en dólares',17,'1 de 6 · solo un artículo'],
+      ['D · Transferencias y bancos',17,'1 de 6 · prioridad muy alta'],
+      ['E · Comercio exterior',0,'0 de 9 · sin construir'],
+      ['G · Lenguaje contable',0,'0 de 5 · canal elegido, sin expresión']
+    ];
+    const W=880,ml=196,mr=200,mt=8, rowH=48, bh=17;
+    const pw=W-ml-mr;
+    data.forEach((d,i)=>{
+      const cy=mt+i*rowH+rowH/2;
+      const lab=el('text',{x:ml-16,y:cy+1,'text-anchor':'end','font-size':12.5,'font-weight':600,fill:C('--ink')});
+      lab.textContent=d[0];svg.appendChild(lab);
+      svg.appendChild(el('rect',{x:ml,y:cy-bh/2,width:pw,height:bh,fill:C('--surface-2'),rx:3}));
+      const w=Math.max((d[1]/100)*pw,0);
+      if(w>0){
+        const col = d[1]>=60 ? C('--s3') : (d[1]>=30 ? C('--s1') : C('--s2'));
+        svg.appendChild(el('rect',{x:ml,y:cy-bh/2,width:w,height:bh,fill:col,rx:3}));
+      }
+      const v=el('text',{x:ml+Math.max(w,0)+12,y:cy+1,'font-size':12.5,'font-weight':600,fill:d[1]===0?C('--crit'):C('--ink'),'dominant-baseline':'middle'});
+      v.textContent=d[1]+'%';svg.appendChild(v);
+      const sub=el('text',{x:ml+Math.max(w,0)+52,y:cy+1,'font-size':11.5,fill:C('--ink-3'),'dominant-baseline':'middle'});
+      sub.textContent=d[2];svg.appendChild(sub);
+    });
+    const yb=mt+data.length*rowH+6;
+    svg.appendChild(el('line',{x1:ml,x2:ml+pw,y1:yb,y2:yb,stroke:C('--rule-2'),'stroke-width':1}));
+    [[0,'0 %'],[50,'50 %'],[100,'100 %']].forEach(([p,t])=>{
+      const tx=el('text',{x:ml+(p/100)*pw,y:yb+18,'text-anchor':p===0?'start':(p===100?'end':'middle'),'font-size':11,fill:C('--ink-3')});
+      tx.textContent=t;svg.appendChild(tx);
+    });
+  })();
+})();
+</script>
+</body>
+</html>

@@ -94,7 +94,7 @@ Contar con estados como solicitado, en revisión, enviado, recibido o conciliado
 
 Una revisión recurrente permite detectar movimientos sin conciliar antes de que se acumulen.
 
-Si quieres profundizar en la organización del seguimiento, revisa [cómo mejorar la trazabilidad de los pagos internacionales a proveedores desde Bolivia](/blog/trazabilidad-pagos-internacionales-proveedores-bolivia).
+Si quieres profundizar en la organización del seguimiento, revisa [cómo mejorar la trazabilidad de los pagos internacionales a proveedores desde Bolivia](/blog/trazabilidad-pagos-internacionales-proveedores-bolivia/).
 
 ## Cómo ayuda Guira
 
@@ -102,5 +102,5 @@ Si quieres profundizar en la organización del seguimiento, revisa [cómo mejora
 
 La disponibilidad de funcionalidades específicas puede depender de cada operación y de terceros involucrados en el proceso.
 
-Si tu empresa quiere mejorar la conciliación y trazabilidad de sus operaciones internacionales, [solicita una demostración de Guira](/demo).
+Si tu empresa quiere mejorar la conciliación y trazabilidad de sus operaciones internacionales, [solicita una demostración de Guira](/demo/).
 

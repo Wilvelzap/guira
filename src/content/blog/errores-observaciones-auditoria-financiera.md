@@ -47,7 +47,7 @@ Cuando la conciliación se realiza mucho tiempo después de la operación, es m�
 
 Una conciliación oportuna permite corregir errores antes de que se conviertan en observaciones durante la auditoría.
 
-Puedes conocer más sobre este proceso en [qué es la conciliación de pagos internacionales y por qué es importante para las empresas](/blog/conciliacion-pagos-internacionales-empresas).
+Puedes conocer más sobre este proceso en [qué es la conciliación de pagos internacionales y por qué es importante para las empresas](/blog/conciliacion-pagos-internacionales-empresas/).
 
 ## 5. No mantener trazabilidad de las operaciones internacionales
 
@@ -55,7 +55,7 @@ Las operaciones internacionales suelen involucrar más documentos, proveedores, 
 
 Si la empresa no puede mostrar el historial completo de una operación, desde la solicitud hasta el cierre, el equipo auditor puede requerir más explicaciones o documentación adicional.
 
-Para evitarlo, es recomendable mantener un registro claro del estado, responsables, documentos y comunicaciones relevantes de cada operación. También puedes revisar [cómo mejorar la trazabilidad de los pagos internacionales a proveedores desde Bolivia](/blog/trazabilidad-pagos-internacionales-proveedores-bolivia).
+Para evitarlo, es recomendable mantener un registro claro del estado, responsables, documentos y comunicaciones relevantes de cada operación. También puedes revisar [cómo mejorar la trazabilidad de los pagos internacionales a proveedores desde Bolivia](/blog/trazabilidad-pagos-internacionales-proveedores-bolivia/).
 
 ## Cómo reducir observaciones
 
@@ -76,5 +76,5 @@ Algunas prácticas útiles son:
 
 La disponibilidad de funcionalidades específicas puede depender de cada operación y de terceros involucrados en el proceso.
 
-Si tu empresa quiere ordenar sus operaciones internacionales antes de futuras revisiones o auditorías, [solicita una demostración de Guira](/demo).
+Si tu empresa quiere ordenar sus operaciones internacionales antes de futuras revisiones o auditorías, [solicita una demostración de Guira](/demo/).
 

@@ -46,7 +46,7 @@ const categoryIcons: Record<string, string> = {
 const getCategoryIcon = (cat: string) => categoryIcons[cat] ?? "file-text";
 
 const tocHeadings = headings.filter((h) => h.depth === 2 || h.depth === 3);
-const canonicalUrl = `https://www.guiracorp.com/blog/${getSlug(post.id)}`;
+const canonicalUrl = `https://www.guiracorp.com/blog/${getSlug(post.id)}/`;
 const siteUrl = "https://www.guiracorp.com";
 const postImage = post.data.image
   ? post.data.image.startsWith("http")
@@ -66,7 +66,7 @@ const postImage = post.data.image
   ogImage={postImage}
   footerTheme="rich-dark"
 >
-  <slot name="head">
+  <Fragment slot="head">
     <script
       type="application/ld+json"
       set:html={JSON.stringify({
@@ -97,7 +97,7 @@ const postImage = post.data.image
         keywords: post.data.keywords,
       })}
     />
-  </slot>
+  </Fragment>
 
   <!-- Reading Progress Bar -->
   <div
@@ -111,7 +111,7 @@ const postImage = post.data.image
   <div class="pt-24 pb-4 border-b border-slate-100 bg-slate-50/60">
     <div class="max-w-7xl mx-auto px-6 flex items-center justify-between gap-4">
       <a
-        href="/blog"
+        href="/blog/"
         class="back-link group inline-flex items-center gap-2.5 py-2 text-sm font-semibold text-slate-600 hover:text-guira-teal"
       >
         <span
@@ -369,7 +369,7 @@ const postImage = post.data.image
               <div class="grid sm:grid-cols-2 gap-4">
                 {relatedPosts.map((related, i) => (
                   <a
-                    href={`/blog/${getSlug(related.id)}`}
+                    href={`/blog/${getSlug(related.id)}/`}
                     class={`related-card group block rounded-xl border border-slate-200 p-5 ${i === 0 ? "reveal-left" : "reveal-right"}`}
                   >
                     <span
@@ -525,7 +525,7 @@ const postImage = post.data.image
                 multi-moneda y trazabilidad documental.
               </p>
               <a
-                href="/demo"
+                href="/demo/"
                 class="block text-center bg-white text-slate-900 text-xs font-bold px-4 py-2.5 rounded-lg transition-colors hover:bg-slate-100"
               >
                 Solicitar Demo Gratis
@@ -556,11 +556,11 @@ const postImage = post.data.image
         complejidad del sistema bancario tradicional.
       </p>
       <div class="flex flex-col sm:flex-row gap-3 justify-center">
-        <a href="/demo" class="btn-primary gap-2">
+        <a href="/demo/" class="btn-primary gap-2">
           <i data-lucide="calendar" class="w-4 h-4"></i>
           Solicitar Demo Gratuita
         </a>
-        <a href="/producto" class="btn-secondary gap-2">
+        <a href="/producto/" class="btn-secondary gap-2">
           <i data-lucide="arrow-right" class="w-4 h-4"></i>
           Ver cómo funciona
         </a>

@@ -33,7 +33,7 @@ Antes, mover fondos era el objetivo principal. Hoy, las empresas necesitan mover
 | Trabajo independiente entre áreas | Mayor coordinación entre equipos con un mismo lenguaje |
 | Control limitado a la ejecución del pago | Seguimiento integral de cada movimiento, del inicio al fin |
 
-Si tu empresa realiza pagos a proveedores, también puede ayudarte leer [cómo mejorar la trazabilidad de los pagos internacionales a proveedores desde Bolivia](/blog/trazabilidad-pagos-internacionales-proveedores-bolivia).
+Si tu empresa realiza pagos a proveedores, también puede ayudarte leer [cómo mejorar la trazabilidad de los pagos internacionales a proveedores desde Bolivia](/blog/trazabilidad-pagos-internacionales-proveedores-bolivia/).
 
 ## Qué buscan hoy las empresas
 
@@ -58,7 +58,7 @@ Mientras que las herramientas tradicionales suelen distribuir la información en
 
 Esta evolución permite responder con mayor rapidez a consultas internas, reducir tareas manuales y mantener un mayor control sobre cada operación.
 
-Si estás evaluando opciones, consulta también [5 aspectos que una empresa debería evaluar antes de elegir una plataforma de pagos internacionales](/blog/aspectos-elegir-plataforma-pagos-internacionales-empresas). Y si tu empresa recibe fondos del exterior, revisa [5 desafíos frecuentes al recibir pagos internacionales para empresas bolivianas](/blog/desafios-recibir-pagos-internacionales-bolivia).
+Si estás evaluando opciones, consulta también [5 aspectos que una empresa debería evaluar antes de elegir una plataforma de pagos internacionales](/blog/aspectos-elegir-plataforma-pagos-internacionales-empresas/). Y si tu empresa recibe fondos del exterior, revisa [5 desafíos frecuentes al recibir pagos internacionales para empresas bolivianas](/blog/desafios-recibir-pagos-internacionales-bolivia/).
 
 ![Vista de una plataforma digital mostrando operaciones internacionales, estados y documentación asociada](/assets/images/blog/seguimiento-operaciones-plataforma-digital.webp)
 
@@ -78,5 +78,5 @@ A medida que aumenta la complejidad de los negocios internacionales, disponer de
 
 *La disponibilidad de funcionalidades específicas puede depender de cada operación y de terceros involucrados en el proceso.*
 
-¿Quieres ver cómo se organiza una operación internacional en un solo lugar? [Solicita una demostración de Guira](/demo).
+¿Quieres ver cómo se organiza una operación internacional en un solo lugar? [Solicita una demostración de Guira](/demo/).
 

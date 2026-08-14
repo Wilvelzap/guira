@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.guiracorp.com/sitemap.xml
+Sitemap: https://www.guiracorp.com/sitemap-index.xml

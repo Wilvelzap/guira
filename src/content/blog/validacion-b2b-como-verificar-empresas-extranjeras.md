@@ -16,7 +16,7 @@ excerpt: "El fraude en transacciones B2B internacionales cuesta millones de dól
 
 Cada año, miles de empresas latinoamericanas pierden dinero por no verificar correctamente a sus contrapartes comerciales. El fraude en transacciones B2B internacionales adopta muchas formas: proveedores fantasma, cambios de datos bancarios fraudulentos, facturas falsas, y empresas que simplemente no existen.
 
-La validación B2B (también conocida como KYB o Know Your Business) es el proceso de verificar que la empresa con la que vas a hacer negocios es quien dice ser. En esta guía te explicamos cómo hacerlo de forma sistemática. Esto es fundamental antes de realizar cualquier [pago a un proveedor en el exterior desde Bolivia](/blog/como-pagar-proveedor-exterior-desde-bolivia) o emitir una instrucción para [enviar un Wire a un proveedor en Estados Unidos desde Bolivia](/blog/como-enviar-wire-proveedor-eeuu-desde-bolivia). Asimismo, es una práctica clave para asegurar la [trazabilidad de pagos internacionales](/blog/trazabilidad-pagos-internacionales-proveedores-bolivia).
+La validación B2B (también conocida como KYB o Know Your Business) es el proceso de verificar que la empresa con la que vas a hacer negocios es quien dice ser. En esta guía te explicamos cómo hacerlo de forma sistemática. Esto es fundamental antes de realizar cualquier [pago a un proveedor en el exterior desde Bolivia](/blog/como-pagar-proveedor-exterior-desde-bolivia/) o emitir una instrucción para [enviar un Wire a un proveedor en Estados Unidos desde Bolivia](/blog/como-enviar-wire-proveedor-eeuu-desde-bolivia/). Asimismo, es una práctica clave para asegurar la [trazabilidad de pagos internacionales](/blog/trazabilidad-pagos-internacionales-proveedores-bolivia/).
 
 ## Por qué la validación B2B es crítica para tu empresa
 
@@ -168,4 +168,4 @@ La validación B2B no es un trámite opcional ni burocracia innecesaria: es la p
 
 El proceso de due diligence puede parecer tedioso al principio, pero una vez que tienes el protocolo establecido, toma menos de una hora por proveedor nuevo, y puede ahorrarte decenas de miles de dólares en fraudes evitados.
 
-¿Quieres simplificar tu proceso de validación de proveedores internacionales? [Descubre cómo Guira automatiza la verificación B2B](/producto) en cada transacción.
+¿Quieres simplificar tu proceso de validación de proveedores internacionales? [Descubre cómo Guira automatiza la verificación B2B](/producto/) en cada transacción.

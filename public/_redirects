@@ -26,9 +26,10 @@ http://www.guiracorp.com/* https://www.guiracorp.com/:splat 301!
 /compliance.html /seguridad/ 301!
 /compliance /seguridad/ 301!
 
-# Enforce no trailing slash (matches astro.config trailingSlash: 'never')
-/blog/:slug/ /blog/:slug 301!
-/:page/ /:page 301!
+# NOTA: aquí había un bloque que forzaba URLs sin barra final
+# (/blog/:slug/ -> /blog/:slug y /:page/ -> /:page). Contradecía a
+# astro.config.mjs, que publica con trailingSlash: 'always', y el sitemap con
+# barra final. La barra final es la forma canónica. No reintroducir ese bloque.
 
 # Return custom 404 page with 404 HTTP status for any non-existent page
 /* /404.html 404

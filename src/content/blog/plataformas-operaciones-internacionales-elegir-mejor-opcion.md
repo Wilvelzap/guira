@@ -33,7 +33,7 @@ Hace algunos años, el principal desafío era encontrar una forma de enviar o re
 - Facilitar revisiones internas y auditorías.
 - Centralizar información para una mejor toma de decisiones.
 
-Esta evolución ha impulsado el desarrollo de plataformas especializadas para distintos tipos de empresas y necesidades. Si quieres conocer el contexto, lee [cómo han cambiado los pagos internacionales para las empresas](/blog/de-transferir-dinero-a-gestionar-operaciones-pagos-internacionales-empresas).
+Esta evolución ha impulsado el desarrollo de plataformas especializadas para distintos tipos de empresas y necesidades. Si quieres conocer el contexto, lee [cómo han cambiado los pagos internacionales para las empresas](/blog/de-transferir-dinero-a-gestionar-operaciones-pagos-internacionales-empresas/).
 
 ## Los principales tipos de plataformas
 
@@ -47,7 +47,7 @@ Son alternativas adecuadas cuando las operaciones dependen principalmente de una
 
 Estas plataformas se enfocan en facilitar la recepción de pagos provenientes de clientes ubicados en otros países. Son utilizadas con frecuencia por empresas que exportan servicios, trabajan con clientes internacionales o reciben ingresos recurrentes desde el exterior.
 
-Si tu empresa recibe pagos desde el exterior, también puede interesarte [cómo cobrar clientes de Estados Unidos desde Bolivia](/blog/como-cobrar-clientes-estados-unidos-desde-bolivia).
+Si tu empresa recibe pagos desde el exterior, también puede interesarte [cómo cobrar clientes de Estados Unidos desde Bolivia](/blog/como-cobrar-clientes-estados-unidos-desde-bolivia/).
 
 ### Plataformas orientadas a tesorería y gestión financiera
 
@@ -83,7 +83,7 @@ Si tu prioridad es la gestión financiera, las soluciones orientadas a tesorerí
 
 Si tu desafío está en la coordinación entre áreas, el seguimiento, la documentación y la visibilidad de las operaciones, puede tener más sentido evaluar plataformas con un enfoque operativo.
 
-Antes de comparar proveedores, también conviene revisar [5 aspectos que una empresa debería evaluar antes de elegir una plataforma de pagos internacionales](/blog/aspectos-elegir-plataforma-pagos-internacionales-empresas).
+Antes de comparar proveedores, también conviene revisar [5 aspectos que una empresa debería evaluar antes de elegir una plataforma de pagos internacionales](/blog/aspectos-elegir-plataforma-pagos-internacionales-empresas/).
 
 ## Conclusión
 
@@ -93,5 +93,5 @@ No existe una plataforma que sea la mejor para todas las empresas. La elección 
 
 *La disponibilidad de funcionalidades específicas puede depender de cada operación y de terceros involucrados en el proceso.*
 
-Si estás evaluando alternativas para gestionar tus operaciones internacionales, [conoce cómo funciona Guira](/producto).
+Si estás evaluando alternativas para gestionar tus operaciones internacionales, [conoce cómo funciona Guira](/producto/).
 

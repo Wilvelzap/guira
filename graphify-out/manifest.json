@@ -3834,142 +3834,142 @@
     "ast_hash": "4fa1f5d62da423300b24f46138b5b526",
     "semantic_hash": ""
   },
-  "assets/images/para-ads/LEEME_primera_bateria.md": {
+  "public/assets/images/para-ads/LEEME_primera_bateria.md": {
     "mtime": 1785299149.197,
     "ast_hash": "72e352b31c24c47c79c1d47469f321d5",
     "semantic_hash": ""
   },
-  "assets/images/para-ads/Guira_A1_V1_claro_firmada.png": {
+  "public/assets/images/para-ads/Guira_A1_V1_claro_firmada.png": {
     "mtime": 1785313016.0,
     "ast_hash": "3ecfc4a61b0174393962c3502e4fb471",
     "semantic_hash": ""
   },
-  "assets/images/para-ads/Guira_A1_V2_oscuro_firmada.png": {
+  "public/assets/images/para-ads/Guira_A1_V2_oscuro_firmada.png": {
     "mtime": 1785313016.0,
     "ast_hash": "1716cb1f311b48b398505624434a4d7c",
     "semantic_hash": ""
   },
-  "assets/images/para-ads/Guira_A1_foto_1080x1350_firmada.png": {
+  "public/assets/images/para-ads/Guira_A1_foto_1080x1350_firmada.png": {
     "mtime": 1785313016.0,
     "ast_hash": "952108080bd78eddc23b704f369f57e3",
     "semantic_hash": ""
   },
-  "assets/images/para-ads/Guira_A1_generado_completo_1080x1350_firmada.png": {
+  "public/assets/images/para-ads/Guira_A1_generado_completo_1080x1350_firmada.png": {
     "mtime": 1785313016.0,
     "ast_hash": "b32c1c59c9ee78d4e0e27f520eb1cf71",
     "semantic_hash": ""
   },
-  "assets/images/para-ads/Guira_A2_V1_claro_firmada.png": {
+  "public/assets/images/para-ads/Guira_A2_V1_claro_firmada.png": {
     "mtime": 1785313016.0,
     "ast_hash": "378fffa082e5f5dffae137ac937ab7ee",
     "semantic_hash": ""
   },
-  "assets/images/para-ads/Guira_A2_V2_oscuro_firmada.png": {
+  "public/assets/images/para-ads/Guira_A2_V2_oscuro_firmada.png": {
     "mtime": 1785313016.0,
     "ast_hash": "b0b8b9a2159035c1a6827711fdf0cc0d",
     "semantic_hash": ""
   },
-  "assets/images/para-ads/Guira_A2_foto_1080x1350_firmada.png": {
+  "public/assets/images/para-ads/Guira_A2_foto_1080x1350_firmada.png": {
     "mtime": 1785313016.0,
     "ast_hash": "3acaada28bb9fd5ba5c132e6e8f5b88a",
     "semantic_hash": ""
   },
-  "assets/images/para-ads/Guira_A3_V1_claro_firmada.png": {
+  "public/assets/images/para-ads/Guira_A3_V1_claro_firmada.png": {
     "mtime": 1785313016.0,
     "ast_hash": "b20065a380c0979e2199c6577ffeacad",
     "semantic_hash": ""
   },
-  "assets/images/para-ads/Guira_A3_V2_oscuro_firmada.png": {
+  "public/assets/images/para-ads/Guira_A3_V2_oscuro_firmada.png": {
     "mtime": 1785313016.0,
     "ast_hash": "0ebd2033fcef14c128651b155dbcd7d4",
     "semantic_hash": ""
   },
-  "assets/images/para-ads/Guira_A3_foto_1080x1350_firmada.png": {
+  "public/assets/images/para-ads/Guira_A3_foto_1080x1350_firmada.png": {
     "mtime": 1785313016.0,
     "ast_hash": "0e04bb04cdecf225260bc22d5bfd0485",
     "semantic_hash": ""
   },
-  "assets/images/para-ads/Guira_A3_generado_completo_1080x1080_firmada.png": {
+  "public/assets/images/para-ads/Guira_A3_generado_completo_1080x1080_firmada.png": {
     "mtime": 1785313016.0,
     "ast_hash": "899414dd8357466d1908c4d8202e2cf9",
     "semantic_hash": ""
   },
-  "assets/images/para-ads/Guira_A4_generado_completo_1080x1080_firmada.png": {
+  "public/assets/images/para-ads/Guira_A4_generado_completo_1080x1080_firmada.png": {
     "mtime": 1785313016.0,
     "ast_hash": "1170356c2963ab16f1360647bddb17a9",
     "semantic_hash": ""
   },
-  "assets/images/para-ads/Guira_A5_V1_claro_firmada.png": {
+  "public/assets/images/para-ads/Guira_A5_V1_claro_firmada.png": {
     "mtime": 1785313016.0,
     "ast_hash": "757542b1c2233520c0b997302b2c055d",
     "semantic_hash": ""
   },
-  "assets/images/para-ads/Guira_A5_V2_oscuro_firmada.png": {
+  "public/assets/images/para-ads/Guira_A5_V2_oscuro_firmada.png": {
     "mtime": 1785313016.0,
     "ast_hash": "f99d44522a51ebdbaa146bdcaa95c7c0",
     "semantic_hash": ""
   },
-  "assets/images/para-ads/Guira_A5_alt_claro_1254_IA.png": {
+  "public/assets/images/para-ads/Guira_A5_alt_claro_1254_IA.png": {
     "mtime": 1785299088.554,
     "ast_hash": "02c75027bb317deeb8687d4222bbcb4e",
     "semantic_hash": ""
   },
-  "assets/images/para-ads/Guira_A5_alt_foto_1254_IA.png": {
+  "public/assets/images/para-ads/Guira_A5_alt_foto_1254_IA.png": {
     "mtime": 1785299095.002,
     "ast_hash": "edf49b1a86e47d70a118775062f07769",
     "semantic_hash": ""
   },
-  "assets/images/para-ads/Guira_A6_V1_claro_firmada.png": {
+  "public/assets/images/para-ads/Guira_A6_V1_claro_firmada.png": {
     "mtime": 1785313016.0,
     "ast_hash": "616c8f839587ca773c67e9341fba23db",
     "semantic_hash": ""
   },
-  "assets/images/para-ads/Guira_A6_V2_oscuro_firmada.png": {
+  "public/assets/images/para-ads/Guira_A6_V2_oscuro_firmada.png": {
     "mtime": 1785313016.0,
     "ast_hash": "08470474ed6b819ad6cd60d8ddb1f9d9",
     "semantic_hash": ""
   },
-  "assets/images/para-ads/Guira_A6_alt_claro_1254_IA.png": {
+  "public/assets/images/para-ads/Guira_A6_alt_claro_1254_IA.png": {
     "mtime": 1785299103.304,
     "ast_hash": "80af56672277538f7a875aa862cc9c12",
     "semantic_hash": ""
   },
-  "assets/images/para-ads/Guira_A6_alt_foto_1254_IA.png": {
+  "public/assets/images/para-ads/Guira_A6_alt_foto_1254_IA.png": {
     "mtime": 1785299109.788,
     "ast_hash": "c3c9c9693e0437c6f67c5bb360468f1c",
     "semantic_hash": ""
   },
-  "assets/images/para-ads/Guira_A8_V1_claro_firmada.png": {
+  "public/assets/images/para-ads/Guira_A8_V1_claro_firmada.png": {
     "mtime": 1785313016.0,
     "ast_hash": "6d0aee7af4c65f066421dc46e3b3b319",
     "semantic_hash": ""
   },
-  "assets/images/para-ads/Guira_A8_V2_oscuro_firmada.png": {
+  "public/assets/images/para-ads/Guira_A8_V2_oscuro_firmada.png": {
     "mtime": 1785313016.0,
     "ast_hash": "587248978a1cfbb003e9c298c5e6014d",
     "semantic_hash": ""
   },
-  "assets/images/para-ads/Guira_A8_alt_claro_1254_IA.png": {
+  "public/assets/images/para-ads/Guira_A8_alt_claro_1254_IA.png": {
     "mtime": 1785299121.434,
     "ast_hash": "a827334f70e0baa5b530474ec5b8562c",
     "semantic_hash": ""
   },
-  "assets/images/para-ads/Guira_A8_alt_foto_1254_IA.png": {
+  "public/assets/images/para-ads/Guira_A8_alt_foto_1254_IA.png": {
     "mtime": 1785299127.617,
     "ast_hash": "4bb1b4ff4762468ef0f4adde4349f099",
     "semantic_hash": ""
   },
-  "assets/images/para-ads/Om_pag1.jpeg": {
+  "public/assets/images/para-ads/Om_pag1.jpeg": {
     "mtime": 1786592587.0,
     "ast_hash": "6f97932e4b8dd24c493cf7844b743cbf",
     "semantic_hash": ""
   },
-  "assets/images/para-ads/Om_pag2.jpeg": {
+  "public/assets/images/para-ads/Om_pag2.jpeg": {
     "mtime": 1786592608.0,
     "ast_hash": "3638ae0d2bb58222eb2749c752b065aa",
     "semantic_hash": ""
   },
-  "assets/images/para-ads/Om_pag3.jpeg": {
+  "public/assets/images/para-ads/Om_pag3.jpeg": {
     "mtime": 1786592623.0,
     "ast_hash": "6c2c98925e668150b66a6f25ee4b9f51",
     "semantic_hash": ""

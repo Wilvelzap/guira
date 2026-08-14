@@ -101,7 +101,7 @@ const getCategoryIcon = (cat: string) => categoryIcons[cat] ?? 'file-text';
           <div class="h-px flex-1 bg-slate-200"></div>
         </div>
 
-        <a href={`/blog/${getSlug(featuredPost.id)}`} class="group block">
+        <a href={`/blog/${getSlug(featuredPost.id)}/`} class="group block">
           <article class="grid md:grid-cols-5 gap-0 rounded-2xl overflow-hidden border border-slate-200 premium-card hover:border-guira-teal/30 transition-all duration-300">
             <div class="md:col-span-2 relative bg-gradient-to-br from-guira-petrol via-guira-navy to-guira-dark min-h-[260px] overflow-hidden">
               {featuredPost.data.image ? (
@@ -195,7 +195,7 @@ const getCategoryIcon = (cat: string) => categoryIcons[cat] ?? 'file-text';
 
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {restPosts.map((post, i) => (
-            <a href={`/blog/${getSlug(post.id)}`} class="group block reveal" style={`transition-delay: ${i * 0.08}s`}>
+            <a href={`/blog/${getSlug(post.id)}/`} class="group block reveal" style={`transition-delay: ${i * 0.08}s`}>
               <article class="h-full flex flex-col rounded-2xl border border-slate-200 overflow-hidden premium-card hover:border-guira-teal/30 transition-all duration-300">
                 <div class="relative h-40 bg-gradient-to-br from-slate-50 to-slate-100 flex items-center justify-center overflow-hidden">
                   {post.data.image ? (

@@ -127,13 +127,15 @@ const finalCanonicalUrl = canonicalBase === siteOrigin || canonicalBase.endsWith
       })();
     </script>
     <noscript>
-      <img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1012152791596331&ev=PageView&noscript=1" />
+      <img height="1" width="1" style="display:none" alt="" src="https://www.facebook.com/tr?id=1012152791596331&ev=PageView&noscript=1" />
     </noscript>
     <!-- End Consent-based Analytics & Marketing Scripts -->
 
     <title>{title}</title>
     <meta name="description" content={description} />
-    {keywords && <meta name="keywords" content={keywords} />}
+    <!-- meta keywords retirada: Google la ignora desde 2009 y exponía la estrategia
+         completa en el código fuente. La prop `keywords` se mantiene aceptada para no
+         romper las páginas que aún la pasan, pero ya no se renderiza. -->
     <link rel="canonical" href={finalCanonicalUrl} />
     
     <link rel="icon" type="image/svg+xml" href="/guira-logo.svg" />

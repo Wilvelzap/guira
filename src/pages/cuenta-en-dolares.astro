@@ -1,0 +1,397 @@
+---
+import Layout from '../layouts/Layout.astro';
+import StackedSections from '../components/StackedSections.astro';
+---
+
+<Layout
+  title="Cuenta en dólares para empresas en Bolivia | Guira"
+  description="Opera una cuenta en dólares para tu empresa en Bolivia. Cobra a clientes del exterior, paga a tus proveedores y deja respaldo documental de cada operación."
+  canonicalUrl="https://www.guiracorp.com/cuenta-en-dolares/"
+  activeLink="cuenta-en-dolares"
+  footerTheme="dark"
+>
+  <Fragment slot="head">
+    <!-- Schema: Service + FAQPage -->
+    <script type="application/ld+json" is:inline>
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Service",
+          "name": "Cuenta operativa en dólares para empresas",
+          "url": "https://www.guiracorp.com/cuenta-en-dolares/",
+          "description": "Cuenta operativa en dólares para empresas en Bolivia, para cobrar a clientes del exterior, pagar a proveedores internacionales y conservar el respaldo documental de cada operación.",
+          "provider": {
+            "@type": "Organization",
+            "name": "Guira System LLC",
+            "url": "https://www.guiracorp.com"
+          },
+          "areaServed": {
+            "@type": "Country",
+            "name": "Bolivia"
+          },
+          "serviceType": "Cuenta operativa en dólares para empresas"
+        },
+        {
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "¿Qué es una cuenta en dólares para empresas?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Es una cuenta operativa en dólares desde la que tu empresa cobra a clientes del exterior, instruye pagos a proveedores internacionales y consulta el estado de cada operación. Guira es la plataforma tecnológica que la ordena. La infraestructura financiera la provee un partner tecnológico licenciado en Estados Unidos."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "¿Puede una empresa boliviana abrir una cuenta en dólares para operar con el exterior?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Sí, siempre que complete la validación empresarial. Se revisa la documentación de constitución, los representantes autorizados y la actividad económica. La disponibilidad depende del perfil de la empresa, la jurisdicción y el caso de uso."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "¿Qué documentación necesita mi empresa?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "En general se pide documentación de constitución de la empresa, identificación de los representantes autorizados, descripción de la actividad y respaldo comercial de las operaciones, como facturas o contratos."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "¿Guira es un banco?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "No. Guira es una plataforma tecnológica creada y operada por Guira System LLC en Delaware, Estados Unidos. No es banco, entidad financiera ni casa de cambio. En Bolivia, Guiraglobal SRL es el equipo de asesoría comercial que acompaña a las empresas en el uso de la plataforma."
+              }
+            }
+          ]
+        }
+      ]
+    }
+    </script>
+
+    <!-- Schema: BreadcrumbList -->
+    <script type="application/ld+json" is:inline>
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://www.guiracorp.com/"},
+        {"@type": "ListItem", "position": 2, "name": "Soluciones", "item": "https://www.guiracorp.com/soluciones/"},
+        {"@type": "ListItem", "position": 3, "name": "Cuenta en dólares para empresas", "item": "https://www.guiracorp.com/cuenta-en-dolares/"}
+      ]
+    }
+    </script>
+  </Fragment>
+
+  <StackedSections>
+
+    <!-- HERO -->
+    <header data-stack-section class="relative pt-36 pb-24 overflow-hidden bg-guira-dark border-b border-white/5">
+      <div class="fintech-orb w-[500px] h-[500px] bg-guira-teal/20 -top-20 -left-32" style="animation-delay:0s"></div>
+      <div class="fintech-orb w-[400px] h-[400px] bg-blue-500/15 top-10 right-0" style="animation-delay:2s"></div>
+
+      <div class="absolute inset-0 opacity-30 bg-[linear-gradient(rgba(0,81,255,0.06)_1px,transparent_1px),linear-gradient(90deg,rgba(0,81,255,0.06)_1px,transparent_1px)] bg-[size:72px_72px] animate-pulse-grid"></div>
+
+      <div class="max-w-7xl mx-auto px-6 relative z-10 grid lg:grid-cols-[1.15fr_0.85fr] gap-16 items-center">
+        <div class="text-left reveal">
+          <div class="inline-flex items-center gap-2.5 px-4 py-2 rounded-full text-xs font-bold text-guira-cyan bg-guira-teal/10 border border-guira-teal/25 mb-8">
+            <span class="signal-dot w-2 h-2 rounded-full bg-guira-cyan"></span>
+            Para empresas en Bolivia · Guira opera desde EE.UU.
+          </div>
+
+          <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight mb-6 leading-[1.1]">
+            <span class="text-white">Cuenta en dólares</span><br />
+            <span class="text-guira-cyan">para empresas</span>
+            <span class="text-white"> en Bolivia</span>
+          </h1>
+
+          <p class="text-base md:text-lg text-slate-400 mb-10 max-w-xl font-medium leading-relaxed">
+            Una sola cuenta operativa en dólares para cobrar a tus clientes del exterior, pagar a tus proveedores internacionales y seguir el estado de cada operación. Sin abrir un trámite bancario distinto cada vez.
+          </p>
+
+          <div class="flex flex-col sm:flex-row gap-4 mb-12">
+            <a href="/demo/" class="px-8 py-4 bg-guira-teal text-white rounded-xl font-bold text-base hover:bg-blue-700 transition-all shadow-xl shadow-guira-teal/30 hover:-translate-y-1 flex items-center justify-center gap-2">
+              Hablar con un asesor
+              <i data-lucide="arrow-right" class="w-5 h-5"></i>
+            </a>
+            <a href="/como-funciona/" class="px-8 py-4 bg-white/5 text-white border border-white/15 rounded-xl font-bold text-base hover:bg-white/10 transition-all hover:-translate-y-1 flex items-center justify-center">
+              Ver cómo funciona
+            </a>
+          </div>
+
+          <div class="grid grid-cols-3 gap-4 max-w-lg">
+            <div class="fintech-badge rounded-2xl p-4 text-center">
+              <div class="text-xl font-extrabold text-white mb-0.5">Cobra</div>
+              <div class="text-[11px] text-slate-400 font-semibold">Clientes del exterior</div>
+            </div>
+            <div class="fintech-badge rounded-2xl p-4 text-center">
+              <div class="text-xl font-extrabold text-white mb-0.5">Paga</div>
+              <div class="text-[11px] text-slate-400 font-semibold">Proveedores internacionales</div>
+            </div>
+            <div class="fintech-badge rounded-2xl p-4 text-center">
+              <div class="text-xl font-extrabold text-guira-cyan mb-0.5">Documenta</div>
+              <div class="text-[11px] text-slate-400 font-semibold">Respaldo por operación</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Mockup -->
+        <div class="relative mx-auto w-full max-w-sm reveal reveal-delay-2">
+          <div class="fintech-badge rounded-3xl p-6 shadow-2xl">
+            <p class="section-kicker text-slate-400 mb-4">Cuenta operativa en dólares</p>
+
+            <div class="rounded-2xl bg-white/5 border border-white/10 p-5 mb-4">
+              <div class="text-[11px] font-semibold text-slate-400 mb-1">Moneda de operación</div>
+              <div class="text-2xl font-extrabold text-white">USD</div>
+            </div>
+
+            <div class="space-y-3">
+              <div class="flex items-center justify-between rounded-xl bg-white/5 border border-white/10 px-4 py-3">
+                <span class="text-sm font-semibold text-slate-300">Cobro de cliente en EE.UU.</span>
+                <span class="text-[11px] font-bold text-emerald-400">Acreditado</span>
+              </div>
+              <div class="flex items-center justify-between rounded-xl bg-white/5 border border-white/10 px-4 py-3">
+                <span class="text-sm font-semibold text-slate-300">Pago a proveedor en China</span>
+                <span class="text-[11px] font-bold text-guira-cyan">En curso</span>
+              </div>
+              <div class="flex items-center justify-between rounded-xl bg-white/5 border border-white/10 px-4 py-3">
+                <span class="text-sm font-semibold text-slate-300">Factura comercial adjunta</span>
+                <span class="text-[11px] font-bold text-slate-400">Archivada</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- QUÉ RESUELVE -->
+    <section data-stack-section class="py-24 bg-white">
+      <div class="max-w-6xl mx-auto px-6">
+        <div class="max-w-3xl mb-16 reveal">
+          <p class="section-kicker text-guira-teal mb-4">El problema real</p>
+          <h2 class="text-3xl md:text-4xl font-extrabold text-slate-900 mb-6 tracking-tight">
+            Operar en dólares desde Bolivia no debería depender de un trámite distinto cada vez
+          </h2>
+          <p class="text-lg text-slate-500 font-medium leading-relaxed">
+            La mayoría de las empresas que exportan servicios o importan mercadería resuelven cada operación por separado. Un cobro por un lado, un pago por otro, y la documentación repartida entre correos y capturas de pantalla.
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-6">
+          <div class="reveal rounded-2xl border border-slate-200 p-7 bg-slate-50">
+            <div class="w-12 h-12 rounded-xl bg-white border border-slate-200 flex items-center justify-center mb-5 text-guira-teal">
+              <i data-lucide="clock" class="w-6 h-6"></i>
+            </div>
+            <h3 class="text-lg font-bold text-slate-900 mb-2">El cobro tarda y nadie sabe dónde está</h3>
+            <p class="text-slate-500 font-medium leading-relaxed">Tu cliente dice que pagó, tu banco no lo ve, y el equipo de finanzas queda a ciegas durante días.</p>
+          </div>
+
+          <div class="reveal reveal-delay-1 rounded-2xl border border-slate-200 p-7 bg-slate-50">
+            <div class="w-12 h-12 rounded-xl bg-white border border-slate-200 flex items-center justify-center mb-5 text-guira-teal">
+              <i data-lucide="file-warning" class="w-6 h-6"></i>
+            </div>
+            <h3 class="text-lg font-bold text-slate-900 mb-2">La auditoría pide papeles que están dispersos</h3>
+            <p class="text-slate-500 font-medium leading-relaxed">Factura, orden de compra, instrucción de pago y comprobante viven en cuatro lugares distintos.</p>
+          </div>
+
+          <div class="reveal reveal-delay-2 rounded-2xl border border-slate-200 p-7 bg-slate-50">
+            <div class="w-12 h-12 rounded-xl bg-white border border-slate-200 flex items-center justify-center mb-5 text-guira-teal">
+              <i data-lucide="split" class="w-6 h-6"></i>
+            </div>
+            <h3 class="text-lg font-bold text-slate-900 mb-2">Cobrar y pagar son dos mundos separados</h3>
+            <p class="text-slate-500 font-medium leading-relaxed">Lo que entra por un canal no sirve para pagar por el otro, y cada operación empieza de cero.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CÓMO FUNCIONA -->
+    <section data-stack-section class="py-24 bg-guira-navy">
+      <div class="max-w-6xl mx-auto px-6">
+        <div class="max-w-3xl mb-16 reveal">
+          <p class="section-kicker text-guira-cyan mb-4">Cómo se abre</p>
+          <h2 class="text-3xl md:text-4xl font-extrabold text-white mb-6 tracking-tight">
+            Tres pasos, y tu empresa opera en dólares
+          </h2>
+          <p class="text-lg text-slate-400 font-medium leading-relaxed">
+            El proceso es de empresa a empresa. No hay cuentas personales ni perfiles individuales.
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-6">
+          <div class="reveal rounded-2xl bg-white/5 border border-white/10 p-7">
+            <div class="text-xs font-bold text-guira-cyan mb-3">Paso 1</div>
+            <h3 class="text-lg font-bold text-white mb-3">Validación de la empresa</h3>
+            <p class="text-slate-400 font-medium leading-relaxed">Presentas la documentación de constitución, los representantes autorizados y una descripción de la actividad. Es el proceso conocido como KYB.</p>
+          </div>
+
+          <div class="reveal reveal-delay-1 rounded-2xl bg-white/5 border border-white/10 p-7">
+            <div class="text-xs font-bold text-guira-cyan mb-3">Paso 2</div>
+            <h3 class="text-lg font-bold text-white mb-3">Habilitación de la cuenta operativa</h3>
+            <p class="text-slate-400 font-medium leading-relaxed">Tu empresa queda habilitada para recibir cobros en dólares e instruir pagos al exterior desde un mismo lugar. Cada empresa opera su propia cuenta, sin mezclarse con la de otras.</p>
+          </div>
+
+          <div class="reveal reveal-delay-2 rounded-2xl bg-white/5 border border-white/10 p-7">
+            <div class="text-xs font-bold text-guira-cyan mb-3">Paso 3</div>
+            <h3 class="text-lg font-bold text-white mb-3">Operación con respaldo</h3>
+            <p class="text-slate-400 font-medium leading-relaxed">Cada cobro y cada pago quedan con su documentación asociada y su estado visible, listos para conciliación y auditoría.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PARA QUÉ SIRVE -->
+    <section data-stack-section class="py-24 bg-white">
+      <div class="max-w-6xl mx-auto px-6">
+        <div class="max-w-3xl mb-14 reveal">
+          <p class="section-kicker text-guira-teal mb-4">Qué puedes hacer</p>
+          <h2 class="text-3xl md:text-4xl font-extrabold text-slate-900 mb-6 tracking-tight">
+            Una cuenta, las dos puntas de tu operación internacional
+          </h2>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-6">
+          <a href="/pagos-cobros-internacionales/" class="reveal group rounded-2xl border border-slate-200 p-8 hover:border-guira-teal/40 hover:shadow-lg transition-all block">
+            <div class="w-12 h-12 rounded-xl bg-guira-teal/10 flex items-center justify-center mb-5 text-guira-teal">
+              <i data-lucide="download" class="w-6 h-6"></i>
+            </div>
+            <h3 class="text-xl font-bold text-slate-900 mb-3 group-hover:text-guira-teal transition-colors">Cobrar a clientes del exterior</h3>
+            <p class="text-slate-500 font-medium leading-relaxed mb-4">Recibe pagos de clientes en Estados Unidos, Europa y la región sin depender de intermediarios que no te dan visibilidad.</p>
+            <span class="text-sm font-bold text-guira-teal inline-flex items-center gap-1.5">Cómo cobrar del exterior <i data-lucide="arrow-right" class="w-4 h-4"></i></span>
+          </a>
+
+          <a href="/pagos-proveedores-bolivia/" class="reveal reveal-delay-1 group rounded-2xl border border-slate-200 p-8 hover:border-guira-teal/40 hover:shadow-lg transition-all block">
+            <div class="w-12 h-12 rounded-xl bg-guira-teal/10 flex items-center justify-center mb-5 text-guira-teal">
+              <i data-lucide="upload" class="w-6 h-6"></i>
+            </div>
+            <h3 class="text-xl font-bold text-slate-900 mb-3 group-hover:text-guira-teal transition-colors">Pagar a proveedores internacionales</h3>
+            <p class="text-slate-500 font-medium leading-relaxed mb-4">Instruye pagos a proveedores en el exterior con los datos del beneficiario, la factura comercial y el seguimiento de cada operación.</p>
+            <span class="text-sm font-bold text-guira-teal inline-flex items-center gap-1.5">Pagos a proveedores desde Bolivia <i data-lucide="arrow-right" class="w-4 h-4"></i></span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- PARA QUIÉN -->
+    <section data-stack-section class="py-24 bg-slate-50 border-y border-slate-200">
+      <div class="max-w-6xl mx-auto px-6">
+        <div class="max-w-3xl mb-14 reveal">
+          <p class="section-kicker text-guira-teal mb-4">Para quién es</p>
+          <h2 class="text-3xl md:text-4xl font-extrabold text-slate-900 mb-6 tracking-tight">
+            Empresas formales con operación internacional recurrente
+          </h2>
+        </div>
+
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+          <div class="reveal rounded-2xl bg-white border border-slate-200 p-6">
+            <h3 class="font-bold text-slate-900 mb-2">Exportadoras de servicios</h3>
+            <p class="text-sm text-slate-500 font-medium leading-relaxed">Agencias, estudios de software y consultoras que facturan a clientes en el exterior.</p>
+          </div>
+          <div class="reveal reveal-delay-1 rounded-2xl bg-white border border-slate-200 p-6">
+            <h3 class="font-bold text-slate-900 mb-2">Importadoras</h3>
+            <p class="text-sm text-slate-500 font-medium leading-relaxed">Empresas que compran mercadería fuera del país y necesitan pagar a plazo fijo.</p>
+          </div>
+          <div class="reveal reveal-delay-2 rounded-2xl bg-white border border-slate-200 p-6">
+            <h3 class="font-bold text-slate-900 mb-2">Corporativos regionales</h3>
+            <p class="text-sm text-slate-500 font-medium leading-relaxed">Grupos con operación en varios países que necesitan una sola vista de sus movimientos.</p>
+          </div>
+          <div class="reveal reveal-delay-3 rounded-2xl bg-white border border-slate-200 p-6">
+            <h3 class="font-bold text-slate-900 mb-2">ONGs y cooperación</h3>
+            <p class="text-sm text-slate-500 font-medium leading-relaxed">Organizaciones que reciben desembolsos del exterior y deben rendir cuentas por cada uno.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section data-stack-section class="py-24 bg-white">
+      <div class="max-w-3xl mx-auto px-6">
+        <div class="mb-12 reveal">
+          <p class="section-kicker text-guira-teal mb-4">Preguntas frecuentes</p>
+          <h2 class="text-3xl md:text-4xl font-extrabold text-slate-900 tracking-tight">
+            Lo que más nos preguntan
+          </h2>
+        </div>
+
+        <div class="divide-y divide-slate-200 border-t border-b border-slate-200">
+          <details class="group">
+            <summary class="flex justify-between items-center gap-6 font-bold cursor-pointer list-none py-6 text-slate-900">
+              <span>¿Qué es exactamente una cuenta en dólares para empresas?</span>
+              <i data-lucide="plus" class="w-5 h-5 text-slate-400 shrink-0 group-open:rotate-45 transition-transform"></i>
+            </summary>
+            <p class="pb-6 text-slate-500 font-medium leading-relaxed">
+              Es una cuenta operativa en dólares desde la que tu empresa cobra a clientes del exterior, instruye pagos a proveedores internacionales y consulta el estado de cada operación. Guira es la plataforma tecnológica que la ordena. La infraestructura financiera la provee un partner tecnológico licenciado en Estados Unidos.
+            </p>
+          </details>
+
+          <details class="group">
+            <summary class="flex justify-between items-center gap-6 font-bold cursor-pointer list-none py-6 text-slate-900">
+              <span>¿Puede una empresa boliviana operar una cuenta en dólares con el exterior?</span>
+              <i data-lucide="plus" class="w-5 h-5 text-slate-400 shrink-0 group-open:rotate-45 transition-transform"></i>
+            </summary>
+            <p class="pb-6 text-slate-500 font-medium leading-relaxed">
+              Sí, siempre que complete la validación empresarial. Se revisa la documentación de constitución, los representantes autorizados y la actividad económica. La disponibilidad depende del perfil de la empresa, la jurisdicción y el caso de uso.
+            </p>
+          </details>
+
+          <details class="group">
+            <summary class="flex justify-between items-center gap-6 font-bold cursor-pointer list-none py-6 text-slate-900">
+              <span>¿Qué documentación necesita mi empresa?</span>
+              <i data-lucide="plus" class="w-5 h-5 text-slate-400 shrink-0 group-open:rotate-45 transition-transform"></i>
+            </summary>
+            <p class="pb-6 text-slate-500 font-medium leading-relaxed">
+              En general se pide documentación de constitución de la empresa, identificación de los representantes autorizados, descripción de la actividad y respaldo comercial de las operaciones, como facturas o contratos. Puedes ver el detalle en <a href="/como-funciona/" class="text-guira-teal font-bold hover:underline">cómo funciona</a>.
+            </p>
+          </details>
+
+          <details class="group">
+            <summary class="flex justify-between items-center gap-6 font-bold cursor-pointer list-none py-6 text-slate-900">
+              <span>¿Guira es un banco?</span>
+              <i data-lucide="plus" class="w-5 h-5 text-slate-400 shrink-0 group-open:rotate-45 transition-transform"></i>
+            </summary>
+            <p class="pb-6 text-slate-500 font-medium leading-relaxed">
+              No. Guira es una plataforma tecnológica creada y operada por Guira System LLC, en Delaware, Estados Unidos. No es banco, entidad financiera ni casa de cambio. En Bolivia, Guiraglobal SRL es el equipo de asesoría comercial que acompaña a las empresas en el uso de la plataforma.
+            </p>
+          </details>
+
+          <details class="group">
+            <summary class="flex justify-between items-center gap-6 font-bold cursor-pointer list-none py-6 text-slate-900">
+              <span>¿Cuánto tarda la habilitación?</span>
+              <i data-lucide="plus" class="w-5 h-5 text-slate-400 shrink-0 group-open:rotate-45 transition-transform"></i>
+            </summary>
+            <p class="pb-6 text-slate-500 font-medium leading-relaxed">
+              Depende de qué tan completa esté la documentación al momento de presentarla. El equipo asesor en Bolivia revisa contigo la carpeta antes de enviarla, que es lo que más acorta el proceso.
+            </p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section data-stack-section class="py-24 bg-guira-dark relative overflow-hidden">
+      <div class="fintech-orb w-[420px] h-[420px] bg-guira-teal/20 -top-24 right-0"></div>
+      <div class="max-w-3xl mx-auto px-6 text-center relative z-10 reveal">
+        <h2 class="text-3xl md:text-4xl font-extrabold text-white mb-5 tracking-tight">
+          Revisa tu caso con un asesor en Bolivia
+        </h2>
+        <p class="text-lg text-slate-400 font-medium mb-10 leading-relaxed">
+          Cuéntanos cómo cobra y cómo paga tu empresa hoy. Te decimos con claridad si Guira encaja y qué documentación conviene tener lista.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="/demo/" class="px-8 py-4 bg-guira-teal text-white rounded-xl font-bold text-base hover:bg-blue-700 transition-all shadow-xl shadow-guira-teal/30 hover:-translate-y-1 flex items-center justify-center gap-2">
+            Solicitar demo
+            <i data-lucide="arrow-right" class="w-5 h-5"></i>
+          </a>
+          <a href="/contacto/" class="px-8 py-4 bg-white/5 text-white border border-white/15 rounded-xl font-bold text-base hover:bg-white/10 transition-all hover:-translate-y-1 flex items-center justify-center">
+            Contactar al equipo
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </StackedSections>
+</Layout>

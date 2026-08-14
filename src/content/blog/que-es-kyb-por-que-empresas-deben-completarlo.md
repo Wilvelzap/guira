@@ -39,7 +39,7 @@ El objetivo del KYB es verificar que la empresa cumple con los requisitos establ
 
 Por este motivo, el KYB suele ser uno de los primeros pasos antes de utilizar determinados servicios relacionados con pagos u operaciones internacionales.
 
-Si tu empresa está evaluando una cuenta virtual para recibir pagos, este proceso normalmente forma parte de la incorporación. Puedes conocer más en [cómo funciona una cuenta virtual USD para empresas](/blog/como-funciona-cuenta-virtual-usd-empresas).
+Si tu empresa está evaluando una cuenta virtual para recibir pagos, este proceso normalmente forma parte de la incorporación. Puedes conocer más en [cómo funciona una cuenta virtual USD para empresas](/blog/como-funciona-cuenta-virtual-usd-empresas/).
 
 ## Qué documentación suele solicitarse
 
@@ -84,7 +84,7 @@ Una vez concluido el proceso y, si corresponde, aprobada la validación, la empr
 
 El alcance de las funcionalidades disponibles dependerá de cada proveedor y de las características de la operación.
 
-Si además estás comparando soluciones para operar internacionalmente, revisa [plataformas de operaciones internacionales: cómo elegir la mejor opción para tu empresa](/blog/plataformas-operaciones-internacionales-elegir-mejor-opcion).
+Si además estás comparando soluciones para operar internacionalmente, revisa [plataformas de operaciones internacionales: cómo elegir la mejor opción para tu empresa](/blog/plataformas-operaciones-internacionales-elegir-mejor-opcion/).
 
 ## Conclusión
 
@@ -98,5 +98,5 @@ Contar con la documentación preparada y comprender cómo funciona este procedim
 
 *La disponibilidad de funcionalidades específicas puede depender de cada operación y de terceros involucrados en el proceso.*
 
-¿Quieres conocer cómo funciona el proceso de incorporación en Guira? [Solicita una demostración](/demo).
+¿Quieres conocer cómo funciona el proceso de incorporación en Guira? [Solicita una demostración](/demo/).
 

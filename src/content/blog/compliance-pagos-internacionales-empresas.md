@@ -39,7 +39,7 @@ Dependiendo del servicio, estos procesos pueden incluir:
 
 Cada plataforma o proveedor establece sus propios procedimientos, por lo que los requisitos pueden variar.
 
-Si tu empresa está iniciando un proceso de incorporación, es habitual que primero deba completar una validación corporativa. En nuestro artículo sobre [qué es el KYB y por qué las empresas deben completarlo](/blog/que-es-kyb-por-que-empresas-deben-completarlo) encontrarás más información.
+Si tu empresa está iniciando un proceso de incorporación, es habitual que primero deba completar una validación corporativa. En nuestro artículo sobre [qué es el KYB y por qué las empresas deben completarlo](/blog/que-es-kyb-por-que-empresas-deben-completarlo/) encontrarás más información.
 
 ## Beneficios de una buena gestión de Compliance
 
@@ -63,7 +63,7 @@ Cuando la información se encuentra dispersa entre diferentes correos, carpetas 
 
 Por ello, muchas empresas buscan herramientas que les permitan centralizar documentos y consultar la información desde un único entorno.
 
-Si estás evaluando este tipo de soluciones, también puede interesarte [plataformas de operaciones internacionales: cómo elegir la mejor opción para tu empresa](/blog/plataformas-operaciones-internacionales-elegir-mejor-opcion).
+Si estás evaluando este tipo de soluciones, también puede interesarte [plataformas de operaciones internacionales: cómo elegir la mejor opción para tu empresa](/blog/plataformas-operaciones-internacionales-elegir-mejor-opcion/).
 
 ![Dashboard empresarial mostrando documentos y procesos organizados en una sola plataforma](/assets/images/blog/dashboard-cobros-internacionales-trazabilidad.webp)
 
@@ -79,5 +79,5 @@ Comprender estos procesos y contar con una adecuada organización documental pue
 
 *La disponibilidad de funcionalidades específicas puede depender de cada operación y de terceros involucrados en el proceso.*
 
-¿Quieres conocer cómo organizar la documentación de tus operaciones internacionales? [Solicita una demostración de Guira](/demo).
+¿Quieres conocer cómo organizar la documentación de tus operaciones internacionales? [Solicita una demostración de Guira](/demo/).
 

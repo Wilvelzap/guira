@@ -30,7 +30,7 @@ La trazabilidad es la capacidad de registrar, consultar y dar seguimiento a cada
 
 Cuando toda esta información se encuentra organizada, resulta más sencillo conocer el estado de cada pago y responder rápidamente a consultas internas o del proveedor.
 
-> **Recomendación:** Si deseas conocer el proceso completo de un pago internacional, consulta nuestra guía [Cómo pagar a un proveedor en el exterior desde Bolivia](/blog/como-pagar-proveedor-exterior-desde-bolivia).
+> **Recomendación:** Si deseas conocer el proceso completo de un pago internacional, consulta nuestra guía [Cómo pagar a un proveedor en el exterior desde Bolivia](/blog/como-pagar-proveedor-exterior-desde-bolivia/).
 
 ---
 
@@ -61,7 +61,7 @@ Gran parte de los inconvenientes en los pagos internacionales proviene de inform
 
 Una documentación organizada y en un único lugar facilita consultas posteriores, conciliaciones periódicas y procesos de auditoría del SIN o entes internos.
 
-> **Recomendación:** También puede interesarte nuestro artículo [Cómo enviar un Wire a un proveedor en Estados Unidos desde Bolivia](/blog/como-enviar-wire-proveedor-eeuu-desde-bolivia), donde explicamos la información necesaria para este tipo de operaciones.
+> **Recomendación:** También puede interesarte nuestro artículo [Cómo enviar un Wire a un proveedor en Estados Unidos desde Bolivia](/blog/como-enviar-wire-proveedor-eeuu-desde-bolivia/), donde explicamos la información necesaria para este tipo de operaciones.
 
 ---
 
@@ -97,7 +97,7 @@ Las herramientas tecnológicas pueden contribuir a una gestión más organizada 
 
 Esto permite que el equipo de finanzas dedique menos tiempo a tareas administrativas repetitivas y concentre sus esfuerzos en actividades estratégicas para el crecimiento del negocio.
 
-> **Recomendación:** Si tu empresa también recibe pagos desde el exterior, consulta [5 desafíos frecuentes al recibir pagos internacionales para empresas bolivianas](/blog/desafios-recibir-pagos-internacionales-bolivia) para conocer buenas prácticas aplicables a ambos procesos.
+> **Recomendación:** Si tu empresa también recibe pagos desde el exterior, consulta [5 desafíos frecuentes al recibir pagos internacionales para empresas bolivianas](/blog/desafios-recibir-pagos-internacionales-bolivia/) para conocer buenas prácticas aplicables a ambos procesos.
 
 ---
 
@@ -115,4 +115,4 @@ A través de Guira, las organizaciones acceden a una interfaz donde finanzas y c
 
 ¿Quieres conocer cómo centralizar la gestión y el seguimiento de tus operaciones internacionales?
 
-[Solicita una demostración de Guira](/demo) y descubre cómo organizar toda la información de tus pagos internacionales desde una sola plataforma.
+[Solicita una demostración de Guira](/demo/) y descubre cómo organizar toda la información de tus pagos internacionales desde una sola plataforma.

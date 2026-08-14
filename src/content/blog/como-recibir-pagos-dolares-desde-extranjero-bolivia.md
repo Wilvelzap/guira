@@ -16,7 +16,7 @@ excerpt: "Recibir pagos en dólares desde el extranjero es uno de los mayores de
 
 Recibir pagos internacionales en dólares es uno de los retos más frecuentes para las empresas bolivianas que trabajan con clientes, socios o proyectos en el exterior. Ya sea que exportes servicios, trabajes con organismos internacionales, o simplemente cobres a clientes de Estados Unidos, Europa o Latinoamérica, el proceso puede resultar confuso y lleno de obstáculos.
 
-En esta guía te explicamos todo lo que necesitas saber: los métodos disponibles, los requisitos legales en Bolivia, los costos típicos y cómo modernizar tu proceso de cobro. Si también estás cobrando a clientes específicos en EE.UU., te recomendamos revisar nuestra guía sobre [cómo cobrar clientes de Estados Unidos desde Bolivia](/blog/como-cobrar-clientes-estados-unidos-desde-bolivia) y conocer los principales [desafíos al recibir pagos internacionales](/blog/desafios-recibir-pagos-internacionales-bolivia).
+En esta guía te explicamos todo lo que necesitas saber: los métodos disponibles, los requisitos legales en Bolivia, los costos típicos y cómo modernizar tu proceso de cobro. Si también estás cobrando a clientes específicos en EE.UU., te recomendamos revisar nuestra guía sobre [cómo cobrar clientes de Estados Unidos desde Bolivia](/blog/como-cobrar-clientes-estados-unidos-desde-bolivia/) y conocer los principales [desafíos al recibir pagos internacionales](/blog/desafios-recibir-pagos-internacionales-bolivia/).
 
 ## Por qué es complicado recibir pagos del exterior en Bolivia
 
@@ -141,4 +141,4 @@ Recibir pagos en dólares desde el extranjero es perfectamente posible para las 
 
 Para empresas que trabajan regularmente con clientes o socios internacionales, usar una plataforma especializada como Guira puede reducir drásticamente los tiempos de espera, los costos operativos y la carga administrativa, permitiéndote enfocarte en hacer crecer tu negocio.
 
-¿Quieres saber cómo Guira puede ayudar a tu empresa a recibir pagos internacionales de forma más eficiente? [Solicita una demo gratuita](/demo) y uno de nuestros especialistas te explicará el proceso.
+¿Quieres saber cómo Guira puede ayudar a tu empresa a recibir pagos internacionales de forma más eficiente? [Solicita una demo gratuita](/demo/) y uno de nuestros especialistas te explicará el proceso.

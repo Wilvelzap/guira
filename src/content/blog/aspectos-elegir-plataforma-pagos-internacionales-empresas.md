@@ -34,7 +34,7 @@ Cuando una empresa realiza pagos internacionales con frecuencia, es habitual que
 
 Contar con esta información facilita la gestión diaria y reduce la dependencia de consultas manuales.
 
-La importancia de esta visibilidad responde a una transformación que está ocurriendo en toda la región: las empresas ya no buscan únicamente ejecutar pagos, sino administrar mejor sus operaciones internacionales. Para entender ese cambio, lee [de transferir dinero a gestionar operaciones](/blog/de-transferir-dinero-a-gestionar-operaciones-pagos-internacionales-empresas).
+La importancia de esta visibilidad responde a una transformación que está ocurriendo en toda la región: las empresas ya no buscan únicamente ejecutar pagos, sino administrar mejor sus operaciones internacionales. Para entender ese cambio, lee [de transferir dinero a gestionar operaciones](/blog/de-transferir-dinero-a-gestionar-operaciones-pagos-internacionales-empresas/).
 
 ## 2. Gestión documental integrada
 
@@ -63,7 +63,7 @@ Antes de tomar una decisión, es recomendable analizar preguntas como:
 
 Las operaciones internacionales suelen involucrar a finanzas, administración, contabilidad, compras y dirección. Cuanto mejor se adapte la plataforma a esa dinámica, mayor será su aporte operativo.
 
-Si tu empresa gestiona pagos internacionales de forma recurrente, también puede interesarte [cómo mejorar la trazabilidad de los pagos internacionales a proveedores desde Bolivia](/blog/trazabilidad-pagos-internacionales-proveedores-bolivia).
+Si tu empresa gestiona pagos internacionales de forma recurrente, también puede interesarte [cómo mejorar la trazabilidad de los pagos internacionales a proveedores desde Bolivia](/blog/trazabilidad-pagos-internacionales-proveedores-bolivia/).
 
 ## 4. Escalabilidad operativa
 
@@ -91,7 +91,7 @@ Una plataforma puede aportar valor cuando permite concentrar en un mismo entorno
 
 Esto facilita el acceso a la información y mejora la coordinación entre los distintos equipos involucrados.
 
-Si además tu empresa recibe pagos desde el exterior, mantener toda la información centralizada puede simplificar la conciliación y el seguimiento. En ese caso, revisa [5 desafíos frecuentes al recibir pagos internacionales para empresas bolivianas](/blog/desafios-recibir-pagos-internacionales-bolivia).
+Si además tu empresa recibe pagos desde el exterior, mantener toda la información centralizada puede simplificar la conciliación y el seguimiento. En ese caso, revisa [5 desafíos frecuentes al recibir pagos internacionales para empresas bolivianas](/blog/desafios-recibir-pagos-internacionales-bolivia/).
 
 ## Más allá de la plataforma: también importan los procesos
 
@@ -109,5 +109,5 @@ Las empresas que evalúan aspectos como visibilidad, gestión documental, integr
 
 *La disponibilidad de funcionalidades específicas puede depender de cada operación y de terceros involucrados en el proceso.*
 
-Si estás evaluando alternativas para gestionar tus operaciones internacionales, [solicita una demostración de Guira](/demo).
+Si estás evaluando alternativas para gestionar tus operaciones internacionales, [solicita una demostración de Guira](/demo/).
 
