@@ -10,6 +10,8 @@ import KineticButton from '../components/KineticButton.astro';
   keywords="Guiraglobal SRL, Guira Bolivia, asesoría comercial pagos internacionales, pagos a proveedores desde Bolivia, asesoría Guira Bolivia, plataforma tecnológica B2B Bolivia"
   canonicalUrl="https://www.guiracorp.com/guiraglobal"
   footerTheme="light"
+  footerVariant="guiraglobal"
+  hideFloatingWhatsapp={true}
 >
   <Fragment slot="head">
     <!-- Schema: Organization + LocalBusiness -->
@@ -39,6 +41,7 @@ import KineticButton from '../components/KineticButton.astro';
       },
       "contactPoint": {
         "@type": "ContactPoint",
+        "telephone": "+59167015106",
         "contactType": "sales",
         "areaServed": "BO",
         "availableLanguage": "Spanish"
@@ -135,6 +138,17 @@ import KineticButton from '../components/KineticButton.astro';
             </div>
           </div>
         </div>
+        <div class="mt-6 bg-white border border-slate-200 rounded-3xl p-8">
+          <div class="flex items-center gap-4">
+            <div class="w-12 h-12 rounded-xl bg-guira-teal/10 flex items-center justify-center text-guira-teal">
+              <i data-lucide="phone" class="w-6 h-6"></i>
+            </div>
+            <div>
+              <h3 class="font-bold text-slate-900">Contacto</h3>
+              <a href="tel:+59167015106" class="text-slate-600 hover:text-guira-teal hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-guira-teal focus-visible:ring-offset-2 rounded-sm">+591 67015106</a>
+            </div>
+          </div>
+        </div>
       </section>
 
       <!-- Servicios -->
@@ -198,6 +212,13 @@ import KineticButton from '../components/KineticButton.astro';
             Si eres una empresa boliviana interesada en los servicios de Guira, nuestro equipo puede orientarte sobre el proceso, requisitos y casos de uso aplicables.
           </p>
           <div class="flex flex-col sm:flex-row gap-4">
+            <KineticButton
+              href="https://wa.me/59167015106"
+              variant="teal"
+              size="lg"
+              label="Escribir por WhatsApp"
+              class="w-full sm:w-auto"
+            />
             <KineticButton
               href="/demo/"
               variant="teal"

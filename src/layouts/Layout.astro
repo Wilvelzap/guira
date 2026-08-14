@@ -23,6 +23,8 @@ interface Props {
   robots?: string;
   activeLink?: string;
   footerTheme?: 'dark' | 'light' | 'rich-dark';
+  footerVariant?: 'default' | 'guiraglobal';
+  hideFloatingWhatsapp?: boolean;
   hideNav?: boolean;
   hideFooter?: boolean;
 }
@@ -44,6 +46,8 @@ const {
   robots = "index, follow",
   activeLink,
   footerTheme,
+  footerVariant = 'default',
+  hideFloatingWhatsapp = false,
   hideNav = false,
   hideFooter = false
 } = Astro.props;
@@ -164,7 +168,7 @@ const finalCanonicalUrl = canonicalBase === siteOrigin || canonicalBase.endsWith
     <slot name="head" />
 </head>
 
-<body class="bg-white text-slate-900 font-sans antialiased overflow-x-hidden selection:bg-guira-teal selection:text-white flex flex-col min-h-screen">
+<body class="bg-white text-slate-900 font-sans antialiased overflow-x-hidden selection:bg-guira-teal selection:text-white flex flex-col min-h-screen" data-floating-whatsapp={hideFloatingWhatsapp ? undefined : 'true'}>
     <!-- Google Tag Manager (noscript) -->
     <noscript>
       <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KN47K3LJ" height="0" width="0" style="display:none;visibility:hidden"></iframe>
@@ -175,7 +179,7 @@ const finalCanonicalUrl = canonicalBase === siteOrigin || canonicalBase.endsWith
 
     <slot />
 
-    {!hideFooter && <Footer theme={footerTheme} />}
+    {!hideFooter && <Footer theme={footerTheme} variant={footerVariant} />}
 
     <CookieBanner />
 

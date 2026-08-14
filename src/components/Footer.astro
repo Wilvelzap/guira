@@ -1,12 +1,35 @@
 ---
 interface Props {
   theme?: 'dark' | 'light' | 'rich-dark';
+  variant?: 'default' | 'guiraglobal';
 }
 
-const { theme = 'light' } = Astro.props;
+const { theme = 'light', variant = 'default' } = Astro.props;
 ---
 
-{theme === 'rich-dark' ? (
+{variant === 'guiraglobal' ? (
+  <footer class="border-t border-slate-200 bg-white pt-10 pb-10 mt-auto text-left">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="flex flex-col gap-8 md:flex-row md:items-start md:justify-between">
+        <div class="max-w-xl">
+          <p class="text-lg font-extrabold text-slate-900">Guiraglobal SRL</p>
+          <p class="mt-2 text-sm leading-relaxed text-slate-600">
+            Asesoría comercial y acompañamiento operativo para empresas en Bolivia.
+          </p>
+        </div>
+        <address class="not-italic text-sm leading-relaxed text-slate-600 md:text-right">
+          <p>Calle 8 de Calacoto #8330, La Paz, Bolivia</p>
+          <a href="tel:+59167015106" class="mt-1 inline-block font-semibold text-guira-teal hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-guira-teal focus-visible:ring-offset-2 rounded-sm">
+            +591 67015106
+          </a>
+        </address>
+      </div>
+      <p class="mt-8 border-t border-slate-200 pt-6 text-xs font-medium text-slate-500">
+        © 2026 Guiraglobal SRL. Todos los derechos reservados.
+      </p>
+    </div>
+  </footer>
+) : theme === 'rich-dark' ? (
   <footer class="border-t border-white/10 bg-guira-dark pt-20 pb-10 mt-auto text-left">
     <div class="max-w-7xl mx-auto px-6">
       <div class="grid grid-cols-2 md:grid-cols-4 gap-10 mb-16">

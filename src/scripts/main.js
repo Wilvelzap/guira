@@ -93,6 +93,8 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // 8. WhatsApp Floating Widget
+    if (document.body.dataset.floatingWhatsapp !== 'true') return;
+
     const waWidget = document.createElement('a');
     waWidget.href = 'https://wa.me/59175245845';
     waWidget.target = '_blank';
