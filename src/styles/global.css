@@ -279,6 +279,129 @@ body::after {
     box-shadow: 0 28px 72px -24px rgba(0, 0, 0, 0.68), 0 0 0 1px rgba(0, 216, 255, 0.05);
 }
 
+.account-hero-tilt-wrap {
+    perspective: 1800px;
+}
+
+.account-hero-table {
+    background: #ffffff;
+    border: 1px solid rgba(15, 23, 42, 0.06);
+    border-radius: 0.375rem;
+}
+
+.account-hero-tilt {
+    transform: perspective(1800px) rotateY(-24deg) rotateX(4deg) rotate(3deg);
+    transform-style: preserve-3d;
+    box-shadow:
+        36px 44px 80px -24px rgba(15, 23, 42, 0.5),
+        0 0 0 1px rgba(15, 23, 42, 0.04);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    will-change: transform;
+}
+
+.account-hero-tilt-wrap:hover .account-hero-tilt {
+    transform: perspective(1800px) rotateY(-16deg) rotateX(2deg) rotate(1.5deg);
+    box-shadow:
+        24px 32px 64px -20px rgba(15, 23, 42, 0.42),
+        0 0 0 1px rgba(15, 23, 42, 0.04);
+}
+
+.account-hero-ticker {
+    height: 340px;
+    overflow: hidden;
+    position: relative;
+    mask-image: linear-gradient(to bottom, transparent, #000 12%, #000 88%, transparent);
+    -webkit-mask-image: linear-gradient(to bottom, transparent, #000 12%, #000 88%, transparent);
+}
+
+.account-hero-ticker__track {
+    display: flex;
+    flex-direction: column;
+    animation: account-hero-ticker-scroll 18s linear infinite;
+}
+
+.account-hero-ticker:hover .account-hero-ticker__track {
+    animation-play-state: paused;
+}
+
+@keyframes account-hero-ticker-scroll {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-50%);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .account-hero-ticker__track {
+        animation: none;
+    }
+}
+
+.account-hero-row {
+    border-bottom: 1px solid rgba(15, 23, 42, 0.06);
+}
+
+.account-hero-row:last-child {
+    border-bottom: none;
+}
+
+.account-hero-row:nth-child(even) {
+    background: rgba(248, 250, 252, 0.7);
+}
+
+.account-hero-id {
+    flex: 0 0 auto;
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: #0f172a;
+}
+
+.account-hero-status {
+    flex: 0 0 auto;
+    display: inline-flex;
+    align-items: center;
+    padding: 0.3rem 0.85rem;
+    border-radius: 9999px;
+    font-size: 0.7rem;
+    font-weight: 700;
+    color: #ffffff;
+    white-space: nowrap;
+}
+
+.account-hero-status--ok {
+    background: #10b981;
+}
+
+.account-hero-status--pending {
+    background: #0051ff;
+}
+
+.account-hero-desc {
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    text-align: right;
+    min-width: 0;
+}
+
+.account-hero-desc__title {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: #0f172a;
+    white-space: nowrap;
+}
+
+.account-hero-desc__sub {
+    font-size: 0.72rem;
+    font-weight: 600;
+    color: #94a3b8;
+    white-space: nowrap;
+}
+
 .account-hero-capability {
     background: rgba(15, 23, 42, 0.78);
     border: 1px solid rgba(148, 163, 184, 0.22);
@@ -545,13 +668,60 @@ body::after {
     }
 }
 
-/* ─── Section Labels ───────────────────────────────────────── */
+/*
+ * ─── Section Labels ───────────────────────────────────────────
+ * Sin color propio a propósito: cada uso pasa su propia utilidad
+ * Tailwind (text-guira-teal / text-guira-cyan / text-slate-400...).
+ * Un color aquí competiría en especificidad con esas utilidades y
+ * ganaría por orden de aparición en la hoja compilada, silenciando
+ * el acento de marca en cada kicker del sitio.
+ */
 .section-kicker {
     letter-spacing: 0.18em;
     text-transform: uppercase;
     font-size: 0.6875rem;
     font-weight: 700;
-    color: #94a3b8;
+}
+
+/*
+ * ─── Heading System ──────────────────────────────────────────
+ * Ver docs/estilo-tipografia-cuenta-en-dolares.md. Estas clases empaquetan
+ * peso, tracking, mayúsculas y leading; el color e hijos (spans de acento,
+ * group-hover) se agregan como utilidades Tailwind en cada uso porque
+ * cambian según el fondo claro/oscuro de la sección.
+ */
+/* H1 de hero: título principal, siempre con un span de acento en
+   text-guira-teal (fondo claro) o text-guira-cyan (fondo oscuro). */
+.h1-hero {
+    @apply text-4xl md:text-6xl font-extrabold tracking-tight leading-[1.1];
+}
+
+/* H2 "editorial": cabecera de sección tipo declaración/statement,
+   siempre precedida por un .section-kicker. */
+.h2-section {
+    @apply text-3xl sm:text-4xl md:text-5xl lg:text-[2.65rem] font-extrabold uppercase tracking-tight leading-[1.08];
+}
+
+/* H2 "panel": sentence case, para bloques con ícono o imagen acompañante
+   (no lleva uppercase). */
+.h2-panel {
+    @apply text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight leading-[1.1];
+}
+
+/* H2 de CTA final: versión reducida del h2-section, sin uppercase. */
+.h2-cta {
+    @apply text-3xl md:text-4xl font-extrabold tracking-tight;
+}
+
+/* H3 de tarjeta/paso/columna. Combinar con group-hover:text-guira-teal
+   o group-hover:text-guira-cyan en el contenedor .group según el fondo. */
+.h3-card {
+    @apply text-base sm:text-lg font-extrabold uppercase tracking-wider transition-colors;
+}
+
+/* Cuerpo de texto estándar: nunca font-normal en este sistema. */
+.body-copy {
+    @apply font-medium leading-relaxed;
 }
 
 /* ─── Premium Cards ────────────────────────────────────────── */
@@ -634,6 +804,19 @@ body::after {
     font-weight: 600;
     white-space: nowrap;
     box-shadow: 0 2px 12px rgba(15, 23, 42, 0.06);
+}
+
+.marquee-logo {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0 2.5rem;
+    color: #0f172a;
+    font-size: 1.0625rem;
+    font-weight: 800;
+    letter-spacing: -0.01em;
+    white-space: nowrap;
+    opacity: 0.85;
 }
 
 /* ─── Tilt Cards ───────────────────────────────────────────── */

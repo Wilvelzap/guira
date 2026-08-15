@@ -68,11 +68,11 @@ const getCategoryIcon = (cat: string) => categoryIcons[cat] ?? 'file-text';
         <i data-lucide="book-open" class="w-3.5 h-3.5"></i>
         Blog & Recursos
       </div>
-      <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white leading-tight mb-6 reveal reveal-delay-1">
+      <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight text-white leading-[1.1] mb-6 reveal reveal-delay-1">
         Operaciones corporativas<br class="hidden md:block" />
-        <span class="text-gradient-accent">sin fronteras</span>
+        <span class="text-guira-cyan">sin fronteras</span>
       </h1>
-      <p class="text-lg text-slate-300 max-w-2xl mx-auto mb-8 reveal reveal-delay-2">
+      <p class="text-base md:text-lg text-slate-300 font-medium leading-relaxed max-w-2xl mx-auto mb-8 reveal reveal-delay-2">
         Guías prácticas, análisis y recursos sobre pagos internacionales, gestión de proveedores y compliance para empresas en Bolivia y Latinoamérica.
       </p>
 
@@ -98,7 +98,7 @@ const getCategoryIcon = (cat: string) => categoryIcons[cat] ?? 'file-text';
     {featuredPost && (
       <section class="mb-16">
         <div class="flex items-center gap-3 mb-6">
-          <span class="section-kicker">Artículo destacado</span>
+          <span class="section-kicker text-slate-400">Artículo destacado</span>
           <div class="h-px flex-1 bg-slate-200"></div>
         </div>
 
@@ -150,7 +150,7 @@ const getCategoryIcon = (cat: string) => categoryIcons[cat] ?? 'file-text';
                     {featuredPost.data.readingTime} min de lectura
                   </span>
                 </div>
-                <h2 class="text-2xl md:text-3xl font-extrabold text-slate-900 mb-4 leading-tight group-hover:text-guira-teal transition-colors">
+                <h2 class="text-2xl md:text-3xl font-extrabold tracking-tight text-slate-900 mb-4 leading-tight group-hover:text-guira-teal transition-colors">
                   {featuredPost.data.title}
                 </h2>
                 <p class="text-slate-600 leading-relaxed mb-6">
@@ -189,7 +189,7 @@ const getCategoryIcon = (cat: string) => categoryIcons[cat] ?? 'file-text';
     {restPosts.length > 0 && (
       <section class="mb-16">
         <div class="flex items-center gap-3 mb-8">
-          <span class="section-kicker">Últimos artículos</span>
+          <span class="section-kicker text-slate-400">Últimos artículos</span>
           <div class="h-px flex-1 bg-slate-200"></div>
           <span class="text-xs text-slate-400 font-medium">{posts.length} artículos</span>
         </div>
@@ -233,7 +233,7 @@ const getCategoryIcon = (cat: string) => categoryIcons[cat] ?? 'file-text';
                     </span>
                   </div>
 
-                  <h3 class="text-lg font-extrabold text-slate-900 leading-snug mb-3 group-hover:text-guira-teal transition-colors">
+                  <h3 class="text-lg font-extrabold tracking-tight text-slate-900 leading-snug mb-3 group-hover:text-guira-teal transition-colors">
                     {post.data.title}
                   </h3>
 
@@ -281,10 +281,10 @@ const getCategoryIcon = (cat: string) => categoryIcons[cat] ?? 'file-text';
               <i data-lucide="zap" class="w-3.5 h-3.5"></i>
               ¿Listo para el siguiente paso?
             </div>
-            <h2 class="text-2xl md:text-3xl font-extrabold text-white mb-3">
+            <h2 class="text-2xl md:text-3xl font-extrabold tracking-tight text-white mb-3">
               Simplifica tus pagos<br class="hidden md:block" /> internacionales con Guira
             </h2>
-            <p class="text-slate-300 text-sm leading-relaxed max-w-lg">
+            <p class="text-slate-300 text-sm font-medium leading-relaxed max-w-lg">
               Todo lo que lees en este blog lo resolvemos en la plataforma: pagos a proveedores, recepción en USD, validación B2B y trazabilidad completa. Todo en un solo lugar.
             </p>
           </div>

@@ -1,0 +1,279 @@
+---
+import KineticButton from './KineticButton.astro';
+
+export interface EditorialGridItem {
+  step?: string;
+  tag?: string;
+  icon?: string;
+  iconBgClass?: string;
+  title: string;
+  description: string;
+  link?: {
+    href: string;
+    text?: string;
+  };
+}
+
+export interface Props {
+  /**
+   * Preset visual: 'light' (fondo blanco con acentos teal) o 'dark' (fondo oscuro con acentos cian)
+   * @default 'light'
+   */
+  theme?: 'light' | 'dark';
+  /**
+   * Texto kicker superior al título (ej. "El problema real", "Cómo se abre")
+   */
+  kicker?: string;
+  /**
+   * Titular principal editorial
+   */
+  title?: string;
+  /**
+   * Descripción o bajada opcional
+   */
+  description?: string;
+  /**
+   * Elementos o tarjetas para la cuadrícula
+   */
+  items?: EditorialGridItem[];
+  /**
+   * Número de columnas: 2 | 3 | 4 (por defecto auto según items.length o 3)
+   */
+  columns?: 2 | 3 | 4;
+  /**
+   * Botones de acción inferiores
+   */
+  buttons?: Array<{
+    href: string;
+    label: string;
+    variant?: 'teal' | 'dark' | 'outline' | 'white';
+    size?: 'sm' | 'md' | 'lg';
+    class?: string;
+  }>;
+  /**
+   * Clase personalizada de fondo para la sección (ej. "bg-slate-900", "bg-guira-navy", "bg-white")
+   */
+  bgClass?: string;
+  /**
+   * Clase personalizada de bordes (ej. "border-b border-slate-800", "border-y border-slate-200")
+   */
+  borderClass?: string;
+  /**
+   * Clases CSS adicionales para el tag <section>
+   */
+  class?: string;
+  /**
+   * ID de anclaje de la sección
+   */
+  id?: string;
+  /**
+   * Si incluye data-stack-section para StackedSections (por defecto true)
+   */
+  dataStackSection?: boolean;
+  /**
+   * Si muestra los resplandores sutiles de fondo (por defecto true)
+   */
+  showGlows?: boolean;
+  /**
+   * Ancho de columna del titular (por defecto 'lg:col-span-8')
+   */
+  titleColSpan?: string;
+}
+
+const {
+  theme = 'light',
+  kicker = '',
+  title = '',
+  description = '',
+  items = [],
+  columns,
+  buttons = [],
+  bgClass,
+  borderClass,
+  class: className = '',
+  id,
+  dataStackSection = true,
+  showGlows = true,
+  titleColSpan = 'lg:col-span-8',
+} = Astro.props;
+
+const isDark = theme === 'dark';
+
+// Configuración de colores según el tema
+const sectionBg = bgClass ?? (isDark ? 'bg-guira-dark text-white' : 'bg-white text-slate-900');
+const sectionBorder = borderClass ?? (isDark ? 'border-b border-slate-800' : 'border-y border-slate-200');
+const kickerColor = isDark ? 'text-guira-cyan' : 'text-guira-teal';
+const titleColor = isDark ? 'text-white' : 'text-slate-900';
+const descColor = isDark ? 'text-slate-400' : 'text-slate-600';
+const dividerColor = isDark ? 'divide-slate-800' : 'divide-slate-200';
+const borderTopColor = isDark ? 'border-slate-800' : 'border-slate-200';
+const itemTagColor = isDark ? 'text-guira-cyan' : 'text-guira-teal';
+const itemTitleColor = isDark ? 'text-white group-hover:text-guira-cyan' : 'text-slate-900 group-hover:text-guira-teal';
+const itemDescColor = isDark ? 'text-slate-400' : 'text-slate-600';
+const defaultIconBg = isDark ? 'bg-guira-cyan/10 text-guira-cyan' : 'bg-guira-teal/10 text-guira-teal';
+
+// Cantidad de columnas efectiva
+const totalItems = items.length;
+const effectiveColumns = columns ?? (totalItems === 4 ? 4 : totalItems === 2 ? 2 : 3);
+
+// Determinación de clases de la cuadrícula
+let gridColsClass = 'grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x';
+if (effectiveColumns === 4) {
+  gridColsClass = 'grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 divide-y sm:divide-y-0 sm:divide-x';
+} else if (effectiveColumns === 2) {
+  gridColsClass = 'grid-cols-1 md:grid-cols-2 divide-y md:divide-y-0 md:divide-x';
+}
+
+// Delays de animación
+const delayClasses = ['', 'reveal-delay-1', 'reveal-delay-2', 'reveal-delay-3'];
+
+// Helper de padding según la posición en columnas
+function getItemPaddingClass(idx: number, total: number, cols: number): string {
+  if (cols === 4) {
+    return 'pt-8 pb-8 sm:py-10 sm:px-6 first:pl-0 last:pr-0';
+  }
+  if (cols === 2) {
+    if (idx === 0) return 'pt-8 pb-8 md:py-10 md:pr-8 lg:pr-12';
+    return 'pt-8 pb-8 md:py-10 md:pl-8 lg:pl-12';
+  }
+  // Default 3 columns
+  if (idx === 0) return 'pt-8 pb-8 md:py-10 md:pr-8 lg:pr-10';
+  if (idx === total - 1) return 'pt-8 pb-8 md:py-10 md:pl-8 lg:pl-10';
+  return 'pt-8 pb-8 md:py-10 md:px-8 lg:px-10';
+}
+
+const hasFooterSlot = Astro.slots.has('footer');
+const hasButtons = buttons.length > 0;
+---
+
+<section
+  id={id}
+  data-stack-section={dataStackSection ? '' : undefined}
+  class={`py-20 lg:py-28 ${sectionBg} ${sectionBorder} relative overflow-hidden ${className}`}
+>
+  {showGlows && (
+    <>
+      {isDark ? (
+        <>
+          <div
+            class="pointer-events-none absolute -left-24 top-1/2 -translate-y-1/2 w-96 h-96 bg-guira-cyan/10 rounded-full blur-3xl"
+            aria-hidden="true"
+          />
+          <div
+            class="pointer-events-none absolute -right-24 top-1/4 w-80 h-80 bg-guira-teal/10 rounded-full blur-3xl"
+            aria-hidden="true"
+          />
+        </>
+      ) : (
+        <>
+          <div
+            class="pointer-events-none absolute -right-24 top-1/2 -translate-y-1/2 w-96 h-96 bg-guira-teal/5 rounded-full blur-3xl"
+            aria-hidden="true"
+          />
+          <div
+            class="pointer-events-none absolute -left-24 top-1/4 w-80 h-80 bg-blue-500/5 rounded-full blur-3xl"
+            aria-hidden="true"
+          />
+        </>
+      )}
+    </>
+  )}
+
+  <div class="max-w-7xl mx-auto px-4 relative z-10">
+    <!-- Encabezado superior estilo editorial -->
+    <div class="grid lg:grid-cols-12 gap-8 lg:gap-12 items-end mb-12 lg:mb-16 reveal">
+      <div class={titleColSpan}>
+        {kicker && (
+          <p class={`section-kicker ${kickerColor} mb-3`}>
+            {kicker}
+          </p>
+        )}
+        {Astro.slots.has('title') ? (
+          <h2 class={`text-3xl sm:text-4xl md:text-5xl lg:text-[2.65rem] font-extrabold uppercase tracking-tight ${titleColor} leading-[1.08]`}>
+            <slot name="title" />
+          </h2>
+        ) : title ? (
+          <h2
+            class={`text-3xl sm:text-4xl md:text-5xl lg:text-[2.65rem] font-extrabold uppercase tracking-tight ${titleColor} leading-[1.08]`}
+            set:html={title}
+          />
+        ) : null}
+        {description && (
+          <p class={`mt-4 text-base sm:text-lg font-medium ${descColor} leading-relaxed max-w-2xl`}>
+            {description}
+          </p>
+        )}
+        <slot name="header-left" />
+      </div>
+
+      {Astro.slots.has('header-right') && (
+        <div class="lg:col-span-4 flex flex-col items-start lg:items-end justify-between self-stretch pt-2">
+          <slot name="header-right" />
+        </div>
+      )}
+    </div>
+
+    <!-- Fila de tarjetas divididas por líneas finas -->
+    {items.length > 0 ? (
+      <div class={`border-t ${borderTopColor}`}>
+        <div class={`grid ${gridColsClass} ${dividerColor}`}>
+          {items.map((item, idx) => {
+            const delay = delayClasses[idx % delayClasses.length];
+            const paddingClass = getItemPaddingClass(idx, items.length, effectiveColumns);
+            const tagText = item.step || item.tag;
+
+            return (
+              <div class={`reveal ${delay} ${paddingClass} group`}>
+                {item.icon && (
+                  <div class={`w-11 h-11 rounded-xl flex items-center justify-center mb-5 ${item.iconBgClass || defaultIconBg}`}>
+                    <i data-lucide={item.icon} class="w-5 h-5" />
+                  </div>
+                )}
+                {tagText && (
+                  <span class={`font-mono text-xs font-bold ${itemTagColor} tracking-widest uppercase mb-2 block`}>
+                    {tagText}
+                  </span>
+                )}
+                <h3 class={`text-base sm:text-lg font-extrabold uppercase tracking-wider ${itemTitleColor} mb-3 sm:mb-4 transition-colors`}>
+                  {item.title}
+                </h3>
+                <p class={`text-sm sm:text-base font-medium ${itemDescColor} leading-relaxed`}>
+                  {item.description}
+                </p>
+                {item.link && (
+                  <a
+                    href={item.link.href}
+                    class={`inline-flex items-center gap-1 mt-4 text-sm font-bold ${itemTagColor} hover:underline`}
+                  >
+                    {item.link.text || 'Conoce más'} &rarr;
+                  </a>
+                )}
+              </div>
+            );
+          })}
+        </div>
+      </div>
+    ) : (
+      <div class={`border-t ${borderTopColor}`}>
+        <slot />
+      </div>
+    )}
+
+    <!-- Botones o pie de sección inferior opcional -->
+    {(hasButtons || hasFooterSlot) && (
+      <div class="mt-12 lg:mt-16 flex flex-col sm:flex-row justify-center gap-4 reveal">
+        {hasButtons &&
+          buttons.map((btn) => (
+            <KineticButton
+              href={btn.href}
+              variant={btn.variant || 'teal'}
+              size={btn.size || 'md'}
+              label={btn.label}
+              class={btn.class || 'w-full sm:w-auto'}
+            />
+          ))}
+        <slot name="footer" />
+      </div>
+    )}
+  </div>
+</section>

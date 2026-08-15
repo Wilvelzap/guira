@@ -1,0 +1,456 @@
+---
+export interface SplitColumnItem {
+  icon?: string;
+  iconColor?: string;
+  title?: string;
+  description: string;
+}
+
+export interface SplitColumn {
+  theme?: 'light' | 'dark';
+  kicker?: string;
+  title: string;
+  description?: string;
+  listTitle?: string;
+  items?: SplitColumnItem[];
+  bgClass?: string;
+  showGlow?: boolean;
+  backgroundVariant?: 'rails' | 'network' | 'none';
+}
+
+export interface Props {
+  left?: SplitColumn;
+  right?: SplitColumn;
+  id?: string;
+  dataStackSection?: boolean;
+  class?: string;
+}
+
+const {
+  left,
+  right,
+  id,
+  dataStackSection = true,
+  class: className = '',
+} = Astro.props;
+
+// Configuraciones por defecto lado izquierdo
+const leftTheme = left?.theme || 'light';
+const leftIsDark = leftTheme === 'dark';
+const leftBg = left?.bgClass || (leftIsDark ? 'bg-guira-navy' : 'bg-white');
+const leftKickerColor = leftIsDark ? 'text-guira-cyan' : 'text-guira-teal';
+const leftTitleColor = leftIsDark ? 'text-white' : 'text-slate-900';
+const leftDescColor = leftIsDark ? 'text-slate-300' : 'text-slate-600';
+const leftListTitleColor = leftIsDark ? 'text-white' : 'text-slate-900';
+const leftItemTextColor = leftIsDark ? 'text-slate-200' : 'text-slate-700';
+const leftItemStrongColor = leftIsDark ? 'text-white' : 'text-slate-900';
+const leftDefaultIcon = leftIsDark ? 'check' : 'x';
+const leftDefaultIconColor = leftIsDark ? 'text-guira-cyan' : 'text-rose-500';
+const leftDividerColor = leftIsDark ? 'divide-white/20 border-white/20' : 'divide-slate-300 border-slate-300';
+const leftBgVariant = left?.backgroundVariant || (leftIsDark ? 'rails' : 'none');
+
+// Configuraciones por defecto lado derecho
+const rightTheme = right?.theme || 'dark';
+const rightIsDark = rightTheme === 'dark';
+const rightBg = right?.bgClass || (rightIsDark ? 'bg-guira-navy' : 'bg-white');
+const rightKickerColor = rightIsDark ? 'text-guira-cyan' : 'text-guira-teal';
+const rightTitleColor = rightIsDark ? 'text-white' : 'text-slate-900';
+const rightDescColor = rightIsDark ? 'text-slate-300' : 'text-slate-600';
+const rightListTitleColor = rightIsDark ? 'text-white' : 'text-slate-900';
+const rightItemTextColor = rightIsDark ? 'text-slate-200' : 'text-slate-700';
+const rightItemStrongColor = rightIsDark ? 'text-white' : 'text-slate-900';
+const rightDefaultIcon = rightIsDark ? 'check' : 'x';
+const rightDefaultIconColor = rightIsDark ? 'text-guira-cyan' : 'text-rose-500';
+const rightDividerColor = rightIsDark ? 'divide-white/20 border-white/20' : 'divide-slate-300 border-slate-300';
+const rightBgVariant = right?.backgroundVariant || (rightIsDark ? 'rails' : 'none');
+---
+
+<section
+  id={id}
+  data-stack-section={dataStackSection ? '' : undefined}
+  data-dual-split-section
+  class={`relative overflow-hidden border-y border-slate-200 ${className}`}
+>
+  <div class="grid md:min-h-[760px] md:grid-cols-2">
+    <!-- Columna Izquierda -->
+    <article
+      class={`flex ${leftBg} px-6 py-16 sm:px-10 md:px-16 lg:px-[clamp(4rem,8vw,10rem)] border-b md:border-b-0 md:border-r border-slate-200 relative overflow-hidden`}
+    >
+      {left?.showGlow && (
+        <div
+          class="absolute -left-32 -top-24 h-[430px] w-[430px] rounded-full bg-guira-teal/20 blur-[110px] pointer-events-none"
+          aria-hidden="true"
+        />
+      )}
+
+      {leftBgVariant === 'rails' && (
+        <div class="bank-rails-bg pointer-events-none absolute inset-0 overflow-hidden opacity-45" aria-hidden="true">
+          <div class="absolute -left-20 top-1/3 w-[450px] h-[450px] bg-guira-teal/15 rounded-full blur-[110px] pointer-events-none" />
+          <svg class="absolute inset-0 w-full h-full" viewBox="0 0 800 900" preserveAspectRatio="none" fill="none">
+            <defs>
+              <linearGradient id="rail-beam-l1" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#00d8ff" stop-opacity="0" />
+                <stop offset="60%" stop-color="#00d8ff" stop-opacity="0.9" />
+                <stop offset="100%" stop-color="#ffffff" stop-opacity="1" />
+              </linearGradient>
+            </defs>
+            <path class="rail-track" d="M-100 150 L650 900" stroke="rgba(148, 163, 184, 0.15)" stroke-width="1.2" />
+            <path class="rail-track" d="M0 100 L750 850" stroke="rgba(0, 216, 255, 0.16)" stroke-width="1.5" />
+            <path class="rail-track" d="M150 0 L900 750" stroke="rgba(148, 163, 184, 0.15)" stroke-width="1.2" />
+            <path class="rail-pulse rail-pulse-1" d="M0 100 L750 850" stroke="url(#rail-beam-l1)" stroke-width="2.5" />
+            <path class="rail-pulse rail-pulse-3" d="M150 0 L900 750" stroke="url(#rail-beam-l1)" stroke-width="2" />
+          </svg>
+        </div>
+      )}
+
+      <div class="mx-auto flex w-full max-w-xl flex-col justify-between text-center relative z-10">
+        {left?.kicker && (
+          <p class={`section-kicker ${leftKickerColor}`}>
+            {left.kicker}
+          </p>
+        )}
+
+        <div class="my-12 reveal-left">
+          {left?.title && (
+            <h2
+              class={`mx-auto max-w-lg text-3xl font-extrabold leading-[1.08] tracking-tight ${leftTitleColor} sm:text-4xl lg:text-5xl uppercase`}
+              set:html={left.title}
+            />
+          )}
+          {left?.description && (
+            <p
+              class={`mx-auto mt-5 max-w-md text-base font-medium leading-relaxed ${leftDescColor} sm:text-lg`}
+            >
+              {left.description}
+            </p>
+          )}
+        </div>
+
+        {left?.items && left.items.length > 0 && (
+          <div>
+            {left.listTitle && (
+              <h3 class={`mb-6 text-xl font-bold uppercase tracking-wider ${leftListTitleColor}`}>
+                {left.listTitle}
+              </h3>
+            )}
+            <ul class={`mx-auto w-full max-w-md divide-y border-y ${leftDividerColor} text-left`}>
+              {left.items.map((item) => (
+                <li class={`dual-split-left-item flex gap-4 py-4 sm:py-5 text-sm font-medium leading-relaxed ${leftItemTextColor} sm:text-base group transition-colors`}>
+                  <div class="mt-0.5 w-6 h-6 rounded-full flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform">
+                    <i
+                      data-lucide={item.icon || leftDefaultIcon}
+                      class={`h-5 w-5 ${item.iconColor || leftDefaultIconColor}`}
+                    />
+                  </div>
+                  <span>
+                    {item.title && (
+                      <strong class={`${leftItemStrongColor} block sm:inline`}>
+                        {item.title}:{' '}
+                      </strong>
+                    )}
+                    {item.description}
+                  </span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
+
+        <slot name="left" />
+      </div>
+    </article>
+
+    <!-- Columna Derecha (Sección Positiva con Animación de Rieles Financieros Opción 4) -->
+    <article
+      class={`relative flex overflow-hidden ${rightBg} px-6 py-16 sm:px-10 md:px-16 lg:px-[clamp(4rem,8vw,10rem)]`}
+    >
+      <!-- Animación Opción 4: Rieles Financieros Paralelos (High-Speed Bank Rails) -->
+      {rightBgVariant === 'rails' && (
+        <div class="bank-rails-bg pointer-events-none absolute inset-0 overflow-hidden" aria-hidden="true">
+          <!-- Halos de velocidad y profundidad ambiental -->
+          <div class="absolute -right-24 top-1/4 w-[500px] h-[500px] bg-guira-teal/20 rounded-full blur-[120px] pointer-events-none" />
+          <div class="absolute -left-20 bottom-10 w-[380px] h-[380px] bg-blue-600/15 rounded-full blur-[100px] pointer-events-none" />
+
+          <svg
+            class="absolute inset-0 w-full h-full opacity-60"
+            viewBox="0 0 800 900"
+            preserveAspectRatio="none"
+            fill="none"
+          >
+            <defs>
+              <linearGradient id="rail-beam-teal" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#00d8ff" stop-opacity="0" />
+                <stop offset="60%" stop-color="#00d8ff" stop-opacity="0.9" />
+                <stop offset="100%" stop-color="#ffffff" stop-opacity="1" />
+              </linearGradient>
+              <linearGradient id="rail-beam-cyan" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#0051ff" stop-opacity="0" />
+                <stop offset="60%" stop-color="#38bdf8" stop-opacity="0.95" />
+                <stop offset="100%" stop-color="#ffffff" stop-opacity="1" />
+              </linearGradient>
+              <filter id="rail-glow" x="-20%" y="-20%" width="140%" height="140%">
+                <feGaussianBlur stdDeviation="3" result="blur" />
+                <feMerge>
+                  <feMergeNode in="blur" />
+                  <feMergeNode in="SourceGraphic" />
+                </feMerge>
+              </filter>
+            </defs>
+
+            <!-- Rieles Diagonales Base -->
+            <path class="rail-track" d="M-120 180 L620 920" stroke="rgba(148, 163, 184, 0.15)" stroke-width="1.2" />
+            <path class="rail-track" d="M-20 110 L720 850" stroke="rgba(0, 216, 255, 0.2)" stroke-width="1.5" />
+            <path class="rail-track" d="M90 40 L830 780" stroke="rgba(148, 163, 184, 0.18)" stroke-width="1.2" />
+            <path class="rail-track" d="M210 -30 L950 710" stroke="rgba(0, 216, 255, 0.22)" stroke-width="1.8" />
+            <path class="rail-track" d="M340 -90 L1080 650" stroke="rgba(148, 163, 184, 0.14)" stroke-width="1.2" />
+            <path class="rail-track" d="M470 -150 L1210 590" stroke="rgba(0, 216, 255, 0.15)" stroke-width="1" />
+
+            <!-- Haces de Luz / Pulsos de Alta Velocidad -->
+            <path class="rail-pulse rail-pulse-1" d="M-20 110 L720 850" stroke="url(#rail-beam-teal)" stroke-width="2.5" filter="url(#rail-glow)" />
+            <path class="rail-pulse rail-pulse-2" d="M90 40 L830 780" stroke="url(#rail-beam-cyan)" stroke-width="2" filter="url(#rail-glow)" />
+            <path class="rail-pulse rail-pulse-3" d="M210 -30 L950 710" stroke="url(#rail-beam-teal)" stroke-width="3" filter="url(#rail-glow)" />
+            <path class="rail-pulse rail-pulse-4" d="M340 -90 L1080 650" stroke="url(#rail-beam-cyan)" stroke-width="2" filter="url(#rail-glow)" />
+            <path class="rail-pulse rail-pulse-5" d="M-120 180 L620 920" stroke="url(#rail-beam-teal)" stroke-width="2" filter="url(#rail-glow)" />
+
+            <!-- Nodos de Liquidación y Trazabilidad -->
+            <g class="rail-nodes">
+              <circle cx="280" cy="410" r="4" fill="#00d8ff" class="rail-node" />
+              <circle cx="460" cy="430" r="4.5" fill="#ffffff" class="rail-node" />
+              <circle cx="580" cy="520" r="3.5" fill="#00d8ff" class="rail-node" />
+              <circle cx="200" cy="220" r="3.5" fill="#38bdf8" class="rail-node" />
+              <circle cx="520" cy="310" r="4" fill="#00d8ff" class="rail-node" />
+            </g>
+
+            <!-- Cápsulas / Etiquetas de Rieles en Tránsito -->
+            <g class="rail-tag">
+              <rect x="-34" y="-12" width="68" height="24" rx="12" fill="rgba(5, 20, 45, 0.96)" stroke="rgba(0, 216, 255, 0.85)" stroke-width="1.2" filter="url(#rail-glow)" />
+              <text x="0" y="4.5" fill="#00d8ff" font-family="Inter, sans-serif" font-size="9" font-weight="800" letter-spacing="0.08em" text-anchor="middle">WIRE / ACH</text>
+              <animateMotion dur="8.5s" begin="0s" repeatCount="indefinite" path="M210 -30 L950 710" />
+            </g>
+            <g class="rail-tag">
+              <rect x="-28" y="-11" width="56" height="22" rx="11" fill="rgba(7, 34, 62, 0.96)" stroke="rgba(56, 189, 248, 0.8)" stroke-width="1.2" filter="url(#rail-glow)" />
+              <text x="0" y="4" fill="#ffffff" font-family="Inter, sans-serif" font-size="8.5" font-weight="800" letter-spacing="0.06em" text-anchor="middle">USD · B2B</text>
+              <animateMotion dur="12s" begin="-5s" repeatCount="indefinite" path="M-20 110 L720 850" />
+            </g>
+          </svg>
+        </div>
+      )}
+
+      {(right?.showGlow ?? rightIsDark) && (
+        <div
+          class="absolute -right-32 -top-24 h-[430px] w-[430px] rounded-full bg-guira-teal/20 blur-[110px] pointer-events-none"
+          aria-hidden="true"
+        />
+      )}
+      <div class="relative z-10 mx-auto flex w-full max-w-xl flex-col justify-between text-center">
+        {right?.kicker && (
+          <p class={`section-kicker ${rightKickerColor}`}>
+            {right.kicker}
+          </p>
+        )}
+
+        <div class="my-12 reveal-right">
+          {right?.title && (
+            <h2
+              class={`mx-auto max-w-lg text-3xl font-extrabold leading-[1.08] tracking-tight ${rightTitleColor} sm:text-4xl lg:text-5xl uppercase`}
+              set:html={right.title}
+            />
+          )}
+          {right?.description && (
+            <p
+              class={`mx-auto mt-5 max-w-md text-base font-medium leading-relaxed ${rightDescColor} sm:text-lg`}
+            >
+              {right.description}
+            </p>
+          )}
+        </div>
+
+        {right?.items && right.items.length > 0 && (
+          <div>
+            {right.listTitle && (
+              <h3 class={`mb-6 text-xl font-bold uppercase tracking-wider ${rightListTitleColor}`}>
+                {right.listTitle}
+              </h3>
+            )}
+            <ul class={`mx-auto w-full max-w-md divide-y border-y ${rightDividerColor} text-left`}>
+              {right.items.map((item) => (
+                <li class={`dual-split-right-item flex gap-4 py-4 sm:py-5 text-sm font-medium leading-relaxed ${rightItemTextColor} sm:text-base group transition-colors`}>
+                  <div class="mt-0.5 w-6 h-6 rounded-full flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform">
+                    <i
+                      data-lucide={item.icon || rightDefaultIcon}
+                      class={`h-5 w-5 ${item.iconColor || rightDefaultIconColor}`}
+                    />
+                  </div>
+                  <span>
+                    {item.title && (
+                      <strong class={`${rightItemStrongColor} block sm:inline`}>
+                        {item.title}:{' '}
+                      </strong>
+                    )}
+                    {item.description}
+                  </span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
+
+        <slot name="right" />
+      </div>
+    </article>
+  </div>
+</section>
+
+<style>
+  .rail-track {
+    vector-effect: non-scaling-stroke;
+  }
+
+  .rail-pulse {
+    stroke-linecap: round;
+    vector-effect: non-scaling-stroke;
+    animation: rail-flow linear infinite;
+  }
+
+  .rail-pulse-1 {
+    stroke-dasharray: 140 850;
+    animation-duration: 5.2s;
+  }
+
+  .rail-pulse-2 {
+    stroke-dasharray: 90 900;
+    animation-duration: 6.8s;
+    animation-delay: -2.2s;
+  }
+
+  .rail-pulse-3 {
+    stroke-dasharray: 180 900;
+    animation-duration: 4.5s;
+    animation-delay: -1.2s;
+  }
+
+  .rail-pulse-4 {
+    stroke-dasharray: 100 800;
+    animation-duration: 7.2s;
+    animation-delay: -3.8s;
+  }
+
+  .rail-pulse-5 {
+    stroke-dasharray: 120 860;
+    animation-duration: 6s;
+    animation-delay: -4.5s;
+  }
+
+  @keyframes rail-flow {
+    from {
+      stroke-dashoffset: 1000;
+    }
+    to {
+      stroke-dashoffset: -1000;
+    }
+  }
+
+  .rail-node {
+    filter: drop-shadow(0 0 6px rgba(0, 216, 255, 0.9));
+    animation: rail-node-pulse 3s ease-in-out infinite alternate;
+  }
+
+  .rail-node:nth-child(2) {
+    animation-delay: -1s;
+  }
+
+  .rail-node:nth-child(3) {
+    animation-delay: -2s;
+  }
+
+  .rail-node:nth-child(4) {
+    animation-delay: -0.5s;
+  }
+
+  @keyframes rail-node-pulse {
+    0% {
+      opacity: 0.35;
+      transform: scale(0.85);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1.3);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .rail-pulse,
+    .rail-node {
+      animation: none !important;
+    }
+  }
+</style>
+
+<script>
+  import { gsap } from 'gsap';
+  import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  function initDualSplitAnimations() {
+    const sections = document.querySelectorAll('[data-dual-split-section]');
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    sections.forEach((section) => {
+      const leftItems = section.querySelectorAll('.dual-split-left-item');
+      const rightItems = section.querySelectorAll('.dual-split-right-item');
+
+      if (prefersReducedMotion) {
+        gsap.set([...leftItems, ...rightItems], { autoAlpha: 1, y: 0 });
+        return;
+      }
+
+      if (leftItems.length > 0) {
+        gsap.set(leftItems, { autoAlpha: 0, y: 22 });
+        ScrollTrigger.create({
+          trigger: section,
+          start: 'top 82%',
+          once: true,
+          onEnter: () => {
+            gsap.to(leftItems, {
+              autoAlpha: 1,
+              y: 0,
+              duration: 0.65,
+              stagger: 0.1,
+              ease: 'power2.out',
+              clearProps: 'opacity,transform',
+            });
+          },
+        });
+      }
+
+      if (rightItems.length > 0) {
+        gsap.set(rightItems, { autoAlpha: 0, y: 22 });
+        ScrollTrigger.create({
+          trigger: section,
+          start: 'top 82%',
+          once: true,
+          onEnter: () => {
+            gsap.to(rightItems, {
+              autoAlpha: 1,
+              y: 0,
+              duration: 0.65,
+              stagger: 0.1,
+              delay: 0.15,
+              ease: 'power2.out',
+              clearProps: 'opacity,transform',
+            });
+          },
+        });
+      }
+    });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initDualSplitAnimations);
+  } else {
+    initDualSplitAnimations();
+  }
+
+  document.addEventListener('astro:page-load', initDualSplitAnimations);
+</script>
