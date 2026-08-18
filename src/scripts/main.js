@@ -96,7 +96,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (document.body.dataset.floatingWhatsapp !== 'true') return;
 
     const waWidget = document.createElement('a');
-    waWidget.href = 'https://wa.me/59175245845';
+    waWidget.href = 'https://wa.me/59167015106';
     waWidget.target = '_blank';
     waWidget.rel = 'noopener noreferrer';
     waWidget.className = 'fixed bottom-6 right-6 w-14 h-14 bg-emerald-500 text-white rounded-full flex items-center justify-center shadow-lg shadow-emerald-500/40 hover:scale-110 hover:bg-emerald-400 transition-all z-50';
