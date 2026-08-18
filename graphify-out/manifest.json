@@ -10,13 +10,13 @@
     "semantic_hash": ""
   },
   "src/components/CookieBanner.astro": {
-    "mtime": 1786685608.4287004,
-    "ast_hash": "8d4eeba5cf2f647c3566d19a4208ca47",
+    "mtime": 1787027269.56206,
+    "ast_hash": "b8b2a67ad0c2dcc31a3045881cb3f03f",
     "semantic_hash": ""
   },
   "src/components/DemoForm.astro": {
-    "mtime": 1786685608.4332726,
-    "ast_hash": "ba2b71cf27be790f6f4faea4c1486eb5",
+    "mtime": 1787027269.56206,
+    "ast_hash": "04529172687a1798a2b82957d7850a33",
     "semantic_hash": ""
   },
   "src/components/Flag.astro": {
@@ -25,13 +25,13 @@
     "semantic_hash": "9e3448664ea9218337f7d7a21392a782"
   },
   "src/components/Footer.astro": {
-    "mtime": 1786685710.3726387,
-    "ast_hash": "d8dae6c59df899034581343529081e53",
+    "mtime": 1787027269.564566,
+    "ast_hash": "5c18a94043a7bebbd0073e3ce3938f1b",
     "semantic_hash": ""
   },
   "src/components/Navbar.astro": {
-    "mtime": 1786685694.2225225,
-    "ast_hash": "2e1f07a2b886004f3d495c92c40352b8",
+    "mtime": 1787027269.5655708,
+    "ast_hash": "e5d52f28f7188b046f0aa2c501928836",
     "semantic_hash": ""
   },
   "src/components/posthog.astro": {
@@ -45,103 +45,103 @@
     "semantic_hash": "8bae336186f2321250946d5a23daf9ec"
   },
   "src/layouts/Layout.astro": {
-    "mtime": 1786686643.5749912,
-    "ast_hash": "0e68ffa29c659a6eae6d55f4ebb0cd03",
+    "mtime": 1787027269.5675707,
+    "ast_hash": "a0aaff81475fff3ce0003634858227a5",
     "semantic_hash": ""
   },
   "src/pages/404.astro": {
-    "mtime": 1786685608.3285656,
-    "ast_hash": "0a4afe9ded873be43e12c5e2e216ab4b",
+    "mtime": 1787027269.5675707,
+    "ast_hash": "cb35cababfd399da72ef380fa014dfff",
     "semantic_hash": ""
   },
   "src/pages/blog/[slug].astro": {
-    "mtime": 1786686638.0610557,
-    "ast_hash": "cadfb2906f2cb28692c8fc0bd2084f99",
+    "mtime": 1787027269.5675707,
+    "ast_hash": "263248e4bcb6a73cc987a113a0a255b0",
     "semantic_hash": ""
   },
   "src/pages/blog/index.astro": {
-    "mtime": 1786686641.6106386,
-    "ast_hash": "ef28067d7ba5f2c1bdaf87ccd2ff1bc7",
+    "mtime": 1787027269.5690742,
+    "ast_hash": "3c0d37130e61d6c5d570d0aa828b2446",
     "semantic_hash": ""
   },
   "src/pages/como-funciona.astro": {
-    "mtime": 1786685608.333416,
-    "ast_hash": "dde9d639d4dbb085e522f006a4291dee",
+    "mtime": 1787027269.5700798,
+    "ast_hash": "5d262e3577f2d4bcefb92fe73bf95110",
     "semantic_hash": ""
   },
   "src/pages/contacto.astro": {
-    "mtime": 1786685608.3409278,
-    "ast_hash": "6c6d778fc55a07702c98346ef8a394c2",
+    "mtime": 1787028767.6224802,
+    "ast_hash": "397b04fe83d19fcb2472acb53cfdb75a",
     "semantic_hash": ""
   },
   "src/pages/cookies.astro": {
-    "mtime": 1786685608.3490286,
-    "ast_hash": "667adb3d3c2871f1224a7d48713b768b",
+    "mtime": 1787027269.5710783,
+    "ast_hash": "e5d9e6f28c44e81e35cc6f2d7e243089",
     "semantic_hash": ""
   },
   "src/pages/demo.astro": {
-    "mtime": 1786685608.3530788,
-    "ast_hash": "a39094f2b5f7c68840f68bfa19fa413f",
+    "mtime": 1787027269.572078,
+    "ast_hash": "60d1e195ccd4b7f0dd0972769e43d136",
     "semantic_hash": ""
   },
   "src/pages/faq.astro": {
-    "mtime": 1786685686.1511927,
-    "ast_hash": "a7600dbdccb8a6e16e96d0fb410ab0b5",
+    "mtime": 1787027269.5730782,
+    "ast_hash": "3a0dec2cc35c6d0b22556dc6d79d1775",
     "semantic_hash": ""
   },
   "src/pages/guiraglobal.astro": {
-    "mtime": 1786685608.3608336,
-    "ast_hash": "e3281416c4bd9bd8ddb8514715996ddc",
+    "mtime": 1787027269.5730782,
+    "ast_hash": "6cb1e3c898aebfa081a6f37f84f2a0fc",
     "semantic_hash": ""
   },
   "src/pages/index.astro": {
-    "mtime": 1786685641.7168727,
-    "ast_hash": "49aaa1ca6c3498001baf57e6c042e5e7",
+    "mtime": 1787028766.8490446,
+    "ast_hash": "3bb41dbe2a3e80da6d6d7c458b255691",
     "semantic_hash": ""
   },
   "src/pages/pagos-cobros-internacionales.astro": {
-    "mtime": 1786685649.8505442,
-    "ast_hash": "b71514b05d9f5ed9024734b79179fd43",
+    "mtime": 1787028769.0987754,
+    "ast_hash": "1d929538445369e3f0e602c296ef3fda",
     "semantic_hash": ""
   },
   "src/pages/pagos-proveedores-bolivia.astro": {
-    "mtime": 1786685608.3856213,
-    "ast_hash": "ff24e6f7d10b3e3749b84a7e6912667f",
+    "mtime": 1787027269.5771017,
+    "ast_hash": "bcc1d4a214c1cfca67469830dc5368ed",
     "semantic_hash": ""
   },
   "src/pages/privacidad.astro": {
-    "mtime": 1786685608.390855,
-    "ast_hash": "77607c0393d1745a46139825df618fa5",
+    "mtime": 1787027269.5771017,
+    "ast_hash": "4a59fda785e52c8f269c116ebd09a11b",
     "semantic_hash": ""
   },
   "src/pages/producto.astro": {
-    "mtime": 1786685608.395367,
-    "ast_hash": "77b46cae96e92b7077db9a6731f4bfaf",
+    "mtime": 1787027269.578101,
+    "ast_hash": "4d7101714f30a61f3cff1e2f8419892a",
     "semantic_hash": ""
   },
   "src/pages/seguridad.astro": {
-    "mtime": 1786685608.4009867,
-    "ast_hash": "64733398c200cb3cb591445940d207db",
+    "mtime": 1787027269.579102,
+    "ast_hash": "55e6665e57cbe9adc2e4520311639ee5",
     "semantic_hash": ""
   },
   "src/pages/sobre-guira.astro": {
-    "mtime": 1786685608.4044924,
-    "ast_hash": "8c22c8a68e9fad790402e223483ff2ec",
+    "mtime": 1787027269.579102,
+    "ast_hash": "1c97a0c17c57f7e2badb212cc1f19a1e",
     "semantic_hash": ""
   },
   "src/pages/soluciones.astro": {
-    "mtime": 1786685670.9331918,
-    "ast_hash": "9013c06ef384bc25ed8459fac8c73b13",
+    "mtime": 1787027269.579102,
+    "ast_hash": "9d50ace320580ca3d82642ddcff99eaf",
     "semantic_hash": ""
   },
   "src/pages/terminos.astro": {
-    "mtime": 1786685608.413504,
-    "ast_hash": "743573b56bc82dc57f4f40ab90ceea82",
+    "mtime": 1787027269.5806055,
+    "ast_hash": "9104e75d8a354ac8ea763dde9c045efd",
     "semantic_hash": ""
   },
   "src/scripts/main.js": {
-    "mtime": 1785723832.683975,
-    "ast_hash": "8f783a08dbed5bf86e50c516d440d872",
+    "mtime": 1787028766.0695462,
+    "ast_hash": "8f44d289daa18c610d7fd10c54e65767",
     "semantic_hash": ""
   },
   "tailwind.config.js": {
@@ -1740,8 +1740,8 @@
     "semantic_hash": ""
   },
   "src/components/RadioCard.astro": {
-    "mtime": 1786685608.4652367,
-    "ast_hash": "1051afba17ed4beb4b5c9c78bce3b9fa",
+    "mtime": 1787027269.566571,
+    "ast_hash": "40383d3a79d2b4d9a67979ba09fe27d9",
     "semantic_hash": ""
   },
   "src/components/StackedSections.astro": {
@@ -2245,8 +2245,8 @@
     "semantic_hash": ""
   },
   "src/pages/pagar-proveedores-exterior.astro": {
-    "mtime": 1786685608.371854,
-    "ast_hash": "20b41ada1138a3a6a00c609bb4371b21",
+    "mtime": 1787028768.368605,
+    "ast_hash": "cc2b8e9b5cb4d579b60c9cdc9445fcbe",
     "semantic_hash": ""
   },
   "LOGO GUIRA CON LETRA HORIZONTAL.svg": {
@@ -3735,8 +3735,8 @@
     "semantic_hash": ""
   },
   "src/components/GuiraButton.astro": {
-    "mtime": 1786685608.4456072,
-    "ast_hash": "83571e2faf66d97f5862ef4a7449a76a",
+    "mtime": 1787027269.564566,
+    "ast_hash": "51b1b5524c32204b5732fdf3d06b6a45",
     "semantic_hash": ""
   },
   "src/content/blog/ds-5384-servicios-financieros-plataformas-operaciones-internacionales.md": {
@@ -3975,13 +3975,168 @@
     "semantic_hash": ""
   },
   "src/pages/cuenta-en-dolares.astro": {
-    "mtime": 1786685820.7846313,
-    "ast_hash": "c3602e57fea4aa1355ec6d9ffb7e5c01",
+    "mtime": 1787027269.572078,
+    "ast_hash": "c18596705d2b415c0e6b7e80fe00e517",
     "semantic_hash": ""
   },
   "guira-auditoria-seo-agosto-2026.html": {
     "mtime": 1786684900.2788265,
     "ast_hash": "8c6beb5156f34a18df3530e462417e8c",
+    "semantic_hash": ""
+  },
+  "src/components/DualSplitSection.astro": {
+    "mtime": 1787027269.563062,
+    "ast_hash": "69a654617fade9d50c88fde7ae3372d2",
+    "semantic_hash": ""
+  },
+  "src/components/EditorialGridSection.astro": {
+    "mtime": 1787027269.563062,
+    "ast_hash": "4709834f8061f1ab551d3deb66b867b7",
+    "semantic_hash": ""
+  },
+  "src/components/FaqSection.astro": {
+    "mtime": 1787027269.563062,
+    "ast_hash": "f5ffed8d3fc224a3f51d907f721559ca",
+    "semantic_hash": ""
+  },
+  "src/components/KineticButton.astro": {
+    "mtime": 1787027269.564566,
+    "ast_hash": "3a2366f9a02bbbc187d16340f4bda20e",
+    "semantic_hash": ""
+  },
+  "src/components/SplitFeatureSection.astro": {
+    "mtime": 1787027269.566571,
+    "ast_hash": "415c6b636bf717b1d72f8dac31b14d5d",
+    "semantic_hash": ""
+  },
+  "STITCH_INDEX_SPEC.md": {
+    "mtime": 1787027269.5575535,
+    "ast_hash": "e848ed5863f87ad88943b6ca77ce7f93",
+    "semantic_hash": ""
+  },
+  "docs/estilo-tipografia-cuenta-en-dolares.md": {
+    "mtime": 1787027269.559057,
+    "ast_hash": "d0cf7434c907d38159807150a8ed57ca",
+    "semantic_hash": ""
+  },
+  "assets/ads-facebook/portada-cobra-eeuu-i.jpg": {
+    "mtime": 1786686762.0287285,
+    "ast_hash": "6c74ce27a98c47ed41822befc1e35407",
+    "semantic_hash": ""
+  },
+  "assets/ads-facebook/portada-cobra-eeuu.jpg": {
+    "mtime": 1786686762.0297549,
+    "ast_hash": "bba19d3103968a4f15e3014e79d5932c",
+    "semantic_hash": ""
+  },
+  "assets/ads-facebook/portada-paga-cobra-opera-i.jpg": {
+    "mtime": 1786686762.0312898,
+    "ast_hash": "d92ac6ab4824ff63040a8873bed4b5f8",
+    "semantic_hash": ""
+  },
+  "assets/ads-facebook/portada-paga-cobra-opera.jpg": {
+    "mtime": 1786686762.0323205,
+    "ast_hash": "28866f8956ca1f1a874c3e3f7d951248",
+    "semantic_hash": ""
+  },
+  "assets/ads-facebook/portada-pagos-en-chats-i.jpg": {
+    "mtime": 1786686762.0343244,
+    "ast_hash": "11e350121340dd86b9ef34ec2be5271a",
+    "semantic_hash": ""
+  },
+  "assets/ads-facebook/portada-pagos-en-chats.jpg": {
+    "mtime": 1786686762.0358274,
+    "ast_hash": "d50888a4119daee80918fe9b922cf45c",
+    "semantic_hash": ""
+  },
+  "assets/ads-facebook/portada-primer-pago-i.jpg": {
+    "mtime": 1786686762.0373416,
+    "ast_hash": "8b0bf1b08bdda0df49e19fe3cdd37ff2",
+    "semantic_hash": ""
+  },
+  "assets/ads-facebook/portada-primer-pago.jpg": {
+    "mtime": 1786686762.0383418,
+    "ast_hash": "3b0db962041a8d2f79f3c467f7092591",
+    "semantic_hash": ""
+  },
+  "assets/ads-facebook/portada-respaldo-contador.jpg": {
+    "mtime": 1786686762.0393417,
+    "ast_hash": "f6b9a2f91246c76b53c270c9899f4960",
+    "semantic_hash": ""
+  },
+  "public/assets/ads-facebook/guira-facebook-a5-visual-v2.png": {
+    "mtime": 1786686762.0463452,
+    "ast_hash": "edf49b1a86e47d70a118775062f07769",
+    "semantic_hash": ""
+  },
+  "public/assets/ads-facebook/guira-facebook-a5.png": {
+    "mtime": 1786686762.0490088,
+    "ast_hash": "02c75027bb317deeb8687d4222bbcb4e",
+    "semantic_hash": ""
+  },
+  "public/assets/ads-facebook/guira-facebook-a6-visual-v2.png": {
+    "mtime": 1786686762.0545156,
+    "ast_hash": "c3c9c9693e0437c6f67c5bb360468f1c",
+    "semantic_hash": ""
+  },
+  "public/assets/ads-facebook/guira-facebook-a6.png": {
+    "mtime": 1786686762.0580225,
+    "ast_hash": "80af56672277538f7a875aa862cc9c12",
+    "semantic_hash": ""
+  },
+  "public/assets/ads-facebook/guira-facebook-a8-visual-v2.png": {
+    "mtime": 1786686762.0630221,
+    "ast_hash": "4bb1b4ff4762468ef0f4adde4349f099",
+    "semantic_hash": ""
+  },
+  "public/assets/ads-facebook/guira-facebook-a8.png": {
+    "mtime": 1786686762.0670345,
+    "ast_hash": "a827334f70e0baa5b530474ec5b8562c",
+    "semantic_hash": ""
+  },
+  "public/assets/ads-facebook/portada-cobra-eeuu-i.jpg": {
+    "mtime": 1786686762.068035,
+    "ast_hash": "6c74ce27a98c47ed41822befc1e35407",
+    "semantic_hash": ""
+  },
+  "public/assets/ads-facebook/portada-cobra-eeuu.jpg": {
+    "mtime": 1786686762.0700378,
+    "ast_hash": "bba19d3103968a4f15e3014e79d5932c",
+    "semantic_hash": ""
+  },
+  "public/assets/ads-facebook/portada-paga-cobra-opera-i.jpg": {
+    "mtime": 1786686762.071038,
+    "ast_hash": "d92ac6ab4824ff63040a8873bed4b5f8",
+    "semantic_hash": ""
+  },
+  "public/assets/ads-facebook/portada-paga-cobra-opera.jpg": {
+    "mtime": 1786686762.0725403,
+    "ast_hash": "28866f8956ca1f1a874c3e3f7d951248",
+    "semantic_hash": ""
+  },
+  "public/assets/ads-facebook/portada-pagos-en-chats-i.jpg": {
+    "mtime": 1786686762.0740721,
+    "ast_hash": "11e350121340dd86b9ef34ec2be5271a",
+    "semantic_hash": ""
+  },
+  "public/assets/ads-facebook/portada-pagos-en-chats.jpg": {
+    "mtime": 1786686762.0750756,
+    "ast_hash": "d50888a4119daee80918fe9b922cf45c",
+    "semantic_hash": ""
+  },
+  "public/assets/ads-facebook/portada-primer-pago-i.jpg": {
+    "mtime": 1786686762.076077,
+    "ast_hash": "8b0bf1b08bdda0df49e19fe3cdd37ff2",
+    "semantic_hash": ""
+  },
+  "public/assets/ads-facebook/portada-primer-pago.jpg": {
+    "mtime": 1786686762.0772357,
+    "ast_hash": "3b0db962041a8d2f79f3c467f7092591",
+    "semantic_hash": ""
+  },
+  "public/assets/ads-facebook/portada-respaldo-contador.jpg": {
+    "mtime": 1786686762.0782392,
+    "ast_hash": "f6b9a2f91246c76b53c270c9899f4960",
     "semantic_hash": ""
   }
 }
