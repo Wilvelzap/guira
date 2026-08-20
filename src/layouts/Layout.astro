@@ -202,6 +202,8 @@ const finalCanonicalUrl = canonicalBase === siteOrigin || canonicalBase.endsWith
           window.posthog?.capture('whatsapp_contact_clicked', {
             link_location: location
           });
+          window.dataLayer = window.dataLayer || [];
+          window.dataLayer.push({ event: 'click-whatsapp' });
         } else if (href === '/demo' || href.startsWith('/demo?') || href === '#solicitar-demo') {
           window.posthog?.capture('demo_cta_clicked', {
             link_location: location,

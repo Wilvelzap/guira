@@ -58,11 +58,17 @@ FORM: Recorrido operativo asimétrico, séptima estructura del concepto d4a56fbd
   <div class="landing-shell">
     <nav class="landing-nav" aria-label="Encabezado">
       <div class="page-wrap nav-inner">
-        <img
-          src="/assets/images/logo-horizontal-color-oscuro.png"
-          alt="Guira"
-          class="h-8 md:h-9 w-auto"
-        />
+        <a
+          href="https://www.guiracorp.com/?utm_source=landing_pagar_proveedores&utm_medium=header_logo&utm_campaign=internal_navigation"
+          class="inline-flex items-center"
+          aria-label="Ir al inicio de Guira"
+        >
+          <img
+            src="/assets/images/logo-horizontal-color-oscuro.png"
+            alt="Guira"
+            class="h-8 md:h-9 w-auto"
+          />
+        </a>
       </div>
     </nav>
 
@@ -81,7 +87,7 @@ FORM: Recorrido operativo asimétrico, séptima estructura del concepto d4a56fbd
             </p>
             <div class="hero-actions">
               <GuiraButton
-                href="https://wa.me/59167015106?text=Hola,%20quiero%20pagar%20a%20mis%20proveedores%20del%20exterior%20con%20Guira"
+                href="https://wa.me/59167015106?text=%5BW-PAG1%5D%20Hola,%20quiero%20pagar%20a%20mis%20proveedores%20del%20exterior%20con%20Guira"
                 target="_blank"
                 rel="noopener noreferrer"
                 label="Quiero pagar a mi proveedor"
@@ -333,7 +339,7 @@ FORM: Recorrido operativo asimétrico, séptima estructura del concepto d4a56fbd
           </div>
           <div class="section-cta">
             <GuiraButton
-              href="https://wa.me/59167015106?text=Hola,%20necesito%20pagar%20a%20un%20proveedor%20del%20exterior%20y%20quiero%20orientaci%C3%B3n"
+              href="https://wa.me/59167015106?text=%5BW-PAG2%5D%20Hola,%20necesito%20pagar%20a%20un%20proveedor%20del%20exterior%20y%20quiero%20orientaci%C3%B3n"
               target="_blank"
               rel="noopener noreferrer"
               label="Quiero resolver esto"
@@ -457,7 +463,7 @@ FORM: Recorrido operativo asimétrico, séptima estructura del concepto d4a56fbd
           </div>
           <div class="section-cta">
             <GuiraButton
-              href="https://wa.me/59167015106?text=Hola,%20quiero%20empezar%20a%20pagar%20a%20mis%20proveedores%20del%20exterior%20con%20Guira"
+              href="https://wa.me/59167015106?text=%5BW-PAG1%5D%20Hola,%20quiero%20pagar%20a%20mis%20proveedores%20del%20exterior%20con%20Guira"
               target="_blank"
               rel="noopener noreferrer"
               label="Empezar mi primera operación"
@@ -509,7 +515,7 @@ FORM: Recorrido operativo asimétrico, séptima estructura del concepto d4a56fbd
         <div class="page-wrap">
           <div class="section-cta">
             <GuiraButton
-              href="https://wa.me/59167015106?text=Hola,%20quiero%20conocer%20el%20respaldo%20documental%20de%20los%20pagos%20con%20Guira"
+              href="https://wa.me/59167015106?text=%5BW-PAG3%5D%20Hola,%20quiero%20conocer%20el%20respaldo%20documental%20de%20los%20pagos%20con%20Guira"
               target="_blank"
               rel="noopener noreferrer"
               label="Quiero ver el respaldo por operación"
@@ -599,7 +605,7 @@ FORM: Recorrido operativo asimétrico, séptima estructura del concepto d4a56fbd
               target="_blank"
               rel="noopener noreferrer"
               class="text-guira-cyan hover:text-guira-neon font-bold"
-              >+591 75 245845</a
+              >+591 67015106</a
             >
             <a
               href="mailto:administracion@guiracorp.com"
@@ -631,39 +637,6 @@ FORM: Recorrido operativo asimétrico, séptima estructura del concepto d4a56fbd
   </div>
 
   <script>
-    const prepareWhatsAppLinks = () => {
-      const links = document.querySelectorAll('a[href*="wa.me"]');
-      const floatingLink = Array.from(links).find(
-        (link) => link.getAttribute("aria-label") === "Chat en WhatsApp",
-      );
-
-      if (floatingLink) {
-        const floatingUrl = new URL(floatingLink.href);
-        if (floatingUrl.searchParams.get("text") === null) {
-          floatingUrl.searchParams.set(
-            "text",
-            "Hola, quiero pagar a mis proveedores del exterior con Guira",
-          );
-          floatingLink.setAttribute("href", floatingUrl.toString());
-        }
-      }
-
-      const reference = new URLSearchParams(window.location.search).get(
-        "utm_content",
-      );
-      if (!reference) return;
-      const suffix = ` [ref: ${reference}]`;
-
-      links.forEach((link) => {
-        const url = new URL(link.href);
-        const originalText = url.searchParams.get("text");
-        if (originalText === null || originalText.endsWith(suffix)) return;
-        url.searchParams.set("text", originalText + suffix);
-        link.setAttribute("href", url.toString());
-      });
-    };
-
-    window.addEventListener("load", prepareWhatsAppLinks);
     document.addEventListener("click", (event) => {
       const link = event.target.closest('a[href*="wa.me"]');
       if (!link) return;
