@@ -1,7 +1,7 @@
 {
   "astro.config.mjs": {
-    "mtime": 1785732692.135789,
-    "ast_hash": "cbc0563931927d558e3cf896e6e5f343",
+    "mtime": 1787638253.5422096,
+    "ast_hash": "63b642f9b764a354a1302acbe90c715a",
     "semantic_hash": ""
   },
   "package.json": {
@@ -15,8 +15,8 @@
     "semantic_hash": ""
   },
   "src/components/DemoForm.astro": {
-    "mtime": 1787027269.56206,
-    "ast_hash": "04529172687a1798a2b82957d7850a33",
+    "mtime": 1787638294.022508,
+    "ast_hash": "1064159a35d8b67990f901fa00225689",
     "semantic_hash": ""
   },
   "src/components/Flag.astro": {
@@ -45,8 +45,8 @@
     "semantic_hash": "8bae336186f2321250946d5a23daf9ec"
   },
   "src/layouts/Layout.astro": {
-    "mtime": 1787027269.5675707,
-    "ast_hash": "a0aaff81475fff3ce0003634858227a5",
+    "mtime": 1787638162.7933002,
+    "ast_hash": "abb87b371ea73074fb33028fa564d3f4",
     "semantic_hash": ""
   },
   "src/pages/404.astro": {
@@ -100,8 +100,8 @@
     "semantic_hash": ""
   },
   "src/pages/pagos-cobros-internacionales.astro": {
-    "mtime": 1787028769.0987754,
-    "ast_hash": "1d929538445369e3f0e602c296ef3fda",
+    "mtime": 1787638162.7943008,
+    "ast_hash": "5fadd03a2c470c8f4e967c18a4e66bc2",
     "semantic_hash": ""
   },
   "src/pages/pagos-proveedores-bolivia.astro": {
@@ -170,8 +170,8 @@
     "semantic_hash": ""
   },
   "CLAUDE.md": {
-    "mtime": 1785732702.3714044,
-    "ast_hash": "1203b8bdd359563bf9ad2296b6d5d1fe",
+    "mtime": 1787638359.9389918,
+    "ast_hash": "1c778fbe28b76b3ed0870cc6737e7519",
     "semantic_hash": ""
   },
   "guia_palabras_prohibidas.md": {
@@ -2195,8 +2195,8 @@
     "semantic_hash": ""
   },
   "AGENTS.md": {
-    "mtime": 1785723832.1807473,
-    "ast_hash": "21d7053d674ccfcea2a3b922f2d4dd83",
+    "mtime": 1787638371.4481611,
+    "ast_hash": "a90ffd3fdb14e3afc1a13249559496ea",
     "semantic_hash": ""
   },
   "DESIGN.md": {
@@ -2245,8 +2245,8 @@
     "semantic_hash": ""
   },
   "src/pages/pagar-proveedores-exterior.astro": {
-    "mtime": 1787028768.368605,
-    "ast_hash": "cc2b8e9b5cb4d579b60c9cdc9445fcbe",
+    "mtime": 1787638162.7943008,
+    "ast_hash": "13c6183726f1e2e25a4d01c27f6bd9c2",
     "semantic_hash": ""
   },
   "LOGO GUIRA CON LETRA HORIZONTAL.svg": {
@@ -4137,6 +4137,11 @@
   "public/assets/ads-facebook/portada-respaldo-contador.jpg": {
     "mtime": 1786686762.0782392,
     "ast_hash": "f6b9a2f91246c76b53c270c9899f4960",
+    "semantic_hash": ""
+  },
+  "src/pages/cobrar-clientes-exterior.astro": {
+    "mtime": 1787638349.7817547,
+    "ast_hash": "831d5032a7a153e785f967300dc256f5",
     "semantic_hash": ""
   }
 }
