@@ -1,0 +1,1510 @@
+---
+import Layout from "../layouts/Layout.astro";
+import DemoForm from "../components/DemoForm.astro";
+import GuiraButton from "../components/GuiraButton.astro";
+import FaqSection from "../components/FaqSection.astro";
+
+const cobrarExteriorFaq = [
+  {
+    question: "¿Quién opera la plataforma?",
+    answer: "Guira es una plataforma tecnológica creada y operada por Guira System LLC, constituida en Delaware, Estados Unidos. En Bolivia, Guiraglobal SRL es el equipo de asesoría comercial que acompaña a las empresas en su uso."
+  },
+  {
+    question: "¿La cuenta en Estados Unidos está a nombre de mi empresa?",
+    answer: "Sí. Para el corredor de Estados Unidos en USD, la cuenta operativa se habilita a nombre de tu empresa a través de un partner tecnológico licenciado en EE.UU., permitiendo recibir transferencias ACH y Wire directas de tus clientes."
+  },
+  {
+    question: "¿Sirve para lo que mi contador necesita?",
+    answer: "Cada operación se entrega con comprobante, referencia asociada a la factura y registro del estado. Es la información que se solicita habitualmente en una conciliación o en una revisión interna."
+  },
+  {
+    question: "¿Cuánto demora empezar?",
+    answer: "Empieza con una conversación. Escríbenos, revisamos tu operación y te decimos con claridad si Guira encaja con lo que tu empresa necesita."
+  }
+];
+---
+
+<Layout
+  title="Cobra a tus clientes del exterior desde una cuenta operativa | Guira"
+  description="Tu cliente paga en su propio país, en su propia moneda. Tú recibes con respaldo documental en cada operación."
+  canonicalUrl="https://www.guiracorp.com/cobrar-clientes-exterior/"
+  robots="noindex, nofollow"
+  hideNav={true}
+  hideFooter={true}
+>
+  <Fragment slot="head">
+    <link
+      rel="preload"
+      as="image"
+      href="/assets/images/logo-horizontal-color-oscuro.png"
+      type="image/png"
+    />
+    <link
+      rel="preload"
+      as="image"
+      href="/assets/images/logo-isotipo-color.png"
+      type="image/png"
+    />
+    <style is:inline>
+      html {
+        scroll-behavior: smooth;
+      }
+    </style>
+  </Fragment>
+
+  <div class="landing-shell">
+    <nav class="landing-nav" aria-label="Encabezado">
+      <div class="page-wrap nav-inner">
+        <a
+          href="https://www.guiracorp.com/?utm_source=landing_cobrar_clientes&utm_medium=header_logo&utm_campaign=internal_navigation"
+          class="inline-flex items-center"
+          aria-label="Ir al inicio de Guira"
+        >
+          <img
+            src="/assets/images/logo-horizontal-color-oscuro.png"
+            alt="Guira"
+            class="h-8 md:h-9 w-auto"
+          />
+        </a>
+      </div>
+    </nav>
+
+    <main>
+      <header class="hero">
+        <div class="hero-wash" aria-hidden="true"></div>
+        <div class="page-wrap hero-grid">
+          <div class="hero-copy">
+            <div class="audience-tag">
+              <span></span> Para empresas exportadoras de Bolivia
+            </div>
+            <h1>Cobra a tus clientes en el exterior</h1>
+            <p class="hero-lead">
+              Tu cliente paga en su propio país, en su propia moneda. Tú recibes
+              con respaldo documental en cada operación.
+            </p>
+            <div class="hero-actions">
+              <GuiraButton
+                href="https://wa.me/59167015106?text=%5BW-COB5%5D%20Hola%2C%20quiero%20cobrar%20a%20mis%20clientes%20del%20exterior%20con%20Guira."
+                target="_blank"
+                rel="noopener noreferrer"
+                label="Quiero cobrar a mi cliente"
+              />
+            </div>
+            <p class="hero-support">
+              Escríbenos y revisamos tu operación. Sin compromiso.
+            </p>
+            <div class="trust-line" aria-label="Características principales">
+              <span><i data-lucide="building-2"></i> Solo empresas</span>
+              <span
+                ><i data-lucide="file-check-2"></i> Respaldo por operación</span
+              >
+              <span><i data-lucide="headphones"></i> Acompañamiento local</span>
+            </div>
+          </div>
+
+          <div
+            class="hero-device hero-network"
+            role="img"
+            aria-label="Guira conecta cobros con clientes internacionales en dólares, euros, reales, pesos mexicanos y pesos colombianos"
+          >
+            <div class="device-halo" aria-hidden="true"></div>
+            <svg
+              class="network-routes"
+              viewBox="0 0 760 500"
+              fill="none"
+              aria-hidden="true"
+              preserveAspectRatio="xMidYMid meet"
+            >
+              <defs>
+                <marker
+                  id="arrow-blue"
+                  viewBox="0 0 10 10"
+                  refX="9"
+                  refY="5"
+                  markerWidth="7"
+                  markerHeight="7"
+                  orient="auto-start-reverse"
+                >
+                  <path d="M 0 0 L 10 5 L 0 10 z" fill="#0051ff"></path>
+                </marker>
+                <marker
+                  id="arrow-cyan"
+                  viewBox="0 0 10 10"
+                  refX="9"
+                  refY="5"
+                  markerWidth="7"
+                  markerHeight="7"
+                  orient="auto-start-reverse"
+                >
+                  <path d="M 0 0 L 10 5 L 0 10 z" fill="#00cfe8"></path>
+                </marker>
+              </defs>
+              <path
+                class="network-route network-route-blue"
+                d="M390 102 C394 152 380 195 380 260"
+                marker-end="url(#arrow-blue)"></path>
+              <path
+                class="network-route network-route-cyan"
+                d="M161 204 C222 214 270 248 335 265"
+                marker-end="url(#arrow-cyan)"></path>
+              <path
+                class="network-route network-route-cyan"
+                d="M198 382 C240 355 282 326 340 295"
+                marker-end="url(#arrow-cyan)"></path>
+              <path
+                class="network-route network-route-blue"
+                d="M588 192 C530 196 490 210 420 252"
+                marker-end="url(#arrow-blue)"></path>
+              <path
+                class="network-route network-route-blue"
+                d="M555 391 C529 342 492 309 425 297"
+                marker-end="url(#arrow-blue)"></path>
+
+              <circle class="network-signal network-signal-blue" r="5">
+                <animateMotion
+                  dur="3.8s"
+                  repeatCount="indefinite"
+                  path="M390 102 C394 152 380 195 380 260"></animateMotion>
+                <animate
+                  attributeName="opacity"
+                  values="0;1;1;0"
+                  keyTimes="0;0.12;0.8;1"
+                  dur="3.8s"
+                  repeatCount="indefinite"></animate>
+              </circle>
+              <circle
+                class="network-signal network-signal-cyan"
+                r="5"
+                opacity="0"
+              >
+                <animateMotion
+                  dur="4.6s"
+                  begin="-1.3s"
+                  repeatCount="indefinite"
+                  path="M161 204 C222 214 270 248 335 265"></animateMotion>
+                <animate
+                  attributeName="opacity"
+                  values="0;1;1;0"
+                  keyTimes="0;0.12;0.8;1"
+                  dur="4.6s"
+                  begin="-1.3s"
+                  repeatCount="indefinite"></animate>
+              </circle>
+              <circle
+                class="network-signal network-signal-cyan"
+                r="4.5"
+                opacity="0"
+              >
+                <animateMotion
+                  dur="4.2s"
+                  begin="-2.5s"
+                  repeatCount="indefinite"
+                  path="M198 382 C240 355 282 326 340 295"></animateMotion>
+                <animate
+                  attributeName="opacity"
+                  values="0;1;1;0"
+                  keyTimes="0;0.12;0.8;1"
+                  dur="4.2s"
+                  begin="-2.5s"
+                  repeatCount="indefinite"></animate>
+              </circle>
+              <circle
+                class="network-signal network-signal-blue"
+                r="4.5"
+                opacity="0"
+              >
+                <animateMotion
+                  dur="4.1s"
+                  begin="-0.8s"
+                  repeatCount="indefinite"
+                  path="M588 192 C530 196 490 210 420 252"></animateMotion>
+                <animate
+                  attributeName="opacity"
+                  values="0;1;1;0"
+                  keyTimes="0;0.12;0.8;1"
+                  dur="4.1s"
+                  begin="-0.8s"
+                  repeatCount="indefinite"></animate>
+              </circle>
+              <circle
+                class="network-signal network-signal-blue"
+                r="5"
+                opacity="0"
+              >
+                <animateMotion
+                  dur="4.5s"
+                  begin="-3.1s"
+                  repeatCount="indefinite"
+                  path="M555 391 C529 342 492 309 425 297"></animateMotion>
+                <animate
+                  attributeName="opacity"
+                  values="0;1;1;0"
+                  keyTimes="0;0.12;0.8;1"
+                  dur="4.5s"
+                  begin="-3.1s"
+                  repeatCount="indefinite"></animate>
+              </circle>
+            </svg>
+
+            <div class="network-center" aria-hidden="true">
+              <img
+                src="/assets/images/logo-isotipo-color.png"
+                alt=""
+                width="98"
+                height="98"
+              />
+            </div>
+            <span class="network-node network-node-usd" aria-hidden="true"
+              >USD</span
+            >
+            <span class="network-node network-node-eur" aria-hidden="true"
+              >EUR</span
+            >
+            <span class="network-node network-node-cop" aria-hidden="true"
+              >COP</span
+            >
+            <span class="network-node network-node-brl" aria-hidden="true"
+              >BRL</span
+            >
+            <span class="network-node network-node-mxn" aria-hidden="true"
+              >MXN</span
+            >
+          </div>
+        </div>
+      </header>
+
+      <section class="corridors" aria-label="Destinos habilitados">
+        <div class="page-wrap corridor-inner">
+          <p class="corridor-title">Un flujo para tus cobros frecuentes</p>
+          <div class="country-list">
+            <span><strong>Estados Unidos</strong><b>ACH · Wire</b></span>
+            <span><strong>Europa</strong><b>SEPA</b></span>
+            <span><strong>Brasil</strong><b>Pix</b></span>
+            <span><strong>México</strong><b>SPEI</b></span>
+            <span><strong>Colombia</strong><b>Bre-B</b></span>
+          </div>
+        </div>
+      </section>
+
+      <!-- Banda de titularidad -->
+      <section class="ownership-strip" aria-label="Titularidad de cuenta en Estados Unidos">
+        <div class="page-wrap">
+          <div class="ownership-card">
+            <div class="ownership-badge">
+              <i data-lucide="shield-check"></i>
+              <span>Estados Unidos · USD</span>
+            </div>
+            <p class="ownership-headline">
+              Cuenta operativa en Estados Unidos a nombre de tu empresa en USD para recibir transferencias ACH y Wire directas de tus clientes.
+            </p>
+            <p class="ownership-legal">
+              La titularidad a nombre de tu empresa aplica exclusivamente para la estructura operativa en Estados Unidos (USD) a través del partner tecnológico licenciado en EE.UU. En los demás corredores (Europa, Brasil, México y Colombia), la recepción opera mediante los rieles locales habilitados para cada jurisdicción.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Banda Para quién es -->
+      <section class="audience-section section-space-sm" aria-label="Para quién es">
+        <div class="page-wrap">
+          <div class="audience-heading">
+            <span class="block mb-[18px] text-[#0051ff] text-[0.72rem] font-extrabold"
+              >Para quién es</span
+            >
+            <h2
+              class="max-w-[700px] text-[clamp(2rem,4vw,3.2rem)] leading-[1.08] tracking-tight font-extrabold text-balance text-slate-900"
+            >
+              Diseñado para empresas exportadoras que necesitan cobrar con orden.
+            </h2>
+          </div>
+          <div class="audience-grid">
+            <article class="audience-card" tabindex="0">
+              <div class="audience-card-icon">
+                <i data-lucide="laptop"></i>
+              </div>
+              <div>
+                <h3>Exportación de servicios y tecnología</h3>
+                <p>
+                  Empresas de desarrollo de software, agencias digitales, consultoras y firmas profesionales que facturan a clientes corporativos en el exterior.
+                </p>
+              </div>
+            </article>
+            <article class="audience-card" tabindex="0">
+              <div class="audience-card-icon">
+                <i data-lucide="package"></i>
+              </div>
+              <div>
+                <h3>Exportación de productos y bienes</h3>
+                <p>
+                  Empresas de manufactura, agroindustria, insumos y bienes comerciales que necesitan recibir pagos internacionales sin retrasar despachos ni contratos.
+                </p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="problem-section section-space">
+        <div class="page-wrap">
+          <div class="problem-grid">
+            <div class="">
+              <span
+                class="block mb-[18px] text-[#0051ff] text-[0.72rem] font-extrabold"
+                >El problema operativo</span
+              >
+              <h2
+                class="max-w-[700px] mx-auto text-[clamp(2rem,4vw,3.55rem)] leading-[1.08] tracking-tight font-extrabold text-balance"
+              >
+                Cobrar a un cliente del exterior no debería ser un obstáculo para cerrar negocios.
+              </h2>
+              <p
+                class="max-w-[620px] mx-auto mt-[22px] text-slate-500 text-[1.06rem] leading-[1.7] font-medium"
+              >
+                Cuando los canales de cobro son rígidos o lentos, tu empresa pierde competitividad y tiempo valioso.
+              </p>
+            </div>
+            <div class="friction-list">
+              <article tabindex="0">
+                <span>01</span><div>
+                  <h3>Requisitos y datos que complican al cliente</h3><p>
+                    Tu cliente pide pagar por rieles locales de su país o exige datos operativos que tu empresa no puede entregarle con agilidad.
+                  </p>
+                </div>
+              </article>
+              <article tabindex="0">
+                <span>02</span><div>
+                  <h3>Falta de visibilidad sobre el estado</h3><p>
+                    Ventas, finanzas y gerencia esperan sin saber si el cliente ya inició la transferencia o en qué punto del circuito está.
+                  </p>
+                </div>
+              </article>
+              <article tabindex="0">
+                <span>03</span><div>
+                  <h3>Conciliación y respaldo desordenados</h3><p>
+                    El ingreso llega sin referencia clara de la factura y obliga a reconstruir la trazabilidad contable después.
+                  </p>
+                </div>
+              </article>
+            </div>
+          </div>
+          <div class="section-cta">
+            <GuiraButton
+              href="https://wa.me/59167015106?text=%5BW-COB6%5D%20Hola%2C%20necesito%20cobrar%20a%20un%20cliente%20del%20exterior%20y%20quiero%20orientaci%C3%B3n."
+              target="_blank"
+              rel="noopener noreferrer"
+              label="Quiero resolver esto"
+            />
+          </div>
+        </div>
+      </section>
+
+      <section id="como-funciona" class="process-section section-space">
+        <div class="page-wrap">
+          <div class="max-w-[700px] mx-auto text-center">
+            <span
+              class="block mb-[18px] text-[#0051ff] text-[0.72rem] font-extrabold"
+              >Cómo funciona</span
+            >
+            <h2
+              class="text-[clamp(2rem,4vw,3.55rem)] leading-[1.08] tracking-tight font-extrabold text-balance"
+            >
+              Del cobro de tu cliente al respaldo, en una sola secuencia.
+            </h2>
+            <p
+              class="max-w-[620px] mx-auto mt-[22px] text-slate-500 text-[1.06rem] leading-[1.7] font-medium"
+            >
+              Un especialista acompaña la preparación de la operación y tu
+              equipo mantiene la visibilidad.
+            </p>
+          </div>
+          <div
+            class="grid md:grid-cols-2 lg:grid-cols-4 divide-y divide-slate-200 md:divide-y-0 md:divide-x mt-16"
+          >
+            <div class="group px-6 py-8 md:py-0 text-center">
+              <div class="relative inline-flex mb-6">
+                <div
+                  class="w-14 h-14 rounded-xl bg-white border border-slate-200 flex items-center justify-center transition-colors group-hover:bg-blue-600 group-hover:border-blue-600"
+                >
+                  <i
+                    data-lucide="scan-search"
+                    class="w-6 h-6 text-slate-700 transition-colors group-hover:text-white"
+                  ></i>
+                </div>
+                <span
+                  class="absolute -top-2 -right-2 w-5 h-5 rounded-full bg-slate-900 text-white text-[11px] font-bold flex items-center justify-center"
+                  >1</span
+                >
+              </div>
+              <h3 class="text-lg font-bold text-slate-900 mb-3">Revisamos</h3>
+              <p class="text-slate-600 text-sm font-medium max-w-xs mx-auto">
+                Validamos la factura comercial o proforma, los datos del cliente pagador y el país de origen.
+              </p>
+            </div>
+            <div class="group px-6 py-8 md:py-0 text-center">
+              <div class="relative inline-flex mb-6">
+                <div
+                  class="w-14 h-14 rounded-xl bg-white border border-slate-200 flex items-center justify-center transition-colors group-hover:bg-blue-600 group-hover:border-blue-600"
+                >
+                  <i
+                    data-lucide="route"
+                    class="w-6 h-6 text-slate-700 transition-colors group-hover:text-white"
+                  ></i>
+                </div>
+                <span
+                  class="absolute -top-2 -right-2 w-5 h-5 rounded-full bg-slate-900 text-white text-[11px] font-bold flex items-center justify-center"
+                  >2</span
+                >
+              </div>
+              <h3 class="text-lg font-bold text-slate-900 mb-3">
+                Definimos la ruta
+              </h3>
+              <p class="text-slate-600 text-sm font-medium max-w-xs mx-auto">
+                Para Estados Unidos habilitamos la cuenta en USD a nombre de tu empresa. Para los demás países, asignamos el riel local correspondiente.
+              </p>
+            </div>
+            <div class="group px-6 py-8 md:py-0 text-center">
+              <div class="relative inline-flex mb-6">
+                <div
+                  class="w-14 h-14 rounded-xl bg-white border border-slate-200 flex items-center justify-center transition-colors group-hover:bg-blue-600 group-hover:border-blue-600"
+                >
+                  <i
+                    data-lucide="arrow-down-left"
+                    class="w-6 h-6 text-slate-700 transition-colors group-hover:text-white"
+                  ></i>
+                </div>
+                <span
+                  class="absolute -top-2 -right-2 w-5 h-5 rounded-full bg-slate-900 text-white text-[11px] font-bold flex items-center justify-center"
+                  >3</span
+                >
+              </div>
+              <h3 class="text-lg font-bold text-slate-900 mb-3">
+                Tu cliente paga
+              </h3>
+              <p class="text-slate-600 text-sm font-medium max-w-xs mx-auto">
+                Tu cliente transfiere en su moneda y riel habitual (ACH, Wire, SEPA, Pix, SPEI o Bre-B) como si pagara a una empresa local.
+              </p>
+            </div>
+            <div class="group px-6 py-8 md:py-0 text-center">
+              <div class="relative inline-flex mb-6">
+                <div
+                  class="w-14 h-14 rounded-xl bg-white border border-slate-200 flex items-center justify-center transition-colors group-hover:bg-blue-600 group-hover:border-blue-600"
+                >
+                  <i
+                    data-lucide="folder-check"
+                    class="w-6 h-6 text-slate-700 transition-colors group-hover:text-white"
+                  ></i>
+                </div>
+                <span
+                  class="absolute -top-2 -right-2 w-5 h-5 rounded-full bg-slate-900 text-white text-[11px] font-bold flex items-center justify-center"
+                  >4</span
+                >
+              </div>
+              <h3 class="text-lg font-bold text-slate-900 mb-3">
+                Consolidamos el respaldo
+              </h3>
+              <p class="text-slate-600 text-sm font-medium max-w-xs mx-auto">
+                Estado, referencia y comprobante quedan asociados a la misma
+                operación.
+              </p>
+            </div>
+          </div>
+          <div class="section-cta">
+            <GuiraButton
+              href="https://wa.me/59167015106?text=%5BW-COB5%5D%20Hola%2C%20quiero%20cobrar%20a%20mis%20clientes%20del%20exterior%20con%20Guira."
+              target="_blank"
+              rel="noopener noreferrer"
+              label="Empezar mi primera operación"
+            />
+          </div>
+        </div>
+      </section>
+
+      <section class="control-section section-space">
+        <div class="page-wrap control-grid">
+          <div class="">
+            <!-- TODO: Reemplazar por el arte de cobros cuando esté listo -->
+            <img
+              src="/DOCUMENTACION2.png"
+              alt="Documentación de una operación internacional"
+              width="1768"
+              height="890"
+              loading="lazy"
+              decoding="async"
+            />
+          </div>
+          <div class="section-heading control-copy">
+            <span
+              class="block mb-[18px] text-[#0051ff] text-[0.72rem] font-extrabold"
+              >Control por operación</span
+            >
+            <h2
+              class="max-w-[700px] mx-auto text-[clamp(2rem,4vw,3.55rem)] leading-[1.08] tracking-tight font-extrabold text-balance"
+            >
+              La misma información para ventas, finanzas y contabilidad.
+            </h2>
+            <p
+              class="max-w-[620px] mx-auto mt-[22px] text-slate-500 text-[1.06rem] leading-[1.7] font-medium"
+            >
+              Cada cobro conserva su contexto. Tu equipo puede consultar qué se
+              cobró, de qué cliente, por qué concepto y con qué respaldo.
+            </p>
+            <ul>
+              <li>
+                <i data-lucide="check"></i> Estado visible de principio a fin
+              </li>
+              <li>
+                <i data-lucide="check"></i> Factura y comprobante relacionados
+              </li>
+              <li><i data-lucide="check"></i> Historial para conciliación</li>
+            </ul>
+            <p class="control-close">Y si te preguntan, lo puedes mostrar.</p>
+          </div>
+        </div>
+        <div class="page-wrap">
+          <div class="section-cta">
+            <GuiraButton
+              href="https://wa.me/59167015106?text=%5BW-COB7%5D%20Hola%2C%20quiero%20conocer%20el%20respaldo%20documental%20de%20los%20cobros%20con%20Guira."
+              target="_blank"
+              rel="noopener noreferrer"
+              label="Quiero ver el respaldo por operación"
+            />
+          </div>
+        </div>
+      </section>
+
+      <section class="trust-section">
+        <div class="page-wrap trust-grid">
+          <div>
+            <span class="section-label section-label-light"
+              >Estructura y acompañamiento</span
+            ><h2>Una plataforma global con asesoría comercial en Bolivia.</h2>
+          </div>
+          <div class="trust-copy">
+            <p>
+              Guira es una plataforma tecnológica creada y operada por Guira
+              System LLC, constituida en Delaware, Estados Unidos. En Bolivia,
+              Guiraglobal SRL es el equipo de asesoría comercial que acompaña a
+              las empresas en su uso.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <FaqSection
+        kicker="Preguntas frecuentes"
+        topBadge="COBROS INTERNACIONALES"
+        title="Antes de empezar"
+        description="Información clave sobre la plataforma, soporte contable y tiempos de inicio."
+        items={cobrarExteriorFaq}
+      />
+
+      <section id="contacto" class="contact-section section-space">
+        <div class="page-wrap contact-grid">
+          <div class="contact-copy">
+            <span class="section-label">Revisa tu operación</span>
+            <h2>Cuéntanos de qué clientes necesitas cobrar.</h2>
+            <p>
+              Compártenos el país de origen, la moneda y el volumen estimado. Un
+              especialista evaluará el caso y te explicará los siguientes pasos.
+            </p>
+            <div class="contact-note">
+              <i data-lucide="clock-3"></i><div>
+                <strong>Una conversación concreta</strong><span
+                  >Sin compromiso y enfocada en la operación de tu empresa.</span
+                >
+              </div>
+            </div>
+          </div>
+          <DemoForm
+            defaultUseCase="cobros"
+            submitLabel="Quiero que me contacten"
+          />
+        </div>
+      </section>
+    </main>
+
+    <footer
+      class="landing-footer bg-slate-900 text-white py-12 border-t border-slate-800"
+    >
+      <div class="page-wrap">
+        <div class="grid md:grid-cols-2 gap-8 mb-8">
+          <div>
+            <p class="text-slate-300 font-medium leading-relaxed mb-4">
+              Guira es una plataforma operada por Guira System LLC (Estados
+              Unidos). En Bolivia, Guiraglobal SRL brinda asesoría comercial y
+              acompañamiento operativo.
+            </p>
+            <p class="text-white/70 text-xs leading-relaxed">
+              Guira es una plataforma tecnológica B2B. No somos banco, entidad
+              financiera, casa de cambio, billetera de consumo ni custodio
+              directo de fondos. Los servicios financieros, rieles de pago,
+              cuentas de recepción, custodia, movimiento de fondos o
+              procesamiento transaccional, cuando correspondan, son provistos
+              exclusivamente por terceros o partners aplicables bajo sus propias
+              autorizaciones, términos, límites, jurisdicciones y criterios de
+              aprobación. La disponibilidad del servicio depende del perfil de
+              la empresa, documentación presentada, jurisdicción, caso de uso y
+              revisión correspondiente.
+            </p>
+          </div>
+          <div class="flex flex-col gap-4 md:items-end">
+            <a
+              href="https://wa.me/59167015106"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="text-guira-cyan hover:text-guira-neon font-bold"
+              >+591 67015106</a
+            >
+            <a
+              href="mailto:administracion@guiracorp.com"
+              class="text-slate-400 hover:text-white font-medium"
+              >administracion@guiracorp.com</a
+            >
+          </div>
+        </div>
+        <div
+          class="flex items-center justify-center gap-6 pt-6 border-t border-slate-800"
+        >
+          <a
+            href="/terminos/"
+            class="text-slate-400 hover:text-white text-sm font-medium"
+            >Términos</a
+          >
+          <a
+            href="/privacidad/"
+            class="text-slate-400 hover:text-white text-sm font-medium"
+            >Privacidad</a
+          >
+        </div>
+        <p class="text-slate-500 text-sm text-center mt-4">
+          © 2026 Guira System LLC. Representado en Bolivia por Guiraglobal SRL.
+          Todos los derechos reservados.
+        </p>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    document.addEventListener("click", (event) => {
+      const link = (event.target as HTMLElement | null)?.closest('a[href*="wa.me"]');
+      if (!link) return;
+      (window as any).dataLayer = (window as any).dataLayer || [];
+      (window as any).dataLayer.push({ event: "click-whatsapp" });
+    });
+  </script>
+
+  <script>
+    import { gsap } from "gsap";
+    import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+    gsap.registerPlugin(ScrollTrigger);
+
+    const reducedMotion = window.matchMedia(
+      "(prefers-reduced-motion: reduce)",
+    ).matches;
+
+    if (!reducedMotion) {
+      // Entrada del hero al cargar
+      const heroTimeline = gsap.timeline({
+        defaults: { ease: "power3.out" },
+      });
+      heroTimeline
+        .from(".audience-tag", { opacity: 0, y: 16, duration: 0.6 })
+        .from(".hero h1", { opacity: 0, y: 22, duration: 0.75 }, "-=0.4")
+        .from(".hero-lead", { opacity: 0, y: 20, duration: 0.7 }, "-=0.55")
+        .from(".hero-actions", { opacity: 0, y: 16, duration: 0.6 }, "-=0.5")
+        .from(".hero-support", { opacity: 0, y: 12, duration: 0.5 }, "-=0.4")
+        .from(".trust-line", { opacity: 0, y: 16, duration: 0.6 }, "-=0.4")
+        .from(
+          ".hero-device",
+          { opacity: 0, x: 40, scale: 0.96, duration: 0.9 },
+          "-=0.7",
+        )
+        .from(
+          ".network-route",
+          { opacity: 0, duration: 0.45, stagger: 0.07 },
+          "-=0.48",
+        )
+        .from(
+          ".network-center",
+          { autoAlpha: 0, scale: 0.78, duration: 0.55 },
+          "-=0.42",
+        )
+        .from(
+          ".network-node",
+          { autoAlpha: 0, scale: 0.72, duration: 0.45, stagger: 0.08 },
+          "-=0.36",
+        );
+
+      // Parallax sutil del halo del hero al hacer scroll
+      gsap.to(".hero-wash", {
+        y: 130,
+        ease: "none",
+        scrollTrigger: {
+          trigger: ".hero",
+          start: "top top",
+          end: "bottom top",
+          scrub: 1,
+        },
+      });
+
+      // Tarjetas de "Cómo funciona": entran y se reactivan al subir/bajar
+      const processCards = gsap.utils.toArray("#como-funciona .group");
+      if (processCards.length) {
+        gsap.set(processCards, { opacity: 0, y: 30, scale: 0.94 });
+        gsap.to(processCards, {
+          opacity: 1,
+          y: 0,
+          scale: 1,
+          duration: 0.7,
+          ease: "power3.out",
+          stagger: 0.12,
+          scrollTrigger: {
+            trigger: "#como-funciona .grid",
+            start: "top 78%",
+            toggleActions: "play none none reverse",
+          },
+          onComplete: () => gsap.set(processCards, { clearProps: "all" }),
+          onReverseComplete: () =>
+            gsap.set(processCards, { opacity: 0, y: 30, scale: 0.94 }),
+        });
+      }
+
+      // Preguntas de "Antes de empezar": suben desde abajo y se reactivan al subir/bajar
+      const faqItems = gsap.utils.toArray(".faq-list details");
+      if (faqItems.length) {
+        gsap.set(faqItems, { opacity: 0, y: 44 });
+        gsap.to(faqItems, {
+          opacity: 1,
+          y: 0,
+          duration: 0.65,
+          ease: "power3.out",
+          stagger: 0.14,
+          scrollTrigger: {
+            trigger: ".faq-list",
+            start: "top 82%",
+            toggleActions: "play none none reverse",
+          },
+          onComplete: () =>
+            gsap.set(faqItems, { clearProps: "opacity,transform" }),
+          onReverseComplete: () => gsap.set(faqItems, { opacity: 0, y: 44 }),
+        });
+      }
+    }
+  </script>
+</Layout>
+
+<style>
+  :global(body) {
+    background: #fff;
+  }
+  .landing-shell {
+    color: #0f172a;
+    overflow: clip;
+  }
+  .page-wrap {
+    width: min(1180px, calc(100% - 40px));
+    margin-inline: auto;
+  }
+  .landing-nav {
+    height: 76px;
+    display: flex;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.92);
+    border-bottom: 1px solid #e8edf5;
+    position: relative;
+    z-index: 20;
+  }
+  .nav-inner,
+  .nav-actions,
+  .hero-actions,
+  .trust-line {
+    display: flex;
+    align-items: center;
+  }
+  .nav-inner {
+    justify-content: space-between;
+  }
+  .nav-actions {
+    gap: 28px;
+  }
+  .nav-link,
+  .text-action {
+    color: #334155;
+    font-weight: 700;
+    font-size: 0.92rem;
+  }
+  .text-action:focus-visible,
+  .nav-link:focus-visible {
+    outline: 3px solid rgba(0, 81, 255, 0.25);
+    outline-offset: 3px;
+  }
+  .section-cta {
+    margin-top: 42px;
+    text-align: center;
+  }
+  .hero {
+    position: relative;
+    padding: 88px 0 82px;
+    background: #fff;
+  }
+  .hero-wash {
+    position: absolute;
+    width: 720px;
+    height: 720px;
+    border-radius: 50%;
+    right: -300px;
+    top: -320px;
+    background: radial-gradient(
+      circle,
+      rgba(0, 81, 255, 0.11),
+      rgba(0, 216, 255, 0.04) 44%,
+      transparent 68%
+    );
+  }
+  .hero-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 0.88fr) minmax(0, 1.12fr);
+    gap: clamp(38px, 5vw, 76px);
+    align-items: center;
+    position: relative;
+  }
+  .audience-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 24px;
+    padding: 8px 12px;
+    border-radius: 999px;
+    background: #eef4ff;
+    color: #1648ad;
+    font-weight: 800;
+    font-size: 0.78rem;
+  }
+  .audience-tag span {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #0051ff;
+  }
+  h1 {
+    max-width: 760px;
+    font-size: clamp(2.65rem, 3.35vw, 3rem);
+    line-height: 0.98;
+    letter-spacing: -0.04em;
+    font-weight: 850;
+    text-wrap: balance;
+  }
+  .hero-lead {
+    max-width: 630px;
+    margin-top: 28px;
+    color: #475569;
+    font-size: clamp(1.08rem, 2vw, 1.26rem);
+    line-height: 1.65;
+    font-weight: 500;
+  }
+  .hero-actions {
+    gap: 22px;
+    margin-top: 34px;
+  }
+  .hero-support {
+    margin-top: 12px;
+    color: #64748b;
+    font-size: 0.82rem;
+    font-weight: 650;
+  }
+  .text-action {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .trust-line {
+    flex-wrap: wrap;
+    gap: 14px 24px;
+    margin-top: 42px;
+    color: #64748b;
+    font-size: 0.78rem;
+    font-weight: 750;
+  }
+  .trust-line span {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+  }
+  .trust-line :global(svg) {
+    width: 16px;
+    height: 16px;
+    color: #0051ff;
+  }
+  .hero-device {
+    position: relative;
+    width: 100%;
+    max-width: 760px;
+    aspect-ratio: 38 / 25;
+    min-height: 0;
+    justify-self: end;
+    display: grid;
+    place-items: center;
+    isolation: isolate;
+  }
+  .device-halo {
+    position: absolute;
+    z-index: -1;
+    width: 108%;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background: radial-gradient(
+      circle,
+      rgba(0, 81, 255, 0.16),
+      rgba(0, 216, 255, 0.06) 45%,
+      transparent 70%
+    );
+  }
+  .network-routes {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    overflow: visible;
+  }
+  .network-route {
+    fill: none;
+    stroke-width: 3;
+    stroke-linecap: round;
+  }
+  .network-route-blue {
+    stroke: #0051ff;
+  }
+  .network-route-cyan {
+    stroke: #00cfe8;
+  }
+  .network-signal-blue {
+    fill: #0051ff;
+  }
+  .network-signal-cyan {
+    fill: #00cfe8;
+  }
+  .network-signal {
+    filter: drop-shadow(0 0 5px rgba(0, 216, 255, 0.8));
+  }
+  .network-center,
+  .network-node {
+    position: absolute;
+    display: grid;
+    place-items: center;
+    transform: translate(-50%, -50%);
+  }
+  .network-center {
+    z-index: 2;
+    left: 50%;
+    top: 55%;
+    width: clamp(104px, 15vw, 146px);
+    aspect-ratio: 1;
+    padding: clamp(18px, 2vw, 25px);
+    border-radius: 50%;
+    background: white;
+    box-shadow: 0 20px 42px -22px rgba(15, 23, 42, 0.42);
+  }
+  .network-center img {
+    width: 100%;
+    height: auto;
+  }
+  .network-node {
+    z-index: 1;
+    width: clamp(58px, 8vw, 82px);
+    aspect-ratio: 1;
+    border: 3px solid white;
+    border-radius: 50%;
+    color: white;
+    background: #0b1120;
+    box-shadow: 0 14px 30px -18px rgba(15, 23, 42, 0.5);
+    font-size: clamp(0.83rem, 1.45vw, 1.05rem);
+    font-weight: 800;
+    letter-spacing: -0.04em;
+  }
+  .network-node-usd {
+    left: 51.3%;
+    top: 10%;
+  }
+  .network-node-eur {
+    left: 14.5%;
+    top: 36%;
+  }
+  .network-node-cop {
+    left: 19%;
+    top: 80%;
+  }
+  .network-node-brl {
+    left: 84%;
+    top: 37%;
+  }
+  .network-node-mxn {
+    left: 78%;
+    top: 82%;
+  }
+  .corridors {
+    background: #07101f;
+    color: #f8fafc;
+  }
+  .corridor-inner {
+    display: grid;
+    grid-template-columns: minmax(180px, 0.85fr) minmax(0, 3.15fr);
+    align-items: stretch;
+    min-height: 214px;
+    gap: 3rem;
+    padding: 30px 0;
+    border-block: 1px solid rgba(226, 232, 240, 0.24);
+  }
+  .corridor-title {
+    align-self: center;
+    max-width: 12ch;
+    color: #f8fafc;
+    font-size: clamp(1.35rem, 2.1vw, 2rem);
+    font-weight: 800;
+    line-height: 1.04;
+    letter-spacing: -0.04em;
+  }
+  .country-list {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    align-items: center;
+  }
+  .country-list span {
+    display: grid;
+    align-content: center;
+    min-height: 84px;
+    padding: 0.75rem clamp(0.8rem, 1.6vw, 1.5rem);
+    border-left: 1px solid rgba(226, 232, 240, 0.16);
+    color: #f8fafc;
+  }
+  .country-list strong {
+    font-size: clamp(0.92rem, 1.25vw, 1.18rem);
+    font-weight: 800;
+    line-height: 1.12;
+    letter-spacing: -0.025em;
+  }
+  .country-list b {
+    margin-top: 0.55rem;
+    color: #b8edff;
+    font-size: 0.68rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  /* Banda de Titularidad */
+  .ownership-strip {
+    background: #0b1528;
+    padding: 36px 0;
+    border-bottom: 1px solid rgba(226, 232, 240, 0.12);
+  }
+  .ownership-card {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    max-width: 960px;
+    margin-inline: auto;
+    text-align: center;
+    align-items: center;
+  }
+  .ownership-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 14px;
+    border-radius: 999px;
+    background: rgba(0, 81, 255, 0.2);
+    border: 1px solid rgba(0, 207, 232, 0.35);
+    color: #7dd3fc;
+    font-size: 0.76rem;
+    font-weight: 800;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+  .ownership-badge :global(svg) {
+    width: 15px;
+    height: 15px;
+    color: #00cfe8;
+  }
+  .ownership-headline {
+    color: #ffffff;
+    font-size: clamp(1.15rem, 1.7vw, 1.38rem);
+    font-weight: 800;
+    line-height: 1.4;
+    letter-spacing: -0.02em;
+    max-width: 48ch;
+  }
+  .ownership-legal {
+    color: #94a3b8;
+    font-size: 14px;
+    line-height: 1.6;
+    font-weight: 500;
+    max-width: 78ch;
+  }
+
+  /* Banda Para quién es */
+  .audience-section {
+    background: #ffffff;
+  }
+  .section-space-sm {
+    padding: 88px 0 32px;
+  }
+  .audience-heading {
+    margin-bottom: 40px;
+  }
+  .audience-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+  }
+  .audience-card {
+    display: grid;
+    grid-template-columns: 56px 1fr;
+    gap: 24px;
+    padding: 36px 30px;
+    border-radius: 16px;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    transition:
+      border-color 0.24s ease,
+      box-shadow 0.24s ease,
+      transform 0.24s ease;
+  }
+  .audience-card:hover,
+  .audience-card:focus-visible {
+    border-color: #93c5fd;
+    box-shadow: 0 16px 36px -18px rgba(0, 81, 255, 0.18);
+    transform: translateY(-2px);
+  }
+  .audience-card-icon {
+    width: 52px;
+    height: 52px;
+    border-radius: 14px;
+    background: #eef4ff;
+    display: grid;
+    place-items: center;
+    color: #0051ff;
+  }
+  .audience-card-icon :global(svg) {
+    width: 24px;
+    height: 24px;
+  }
+  .audience-card h3 {
+    font-size: clamp(1.22rem, 1.8vw, 1.45rem);
+    line-height: 1.25;
+    font-weight: 800;
+    color: #0f172a;
+    margin-bottom: 10px;
+  }
+  .audience-card p {
+    color: #64748b;
+    font-size: 0.98rem;
+    line-height: 1.65;
+    font-weight: 500;
+  }
+
+  .section-space {
+    padding: 120px 0;
+  }
+  .problem-section {
+    background: white;
+  }
+  .problem-grid {
+    display: grid;
+    grid-template-columns: 0.95fr 1.05fr;
+    gap: 110px;
+  }
+  .sticky-heading {
+    align-self: start;
+    position: sticky;
+    top: 120px;
+  }
+  .friction-list {
+    align-self: center;
+  }
+  .friction-list article {
+    display: grid;
+    grid-template-columns: 56px 1fr;
+    gap: 24px;
+    padding: 30px 0;
+    border-top: 1px solid #e2e8f0;
+    cursor: default;
+  }
+  .friction-list article:last-child {
+    border-bottom: 1px solid #e2e8f0;
+  }
+  .friction-list article > span {
+    color: #0051ff;
+    font-size: 1.15rem;
+    line-height: 1.25;
+    font-weight: 850;
+    transition:
+      color 0.24s ease,
+      transform 0.32s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .friction-list h3 {
+    font-size: clamp(1.32rem, 2vw, 1.55rem);
+    line-height: 1.2;
+    font-weight: 800;
+    transition: color 0.24s ease;
+  }
+  .friction-list p {
+    max-height: 0;
+    margin-top: 0;
+    overflow: hidden;
+    opacity: 0;
+    color: #64748b;
+    line-height: 1.65;
+    transform: translateY(-8px);
+    transition:
+      max-height 0.38s cubic-bezier(0.16, 1, 0.3, 1),
+      margin-top 0.38s cubic-bezier(0.16, 1, 0.3, 1),
+      opacity 0.2s ease,
+      transform 0.38s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .friction-list article:hover > span,
+  .friction-list article:focus-visible > span {
+    color: #003ec7;
+    transform: translateX(4px);
+  }
+  .friction-list article:hover h3,
+  .friction-list article:focus-visible h3 {
+    color: #0051ff;
+  }
+  .friction-list article:hover p,
+  .friction-list article:focus-visible p {
+    max-height: 140px;
+    margin-top: 14px;
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .friction-list article:focus-visible {
+    outline: 3px solid rgba(0, 81, 255, 0.22);
+    outline-offset: 6px;
+    border-radius: 8px;
+  }
+  .process-section {
+    background: #f5f8fd;
+  }
+  .control-grid {
+    display: grid;
+    grid-template-columns: 1.08fr 0.92fr;
+    gap: 90px;
+    align-items: center;
+  }
+  .control-copy ul {
+    display: grid;
+    gap: 15px;
+    margin-top: 30px;
+    color: #334155;
+    font-weight: 700;
+  }
+  .control-copy li {
+    display: flex;
+    gap: 11px;
+    align-items: center;
+  }
+  .control-copy li :global(svg) {
+    width: 18px;
+    color: #0051ff;
+  }
+  .control-close {
+    margin-top: 30px;
+    color: #0f172a;
+    font-size: 1.2rem;
+    font-weight: 850;
+  }
+  .trust-section {
+    padding: 92px 0;
+    color: white;
+    background: #07101f;
+  }
+  .trust-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 100px;
+  }
+  .section-label-light {
+    color: #7dd3fc;
+  }
+  .trust-section h2 {
+    font-size: clamp(2rem, 4vw, 3.4rem);
+    line-height: 1.08;
+    letter-spacing: -0.035em;
+    font-weight: 850;
+    text-wrap: balance;
+  }
+  .trust-copy {
+    display: grid;
+    gap: 20px;
+    align-content: center;
+    color: #cbd5e1;
+    line-height: 1.7;
+  }
+  .trust-copy strong {
+    color: white;
+  }
+  .contact-section {
+    background: #f5f8fd;
+  }
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 0.72fr 1fr;
+    gap: 90px;
+    align-items: start;
+  }
+  .contact-copy {
+    position: sticky;
+    top: 120px;
+  }
+  .contact-copy h2 {
+    font-size: clamp(2.2rem, 4vw, 3.7rem);
+    line-height: 1.02;
+    letter-spacing: -0.035em;
+    font-weight: 850;
+  }
+  .contact-copy > p {
+    margin-top: 24px;
+    color: #64748b;
+    font-size: 1.06rem;
+    line-height: 1.7;
+  }
+  .contact-note {
+    display: flex;
+    gap: 14px;
+    margin-top: 32px;
+    padding-top: 25px;
+    border-top: 1px solid #d8e1ee;
+  }
+  .contact-note :global(svg) {
+    color: #0051ff;
+    width: 21px;
+  }
+  .contact-note div {
+    display: grid;
+    gap: 4px;
+  }
+  .contact-note strong {
+    font-size: 0.9rem;
+  }
+  .contact-note span {
+    color: #64748b;
+    font-size: 0.78rem;
+    line-height: 1.5;
+  }
+  .landing-footer {
+    color: #94a3b8;
+    background: #020617;
+    border-top: 1px solid #172033;
+    padding: 44px 0;
+  }
+  :global(#demo-form .grid),
+  :global(#demo-form .grid > div),
+  :global(#demo-form select) {
+    min-width: 0;
+  }
+  :global(#demo-form select) {
+    width: 100%;
+    font-size: 0.875rem;
+    padding-right: 2.75rem;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .network-signal {
+      display: none;
+    }
+  }
+  @media (max-width: 900px) {
+    .hero-grid,
+    .problem-grid,
+    .control-grid,
+    .trust-grid,
+    .contact-grid,
+    .audience-grid {
+      grid-template-columns: 1fr;
+    }
+    .hero-grid {
+      gap: 34px;
+    }
+    .hero-device {
+      width: min(100%, 680px);
+      justify-self: center;
+    }
+    .problem-grid,
+    .control-grid,
+    .trust-grid,
+    .contact-grid {
+      gap: 55px;
+    }
+    .sticky-heading,
+    .contact-copy {
+      position: static;
+    }
+    .corridor-inner {
+      grid-template-columns: 1fr;
+      min-height: 0;
+      gap: 28px;
+      padding: 32px 0;
+    }
+    .country-list {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+  }
+  @media (max-width: 640px) {
+    .page-wrap {
+      width: min(100% - 32px, 1180px);
+    }
+    .landing-nav {
+      height: 68px;
+    }
+    .nav-link {
+      display: none;
+    }
+    .hero {
+      padding: 62px 0 54px;
+    }
+    .hero-actions {
+      align-items: stretch;
+      flex-direction: column;
+    }
+    .country-list {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+    .country-list span {
+      min-height: 76px;
+      padding-inline: 1rem;
+    }
+    .text-action {
+      justify-content: center;
+    }
+    .section-space {
+      padding: 84px 0;
+    }
+    .section-space-sm {
+      padding: 60px 0 20px;
+    }
+    .trust-grid {
+      gap: 44px;
+    }
+    .ownership-strip {
+      padding: 28px 0;
+    }
+    .ownership-headline {
+      font-size: 1.1rem;
+    }
+    .ownership-legal {
+      font-size: 14px;
+    }
+    .audience-card {
+      grid-template-columns: 1fr;
+      gap: 16px;
+      padding: 24px 20px;
+    }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    * {
+      scroll-behavior: auto !important;
+      transition-duration: 0.01ms !important;
+      animation-duration: 0.01ms !important;
+    }
+  }
+</style>

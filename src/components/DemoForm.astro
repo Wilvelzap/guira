@@ -9,6 +9,13 @@ interface Props {
 
 const { defaultUseCase = "", submitLabel = "Solicitar demo" } = Astro.props;
 
+const useCaseLabels: Record<string, string> = {
+    cobros: "Cobros internacionales",
+    pagos: "Pago a proveedores",
+    ambos: "Cobros y pagos unificados",
+};
+const defaultUseCaseLabel = defaultUseCase ? (useCaseLabels[defaultUseCase] || "") : "";
+
 const letters = (text: string) =>
     text.split("").map((ch, i) => ({ ch: ch === " " ? " " : ch, i }));
 ---
@@ -179,13 +186,13 @@ const letters = (text: string) =>
                 </div>
             </div>
 
-            <div class="field-float accordion-field" id="usecase-accordion">
+            <div class:list={["field-float accordion-field", defaultUseCase && "has-value"]} id="usecase-accordion">
                 <button
                     type="button"
                     class="field-input field-select accordion-trigger"
                     aria-expanded="false"
                 >
-                    <span class="accordion-value"></span>
+                    <span class="accordion-value">{defaultUseCaseLabel}</span>
                     <i
                         data-lucide="chevron-down"
                         class="accordion-chevron w-4 h-4"></i>
@@ -206,6 +213,7 @@ const letters = (text: string) =>
                                 type="radio"
                                 name="usecase"
                                 value="cobros"
+                                checked={defaultUseCase === "cobros"}
                                 required
                             /><span>Cobros internacionales</span></label
                         >
@@ -214,6 +222,7 @@ const letters = (text: string) =>
                                 type="radio"
                                 name="usecase"
                                 value="pagos"
+                                checked={defaultUseCase === "pagos"}
                                 required
                             /><span>Pago a proveedores</span></label
                         >
@@ -222,6 +231,7 @@ const letters = (text: string) =>
                                 type="radio"
                                 name="usecase"
                                 value="ambos"
+                                checked={defaultUseCase === "ambos"}
                                 required
                             /><span>Cobros y pagos unificados</span></label
                         >
@@ -479,7 +489,8 @@ const letters = (text: string) =>
 
     .field-input:focus + .field-label .letter,
     .field-input:not(:placeholder-shown) + .field-label .letter,
-    select.field-input:valid + .field-label .letter {
+    select.field-input:valid + .field-label .letter,
+    .accordion-field.has-value .field-label .letter {
         transform: translateY(-1.15rem) scale(0.8);
         color: var(--guira-teal, #0051ff);
     }

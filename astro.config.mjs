@@ -14,7 +14,7 @@ export default defineConfig({
       configFile: './tailwind.config.mjs',
     }),
     sitemap({
-      filter: (page) => !page.includes('/pagar-proveedores-exterior/'),
+      filter: (page) => !page.includes('/pagar-proveedores-exterior/') && !page.includes('/cobrar-clientes-exterior/'),
     }),
   ],
   build: {
