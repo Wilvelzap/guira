@@ -149,7 +149,7 @@ const cobrosFaq = [
     >
     </div>
 
-    <div class="max-w-7xl mx-auto px-6 sm:px-8 relative z-10 w-full">
+    <div class="max-w-7xl mx-auto px-6 relative z-10 w-full">
       <div class="grid lg:grid-cols-12 gap-12 lg:gap-8 items-center">
         <div class="lg:col-span-6 text-left">
           <p class="section-kicker text-guira-cyan mb-3">
@@ -188,89 +188,27 @@ const cobrosFaq = [
           </p>
         </div>
 
-        <!-- GLOBO TERRÁQUEO WIREFRAME CON ÓRBITA DE BANDERAS DE GUIRA -->
-        <div class="lg:col-span-6 relative flex items-center justify-center py-4">
+        <!-- GLOBO TERRÁQUEO WIREFRAME: HEMISFERIO SUPERIOR EN 3D REAL CON ROTACIÓN ESFÉRICA -->
+        <div class="lg:col-span-6 relative flex items-center justify-center py-4 globe-3d-perspective-wrapper">
           <!-- Ambient Glow Backdrop -->
           <div
-            class="absolute inset-0 bg-[radial-gradient(circle_at_50%_55%,rgba(56,189,248,0.2),rgba(0,81,255,0.08)_50%,transparent_75%)] blur-3xl pointer-events-none"
+            class="absolute inset-0 bg-[radial-gradient(circle_at_50%_65%,rgba(56,189,248,0.24),rgba(0,81,255,0.08)_50%,transparent_75%)] blur-3xl pointer-events-none"
           >
           </div>
 
           <div
-            class="relative w-full max-w-[540px] sm:max-w-[580px] lg:max-w-[620px] aspect-square flex items-center justify-center select-none overflow-hidden"
+            class="relative w-full max-w-[620px] aspect-[16/9] flex items-center justify-center select-none overflow-visible globe-3d-stage"
             id="semicircle-hero-container"
           >
-            <!-- 1. SVG Globo Terráqueo con Meridianos y Paralelos Geométricos -->
-            <svg
-              class="absolute inset-0 w-full h-full pointer-events-none z-0"
-              viewBox="0 0 600 600"
-              preserveAspectRatio="xMidYMid meet"
-              id="globe-wireframe-svg"
-            >
-              <defs>
-                <!-- Degradado de la esfera oceánica -->
-                <radialGradient id="globe-sphere-grad" cx="50%" cy="50%" r="50%">
-                  <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.16"></stop>
-                  <stop offset="70%" stop-color="#0051ff" stop-opacity="0.08"></stop>
-                  <stop offset="100%" stop-color="#0284c7" stop-opacity="0"></stop>
-                </radialGradient>
+            <!-- 1. Canvas 3D de Alta Resolución para Malla Esférica en Rotación Real -->
+            <canvas
+              id="globe-3d-mesh-canvas"
+              width="1200"
+              height="680"
+              class="absolute inset-0 w-full h-full pointer-events-none z-0 select-none"
+            ></canvas>
 
-                <!-- Franja difuminada del arco superior para el recorrido de banderas -->
-                <linearGradient id="globe-arch-grad" x1="0%" y1="0%" x2="100%" y2="0%">
-                  <stop offset="0%" stop-color="#38bdf8" stop-opacity="0"></stop>
-                  <stop offset="15%" stop-color="#38bdf8" stop-opacity="0.28"></stop>
-                  <stop offset="50%" stop-color="#e0f2fe" stop-opacity="0.5"></stop>
-                  <stop offset="85%" stop-color="#38bdf8" stop-opacity="0.28"></stop>
-                  <stop offset="100%" stop-color="#38bdf8" stop-opacity="0"></stop>
-                </linearGradient>
-              </defs>
-
-              <!-- Esfera base del globo terráqueo -->
-              <circle cx="300" cy="310" r="230" fill="url(#globe-sphere-grad)"></circle>
-              <circle
-                cx="300"
-                cy="310"
-                r="230"
-                fill="none"
-                stroke="rgba(56, 189, 248, 0.5)"
-                stroke-width="2"
-              ></circle>
-
-              <!-- Franja de arco superior sobre el globo -->
-              <path
-                d="M 50,310 A 250 215 0 0 1 550,310"
-                fill="none"
-                stroke="url(#globe-arch-grad)"
-                stroke-width="52"
-                stroke-linecap="round"
-              ></path>
-
-              <!-- Meridianos de Longitud del Globo Terráqueo -->
-              <g stroke="rgba(186, 230, 253, 0.42)" stroke-width="1.4" fill="none">
-                <!-- Eje Polar Central -->
-                <line x1="300" y1="80" x2="300" y2="540" stroke="rgba(56, 189, 248, 0.55)"></line>
-                
-                <!-- Meridianos Interiores -->
-                <ellipse cx="300" cy="310" rx="75" ry="230"></ellipse>
-                <ellipse cx="300" cy="310" rx="150" ry="230"></ellipse>
-                <ellipse cx="300" cy="310" rx="205" ry="230" stroke="rgba(186, 230, 253, 0.3)"></ellipse>
-              </g>
-
-              <!-- Paralelos de Latitud del Globo Terráqueo (Inclinación 3D) -->
-              <g stroke="rgba(186, 230, 253, 0.42)" stroke-width="1.4" fill="none">
-                <!-- Ecuador -->
-                <ellipse cx="300" cy="310" rx="230" ry="65" stroke="rgba(56, 189, 248, 0.6)" stroke-width="1.6"></ellipse>
-                
-                <!-- Paralelos Norte -->
-                <ellipse cx="300" cy="195" rx="200" ry="52"></ellipse>
-                <ellipse cx="300" cy="115" rx="115" ry="30" stroke="rgba(186, 230, 253, 0.3)"></ellipse>
-
-                <!-- Paralelos Sur -->
-                <ellipse cx="300" cy="425" rx="200" ry="52"></ellipse>
-              </g>
-            </svg>
-
-            <!-- 2. Capa de Discos de Banderas en Órbita Continua -->
+            <!-- 2. Capa de Discos de Banderas en Órbita 3D Continua -->
             <div
               id="orbit-flags-track"
               class="absolute inset-0 z-10 pointer-events-none"
@@ -288,7 +226,7 @@ const cobrosFaq = [
     data-stack-section
     class="relative py-20 bg-guira-navy text-white overflow-hidden"
   >
-    <div class="max-w-6xl mx-auto px-6 relative z-10">
+    <div class="max-w-7xl mx-auto px-6 relative z-10">
       <div class="text-center mb-10">
         <p class="section-kicker text-guira-cyan mb-3">
           Todo en una sola plataforma
@@ -601,26 +539,40 @@ const cobrosFaq = [
   </section>
 
   <!-- ESTADÍSTICAS RÁPIDAS -->
-  <section data-stack-section class="py-12 bg-guira-teal">
-    <div class="max-w-6xl mx-auto px-6">
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center text-white">
-        <div>
-          <p class="text-3xl md:text-4xl font-extrabold mb-1">USD</p>
-          <p class="text-guira-cyan text-sm font-medium">
+  <section data-stack-section class="py-10 lg:py-12 bg-slate-900 border-b border-slate-800">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="grid grid-cols-2 md:grid-cols-4 divide-y md:divide-y-0 md:divide-x divide-slate-800 text-center">
+        <div class="py-4 md:py-2 px-4 sm:px-6 border-r border-slate-800 md:border-r-0">
+          <p class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight mb-1.5">
+            USD
+          </p>
+          <p class="text-guira-cyan text-xs sm:text-sm font-semibold">
             Cobros desde EE. UU.
           </p>
         </div>
-        <div>
-          <p class="text-3xl md:text-4xl font-extrabold mb-1">Wire</p>
-          <p class="text-guira-cyan text-sm font-medium">Pagos corporativos</p>
+        <div class="py-4 md:py-2 px-4 sm:px-6">
+          <p class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight mb-1.5">
+            Wire
+          </p>
+          <p class="text-guira-cyan text-xs sm:text-sm font-semibold">
+            Pagos corporativos
+          </p>
         </div>
-        <div>
-          <p class="text-3xl md:text-4xl font-extrabold mb-1">ACH</p>
-          <p class="text-guira-cyan text-sm font-medium">Según estructura</p>
+        <div class="py-4 md:py-2 px-4 sm:px-6 border-r border-slate-800 md:border-r-0">
+          <p class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight mb-1.5">
+            ACH
+          </p>
+          <p class="text-guira-cyan text-xs sm:text-sm font-semibold">
+            Según estructura
+          </p>
         </div>
-        <div>
-          <p class="text-3xl md:text-4xl font-extrabold mb-1">1 lugar</p>
-          <p class="text-guira-cyan text-sm font-medium">Documentos y estado</p>
+        <div class="py-4 md:py-2 px-4 sm:px-6">
+          <p class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight mb-1.5">
+            1 lugar
+          </p>
+          <p class="text-guira-cyan text-xs sm:text-sm font-semibold">
+            Documentos y estado
+          </p>
         </div>
       </div>
     </div>
@@ -628,7 +580,7 @@ const cobrosFaq = [
 
   <!-- PROBLEMA -->
   <section data-stack-section class="py-20 bg-white">
-    <div class="max-w-5xl mx-auto px-6">
+    <div class="max-w-7xl mx-auto px-6">
       <div class="text-center mb-12">
         <h2
           class="text-3xl sm:text-4xl md:text-5xl lg:text-[2.65rem] font-extrabold uppercase tracking-tight leading-[1.08] mb-6 text-slate-900"
@@ -771,7 +723,7 @@ const cobrosFaq = [
 
   <!-- INFORMACIÓN PARA EL PAGADOR -->
   <section data-stack-section class="py-20 bg-slate-50">
-    <div class="max-w-6xl mx-auto px-6">
+    <div class="max-w-7xl mx-auto px-6">
       <div class="grid lg:grid-cols-2 gap-10 items-center">
         <div>
           <h2
@@ -841,7 +793,7 @@ const cobrosFaq = [
   <StackedSections>
     <!-- PLATAFORMA EN ACCIÓN -->
     <section data-stack-section class="py-20 bg-white">
-      <div class="max-w-6xl mx-auto px-6">
+      <div class="max-w-7xl mx-auto px-6">
         <div class="text-center mb-14">
           <h2
             class="text-3xl sm:text-4xl md:text-5xl lg:text-[2.65rem] font-extrabold uppercase tracking-tight leading-[1.08] mb-6 text-slate-900"
@@ -1262,31 +1214,47 @@ const cobrosFaq = [
 
     <!-- CRITERIOS OPERATIVOS -->
     <section data-stack-section class="py-16 bg-slate-900 text-white">
-      <div class="max-w-5xl mx-auto px-6 text-center">
+      <div class="max-w-7xl mx-auto px-6 text-center">
         <h2
-          class="text-3xl sm:text-4xl md:text-5xl lg:text-[2.65rem] font-extrabold uppercase tracking-tight leading-[1.08] mb-8"
+          class="text-3xl sm:text-4xl md:text-5xl lg:text-[2.65rem] font-extrabold uppercase tracking-tight leading-[1.08] mb-10"
         >
           Qué conviene revisar antes de recibir un pago desde EE. UU.
         </h2>
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
-          <div class="bg-white/10 backdrop-blur p-4 rounded-xl">
-            <p class="font-bold">Método</p>
-            <p class="text-guira-cyan text-sm">Wire, ACH o plataforma</p>
+        <div class="grid grid-cols-2 md:grid-cols-4 divide-y md:divide-y-0 md:divide-x divide-slate-800 text-center mb-10">
+          <div class="py-4 md:py-2 px-4 sm:px-6 border-r border-slate-800 md:border-r-0">
+            <p class="text-xl sm:text-2xl font-extrabold text-white tracking-tight mb-1.5">
+              Método
+            </p>
+            <p class="text-guira-cyan text-xs sm:text-sm font-semibold">
+              Wire, ACH o plataforma
+            </p>
           </div>
-          <div class="bg-white/10 backdrop-blur p-4 rounded-xl">
-            <p class="font-bold">Referencia</p>
-            <p class="text-guira-cyan text-sm">Factura o contrato</p>
+          <div class="py-4 md:py-2 px-4 sm:px-6">
+            <p class="text-xl sm:text-2xl font-extrabold text-white tracking-tight mb-1.5">
+              Referencia
+            </p>
+            <p class="text-guira-cyan text-xs sm:text-sm font-semibold">
+              Factura o contrato
+            </p>
           </div>
-          <div class="bg-white/10 backdrop-blur p-4 rounded-xl">
-            <p class="font-bold">Documentos</p>
-            <p class="text-guira-cyan text-sm">Respaldo por operación</p>
+          <div class="py-4 md:py-2 px-4 sm:px-6 border-r border-slate-800 md:border-r-0">
+            <p class="text-xl sm:text-2xl font-extrabold text-white tracking-tight mb-1.5">
+              Documentos
+            </p>
+            <p class="text-guira-cyan text-xs sm:text-sm font-semibold">
+              Respaldo por operación
+            </p>
           </div>
-          <div class="bg-white/10 backdrop-blur p-4 rounded-xl">
-            <p class="font-bold">Seguimiento</p>
-            <p class="text-guira-cyan text-sm">Estado y conciliación</p>
+          <div class="py-4 md:py-2 px-4 sm:px-6">
+            <p class="text-xl sm:text-2xl font-extrabold text-white tracking-tight mb-1.5">
+              Seguimiento
+            </p>
+            <p class="text-guira-cyan text-xs sm:text-sm font-semibold">
+              Estado y conciliación
+            </p>
           </div>
         </div>
-        <p class="text-slate-400 text-sm">
+        <p class="text-slate-400 text-sm max-w-2xl mx-auto">
           Cada empresa opera distinto. Guira te ayuda a evaluar el proceso según
           el cliente, monto, frecuencia y documentación disponible.
         </p>
@@ -1369,7 +1337,7 @@ const cobrosFaq = [
     data-stack-section
     class="bg-slate-900 text-white py-12 border-t border-slate-800"
   >
-    <div class="max-w-6xl mx-auto px-6">
+    <div class="max-w-7xl mx-auto px-6">
       <div class="grid md:grid-cols-2 gap-8 mb-8">
         <div>
           <p class="text-slate-300 font-medium leading-relaxed">
@@ -1691,7 +1659,49 @@ const cobrosFaq = [
       }
     }
 
-    /* ESTILOS DE LOS DISCOS DE BANDERAS (ÓRBITA SEMICIRCULAR HERO) */
+    /* PERSPECTIVA Y EFECTO 3D INCLINADO DEL GLOBO TERRÁQUEO */
+    .globe-3d-perspective-wrapper {
+      perspective: 1200px;
+      perspective-origin: 50% 60%;
+    }
+
+    .globe-3d-stage {
+      transform-style: preserve-3d;
+      transform: rotateX(20deg) rotateY(-8deg) rotateZ(1deg);
+      transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+      animation: globe-float-3d 7s ease-in-out infinite alternate;
+      will-change: transform;
+    }
+
+    @keyframes globe-float-3d {
+      0% {
+        transform: rotateX(20deg) rotateY(-8deg) rotateZ(1deg) translateY(0px);
+      }
+      50% {
+        transform: rotateX(15deg) rotateY(-4deg) rotateZ(-0.5deg) translateY(-10px);
+      }
+      100% {
+        transform: rotateX(22deg) rotateY(-11deg) rotateZ(1.8deg) translateY(-4px);
+      }
+    }
+
+    .globe-3d-stage:hover {
+      animation-play-state: paused;
+    }
+
+    #globe-3d-mesh-canvas {
+      transform: translateZ(0px);
+      transform-style: preserve-3d;
+      -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 1) 78%, rgba(0, 0, 0, 0) 100%);
+      mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 1) 78%, rgba(0, 0, 0, 0) 100%);
+    }
+
+    #orbit-flags-track {
+      transform: translateZ(40px);
+      transform-style: preserve-3d;
+    }
+
+    /* ESTILOS DE LOS DISCOS DE BANDERAS (ÓRBITA SEMICIRCULAR HERO EN ESPACIO 3D) */
     .flag-disc-wrapper {
       position: absolute;
       left: 0;
@@ -1703,6 +1713,7 @@ const cobrosFaq = [
       border-radius: 9999px;
       cursor: pointer;
       will-change: transform, opacity;
+      transform-style: preserve-3d;
       transition: filter 0.3s ease;
     }
 
@@ -1716,23 +1727,35 @@ const cobrosFaq = [
       justify-content: center;
       background: #ffffff;
       box-shadow: 
-        0 10px 25px -4px rgba(0, 0, 0, 0.3),
+        0 14px 30px -4px rgba(0, 0, 0, 0.4),
         0 0 0 2px rgba(255, 255, 255, 0.95),
-        0 0 16px rgba(56, 189, 248, 0.35);
+        0 0 20px rgba(56, 189, 248, 0.45);
+      transform: translateZ(12px);
       transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease;
     }
 
     .flag-disc-wrapper:hover .flag-disc-inner {
-      transform: scale(1.15);
+      transform: scale(1.18) translateZ(28px);
       box-shadow: 
-        0 14px 30px -4px rgba(0, 0, 0, 0.4),
+        0 18px 40px -4px rgba(0, 0, 0, 0.5),
         0 0 0 2.5px #ffffff,
-        0 0 24px rgba(0, 216, 255, 0.6);
+        0 0 30px rgba(0, 216, 255, 0.75);
+    }
+
+    @media (max-width: 768px) {
+      .globe-3d-perspective-wrapper {
+        perspective: none;
+      }
+      .globe-3d-stage {
+        transform: none !important;
+        animation: none !important;
+      }
     }
 
     @media (prefers-reduced-motion: reduce) {
       .animate-bounce-slow,
-      .modal-3d-card {
+      .modal-3d-card,
+      .globe-3d-stage {
         animation: none;
         transition: none !important;
       }
@@ -2163,10 +2186,12 @@ const cobrosFaq = [
 
     function initSemicircleHero() {
       var container = document.getElementById("semicircle-hero-container");
-      if (!container) return;
-
+      var canvas = document.getElementById("globe-3d-mesh-canvas");
       var flagsTrack = document.getElementById("orbit-flags-track");
-      if (!flagsTrack) return;
+      if (!container || !canvas || !flagsTrack) return;
+
+      var ctx = canvas.getContext("2d");
+      if (!ctx) return;
 
       // Lista exacta de países de "Alcance regional de Guira" en index.astro
       var COUNTRIES = [
@@ -2204,47 +2229,160 @@ const cobrosFaq = [
       });
 
       var N = COUNTRIES.length;
-      var angleOffset = 0;
-      var speed = 0.0022;
-      var cx = 300;
-      var cy = 310;
-      var Rx = 250;
-      var Ry = 215;
+      var flagAngleOffset = 0;
+      var flagSpeed = 0.0022;
+
+      var globeRotY = 0;
+      var globeSpeed = 0.0016;
+
+      // Parámetros de proyección 3D del Canvas
+      var W = canvas.width;  // 1200
+      var H = canvas.height; // 680
+      var cx = W / 2;        // 600
+      var cy = H - 60;       // 620 (Línea de horizonte en la base)
+      var R = 490;           // Radio en espacio canvas 1200x680
+      var pitch = 22 * (Math.PI / 180); // Inclinación hacia la cámara (eje X)
+      var cosP = Math.cos(pitch);
+      var sinP = Math.sin(pitch);
+
+      // Proyección 3D trigonométrica esférica (lat, lon) -> (x, y, z)
+      function project3D(latRad, lonRad) {
+        var cosLat = Math.cos(latRad);
+        var sinLat = Math.sin(latRad);
+        var cosLon = Math.cos(lonRad);
+        var sinLon = Math.sin(lonRad);
+
+        // Coordenadas en esfera unitaria
+        var x0 = cosLat * sinLon;
+        var y0 = sinLat;
+        var z0 = cosLat * cosLon;
+
+        // Rotación de inclinación sobre el eje X
+        var y1 = y0 * cosP - z0 * sinP;
+        var z1 = y0 * sinP + z0 * cosP;
+        var x1 = x0;
+
+        return {
+          x: cx + x1 * R,
+          y: cy - y1 * R,
+          z: z1
+        };
+      }
+
+      function draw3DGlobe() {
+        ctx.clearRect(0, 0, W, H);
+
+        // 1. Sombreado esférico volumétrico natural
+        var sphereGrad = ctx.createRadialGradient(cx, cy - R * 0.45, R * 0.08, cx, cy, R);
+        sphereGrad.addColorStop(0, "rgba(56, 189, 248, 0.22)");
+        sphereGrad.addColorStop(0.55, "rgba(0, 81, 255, 0.09)");
+        sphereGrad.addColorStop(1, "rgba(2, 132, 199, 0.01)");
+        
+        ctx.save();
+        ctx.beginPath();
+        ctx.arc(cx, cy, R, Math.PI, 0, false);
+        ctx.fillStyle = sphereGrad;
+        ctx.fill();
+        ctx.restore();
+
+        // 2. Paralelos de Latitud 3D (Ecuador 0°, 18°, 36°, 54°, 72°)
+        var parallels = [0, 18, 36, 54, 72];
+        parallels.forEach(function (latDeg) {
+          var latRad = latDeg * (Math.PI / 180);
+          ctx.beginPath();
+          var steps = 60;
+          for (var s = 0; s <= steps; s++) {
+            var lonRad = (s / steps) * Math.PI * 2;
+            var pt = project3D(latRad, lonRad);
+            if (s === 0) ctx.moveTo(pt.x, pt.y);
+            else ctx.lineTo(pt.x, pt.y);
+          }
+          if (latDeg === 0) {
+            ctx.lineWidth = 3.2;
+            ctx.strokeStyle = "rgba(56, 189, 248, 0.7)";
+          } else {
+            ctx.lineWidth = 1.8;
+            ctx.strokeStyle = "rgba(186, 230, 253, 0.4)";
+          }
+          ctx.stroke();
+        });
+
+        // 3. Meridianos de Longitud 3D en Rotación Continua (12 meridianos)
+        var meridiansCount = 12;
+        for (var m = 0; m < meridiansCount; m++) {
+          var lonRad = globeRotY + (m / meridiansCount) * Math.PI * 2;
+          ctx.beginPath();
+          var latSteps = 40;
+          var avgZ = 0;
+          for (var ls = 0; ls <= latSteps; ls++) {
+            // Curvan desde el polo norte hasta ligeramente por debajo del ecuador (-12°)
+            var latRad = (1 - ls / latSteps) * (Math.PI / 2 + 0.2) - 0.2;
+            var pt = project3D(latRad, lonRad);
+            if (ls === 0) ctx.moveTo(pt.x, pt.y);
+            else ctx.lineTo(pt.x, pt.y);
+            avgZ += pt.z;
+          }
+          avgZ /= (latSteps + 1);
+
+          // Iluminación dependiente de la profundidad Z
+          var zNorm = Math.max(0, Math.min(1, (avgZ + 1) / 2));
+          var alpha = 0.12 + 0.55 * Math.pow(zNorm, 1.3);
+          var lineW = 1.2 + 1.6 * zNorm;
+
+          ctx.lineWidth = lineW;
+          ctx.strokeStyle = "rgba(186, 230, 253, " + alpha.toFixed(2) + ")";
+          ctx.stroke();
+        }
+
+        // 4. Borde suave del Arco Superior (sin línea recta horizontal inferior)
+        ctx.beginPath();
+        ctx.arc(cx, cy, R, Math.PI, 0, false);
+        ctx.lineWidth = 3.4;
+        ctx.strokeStyle = "rgba(56, 189, 248, 0.65)";
+        ctx.stroke();
+      }
 
       function tick() {
-        angleOffset += speed;
+        globeRotY += globeSpeed;
+        flagAngleOffset += flagSpeed;
 
-        // Posicionar cada bandera a lo largo del arco semicircular del globo
+        draw3DGlobe();
+
+        // Posicionar las banderas en órbita 3D sobre la cúpula
+        var flagRx = 250;
+        var flagRy = 215;
+        var flagCx = 300;
+        var flagCy = 310;
+
         COUNTRIES.forEach(function (c, i) {
-          var rawTheta = angleOffset + (i / N) * Math.PI * 2;
+          var rawTheta = flagAngleOffset + (i / N) * Math.PI * 2;
           var theta = rawTheta % (Math.PI * 2);
           if (theta < 0) theta += Math.PI * 2;
 
           var el = flagElements[i];
-
-          // Semicírculo visible superior: theta entre 0.02 y PI - 0.02
           var isVisible = theta >= 0.02 && theta <= Math.PI - 0.02;
 
           if (isVisible) {
             var sinT = Math.sin(theta);
             var cosT = Math.cos(theta);
 
-            var x = cx - Rx * cosT;
-            var y = cy - Ry * sinT;
+            var x = flagCx - flagRx * cosT;
+            var y = flagCy - flagRy * sinT;
 
             var elevation = sinT;
             var size = 36 + 32 * elevation;
             var opacity = Math.pow(elevation, 0.4);
 
             var pctX = (x / 600) * 100;
-            var pctY = (y / 600) * 100;
+            var pctY = (y / 340) * 100;
+            var zDepth = 18 + 36 * elevation;
 
             el.style.display = "flex";
             el.style.left = pctX + "%";
             el.style.top = pctY + "%";
             el.style.width = size.toFixed(1) + "px";
             el.style.height = size.toFixed(1) + "px";
-            el.style.transform = "translate(-50%, -50%)";
+            el.style.transform = "translate(-50%, -50%) translateZ(" + zDepth.toFixed(1) + "px)";
             el.style.opacity = opacity.toFixed(3);
             el.style.zIndex = String(Math.round(elevation * 100));
           } else {

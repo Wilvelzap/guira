@@ -4,6 +4,7 @@ import StackedSections from "../components/StackedSections.astro";
 import RadioCard from "../components/RadioCard.astro";
 import KineticButton from "../components/KineticButton.astro";
 import FaqSection from "../components/FaqSection.astro";
+import PhoneFlowMockup from "../components/PhoneFlowMockup.astro";
 
 const productoFaq = [
     {
@@ -21,6 +22,189 @@ const productoFaq = [
     {
         question: "¿Cuánto demoran los pagos hacia terceros en Estados Unidos (ACH/Wire)?",
         answer: "Al contar con un soporte documental previo, las instrucciones de pago a través de la red ACH o las ejecuciones en formato Wire se cursan de acuerdo a los tiempos bancarios habituales de Estados Unidos (usualmente el mismo día o al día siguiente hábil), minimizando así interrupciones injustificadas."
+    }
+];
+
+const expedientesList = [
+    {
+        id: "#191d7832",
+        client: "Hector Emmanuel Semp...",
+        status: "Completado",
+        type: "Guira al exterior",
+        rail: "Billetera digital (Guira)",
+        originAmount: "5.00",
+        originCurrency: "USDC",
+        destAmount: "4.98",
+        destCurrency: "USD",
+        date: "18/08/2026"
+    },
+    {
+        id: "#85c24193",
+        client: "Tech Global SRL",
+        status: "Completado",
+        type: "Cripto a Guira",
+        rail: "Billetera digital (Guira)",
+        originAmount: "5.00",
+        originCurrency: "USDC",
+        destAmount: "5.00",
+        destCurrency: "USDC",
+        date: "18/08/2026"
+    },
+    {
+        id: "#f745f94f",
+        client: "Comercial Andina",
+        status: "Completado",
+        type: "Bolivia a Guira",
+        rail: "Billetera digital (Guira)",
+        originAmount: "100.00",
+        originCurrency: "BOB",
+        destAmount: "8.47",
+        destCurrency: "USDC",
+        date: "18/08/2026"
+    },
+    {
+        id: "#7864299b",
+        client: "Hector Emmanuel Semp...",
+        status: "Completado",
+        type: "Bolivia a cripto",
+        rail: "Transferencia bancaria",
+        originAmount: "118.06",
+        originCurrency: "BOB",
+        destAmount: "10.00",
+        destCurrency: "USDT",
+        date: "18/08/2026"
+    },
+    {
+        id: "#a639797f",
+        client: "Importadora del Pacífico",
+        status: "Completado",
+        type: "Exterior a Bolivia",
+        rail: "Transferencia bancaria",
+        originAmount: "100.00",
+        originCurrency: "USD",
+        destAmount: "1,103.86",
+        destCurrency: "BOB",
+        date: "18/08/2026"
+    },
+    {
+        id: "#043d913d",
+        client: "Soluciones Cloud Latam",
+        status: "Completado",
+        type: "Bolivia a Guira",
+        rail: "Billetera digital (Guira)",
+        originAmount: "100.00",
+        originCurrency: "BOB",
+        destAmount: "8.50",
+        destCurrency: "USDC",
+        date: "18/08/2026"
+    },
+    {
+        id: "#757c0d28",
+        client: "Hector Emmanuel Semp...",
+        status: "Completado",
+        type: "Bolivia al exterior",
+        rail: "Transferencia bancaria",
+        originAmount: "1,212.38",
+        originCurrency: "BOB",
+        destAmount: "100.00",
+        destCurrency: "USD",
+        date: "18/08/2026"
+    },
+    {
+        id: "#9cba1807",
+        client: "Hector Emmanuel Semp...",
+        status: "Completado",
+        type: "Bolivia al exterior",
+        rail: "Transferencia bancaria",
+        originAmount: "1,333.61",
+        originCurrency: "BOB",
+        destAmount: "100.00",
+        destCurrency: "USD",
+        date: "18/08/2026"
+    },
+    {
+        id: "#2e46a64c",
+        client: "Miquel Angel Tambo Mo...",
+        status: "Completado",
+        type: "Bolivia al exterior",
+        rail: "Transferencia bancaria",
+        originAmount: "117.62",
+        originCurrency: "BOB",
+        destAmount: "10.00",
+        destCurrency: "USD",
+        date: "18/08/2026"
+    },
+    {
+        id: "#8305dedf",
+        client: "Miquel Angel Tambo Mo...",
+        status: "Completado",
+        type: "Wallet externa al exterior",
+        rail: "Billetera digital (Guira)",
+        originAmount: "10.00",
+        originCurrency: "USDC",
+        destAmount: "9.82",
+        destCurrency: "USD",
+        date: "10/08/2026"
+    },
+    {
+        id: "#f234967c",
+        client: "Marco Manuel Marca Ca...",
+        status: "Completado",
+        type: "Wallet externa al exterior",
+        rail: "Billetera digital (Guira)",
+        originAmount: "10.00",
+        originCurrency: "USDC",
+        destAmount: "9.82",
+        destCurrency: "USD",
+        date: "10/08/2026"
+    },
+    {
+        id: "#d44907b4",
+        client: "Hector Emmanuel Semp...",
+        status: "Completado",
+        type: "Wallet externa al exterior",
+        rail: "Billetera digital (Guira)",
+        originAmount: "10.00",
+        originCurrency: "USDC",
+        destAmount: "9.97",
+        destCurrency: "USD",
+        date: "10/08/2026"
+    },
+    {
+        id: "#9e74df4d",
+        client: "Miquel Angel Tambo Mo...",
+        status: "Completado",
+        type: "Wallet externa al exterior",
+        rail: "Billetera digital (Guira)",
+        originAmount: "10.00",
+        originCurrency: "USDC",
+        destAmount: "9.70",
+        destCurrency: "USD",
+        date: "10/08/2026"
+    },
+    {
+        id: "#4db27a1a",
+        client: "Miquel Angel Tambo Mo...",
+        status: "Completado",
+        type: "Guira al exterior",
+        rail: "Billetera digital (Guira)",
+        originAmount: "5.00",
+        originCurrency: "USDC",
+        destAmount: "4.98",
+        destCurrency: "USD",
+        date: "03/08/2026"
+    },
+    {
+        id: "#874cba15",
+        client: "Agroindustrial del Oriente",
+        status: "Completado",
+        type: "Cripto a Guira",
+        rail: "Billetera digital (Guira)",
+        originAmount: "5.00",
+        originCurrency: "USDC",
+        destAmount: "5.00",
+        destCurrency: "USDC",
+        date: "03/08/2026"
     }
 ];
 ---
@@ -136,8 +320,7 @@ const productoFaq = [
                     <h1
                         class="text-4xl md:text-6xl font-extrabold text-slate-900 mb-6 leading-[1.1] tracking-tight"
                     >
-                        Plataforma para gestionar operaciones <span class="text-guira-teal">internacionales</span>
-                        empresariales
+                        Plataforma para gestionar operaciones <span class="text-guira-teal">internacionales</span> empresariales
                     </h1>
                     <p
                         class="text-base md:text-lg text-slate-600 font-medium max-w-xl mb-8 leading-relaxed"
@@ -204,126 +387,11 @@ const productoFaq = [
                     </div>
                 </div>
 
-                <!-- Mockup Premium Brillante (Claro/Oscuro Intersilado) -->
+                <!-- Mockup de Smartphone con Flujo Animado -->
                 <div
-                    class="relative lg:ml-auto w-full max-w-lg mt-10 lg:mt-0 reveal-up delay-200"
+                    class="relative lg:ml-auto w-full max-w-lg mt-10 lg:mt-0 flex justify-center lg:justify-end reveal-up delay-200"
                 >
-                    <div
-                        class="bg-white border border-slate-200 rounded-2xl p-6 shadow-2xl relative z-20 hover:border-slate-300 transition-colors duration-500"
-                    >
-                        <div
-                            class="flex items-center justify-between mb-6 border-b border-slate-100 pb-4"
-                        >
-                            <div class="flex items-center gap-3">
-                                <div
-                                    class="w-8 h-8 rounded bg-slate-100 flex items-center justify-center"
-                                >
-                                    <i
-                                        data-lucide="briefcase"
-                                        class="w-4 h-4 text-slate-700"></i>
-                                </div>
-                                <h3 class="font-bold text-slate-900 text-sm">
-                                    Vista de producto corporativa
-                                </h3>
-                            </div>
-                            <span class="flex h-2 w-2 relative">
-                                <span
-                                    class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-500 opacity-75"
-                                ></span>
-                                <span
-                                    class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"
-                                ></span>
-                            </span>
-                        </div>
-
-                        <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-6">
-                            <div
-                                class="bg-slate-50 rounded-lg p-3 border border-slate-100"
-                            >
-                                <p
-                                    class="text-[10px] text-slate-400 font-bold mb-1 uppercase tracking-wider"
-                                >
-                                    Canal
-                                </p>
-                                <p class="text-xs text-slate-900 font-bold">
-                                    ACH / Wire
-                                </p>
-                            </div>
-                            <div
-                                class="bg-slate-50 rounded-lg p-3 border border-slate-100"
-                            >
-                                <p
-                                    class="text-[10px] text-slate-400 font-bold mb-1 uppercase tracking-wider"
-                                >
-                                    Operación
-                                </p>
-                                <p class="text-xs text-slate-900 font-bold">
-                                    Pago a Proveedor
-                                </p>
-                            </div>
-                            <div
-                                class="bg-slate-50 rounded-lg p-3 border border-slate-100"
-                            >
-                                <p
-                                    class="text-[10px] text-slate-400 font-bold mb-1 uppercase tracking-wider"
-                                >
-                                    Estado
-                                </p>
-                                <p class="text-xs text-slate-900 font-bold">
-                                    Instrucción Validada
-                                </p>
-                            </div>
-                        </div>
-
-                        <div
-                            class="bg-slate-900 rounded-xl p-5 border border-slate-800 relative overflow-hidden shadow-inner"
-                        >
-                            <h4 class="text-sm font-bold text-white mb-3">
-                                Detalle de la instrucción
-                            </h4>
-                            <div
-                                class="inline-flex items-center gap-1.5 px-2 py-1 rounded bg-emerald-500/20 text-[10px] text-emerald-500 font-bold mb-5 border border-emerald-500/30"
-                            >
-                                <i data-lucide="shield-check" class="w-3 h-3"
-                                ></i> Trazabilidad confirmada
-                            </div>
-
-                            <div class="space-y-4">
-                                <div
-                                    class="flex justify-between items-center text-xs"
-                                >
-                                    <span class="text-slate-400 font-medium"
-                                        >Routing Number</span
-                                    >
-                                    <span
-                                        class="text-white font-mono bg-white/10 px-2 py-1.5 rounded shadow-sm border border-white/5"
-                                        >0210000**</span
-                                    >
-                                </div>
-                                <div
-                                    class="flex justify-between items-center text-xs"
-                                >
-                                    <span class="text-slate-400 font-medium"
-                                        >Account Number</span
-                                    >
-                                    <span
-                                        class="text-white font-mono bg-white/10 px-2 py-1.5 rounded shadow-sm border border-white/5"
-                                        >4682000001**</span
-                                    >
-                                </div>
-                                <div
-                                    class="flex justify-between items-center text-xs"
-                                >
-                                    <span class="text-slate-400 font-medium"
-                                        >Soporte Operativo</span
-                                    >
-                                    <span class="text-white font-medium"
-                                        >Invoice #4582 / Adjunto</span
-                                    >
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    <PhoneFlowMockup />
                 </div>
             </div>
         </header>
@@ -711,19 +779,19 @@ const productoFaq = [
                 >
                 </div>
             </div>
-            <div
-                class="relative z-10 max-w-4xl mx-auto px-6 text-center reveal-up"
-            >
-                <p class="section-kicker text-guira-cyan mb-3">
-                    Plataforma Guira
-                </p>
-                <h3 class="text-2xl md:text-3xl font-extrabold uppercase tracking-tight leading-[1.08] text-white mb-4">
-                    Una sola vista para toda tu operación internacional
-                </h3>
-                <p class="body-copy text-slate-400 max-w-xl mx-auto">
-                    Saldos, instrucciones, estados y comprobantes. Todo
-                    centralizado y trazable desde el panel de tu empresa.
-                </p>
+            <div class="max-w-7xl mx-auto px-6 relative z-10">
+                <div class="max-w-4xl mx-auto text-center reveal-up">
+                    <p class="section-kicker text-guira-cyan mb-3">
+                        Plataforma Guira
+                    </p>
+                    <h3 class="text-2xl md:text-3xl font-extrabold uppercase tracking-tight leading-[1.08] text-white mb-4">
+                        Una sola vista para toda tu operación internacional
+                    </h3>
+                    <p class="body-copy text-slate-400 max-w-xl mx-auto">
+                        Saldos, instrucciones, estados y comprobantes. Todo
+                        centralizado y trazable desde el panel de tu empresa.
+                    </p>
+                </div>
             </div>
         </div>
 
@@ -732,7 +800,7 @@ const productoFaq = [
             data-stack-section
             class="py-24 bg-slate-50 relative z-10 border-y border-slate-200"
         >
-            <div class="max-w-6xl mx-auto px-6 md:max-w-none md:px-12 lg:px-20">
+            <div class="max-w-7xl mx-auto px-6 relative z-10">
                 <div class="text-center mb-20 reveal-up">
                     <h2 class="h2-panel text-slate-900 mb-4">
                         Proceso en 3 pasos
@@ -822,118 +890,287 @@ const productoFaq = [
             </div>
         </section>
 
-        <!-- 5. Confianza y Compliance -->
+        <!-- 5. Confianza y Compliance (2 Columnas con Tablet 3D) -->
         <section
             data-stack-section
-            class="py-20 bg-guira-navy border-t border-white/10 relative z-10"
+            class="py-20 md:py-28 bg-guira-navy border-t border-white/10 relative z-10 overflow-hidden"
         >
-            <div class="max-w-7xl mx-auto px-6 reveal-up">
-                <div
-                    class="p-8 md:p-12 overflow-hidden relative shadow-2xl group hover:border-white/20 transition-colors"
-                >
-                    <div
-                        class="absolute top-0 right-0 w-64 h-64 bg-emerald-500/10 blur-[80px] rounded-full pointer-events-none group-hover:bg-emerald-500/20 transition-colors duration-700"
-                    >
+            <!-- Halos ambientales de fondo -->
+            <div class="absolute top-1/4 right-0 w-96 h-96 bg-emerald-500/10 blur-[110px] rounded-full pointer-events-none"></div>
+            <div class="absolute bottom-10 left-1/3 w-80 h-80 bg-guira-cyan/10 blur-[100px] rounded-full pointer-events-none"></div>
+
+            <div class="max-w-7xl mx-auto px-6 relative z-10">
+                <div class="grid lg:grid-cols-12 gap-12 lg:gap-14 items-center">
+                    <!-- Columna Izquierda: Texto y Certidumbre -->
+                    <div class="lg:col-span-5 reveal-up">
+                        <div
+                            class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs font-semibold text-slate-300 mb-6"
+                        >
+                            <i
+                                data-lucide="shield-check"
+                                class="w-4 h-4 text-guira-cyan"></i> Certidumbre
+                            Operativa
+                        </div>
+                        <h2 class="h2-panel text-white mb-6">
+                            Operaciones documentadas sin bloqueos absurdos
+                        </h2>
+                        <p class="body-copy text-slate-400 mb-8 text-base md:text-lg leading-relaxed">
+                            Habilitamos trazabilidad documental en cada
+                            movimiento. Centralizar tu cobranza B2B en Guira
+                            significa que tus instrucciones de pago y
+                            recepción avanzan con total transparencia.
+                        </p>
+
+                        <ul class="space-y-4">
+                            <li class="flex items-start gap-3.5 group/item">
+                                <div
+                                    class="w-8 h-8 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center shrink-0 group-hover/item:bg-emerald-500/10 group-hover/item:border-emerald-500/30 transition-colors mt-0.5"
+                                >
+                                    <i
+                                        data-lucide="file-signature"
+                                        class="w-4 h-4 text-white"></i>
+                                </div>
+                                <span class="text-slate-300 text-sm md:text-base leading-relaxed"
+                                    >Una vez documentada correctamente tu
+                                    operación B2B, facilitamos la fluidez en
+                                    el registro de tus instrucciones.</span
+                                >
+                            </li>
+                            <li class="flex items-start gap-3.5 group/item">
+                                <div
+                                    class="w-8 h-8 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center shrink-0 group-hover/item:bg-emerald-500/10 group-hover/item:border-emerald-500/30 transition-colors mt-0.5"
+                                >
+                                    <i
+                                        data-lucide="lock"
+                                        class="w-4 h-4 text-white"></i>
+                                </div>
+                                <span class="text-slate-300 text-sm md:text-base leading-relaxed"
+                                    >Cero sorpresas: los canales operan
+                                    sobre las reglas y rieles pactados desde
+                                    el onboarding institucional.</span
+                                >
+                            </li>
+                            <li class="flex items-start gap-3.5 group/item">
+                                <div
+                                    class="w-8 h-8 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center shrink-0 group-hover/item:bg-emerald-500/10 group-hover/item:border-emerald-500/30 transition-colors mt-0.5"
+                                >
+                                    <i
+                                        data-lucide="headset"
+                                        class="w-4 h-4 text-white"></i>
+                                </div>
+                                <span class="text-slate-300 text-sm md:text-base leading-relaxed"
+                                    >Validación humana en tu zona horaria
+                                    para garantizar que toda instrucción
+                                    proceda.</span
+                                >
+                            </li>
+                        </ul>
                     </div>
 
-                    <div
-                        class="grid md:grid-cols-2 gap-12 items-center relative z-10"
-                    >
-                        <div>
-                            <div
-                                class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs font-semibold text-slate-300 mb-6"
-                            >
-                                <i
-                                    data-lucide="shield-check"
-                                    class="w-4 h-4 text-guira-cyan"></i> Certidumbre
-                                Operativa
+                    <!-- Columna Derecha: Tablet 3D inclinada hacia la derecha con profundidad y scroll -->
+                    <div class="lg:col-span-7 w-full tablet-perspective-wrapper reveal-up delay-100 flex items-center justify-center lg:justify-end">
+                        <div class="tablet-3d-chassis w-full max-w-2xl relative rounded-[28px] sm:rounded-[36px] p-2.5 sm:p-3.5 bg-gradient-to-b from-slate-700 via-slate-800 to-slate-950 border border-slate-600/60 shadow-2xl ring-1 ring-white/15 select-none">
+                            <!-- Sensor / Cámara de la tablet -->
+                            <div class="hidden sm:flex items-center justify-center gap-1.5 pb-2 pt-0.5">
+                                <div class="w-2 h-2 rounded-full bg-slate-900 border border-slate-700"></div>
+                                <div class="w-1 h-1 rounded-full bg-slate-700/60"></div>
                             </div>
-                            <h2 class="h2-panel text-white mb-6">
-                                Operaciones documentadas sin bloqueos absurdos
-                            </h2>
-                            <p class="body-copy text-slate-400 mb-6">
-                                Habilitamos trazabilidad documental en cada
-                                movimiento. Centralizar tu cobranza B2B en Guira
-                                significa que tus instrucciones de pago y
-                                recepción avanzan con total transparencia.
-                            </p>
 
-                            <ul class="space-y-4">
-                                <li class="flex items-center gap-3 group/item">
-                                    <div
-                                        class="w-8 h-8 flex items-center justify-center group-hover/item:bg-emerald-500/10 transition-colors"
-                                    >
-                                        <i
-                                            data-lucide="file-signature"
-                                            class="w-4 h-4 text-white"></i>
-                                    </div>
-                                    <span class="text-slate-300 text-sm"
-                                        >Una vez documentada correctamente tu
-                                        operación B2B, facilitamos la fluidez en
-                                        el registro de tus instrucciones.</span
-                                    >
-                                </li>
-                                <li class="flex items-center gap-3 group/item">
-                                    <div
-                                        class="w-8 h-8 flex items-center justify-center group-hover/item:bg-emerald-500/10 transition-colors"
-                                    >
-                                        <i
-                                            data-lucide="lock"
-                                            class="w-4 h-4 text-white"></i>
-                                    </div>
-                                    <span class="text-slate-300 text-sm"
-                                        >Cero sorpresas: los canales operan
-                                        sobre las reglas y rieles pactados desde
-                                        el onboarding institucional.</span
-                                    >
-                                </li>
-                                <li class="flex items-center gap-3 group/item">
-                                    <div
-                                        class="w-8 h-8 flex items-center justify-center group-hover/item:bg-emerald-500/10 transition-colors"
-                                    >
-                                        <i
-                                            data-lucide="headset"
-                                            class="w-4 h-4 text-white"></i>
-                                    </div>
-                                    <span class="text-slate-300 text-sm"
-                                        >Validación humana en tu zona horaria
-                                        para garantizar que toda instrucción
-                                        proceda.</span
-                                    >
-                                </li>
-                            </ul>
-                        </div>
+                            <!-- Pantalla de la tablet -->
+                            <div class="rounded-[20px] sm:rounded-[26px] bg-white overflow-hidden shadow-inner border border-slate-200/50 flex flex-col md:flex-row text-left font-sans">
+                                <!-- Sidebar izquierda de la app -->
+                                <div class="w-full md:w-14 bg-[#080d1a] border-b md:border-b-0 md:border-r border-slate-800/80 py-3 md:py-4 px-3 md:px-0 flex flex-row md:flex-col items-center justify-between shrink-0 select-none">
+                                    <div class="flex flex-row md:flex-col items-center gap-3 md:gap-3.5">
+                                        <!-- Mini logo -->
+                                        <div class="w-8 h-8 rounded-lg bg-slate-800/90 border border-slate-700/70 flex items-center justify-center text-slate-300">
+                                            <img src="/guira-logo.svg" alt="Guira" class="w-4 h-4 object-contain opacity-80" />
+                                        </div>
 
-                        <div
-                            class="flex flex-col gap-4 items-center sm:items-end"
-                        >
-                            <div
-                                class="bg-white/5 backdrop-blur-md rounded-2xl p-6 border border-white/10 max-w-xs shadow-lg w-full transform hover:scale-105 transition-transform"
-                            >
-                                <p
-                                    class="text-xs text-slate-400 mb-4 whitespace-normal italic"
-                                >
-                                    «Nuestra tecnología prioriza el orden
-                                    documental y la fluidez en cada movimiento
-                                    operativo».
-                                </p>
-                                <div class="flex items-center gap-3">
-                                    <div
-                                        class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center border border-white/10"
-                                    >
-                                        <img
-                                            src="/guira-logo.svg"
-                                            class="w-5 h-5 object-contain"
-                                            alt="Guira Logo Pequeño"
-                                        />
+                                        <!-- Navegación -->
+                                        <div class="flex flex-row md:flex-col items-center gap-2.5 md:gap-3 md:pt-2">
+                                            <div class="w-8 h-8 rounded-lg flex items-center justify-center text-slate-400 hover:text-white transition-colors cursor-pointer" title="Dashboard">
+                                                <i data-lucide="layout-grid" class="w-4 h-4"></i>
+                                            </div>
+                                            <div class="w-8 h-8 rounded-lg flex items-center justify-center text-slate-400 hover:text-white transition-colors cursor-pointer" title="Ingresos">
+                                                <i data-lucide="arrow-down-left" class="w-4 h-4"></i>
+                                            </div>
+                                            <div class="w-8 h-8 rounded-lg flex items-center justify-center text-slate-400 hover:text-white transition-colors cursor-pointer" title="Egresos">
+                                                <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
+                                            </div>
+                                            <div class="w-8 h-8 rounded-lg flex items-center justify-center text-slate-400 hover:text-white transition-colors cursor-pointer" title="Contactos">
+                                                <i data-lucide="users" class="w-4 h-4"></i>
+                                            </div>
+                                            <!-- Expedientes Activo -->
+                                            <div class="w-8 h-8 rounded-full bg-[#0051ff] text-white flex items-center justify-center shadow-[0_0_14px_rgba(0,81,255,0.65)] cursor-pointer" title="Expedientes">
+                                                <i data-lucide="zap" class="w-4 h-4 fill-white"></i>
+                                            </div>
+                                            <div class="w-8 h-8 rounded-lg flex items-center justify-center text-slate-400 hover:text-white transition-colors cursor-pointer" title="Configuración">
+                                                <i data-lucide="settings" class="w-4 h-4"></i>
+                                            </div>
+                                            <div class="w-8 h-8 rounded-lg flex items-center justify-center text-slate-400 hover:text-white transition-colors cursor-pointer" title="Acompañamiento">
+                                                <i data-lucide="headset" class="w-4 h-4"></i>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <div>
-                                        <p class="text-sm font-bold text-white">
-                                            Equipo de Estructuración
-                                        </p>
-                                        <p class="text-[10px] text-slate-500">
-                                            Guira Empresas
-                                        </p>
+
+                                    <!-- Bottom icons -->
+                                    <div class="flex flex-row md:flex-col items-center gap-2.5 md:gap-3">
+                                        <div class="w-7 h-7 flex items-center justify-center text-slate-400 relative cursor-pointer" title="Notificaciones">
+                                            <i data-lucide="bell" class="w-3.5 h-3.5"></i>
+                                            <span class="absolute top-1 right-1 w-1.5 h-1.5 rounded-full bg-blue-500 ring-2 ring-[#080d1a]"></span>
+                                        </div>
+                                        <div class="w-7 h-7 flex items-center justify-center text-slate-400 cursor-pointer" title="Tema">
+                                            <i data-lucide="moon" class="w-3.5 h-3.5"></i>
+                                        </div>
+                                        <div class="w-6 h-6 rounded-full bg-gradient-to-tr from-slate-700 to-slate-600 border border-slate-500/50 flex items-center justify-center text-[9px] font-bold text-white shadow-inner cursor-pointer" title="Perfil">
+                                            GU
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Panel Principal Blanco -->
+                                <div class="flex-1 bg-white flex flex-col min-w-0">
+                                    <!-- Cabecera -->
+                                    <div class="px-4 sm:px-5 pt-4 pb-2.5 flex items-center justify-between border-b border-slate-100 bg-white">
+                                        <h3 class="text-lg sm:text-xl font-extrabold text-slate-900 tracking-tight">
+                                            Expedientes
+                                        </h3>
+                                        <div class="flex items-center gap-4 text-right select-none">
+                                            <div>
+                                                <p class="text-[8px] sm:text-[9px] font-bold uppercase tracking-wider text-slate-400">VISIBLES</p>
+                                                <p class="text-base sm:text-lg font-extrabold text-slate-900 leading-none mt-0.5">50</p>
+                                            </div>
+                                            <div>
+                                                <p class="text-[8px] sm:text-[9px] font-bold uppercase tracking-wider text-slate-400">EN CURSO</p>
+                                                <p class="text-base sm:text-lg font-extrabold text-slate-900 leading-none mt-0.5">00</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Barra de Búsqueda y Filtros -->
+                                    <div class="px-4 py-2 border-b border-slate-100 bg-slate-50/50 flex flex-wrap items-center gap-2 select-none">
+                                        <div class="relative flex-1 min-w-[110px] sm:min-w-[140px]">
+                                            <i data-lucide="search" class="w-3 h-3 text-slate-400 absolute left-2.5 top-1/2 -translate-y-1/2"></i>
+                                            <input
+                                                type="text"
+                                                placeholder="Buscar por exp..."
+                                                readonly
+                                                class="w-full pl-7 pr-2 py-1 bg-white border border-slate-200 rounded-md text-[10px] text-slate-600 placeholder-slate-400 cursor-default focus:outline-none"
+                                            />
+                                        </div>
+                                        <div class="hidden sm:inline-flex items-center gap-1 px-2 py-0.5 rounded-md border border-slate-200 bg-white text-[10px] font-semibold text-slate-700 shadow-2xs cursor-default">
+                                            <span>Todos los estados</span>
+                                            <i data-lucide="chevron-down" class="w-2.5 h-2.5 text-slate-400"></i>
+                                        </div>
+                                        <div class="hidden md:inline-flex items-center gap-1 px-2 py-0.5 rounded-md border border-slate-200 bg-white text-[10px] font-semibold text-slate-700 shadow-2xs cursor-default">
+                                            <span>2026</span>
+                                            <i data-lucide="chevron-down" class="w-2.5 h-2.5 text-slate-400"></i>
+                                        </div>
+                                        <div class="hidden lg:inline-flex items-center gap-1 px-2 py-0.5 rounded-md border border-slate-200 bg-white text-[10px] font-semibold text-slate-700 shadow-2xs cursor-default">
+                                            <span>Todo el año</span>
+                                            <i data-lucide="chevron-down" class="w-2.5 h-2.5 text-slate-400"></i>
+                                        </div>
+                                        <div class="inline-flex items-center gap-1 px-2 py-0.5 rounded-md border border-slate-200 bg-slate-100 hover:bg-slate-200 text-[10px] font-bold text-slate-800 shadow-2xs cursor-default transition-colors ml-auto sm:ml-0">
+                                            <i data-lucide="download" class="w-2.5 h-2.5 text-slate-600"></i>
+                                            <span>Exportar</span>
+                                            <i data-lucide="chevron-down" class="w-2.5 h-2.5 text-slate-400"></i>
+                                        </div>
+                                    </div>
+
+                                    <!-- Tabla con Scroll Infinito -->
+                                    <div class="overflow-x-auto min-w-full">
+                                        <div class="min-w-[620px]">
+                                            <!-- Cabecera de Columnas -->
+                                            <div class="grid grid-cols-[1.3fr_1.1fr_1.7fr_1.1fr_1.1fr_1fr_0.6fr] items-center px-4 py-2 bg-slate-50 border-b border-slate-200/80 text-[9px] font-bold uppercase tracking-wider text-slate-400 select-none">
+                                                <div>EXPEDIENTE</div>
+                                                <div>ESTADO</div>
+                                                <div>TIPO / RIEL</div>
+                                                <div>ORIGEN</div>
+                                                <div>DESTINO</div>
+                                                <div>FECHA</div>
+                                                <div class="text-right">ACCIONES</div>
+                                            </div>
+
+                                            <!-- Contenedor del Scroll -->
+                                            <div class="relative h-[310px] overflow-hidden group/ticker">
+                                                <!-- Gradientes superior e inferior -->
+                                                <div class="pointer-events-none absolute top-0 inset-x-0 h-4 bg-gradient-to-b from-white to-transparent z-10"></div>
+                                                <div class="pointer-events-none absolute bottom-0 inset-x-0 h-6 bg-gradient-to-t from-white to-transparent z-10"></div>
+
+                                                <!-- Track con animación de scroll vertical continuo -->
+                                                <div class="expedientes-ticker-track">
+                                                    <!-- Repetición 1 -->
+                                                    {expedientesList.map((item) => (
+                                                        <div class="grid grid-cols-[1.3fr_1.1fr_1.7fr_1.1fr_1.1fr_1fr_0.6fr] items-center px-4 py-2 border-b border-slate-100 hover:bg-slate-50/90 transition-colors text-left text-xs">
+                                                            <div class="min-w-0 pr-2">
+                                                                <p class="font-mono font-bold text-slate-900 text-[11px] tracking-tight">{item.id}</p>
+                                                                <p class="text-[9px] text-slate-400 truncate leading-tight mt-0.5">{item.client}</p>
+                                                            </div>
+                                                            <div>
+                                                                <span class="inline-flex items-center px-2 py-0.5 rounded-full text-[9px] font-bold bg-emerald-500 text-white shadow-2xs">
+                                                                    {item.status}
+                                                                </span>
+                                                            </div>
+                                                            <div class="min-w-0 pr-2">
+                                                                <p class="font-bold text-slate-800 text-[10px] leading-tight truncate">{item.type}</p>
+                                                                <p class="text-[9px] text-slate-400 truncate leading-tight mt-0.5">{item.rail}</p>
+                                                            </div>
+                                                            <div>
+                                                                <p class="font-bold text-slate-900 text-[10px] leading-tight">{item.originAmount}</p>
+                                                                <p class="text-[8px] font-bold text-slate-400 uppercase leading-tight mt-0.5">{item.originCurrency}</p>
+                                                            </div>
+                                                            <div>
+                                                                <p class="font-bold text-slate-900 text-[10px] leading-tight">{item.destAmount}</p>
+                                                                <p class="text-[8px] font-bold text-slate-400 uppercase leading-tight mt-0.5">{item.destCurrency}</p>
+                                                            </div>
+                                                            <div>
+                                                                <p class="text-[10px] font-medium text-slate-500">{item.date}</p>
+                                                            </div>
+                                                            <div class="flex justify-end">
+                                                                <button aria-label="Descargar comprobante" class="w-5 h-5 rounded-full bg-[#0051ff] hover:bg-blue-600 text-white flex items-center justify-center shadow-xs transition-transform active:scale-95 cursor-pointer">
+                                                                    <i data-lucide="download" class="w-2.5 h-2.5"></i>
+                                                                </button>
+                                                            </div>
+                                                        </div>
+                                                    ))}
+
+                                                    <!-- Repetición 2 (para loop infinito fluido) -->
+                                                    {expedientesList.map((item) => (
+                                                        <div class="grid grid-cols-[1.3fr_1.1fr_1.7fr_1.1fr_1.1fr_1fr_0.6fr] items-center px-4 py-2 border-b border-slate-100 hover:bg-slate-50/90 transition-colors text-left text-xs">
+                                                            <div class="min-w-0 pr-2">
+                                                                <p class="font-mono font-bold text-slate-900 text-[11px] tracking-tight">{item.id}</p>
+                                                                <p class="text-[9px] text-slate-400 truncate leading-tight mt-0.5">{item.client}</p>
+                                                            </div>
+                                                            <div>
+                                                                <span class="inline-flex items-center px-2 py-0.5 rounded-full text-[9px] font-bold bg-emerald-500 text-white shadow-2xs">
+                                                                    {item.status}
+                                                                </span>
+                                                            </div>
+                                                            <div class="min-w-0 pr-2">
+                                                                <p class="font-bold text-slate-800 text-[10px] leading-tight truncate">{item.type}</p>
+                                                                <p class="text-[9px] text-slate-400 truncate leading-tight mt-0.5">{item.rail}</p>
+                                                            </div>
+                                                            <div>
+                                                                <p class="font-bold text-slate-900 text-[10px] leading-tight">{item.originAmount}</p>
+                                                                <p class="text-[8px] font-bold text-slate-400 uppercase leading-tight mt-0.5">{item.originCurrency}</p>
+                                                            </div>
+                                                            <div>
+                                                                <p class="font-bold text-slate-900 text-[10px] leading-tight">{item.destAmount}</p>
+                                                                <p class="text-[8px] font-bold text-slate-400 uppercase leading-tight mt-0.5">{item.destCurrency}</p>
+                                                            </div>
+                                                            <div>
+                                                                <p class="text-[10px] font-medium text-slate-500">{item.date}</p>
+                                                            </div>
+                                                            <div class="flex justify-end">
+                                                                <button aria-label="Descargar comprobante" class="w-5 h-5 rounded-full bg-[#0051ff] hover:bg-blue-600 text-white flex items-center justify-center shadow-xs transition-transform active:scale-95 cursor-pointer">
+                                                                    <i data-lucide="download" class="w-2.5 h-2.5"></i>
+                                                                </button>
+                                                            </div>
+                                                        </div>
+                                                    ))}
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -948,7 +1185,7 @@ const productoFaq = [
             data-stack-section
             class="py-20 bg-slate-50 relative z-10 border-b border-slate-200"
         >
-            <div class="max-w-7xl mx-auto px-6">
+            <div class="max-w-7xl mx-auto px-6 relative z-10">
                 <div class="text-center mb-16 reveal-up">
                     <h2 class="h2-panel text-slate-900 mb-4">
                         Diseñado para empresas con visión internacional
@@ -1001,41 +1238,43 @@ const productoFaq = [
             data-stack-section
             class="py-24 bg-guira-navy text-center relative overflow-hidden z-10"
         >
-            <div class="max-w-4xl mx-auto px-6 relative z-10 reveal-up">
-                <h2
-                    class="text-3xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-white mb-6"
-                >
-                    Evalúa si Guira encaja con la operación internacional de tu
-                    empresa
-                </h2>
-                <p class="text-slate-400 text-lg mb-10 font-medium leading-relaxed">
-                    Solicita una demo para revisar requisitos, estructura
-                    operativa y elegibilidad del servicio según tu caso de uso.
-                </p>
-                <div
-                    class="flex flex-col sm:flex-row flex-wrap justify-center gap-4"
-                >
-                    <KineticButton
-                        href="https://app.guiracorp.com"
-                        variant="teal"
-                        size="lg"
-                        label="Crear tu cuenta Guira"
-                        class="w-full sm:w-auto"
-                    />
-                    <KineticButton
-                        href="/demo/"
-                        variant="dark"
-                        size="lg"
-                        label="Solicitar demo"
-                        class="w-full sm:w-auto"
-                    />
-                    <KineticButton
-                        href="/contacto/"
-                        variant="light"
-                        size="lg"
-                        label="Hablar con ventas"
-                        class="w-full sm:w-auto"
-                    />
+            <div class="max-w-7xl mx-auto px-6 relative z-10">
+                <div class="max-w-4xl mx-auto text-center reveal-up">
+                    <h2
+                        class="text-3xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-white mb-6"
+                    >
+                        Evalúa si Guira encaja con la operación internacional de tu
+                        empresa
+                    </h2>
+                    <p class="text-slate-400 text-lg mb-10 font-medium leading-relaxed">
+                        Solicita una demo para revisar requisitos, estructura
+                        operativa y elegibilidad del servicio según tu caso de uso.
+                    </p>
+                    <div
+                        class="flex flex-col sm:flex-row flex-wrap justify-center gap-4"
+                    >
+                        <KineticButton
+                            href="https://app.guiracorp.com"
+                            variant="teal"
+                            size="lg"
+                            label="Crear tu cuenta Guira"
+                            class="w-full sm:w-auto"
+                        />
+                        <KineticButton
+                            href="/demo/"
+                            variant="dark"
+                            size="lg"
+                            label="Solicitar demo"
+                            class="w-full sm:w-auto"
+                        />
+                        <KineticButton
+                            href="/contacto/"
+                            variant="light"
+                            size="lg"
+                            label="Hablar con ventas"
+                            class="w-full sm:w-auto"
+                        />
+                    </div>
                 </div>
             </div>
         </section>
@@ -1101,5 +1340,58 @@ const productoFaq = [
             transparent
         );
         box-shadow: 0 0 10px rgba(0, 81, 255, 0.5);
+    }
+
+    /* Animación de scroll vertical continuo para la lista de expedientes */
+    @keyframes scrollExpedientesVertical {
+        0% {
+            transform: translateY(0);
+        }
+        100% {
+            transform: translateY(-50%);
+        }
+    }
+
+    .expedientes-ticker-track {
+        display: flex;
+        flex-direction: column;
+        animation: scrollExpedientesVertical 36s linear infinite;
+        will-change: transform;
+    }
+
+    .group\/ticker:hover .expedientes-ticker-track {
+        animation-play-state: paused;
+    }
+
+    /* 3D Tablet Mockup Perspective and Depth */
+    .tablet-perspective-wrapper {
+        perspective: 1600px;
+        perspective-origin: 30% 50%;
+    }
+
+    .tablet-3d-chassis {
+        transform-style: preserve-3d;
+        transform: perspective(1600px) rotateY(-18deg) rotateX(6deg) rotate(2deg);
+        transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.6s ease;
+        box-shadow: 
+            -30px 40px 70px -15px rgba(0, 0, 0, 0.85),
+            0 0 50px -5px rgba(0, 81, 255, 0.3);
+    }
+
+    .tablet-perspective-wrapper:hover .tablet-3d-chassis {
+        transform: perspective(1600px) rotateY(-10deg) rotateX(3deg) rotate(1deg) translateY(-6px);
+        box-shadow: 
+            -20px 50px 85px -10px rgba(0, 0, 0, 0.9),
+            0 0 70px 5px rgba(0, 81, 255, 0.4);
+    }
+
+    @media (max-width: 1024px) {
+        .tablet-perspective-wrapper {
+            perspective: none !important;
+        }
+        .tablet-3d-chassis {
+            transform: none !important;
+            box-shadow: 0 20px 45px -10px rgba(0, 0, 0, 0.6) !important;
+        }
     }
 </style>

@@ -1,0 +1,335 @@
+---
+interface Props {
+  class?: string;
+}
+
+const { class: className = '' } = Astro.props;
+---
+
+<div class:list={['phone-scene relative mx-auto flex items-center justify-center py-6 sm:py-10', className]}>
+  
+  <!-- 3D Cast Shadow underneath tilted phone -->
+  <div 
+    class="phone-ground-shadow absolute -bottom-8 w-[270px] sm:w-[310px] h-[40px] bg-slate-950/45 blur-2xl rounded-[100%] pointer-events-none -z-10"
+    aria-hidden="true"
+  ></div>
+
+  <!-- Ambient blue/teal glow behind device for depth separation -->
+  <div 
+    class="absolute -inset-10 bg-gradient-to-tr from-blue-600/25 via-sky-400/20 to-guira-teal/20 blur-3xl rounded-[60px] pointer-events-none -z-20 opacity-90"
+    aria-hidden="true"
+  ></div>
+
+  <!-- 3D Tilted Smartphone Chassis (Girado a la derecha con profundidad) -->
+  <div class="phone-3d-chassis relative w-[295px] sm:w-[320px] h-[610px] sm:h-[640px] select-none group">
+    
+    <!-- 3D Extruded Outer Titanium Frame -->
+    <div class="phone-outer-frame absolute inset-0 rounded-[50px] bg-gradient-to-b from-slate-700 via-slate-800 to-slate-950 p-[10px] border border-slate-600/70">
+      
+      <!-- Physical 3D Side Buttons -->
+      <!-- Left: Action Button (Prominente en primer plano) -->
+      <div class="phone-btn absolute -left-[4px] top-[100px] w-[4px] h-[24px] bg-gradient-to-r from-slate-400 via-slate-500 to-slate-700 rounded-l-sm shadow-md"></div>
+      <!-- Left: Volume Up Button (Prominente) -->
+      <div class="phone-btn absolute -left-[4px] top-[138px] w-[4px] h-[42px] bg-gradient-to-r from-slate-400 via-slate-500 to-slate-700 rounded-l-sm shadow-md"></div>
+      <!-- Left: Volume Down Button (Prominente) -->
+      <div class="phone-btn absolute -left-[4px] top-[190px] w-[4px] h-[42px] bg-gradient-to-r from-slate-400 via-slate-500 to-slate-700 rounded-l-sm shadow-md"></div>
+      <!-- Right: Power Button (Recedido) -->
+      <div class="phone-btn absolute -right-[3px] top-[148px] w-[3px] h-[64px] bg-gradient-to-l from-slate-700 to-slate-800 rounded-r-sm opacity-80"></div>
+
+      <!-- Inner Screen Bezel with Glass Glare & Recessed OLED Depth -->
+      <div class="phone-screen relative w-full h-full bg-[#f8fafc] rounded-[40px] overflow-hidden border border-slate-300/80 flex flex-col shadow-[inset_0_2px_6px_rgba(0,0,0,0.12),inset_0_0_0_1px_rgba(0,0,0,0.06)]">
+        
+        <!-- Specular Reflection Sheen (diagonal light streak across glass) -->
+        <div class="phone-glass-glare absolute inset-0 bg-gradient-to-tr from-transparent via-white/15 to-transparent pointer-events-none z-40"></div>
+
+        <!-- Fixed Top Status Bar with solid white background preventing text collision -->
+        <header class="relative w-full bg-white/95 backdrop-blur-md z-30 pt-2.5 pb-2 px-6 border-b border-slate-100 shadow-[0_2px_8px_rgba(0,0,0,0.03)]">
+          <div class="flex items-center justify-between text-[11px] font-semibold text-slate-900">
+            <span class="tracking-tight font-bold">9:41</span>
+            
+            <!-- Dynamic Island Pill -->
+            <div class="w-20 h-4 bg-black rounded-full flex items-center justify-end pr-2 gap-1 shadow-inner">
+              <div class="w-2 h-2 rounded-full bg-[#111827] ring-1 ring-white/10"></div>
+              <div class="w-1.5 h-1.5 rounded-full bg-[#1e293b]"></div>
+            </div>
+
+            <!-- Icons: Cellular, Wifi, Battery -->
+            <div class="flex items-center gap-1.5 text-slate-800">
+              <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M2 17h3v4H2v-4zm6-5h3v9H8v-9zm6-5h3v14h-3V7zm6-5h3v19h-3V2z"/>
+              </svg>
+              <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 4C7.31 4 3.07 5.9 0 8.98L12 21 24 8.98A16.88 16.88 0 0012 4zm0 4c3.48 0 6.64 1.35 9 3.55L12 19.4 3 11.55C5.36 9.35 8.52 8 12 8z"/>
+              </svg>
+              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M17 5H3a2 2 0 00-2 2v10a2 2 0 002 2h14a2 2 0 002-2v-1h2a1 1 0 001-1V9a1 1 0 00-1-1h-2V7a2 2 0 00-2-2zm0 12H3V7h14v10z"/>
+              </svg>
+            </div>
+          </div>
+        </header>
+
+        <!-- Scrollable Screen Viewport Area -->
+        <div class="phone-scroll-viewport relative flex-1 overflow-hidden">
+          
+          <!-- Synchronized Scrollbar Track -->
+          <div class="absolute right-1.5 top-3 bottom-8 w-1 pointer-events-none z-20">
+            <div class="phone-scrollbar-thumb w-1 h-12 bg-blue-600/35 rounded-full"></div>
+          </div>
+
+          <!-- Animated Vertical Scrolling Content -->
+          <div class="phone-scroll-track relative w-full">
+            <div class="phone-scroll-content pt-4 pb-8 px-4 sm:px-4.5 space-y-3.5">
+              
+              <!-- Hamburger menu button -->
+              <div>
+                <div class="w-9 h-9 rounded-xl bg-white border border-slate-200/90 shadow-xs flex items-center justify-center text-slate-700">
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                  </svg>
+                </div>
+              </div>
+
+              <!-- Header: Transferencia de expediente & Enviar fondos -->
+              <div>
+                <span class="text-[11px] font-bold tracking-wider text-blue-600 uppercase block mb-1">Transferencia de expediente</span>
+                <h3 class="text-[23px] font-black text-slate-900 tracking-tight mb-1.5 leading-tight">Enviar fondos</h3>
+                <p class="text-[12px] text-slate-500 font-normal leading-relaxed">
+                  Selecciona ruta, metodo y detalle. La orden se crea antes de cualquier instruccion de pago.
+                </p>
+              </div>
+
+              <!-- Subtle Divider -->
+              <div class="h-px bg-slate-200/80 w-full !my-3"></div>
+
+              <!-- Flow Progress -->
+              <div>
+                <div class="flex items-center justify-between text-[11px] font-bold text-blue-600 uppercase tracking-wide mb-1">
+                  <span>Progreso del flujo</span>
+                  <span>0%</span>
+                </div>
+                <div class="text-[13px] font-bold text-slate-900">
+                  Paso 1 de 5: <span class="text-slate-500 font-normal">Ruta</span>
+                </div>
+              </div>
+
+              <!-- Section: RUTA SOPORTADA / ENVÍOS INTERBANCARIOS -->
+              <div class="!mt-4 space-y-0.5">
+                <span class="text-[10px] font-bold tracking-widest text-slate-400 uppercase block">Ruta soportada</span>
+                <h4 class="text-[13px] font-black tracking-wider text-slate-700 uppercase">Envíos interbancarios</h4>
+              </div>
+
+              <!-- Card 1: Bolivia al exterior (Selected) -->
+              <div class="rounded-2xl border-2 border-blue-600 bg-white p-3.5 shadow-sm relative transition-all duration-300">
+                <div class="flex items-center justify-between mb-2.5">
+                  <div class="w-10 h-10 rounded-full bg-blue-600 text-white flex items-center justify-center shadow-md shadow-blue-500/25">
+                    <svg class="w-5 h-5 -rotate-45 translate-x-0.5 -translate-y-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M6 12L3.269 3.126A59.768 59.768 0 0121.485 12 59.77 59.77 0 013.27 20.876L5.999 12zm0 0h7.5" />
+                    </svg>
+                  </div>
+                  <div class="w-5 h-5 rounded-full border-2 border-blue-600 flex items-center justify-center bg-white">
+                    <div class="w-2.5 h-2.5 rounded-full bg-blue-600"></div>
+                  </div>
+                </div>
+                <h5 class="text-[14px] font-bold text-slate-900 mb-0.5">Bolivia al exterior</h5>
+                <p class="text-[11px] text-slate-500 leading-snug">Envía dinero desde Bolivia hacia cualquier cuenta en el extranjero.</p>
+              </div>
+
+              <!-- Card 2: Crypto a crypto (Unselected) -->
+              <div class="rounded-2xl border border-slate-200/90 bg-slate-50/50 p-3.5 relative transition-all duration-300">
+                <div class="flex items-center justify-between mb-2.5">
+                  <div class="w-10 h-10 rounded-full bg-slate-100 text-slate-600 flex items-center justify-center">
+                    <svg class="w-5 h-5 fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M7.5 21L3 16.5m0 0L7.5 12M3 16.5h13.5m0-13.5L21 7.5m0 0L16.5 12M21 7.5H7.5" />
+                    </svg>
+                  </div>
+                  <div class="w-5 h-5 rounded-full border border-slate-300 bg-transparent"></div>
+                </div>
+                <h5 class="text-[14px] font-bold text-slate-700 mb-0.5">Crypto a crypto</h5>
+                <p class="text-[11px] text-slate-500 leading-snug">Transfiere activos digitales entre billeteras de forma rápida y segura.</p>
+              </div>
+
+              <!-- Section: RETIROS DE BILLETERA -->
+              <div class="!mt-4">
+                <h4 class="text-[13px] font-black tracking-wider text-slate-700 uppercase">Retiros de billetera</h4>
+              </div>
+
+              <!-- Card 3: Retirar fondos de mi Billetera Digital (Unselected) -->
+              <div class="rounded-2xl border border-slate-200/90 bg-slate-50/50 p-3.5 relative transition-all duration-300">
+                <div class="flex items-center justify-between mb-2.5">
+                  <div class="w-10 h-10 rounded-full bg-slate-100 text-slate-600 flex items-center justify-center">
+                    <svg class="w-5 h-5 fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25" />
+                    </svg>
+                  </div>
+                  <div class="w-5 h-5 rounded-full border border-slate-300 bg-transparent"></div>
+                </div>
+                <h5 class="text-[14px] font-bold text-slate-700 mb-0.5">Retirar fondos de mi Billetera Digital</h5>
+                <p class="text-[11px] text-slate-500 leading-snug">Transfiere el saldo de tu billetera a tu cuenta bancaria o cuenta externa.</p>
+              </div>
+
+              <!-- Card 4: Wallet externa al exterior (Unselected) -->
+              <div class="rounded-2xl border border-slate-200/90 bg-slate-50/50 p-3.5 relative transition-all duration-300">
+                <div class="flex items-center justify-between mb-2.5">
+                  <div class="w-10 h-10 rounded-full bg-slate-100 text-slate-600 flex items-center justify-center">
+                    <svg class="w-5 h-5 fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M21 12a2.25 2.25 0 00-2.25-2.25H15a3 3 0 11-6 0H5.25A2.25 2.25 0 003 12m18 0v6a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 18v-6m18 0V9M3 12V9m18 0a2.25 2.25 0 00-2.25-2.25H5.25A2.25 2.25 0 003 9m18 0V6a2.25 2.25 0 00-2.25-2.25H5.25A2.25 2.25 0 003 6v3" />
+                    </svg>
+                  </div>
+                  <div class="w-5 h-5 rounded-full border border-slate-300 bg-transparent"></div>
+                </div>
+                <h5 class="text-[14px] font-bold text-slate-700 mb-0.5">Wallet externa al exterior</h5>
+                <p class="text-[11px] text-slate-500 leading-snug">Paga a tu proveedor en el exterior desde tu wallet externa escaneando un QR.</p>
+              </div>
+
+              <!-- Bottom CTA Button -->
+              <div class="!pt-2 !pb-6">
+                <div class="w-full py-3.5 px-5 rounded-full bg-blue-600 text-white font-bold text-[13px] shadow-lg shadow-blue-500/30 flex items-center justify-center gap-2 hover:bg-blue-700 transition-colors">
+                  <span>Continuar a metodo</span>
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+                  </svg>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Fixed Bottom Home Indicator with subtle frosted gradient fade -->
+        <footer class="relative w-full h-6 bg-gradient-to-t from-[#f8fafc] via-[#f8fafc]/90 to-transparent z-30 flex items-center justify-center pointer-events-none">
+          <div class="w-28 h-1 bg-slate-400/80 rounded-full"></div>
+        </footer>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  /* 3D Perspective Scene */
+  .phone-scene {
+    perspective: 1200px;
+  }
+
+  /* Girado con profundidad en el eje Z */
+  .phone-3d-chassis {
+    transform: rotateY(18deg) rotateX(10deg) rotateZ(-3deg);
+    transform-style: preserve-3d;
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  /* 3D Physical Extruded Bezel Box-Shadow (Extrusión a la izquierda) */
+  .phone-outer-frame {
+    box-shadow: 
+      -1px 1px 0px rgba(255, 255, 255, 0.4),      /* Left rim specular highlight */
+      -2px 2px 0px #475569,                        /* Titanium chamfer layer */
+      -3px 3px 0px #334155,                        /* Metal body depth */
+      -4px 4px 0px #1e293b,                        /* Shadow bevel */
+      -6px 6px 0px #0f172a,                        /* Deep edge extrusion */
+      -8px 8px 0px #020617,                        /* Solid base */
+      -12px 14px 25px -3px rgba(0, 0, 0, 0.45),    /* Direct 3D shadow */
+      -25px 35px 50px -10px rgba(15, 23, 42, 0.4), /* Mid ambient shadow */
+      -40px 60px 80px -15px rgba(2, 6, 23, 0.3);   /* Deep room shadow */
+    transition: box-shadow 0.6s ease;
+  }
+
+  /* Interactive Hover: Smooth 3D Leveling */
+  .phone-scene:hover .phone-3d-chassis {
+    transform: rotateY(10deg) rotateX(6deg) rotateZ(-1.5deg) translateY(-8px);
+  }
+
+  .phone-scene:hover .phone-outer-frame {
+    box-shadow: 
+      -1px 1px 0px rgba(255, 255, 255, 0.45),
+      -2px 2px 0px #475569,
+      -3px 3px 0px #334155,
+      -4px 4px 0px #1e293b,
+      -6px 6px 0px #0f172a,
+      -8px 8px 0px #020617,
+      -15px 18px 30px -3px rgba(0, 0, 0, 0.5),
+      -30px 45px 65px -10px rgba(15, 23, 42, 0.45),
+      -50px 75px 95px -15px rgba(2, 6, 23, 0.35);
+  }
+
+  .phone-ground-shadow {
+    transform: rotateY(18deg) rotateX(10deg) translateY(16px) translateX(-20px) scaleY(0.4);
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.6s ease;
+  }
+
+  .phone-scene:hover .phone-ground-shadow {
+    transform: rotateY(10deg) rotateX(6deg) translateY(24px) translateX(-12px) scaleY(0.35) scaleX(1.05);
+    opacity: 0.7;
+  }
+
+  /* Fluid Auto-Scrolling Animation */
+  @keyframes phoneAutoScroll {
+    0%, 14% {
+      transform: translateY(0);
+    }
+    46%, 64% {
+      transform: translateY(calc(-100% + 550px));
+    }
+    92%, 100% {
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes scrollbarThumbAnim {
+    0%, 14% {
+      transform: translateY(0);
+    }
+    46%, 64% {
+      transform: translateY(420px);
+    }
+    92%, 100% {
+      transform: translateY(0);
+    }
+  }
+
+  .phone-scroll-track {
+    will-change: transform;
+    animation: phoneAutoScroll 12s cubic-bezier(0.65, 0, 0.35, 1) infinite;
+  }
+
+  .phone-scrollbar-thumb {
+    will-change: transform;
+    animation: scrollbarThumbAnim 12s cubic-bezier(0.65, 0, 0.35, 1) infinite;
+  }
+
+  /* Pause scrolling on hover for inspection */
+  .phone-scene:hover .phone-scroll-track,
+  .phone-scene:hover .phone-scrollbar-thumb {
+    animation-play-state: paused;
+  }
+
+  @media (max-width: 640px) {
+    .phone-3d-chassis {
+      transform: rotateY(10deg) rotateX(6deg) rotateZ(-1.5deg);
+    }
+    
+    @keyframes phoneAutoScroll {
+      0%, 14% {
+        transform: translateY(0);
+      }
+      46%, 64% {
+        transform: translateY(calc(-100% + 520px));
+      }
+      92%, 100% {
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes scrollbarThumbAnim {
+      0%, 14% {
+        transform: translateY(0);
+      }
+      46%, 64% {
+        transform: translateY(390px);
+      }
+      92%, 100% {
+        transform: translateY(0);
+      }
+    }
+  }
+</style>
