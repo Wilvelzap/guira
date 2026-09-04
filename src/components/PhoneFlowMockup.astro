@@ -10,7 +10,7 @@ const { class: className = '' } = Astro.props;
   
   <!-- 3D Cast Shadow underneath tilted phone -->
   <div 
-    class="phone-ground-shadow absolute -bottom-8 w-[270px] sm:w-[310px] h-[40px] bg-slate-950/45 blur-2xl rounded-[100%] pointer-events-none -z-10"
+    class="phone-ground-shadow absolute -bottom-8 w-[250px] sm:w-[310px] h-[40px] bg-slate-950/45 blur-2xl rounded-[100%] pointer-events-none -z-10"
     aria-hidden="true"
   ></div>
 
@@ -21,7 +21,7 @@ const { class: className = '' } = Astro.props;
   ></div>
 
   <!-- 3D Tilted Smartphone Chassis (Girado a la derecha con profundidad) -->
-  <div class="phone-3d-chassis relative w-[295px] sm:w-[320px] h-[610px] sm:h-[640px] select-none group">
+  <div class="phone-3d-chassis relative w-[285px] sm:w-[320px] max-w-full h-[590px] sm:h-[640px] select-none group">
     
     <!-- 3D Extruded Outer Titanium Frame -->
     <div class="phone-outer-frame absolute inset-0 rounded-[50px] bg-gradient-to-b from-slate-700 via-slate-800 to-slate-950 p-[10px] border border-slate-600/70">

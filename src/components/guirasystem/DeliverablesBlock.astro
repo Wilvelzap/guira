@@ -1,0 +1,57 @@
+---
+/**
+ * El paquete documental es el producto: se presenta como entregable,
+ * no como beneficio de marketing.
+ */
+interface Props {
+  id?: string;
+  deliverables: {
+    title: string;
+    intro: string;
+    items: string[];
+    note: string;
+  };
+}
+
+const { id, deliverables } = Astro.props;
+---
+
+<section class="gs-section" id={id}>
+  <div class="gs-shell">
+    <h2>{deliverables.title}</h2>
+    <p>{deliverables.intro}</p>
+    <ul class="gs-list">
+      {deliverables.items.map((item) => <li>{item}</li>)}
+    </ul>
+    <p class="gs-deliverables__note">{deliverables.note}</p>
+  </div>
+</section>
+
+<style>
+  .gs-list {
+    margin: 1.5rem 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .gs-list li {
+    position: relative;
+    padding: 0.55rem 0 0.55rem 1.5rem;
+    color: var(--gs-ink);
+  }
+
+  .gs-list li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 1.15rem;
+    width: 0.55rem;
+    height: 2px;
+    background: var(--gs-accent);
+  }
+
+  .gs-deliverables__note {
+    padding-top: 1.25rem;
+    border-top: 1px solid var(--gs-rule);
+  }
+</style>

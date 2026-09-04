@@ -1,0 +1,204 @@
+---
+/**
+ * Contacto. No hay alta libre: la plataforma opera con solicitud de
+ * evaluación. Sin campos de monto, volumen, moneda ni tipo de operación.
+ * El formulario envía por Web3Forms —el mismo servicio que ya usa /demo—
+ * mediante POST nativo: funciona con JavaScript deshabilitado.
+ */
+interface Props {
+  id?: string;
+  contact: {
+    title: string;
+    entityLine: string;
+    email: string | null;
+    emailPending: string;
+    note: string;
+    form: {
+      subject: string;
+      fields: {
+        name: string;
+        company: string;
+        email: string;
+        country: string;
+        message: string;
+      };
+      submit: string;
+      privacyNote: string;
+      privacyLink: string;
+      privacyHref: string;
+    };
+  };
+}
+
+const { id, contact } = Astro.props;
+const f = contact.form;
+---
+
+<section class="gs-section" id={id}>
+  <div class="gs-shell">
+    <h2>{contact.title}</h2>
+
+    <p class="gs-contact__entity">{contact.entityLine}</p>
+
+    {contact.email ? (
+      <p class="gs-contact__email">
+        <a href={`mailto:${contact.email}`}>{contact.email}</a>
+      </p>
+    ) : (
+      <p class="gs-contact__email gs-contact__email--pending">
+        {contact.emailPending}
+      </p>
+    )}
+    {/* PENDIENTE (§8.2): publicar la casilla institucional una vez que Wilmar
+        confirme cuál es (debe ser del dominio corporativo y estar monitoreada).
+        Al confirmarla, basta cargar "email" en en.json y es.json. */}
+
+    <p>{contact.note}</p>
+
+    <form
+      class="gs-contact__form"
+      action="https://api.web3forms.com/submit"
+      method="POST"
+    >
+      <input
+        type="hidden"
+        name="access_key"
+        value="8707452b-a137-481b-ba1b-75d2b548b4eb"
+      />
+      <input type="hidden" name="subject" value={f.subject} />
+      <input
+        type="checkbox"
+        name="botcheck"
+        class="gs-contact__botcheck"
+        style="display:none"
+        tabindex="-1"
+        autocomplete="off"
+      />
+
+      <div class="gs-field">
+        <label for={`${id}-name`}>{f.fields.name}</label>
+        <input id={`${id}-name`} name="name" type="text" required autocomplete="name" />
+      </div>
+
+      <div class="gs-field">
+        <label for={`${id}-company`}>{f.fields.company}</label>
+        <input id={`${id}-company`} name="company" type="text" required autocomplete="organization" />
+      </div>
+
+      <div class="gs-field">
+        <label for={`${id}-email`}>{f.fields.email}</label>
+        <input id={`${id}-email`} name="email" type="email" required autocomplete="email" />
+      </div>
+
+      <div class="gs-field">
+        <label for={`${id}-country`}>{f.fields.country}</label>
+        <input id={`${id}-country`} name="country" type="text" required autocomplete="country-name" />
+      </div>
+
+      <div class="gs-field gs-field--full">
+        <label for={`${id}-message`}>{f.fields.message}</label>
+        <textarea id={`${id}-message`} name="message" rows="4" required></textarea>
+      </div>
+
+      <div class="gs-field--full">
+        <button type="submit">{f.submit}</button>
+      </div>
+
+      <p class="gs-contact__privacy gs-field--full">
+        {f.privacyNote} <a href={f.privacyHref}>{f.privacyLink}</a>.
+      </p>
+    </form>
+  </div>
+</section>
+
+<style>
+  .gs-contact__entity {
+    margin-bottom: 0.35rem;
+    font-family: var(--gs-mono);
+    font-size: 0.9375rem;
+    color: var(--gs-ink);
+  }
+
+  .gs-contact__email {
+    margin-bottom: 1.5rem;
+    font-family: var(--gs-mono);
+    font-size: 0.9375rem;
+  }
+
+  .gs-contact__email--pending {
+    color: var(--gs-ink-faint);
+  }
+
+  .gs-contact__form {
+    margin-top: 1.75rem;
+    display: grid;
+    gap: 1.1rem;
+    border-top: 1px solid var(--gs-rule);
+    padding-top: 1.75rem;
+  }
+
+  @media (min-width: 40rem) {
+    .gs-contact__form {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .gs-field--full {
+      grid-column: 1 / -1;
+    }
+  }
+
+  .gs-field {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+  }
+
+  .gs-contact__form label {
+    font-size: 0.8125rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--gs-ink-faint);
+  }
+
+  .gs-contact__form input,
+  .gs-contact__form textarea {
+    font-family: inherit;
+    font-size: 1rem;
+    color: var(--gs-ink);
+    background: var(--gs-surface);
+    border: 1px solid var(--gs-rule);
+    border-radius: 2px;
+    padding: 0.65rem 0.7rem;
+    width: 100%;
+  }
+
+  .gs-contact__form textarea {
+    resize: vertical;
+  }
+
+  .gs-contact__form button {
+    font-family: inherit;
+    font-size: 0.875rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: #fff;
+    background: var(--gs-accent);
+    border: 1px solid var(--gs-accent);
+    border-radius: 2px;
+    padding: 0.8rem 1.6rem;
+    cursor: pointer;
+  }
+
+  .gs-contact__form button:hover {
+    background: var(--gs-ink);
+    border-color: var(--gs-ink);
+  }
+
+  .gs-contact__privacy {
+    margin: 0;
+    font-size: 0.8125rem;
+    color: var(--gs-ink-faint);
+  }
+</style>

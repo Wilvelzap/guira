@@ -1,6 +1,8 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import RadioCard from "../components/RadioCard.astro";
+import GuiraButton from "../components/GuiraButton.astro";
+import EditorialHeader from "../components/EditorialHeader.astro";
 ---
 
 <Layout
@@ -66,64 +68,57 @@ import RadioCard from "../components/RadioCard.astro";
     </Fragment>
 
     <!-- Header Section -->
+    <!-- Header Section (Estilo Editorial Minimalista con Paleta Azul y Tipografía de Index) -->
     <header
-        class="relative pt-36 pb-20 overflow-hidden bg-white border-b border-slate-200"
+        class="relative pt-36 sm:pt-40 md:pt-44 pb-20 sm:pb-24 md:pb-28 overflow-hidden bg-[#080f21] border-b border-white/10"
     >
-        <div class="absolute inset-0">
-            <picture class="w-full h-full block">
-                <source
-                    srcset="/assets/images/como-funciona-flujo.webp"
-                    type="image/webp"
-                    fetchpriority="high"
-                />
-                <img
-                    src="/assets/images/como-funciona-flujo.jpg"
-                    alt=""
-                    class="w-full h-full object-cover object-center opacity-10"
-                    aria-hidden="true"
-                    fetchpriority="high"
-                />
-            </picture>
+        <!-- Superficie de azules y cianes de Guira (idéntica a index.astro) -->
+        <div class="hero-operation-surface"></div>
+        <div class="hero-operation-network" aria-hidden="true">
+            <div class="hero-operation-network__halo"></div>
         </div>
-        <div
-            class="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[600px] bg-guira-teal opacity-[0.05] blur-[120px] rounded-full pointer-events-none"
-        >
-        </div>
-        <div class="max-w-4xl mx-auto px-6 relative z-10 text-center reveal">
-            <h1
-                class="text-4xl md:text-6xl font-extrabold tracking-tight mb-8 leading-[1.1] text-slate-900"
-            >
-                Cómo funciona el ecosistema <br class="hidden md:block" />
-                <span class="text-guira-teal">de pagos internacionales</span>
-            </h1>
-            <p
-                class="text-lg md:text-xl text-slate-600 font-medium max-w-2xl mx-auto leading-relaxed"
-            >
-                Desde la validación KYB hasta la recepción de pagos en USD, la
-                organización documental y el seguimiento de cada operación,
-                Guira ayuda a que tu empresa trabaje con mayor visibilidad.
-            </p>
+
+        <div class="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 relative z-10">
+            <div class="border-l border-white/15 pl-6 sm:pl-10 lg:pl-12">
+                <div class="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-12 lg:gap-16 items-start">
+                    <!-- Columna Izquierda: Label / Categoría alineado al tope -->
+                    <div class="md:col-span-3 lg:col-span-2">
+                        <span class="inline-flex items-center gap-2 text-xs sm:text-sm font-semibold tracking-wider text-guira-cyan uppercase select-none">
+                            <span class="w-1.5 h-1.5 rounded-full bg-guira-cyan"></span>
+                            Cómo funciona
+                        </span>
+                    </div>
+
+                    <!-- Columna Derecha: Titular Monumental en Mayúsculas con Tipografía de Index -->
+                    <div class="md:col-span-9 lg:col-span-10">
+                        <h1
+                            class="text-3xl sm:text-4xl md:text-5xl lg:text-[46px] xl:text-[54px] font-extrabold tracking-tight text-white uppercase leading-[1.1] max-w-5xl"
+                        >
+                            Cómo funciona el ecosistema de pagos internacionales y control por operación
+                        </h1>
+
+                        <p
+                            class="mt-6 sm:mt-8 text-base md:text-lg text-slate-300 font-normal leading-relaxed max-w-2xl"
+                        >
+                            Desde la validación KYB hasta la recepción de pagos en USD, la
+                            organización documental y el seguimiento de cada operación,
+                            Guira ayuda a que tu empresa trabaje con mayor visibilidad.
+                        </p>
+                    </div>
+                </div>
+            </div>
         </div>
     </header>
 
     <!-- Ecosistema -->
     <section class="py-20 bg-white border-b border-slate-200">
-        <div class="max-w-7xl mx-auto px-6" data-cross-fade="from">
-            <div class="text-center mb-14 reveal">
-                <p class="section-kicker text-guira-teal mb-3">
-                    Ecosistema operativo
-                </p>
-                <h2
-                    class="h2-section text-slate-900 mb-5"
-                >
-                    Las piezas que conectan una operación internacional
-                </h2>
-                <p class="body-copy text-slate-600 max-w-2xl mx-auto text-lg">
-                    Una operación internacional no es solo recibir o enviar
-                    fondos. También implica identificación, documentos,
-                    validaciones, seguimiento y conciliación.
-                </p>
-            </div>
+        <div class="max-w-7xl mx-auto px-6 relative z-10" data-cross-fade="from">
+            <EditorialHeader
+                kicker="Ecosistema operativo"
+                line1="Las piezas que conectan"
+                line2="una operación internacional."
+                description="Una operación internacional no es solo recibir o enviar fondos. También implica identificación, documentos, validaciones, seguimiento y conciliación."
+            />
 
             <div class="grid md:grid-cols-3 gap-6" data-folder-stack>
                 <RadioCard
@@ -325,159 +320,174 @@ import RadioCard from "../components/RadioCard.astro";
             class="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(0,81,255,0.06),transparent_60%)] pointer-events-none"
         >
         </div>
-        <div class="relative">
-            <div class="max-w-3xl mx-auto px-6 text-center mb-16 md:mb-20 reveal">
-                <p class="section-kicker text-guira-teal mb-3">
-                    Cómo empezar
-                </p>
-                <h2
-                    class="h2-section text-slate-900 mb-5"
-                >
-                    El proceso, paso a paso
-                </h2>
-                <p class="body-copy text-slate-600 max-w-2xl mx-auto text-lg">
-                    Desde el registro de tu empresa hasta la ejecución de pagos,
-                    cuatro etapas claras conectan tu operación internacional.
-                </p>
-            </div>
+        <div class="max-w-7xl mx-auto px-6 relative z-10">
+            <EditorialHeader
+                kicker="Cómo empezar"
+                line1="El proceso,"
+                line2="paso a paso."
+                description="Elige el tipo de cuenta según tu perfil y sigue los video tutoriales para completar tu habilitación operativa."
+            />
 
-            <div class="w-full border-t border-slate-400" data-editorial-steps>
+            <div class="w-full border-t border-slate-300" data-editorial-steps>
                 <div class="grid">
-                    <!-- Paso 1 -->
+                    <!-- Opción: Cuenta personal (KYC) -->
                     <div
-                        class="step editorial-step group grid max-w-[90rem] mx-auto gap-8 px-6 py-8 border-b border-slate-400 transition-colors hover:bg-white sm:px-8 lg:px-10 md:grid-cols-[minmax(0,1.15fr)_minmax(20rem,0.85fr)] md:items-stretch md:gap-16 md:py-7"
+                        class="step editorial-step group grid gap-8 py-10 md:py-14 border-b border-slate-300 md:grid-cols-12 md:items-center md:gap-12"
                         data-step
-                        data-step-index="1"
                     >
-                        <div
-                            class="step-card flex flex-col justify-between border-0 bg-transparent py-1 md:py-3"
-                        >
-                            <h3 class="max-w-2xl text-2xl font-extrabold tracking-tight text-slate-900 transition-colors group-hover:text-guira-teal md:text-4xl">
-                                Registra tu empresa
-                            </h3>
-                            <p
-                                class="mt-4 max-w-xl text-base font-medium leading-relaxed text-slate-600"
-                            >
-                                Completa tu solicitud y comparte la
-                                documentación básica de tu empresa, sus
-                                representantes y su actividad operativa. Este
-                                paso nos permite entender tu perfil y evaluar la
-                                elegibilidad del servicio.
-                            </p>
-                            <div
-                                class="mt-6 max-w-xl border-t border-slate-300 pt-5 flex items-start gap-4"
-                            >
-                                <div class="mt-1">
-                                    <i
-                                        data-lucide="info"
-                                        class="w-5 h-5 text-guira-teal"></i>
-                                </div>
-                                <div>
-                                    <h4
-                                        class="text-sm font-bold text-slate-900 mb-1"
-                                    >
-                                        Documentos habituales
-                                    </h4>
-                                    <p
-                                        class="text-sm text-slate-600 font-medium"
-                                    >
-                                        Constitución de la empresa,
-                                        identificación de representantes,
-                                        información de actividad económica y
-                                        soporte de operación comercial.
-                                    </p>
-                                </div>
+                        <div class="md:col-span-7 flex flex-col justify-between h-full py-1">
+                            <div>
+                                <h3 class="text-2xl sm:text-3xl md:text-4xl font-extrabold uppercase tracking-tight text-slate-900 leading-tight">
+                                    Conoce cómo crear tu cuenta personal en Guira
+                                </h3>
+                                <p class="mt-3 text-sm font-semibold uppercase tracking-wider text-slate-500">
+                                    KYC
+                                </p>
+                            </div>
+                            <div class="mt-8 md:mt-10">
+                                <GuiraButton
+                                    href="https://app.guiracorp.com"
+                                    variant="dark"
+                                    size="md"
+                                    label="Crear cuenta"
+                                />
                             </div>
                         </div>
-                        <img src="/assets/images/blog/factura-comercial-codigo-swift.webp" alt="Documentación comercial para iniciar una operación" class="h-52 w-full rounded-2xl object-cover md:h-full md:min-h-64" loading="lazy" />
+                        <div class="md:col-span-5">
+                            <div class="relative w-full aspect-video bg-black overflow-hidden shadow-sm">
+                                <video
+                                    controls
+                                    controlslist="nodownload"
+                                    oncontextmenu="return false;"
+                                    preload="metadata"
+                                    playsinline
+                                    poster="https://res.cloudinary.com/dbrkedvyp/video/upload/so_1/v1788533356/KYC_Tutorial_uglyzm.jpg"
+                                    class="w-full h-full object-cover"
+                                    data-tutorial-video
+                                >
+                                    <source
+                                        src="https://res.cloudinary.com/dbrkedvyp/video/upload/v1788533356/KYC_Tutorial_uglyzm.mp4"
+                                        type="video/mp4"
+                                    />
+                                    Tu navegador no soporta la reproducción de video.
+                                </video>
+                            </div>
+                        </div>
                     </div>
 
-                    <!-- Paso 2 -->
+                    <!-- Opción: Cuenta para empresa (KYB) -->
                     <div
-                        class="step editorial-step group grid max-w-[90rem] mx-auto gap-8 px-6 py-8 border-b border-slate-400 transition-colors hover:bg-white sm:px-8 lg:px-10 md:grid-cols-[minmax(0,1.15fr)_minmax(20rem,0.85fr)] md:items-stretch md:gap-16 md:py-7"
+                        class="step editorial-step group grid gap-8 py-10 md:py-14 border-b border-slate-300 md:grid-cols-12 md:items-center md:gap-12"
                         data-step
-                        data-step-index="2"
                     >
-                        <div
-                            class="step-card flex flex-col justify-between border-0 bg-transparent py-1 md:py-3"
-                        >
-                            <h3 class="max-w-2xl text-2xl font-extrabold tracking-tight text-slate-900 transition-colors group-hover:text-guira-teal md:text-4xl">
-                                Completa la validación empresarial
-                            </h3>
-                            <p
-                                class="mt-4 max-w-xl text-base font-medium leading-relaxed text-slate-600"
-                            >
-                                Nuestro equipo y los proveedores aplicables
-                                revisan la información de tu empresa para
-                                habilitar una operación alineada con criterios
-                                de cumplimiento y riesgo. La aprobación depende
-                                del perfil, la jurisdicción y el tipo de
-                                actividad.
-                            </p>
+                        <div class="md:col-span-7 flex flex-col justify-between h-full py-1">
+                            <div>
+                                <h3 class="text-2xl sm:text-3xl md:text-4xl font-extrabold uppercase tracking-tight text-slate-900 leading-tight">
+                                    Conoce cómo crear tu cuenta para empresa
+                                </h3>
+                                <p class="mt-3 text-sm font-semibold uppercase tracking-wider text-slate-500">
+                                    KYB
+                                </p>
+                            </div>
+                            <div class="mt-8 md:mt-10">
+                                <GuiraButton
+                                    href="https://app.guiracorp.com"
+                                    variant="dark"
+                                    size="md"
+                                    label="Crear cuenta"
+                                />
+                            </div>
                         </div>
-                        <img src="/assets/images/blog/validacion-b2b-empresas-extranjeras-fraude.webp" alt="Validación empresarial y documentación" class="h-52 w-full rounded-2xl object-cover md:h-full md:min-h-64" loading="lazy" />
+                        <div class="md:col-span-5">
+                            <div class="relative w-full aspect-video bg-black overflow-hidden shadow-sm">
+                                <video
+                                    controls
+                                    controlslist="nodownload"
+                                    oncontextmenu="return false;"
+                                    preload="metadata"
+                                    playsinline
+                                    poster="https://res.cloudinary.com/dbrkedvyp/video/upload/so_1/v1788533578/KYB_Tutorial_uvl9ml.jpg"
+                                    class="w-full h-full object-cover"
+                                    data-tutorial-video
+                                >
+                                    <source
+                                        src="https://res.cloudinary.com/dbrkedvyp/video/upload/v1788533578/KYB_Tutorial_uvl9ml.mp4"
+                                        type="video/mp4"
+                                    />
+                                    Tu navegador no soporta la reproducción de video.
+                                </video>
+                            </div>
+                        </div>
                     </div>
 
-                    <!-- Paso 3 -->
+                    <!-- Habilita tu cuenta virtual en otros países -->
                     <div
-                        class="step editorial-step group grid max-w-[90rem] mx-auto gap-8 px-6 py-8 border-b border-slate-400 transition-colors hover:bg-white sm:px-8 lg:px-10 md:grid-cols-[minmax(0,1.15fr)_minmax(20rem,0.85fr)] md:items-stretch md:gap-16 md:py-7"
+                        class="step editorial-step group grid gap-8 py-10 md:py-14 border-b border-slate-300 md:grid-cols-12 md:items-center md:gap-12"
                         data-step
-                        data-step-index="3"
                     >
-                        <div
-                            class="step-card flex flex-col justify-between border-0 bg-transparent py-1 md:py-3"
-                        >
-                            <h3 class="max-w-2xl text-2xl font-extrabold tracking-tight text-slate-900 transition-colors group-hover:text-guira-teal md:text-4xl">
-                                Habilita tu cuenta virtual en otros países
-                            </h3>
-                            <p
-                                class="mt-4 max-w-xl text-base font-medium leading-relaxed text-slate-600"
-                            >
-                                Una vez aprobada tu empresa, activas una cuenta
-                                virtual en dólares para operar con el exterior.
-                                Desde ahí puedes recibir pagos internacionales y
-                                visualizar tus movimientos en un solo lugar.
-                            </p>
-                            <p class="mt-5 max-w-xl border-t border-slate-300 pt-5 text-sm text-slate-600 font-medium">
-                                La cuenta virtual queda disponible según el país
-                                y la estructura aplicable a tu empresa, con
-                                historial de movimientos y visibilidad completa
-                                sobre tus ingresos operativos.
-                            </p>
+                        <div class="md:col-span-7 flex flex-col justify-between h-full py-1">
+                            <div>
+                                <h3 class="text-2xl sm:text-3xl md:text-4xl font-extrabold uppercase tracking-tight text-slate-900 leading-tight">
+                                    Habilita tu cuenta virtual en otros países
+                                </h3>
+                                <p class="mt-3 text-sm font-semibold uppercase tracking-wider text-slate-500">
+                                    Cuenta operativa en dólares
+                                </p>
+                            </div>
+                            <div class="mt-8 md:mt-10">
+                                <GuiraButton
+                                    href="/blog/como-funciona-cuenta-virtual-usd-empresas/"
+                                    variant="dark"
+                                    size="md"
+                                    label="Leer guía"
+                                />
+                            </div>
                         </div>
-                        <img src="/assets/images/blog/seguimiento-operaciones-plataforma-digital.webp" alt="Cuenta operativa en dólares disponible en la plataforma" class="h-52 w-full rounded-2xl object-cover md:h-full md:min-h-64" loading="lazy" />
+                        <div class="md:col-span-5">
+                            <div class="relative w-full aspect-video bg-black overflow-hidden shadow-sm">
+                                <img
+                                    src="/assets/images/blog/seguimiento-operaciones-plataforma-digital.webp"
+                                    alt="Cuenta operativa en dólares disponible en la plataforma"
+                                    class="w-full h-full object-cover"
+                                    loading="lazy"
+                                />
+                            </div>
+                        </div>
                     </div>
 
-                    <!-- Paso 4 -->
+                    <!-- Centraliza la visibilidad e instruye pagos -->
                     <div
-                        class="step editorial-step group grid max-w-[90rem] mx-auto gap-8 px-6 py-8 border-b border-slate-400 transition-colors hover:bg-white sm:px-8 lg:px-10 md:grid-cols-[minmax(0,1.15fr)_minmax(20rem,0.85fr)] md:items-stretch md:gap-16 md:py-7"
+                        class="step editorial-step group grid gap-8 py-10 md:py-14 border-b border-slate-300 md:grid-cols-12 md:items-center md:gap-12"
                         data-step
-                        data-step-index="4"
                     >
-                        <div
-                            class="step-card flex flex-col justify-between border-0 bg-transparent py-1 md:py-3"
-                        >
-                            <h3 class="max-w-2xl text-2xl font-extrabold tracking-tight text-slate-900 transition-colors group-hover:text-guira-teal md:text-4xl">
-                                Centraliza la visibilidad e instruye pagos
-                            </h3>
-                            <p
-                                class="mt-4 max-w-xl text-base font-medium leading-relaxed text-slate-600"
-                            >
-                                Con tu operación activa, podrás visibilizar tu
-                                saldo operativo, solicitar salidas según tu
-                                estructura e instruir pagos empresariales a
-                                proveedores mediante ACH o Wire, de acuerdo con
-                                los rieles disponibles y habilitados.
-                            </p>
-                            <p class="mt-5 max-w-xl border-t border-slate-300 pt-5 text-sm text-slate-600 font-medium">
-                                Dependiendo del caso de uso y la estructura
-                                aprobada, tu empresa puede realizar pagos a
-                                proveedores o partners mediante ACH o Wire,
-                                además de acceder a opciones de salida
-                                estructuradas según el riel aplicable.
-                            </p>
+                        <div class="md:col-span-7 flex flex-col justify-between h-full py-1">
+                            <div>
+                                <h3 class="text-2xl sm:text-3xl md:text-4xl font-extrabold uppercase tracking-tight text-slate-900 leading-tight">
+                                    Centraliza la visibilidad e instruye pagos
+                                </h3>
+                                <p class="mt-3 text-sm font-semibold uppercase tracking-wider text-slate-500">
+                                    ACH & Wire internacional
+                                </p>
+                            </div>
+                            <div class="mt-8 md:mt-10">
+                                <GuiraButton
+                                    href="/pagos-proveedores-bolivia/"
+                                    variant="dark"
+                                    size="md"
+                                    label="Ver detalles"
+                                />
+                            </div>
                         </div>
-                        <img src="/assets/images/blog/wire-vs-ach-empresas-bolivianas.webp" alt="Empresa instruyendo un pago internacional" class="h-52 w-full rounded-2xl object-cover md:h-full md:min-h-64" loading="lazy" />
+                        <div class="md:col-span-5">
+                            <div class="relative w-full aspect-video bg-black overflow-hidden shadow-sm">
+                                <img
+                                    src="/assets/images/blog/wire-vs-ach-empresas-bolivianas.webp"
+                                    alt="Empresa instruyendo un pago internacional"
+                                    class="w-full h-full object-cover"
+                                    loading="lazy"
+                                />
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -525,6 +535,18 @@ import RadioCard from "../components/RadioCard.astro";
                     }),
             });
         }
+
+        // Evitar que ambos videos tutoriales suenen al mismo tiempo
+        const tutorialVideos = document.querySelectorAll<HTMLVideoElement>("[data-tutorial-video]");
+        tutorialVideos.forEach((video) => {
+            video.addEventListener("play", () => {
+                tutorialVideos.forEach((other) => {
+                    if (other !== video && !other.paused) {
+                        other.pause();
+                    }
+                });
+            });
+        });
     </script>
 
     <!-- Qué necesita normalmente una empresa para empezar -->
@@ -534,7 +556,7 @@ import RadioCard from "../components/RadioCard.astro";
         >
         </div>
         <div
-            class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center"
+            class="max-w-7xl mx-auto px-6 relative z-10 grid md:grid-cols-2 gap-16 items-center"
         >
             <div class="reveal">
                 <h2 class="h2-section text-white mb-6">
@@ -547,54 +569,44 @@ import RadioCard from "../components/RadioCard.astro";
                 </p>
             </div>
             <div class="reveal reveal-delay-1">
-                <ul class="space-y-4">
-                    <li
-                        class="flex items-center gap-4 bg-slate-800/50 p-4 rounded-xl border border-slate-700"
-                    >
+                <ul class="divide-y divide-slate-800 border-y border-slate-800">
+                    <li class="flex items-center gap-4 py-4 sm:py-5">
                         <i
                             data-lucide="check-circle-2"
                             class="w-6 h-6 text-guira-teal shrink-0"></i>
-                        <span class="font-medium"
+                        <span class="font-medium text-slate-100"
                             >Empresa legalmente constituida</span
                         >
                     </li>
-                    <li
-                        class="flex items-center gap-4 bg-slate-800/50 p-4 rounded-xl border border-slate-700"
-                    >
+                    <li class="flex items-center gap-4 py-4 sm:py-5">
                         <i
                             data-lucide="users"
                             class="w-6 h-6 text-guira-teal shrink-0"></i>
-                        <span class="font-medium"
+                        <span class="font-medium text-slate-100"
                             >Representantes identificables</span
                         >
                     </li>
-                    <li
-                        class="flex items-center gap-4 bg-slate-800/50 p-4 rounded-xl border border-slate-700"
-                    >
+                    <li class="flex items-center gap-4 py-4 sm:py-5">
                         <i
                             data-lucide="activity"
                             class="w-6 h-6 text-guira-teal shrink-0"></i>
-                        <span class="font-medium"
+                        <span class="font-medium text-slate-100"
                             >Actividad comercial verificable</span
                         >
                     </li>
-                    <li
-                        class="flex items-center gap-4 bg-slate-800/50 p-4 rounded-xl border border-slate-700"
-                    >
+                    <li class="flex items-center gap-4 py-4 sm:py-5">
                         <i
                             data-lucide="folder-check"
                             class="w-6 h-6 text-guira-teal shrink-0"></i>
-                        <span class="font-medium"
+                        <span class="font-medium text-slate-100"
                             >Documentación básica de soporte</span
                         >
                     </li>
-                    <li
-                        class="flex items-center gap-4 bg-slate-800/50 p-4 rounded-xl border border-slate-700"
-                    >
+                    <li class="flex items-center gap-4 py-4 sm:py-5">
                         <i
                             data-lucide="target"
                             class="w-6 h-6 text-guira-teal shrink-0"></i>
-                        <span class="font-medium"
+                        <span class="font-medium text-slate-100"
                             >Caso de uso alineado con el servicio</span
                         >
                     </li>
@@ -605,7 +617,7 @@ import RadioCard from "../components/RadioCard.astro";
 
     <!-- Qué puede hacer tu empresa una vez activada -->
     <section class="py-24 bg-slate-50 border-y border-slate-200">
-        <div class="max-w-7xl mx-auto px-6">
+        <div class="max-w-7xl mx-auto px-6 relative z-10">
             <div class="text-center mb-16 reveal">
                 <h2
                     class="h2-section mb-6 text-slate-900"
@@ -744,37 +756,45 @@ import RadioCard from "../components/RadioCard.astro";
     >
         <div class="absolute inset-0 bg-gradient-to-b from-slate-50 to-white">
         </div>
-        <div class="max-w-4xl mx-auto px-6 text-center relative z-10 reveal">
-            <h2
-                class="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight mb-8 text-slate-900"
-            >
-                Evalúa si Guira encaja con la operación internacional de tu
-                empresa
-            </h2>
-            <p
-                class="text-xl text-slate-600 font-medium leading-relaxed mb-12 max-w-2xl mx-auto"
-            >
-                Solicita una demo para revisar requisitos, estructura operativa
-                y elegibilidad del servicio según tu caso de uso.
-            </p>
-            <div
-                class="flex flex-col sm:flex-row flex-wrap items-center justify-center gap-4"
-            >
-                <a
-                    href="https://app.guiracorp.com"
-                    class="w-full sm:w-auto px-10 py-5 bg-guira-teal text-white rounded-2xl font-bold text-lg hover:bg-blue-700 transition-all shadow-xl shadow-blue-900/20 hover:-translate-y-1"
-                    >Crear tu cuenta Guira</a
+        <div class="max-w-7xl mx-auto px-6 relative z-10">
+            <div class="max-w-4xl mx-auto text-center reveal">
+                <h2
+                    class="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight mb-8 text-slate-900"
                 >
-                <a
-                    href="/demo/"
-                    class="w-full sm:w-auto px-10 py-5 bg-slate-900 text-white border border-slate-800 rounded-2xl font-bold text-lg hover:bg-slate-800 transition-all shadow-sm hover:-translate-y-1"
-                    >Solicitar demo</a
+                    Evalúa si Guira encaja con la operación internacional de tu
+                    empresa
+                </h2>
+                <p
+                    class="text-xl text-slate-600 font-medium leading-relaxed mb-12 max-w-2xl mx-auto"
                 >
-                <a
-                    href="/contacto/"
-                    class="w-full sm:w-auto px-10 py-5 bg-white text-slate-700 border border-slate-200 rounded-2xl font-bold text-lg hover:bg-slate-50 transition-all shadow-sm hover:-translate-y-1"
-                    >Hablar con ventas</a
+                    Solicita una demo para revisar requisitos, estructura operativa
+                    y elegibilidad del servicio según tu caso de uso.
+                </p>
+                <div
+                    class="flex flex-col sm:flex-row flex-wrap items-center justify-center gap-4"
                 >
+                    <GuiraButton
+                        href="https://app.guiracorp.com"
+                        variant="teal"
+                        size="lg"
+                        label="Crear tu cuenta Guira"
+                        class="w-full sm:w-auto"
+                    />
+                    <GuiraButton
+                        href="/demo/"
+                        variant="dark"
+                        size="lg"
+                        label="Solicitar demo"
+                        class="w-full sm:w-auto"
+                    />
+                    <GuiraButton
+                        href="/contacto/"
+                        variant="light"
+                        size="lg"
+                        label="Hablar con ventas"
+                        class="w-full sm:w-auto"
+                    />
+                </div>
             </div>
         </div>
     </section>

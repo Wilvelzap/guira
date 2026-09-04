@@ -1,0 +1,68 @@
+---
+/**
+ * Las cuatro exclusiones explícitas. Es la sección que un analista de
+ * compliance busca primero: va alta en la página y con contraste propio.
+ */
+interface Props {
+  id?: string;
+  exclusions: {
+    title: string;
+    items: string[];
+    note: string;
+  };
+}
+
+const { id, exclusions } = Astro.props;
+---
+
+<section class="gs-section gs-exclusions" id={id}>
+  <div class="gs-shell">
+    <h2>{exclusions.title}</h2>
+    <ul class="gs-exclusions__list">
+      {exclusions.items.map((item) => <li>{item}</li>)}
+    </ul>
+    <p class="gs-exclusions__note">{exclusions.note}</p>
+  </div>
+</section>
+
+<style>
+  .gs-exclusions {
+    background: var(--gs-surface-alt);
+  }
+
+  .gs-exclusions__list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    border-top: 1px solid var(--gs-rule);
+  }
+
+  .gs-exclusions__list li {
+    position: relative;
+    padding: 0.85rem 0 0.85rem 1.5rem;
+    border-bottom: 1px solid var(--gs-rule);
+    color: var(--gs-ink);
+    font-weight: 500;
+  }
+
+  .gs-exclusions__list li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 1.45rem;
+    width: 0.6rem;
+    height: 2px;
+    background: var(--gs-accent);
+  }
+
+  .gs-exclusions__note {
+    margin-top: 1.35rem;
+    font-size: 0.9375rem;
+  }
+
+  @media print {
+    .gs-exclusions {
+      background: #fff;
+    }
+  }
+</style>

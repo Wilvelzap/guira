@@ -1,0 +1,60 @@
+---
+/**
+ * Cuerpo compartido del expediente corporativo de Guira System LLC.
+ * Las dos rutas (/guirasystem/ y /es/guirasystem/) renderizan este mismo
+ * componente con su archivo de datos: en.json o es.json. El copy nunca vive
+ * en el markup, para que una corrección legal sea un cambio de datos
+ * auditable en un solo archivo por idioma.
+ */
+import SiteHeader from './SiteHeader.astro';
+import IdentityHeader from './IdentityHeader.astro';
+import ProseSection from './ProseSection.astro';
+import ExclusionsBlock from './ExclusionsBlock.astro';
+import FlowDiagram from './FlowDiagram.astro';
+import DeliverablesBlock from './DeliverablesBlock.astro';
+import CorporateDataTable from './CorporateDataTable.astro';
+import GroupStructure from './GroupStructure.astro';
+import CompliancePosture from './CompliancePosture.astro';
+import ContactBlock from './ContactBlock.astro';
+import LegalFooter from './LegalFooter.astro';
+
+interface Props {
+  data: any;
+}
+
+const { data } = Astro.props;
+---
+
+<SiteHeader nav={data.nav} />
+
+<main id="contenido">
+  <IdentityHeader identity={data.identity} />
+
+  <ProseSection
+    id="what-we-do"
+    title={data.whatWeDo.title}
+    paragraphs={data.whatWeDo.paragraphs}
+  />
+
+  <ExclusionsBlock id="exclusions" exclusions={data.exclusions} />
+
+  <FlowDiagram id="how-it-works" flow={data.flow} />
+
+  <DeliverablesBlock id="deliverables" deliverables={data.deliverables} />
+
+  <ProseSection
+    id="advisory"
+    title={data.advisory.title}
+    paragraphs={data.advisory.paragraphs}
+  />
+
+  <CorporateDataTable id="corporate-information" corporate={data.corporate} />
+
+  <GroupStructure id="group-structure" group={data.group} />
+
+  <CompliancePosture id="compliance" compliance={data.compliance} />
+
+  <ContactBlock id="contact" contact={data.contact} />
+</main>
+
+<LegalFooter footer={data.footer} canonical={data.meta.canonical} />

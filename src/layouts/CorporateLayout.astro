@@ -1,0 +1,327 @@
+---
+/**
+ * CorporateLayout.astro
+ *
+ * Layout sobrio para páginas institucionales de verificación corporativa
+ * (expedientes de KYB). Deliberadamente NO reutiliza Layout.astro: esta
+ * familia de páginas se sirve sin píxeles publicitarios, sin fuentes por CDN
+ * y sin JavaScript de terceros, y todo su contenido debe existir en el HTML
+ * servido aunque el JS esté bloqueado.
+ */
+interface Props {
+  lang: 'en' | 'es';
+  title: string;
+  description: string;
+  canonical: string;
+  alternateEn: string;
+  alternateEs: string;
+  ogLocale?: string;
+}
+
+const {
+  lang,
+  title,
+  description,
+  canonical,
+  alternateEn,
+  alternateEs,
+  ogLocale = lang === 'es' ? 'es_ES' : 'en_US',
+} = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang={lang}>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="index, follow" />
+
+    <title>{title}</title>
+    <meta name="description" content={description} />
+
+    <link rel="canonical" href={canonical} />
+    <link rel="alternate" hreflang="en" href={alternateEn} />
+    <link rel="alternate" hreflang="es" href={alternateEs} />
+    <link rel="alternate" hreflang="x-default" href={alternateEn} />
+
+    <link rel="icon" type="image/svg+xml" href="/guira-logo.svg" />
+
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:locale" content={ogLocale} />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+
+    <slot name="head" />
+  </head>
+
+  <body class="gs-body">
+    <slot />
+  </body>
+</html>
+
+<style is:global>
+  /* ─── Tokens ──────────────────────────────────────────────────
+     Un solo acento, tomado de la identidad actual del proyecto
+     (guira-teal). Al cerrar la identidad de marca basta cambiar
+     --gs-accent aquí. */
+  :root {
+    --gs-accent: #0051ff;
+    --gs-ink: #0f172a;
+    --gs-ink-soft: #475569;
+    --gs-ink-faint: #64748b;
+    --gs-rule: #e2e8f0;
+    --gs-surface: #ffffff;
+    --gs-surface-alt: #f8fafc;
+    --gs-measure: 46rem;
+    --gs-font: 'Inter', ui-sans-serif, system-ui, -apple-system, 'Segoe UI',
+      Roboto, Helvetica, Arial, sans-serif;
+    --gs-mono: 'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, Consolas,
+      monospace;
+  }
+
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  html {
+    -webkit-text-size-adjust: 100%;
+  }
+
+  .gs-body {
+    margin: 0;
+    background: var(--gs-surface);
+    color: var(--gs-ink);
+    font-family: var(--gs-font);
+    font-size: 17px;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  .gs-body a {
+    color: var(--gs-accent);
+    text-underline-offset: 0.2em;
+  }
+
+  .gs-body a:focus-visible,
+  .gs-body button:focus-visible,
+  .gs-body input:focus-visible,
+  .gs-body textarea:focus-visible {
+    outline: 2px solid var(--gs-accent);
+    outline-offset: 2px;
+  }
+
+  /* ─── Estructura ─────────────────────────────────────────────── */
+  .gs-shell {
+    max-width: var(--gs-measure);
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+
+  .gs-shell--wide {
+    max-width: 60rem;
+  }
+
+  .gs-section {
+    padding: 2.75rem 0;
+    border-top: 1px solid var(--gs-rule);
+  }
+
+  .gs-section:first-of-type {
+    border-top: 0;
+  }
+
+  .gs-section h2 {
+    margin: 0 0 1.25rem;
+    font-size: 1.0625rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--gs-ink);
+  }
+
+  .gs-section p {
+    margin: 0 0 1.15rem;
+    color: var(--gs-ink-soft);
+  }
+
+  .gs-section p:last-child {
+    margin-bottom: 0;
+  }
+
+  .gs-skip {
+    position: absolute;
+    left: -9999px;
+    top: 0;
+    background: var(--gs-ink);
+    color: #fff;
+    padding: 0.6rem 1rem;
+    z-index: 10;
+  }
+
+  .gs-skip:focus {
+    left: 0.5rem;
+    top: 0.5rem;
+  }
+
+  /* ─── Cabecera del sitio ─────────────────────────────────────── */
+  .gs-topbar {
+    border-bottom: 1px solid var(--gs-rule);
+    background: var(--gs-surface);
+  }
+
+  .gs-topbar__inner {
+    max-width: 60rem;
+    margin: 0 auto;
+    padding: 0.9rem 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+
+  .gs-topbar__brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    color: var(--gs-ink);
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 0.9375rem;
+  }
+
+  .gs-topbar__brand img {
+    height: 1.4rem;
+    width: auto;
+  }
+
+  .gs-langswitch {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.8125rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+  }
+
+  .gs-langswitch__current {
+    color: var(--gs-ink);
+  }
+
+  .gs-langswitch__sep {
+    color: var(--gs-rule);
+  }
+
+  .gs-langswitch a {
+    color: var(--gs-ink-faint);
+    text-decoration: none;
+  }
+
+  .gs-langswitch a:hover {
+    color: var(--gs-accent);
+    text-decoration: underline;
+  }
+
+  /* ─── Pie legal ──────────────────────────────────────────────── */
+  .gs-footer {
+    border-top: 1px solid var(--gs-rule);
+    background: var(--gs-surface-alt);
+    padding: 2.25rem 0 3rem;
+    font-size: 0.8125rem;
+    line-height: 1.6;
+    color: var(--gs-ink-faint);
+  }
+
+  .gs-footer p {
+    margin: 0 0 0.9rem;
+  }
+
+  .gs-footer__legal {
+    font-weight: 700;
+    color: var(--gs-ink);
+  }
+
+  .gs-footer__links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .gs-footer__links li + li::before {
+    content: '·';
+    margin-right: 0.75rem;
+    color: var(--gs-rule);
+  }
+
+  .gs-print-note {
+    display: none;
+  }
+
+  /* ─── Impresión (§6.5) ───────────────────────────────────────── */
+  @media print {
+    :root {
+      --gs-ink: #000;
+      --gs-ink-soft: #000;
+      --gs-ink-faint: #000;
+      --gs-rule: #999;
+      --gs-surface: #fff;
+      --gs-surface-alt: #fff;
+    }
+
+    .gs-body {
+      font-size: 10.5pt;
+      line-height: 1.45;
+      background: #fff;
+      color: #000;
+    }
+
+    .gs-topbar,
+    .gs-contact__form,
+    .gs-skip {
+      display: none !important;
+    }
+
+    .gs-shell,
+    .gs-shell--wide,
+    .gs-topbar__inner {
+      max-width: none;
+      padding: 0;
+    }
+
+    .gs-section {
+      padding: 0.7rem 0;
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+
+    .gs-body a {
+      color: #000;
+      text-decoration: none;
+    }
+
+    table,
+    dl,
+    .gs-card,
+    .gs-flow__diagram {
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+
+    .gs-print-note {
+      display: block;
+      margin-top: 1rem;
+      font-size: 8pt;
+      color: #000;
+    }
+  }
+</style>

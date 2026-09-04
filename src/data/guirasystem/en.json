@@ -1,0 +1,167 @@
+{
+  "lang": "en",
+  "meta": {
+    "title": "Guira System LLC — Payment origination and documentation software",
+    "description": "Guira System LLC is a US-based software and business-services company. We develop and operate a B2B web platform used by Bolivian importers.",
+    "canonical": "https://www.guiracorp.com/guirasystem/",
+    "alternate": "https://www.guiracorp.com/es/guirasystem/",
+    "ogLocale": "en_US"
+  },
+  "nav": {
+    "brand": "Guira System LLC",
+    "skipToContent": "Skip to content",
+    "languageLabel": "Language",
+    "current": "EN",
+    "otherCode": "ES",
+    "otherHref": "/es/guirasystem/",
+    "otherLabel": "Ver esta página en español"
+  },
+  "identity": {
+    "legalName": "Guira System LLC",
+    "attributes": [
+      "Software and business services",
+      "Limited Liability Company",
+      "State of Delaware, United States"
+    ],
+    "tagline": "Payment origination and documentation software for international B2B trade."
+  },
+  "whatWeDo": {
+    "title": "What we do",
+    "paragraphs": [
+      "Guira System LLC is a US-based software and business-services company. We develop and operate a B2B web platform used by Bolivian small and medium-sized importers to originate and document international supplier payments.",
+      "Guira System LLC does not hold, receive, exchange or transmit customer funds. All payment execution and settlement is performed by licensed US financial institutions and licensed payment providers with which we contract; customer funds move only through those licensed providers' accounts and never through Guira System LLC's own accounts.",
+      "Our product is the software platform and the compliance documentation package it generates for each transaction: KYC/KYB verification records, supporting commercial documents, a full transaction audit trail and settlement evidence, which our clients use for accounting, customs and audit purposes.",
+      "Our revenue consists exclusively of platform license and service fees invoiced to our clients, plus an intercompany service fee from our affiliate GUIRAGLOBAL S.R.L. (La Paz, Bolivia), which provides local advisory services under a fixed monthly retainer."
+    ]
+  },
+  "exclusions": {
+    "title": "What Guira System LLC does not do",
+    "items": [
+      "We do not hold, receive, exchange or transmit customer funds.",
+      "We do not operate as a money services business, money transmitter, currency exchange or virtual asset service provider, and we do not perform any activity requiring a money transmission licence.",
+      "We do not maintain customer balances or custody of any kind.",
+      "We are not a bank and we do not provide banking services."
+    ],
+    "note": "Payment execution and settlement are performed exclusively by licensed US financial institutions and licensed payment providers with which we contract."
+  },
+  "flow": {
+    "title": "How the platform works",
+    "steps": [
+      {
+        "number": "1",
+        "name": "Origination",
+        "text": "The client company enters a supplier payment instruction on the platform and uploads the underlying commercial documents."
+      },
+      {
+        "number": "2",
+        "name": "Verification",
+        "text": "Identity and counterparty verification, sanctions and PEP screening are completed through a specialised third-party provider. Every instruction is reviewed by a specialist before it proceeds."
+      },
+      {
+        "number": "3",
+        "name": "Execution",
+        "text": "Execution and settlement are performed by licensed US financial institutions and licensed payment providers. Funds move through those providers' accounts. They never move through accounts of Guira System LLC."
+      },
+      {
+        "number": "4",
+        "name": "Documentation",
+        "text": "The platform assembles the complete record of the operation: verification records, supporting commercial documents, audit trail and settlement evidence."
+      }
+    ],
+    "diagram": {
+      "perimeterLabel": "Guira System LLC",
+      "outsideLabel": "Licensed US providers",
+      "outsideNote": "Outside the Guira System LLC perimeter",
+      "alt": "Diagram of the operation. Three stages — origination, verification and documentation — sit inside a dashed perimeter labelled Guira System LLC. The execution and settlement stage sits outside that perimeter, in a separate block labelled licensed US providers, showing that client funds move only through the licensed providers' accounts and never through accounts of Guira System LLC."
+    }
+  },
+  "deliverables": {
+    "title": "What our clients receive",
+    "intro": "Every operation produces a documentation package built for third-party review:",
+    "items": [
+      "KYC and KYB verification records",
+      "Supporting commercial documents (invoice, purchase order, shipping documents)",
+      "A complete transaction audit trail with timestamps",
+      "Settlement evidence issued by the executing licensed provider"
+    ],
+    "note": "Our clients use this package for accounting, customs and audit purposes. This documentation is the product."
+  },
+  "advisory": {
+    "title": "Advisory services",
+    "paragraphs": [
+      "Local advisory, onboarding and documentation support in Bolivia are provided by our affiliate GUIRAGLOBAL S.R.L. (La Paz), under a fixed monthly retainer.",
+      "The scope of that engagement is advisory and documentary. GUIRAGLOBAL S.R.L. does not receive, hold or move client funds, is not a financial institution and charges no transaction-based or ad valorem fee."
+    ]
+  },
+  "corporate": {
+    "title": "Corporate information",
+    "rows": [
+      { "label": "Legal name", "value": "Guira System LLC" },
+      { "label": "Entity type", "value": "Limited Liability Company" },
+      { "label": "Jurisdiction", "value": "State of Delaware, United States of America" },
+      { "label": "Activity", "value": "Software and business services (B2B)" },
+      { "label": "Industry classification", "value": "NAICS 541511 — Custom Computer Programming Services (primary); NAICS 541611 — Administrative & Management Consulting Services (secondary)" },
+      { "label": "Product", "value": "B2B web platform for the origination and documentation of international supplier payments" },
+      { "label": "Market served", "value": "Small and medium-sized importers in Bolivia; trade corridors to the United States and Asia" },
+      { "label": "Affiliate", "value": "GUIRAGLOBAL S.R.L. — La Paz, Bolivia. Local advisory services under a fixed monthly retainer." },
+      { "label": "Officer", "value": "Wilmar Velásquez Zapata — Managing Member" },
+      { "label": "Corporate domain", "value": "guiracorp.com" }
+    ]
+  },
+  "group": {
+    "title": "Group structure",
+    "entities": [
+      {
+        "name": "Guira System LLC",
+        "jurisdiction": "State of Delaware, United States",
+        "role": "Develops and operates the platform. Contracts the licensed providers. Invoices platform license and service fees.",
+        "perimeter": "Does not hold, receive, exchange or transmit customer funds."
+      },
+      {
+        "name": "GUIRAGLOBAL S.R.L.",
+        "jurisdiction": "La Paz, Bolivia",
+        "role": "Local advisory, onboarding support and documentation support, under a fixed monthly retainer.",
+        "perimeter": "Does not receive, hold or move client funds. Is not a financial institution and is not subject to financial supervision. Charges no transaction-based or ad valorem fee."
+      }
+    ]
+  },
+  "compliance": {
+    "title": "Compliance posture",
+    "items": [
+      "Identity verification (KYC/KYB) and sanctions and PEP screening are performed through a specialised third-party provider before onboarding is completed.",
+      "Every payment instruction is reviewed by a specialist before it is submitted for execution.",
+      "Records for each operation are retained and made available to the client for accounting and audit purposes.",
+      "Execution is contracted exclusively with licensed US financial institutions and licensed payment providers."
+    ]
+  },
+  "contact": {
+    "title": "Contact",
+    "entityLine": "Guira System LLC · State of Delaware, United States",
+    "email": null,
+    "emailPending": "Institutional mailbox of the corporate domain — to be confirmed before publication.",
+    "note": "Access to the platform is currently offered to a limited group of companies. Request an assessment of your operation.",
+    "form": {
+      "subject": "Guira System LLC — assessment request",
+      "fields": {
+        "name": "Full name",
+        "company": "Company",
+        "email": "Corporate email",
+        "country": "Country",
+        "message": "Message"
+      },
+      "submit": "Request an assessment",
+      "privacyNote": "The data you submit is used solely to respond to your request. See our",
+      "privacyLink": "Privacy Policy",
+      "privacyHref": "/privacidad/"
+    }
+  },
+  "footer": {
+    "copyright": "© 2026 Guira System LLC. All rights reserved.",
+    "disclaimer": "Guira System LLC is a software and business-services company incorporated in the State of Delaware, United States. It is not a bank, money services business or financial institution, and does not provide financial, legal, tax or investment advice. Payment execution and settlement are performed by licensed third-party providers.",
+    "links": [
+      { "label": "Terms of Service", "href": "/terminos/" },
+      { "label": "Privacy Policy", "href": "/privacidad/" }
+    ],
+    "printedOn": "Retrieved from"
+  }
+}

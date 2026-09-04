@@ -1,0 +1,78 @@
+---
+/**
+ * Datos registrales en <dl> semántico: texto seleccionable y copiable,
+ * nunca imagen. Un analista copia estos campos a su expediente.
+ */
+interface Props {
+  id?: string;
+  corporate: {
+    title: string;
+    rows: { label: string; value: string }[];
+  };
+}
+
+const { id, corporate } = Astro.props;
+---
+
+<section class="gs-section" id={id}>
+  <div class="gs-shell">
+    <h2>{corporate.title}</h2>
+    <dl class="gs-datalist">
+      {corporate.rows.map((row) => (
+        <div class="gs-datalist__row">
+          <dt>{row.label}</dt>
+          <dd>{row.value}</dd>
+        </div>
+      ))}
+    </dl>
+    {/*
+      PENDIENTE (§8): fecha de constitución y dirección comercial operativa.
+      No se publican hasta que Wilmar confirme el dato y exista documento de
+      respaldo de los últimos 12 meses. La dirección del agente registrado en
+      Delaware no se publica como dirección comercial.
+    */}
+  </div>
+</section>
+
+<style>
+  .gs-datalist {
+    margin: 0;
+    border-top: 1px solid var(--gs-rule);
+  }
+
+  .gs-datalist__row {
+    display: grid;
+    gap: 0.25rem 1.5rem;
+    padding: 0.85rem 0;
+    border-bottom: 1px solid var(--gs-rule);
+  }
+
+  @media (min-width: 40rem) {
+    .gs-datalist__row {
+      grid-template-columns: 13rem 1fr;
+    }
+  }
+
+  .gs-datalist dt {
+    margin: 0;
+    font-size: 0.8125rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--gs-ink-faint);
+  }
+
+  .gs-datalist dd {
+    margin: 0;
+    font-family: var(--gs-mono);
+    font-size: 0.9375rem;
+    line-height: 1.5;
+    color: var(--gs-ink);
+  }
+
+  @media print {
+    .gs-datalist__row {
+      padding: 0.3rem 0;
+    }
+  }
+</style>

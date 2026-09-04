@@ -5,6 +5,7 @@ import DemoForm from "../components/DemoForm.astro";
 import StackedSections from "../components/StackedSections.astro";
 import FaqSection from "../components/FaqSection.astro";
 import EditorialGridSection from "../components/EditorialGridSection.astro";
+import EditorialHeader from "../components/EditorialHeader.astro";
 import GuiraButton from "../components/GuiraButton.astro";
 
 const opcionesCobroItems = [
@@ -189,7 +190,9 @@ const cobrosFaq = [
         </div>
 
         <!-- GLOBO TERRÁQUEO WIREFRAME: HEMISFERIO SUPERIOR EN 3D REAL CON ROTACIÓN ESFÉRICA -->
-        <div class="lg:col-span-6 relative flex items-center justify-center py-4 globe-3d-perspective-wrapper">
+        <div
+          class="lg:col-span-6 relative flex items-center justify-center py-4 globe-3d-perspective-wrapper"
+        >
           <!-- Ambient Glow Backdrop -->
           <div
             class="absolute inset-0 bg-[radial-gradient(circle_at_50%_65%,rgba(56,189,248,0.24),rgba(0,81,255,0.08)_50%,transparent_75%)] blur-3xl pointer-events-none"
@@ -227,22 +230,14 @@ const cobrosFaq = [
     class="relative py-20 bg-guira-navy text-white overflow-hidden"
   >
     <div class="max-w-7xl mx-auto px-6 relative z-10">
-      <div class="text-center mb-10">
-        <p class="section-kicker text-guira-cyan mb-3">
-          Todo en una sola plataforma
-        </p>
-        <h2
-          class="text-3xl sm:text-4xl md:text-5xl lg:text-[2.65rem] font-extrabold uppercase tracking-tight leading-[1.08] mb-4"
-        >
-          Recibe y envía pagos internacionales sin salir de Guira
-        </h2>
-        <p
-          class="text-slate-300 text-lg max-w-2xl mx-auto font-medium leading-relaxed"
-        >
-          Cobra desde Estados Unidos y paga a tus proveedores en el exterior
-          desde un mismo lugar, con trazabilidad y control por operación.
-        </p>
-      </div>
+      <EditorialHeader
+        theme="dark"
+        kicker="Todo en una sola plataforma"
+        line1="Recibe y envía pagos"
+        line2="internacionales sin salir de Guira"
+        description="Cobra desde Estados Unidos y paga a tus proveedores en el exterior desde un mismo lugar, con trazabilidad y control por operación."
+        marginBottom="mb-12 sm:mb-16"
+      />
 
       <div class="hub-flow-wrapper" id="network-flow-container">
         <div class="hub-flow-scroll">
@@ -539,11 +534,20 @@ const cobrosFaq = [
   </section>
 
   <!-- ESTADÍSTICAS RÁPIDAS -->
-  <section data-stack-section class="py-10 lg:py-12 bg-slate-900 border-b border-slate-800">
+  <section
+    data-stack-section
+    class="py-10 lg:py-12 bg-slate-900 border-b border-slate-800"
+  >
     <div class="max-w-7xl mx-auto px-6">
-      <div class="grid grid-cols-2 md:grid-cols-4 divide-y md:divide-y-0 md:divide-x divide-slate-800 text-center">
-        <div class="py-4 md:py-2 px-4 sm:px-6 border-r border-slate-800 md:border-r-0">
-          <p class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight mb-1.5">
+      <div
+        class="grid grid-cols-2 md:grid-cols-4 divide-y md:divide-y-0 md:divide-x divide-slate-800 text-center"
+      >
+        <div
+          class="py-4 md:py-2 px-4 sm:px-6 border-r border-slate-800 md:border-r-0"
+        >
+          <p
+            class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight mb-1.5"
+          >
             USD
           </p>
           <p class="text-guira-cyan text-xs sm:text-sm font-semibold">
@@ -551,15 +555,21 @@ const cobrosFaq = [
           </p>
         </div>
         <div class="py-4 md:py-2 px-4 sm:px-6">
-          <p class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight mb-1.5">
+          <p
+            class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight mb-1.5"
+          >
             Wire
           </p>
           <p class="text-guira-cyan text-xs sm:text-sm font-semibold">
             Pagos corporativos
           </p>
         </div>
-        <div class="py-4 md:py-2 px-4 sm:px-6 border-r border-slate-800 md:border-r-0">
-          <p class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight mb-1.5">
+        <div
+          class="py-4 md:py-2 px-4 sm:px-6 border-r border-slate-800 md:border-r-0"
+        >
+          <p
+            class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight mb-1.5"
+          >
             ACH
           </p>
           <p class="text-guira-cyan text-xs sm:text-sm font-semibold">
@@ -567,7 +577,9 @@ const cobrosFaq = [
           </p>
         </div>
         <div class="py-4 md:py-2 px-4 sm:px-6">
-          <p class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight mb-1.5">
+          <p
+            class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight mb-1.5"
+          >
             1 lugar
           </p>
           <p class="text-guira-cyan text-xs sm:text-sm font-semibold">
@@ -1220,9 +1232,15 @@ const cobrosFaq = [
         >
           Qué conviene revisar antes de recibir un pago desde EE. UU.
         </h2>
-        <div class="grid grid-cols-2 md:grid-cols-4 divide-y md:divide-y-0 md:divide-x divide-slate-800 text-center mb-10">
-          <div class="py-4 md:py-2 px-4 sm:px-6 border-r border-slate-800 md:border-r-0">
-            <p class="text-xl sm:text-2xl font-extrabold text-white tracking-tight mb-1.5">
+        <div
+          class="grid grid-cols-2 md:grid-cols-4 divide-y md:divide-y-0 md:divide-x divide-slate-800 text-center mb-10"
+        >
+          <div
+            class="py-4 md:py-2 px-4 sm:px-6 border-r border-slate-800 md:border-r-0"
+          >
+            <p
+              class="text-xl sm:text-2xl font-extrabold text-white tracking-tight mb-1.5"
+            >
               Método
             </p>
             <p class="text-guira-cyan text-xs sm:text-sm font-semibold">
@@ -1230,15 +1248,21 @@ const cobrosFaq = [
             </p>
           </div>
           <div class="py-4 md:py-2 px-4 sm:px-6">
-            <p class="text-xl sm:text-2xl font-extrabold text-white tracking-tight mb-1.5">
+            <p
+              class="text-xl sm:text-2xl font-extrabold text-white tracking-tight mb-1.5"
+            >
               Referencia
             </p>
             <p class="text-guira-cyan text-xs sm:text-sm font-semibold">
               Factura o contrato
             </p>
           </div>
-          <div class="py-4 md:py-2 px-4 sm:px-6 border-r border-slate-800 md:border-r-0">
-            <p class="text-xl sm:text-2xl font-extrabold text-white tracking-tight mb-1.5">
+          <div
+            class="py-4 md:py-2 px-4 sm:px-6 border-r border-slate-800 md:border-r-0"
+          >
+            <p
+              class="text-xl sm:text-2xl font-extrabold text-white tracking-tight mb-1.5"
+            >
               Documentos
             </p>
             <p class="text-guira-cyan text-xs sm:text-sm font-semibold">
@@ -1246,7 +1270,9 @@ const cobrosFaq = [
             </p>
           </div>
           <div class="py-4 md:py-2 px-4 sm:px-6">
-            <p class="text-xl sm:text-2xl font-extrabold text-white tracking-tight mb-1.5">
+            <p
+              class="text-xl sm:text-2xl font-extrabold text-white tracking-tight mb-1.5"
+            >
               Seguimiento
             </p>
             <p class="text-guira-cyan text-xs sm:text-sm font-semibold">
@@ -1678,10 +1704,12 @@ const cobrosFaq = [
         transform: rotateX(20deg) rotateY(-8deg) rotateZ(1deg) translateY(0px);
       }
       50% {
-        transform: rotateX(15deg) rotateY(-4deg) rotateZ(-0.5deg) translateY(-10px);
+        transform: rotateX(15deg) rotateY(-4deg) rotateZ(-0.5deg)
+          translateY(-10px);
       }
       100% {
-        transform: rotateX(22deg) rotateY(-11deg) rotateZ(1.8deg) translateY(-4px);
+        transform: rotateX(22deg) rotateY(-11deg) rotateZ(1.8deg)
+          translateY(-4px);
       }
     }
 
@@ -1692,8 +1720,18 @@ const cobrosFaq = [
     #globe-3d-mesh-canvas {
       transform: translateZ(0px);
       transform-style: preserve-3d;
-      -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 1) 78%, rgba(0, 0, 0, 0) 100%);
-      mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 1) 78%, rgba(0, 0, 0, 0) 100%);
+      -webkit-mask-image: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 1) 0%,
+        rgba(0, 0, 0, 1) 78%,
+        rgba(0, 0, 0, 0) 100%
+      );
+      mask-image: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 1) 0%,
+        rgba(0, 0, 0, 1) 78%,
+        rgba(0, 0, 0, 0) 100%
+      );
     }
 
     #orbit-flags-track {
@@ -1726,17 +1764,19 @@ const cobrosFaq = [
       align-items: center;
       justify-content: center;
       background: #ffffff;
-      box-shadow: 
+      box-shadow:
         0 14px 30px -4px rgba(0, 0, 0, 0.4),
         0 0 0 2px rgba(255, 255, 255, 0.95),
         0 0 20px rgba(56, 189, 248, 0.45);
       transform: translateZ(12px);
-      transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease;
+      transition:
+        transform 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+        box-shadow 0.3s ease;
     }
 
     .flag-disc-wrapper:hover .flag-disc-inner {
       transform: scale(1.18) translateZ(28px);
-      box-shadow: 
+      box-shadow:
         0 18px 40px -4px rgba(0, 0, 0, 0.5),
         0 0 0 2.5px #ffffff,
         0 0 30px rgba(0, 216, 255, 0.75);
@@ -2195,22 +2235,62 @@ const cobrosFaq = [
 
       // Lista exacta de países de "Alcance regional de Guira" en index.astro
       var COUNTRIES = [
-        { name: "Bolivia", flag: "https://cdn.jsdelivr.net/gh/hatscripts/circle-flags/flags/bo.svg" },
-        { name: "Estados Unidos", flag: "https://cdn.jsdelivr.net/gh/hatscripts/circle-flags/flags/us.svg" },
-        { name: "Perú", flag: "https://cdn.jsdelivr.net/gh/hatscripts/circle-flags/flags/pe.svg" },
-        { name: "Colombia", flag: "https://cdn.jsdelivr.net/gh/hatscripts/circle-flags/flags/co.svg" },
-        { name: "China", flag: "https://cdn.jsdelivr.net/gh/hatscripts/circle-flags/flags/cn.svg" },
-        { name: "Chile", flag: "https://cdn.jsdelivr.net/gh/hatscripts/circle-flags/flags/cl.svg" },
-        { name: "España", flag: "https://cdn.jsdelivr.net/gh/hatscripts/circle-flags/flags/es.svg" },
-        { name: "Reino Unido", flag: "https://cdn.jsdelivr.net/gh/hatscripts/circle-flags/flags/gb.svg" },
-        { name: "Brasil", flag: "https://cdn.jsdelivr.net/gh/hatscripts/circle-flags/flags/br.svg" },
-        { name: "México", flag: "https://cdn.jsdelivr.net/gh/hatscripts/circle-flags/flags/mx.svg" },
-        { name: "Argentina", flag: "https://cdn.jsdelivr.net/gh/hatscripts/circle-flags/flags/ar.svg" },
-        { name: "Canadá", flag: "https://cdn.jsdelivr.net/gh/hatscripts/circle-flags/flags/ca.svg" },
-        { name: "Unión Europea", flag: "https://cdn.jsdelivr.net/gh/hatscripts/circle-flags/flags/european_union.svg" },
-        { name: "Panamá", flag: "https://cdn.jsdelivr.net/gh/hatscripts/circle-flags/flags/pa.svg" },
-        { name: "Alemania", flag: "https://cdn.jsdelivr.net/gh/hatscripts/circle-flags/flags/de.svg" },
-        { name: "Japón", flag: "https://cdn.jsdelivr.net/gh/hatscripts/circle-flags/flags/jp.svg" }
+        {
+          name: "Bolivia",
+          flag: "https://cdn.jsdelivr.net/gh/hatscripts/circle-flags/flags/bo.svg",
+        },
+        {
+          name: "Estados Unidos",
+          flag: "https://cdn.jsdelivr.net/gh/hatscripts/circle-flags/flags/us.svg",
+        },
+        {
+          name: "Perú",
+          flag: "https://cdn.jsdelivr.net/gh/hatscripts/circle-flags/flags/pe.svg",
+        },
+        {
+          name: "Colombia",
+          flag: "https://cdn.jsdelivr.net/gh/hatscripts/circle-flags/flags/co.svg",
+        },
+        {
+          name: "China",
+          flag: "https://cdn.jsdelivr.net/gh/hatscripts/circle-flags/flags/cn.svg",
+        },
+        {
+          name: "Chile",
+          flag: "https://cdn.jsdelivr.net/gh/hatscripts/circle-flags/flags/cl.svg",
+        },
+        {
+          name: "España",
+          flag: "https://cdn.jsdelivr.net/gh/hatscripts/circle-flags/flags/es.svg",
+        },
+        {
+          name: "Reino Unido",
+          flag: "https://cdn.jsdelivr.net/gh/hatscripts/circle-flags/flags/gb.svg",
+        },
+        {
+          name: "Brasil",
+          flag: "https://cdn.jsdelivr.net/gh/hatscripts/circle-flags/flags/br.svg",
+        },
+        {
+          name: "México",
+          flag: "https://cdn.jsdelivr.net/gh/hatscripts/circle-flags/flags/mx.svg",
+        },
+        {
+          name: "Argentina",
+          flag: "https://cdn.jsdelivr.net/gh/hatscripts/circle-flags/flags/ar.svg",
+        },
+        {
+          name: "Canadá",
+          flag: "https://cdn.jsdelivr.net/gh/hatscripts/circle-flags/flags/ca.svg",
+        },
+        {
+          name: "Unión Europea",
+          flag: "https://cdn.jsdelivr.net/gh/hatscripts/circle-flags/flags/european_union.svg",
+        },
+        {
+          name: "Alemania",
+          flag: "https://cdn.jsdelivr.net/gh/hatscripts/circle-flags/flags/de.svg",
+        },
       ];
 
       flagsTrack.innerHTML = "";
@@ -2222,8 +2302,12 @@ const cobrosFaq = [
         el.title = c.name;
         el.innerHTML =
           '<div class="flag-disc-inner">' +
-          '<img src="' + c.flag + '" alt="' + c.name + '" class="w-full h-full object-cover rounded-full select-none" loading="lazy" />' +
-          '</div>';
+          '<img src="' +
+          c.flag +
+          '" alt="' +
+          c.name +
+          '" class="w-full h-full object-cover rounded-full select-none" loading="lazy" />' +
+          "</div>";
         flagsTrack.appendChild(el);
         flagElements.push(el);
       });
@@ -2236,11 +2320,11 @@ const cobrosFaq = [
       var globeSpeed = 0.0016;
 
       // Parámetros de proyección 3D del Canvas
-      var W = canvas.width;  // 1200
+      var W = canvas.width; // 1200
       var H = canvas.height; // 680
-      var cx = W / 2;        // 600
-      var cy = H - 60;       // 620 (Línea de horizonte en la base)
-      var R = 490;           // Radio en espacio canvas 1200x680
+      var cx = W / 2; // 600
+      var cy = H - 60; // 620 (Línea de horizonte en la base)
+      var R = 490; // Radio en espacio canvas 1200x680
       var pitch = 22 * (Math.PI / 180); // Inclinación hacia la cámara (eje X)
       var cosP = Math.cos(pitch);
       var sinP = Math.sin(pitch);
@@ -2265,7 +2349,7 @@ const cobrosFaq = [
         return {
           x: cx + x1 * R,
           y: cy - y1 * R,
-          z: z1
+          z: z1,
         };
       }
 
@@ -2273,11 +2357,18 @@ const cobrosFaq = [
         ctx.clearRect(0, 0, W, H);
 
         // 1. Sombreado esférico volumétrico natural
-        var sphereGrad = ctx.createRadialGradient(cx, cy - R * 0.45, R * 0.08, cx, cy, R);
+        var sphereGrad = ctx.createRadialGradient(
+          cx,
+          cy - R * 0.45,
+          R * 0.08,
+          cx,
+          cy,
+          R,
+        );
         sphereGrad.addColorStop(0, "rgba(56, 189, 248, 0.22)");
         sphereGrad.addColorStop(0.55, "rgba(0, 81, 255, 0.09)");
         sphereGrad.addColorStop(1, "rgba(2, 132, 199, 0.01)");
-        
+
         ctx.save();
         ctx.beginPath();
         ctx.arc(cx, cy, R, Math.PI, 0, false);
@@ -2322,7 +2413,7 @@ const cobrosFaq = [
             else ctx.lineTo(pt.x, pt.y);
             avgZ += pt.z;
           }
-          avgZ /= (latSteps + 1);
+          avgZ /= latSteps + 1;
 
           // Iluminación dependiente de la profundidad Z
           var zNorm = Math.max(0, Math.min(1, (avgZ + 1) / 2));
@@ -2382,7 +2473,8 @@ const cobrosFaq = [
             el.style.top = pctY + "%";
             el.style.width = size.toFixed(1) + "px";
             el.style.height = size.toFixed(1) + "px";
-            el.style.transform = "translate(-50%, -50%) translateZ(" + zDepth.toFixed(1) + "px)";
+            el.style.transform =
+              "translate(-50%, -50%) translateZ(" + zDepth.toFixed(1) + "px)";
             el.style.opacity = opacity.toFixed(3);
             el.style.zIndex = String(Math.round(elevation * 100));
           } else {

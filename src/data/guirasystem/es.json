@@ -1,0 +1,167 @@
+{
+  "lang": "es",
+  "meta": {
+    "title": "Guira System LLC — Software de originación y documentación de pagos",
+    "description": "Guira System LLC es una empresa estadounidense de software y servicios empresariales. Operamos una plataforma web B2B para pagos a proveedores.",
+    "canonical": "https://www.guiracorp.com/es/guirasystem/",
+    "alternate": "https://www.guiracorp.com/guirasystem/",
+    "ogLocale": "es_ES"
+  },
+  "nav": {
+    "brand": "Guira System LLC",
+    "skipToContent": "Ir al contenido",
+    "languageLabel": "Idioma",
+    "current": "ES",
+    "otherCode": "EN",
+    "otherHref": "/guirasystem/",
+    "otherLabel": "View this page in English"
+  },
+  "identity": {
+    "legalName": "Guira System LLC",
+    "attributes": [
+      "Software y servicios empresariales",
+      "Limited Liability Company",
+      "Estado de Delaware, Estados Unidos"
+    ],
+    "tagline": "Software de originación y documentación de pagos para el comercio internacional B2B."
+  },
+  "whatWeDo": {
+    "title": "Qué hacemos",
+    "paragraphs": [
+      "Guira System LLC es una empresa estadounidense de software y servicios empresariales. Desarrollamos y operamos una plataforma web B2B utilizada por pequeñas y medianas empresas importadoras de Bolivia para originar y documentar pagos internacionales a proveedores.",
+      "Guira System LLC no recibe, retiene, intercambia ni transmite fondos de clientes. La ejecución y la liquidación de los pagos son realizadas por instituciones financieras y proveedores de pago licenciados en Estados Unidos con los que la empresa contrata; los fondos de los clientes se mueven únicamente a través de las cuentas de esos proveedores licenciados y nunca a través de cuentas de Guira System LLC.",
+      "Nuestro producto es la plataforma de software y el paquete de documentación que genera para cada operación: registros de verificación KYC/KYB, documentos comerciales de respaldo, un audit trail completo de la transacción y la evidencia de liquidación, que nuestros clientes utilizan con fines contables, aduaneros y de auditoría.",
+      "Nuestros ingresos consisten exclusivamente en honorarios de licencia de plataforma y de servicio facturados a nuestros clientes, más un honorario de servicios intercompañía de nuestra afiliada GUIRAGLOBAL S.R.L. (La Paz, Bolivia), que presta servicios locales de asesoría bajo un retainer mensual fijo."
+    ]
+  },
+  "exclusions": {
+    "title": "Lo que Guira System LLC no hace",
+    "items": [
+      "No recibe, retiene, intercambia ni transmite fondos de clientes.",
+      "No opera como money services business, money transmitter, casa de cambio ni proveedor de servicios de activos virtuales, y no realiza ninguna actividad que requiera licencia de transmisión de dinero.",
+      "No mantiene saldos de clientes ni custodia de ningún tipo.",
+      "No es un banco y no presta servicios bancarios."
+    ],
+    "note": "La ejecución y la liquidación son realizadas exclusivamente por instituciones financieras y proveedores de pago licenciados en Estados Unidos con los que la empresa contrata."
+  },
+  "flow": {
+    "title": "Cómo funciona la plataforma",
+    "steps": [
+      {
+        "number": "1",
+        "name": "Originación",
+        "text": "La empresa cliente registra en la plataforma una instrucción de pago a su proveedor y carga los documentos comerciales que la respaldan."
+      },
+      {
+        "number": "2",
+        "name": "Verificación",
+        "text": "La verificación de identidad y de contraparte, y el screening de sanciones y PEP, se completan a través de un proveedor externo especializado. Cada instrucción es revisada por un especialista antes de continuar."
+      },
+      {
+        "number": "3",
+        "name": "Ejecución",
+        "text": "La ejecución y la liquidación son realizadas por instituciones financieras y proveedores de pago licenciados en Estados Unidos. Los fondos se mueven a través de las cuentas de esos proveedores. Nunca se mueven a través de cuentas de Guira System LLC."
+      },
+      {
+        "number": "4",
+        "name": "Documentación",
+        "text": "La plataforma reúne el registro completo de la operación: registros de verificación, documentos comerciales de respaldo, audit trail y evidencia de liquidación."
+      }
+    ],
+    "diagram": {
+      "perimeterLabel": "Guira System LLC",
+      "outsideLabel": "Proveedores licenciados en EE.UU.",
+      "outsideNote": "Fuera del perímetro de Guira System LLC",
+      "alt": "Diagrama de la operación. Tres etapas —originación, verificación y documentación— están dentro de un perímetro punteado rotulado Guira System LLC. La etapa de ejecución y liquidación queda fuera de ese perímetro, en un bloque separado rotulado proveedores licenciados en Estados Unidos, lo que muestra que los fondos de los clientes se mueven únicamente por las cuentas de los proveedores licenciados y nunca por cuentas de Guira System LLC."
+    }
+  },
+  "deliverables": {
+    "title": "Qué reciben nuestros clientes",
+    "intro": "Cada operación produce un paquete de documentación preparado para revisión de terceros:",
+    "items": [
+      "Registros de verificación KYC y KYB",
+      "Documentos comerciales de respaldo (factura, orden de compra, documentos de embarque)",
+      "Un audit trail completo de la transacción, con marcas de tiempo",
+      "Evidencia de liquidación emitida por el proveedor licenciado que ejecuta la operación"
+    ],
+    "note": "Nuestros clientes utilizan este paquete con fines contables, aduaneros y de auditoría. Esta documentación es el producto."
+  },
+  "advisory": {
+    "title": "Servicios de asesoría",
+    "paragraphs": [
+      "La asesoría local, el acompañamiento en el onboarding y el soporte documental en Bolivia son prestados por nuestra afiliada GUIRAGLOBAL S.R.L. (La Paz), bajo un retainer mensual fijo.",
+      "El alcance de esa relación es de asesoría y documentación. GUIRAGLOBAL S.R.L. no recibe, retiene ni mueve fondos de clientes, no es una institución financiera y no cobra honorarios por transacción ni ad valorem."
+    ]
+  },
+  "corporate": {
+    "title": "Información corporativa",
+    "rows": [
+      { "label": "Razón social", "value": "Guira System LLC" },
+      { "label": "Tipo de entidad", "value": "Limited Liability Company" },
+      { "label": "Jurisdicción", "value": "Estado de Delaware, Estados Unidos de América" },
+      { "label": "Actividad", "value": "Software y servicios empresariales (B2B)" },
+      { "label": "Clasificación de industria", "value": "NAICS 541511 — Custom Computer Programming Services (principal); NAICS 541611 — Administrative & Management Consulting Services (secundaria)" },
+      { "label": "Producto", "value": "Plataforma web B2B de originación y documentación de pagos internacionales a proveedores" },
+      { "label": "Mercado atendido", "value": "PYMEs importadoras de Bolivia; corredores hacia Estados Unidos y Asia" },
+      { "label": "Afiliada", "value": "GUIRAGLOBAL S.R.L. — La Paz, Bolivia. Servicios locales de asesoría bajo retainer mensual fijo." },
+      { "label": "Directivo", "value": "Wilmar Velásquez Zapata — Managing Member" },
+      { "label": "Dominio corporativo", "value": "guiracorp.com" }
+    ]
+  },
+  "group": {
+    "title": "Estructura del grupo",
+    "entities": [
+      {
+        "name": "Guira System LLC",
+        "jurisdiction": "Estado de Delaware, Estados Unidos",
+        "role": "Desarrolla y opera la plataforma. Contrata a los proveedores licenciados. Factura honorarios de licencia de plataforma y de servicio.",
+        "perimeter": "No recibe, retiene, intercambia ni transmite fondos de clientes."
+      },
+      {
+        "name": "GUIRAGLOBAL S.R.L.",
+        "jurisdiction": "La Paz, Bolivia",
+        "role": "Asesoría local, acompañamiento en el onboarding y soporte documental, bajo retainer mensual fijo.",
+        "perimeter": "No recibe, retiene ni mueve fondos de clientes. No es una institución financiera y no está sujeta a supervisión financiera. No cobra honorarios por transacción ni ad valorem."
+      }
+    ]
+  },
+  "compliance": {
+    "title": "Postura de cumplimiento",
+    "items": [
+      "La verificación de identidad (KYC/KYB) y el screening de sanciones y PEP se realizan a través de un proveedor externo especializado antes de completar el onboarding.",
+      "Cada instrucción de pago es revisada por un especialista antes de ser enviada para su ejecución.",
+      "Los registros de cada operación se conservan y se ponen a disposición del cliente con fines contables y de auditoría.",
+      "La ejecución se contrata exclusivamente con instituciones financieras y proveedores de pago licenciados en Estados Unidos."
+    ]
+  },
+  "contact": {
+    "title": "Contacto",
+    "entityLine": "Guira System LLC · Estado de Delaware, Estados Unidos",
+    "email": null,
+    "emailPending": "Casilla institucional del dominio corporativo — por confirmar antes de la publicación.",
+    "note": "El acceso a la plataforma se ofrece actualmente a un grupo limitado de empresas. Solicite una evaluación de su operación.",
+    "form": {
+      "subject": "Guira System LLC — solicitud de evaluación",
+      "fields": {
+        "name": "Nombre y apellido",
+        "company": "Empresa",
+        "email": "Correo corporativo",
+        "country": "País",
+        "message": "Mensaje"
+      },
+      "submit": "Solicitar una evaluación",
+      "privacyNote": "Los datos que envíe se utilizan únicamente para responder a su solicitud. Consulte nuestra",
+      "privacyLink": "Política de Privacidad",
+      "privacyHref": "/privacidad/"
+    }
+  },
+  "footer": {
+    "copyright": "© 2026 Guira System LLC. Todos los derechos reservados.",
+    "disclaimer": "Guira System LLC es una empresa de software y servicios empresariales constituida en el Estado de Delaware, Estados Unidos. No es un banco, money services business ni institución financiera, y no presta asesoría financiera, legal, tributaria ni de inversión. La ejecución y la liquidación de los pagos son realizadas por proveedores licenciados independientes.",
+    "links": [
+      { "label": "Condiciones Generales", "href": "/terminos/" },
+      { "label": "Política de Privacidad", "href": "/privacidad/" }
+    ],
+    "printedOn": "Consultado en"
+  }
+}

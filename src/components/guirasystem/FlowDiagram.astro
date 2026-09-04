@@ -1,0 +1,231 @@
+---
+/**
+ * Diagrama de flujo en SVG inline (sin dependencias, sin JavaScript).
+ * El argumento entero de la página está en la geometría: originación,
+ * verificación y documentación quedan dentro del perímetro punteado de
+ * Guira System LLC; la ejecución queda fuera, en los proveedores licenciados.
+ * El texto equivalente vive en la lista ordenada que acompaña al diagrama.
+ */
+interface Props {
+  id?: string;
+  flow: {
+    title: string;
+    steps: { number: string; name: string; text: string }[];
+    diagram: {
+      perimeterLabel: string;
+      outsideLabel: string;
+      outsideNote: string;
+      alt: string;
+    };
+  };
+}
+
+const { id, flow } = Astro.props;
+const [origination, verification, execution, documentation] = flow.steps;
+const d = flow.diagram;
+---
+
+<section class="gs-section" id={id}>
+  <div class="gs-shell">
+    <h2>{flow.title}</h2>
+
+    <figure class="gs-flow__diagram">
+      <svg
+        viewBox="0 0 700 380"
+        role="img"
+        aria-labelledby={`${id}-diagram-title ${id}-diagram-desc`}
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <title id={`${id}-diagram-title`}>{flow.title}</title>
+        <desc id={`${id}-diagram-desc`}>{d.alt}</desc>
+
+        <defs>
+          <marker
+            id={`${id}-arrow`}
+            viewBox="0 0 10 10"
+            refX="9"
+            refY="5"
+            markerWidth="6"
+            markerHeight="6"
+            orient="auto-start-reverse"
+          >
+            <path d="M 0 0 L 10 5 L 0 10 z" fill="currentColor" />
+          </marker>
+        </defs>
+
+        <!-- Perímetro de Guira System LLC -->
+        <rect
+          x="8" y="34" width="684" height="132" rx="6"
+          fill="none" stroke="var(--gs-accent)" stroke-width="1.5"
+          stroke-dasharray="7 5"
+        />
+        <text x="20" y="24" class="gs-svg-perimeter">{d.perimeterLabel}</text>
+
+        <!-- Nodos dentro del perímetro -->
+        <g class="gs-svg-node">
+          <rect x="28" y="60" width="188" height="80" rx="4" />
+          <text x="46" y="92" class="gs-svg-num">{origination.number}</text>
+          <text x="46" y="118" class="gs-svg-name">{origination.name}</text>
+        </g>
+        <g class="gs-svg-node">
+          <rect x="256" y="60" width="188" height="80" rx="4" />
+          <text x="274" y="92" class="gs-svg-num">{verification.number}</text>
+          <text x="274" y="118" class="gs-svg-name">{verification.name}</text>
+        </g>
+        <g class="gs-svg-node">
+          <rect x="484" y="60" width="188" height="80" rx="4" />
+          <text x="502" y="92" class="gs-svg-num">{documentation.number}</text>
+          <text x="502" y="118" class="gs-svg-name">{documentation.name}</text>
+        </g>
+
+        <!-- Nodo de ejecución, fuera del perímetro -->
+        <g class="gs-svg-node gs-svg-node--outside">
+          <rect x="256" y="238" width="250" height="100" rx="4" />
+          <text x="274" y="270" class="gs-svg-num">{execution.number}</text>
+          <text x="274" y="294" class="gs-svg-name">{execution.name}</text>
+          <text x="274" y="320" class="gs-svg-outside">{d.outsideLabel}</text>
+        </g>
+        <text x="256" y="362" class="gs-svg-outside-note">{d.outsideNote}</text>
+
+        <!-- Recorrido -->
+        <g class="gs-svg-arrow" marker-end={`url(#${id}-arrow)`}>
+          <line x1="222" y1="100" x2="250" y2="100" />
+          <polyline points="350,146 350,232" fill="none" />
+          <polyline points="512,288 578,288 578,146" fill="none" />
+        </g>
+      </svg>
+    </figure>
+
+    <ol class="gs-flow__steps">
+      {flow.steps.map((step) => (
+        <li>
+          <span class="gs-flow__num">{step.number}</span>
+          <div>
+            <h3>{step.name}</h3>
+            <p>{step.text}</p>
+          </div>
+        </li>
+      ))}
+    </ol>
+  </div>
+</section>
+
+<style>
+  .gs-flow__diagram {
+    margin: 0 0 2.25rem;
+    padding: 1.25rem;
+    border: 1px solid var(--gs-rule);
+    background: var(--gs-surface-alt);
+  }
+
+  .gs-flow__diagram svg {
+    display: block;
+    width: 100%;
+    height: auto;
+    color: var(--gs-ink-faint);
+  }
+
+  .gs-svg-node rect {
+    fill: var(--gs-surface);
+    stroke: var(--gs-ink);
+    stroke-width: 1.25;
+  }
+
+  .gs-svg-node--outside rect {
+    fill: var(--gs-surface);
+    stroke: var(--gs-ink);
+    stroke-width: 2;
+  }
+
+  .gs-svg-perimeter {
+    font-family: var(--gs-font);
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    fill: var(--gs-accent);
+  }
+
+  .gs-svg-num {
+    font-family: var(--gs-mono);
+    font-size: 15px;
+    font-weight: 600;
+    fill: var(--gs-accent);
+  }
+
+  .gs-svg-name {
+    font-family: var(--gs-font);
+    font-size: 16px;
+    font-weight: 700;
+    fill: var(--gs-ink);
+  }
+
+  .gs-svg-outside {
+    font-family: var(--gs-font);
+    font-size: 12.5px;
+    font-weight: 600;
+    fill: var(--gs-ink-soft);
+  }
+
+  .gs-svg-outside-note {
+    font-family: var(--gs-font);
+    font-size: 12px;
+    font-weight: 500;
+    fill: var(--gs-ink-faint);
+  }
+
+  .gs-svg-arrow line,
+  .gs-svg-arrow polyline {
+    stroke: var(--gs-ink-faint);
+    stroke-width: 1.5;
+    fill: none;
+  }
+
+  .gs-flow__steps {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    border-top: 1px solid var(--gs-rule);
+  }
+
+  .gs-flow__steps li {
+    display: flex;
+    gap: 1.1rem;
+    padding: 1.25rem 0;
+    border-bottom: 1px solid var(--gs-rule);
+  }
+
+  .gs-flow__num {
+    flex: 0 0 auto;
+    font-family: var(--gs-mono);
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--gs-accent);
+    padding-top: 0.2rem;
+  }
+
+  .gs-flow__steps h3 {
+    margin: 0 0 0.35rem;
+    font-size: 0.9375rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--gs-ink);
+  }
+
+  .gs-flow__steps p {
+    margin: 0;
+    color: var(--gs-ink-soft);
+  }
+
+  @media print {
+    .gs-flow__diagram {
+      background: #fff;
+      padding: 0.5rem;
+    }
+
+    .gs-flow__diagram svg {
+      max-width: 15cm;
+    }
+  }
+</style>

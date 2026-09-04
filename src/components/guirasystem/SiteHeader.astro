@@ -1,0 +1,34 @@
+---
+interface Props {
+  nav: {
+    brand: string;
+    skipToContent: string;
+    languageLabel: string;
+    current: string;
+    otherCode: string;
+    otherHref: string;
+    otherLabel: string;
+  };
+}
+
+const { nav } = Astro.props;
+---
+
+<a class="gs-skip" href="#contenido">{nav.skipToContent}</a>
+
+<header class="gs-topbar">
+  <div class="gs-topbar__inner">
+    <a class="gs-topbar__brand" href="/">
+      <img src="/guira-logo.svg" alt="" aria-hidden="true" />
+      <span>{nav.brand}</span>
+    </a>
+
+    <nav class="gs-langswitch" aria-label={nav.languageLabel}>
+      <span class="gs-langswitch__current" aria-current="true">{nav.current}</span>
+      <span class="gs-langswitch__sep" aria-hidden="true">/</span>
+      <a href={nav.otherHref} hreflang={nav.otherCode.toLowerCase()} title={nav.otherLabel}>
+        {nav.otherCode}
+      </a>
+    </nav>
+  </div>
+</header>

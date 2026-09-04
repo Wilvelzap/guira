@@ -1,0 +1,64 @@
+---
+/**
+ * /es/guirasystem/ — expediente público de verificación corporativa de
+ * Guira System LLC (versión española).
+ */
+import CorporateLayout from '../../../layouts/CorporateLayout.astro';
+import CorporateProfile from '../../../components/guirasystem/CorporateProfile.astro';
+import dataEn from '../../../data/guirasystem/en.json';
+import data from '../../../data/guirasystem/es.json';
+
+// Solo campos verificables. Sin telephone, sin address de calle, sin sameAs
+// hasta que exista el perfil corporativo de LinkedIn (§8.7).
+const organizationSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  name: 'Guira System LLC',
+  legalName: 'Guira System LLC',
+  url: dataEn.meta.canonical,
+  description: data.whatWeDo.paragraphs[0],
+  naics: '541511',
+  foundingLocation: {
+    '@type': 'Place',
+    address: {
+      '@type': 'PostalAddress',
+      addressRegion: 'DE',
+      addressCountry: 'US',
+    },
+  },
+  address: {
+    '@type': 'PostalAddress',
+    addressRegion: 'DE',
+    addressCountry: 'US',
+  },
+  subOrganization: {
+    '@type': 'Organization',
+    name: 'GUIRAGLOBAL S.R.L.',
+    address: {
+      '@type': 'PostalAddress',
+      addressLocality: 'La Paz',
+      addressCountry: 'BO',
+    },
+  },
+};
+---
+
+<CorporateLayout
+  lang="es"
+  title={data.meta.title}
+  description={data.meta.description}
+  canonical={data.meta.canonical}
+  alternateEn={data.meta.alternate}
+  alternateEs={data.meta.canonical}
+  ogLocale={data.meta.ogLocale}
+>
+  <Fragment slot="head">
+    <script
+      type="application/ld+json"
+      is:inline
+      set:html={JSON.stringify(organizationSchema)}
+    />
+  </Fragment>
+
+  <CorporateProfile data={data} />
+</CorporateLayout>

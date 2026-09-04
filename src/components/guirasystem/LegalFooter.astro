@@ -1,0 +1,44 @@
+---
+/**
+ * Pie legal. Los enlaces apuntan a las políticas ya publicadas del sitio;
+ * si alguna dejara de existir, se retira el enlace antes que dejar un 404
+ * dentro de un expediente de KYB.
+ */
+interface Props {
+  footer: {
+    copyright: string;
+    disclaimer: string;
+    links: { label: string; href: string }[];
+    printedOn: string;
+  };
+  canonical: string;
+}
+
+const { footer, canonical } = Astro.props;
+---
+
+<footer class="gs-footer">
+  <div class="gs-shell gs-shell--wide">
+    <p class="gs-footer__legal">{footer.copyright}</p>
+    <p>{footer.disclaimer}</p>
+    <ul class="gs-footer__links">
+      {footer.links.map((link) => (
+        <li><a href={link.href}>{link.label}</a></li>
+      ))}
+    </ul>
+    <p class="gs-print-note">
+      {footer.printedOn} {canonical} <span data-gs-print-date></span>
+    </p>
+  </div>
+</footer>
+
+<!--
+  Única línea de JavaScript de la página: añade la fecha de consulta al pie
+  impreso. Es un adorno progresivo — la URL y todo el contenido ya están en el
+  HTML servido, y la página se lee e imprime completa sin este script.
+-->
+<script is:inline>
+  document.querySelectorAll('[data-gs-print-date]').forEach((el) => {
+    el.textContent = '· ' + new Date().toISOString().slice(0, 10);
+  });
+</script>

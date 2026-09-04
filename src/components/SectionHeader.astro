@@ -1,0 +1,9 @@
+---
+import EditorialHeader, { type Props as EditorialHeaderProps } from "./EditorialHeader.astro";
+
+export type Props = EditorialHeaderProps;
+---
+
+<EditorialHeader {...Astro.props}>
+  <slot />
+</EditorialHeader>
