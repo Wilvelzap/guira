@@ -1,22 +1,9 @@
 ---
 /**
- * Platform and data handling. Solo publica las líneas confirmadas por
- * Wilmar. Todo lo demás —hosting, cifrado en reposo, SLA, certificaciones—
- * queda fuera hasta confirmación exacta (brief §3.4 y §5.6): afirmar
- * SOC 2 / ISO 27001 / PCI DSS / uptime / "bank-grade" sin tenerlos es un
- * hallazgo terminal para un analista de compliance, no un adorno de copy.
- *
- * PENDIENTE (§5.6, §9.11): hosting provider y región, cifrado en reposo,
- * política de respaldo, separación de entornos, procedimiento de respuesta
- * a incidentes, período de retención contractual. Wilmar confirma cuáles
- * son exactas antes de agregarlas a dataHandling.items en en.json / es.json.
- *
- * Nota de implementación: este bloque va en el frontmatter (script, no
- * template) a propósito. Un comentario HTML `<!-- -->` dentro del template
- * se conserva tal cual en el HTML servido, así que listar aquí los términos
- * prohibidos (SOC 2, ISO 27001, PCI DSS, etc.) los publicaría igual que si
- * fueran texto visible, y haría fallar la propia búsqueda de la checklist
- * §10 que existe para detectarlos.
+ * Platform and data handling.
+ * Diseno editorial en fondo blanco con disposicion de 2 columnas (grid 12 cols):
+ * - Titulo a la izquierda (col 4) con la segunda linea en color plomo (slate-400).
+ * - Lista de puntos a la derecha (col 8).
  */
 interface Props {
   id?: string;
@@ -27,37 +14,67 @@ interface Props {
 }
 
 const { id, dataHandling } = Astro.props;
+
+const words = dataHandling.title.split(' ');
+let titleFirst = words[0];
+let titleRest = words.slice(1).join(' ');
+
+if (words.length >= 4) {
+  titleFirst = words.slice(0, 2).join(' ');
+  titleRest = words.slice(2).join(' ');
+}
 ---
 
-<section class="gs-section" id={id}>
-  <div class="gs-shell">
-    <h2>{dataHandling.title}</h2>
-    <ul class="gs-list">
-      {dataHandling.items.map((item) => <li>{item}</li>)}
-    </ul>
+<section
+  class="relative overflow-hidden bg-white border-t border-slate-200 py-12 md:py-16 text-slate-900"
+  id={id}
+>
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="grid gap-12 md:grid-cols-12 md:gap-16 lg:gap-20 xl:gap-24">
+      <div class="md:col-span-4 md:pr-4 lg:pr-8">
+        <h2
+          class="text-4xl font-extrabold uppercase tracking-tight leading-[1.08] text-slate-900 md:text-5xl lg:text-6xl"
+        >
+          <span>{titleFirst}</span>
+          {titleRest && <br />}
+          <span class="text-slate-400">{titleRest}</span>
+        </h2>
+      </div>
+      <div class="md:col-span-8">
+        <ul class="border-y border-slate-200 divide-y divide-slate-200 list-none p-0 m-0">
+          {dataHandling.items.map((item, index) => (
+            <li class="py-4 sm:py-5 flex items-start gap-4 sm:gap-6">
+              <span class="font-mono text-xs sm:text-sm font-bold text-slate-400 shrink-0 pt-0.5 select-none">
+                {String(index + 1).padStart(2, '0')}
+              </span>
+              <p class="text-sm sm:text-base font-medium leading-relaxed text-slate-700 m-0">
+                {item}
+              </p>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
   </div>
 </section>
 
 <style>
-  .gs-list {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-  }
-
-  .gs-list li {
-    position: relative;
-    padding: 0.55rem 0 0.55rem 1.5rem;
-    color: var(--gs-ink);
-  }
-
-  .gs-list li::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 1.15rem;
-    width: 0.55rem;
-    height: 2px;
-    background: var(--gs-accent);
+  @media print {
+    section {
+      background: #fff !important;
+      color: #000 !important;
+      border-color: #cbd5e1 !important;
+      padding: 1rem 0 !important;
+    }
+    h2,
+    h2 span,
+    p,
+    span {
+      color: #000 !important;
+    }
+    ul,
+    li {
+      border-color: #cbd5e1 !important;
+    }
   }
 </style>

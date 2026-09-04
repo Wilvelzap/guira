@@ -19,18 +19,20 @@ const { footer, canonical } = Astro.props;
 ---
 
 <footer class="gs-footer">
-  <div class="gs-shell gs-shell--wide">
-    <p class="gs-footer__legal">{footer.copyright}</p>
-    <p>{footer.disclaimer}</p>
-    <ul class="gs-footer__links">
-      {footer.links.map((link) => (
-        <li><a href={link.href}>{link.label}</a></li>
-      ))}
-    </ul>
-    <p class="gs-footer__updated">{footer.lastUpdated}</p>
-    <p class="gs-print-note">
-      {footer.printedOn} {canonical} <span data-gs-print-date></span>
-    </p>
+  <div class="gs-shell">
+    <div class="gs-prose--wide">
+      <p class="gs-footer__legal">{footer.copyright}</p>
+      <p>{footer.disclaimer}</p>
+      <ul class="gs-footer__links">
+        {footer.links.map((link) => (
+          <li><a href={link.href}>{link.label}</a></li>
+        ))}
+      </ul>
+      <p class="gs-footer__updated">{footer.lastUpdated}</p>
+      <p class="gs-print-note">
+        {footer.printedOn} {canonical} <span data-gs-print-date></span>
+      </p>
+    </div>
   </div>
 </footer>
 

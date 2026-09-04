@@ -2,6 +2,7 @@
 /**
  * El paquete documental es el producto: se presenta como entregable,
  * no como beneficio de marketing.
+ * Estilo split oscuro con lista dividida e íconos azul guira-teal.
  */
 interface Props {
   id?: string;
@@ -16,42 +17,129 @@ interface Props {
 const { id, deliverables } = Astro.props;
 ---
 
-<section class="gs-section" id={id}>
-  <div class="gs-shell">
-    <h2>{deliverables.title}</h2>
-    <p>{deliverables.intro}</p>
-    <ul class="gs-list">
-      {deliverables.items.map((item) => <li>{item}</li>)}
-    </ul>
-    <p class="gs-deliverables__note">{deliverables.note}</p>
+<section class="py-20 sm:py-24 bg-slate-900 text-white relative overflow-hidden" id={id}>
+  <div
+    class="absolute top-0 right-0 w-96 h-96 bg-guira-teal opacity-10 blur-[100px] rounded-full pointer-events-none"
+  >
+  </div>
+  <div
+    class="max-w-7xl mx-auto px-6 relative z-10 grid md:grid-cols-2 gap-12 lg:gap-16 items-center"
+  >
+    <div>
+      <h2 class="h2-section text-white mb-6">
+        {deliverables.title}
+      </h2>
+      <p class="text-slate-400 text-lg font-medium leading-relaxed mb-6">
+        {deliverables.intro}
+      </p>
+      {deliverables.note && (
+        <p class="text-slate-400/90 text-sm sm:text-base font-normal leading-relaxed border-l-2 border-guira-teal/50 pl-4 py-1">
+          {deliverables.note}
+        </p>
+      )}
+    </div>
+    <div>
+      <ul class="divide-y divide-slate-800 border-y border-slate-800">
+        {deliverables.items.map((item, index) => (
+          <li class="flex items-center gap-4 py-4 sm:py-5">
+            {index === 0 && (
+              <svg
+                class="w-6 h-6 text-guira-teal shrink-0"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <circle cx="12" cy="12" r="10" />
+                <path d="m9 12 2 2 4-4" />
+              </svg>
+            )}
+            {index === 1 && (
+              <svg
+                class="w-6 h-6 text-guira-teal shrink-0"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <path d="M20 20a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-7.9a2 2 0 0 1-1.69-.9L9.6 3.9A2 2 0 0 0 8 3H4a2 2 0 0 0-2 2v13a2 2 0 0 0 2 2Z" />
+                <path d="m9 13 2 2 4-4" />
+              </svg>
+            )}
+            {index === 2 && (
+              <svg
+                class="w-6 h-6 text-guira-teal shrink-0"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <path d="M22 12h-4l-3 9L9 3l-3 9H2" />
+              </svg>
+            )}
+            {index === 3 && (
+              <svg
+                class="w-6 h-6 text-guira-teal shrink-0"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <circle cx="12" cy="12" r="10" />
+                <circle cx="12" cy="12" r="6" />
+                <circle cx="12" cy="12" r="2" />
+              </svg>
+            )}
+            {index >= 4 && (
+              <svg
+                class="w-6 h-6 text-guira-teal shrink-0"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
+                <circle cx="9" cy="7" r="4" />
+                <path d="M22 21v-2a4 4 0 0 0-3-3.87" />
+                <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+              </svg>
+            )}
+            <span class="font-medium text-slate-100 text-base sm:text-lg">
+              {item}
+            </span>
+          </li>
+        ))}
+      </ul>
+    </div>
   </div>
 </section>
 
 <style>
-  .gs-list {
-    margin: 1.5rem 0;
-    padding: 0;
-    list-style: none;
-  }
-
-  .gs-list li {
-    position: relative;
-    padding: 0.55rem 0 0.55rem 1.5rem;
-    color: var(--gs-ink);
-  }
-
-  .gs-list li::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 1.15rem;
-    width: 0.55rem;
-    height: 2px;
-    background: var(--gs-accent);
-  }
-
-  .gs-deliverables__note {
-    padding-top: 1.25rem;
-    border-top: 1px solid var(--gs-rule);
+  @media print {
+    section {
+      background: #fff !important;
+      color: #000 !important;
+    }
+    h2, span, p {
+      color: #000 !important;
+    }
+    ul, li {
+      border-color: #e2e8f0 !important;
+    }
   }
 </style>

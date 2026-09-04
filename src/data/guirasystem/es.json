@@ -27,14 +27,20 @@
     "buildStatement": "Construimos la capa tecnológica que permite a las empresas importadoras originar pagos a proveedores con un registro documental completo y auditable — y contratamos a proveedores de pago licenciados para ejecutarlos."
   },
   "whatWeDo": {
+    "kicker": "Qué hacemos",
     "title": "Qué hacemos",
+    "headline": "Software de originación y documentación para el comercio internacional B2B",
+    "imageSrc": "/assets/images/plataforma-dashboard-macbook.webp",
+    "imageAlt": "Plataforma web B2B de Guira para originación y trazabilidad de pagos a proveedores",
     "paragraphs": [
       "Guira System LLC es una empresa estadounidense de software y servicios empresariales. Desarrollamos y operamos una plataforma web B2B utilizada por pequeñas y medianas empresas importadoras de Bolivia para originar y documentar pagos internacionales a proveedores.",
-      "Guira System LLC no recibe, retiene, intercambia ni transmite fondos de clientes. La ejecución y la liquidación de los pagos son realizadas por proveedores de pago licenciados en Estados Unidos con los que la empresa contrata; los fondos de los clientes se mueven únicamente a través de las cuentas de esos proveedores licenciados y nunca a través de cuentas de Guira System LLC.",
+      "Guira System LLC no recibe, retiene, intercambia ni transmite fondos de clientes. La ejecución y la liquidación de los pagos son realizadas por proveedores de pago licenciados en Estados Unidos con los que la empresa contrata, los fondos de los clientes se mueven únicamente a través de las cuentas de esos proveedores licenciados y nunca a través de cuentas de Guira System LLC.",
       "Nuestro producto es la plataforma de software y el paquete de documentación que genera para cada operación: registros de verificación KYC/KYB, documentos comerciales de respaldo, un audit trail completo de la transacción y la evidencia de liquidación, que nuestros clientes utilizan con fines contables, aduaneros y de auditoría."
     ]
   },
   "platform": {
+    "kicker": "El producto",
+    "topBadge": "CAPACIDADES CLAVE",
     "title": "La plataforma",
     "intro": "Guira System LLC desarrolla y opera una aplicación web B2B. Las empresas clientes la utilizan para originar pagos internacionales a proveedores y para producir el registro documental de cada operación.",
     "items": [

@@ -12,9 +12,12 @@
  * de una banda gris (.gs-section--verification) hasta el pie.
  */
 import SiteHeader from './SiteHeader.astro';
-import IdentityHeader from './IdentityHeader.astro';
+import EditorialHeader from '../EditorialHeader.astro';
+import EditorialGridSection from '../EditorialGridSection.astro';
 import ProseSection from './ProseSection.astro';
+import WhatWeDo from './WhatWeDo.astro';
 import CapabilityList from './CapabilityList.astro';
+import FaqSection from '../FaqSection.astro';
 import FlowDiagram from './FlowDiagram.astro';
 import DeliverablesBlock from './DeliverablesBlock.astro';
 import DataHandling from './DataHandling.astro';
@@ -29,27 +32,85 @@ interface Props {
 }
 
 const { data } = Astro.props;
+
+// "The platform" reutiliza el componente FaqSection.astro tal cual, sin
+// modificarlo: sus items llegan como {name, description} y aquí se
+// adaptan a la forma {question, answer} que ese componente espera.
+const platformFaqItems = data.platform.items.map((item: { name: string; description: string }) => ({
+  question: item.name,
+  answer: item.description,
+}));
+
+// "Tecnología y proveedores" reutiliza EditorialGridSection.astro configurado a 3 tarjetas
+// con iconos encapsulados y divisores verticales, idéntico a la referencia visual pedida.
+const providerStackIcons = [
+  '<svg class="w-5 h-5 text-slate-700" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="m16 11 2 2 4-4"/></svg>',
+  '<svg class="w-5 h-5 text-slate-700" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"/><path d="M3 10h18"/><path d="M5 10v11"/><path d="M9 10v11"/><path d="M15 10v11"/><path d="M19 10v11"/><path d="m12 2 10 5H2z"/></svg>',
+  '<svg class="w-5 h-5 text-slate-700" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="14" x="2" y="3" rx="2"/><line x1="8" x2="16" y1="21" y2="21"/><line x1="12" x2="12" y1="17" y2="21"/></svg>',
+];
+
+const providerStackTitle = data.providerStack.title.includes('proveedores')
+  ? data.providerStack.title.replace('proveedores', '<span class="text-slate-400">proveedores</span>')
+  : data.providerStack.title.includes('provider stack')
+    ? data.providerStack.title.replace('provider stack', '<span class="text-slate-400">provider stack</span>')
+    : data.providerStack.title;
+
+const providerStackItems = data.providerStack.items.map((item: { name: string; description: string }, index: number) => ({
+  icon: providerStackIcons[index] || providerStackIcons[0],
+  iconBgClass: 'bg-white border border-slate-200 shadow-xs text-slate-700',
+  title: item.name,
+  description: item.description,
+}));
 ---
 
 <SiteHeader nav={data.nav} />
 
 <main id="contenido">
-  <!-- 1 · Identity header -->
-  <IdentityHeader identity={data.identity} />
+  <!-- 1 · Identity header — reutiliza EditorialHeader (src/components/EditorialHeader.astro)
+       para que el hero comparta tipografía y ritmo con el resto del sitio.
+       reveal={false}: el brief exige "sin movimiento, sin scroll reveals"
+       (§8) en toda esta página, así que se desactiva la animación de
+       entrada que el componente trae por defecto. -->
+  <header class="gs-hero">
+    <div class="gs-shell">
+      <EditorialHeader
+        as="h1"
+        theme="dark"
+        reveal={false}
+        kicker={data.identity.attributes.join(' · ')}
+        title={data.identity.legalName}
+        description={data.identity.tagline}
+        marginBottom="mb-0"
+      >
+        <p class="mt-4 text-base sm:text-lg md:text-xl font-medium leading-relaxed max-w-xl md:ml-auto text-left text-slate-300">
+          {data.identity.buildStatement}
+        </p>
+      </EditorialHeader>
+    </div>
+  </header>
 
   <!-- 2 · What we do -->
-  <ProseSection
+  <WhatWeDo
     id="what-we-do"
+    kicker={data.whatWeDo.kicker || data.whatWeDo.title}
     title={data.whatWeDo.title}
+    headline={data.whatWeDo.headline}
     paragraphs={data.whatWeDo.paragraphs}
+    imageSrc={data.whatWeDo.imageSrc}
+    imageAlt={data.whatWeDo.imageAlt}
   />
 
-  <!-- 3 · The platform -->
-  <CapabilityList
+  <!-- 3 · The platform — componente reutilizable FaqSection.astro, sin
+       modificar, con los ítems de la plataforma adaptados a su forma
+       {question, answer} (ver platformFaqItems arriba). -->
+  <FaqSection
     id="the-platform"
+    kicker={data.platform.kicker}
+    topBadge={data.platform.topBadge}
     title={data.platform.title}
-    intro={data.platform.intro}
-    items={data.platform.items}
+    description={data.platform.intro}
+    items={platformFaqItems}
+    showContact={false}
   />
 
   <!-- 4 · How the platform works -->
@@ -71,10 +132,18 @@ const { data } = Astro.props;
   <DataHandling id="data-handling" dataHandling={data.dataHandling} />
 
   <!-- 7 · Technology and provider stack -->
-  <CapabilityList
+  <EditorialGridSection
     id="provider-stack"
-    title={data.providerStack.title}
-    items={data.providerStack.items}
+    theme="light"
+    title={providerStackTitle}
+    description={data.providerStack.intro}
+    titleClass="text-4xl md:text-5xl lg:text-6xl font-extrabold uppercase tracking-tight leading-[1.08]"
+    titleColSpan="lg:col-span-12"
+    columns={3}
+    items={providerStackItems}
+    borderClass="border-b border-slate-200"
+    dataStackSection={false}
+    showGlows={false}
   />
 
   <!-- 8 · Who it is for -->

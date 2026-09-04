@@ -7,7 +7,13 @@
  * familia de páginas se sirve sin píxeles publicitarios, sin fuentes por CDN
  * y sin JavaScript de terceros, y todo su contenido debe existir en el HTML
  * servido aunque el JS esté bloqueado.
+ *
+ * Importa global.css (Tailwind) porque "The platform" reutiliza
+ * FaqSection.astro, un componente construido con utilidades de Tailwind y
+ * compartido con el resto del sitio. Antes esta página no lo cargaba.
  */
+import '../styles/global.css';
+
 interface Props {
   lang: 'en' | 'es';
   title: string;
@@ -79,7 +85,6 @@ const {
     --gs-rule: #e2e8f0;
     --gs-surface: #ffffff;
     --gs-surface-alt: #f8fafc;
-    --gs-measure: 46rem;
     --gs-font: 'Inter', ui-sans-serif, system-ui, -apple-system, 'Segoe UI',
       Roboto, Helvetica, Arial, sans-serif;
     --gs-mono: 'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, Consolas,
@@ -94,6 +99,23 @@ const {
 
   html {
     -webkit-text-size-adjust: 100%;
+  }
+
+  /* ─── Neutraliza .reveal de global.css ────────────────────────
+     FaqSection.astro (usado en "The platform") trae clases .reveal /
+     .reveal-delay-* que empiezan en opacity:0 y solo pasan a visibles
+     cuando src/scripts/main.js les agrega .active vía IntersectionObserver.
+     Ese script no se carga en esta página (el brief de esta ruta pide
+     "sin movimiento, sin scroll reveals"), así que sin esta regla el
+     contenido de FaqSection quedaría invisible para siempre. Se fuerza
+     el estado final visible en vez de cargar el script de scroll. */
+  .reveal,
+  .reveal-left,
+  .reveal-right,
+  .reveal-up {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
   }
 
   .gs-body {
@@ -121,14 +143,67 @@ const {
   }
 
   /* ─── Estructura ─────────────────────────────────────────────── */
+  /*
+   * Contenedor exterior de toda sección, según
+   * ESPECIFICACION_LAYOUT_HORIZONTAL.md: max-w-7xl (80rem) + px-6,
+   * idéntico al que usan Navbar, Footer y el resto de páginas del sitio.
+   * Antes esta ruta usaba un --gs-measure propio de 46rem centrado con
+   * mx-auto, lo que dejaba una columna angosta flotando en medio de la
+   * pantalla en escritorio — inconsistente con el resto de Guira y el
+   * motivo del ajuste. El ancho de lectura ya no se controla achicando
+   * este contenedor, sino con .gs-prose / .gs-prose--wide por dentro.
+   */
   .gs-shell {
-    max-width: var(--gs-measure);
+    max-width: 80rem;
     margin: 0 auto;
     padding: 0 1.5rem;
   }
 
-  .gs-shell--wide {
-    max-width: 60rem;
+  /*
+   * Nivel 2 (bloque interior) de la guía: reduce el ancho solo del
+   * contenido, nunca del contenedor de sección. A propósito SIN
+   * margin-left auto: el texto queda pegado al borde izquierdo del
+   * .gs-shell, como el resto de bloques editoriales del sitio, en vez de
+   * flotar centrado.
+   *
+   * .gs-prose y .gs-prose--wide comparten la misma medida (56rem / 896px).
+   * Antes eran 44rem y 58rem: esa diferencia dejaba la mayoría de las
+   * secciones de texto corrido usando solo ~55% del ancho de .gs-shell
+   * (mucho vacío a la derecha en pantallas grandes) mientras las secciones
+   * en <dl> (Core capabilities, Corporate information) quedaban sin
+   * ninguna de las dos clases y ocupaban el shell completo (1232px), con
+   * líneas de descripción de casi 120 caracteres. Unificar ambas clases en
+   * un solo valor intermedio empareja el ritmo visual de toda la página y
+   * evita esas líneas demasiado largas en las filas dt/dd.
+   */
+  .gs-prose,
+  .gs-prose--wide {
+    max-width: 56rem;
+  }
+
+  /* ─── Hero (EditorialHeader reutilizado) ─────────────────────
+     Fondo guira-dark de extremo a extremo, como referencia visual
+     pedida: kicker arriba a la izquierda, titular grande debajo,
+     párrafo desplazado a la derecha. Usa el mismo .gs-shell que el
+     resto de la página para que el borde izquierdo del titular
+     coincida exactamente con el de las secciones de abajo. */
+  .gs-hero {
+    background: var(--gs-dark);
+    padding: 4.5rem 0 4rem;
+  }
+
+  @media print {
+    .gs-hero,
+    .gs-hero h1,
+    .gs-hero p,
+    .gs-hero span {
+      background: #fff !important;
+      color: #000 !important;
+    }
+
+    .gs-hero {
+      padding: 0 0 0.75rem;
+    }
   }
 
   .gs-section {
@@ -214,16 +289,16 @@ const {
     top: 0.5rem;
   }
 
-  /* ─── Cabecera del sitio ─────────────────────────────────────── */
+  /* ─── Cabecera del sitio (Navbar oscuro como la plataforma Guira) ─── */
   .gs-topbar {
-    border-bottom: 1px solid var(--gs-rule);
-    background: var(--gs-surface);
+    background: #0B1120;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   }
 
   .gs-topbar__inner {
-    max-width: 60rem;
+    max-width: 80rem;
     margin: 0 auto;
-    padding: 0.9rem 1.5rem;
+    padding: 1rem 1.5rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -233,43 +308,66 @@ const {
   .gs-topbar__brand {
     display: inline-flex;
     align-items: center;
-    gap: 0.6rem;
-    color: var(--gs-ink);
+    gap: 0.75rem;
+    color: #ffffff;
     text-decoration: none;
-    font-weight: 700;
-    font-size: 0.9375rem;
+    font-weight: 800;
+    font-size: 1.05rem;
+    letter-spacing: -0.01em;
+    text-transform: uppercase;
+    transition: color 0.2s ease;
+  }
+
+  .gs-topbar__brand:hover {
+    color: var(--gs-accent-2);
   }
 
   .gs-topbar__brand img {
-    height: 1.4rem;
+    height: 1.75rem;
     width: auto;
+    object-fit: contain;
   }
 
+  /* Botón de cambio de idioma ES / EN con estilo oscuro de cápsula */
   .gs-langswitch {
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
     font-size: 0.8125rem;
-    font-weight: 600;
-    letter-spacing: 0.06em;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    padding: 0.4rem 0.85rem;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 0.5rem;
+    backdrop-filter: blur(8px);
+    transition: all 0.2s ease;
+  }
+
+  .gs-langswitch:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.2);
   }
 
   .gs-langswitch__current {
-    color: var(--gs-ink);
+    color: #00d8ff; /* guira-cyan */
+    font-weight: 800;
   }
 
   .gs-langswitch__sep {
-    color: var(--gs-rule);
+    color: rgba(255, 255, 255, 0.25);
+    font-weight: 400;
   }
 
   .gs-langswitch a {
-    color: var(--gs-ink-faint);
+    color: #94a3b8; /* slate-400 */
     text-decoration: none;
+    transition: color 0.2s ease;
   }
 
   .gs-langswitch a:hover {
-    color: var(--gs-accent);
-    text-decoration: underline;
+    color: #ffffff;
+    text-decoration: none;
   }
 
   /* ─── Pie legal ──────────────────────────────────────────────── */
@@ -341,7 +439,8 @@ const {
     }
 
     .gs-shell,
-    .gs-shell--wide,
+    .gs-prose,
+    .gs-prose--wide,
     .gs-topbar__inner {
       max-width: none;
       padding: 0;

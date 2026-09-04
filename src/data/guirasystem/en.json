@@ -27,14 +27,20 @@
     "buildStatement": "We build the technology layer that lets importing companies originate supplier payments with a complete, auditable documentary record — and we contract licensed payment providers to execute them."
   },
   "whatWeDo": {
+    "kicker": "What we do",
     "title": "What we do",
+    "headline": "Payment origination and documentation software for international B2B trade",
+    "imageSrc": "/assets/images/plataforma-dashboard-macbook.webp",
+    "imageAlt": "Guira B2B web platform for supplier payment origination and audit trail",
     "paragraphs": [
       "Guira System LLC is a US-based software and business-services company. We develop and operate a B2B web platform used by Bolivian small and medium-sized importers to originate and document international supplier payments.",
-      "Guira System LLC does not hold, receive, exchange or transmit customer funds. All payment execution and settlement is performed by licensed payment providers in the United States with which we contract; customer funds move only through those licensed providers' accounts and never through Guira System LLC's own accounts.",
+      "Guira System LLC does not hold, receive, exchange or transmit customer funds. All payment execution and settlement is performed by licensed payment providers in the United States with which we contract, customer funds move only through those licensed providers' accounts and never through Guira System LLC's own accounts.",
       "Our product is the software platform and the documentation package it generates for each transaction: KYC/KYB verification records, supporting commercial documents, a full transaction audit trail and settlement evidence, which our clients use for accounting, customs and audit purposes."
     ]
   },
   "platform": {
+    "kicker": "The product",
+    "topBadge": "CORE CAPABILITIES",
     "title": "The platform",
     "intro": "Guira System LLC develops and operates a B2B web application. Client companies use it to originate international supplier payments and to produce the documentary record of each operation.",
     "items": [
