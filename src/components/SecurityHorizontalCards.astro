@@ -1,0 +1,1192 @@
+---
+interface Props {
+  class?: string;
+}
+
+const { class: className = "" } = Astro.props;
+
+const cards = [
+  {
+    step: "01",
+    eyebrow: "VERIFICACIÓN DE PERFIL Y KYB",
+    title: "VALIDACIÓN EMPRESARIAL",
+    description: "Revisión previa de personería jurídica, directores y actividad comercial para habilitar una operación internacional con pleno respaldo y alineada a políticas de prevención.",
+    specs: [
+      { label: "CATEGORÍA", value: "COMPLIANCE Y PREVENCIÓN CORPORATIVA" },
+      { label: "VERIFICACIÓN", value: "PERSONERÍA JURÍDICA Y BENEFICIARIOS FINALES" },
+      { label: "DOCUMENTACIÓN", value: "REGISTRO MERCANTIL Y PODERES LEGALES" },
+      { label: "ALCANCE", value: "BOLIVIA (BO) Y ESTADOS UNIDOS (US)" },
+      { label: "CRITERIO", value: "ELEGIBILIDAD POR PERFIL EMPRESARIAL" }
+    ],
+    ctaPrimary: "SOLICITAR DEMO",
+    ctaPrimaryHref: "/demo/",
+    ctaSecondary: "CONTACTAR",
+    ctaSecondaryHref: "/contacto/",
+    mockType: "kyb"
+  },
+  {
+    step: "02",
+    eyebrow: "MONITOREO Y CONCILIACIÓN OPERATIVA",
+    title: "TRAZABILIDAD Y CONTROL",
+    description: "Visibilidad integral sobre cada movimiento y flujo empresarial, con respaldo documental descargable y seguimiento de estado en tiempo real.",
+    specs: [
+      { label: "CATEGORÍA", value: "SEGUIMIENTO Y CONTROL TRANSACCIONAL" },
+      { label: "TRAZABILIDAD", value: "TIMELINE EN VIVO POR OPERACIÓN" },
+      { label: "RESPALDOS", value: "COMPROBANTES SWIFT, FEDWIRE Y FACTURAS" },
+      { label: "AUDITORÍA", value: "HISTORIAL EXPORTABLE Y CONCILIABLE" },
+      { label: "ALCANCE", value: "OPERACIONES TRANSFRONTERIZAS B2B" }
+    ],
+    ctaPrimary: "SOLICITAR DEMO",
+    ctaPrimaryHref: "/demo/",
+    ctaSecondary: "CONTACTAR",
+    ctaSecondaryHref: "/contacto/",
+    mockType: "trace"
+  },
+  {
+    step: "03",
+    eyebrow: "INFRAESTRUCTURA DE SEGURIDAD",
+    title: "CONTROLES DE ACCESO",
+    description: "Capas avanzadas de protección tecnológica, autenticación multifactor y roles diferenciados para resguardar la información sensible de cada empresa.",
+    specs: [
+      { label: "CATEGORÍA", value: "SEGURIDAD TECNOLÓGICA Y CIFRADO" },
+      { label: "CIFRADO", value: "TLS 1.3 EN TRÁNSITO / AES-256 EN REPOSO" },
+      { label: "AUTENTICACIÓN", value: "DOBLE FACTOR (2FA / TOTP) OBLIGATORIO" },
+      { label: "JERARQUÍA", value: "ROLES SEGREGADOS (OPERADOR / FIRMANTE)" },
+      { label: "PROTECCIÓN", value: "ENTORNO DE DATOS ESTRUCTURADO Y AISLADO" }
+    ],
+    ctaPrimary: "SOLICITAR DEMO",
+    ctaPrimaryHref: "/demo/",
+    ctaSecondary: "CONTACTAR",
+    ctaSecondaryHref: "/contacto/",
+    mockType: "access"
+  },
+  {
+    step: "04",
+    eyebrow: "CONECTIVIDAD FINANCIERA INSTITUCIONAL",
+    title: "INFRAESTRUCTURA Y RIELES",
+    description: "Software empresarial conectado a rieles bancarios globales y partners tecnológicos autorizados en EE.UU. para máxima solidez operativa.",
+    specs: [
+      { label: "CATEGORÍA", value: "INFRAESTRUCTURA B2B MULTI-RIEL" },
+      { label: "PLATAFORMA", value: "GUIRA SYSTEM LLC (ESTADOS UNIDOS)" },
+      { label: "CUSTODIA Y FONDOS", value: "PARTNER TECNOLÓGICO LICENCIADO EN EE.UU." },
+      { label: "RIELES BANCARIOS", value: "FEDWIRE, ACH Y TRANSFERENCIAS SWIFT" },
+      { label: "ASESORÍA LOCAL", value: "GUIRAGLOBAL SRL (BOLIVIA)" }
+    ],
+    ctaPrimary: "SOLICITAR DEMO",
+    ctaPrimaryHref: "/demo/",
+    ctaSecondary: "CONTACTAR",
+    ctaSecondaryHref: "/contacto/",
+    mockType: "infra"
+  }
+];
+---
+
+<section 
+  id="security-horizontal-section" 
+  class={`security-horizontal-pin relative w-full overflow-hidden bg-white text-slate-900 border-b border-slate-200 ${className}`}
+>
+  <!-- Top Sticky Progress Bar (Standard max-w-7xl Container) -->
+  <div class="sticky top-0 z-30 w-full bg-white/95 backdrop-blur-md border-b border-slate-200">
+    <div class="max-w-7xl mx-auto px-6 py-3 flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <span class="w-2.5 h-2.5 rounded-full bg-guira-teal animate-pulse"></span>
+        <span class="text-xs font-mono uppercase tracking-wider text-slate-700 font-bold">Pilares de Seguridad y Control Operativo</span>
+      </div>
+
+      <!-- Progress Indicator Dots & Counter -->
+      <div class="flex items-center gap-2" id="security-progress-dots">
+        {cards.map((_, i) => (
+          <span 
+            class={`progress-dot h-1.5 rounded-full transition-all duration-300 ${i === 0 ? "w-8 bg-guira-teal" : "w-2 bg-slate-300"}`}
+            data-step={i}
+          ></span>
+        ))}
+        <span class="ml-2 text-xs font-mono text-slate-600 font-bold" id="security-step-counter">01 / 04</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Horizontal Scroll Viewport Container -->
+  <div class="horizontal-track flex flex-col lg:flex-row h-auto lg:h-[calc(100vh-55px)] w-full lg:w-[400vw] will-change-transform z-10 relative">
+    {cards.map((card, index) => (
+      <div 
+        class="horizontal-card w-full lg:w-screen lg:min-w-[100vw] lg:max-w-[100vw] h-auto min-h-[90vh] lg:min-h-0 lg:h-full flex items-center justify-center shrink-0 relative box-border border-b lg:border-b-0 lg:border-r border-slate-200 bg-white py-12 lg:py-0"
+        data-index={index}
+      >
+        <div class="max-w-7xl mx-auto px-6 w-full relative z-10">
+          <div class="grid lg:grid-cols-12 gap-8 lg:gap-14 items-center">
+            
+            <!-- Formal Specification Column (Exact Style from Reference) -->
+            <div class="lg:col-span-7 text-left space-y-4">
+              
+              <!-- Big Clean Header -->
+              <div>
+                <div class="text-xs md:text-sm font-mono font-bold tracking-widest text-slate-500 uppercase mb-1">
+                  {card.eyebrow}
+                </div>
+                <h2 class="text-3xl md:text-5xl font-black text-slate-900 tracking-tight leading-none uppercase">
+                  {card.title}
+                </h2>
+              </div>
+
+              <!-- Description -->
+              <p class="text-sm md:text-base text-slate-600 leading-relaxed font-normal pt-1 pb-2">
+                {card.description}
+              </p>
+
+              <!-- Formal Specification Table (Hairline horizontal dividers) -->
+              <div class="border-t border-b border-slate-900/80 divide-y divide-slate-200">
+                {card.specs.map((spec) => (
+                  <div class="grid grid-cols-12 py-2.5 md:py-3 gap-2 items-center text-xs md:text-[13px]">
+                    <div class="col-span-4 font-mono font-semibold text-slate-500 uppercase tracking-wider">
+                      {spec.label}
+                    </div>
+                    <div class="col-span-8 font-bold text-slate-900 uppercase tracking-tight">
+                      {spec.value}
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              <!-- Action Buttons (Formal Dark Block Style) -->
+              <div class="flex items-center gap-3 pt-3">
+                <a
+                  href={card.ctaPrimaryHref}
+                  class="inline-flex items-center justify-center px-6 py-2.5 rounded-sm bg-slate-900 text-white hover:bg-slate-800 text-xs font-bold uppercase tracking-wider transition-colors shadow-sm"
+                >
+                  {card.ctaPrimary}
+                </a>
+                <a
+                  href={card.ctaSecondaryHref}
+                  class="inline-flex items-center justify-center px-6 py-2.5 rounded-sm border border-slate-300 hover:border-slate-400 bg-white text-slate-800 text-xs font-bold uppercase tracking-wider transition-colors"
+                >
+                  {card.ctaSecondary}
+                </a>
+              </div>
+
+            </div>
+
+          <!-- Visual / UI Mockup Column (Light Mode Enterprise Cards) -->
+          <div class="lg:col-span-5 w-full flex items-center justify-center">
+            
+            {card.mockType === "kyb" && (
+              <div class="kyb-book-wrapper w-full max-w-lg select-none relative" id="kyb-book-experience">
+                
+                <!-- Main Book / Hardcover Ledger Container -->
+                <div class="relative w-full rounded-2xl bg-white border border-slate-300/90 shadow-2xl p-3 md:p-4 overflow-hidden">
+                  
+                  <!-- Top Minimalist Book Header Bar -->
+                  <div class="flex items-center justify-between px-2 pb-2.5 mb-2.5 border-b border-slate-100">
+                    <div class="flex items-center gap-2">
+                      <span class="w-2 h-2 rounded-full bg-guira-teal animate-pulse"></span>
+                      <span class="text-[10px] font-mono font-bold tracking-widest text-slate-800 uppercase">EXPEDIENTE KYB · GUIRA SYSTEM</span>
+                    </div>
+                    <div class="flex items-center gap-3">
+                      <span class="text-[10px] font-mono text-slate-500 font-bold" id="kyb-book-page-indicator">PAG. 01 / 05</span>
+                      <div class="flex items-center gap-1 border border-slate-200 rounded p-0.5 bg-slate-50">
+                        <button type="button" class="kyb-nav-prev w-5 h-5 rounded flex items-center justify-center text-slate-600 hover:text-slate-900 hover:bg-white transition-colors" title="Página anterior" id="kyb-btn-prev">
+                          <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M15 19l-7-7 7-7"></path></svg>
+                        </button>
+                        <button type="button" class="kyb-nav-next w-5 h-5 rounded flex items-center justify-center text-slate-600 hover:text-slate-900 hover:bg-white transition-colors" title="Página siguiente" id="kyb-btn-next">
+                          <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"></path></svg>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Open Book Dual-Page Stage -->
+                  <div class="grid grid-cols-12 gap-0 relative bg-slate-50/80 rounded-xl border border-slate-200/90 overflow-hidden min-h-[300px] md:min-h-[320px]">
+                    
+                    <!-- LEFT PAGE: Fixed Index & Compliance Checklist -->
+                    <div class="col-span-5 p-3 md:p-3.5 bg-white border-r border-slate-200/80 flex flex-col justify-between relative shadow-[inset_-8px_0_12px_rgba(0,0,0,0.02)]">
+                      <div>
+                        <div class="text-[9px] font-mono font-bold uppercase tracking-wider text-slate-400 mb-0.5">ESTRUCTURA</div>
+                        <div class="text-[11px] font-black text-slate-900 uppercase tracking-tight mb-2.5">REQUISITOS BOLIVIA</div>
+                        
+                        <!-- Checklist items connected with active index -->
+                        <div class="space-y-1" id="kyb-index-list">
+                          <div class="kyb-index-item is-active flex items-center justify-between p-1.5 rounded text-[10px] transition-all cursor-pointer bg-slate-900 text-white font-semibold" data-index="0">
+                            <div class="flex items-center gap-1.5 truncate">
+                              <span class="w-1.5 h-1.5 rounded-full bg-guira-teal item-dot"></span>
+                              <span class="truncate">1. Matrícula SEPREC</span>
+                            </div>
+                            <span class="text-[8px] font-mono uppercase tracking-tighter opacity-80">01</span>
+                          </div>
+                          <div class="kyb-index-item flex items-center justify-between p-1.5 rounded text-[10px] transition-all cursor-pointer text-slate-600 hover:bg-slate-100" data-index="1">
+                            <div class="flex items-center gap-1.5 truncate">
+                              <span class="w-1.5 h-1.5 rounded-full bg-slate-300 item-dot"></span>
+                              <span class="truncate">2. Cédula Identidad</span>
+                            </div>
+                            <span class="text-[8px] font-mono uppercase tracking-tighter text-slate-400">02</span>
+                          </div>
+                          <div class="kyb-index-item flex items-center justify-between p-1.5 rounded text-[10px] transition-all cursor-pointer text-slate-600 hover:bg-slate-100" data-index="2">
+                            <div class="flex items-center gap-1.5 truncate">
+                              <span class="w-1.5 h-1.5 rounded-full bg-slate-300 item-dot"></span>
+                              <span class="truncate">3. Certificado NIT</span>
+                            </div>
+                            <span class="text-[8px] font-mono uppercase tracking-tighter text-slate-400">03</span>
+                          </div>
+                          <div class="kyb-index-item flex items-center justify-between p-1.5 rounded text-[10px] transition-all cursor-pointer text-slate-600 hover:bg-slate-100" data-index="3">
+                            <div class="flex items-center gap-1.5 truncate">
+                              <span class="w-1.5 h-1.5 rounded-full bg-slate-300 item-dot"></span>
+                              <span class="truncate">4. Factura Luz/Agua</span>
+                            </div>
+                            <span class="text-[8px] font-mono uppercase tracking-tighter text-slate-400">04</span>
+                          </div>
+                          <div class="kyb-index-item flex items-center justify-between p-1.5 rounded text-[10px] transition-all cursor-pointer text-slate-600 hover:bg-slate-100" data-index="4">
+                            <div class="flex items-center gap-1.5 truncate">
+                              <span class="w-1.5 h-1.5 rounded-full bg-slate-300 item-dot"></span>
+                              <span class="truncate">5. Respaldo Fondos</span>
+                            </div>
+                            <span class="text-[8px] font-mono uppercase tracking-tighter text-slate-400">05</span>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="pt-2 border-t border-slate-100 flex items-center justify-between">
+                        <span class="text-[8px] font-mono text-slate-400 uppercase">COTEJO</span>
+                        <span class="inline-flex items-center gap-1 px-1.5 py-0.5 rounded bg-emerald-50 text-emerald-700 text-[8px] font-mono font-bold border border-emerald-200">
+                          <span class="w-1 h-1 rounded-full bg-emerald-500"></span> AUDITABLE
+                        </span>
+                      </div>
+                    </div>
+
+                    <!-- CENTER SPINE / FOLD CREASE (Sombra realista de lomo central) -->
+                    <div class="absolute left-[41.666667%] top-0 bottom-0 w-2 -ml-1 z-30 pointer-events-none bg-gradient-to-r from-black/10 via-black/5 to-transparent"></div>
+
+                    <!-- Laser Scan Beam Effect -->
+                    <div class="kyb-scan-beam absolute right-0 w-[58.333333%] h-0.5 bg-gradient-to-r from-cyan-400 via-guira-teal to-cyan-300 z-40 pointer-events-none opacity-0"></div>
+
+                    <!-- RIGHT PAGE: Turning 3D Book Page Deck -->
+                    <div class="col-span-7 p-2.5 md:p-3 bg-[#fafbfa] relative flex items-center justify-center [perspective:1400px]" id="kyb-book-pages-container">
+                      
+                      <!-- Page 1: Registro Comercial SEPREC -->
+                      <div class="kyb-book-leaf is-active absolute inset-2 rounded-lg bg-white border border-slate-200/90 p-3 flex flex-col justify-between shadow-md" data-doc-index="0">
+                        <div>
+                          <div class="flex items-center justify-between border-b border-slate-200 pb-1.5 mb-2">
+                            <div class="flex items-center gap-1.5">
+                              <div class="w-5 h-5 rounded bg-blue-50 border border-blue-200 flex items-center justify-center text-guira-teal text-[10px]">
+                                <i data-lucide="building-2" class="w-3 h-3"></i>
+                              </div>
+                              <div>
+                                <div class="text-[10px] font-bold text-slate-900 leading-none">MATRÍCULA SEPREC</div>
+                                <div class="text-[8px] font-mono text-slate-400">REGISTRO MERCANTIL</div>
+                              </div>
+                            </div>
+                            <span class="text-[8px] font-mono font-bold bg-emerald-50 text-emerald-700 border border-emerald-200 px-1.5 py-0.5 rounded">VÁLIDO 2026</span>
+                          </div>
+                          <div class="space-y-1.5 text-[9px] text-slate-600">
+                            <div class="flex justify-between py-0.5 border-b border-slate-100">
+                              <span class="text-slate-400">Razón Social:</span>
+                              <span class="font-bold text-slate-900">EMPRESA CORP S.R.L.</span>
+                            </div>
+                            <div class="flex justify-between py-0.5 border-b border-slate-100">
+                              <span class="text-slate-400">Matrícula:</span>
+                              <span class="font-mono font-bold text-slate-900">00482910-BOL</span>
+                            </div>
+                            <div class="flex justify-between py-0.5">
+                              <span class="text-slate-400">Actividad:</span>
+                              <span class="font-semibold text-slate-700">Comercio B2B y Servicios</span>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="pt-1.5 border-t border-slate-100 flex items-center justify-between text-[8px] text-slate-400">
+                          <span class="flex items-center gap-1 text-emerald-600 font-semibold"><i data-lucide="check-circle-2" class="w-2.5 h-2.5 text-emerald-500"></i> Personería Aprobada</span>
+                          <span class="font-mono text-slate-500">HOJA 01</span>
+                        </div>
+                      </div>
+
+                      <!-- Page 2: Carnet de Identidad -->
+                      <div class="kyb-book-leaf is-next absolute inset-2 rounded-lg bg-white border border-slate-200/90 p-3 flex flex-col justify-between shadow-md" data-doc-index="1">
+                        <div>
+                          <div class="flex items-center justify-between border-b border-slate-200 pb-1.5 mb-2">
+                            <div class="flex items-center gap-1.5">
+                              <div class="w-5 h-5 rounded bg-blue-50 border border-blue-200 flex items-center justify-center text-guira-teal text-[10px]">
+                                <i data-lucide="contact-2" class="w-3 h-3"></i>
+                              </div>
+                              <div>
+                                <div class="text-[10px] font-bold text-slate-900 leading-none">CÉDULA DE IDENTIDAD</div>
+                                <div class="text-[8px] font-mono text-slate-400">REPRESENTANTE LEGAL</div>
+                              </div>
+                            </div>
+                            <span class="text-[8px] font-mono font-bold bg-blue-50 text-blue-700 border border-blue-200 px-1.5 py-0.5 rounded">BIOMETRÍA</span>
+                          </div>
+                          <div class="flex gap-2 items-center py-1">
+                            <div class="w-9 h-11 rounded bg-slate-100 border border-slate-200 flex items-center justify-center text-slate-400 shrink-0">
+                              <i data-lucide="user" class="w-4 h-4"></i>
+                            </div>
+                            <div class="space-y-0.5 text-[9px] text-slate-600 flex-1">
+                              <div class="font-bold text-slate-900">REPRESENTANTE LEGAL</div>
+                              <div class="text-[8px] font-mono text-slate-500">C.I. 6839201 LP</div>
+                              <div class="text-[8px] text-emerald-600 font-semibold flex items-center gap-0.5">
+                                <i data-lucide="scan" class="w-2 h-2"></i> Facial aprobado
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="pt-1.5 border-t border-slate-100 flex items-center justify-between text-[8px] text-slate-400">
+                          <span class="flex items-center gap-1 text-emerald-600 font-semibold"><i data-lucide="check-circle-2" class="w-2.5 h-2.5 text-emerald-500"></i> Poder Notariado</span>
+                          <span class="font-mono text-slate-500">HOJA 02</span>
+                        </div>
+                      </div>
+
+                      <!-- Page 3: Certificado NIT -->
+                      <div class="kyb-book-leaf is-next absolute inset-2 rounded-lg bg-white border border-slate-200/90 p-3 flex flex-col justify-between shadow-md" data-doc-index="2">
+                        <div>
+                          <div class="flex items-center justify-between border-b border-slate-200 pb-1.5 mb-2">
+                            <div class="flex items-center gap-1.5">
+                              <div class="w-5 h-5 rounded bg-blue-50 border border-blue-200 flex items-center justify-center text-guira-teal text-[10px]">
+                                <i data-lucide="file-check-2" class="w-3 h-3"></i>
+                              </div>
+                              <div>
+                                <div class="text-[10px] font-bold text-slate-900 leading-none">CERTIFICADO DE NIT</div>
+                                <div class="text-[8px] font-mono text-slate-400">PADRÓN TRIBUTARIO</div>
+                              </div>
+                            </div>
+                            <span class="text-[8px] font-mono font-bold bg-emerald-50 text-emerald-700 border border-emerald-200 px-1.5 py-0.5 rounded">ACTIVO</span>
+                          </div>
+                          <div class="space-y-1.5 text-[9px] text-slate-600">
+                            <div class="flex justify-between py-0.5 border-b border-slate-100">
+                              <span class="text-slate-400">NIT No.:</span>
+                              <span class="font-mono font-bold text-slate-900">309482019012</span>
+                            </div>
+                            <div class="flex justify-between py-0.5 border-b border-slate-100">
+                              <span class="text-slate-400">Régimen:</span>
+                              <span class="font-semibold text-slate-800">General - Graco</span>
+                            </div>
+                            <div class="flex justify-between py-0.5">
+                              <span class="text-slate-400">Estado Fiscal:</span>
+                              <span class="font-bold text-emerald-600">Habilitado</span>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="pt-1.5 border-t border-slate-100 flex items-center justify-between text-[8px] text-slate-400">
+                          <span class="flex items-center gap-1 text-emerald-600 font-semibold"><i data-lucide="check-circle-2" class="w-2.5 h-2.5 text-emerald-500"></i> QR Autenticado</span>
+                          <span class="font-mono text-slate-500">HOJA 03</span>
+                        </div>
+                      </div>
+
+                      <!-- Page 4: Factura de Luz o Agua -->
+                      <div class="kyb-book-leaf is-next absolute inset-2 rounded-lg bg-white border border-slate-200/90 p-3 flex flex-col justify-between shadow-md" data-doc-index="3">
+                        <div>
+                          <div class="flex items-center justify-between border-b border-slate-200 pb-1.5 mb-2">
+                            <div class="flex items-center gap-1.5">
+                              <div class="w-5 h-5 rounded bg-blue-50 border border-blue-200 flex items-center justify-center text-guira-teal text-[10px]">
+                                <i data-lucide="home" class="w-3 h-3"></i>
+                              </div>
+                              <div>
+                                <div class="text-[10px] font-bold text-slate-900 leading-none">DOMICILIO FISCAL</div>
+                                <div class="text-[8px] font-mono text-slate-400">FACTURA LUZ / AGUA</div>
+                              </div>
+                            </div>
+                            <span class="text-[8px] font-mono font-bold bg-emerald-50 text-emerald-700 border border-emerald-200 px-1.5 py-0.5 rounded">UBICADO</span>
+                          </div>
+                          <div class="space-y-1.5 text-[9px] text-slate-600">
+                            <div class="flex justify-between py-0.5 border-b border-slate-100">
+                              <span class="text-slate-400">Suministro:</span>
+                              <span class="font-mono font-bold text-slate-900">CRE / DELAPAZ</span>
+                            </div>
+                            <div class="flex justify-between py-0.5 border-b border-slate-100">
+                              <span class="text-slate-400">Dirección:</span>
+                              <span class="font-semibold text-slate-800">Av. San Martín, Edif. Platinum</span>
+                            </div>
+                            <div class="flex justify-between py-0.5">
+                              <span class="text-slate-400">Geoposición:</span>
+                              <span class="font-semibold text-emerald-600">Coincidencia 100%</span>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="pt-1.5 border-t border-slate-100 flex items-center justify-between text-[8px] text-slate-400">
+                          <span class="flex items-center gap-1 text-emerald-600 font-semibold"><i data-lucide="check-circle-2" class="w-2.5 h-2.5 text-emerald-500"></i> Domicilio Verificado</span>
+                          <span class="font-mono text-slate-500">HOJA 04</span>
+                        </div>
+                      </div>
+
+                      <!-- Page 5: Comprobante de Fondos -->
+                      <div class="kyb-book-leaf is-next absolute inset-2 rounded-lg bg-white border border-slate-200/90 p-3 flex flex-col justify-between shadow-md" data-doc-index="4">
+                        <div>
+                          <div class="flex items-center justify-between border-b border-slate-200 pb-1.5 mb-2">
+                            <div class="flex items-center gap-1.5">
+                              <div class="w-5 h-5 rounded bg-blue-50 border border-blue-200 flex items-center justify-center text-guira-teal text-[10px]">
+                                <i data-lucide="receipt" class="w-3 h-3"></i>
+                              </div>
+                              <div>
+                                <div class="text-[10px] font-bold text-slate-900 leading-none">ORIGEN DE FONDOS</div>
+                                <div class="text-[8px] font-mono text-slate-400">FACTURA COMERCIAL</div>
+                              </div>
+                            </div>
+                            <span class="text-[8px] font-mono font-bold bg-emerald-50 text-emerald-700 border border-emerald-200 px-1.5 py-0.5 rounded">CONFORME</span>
+                          </div>
+                          <div class="space-y-1.5 text-[9px] text-slate-600">
+                            <div class="flex justify-between py-0.5 border-b border-slate-100">
+                              <span class="text-slate-400">Respaldo:</span>
+                              <span class="font-bold text-slate-900">Factura de Exportación B2B</span>
+                            </div>
+                            <div class="flex justify-between py-0.5 border-b border-slate-100">
+                              <span class="text-slate-400">Concepto:</span>
+                              <span class="font-semibold text-slate-800">Servicios Internacionales</span>
+                            </div>
+                            <div class="flex justify-between py-0.5">
+                              <span class="text-slate-400">Compliance:</span>
+                              <span class="font-bold text-emerald-600">Elegible Operativo</span>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="pt-1.5 border-t border-slate-100 flex items-center justify-between text-[8px] text-slate-400">
+                          <span class="flex items-center gap-1 text-emerald-600 font-semibold"><i data-lucide="check-circle-2" class="w-2.5 h-2.5 text-emerald-500"></i> Origen Lícito</span>
+                          <span class="font-mono text-slate-500">HOJA 05</span>
+                        </div>
+                      </div>
+
+                    </div>
+                  </div>
+
+                  <!-- Minimalist Bottom Index Tabs -->
+                  <div class="grid grid-cols-5 gap-1 pt-2" id="kyb-tab-buttons">
+                    <button type="button" class="kyb-tab-btn active px-1 py-1 rounded border text-center transition-all text-[9px] font-mono font-bold bg-slate-900 text-white border-slate-900 shadow-xs" data-target="0">
+                      01 · SEPREC
+                    </button>
+                    <button type="button" class="kyb-tab-btn px-1 py-1 rounded border text-center transition-all text-[9px] font-mono font-bold bg-slate-50 text-slate-600 border-slate-200 hover:bg-slate-100" data-target="1">
+                      02 · CÉDULA
+                    </button>
+                    <button type="button" class="kyb-tab-btn px-1 py-1 rounded border text-center transition-all text-[9px] font-mono font-bold bg-slate-50 text-slate-600 border-slate-200 hover:bg-slate-100" data-target="2">
+                      03 · NIT
+                    </button>
+                    <button type="button" class="kyb-tab-btn px-1 py-1 rounded border text-center transition-all text-[9px] font-mono font-bold bg-slate-50 text-slate-600 border-slate-200 hover:bg-slate-100" data-target="3">
+                      04 · SERVICIOS
+                    </button>
+                    <button type="button" class="kyb-tab-btn px-1 py-1 rounded border text-center transition-all text-[9px] font-mono font-bold bg-slate-50 text-slate-600 border-slate-200 hover:bg-slate-100" data-target="4">
+                      05 · FONDOS
+                    </button>
+                  </div>
+                </div>
+              </div>
+            )}
+
+            {card.mockType === "trace" && (
+              <div class="w-full max-w-md select-none">
+                <div
+                  class="modal-3d-card relative bg-white border border-slate-200/90 rounded-3xl p-5 sm:p-6 text-slate-900 shadow-2xl overflow-hidden"
+                  id="security-traceability-modal"
+                >
+                  <!-- Header de la Operación -->
+                  <div class="flex items-start justify-between mb-3">
+                    <div>
+                      <span class="text-[10px] sm:text-xs font-bold uppercase tracking-wider text-slate-400">Operación</span>
+                      <div class="flex items-center gap-2.5 mt-0.5">
+                        <h3 class="text-2xl sm:text-3xl font-extrabold tracking-tight text-slate-950">
+                          51,000 <span class="text-xl sm:text-2xl font-bold text-slate-800">BOB</span>
+                        </h3>
+                        <span
+                          id="sec-op-status-badge"
+                          class="inline-flex items-center px-2.5 py-0.5 rounded-full text-[11px] font-bold bg-emerald-50 text-emerald-700 border border-emerald-200 transition-all duration-300"
+                        >
+                          <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 mr-1.5 animate-pulse"></span>
+                          Completado
+                        </span>
+                      </div>
+                      <p class="text-sm font-bold text-slate-900 underline decoration-slate-300 underline-offset-4 mt-1">
+                        John Doe
+                      </p>
+                      <p class="text-xs font-medium text-slate-500 mt-0.5">
+                        Bolivia al exterior · BOB → EUR
+                      </p>
+                    </div>
+                    <div class="w-7 h-7 rounded-full bg-slate-100 flex items-center justify-center text-slate-400 hover:text-slate-600 transition-colors cursor-pointer">
+                      <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                      </svg>
+                    </div>
+                  </div>
+
+                  <!-- Pestañas -->
+                  <div class="flex items-center gap-5 border-b border-slate-200 mt-3 mb-4 text-xs sm:text-sm font-bold">
+                    <button type="button" class="pb-2 text-slate-400 hover:text-slate-600 transition-colors">
+                      Detalles del pago
+                    </button>
+                    <button type="button" class="pb-2 text-slate-950 border-b-2 border-slate-950 transition-colors">
+                      Trazabilidad
+                    </button>
+                  </div>
+
+                  <!-- Línea de tiempo viva / Stepper -->
+                  <div class="relative pl-1 space-y-2.5 sm:space-y-3" id="sec-timeline-stepper">
+                    <!-- Barra vertical de conexión dinámica -->
+                    <div class="absolute left-[17px] sm:left-[19px] top-3.5 bottom-4 w-[2px] bg-slate-100 -z-0">
+                      <div
+                        id="sec-timeline-progress-bar"
+                        class="w-full bg-emerald-500 transition-all duration-700 ease-out"
+                        style="height: 100%;"
+                      ></div>
+                      <div
+                        id="sec-timeline-pulse-dot"
+                        class="absolute left-1/2 -translate-x-1/2 w-2.5 h-2.5 rounded-full bg-emerald-400 shadow-[0_0_12px_#10B981] transition-all duration-700 ease-out opacity-0"
+                      ></div>
+                    </div>
+
+                    <!-- Paso 1: Orden creada -->
+                    <div class="sec-timeline-step relative flex items-start gap-3 z-10 cursor-pointer" data-step="1">
+                      <div class="sec-timeline-node-icon w-7 h-7 rounded-full bg-emerald-50 border-2 border-emerald-500 text-emerald-600 flex items-center justify-center shrink-0 shadow-sm transition-all duration-500">
+                        <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
+                      </div>
+                      <div class="pt-0.5">
+                        <p class="text-xs sm:text-sm font-bold text-emerald-700 sec-timeline-label transition-colors">
+                          Orden creada
+                        </p>
+                        <p class="sec-timeline-sub text-[10px] font-semibold text-blue-600 hidden mt-0.5"></p>
+                      </div>
+                    </div>
+
+                    <!-- Paso 2: Esperando depósito -->
+                    <div class="sec-timeline-step relative flex items-start gap-3 z-10 cursor-pointer" data-step="2">
+                      <div class="sec-timeline-node-icon w-7 h-7 rounded-full bg-emerald-50 border-2 border-emerald-500 text-emerald-600 flex items-center justify-center shrink-0 shadow-sm transition-all duration-500">
+                        <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
+                      </div>
+                      <div class="pt-0.5">
+                        <p class="text-xs sm:text-sm font-bold text-emerald-700 sec-timeline-label transition-colors">
+                          Esperando depósito
+                        </p>
+                        <p class="sec-timeline-sub text-[10px] font-semibold text-blue-600 hidden mt-0.5"></p>
+                      </div>
+                    </div>
+
+                    <!-- Paso 3: Depósito validado -->
+                    <div class="sec-timeline-step relative flex items-start gap-3 z-10 cursor-pointer" data-step="3">
+                      <div class="sec-timeline-node-icon w-7 h-7 rounded-full bg-emerald-50 border-2 border-emerald-500 text-emerald-600 flex items-center justify-center shrink-0 shadow-sm transition-all duration-500">
+                        <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
+                      </div>
+                      <div class="pt-0.5">
+                        <p class="text-xs sm:text-sm font-bold text-emerald-700 sec-timeline-label transition-colors">
+                          Depósito validado
+                        </p>
+                        <p class="sec-timeline-sub text-[10px] font-semibold text-blue-600 hidden mt-0.5"></p>
+                      </div>
+                    </div>
+
+                    <!-- Paso 4: Procesando -->
+                    <div class="sec-timeline-step relative flex items-start gap-3 z-10 cursor-pointer" data-step="4">
+                      <div class="sec-timeline-node-icon w-7 h-7 rounded-full bg-emerald-50 border-2 border-emerald-500 text-emerald-600 flex items-center justify-center shrink-0 shadow-sm transition-all duration-500">
+                        <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
+                      </div>
+                      <div class="pt-0.5">
+                        <p class="text-xs sm:text-sm font-bold text-emerald-700 sec-timeline-label transition-colors">
+                          Procesando
+                        </p>
+                        <p class="sec-timeline-sub text-[10px] font-semibold text-blue-600 hidden mt-0.5"></p>
+                      </div>
+                    </div>
+
+                    <!-- Paso 5: Enviado -->
+                    <div class="sec-timeline-step relative flex items-start gap-3 z-10 cursor-pointer" data-step="5">
+                      <div class="sec-timeline-node-icon w-7 h-7 rounded-full bg-emerald-50 border-2 border-emerald-500 text-emerald-600 flex items-center justify-center shrink-0 shadow-sm transition-all duration-500">
+                        <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
+                      </div>
+                      <div class="pt-0.5">
+                        <p class="text-xs sm:text-sm font-bold text-emerald-700 sec-timeline-label transition-colors">
+                          Enviado
+                        </p>
+                        <p class="sec-timeline-sub text-[10px] font-semibold text-blue-600 hidden mt-0.5"></p>
+                      </div>
+                    </div>
+
+                    <!-- Paso 6: Completado -->
+                    <div class="sec-timeline-step relative flex items-start gap-3 z-10 cursor-pointer" data-step="6">
+                      <div class="sec-timeline-node-icon w-7 h-7 rounded-full bg-guira-teal text-white font-black text-xs flex items-center justify-center shrink-0 shadow-[0_0_12px_rgba(0,81,255,0.4)] transition-all duration-500">
+                        6
+                      </div>
+                      <div class="pt-0.5">
+                        <p class="text-xs sm:text-sm font-extrabold text-guira-teal sec-timeline-label transition-colors">
+                          Completado
+                        </p>
+                        <p class="sec-timeline-sub text-[10px] font-semibold text-slate-500 flex items-center gap-1 mt-0.5">
+                          <span class="w-1.5 h-1.5 rounded-full bg-guira-teal inline-block"></span> Paso 6 de 6 · estado actual
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Botones de Acción Inferiores -->
+                  <div class="mt-5 pt-3.5 border-t border-slate-100 flex items-center justify-between gap-2">
+                    <div class="flex items-center gap-1 text-[11px] font-bold text-slate-600">
+                      <svg class="w-3.5 h-3.5 text-slate-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                      </svg>
+                      <span>Bitácora de actividad</span>
+                    </div>
+                    <div class="flex items-center gap-1.5">
+                      <button
+                        type="button"
+                        class="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg text-xs font-bold bg-guira-teal text-white hover:bg-blue-600 shadow-sm transition-all hover:scale-105 active:scale-95"
+                      >
+                        <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path>
+                        </svg>
+                        Comprobante PDF
+                      </button>
+                      <button
+                        type="button"
+                        class="px-2.5 py-1.5 rounded-lg text-xs font-bold border border-slate-200 text-slate-700 hover:bg-slate-50 transition-colors"
+                      >
+                        Cerrar
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            )}
+
+            {card.mockType === "access" && (
+              <div class="w-full max-w-md rounded-2xl bg-white border border-slate-200/90 p-6 shadow-xl space-y-4">
+                <div class="flex items-center justify-between pb-3 border-b border-slate-100">
+                  <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-xl bg-blue-50 border border-blue-100 flex items-center justify-center text-guira-teal">
+                      <i data-lucide="key-round" class="w-5 h-5"></i>
+                    </div>
+                    <div>
+                      <h4 class="text-sm font-bold text-slate-900">Matriz de Acceso y Cifrado</h4>
+                      <p class="text-[11px] text-slate-500">Seguridad por Niveles Corporativos</p>
+                    </div>
+                  </div>
+                  <span class="px-2.5 py-1 rounded-full bg-blue-50 border border-blue-200 text-guira-teal text-[10px] font-mono font-bold uppercase">TLS 1.3</span>
+                </div>
+
+                <div class="grid grid-cols-2 gap-3">
+                  <div class="p-3 rounded-lg bg-slate-50 border border-slate-100">
+                    <div class="text-[10px] text-slate-400 uppercase font-mono">Autenticación</div>
+                    <div class="text-xs font-bold text-slate-900 mt-1">2FA / TOTP Activo</div>
+                    <div class="text-[10px] text-emerald-600 font-semibold mt-0.5">Obligatorio</div>
+                  </div>
+                  <div class="p-3 rounded-lg bg-slate-50 border border-slate-100">
+                    <div class="text-[10px] text-slate-400 uppercase font-mono">Cifrado Datos</div>
+                    <div class="text-xs font-bold text-slate-900 mt-1">AES-256 en Reposo</div>
+                    <div class="text-[10px] text-emerald-600 font-semibold mt-0.5">Habilitado</div>
+                  </div>
+                </div>
+
+                <div class="p-3 rounded-lg bg-slate-50 border border-slate-100 space-y-2">
+                  <div class="text-xs font-bold text-slate-800">Permisos por Jerarquía</div>
+                  <div class="space-y-1 text-[11px] text-slate-500">
+                    <div class="flex justify-between"><span>Crear solicitudes:</span> <span class="text-slate-800 font-semibold">Operador</span></div>
+                    <div class="flex justify-between"><span>Aprobar desembolsos:</span> <span class="text-slate-800 font-semibold">Firmante Autorizado</span></div>
+                  </div>
+                </div>
+              </div>
+            )}
+
+            {card.mockType === "infra" && (
+              <div class="w-full max-w-md rounded-2xl bg-white border border-slate-200/90 p-6 shadow-xl space-y-4">
+                <div class="flex items-center justify-between pb-3 border-b border-slate-100">
+                  <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-xl bg-blue-50 border border-blue-100 flex items-center justify-center text-guira-teal">
+                      <i data-lucide="network" class="w-5 h-5"></i>
+                    </div>
+                    <div>
+                      <h4 class="text-sm font-bold text-slate-900">Red de Rieles e Infraestructura</h4>
+                      <p class="text-[11px] text-slate-500">Conectividad B2B Internacional</p>
+                    </div>
+                  </div>
+                  <span class="px-2.5 py-1 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-700 text-[10px] font-mono font-bold uppercase">Licenciado</span>
+                </div>
+
+                <div class="p-3.5 rounded-lg bg-slate-50 border border-slate-100 space-y-2.5">
+                  <div class="flex items-center justify-between text-xs">
+                    <span class="text-slate-600 font-medium">Plataforma Tecnológica:</span>
+                    <span class="font-bold text-slate-900">Guira System LLC</span>
+                  </div>
+                  <div class="flex items-center justify-between text-xs">
+                    <span class="text-slate-600 font-medium">Custodia y Procesamiento:</span>
+                    <span class="font-bold text-guira-teal">Partner en EE.UU.</span>
+                  </div>
+                  <div class="flex items-center justify-between text-xs">
+                    <span class="text-slate-600 font-medium">Asesoría Comercial Local:</span>
+                    <span class="font-bold text-slate-900">Guiraglobal SRL</span>
+                  </div>
+                </div>
+
+                <div class="grid grid-cols-3 gap-2 text-center">
+                  <div class="p-2 rounded bg-slate-50 border border-slate-100">
+                    <div class="text-[10px] font-mono text-slate-500">FEDWIRE</div>
+                    <div class="text-[11px] font-bold text-emerald-600">Activo</div>
+                  </div>
+                  <div class="p-2 rounded bg-slate-50 border border-slate-100">
+                    <div class="text-[10px] font-mono text-slate-500">ACH</div>
+                    <div class="text-[11px] font-bold text-emerald-600">Activo</div>
+                  </div>
+                  <div class="p-2 rounded bg-slate-50 border border-slate-100">
+                    <div class="text-[10px] font-mono text-slate-500">SWIFT</div>
+                    <div class="text-[11px] font-bold text-emerald-600">Activo</div>
+                  </div>
+                </div>
+              </div>
+            )}
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+  ))}
+  </div>
+</section>
+
+<style>
+  /* Minimalist 3D Book Page-Turning Styles */
+  #kyb-book-pages-container {
+    perspective: 1400px;
+    transform-style: preserve-3d;
+  }
+
+  .kyb-book-leaf {
+    transform-origin: left center;
+    transition: transform 0.7s cubic-bezier(0.25, 1, 0.4, 1), opacity 0.45s ease-out, filter 0.45s ease-out, box-shadow 0.7s ease;
+    backface-visibility: hidden;
+    will-change: transform, opacity;
+  }
+
+  /* Active page on the right side of the book */
+  .kyb-book-leaf.is-active {
+    opacity: 1;
+    transform: rotateY(0deg) translateZ(2px);
+    z-index: 20;
+    pointer-events: auto;
+    filter: blur(0px);
+    box-shadow: 0 4px 16px rgba(15, 23, 42, 0.08);
+  }
+
+  /* Next pages stacked under the active right page */
+  .kyb-book-leaf.is-next {
+    opacity: 0;
+    transform: rotateY(0deg) translateZ(-6px) scale(0.98);
+    z-index: 10;
+    pointer-events: none;
+    filter: blur(0.5px);
+  }
+
+  /* Turned page (leafed over the spine to the left) */
+  .kyb-book-leaf.is-prev {
+    opacity: 0;
+    transform: rotateY(-115deg) translateZ(8px);
+    z-index: 25;
+    pointer-events: none;
+    filter: blur(1px);
+    box-shadow: -10px 8px 20px rgba(0, 0, 0, 0.12);
+  }
+
+  /* Laser scan beam animation */
+  @keyframes scanSweep {
+    0% {
+      top: 0%;
+      opacity: 0;
+    }
+    20% {
+      opacity: 0.9;
+    }
+    80% {
+      opacity: 0.9;
+    }
+    100% {
+      top: 100%;
+      opacity: 0;
+    }
+  }
+
+  .kyb-scan-beam.scanning {
+    animation: scanSweep 0.85s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  }
+</style>
+
+<script>
+  import gsap from 'gsap';
+  import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  // Initialize horizontal scroll pin
+  function initSecurityHorizontalScroll() {
+    const section = document.querySelector("#security-horizontal-section");
+    const track = document.querySelector(".horizontal-track") as HTMLElement | null;
+    const cards = gsap.utils.toArray<HTMLElement>(".horizontal-card");
+    const dots = document.querySelectorAll(".progress-dot");
+    const counter = document.getElementById("security-step-counter");
+
+    if (!section || !track || cards.length === 0) return;
+
+    let mm = gsap.matchMedia();
+
+    mm.add("(min-width: 1024px)", () => {
+      const totalSlides = cards.length;
+      const getTargetX = () => -(totalSlides - 1) * window.innerWidth;
+
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: section,
+          pin: true,
+          pinSpacing: true,
+          scrub: 1,
+          start: "top top",
+          end: () => `+=${(totalSlides - 1) * window.innerHeight * 0.85}`,
+          invalidateOnRefresh: true,
+          onUpdate: (self) => {
+            const p = self.progress;
+            let activeIndex = 0;
+            if (p < 0.28) {
+              activeIndex = 0;
+            } else if (p < 0.58) {
+              activeIndex = 1;
+            } else if (p < 0.88) {
+              activeIndex = 2;
+            } else {
+              activeIndex = 3;
+            }
+
+            dots.forEach((dot, idx) => {
+              if (idx === activeIndex) {
+                dot.classList.remove("w-2", "bg-slate-300");
+                dot.classList.add("w-8", "bg-guira-teal");
+              } else {
+                dot.classList.remove("w-8", "bg-guira-teal");
+                dot.classList.add("w-2", "bg-slate-300");
+              }
+            });
+
+            if (counter) {
+              counter.textContent = `0${activeIndex + 1} / 0${totalSlides}`;
+            }
+          }
+        }
+      });
+
+      tl.to(track, {
+        x: getTargetX,
+        duration: 1,
+        ease: "none"
+      });
+
+      return () => {
+        tl.kill();
+        ScrollTrigger.getAll().forEach(t => {
+          if (t.trigger === section) t.kill();
+        });
+      };
+    });
+  }
+
+  // Initialize KYB 3D Open Book / Ledger Experience
+  function initKybBookExperience() {
+    const container = document.getElementById("kyb-book-experience");
+    if (!container) return;
+
+    const leaves = container.querySelectorAll<HTMLElement>(".kyb-book-leaf");
+    const indexItems = container.querySelectorAll<HTMLElement>(".kyb-index-item");
+    const tabBtns = container.querySelectorAll<HTMLElement>(".kyb-tab-btn");
+    const pageIndicator = container.querySelector<HTMLElement>("#kyb-book-page-indicator");
+    const scanBeam = container.querySelector<HTMLElement>(".kyb-scan-beam");
+    const btnPrev = container.querySelector<HTMLElement>("#kyb-btn-prev");
+    const btnNext = container.querySelector<HTMLElement>("#kyb-btn-next");
+
+    if (leaves.length === 0) return;
+
+    let currentDocIndex = 0;
+    let autoInterval: any = null;
+    let isHovered = false;
+
+    function triggerScanBeam() {
+      if (!scanBeam) return;
+      scanBeam.classList.remove("scanning");
+      void scanBeam.offsetWidth;
+      scanBeam.classList.add("scanning");
+    }
+
+    function setDocIndex(index: number) {
+      if (index < 0 || index >= leaves.length) return;
+      currentDocIndex = index;
+
+      // 1. Update 3D Book Leaves (Right Page)
+      leaves.forEach((leaf, idx) => {
+        leaf.classList.remove("is-active", "is-next", "is-prev");
+        if (idx === currentDocIndex) {
+          leaf.classList.add("is-active");
+        } else if (idx > currentDocIndex) {
+          leaf.classList.add("is-next");
+        } else {
+          leaf.classList.add("is-prev");
+        }
+      });
+
+      // 2. Update Left Page Index Checklist
+      indexItems.forEach((item, idx) => {
+        const dot = item.querySelector(".item-dot");
+        if (idx === currentDocIndex) {
+          item.classList.add("is-active", "bg-slate-900", "text-white", "font-semibold");
+          item.classList.remove("text-slate-600", "hover:bg-slate-100");
+          if (dot) {
+            dot.classList.remove("bg-slate-300");
+            dot.classList.add("bg-guira-teal");
+          }
+        } else {
+          item.classList.remove("is-active", "bg-slate-900", "text-white", "font-semibold");
+          item.classList.add("text-slate-600", "hover:bg-slate-100");
+          if (dot) {
+            dot.classList.remove("bg-guira-teal");
+            dot.classList.add("bg-slate-300");
+          }
+        }
+      });
+
+      // 3. Update Bottom Tabs
+      tabBtns.forEach((btn, idx) => {
+        if (idx === currentDocIndex) {
+          btn.classList.remove("bg-slate-50", "text-slate-600", "border-slate-200");
+          btn.classList.add("bg-slate-900", "text-white", "border-slate-900", "shadow-xs");
+        } else {
+          btn.classList.remove("bg-slate-900", "text-white", "border-slate-900", "shadow-xs");
+          btn.classList.add("bg-slate-50", "text-slate-600", "border-slate-200");
+        }
+      });
+
+      // 4. Update Page Indicator
+      if (pageIndicator) {
+        pageIndicator.textContent = `PAG. 0${currentDocIndex + 1} / 0${leaves.length}`;
+      }
+
+      triggerScanBeam();
+    }
+
+    // Attach click listeners to index checklist items
+    indexItems.forEach((item) => {
+      item.addEventListener("click", () => {
+        const target = parseInt(item.getAttribute("data-index") || "0", 10);
+        setDocIndex(target);
+      });
+    });
+
+    // Attach click listeners to bottom tabs
+    tabBtns.forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const target = parseInt(btn.getAttribute("data-target") || "0", 10);
+        setDocIndex(target);
+      });
+    });
+
+    // Prev / Next arrow buttons
+    btnPrev?.addEventListener("click", () => {
+      const prevIdx = (currentDocIndex - 1 + leaves.length) % leaves.length;
+      setDocIndex(prevIdx);
+    });
+
+    btnNext?.addEventListener("click", () => {
+      const nextIdx = (currentDocIndex + 1) % leaves.length;
+      setDocIndex(nextIdx);
+    });
+
+    // Auto-advance loop every 4 seconds
+    function startAutoLoop() {
+      stopAutoLoop();
+      autoInterval = setInterval(() => {
+        if (!isHovered) {
+          const nextIdx = (currentDocIndex + 1) % leaves.length;
+          setDocIndex(nextIdx);
+        }
+      }, 4000);
+    }
+
+    function stopAutoLoop() {
+      if (autoInterval) {
+        clearInterval(autoInterval);
+        autoInterval = null;
+      }
+    }
+
+    container.addEventListener("mouseenter", () => {
+      isHovered = true;
+    });
+
+    container.addEventListener("mouseleave", () => {
+      isHovered = false;
+    });
+
+    // Initial setup
+    setDocIndex(0);
+    startAutoLoop();
+  }
+
+  // Initialize Item 02 Traceability Live Stepper Animation
+  function initSecurityTraceabilityTimeline() {
+    const container = document.getElementById("security-traceability-modal");
+    if (!container) return;
+
+    const progressBar = document.getElementById("sec-timeline-progress-bar");
+    const pulseDot = document.getElementById("sec-timeline-pulse-dot");
+    const statusBadge = document.getElementById("sec-op-status-badge");
+    const steps = container.querySelectorAll<HTMLElement>(".sec-timeline-step");
+    if (!steps.length || !progressBar) return;
+
+    let currentStep = 1;
+    let timer: any = null;
+
+    const stepData = [
+      {
+        name: "Orden creada",
+        badgeText: "Orden creada",
+        badgeClass: "bg-amber-50 text-amber-700 border-amber-200",
+        dotClass: "bg-amber-500",
+      },
+      {
+        name: "Esperando depósito",
+        badgeText: "Esperando depósito",
+        badgeClass: "bg-amber-50 text-amber-700 border-amber-200",
+        dotClass: "bg-amber-500",
+      },
+      {
+        name: "Depósito validado",
+        badgeText: "Depósito validado",
+        badgeClass: "bg-cyan-50 text-cyan-700 border-cyan-200",
+        dotClass: "bg-cyan-500",
+      },
+      {
+        name: "Procesando",
+        badgeText: "Procesando",
+        badgeClass: "bg-blue-50 text-blue-700 border-blue-200",
+        dotClass: "bg-blue-500",
+      },
+      {
+        name: "Enviado",
+        badgeText: "Enviado",
+        badgeClass: "bg-indigo-50 text-indigo-700 border-indigo-200",
+        dotClass: "bg-indigo-500",
+      },
+      {
+        name: "Completado",
+        badgeText: "Completado",
+        badgeClass: "bg-emerald-50 text-emerald-700 border-emerald-200",
+        dotClass: "bg-emerald-500",
+      },
+    ];
+
+    function renderStep(targetStep: number) {
+      currentStep = targetStep;
+      const totalSteps = steps.length;
+      const progressPercent = ((currentStep - 1) / (totalSteps - 1)) * 100;
+
+      progressBar.style.height = progressPercent + "%";
+
+      if (pulseDot) {
+        pulseDot.style.opacity = "1";
+        pulseDot.style.top = progressPercent + "%";
+        setTimeout(() => {
+          if (pulseDot) pulseDot.style.opacity = "0";
+        }, 450);
+      }
+
+      steps.forEach((stepEl, idx) => {
+        const stepNum = idx + 1;
+        const iconEl = stepEl.querySelector(".sec-timeline-node-icon");
+        const labelEl = stepEl.querySelector(".sec-timeline-label");
+        const subEl = stepEl.querySelector(".sec-timeline-sub");
+
+        if (stepNum < currentStep) {
+          if (iconEl) {
+            iconEl.className =
+              "sec-timeline-node-icon w-7 h-7 rounded-full bg-emerald-50 border-2 border-emerald-500 text-emerald-600 flex items-center justify-center shrink-0 shadow-sm transition-all duration-500";
+            iconEl.innerHTML =
+              '<svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>';
+          }
+          if (labelEl)
+            labelEl.className =
+              "text-xs sm:text-sm font-bold text-emerald-700 sec-timeline-label transition-colors";
+          if (subEl) {
+            subEl.classList.add("hidden");
+            subEl.innerHTML = "";
+          }
+        } else if (stepNum === currentStep) {
+          if (iconEl) {
+            if (stepNum === 6) {
+              iconEl.className =
+                "sec-timeline-node-icon w-7 h-7 rounded-full bg-guira-teal text-white font-black text-xs flex items-center justify-center shrink-0 shadow-[0_0_14px_rgba(0,81,255,0.6)] scale-110 transition-all duration-500";
+              iconEl.innerHTML = "6";
+            } else {
+              iconEl.className =
+                "sec-timeline-node-icon w-7 h-7 rounded-full bg-blue-600 text-white font-bold text-xs flex items-center justify-center shrink-0 shadow-[0_0_12px_rgba(37,99,235,0.5)] scale-105 transition-all duration-500";
+              iconEl.innerHTML = String(stepNum);
+            }
+          }
+          if (labelEl) {
+            if (stepNum === 6) {
+              labelEl.className =
+                "text-xs sm:text-sm font-extrabold text-guira-teal sec-timeline-label transition-colors";
+            } else {
+              labelEl.className =
+                "text-xs sm:text-sm font-extrabold text-blue-600 sec-timeline-label transition-colors";
+            }
+          }
+          if (subEl) {
+            subEl.classList.remove("hidden");
+            subEl.innerHTML =
+              '<span class="w-1.5 h-1.5 rounded-full bg-blue-600 inline-block mr-1"></span> Paso ' +
+              stepNum +
+              " de 6 · estado actual";
+          }
+        } else {
+          if (iconEl) {
+            iconEl.className =
+              "sec-timeline-node-icon w-7 h-7 rounded-full bg-slate-100 border border-slate-200 text-slate-400 font-semibold text-xs flex items-center justify-center shrink-0 transition-all duration-500";
+            iconEl.innerHTML = String(stepNum);
+          }
+          if (labelEl)
+            labelEl.className =
+              "text-xs sm:text-sm font-medium text-slate-400 sec-timeline-label transition-colors";
+          if (subEl) {
+            subEl.classList.add("hidden");
+            subEl.innerHTML = "";
+          }
+        }
+      });
+
+      const data = stepData[currentStep - 1];
+      if (statusBadge && data) {
+        statusBadge.className =
+          "inline-flex items-center px-2.5 py-0.5 rounded-full text-[11px] font-bold border transition-all duration-300 " +
+          data.badgeClass;
+        statusBadge.innerHTML =
+          '<span class="w-1.5 h-1.5 rounded-full mr-1.5 animate-pulse ' +
+          data.dotClass +
+          '"></span>' +
+          data.badgeText;
+      }
+    }
+
+    function advanceStep() {
+      const next = currentStep >= 6 ? 1 : currentStep + 1;
+      renderStep(next);
+      const delay = next === 6 ? 3500 : 1600;
+      timer = setTimeout(advanceStep, delay);
+    }
+
+    steps.forEach((sEl, idx) => {
+      sEl.addEventListener("click", () => {
+        clearTimeout(timer);
+        renderStep(idx + 1);
+        timer = setTimeout(advanceStep, 2600);
+      });
+    });
+
+    renderStep(1);
+    timer = setTimeout(advanceStep, 1600);
+  }
+
+  // Lifecycle listeners
+  function initAll() {
+    initSecurityHorizontalScroll();
+    initKybBookExperience();
+    initSecurityTraceabilityTimeline();
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initAll);
+  } else {
+    initAll();
+  }
+
+  document.addEventListener('astro:page-load', initAll);
+</script>
+
