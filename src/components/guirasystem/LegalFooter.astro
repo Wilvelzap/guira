@@ -9,6 +9,7 @@ interface Props {
     copyright: string;
     disclaimer: string;
     links: { label: string; href: string }[];
+    lastUpdated: string;
     printedOn: string;
   };
   canonical: string;
@@ -26,6 +27,7 @@ const { footer, canonical } = Astro.props;
         <li><a href={link.href}>{link.label}</a></li>
       ))}
     </ul>
+    <p class="gs-footer__updated">{footer.lastUpdated}</p>
     <p class="gs-print-note">
       {footer.printedOn} {canonical} <span data-gs-print-date></span>
     </p>

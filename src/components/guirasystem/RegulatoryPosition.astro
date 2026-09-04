@@ -1,0 +1,24 @@
+---
+/**
+ * Regulatory position. Condensa las cuatro afirmaciones de §3.3 en dos
+ * párrafos, en fondo oscuro: marca visualmente el corte entre el bloque de
+ * producto (secciones 1–8) y el bloque de verificación (9–13) que pide el
+ * brief §8, sin necesidad de una etiqueta nueva.
+ */
+interface Props {
+  id?: string;
+  regulatoryPosition: {
+    title: string;
+    paragraphs: string[];
+  };
+}
+
+const { id, regulatoryPosition } = Astro.props;
+---
+
+<section class="gs-section gs-section--dark" id={id}>
+  <div class="gs-shell">
+    <h2>{regulatoryPosition.title}</h2>
+    {regulatoryPosition.paragraphs.map((text) => <p>{text}</p>)}
+  </div>
+</section>

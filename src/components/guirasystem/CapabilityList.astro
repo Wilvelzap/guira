@@ -1,0 +1,71 @@
+---
+/**
+ * Lista de definición para capacidades reales del software (§8 del brief:
+ * "<dl>, no tarjetas con iconos. Nombre de la capacidad en seminegrita,
+ * descripción debajo. Densa y legible, sin decoración"). Se reutiliza para
+ * "The platform" (con intro) y "Technology and provider stack" (sin intro):
+ * misma forma visual, contenido distinto.
+ */
+interface Props {
+  id?: string;
+  title: string;
+  intro?: string;
+  items: { name: string; description: string }[];
+}
+
+const { id, title, intro, items } = Astro.props;
+---
+
+<section class="gs-section" id={id}>
+  <div class="gs-shell">
+    <h2>{title}</h2>
+    {intro && <p class="gs-capabilities__intro">{intro}</p>}
+    <dl class="gs-capabilities">
+      {items.map((item) => (
+        <div class="gs-capabilities__row">
+          <dt>{item.name}</dt>
+          <dd>{item.description}</dd>
+        </div>
+      ))}
+    </dl>
+  </div>
+</section>
+
+<style>
+  .gs-capabilities__intro {
+    margin-bottom: 1.75rem;
+  }
+
+  .gs-capabilities {
+    margin: 0;
+    border-top: 1px solid var(--gs-rule);
+  }
+
+  .gs-capabilities__row {
+    display: grid;
+    gap: 0.3rem;
+    padding: 1rem 0;
+    border-bottom: 1px solid var(--gs-rule);
+  }
+
+  @media (min-width: 40rem) {
+    .gs-capabilities__row {
+      grid-template-columns: 13rem 1fr;
+      gap: 0 1.5rem;
+    }
+  }
+
+  .gs-capabilities dt {
+    margin: 0;
+    font-size: 0.9375rem;
+    font-weight: 700;
+    color: var(--gs-ink);
+  }
+
+  .gs-capabilities dd {
+    margin: 0;
+    font-size: 0.9375rem;
+    line-height: 1.6;
+    color: var(--gs-ink-soft);
+  }
+</style>

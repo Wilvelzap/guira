@@ -1,15 +1,19 @@
 ---
 /**
- * /es/guirasystem/ — expediente público de verificación corporativa de
- * Guira System LLC (versión española).
+ * /es/guirasystem/ — página corporativa de Guira System LLC (versión
+ * española). Presenta el producto y sirve como expediente público de
+ * verificación corporativa (v2.0 del brief).
  */
 import CorporateLayout from '../../../layouts/CorporateLayout.astro';
 import CorporateProfile from '../../../components/guirasystem/CorporateProfile.astro';
 import dataEn from '../../../data/guirasystem/en.json';
 import data from '../../../data/guirasystem/es.json';
 
-// Solo campos verificables. Sin telephone, sin address de calle, sin sameAs
-// hasta que exista el perfil corporativo de LinkedIn (§8.7).
+// Solo campos verificables. Sin telephone, sin address de calle, sin
+// sameAs hasta que exista el perfil corporativo de LinkedIn (§9.7).
+// Sin subOrganization: GUIRAGLOBAL S.R.L. no es una filial de Guira
+// System LLC (§3.5) — aparece solo como Related party en el JSON de datos,
+// nunca en este schema.
 const organizationSchema = {
   '@context': 'https://schema.org',
   '@type': 'Organization',
@@ -31,15 +35,18 @@ const organizationSchema = {
     addressRegion: 'DE',
     addressCountry: 'US',
   },
-  subOrganization: {
-    '@type': 'Organization',
-    name: 'GUIRAGLOBAL S.R.L.',
-    address: {
-      '@type': 'PostalAddress',
-      addressLocality: 'La Paz',
-      addressCountry: 'BO',
-    },
-  },
+};
+
+// Nuevo en v2.0 (§7.4): refuerza la clasificación como software ante
+// buscadores y revisores. Sin aggregateRating, sin offers, sin campos que
+// no estén confirmados.
+const softwareApplicationSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'SoftwareApplication',
+  name: 'Guira System LLC',
+  applicationCategory: 'BusinessApplication',
+  url: dataEn.meta.canonical,
+  description: data.platform.intro,
 };
 ---
 
@@ -57,6 +64,11 @@ const organizationSchema = {
       type="application/ld+json"
       is:inline
       set:html={JSON.stringify(organizationSchema)}
+    />
+    <script
+      type="application/ld+json"
+      is:inline
+      set:html={JSON.stringify(softwareApplicationSchema)}
     />
   </Fragment>
 

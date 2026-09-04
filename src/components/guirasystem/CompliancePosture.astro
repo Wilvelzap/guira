@@ -1,7 +1,9 @@
 ---
 /**
  * Controles operativos. La revisión humana de cada instrucción se presenta
- * como atributo de control, no como limitación técnica.
+ * como atributo de control, no como limitación técnica. Parte del bloque
+ * de verificación (banda gris), no de la sección oscura de Regulatory
+ * position.
  */
 interface Props {
   id?: string;
@@ -14,7 +16,7 @@ interface Props {
 const { id, compliance } = Astro.props;
 ---
 
-<section class="gs-section gs-compliance" id={id}>
+<section class="gs-section gs-section--verification gs-compliance" id={id}>
   <div class="gs-shell">
     <h2>{compliance.title}</h2>
     <ul class="gs-compliance__list">
@@ -24,10 +26,6 @@ const { id, compliance } = Astro.props;
 </section>
 
 <style>
-  .gs-compliance {
-    background: var(--gs-surface-alt);
-  }
-
   .gs-compliance__list {
     margin: 0;
     padding: 0;
@@ -50,11 +48,5 @@ const { id, compliance } = Astro.props;
     width: 0.55rem;
     height: 2px;
     background: var(--gs-accent);
-  }
-
-  @media print {
-    .gs-compliance {
-      background: #fff;
-    }
   }
 </style>

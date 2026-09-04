@@ -65,11 +65,14 @@ const {
 
 <style is:global>
   /* ─── Tokens ──────────────────────────────────────────────────
-     Un solo acento, tomado de la identidad actual del proyecto
-     (guira-teal). Al cerrar la identidad de marca basta cambiar
-     --gs-accent aquí. */
+     Tomados literalmente de tailwind.config.mjs (colors.guira) para que
+     esta ruta se sienta parte del mismo entorno de marca que el resto de
+     guiracorp.com, aunque su registro visual sea más sobrio: sin
+     gradientes, sin animaciones, sin fotografía (ver §7 del brief). */
   :root {
-    --gs-accent: #0051ff;
+    --gs-accent: #0051ff; /* guira-teal */
+    --gs-accent-2: #00d8ff; /* guira-cyan, solo sobre fondo oscuro */
+    --gs-dark: #020617; /* guira-dark */
     --gs-ink: #0f172a;
     --gs-ink-soft: #475569;
     --gs-ink-faint: #64748b;
@@ -138,11 +141,12 @@ const {
   }
 
   .gs-section h2 {
-    margin: 0 0 1.25rem;
-    font-size: 1.0625rem;
+    margin: 0 0 1.5rem;
+    font-size: clamp(1.375rem, 2.4vw, 1.75rem);
     font-weight: 800;
-    letter-spacing: 0.08em;
+    letter-spacing: -0.01em;
     text-transform: uppercase;
+    line-height: 1.15;
     color: var(--gs-ink);
   }
 
@@ -153,6 +157,46 @@ const {
 
   .gs-section p:last-child {
     margin-bottom: 0;
+  }
+
+  /* ─── Secciones oscuras ──────────────────────────────────────
+     Mismo ritmo claro/oscuro que el resto del sitio (ver
+     guiraglobal.astro), sin gradiente ni textura: color plano
+     guira-dark. */
+  .gs-section--dark {
+    background: var(--gs-dark);
+    border-top-color: rgba(255, 255, 255, 0.1);
+  }
+
+  .gs-section--dark h2 {
+    color: #ffffff;
+  }
+
+  .gs-section--dark p {
+    color: #cbd5e1;
+  }
+
+  /* ─── Bloque de verificación (secciones 9–13) ────────────────
+     Un fondo levemente distinto separa visualmente los datos
+     registrales del bloque de producto, como pide el brief §8,
+     sin depender de una etiqueta de texto nueva: la sección
+     oscura de Regulatory position ya marca el corte, y esta banda
+     gris continúa el mismo bloque hasta el pie. */
+  .gs-section--verification {
+    background: var(--gs-surface-alt);
+  }
+
+  @media print {
+    .gs-section--verification {
+      background: #fff;
+    }
+
+    .gs-section--dark,
+    .gs-section--dark h2,
+    .gs-section--dark p {
+      background: #fff !important;
+      color: #000 !important;
+    }
   }
 
   .gs-skip {
@@ -261,6 +305,11 @@ const {
     content: '·';
     margin-right: 0.75rem;
     color: var(--gs-rule);
+  }
+
+  .gs-footer__updated {
+    margin-top: 1.25rem !important;
+    font-size: 0.75rem;
   }
 
   .gs-print-note {

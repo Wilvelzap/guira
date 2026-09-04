@@ -2,19 +2,26 @@
 /**
  * Datos registrales en <dl> semántico: texto seleccionable y copiable,
  * nunca imagen. Un analista copia estos campos a su expediente.
+ *
+ * Revenue y Related party van dentro de esta misma sección (§5.8 del
+ * brief), no en secciones propias: son datos de verificación, no mensajes
+ * de producto. GUIRAGLOBAL S.R.L. aparece únicamente aquí en toda la
+ * página — ninguna otra sección la menciona (§3.5, checklist §10).
  */
 interface Props {
   id?: string;
   corporate: {
     title: string;
     rows: { label: string; value: string }[];
+    revenue: { title: string; paragraph: string };
+    relatedParty: { title: string; paragraph: string };
   };
 }
 
 const { id, corporate } = Astro.props;
 ---
 
-<section class="gs-section" id={id}>
+<section class="gs-section gs-section--verification" id={id}>
   <div class="gs-shell">
     <h2>{corporate.title}</h2>
     <dl class="gs-datalist">
@@ -26,11 +33,24 @@ const { id, corporate } = Astro.props;
       ))}
     </dl>
     {/*
-      PENDIENTE (§8): fecha de constitución y dirección comercial operativa.
-      No se publican hasta que Wilmar confirme el dato y exista documento de
-      respaldo de los últimos 12 meses. La dirección del agente registrado en
-      Delaware no se publica como dirección comercial.
+      PENDIENTE (§9.3, §9.4, §9.2): fecha de constitución, dirección
+      comercial operativa y casilla de contacto. No se publican hasta que
+      Wilmar los confirme. La dirección operativa debe ser idéntica a la
+      declarada en el formulario bancario; la dirección del agente
+      registrado en Delaware no se publica como dirección comercial. El
+      contacto se trata en su propia sección (ContactBlock), no como fila
+      de esta tabla.
     */}
+
+    <div class="gs-corporate__block">
+      <h3>{corporate.revenue.title}</h3>
+      <p>{corporate.revenue.paragraph}</p>
+    </div>
+
+    <div class="gs-corporate__block">
+      <h3>{corporate.relatedParty.title}</h3>
+      <p>{corporate.relatedParty.paragraph}</p>
+    </div>
   </div>
 </section>
 
@@ -68,6 +88,28 @@ const { id, corporate } = Astro.props;
     font-size: 0.9375rem;
     line-height: 1.5;
     color: var(--gs-ink);
+  }
+
+  .gs-corporate__block {
+    margin-top: 1.75rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--gs-rule);
+  }
+
+  .gs-corporate__block h3 {
+    margin: 0 0 0.6rem;
+    font-size: 0.8125rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--gs-ink-faint);
+  }
+
+  .gs-corporate__block p {
+    margin: 0;
+    font-size: 0.9375rem;
+    line-height: 1.6;
+    color: var(--gs-ink-soft);
   }
 
   @media print {

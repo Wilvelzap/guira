@@ -1,19 +1,25 @@
 ---
 /**
- * Cuerpo compartido del expediente corporativo de Guira System LLC.
+ * Cuerpo compartido del expediente corporativo de Guira System LLC (v2.0).
  * Las dos rutas (/guirasystem/ y /es/guirasystem/) renderizan este mismo
  * componente con su archivo de datos: en.json o es.json. El copy nunca vive
  * en el markup, para que una corrección legal sea un cambio de datos
  * auditable en un solo archivo por idioma.
+ *
+ * Distribución de peso (brief §4): secciones 1–8 son producto (~70%),
+ * secciones 9–13 son el bloque de verificación (~30%). El corte visual
+ * entre ambos bloques lo marca RegulatoryPosition (fondo oscuro), seguido
+ * de una banda gris (.gs-section--verification) hasta el pie.
  */
 import SiteHeader from './SiteHeader.astro';
 import IdentityHeader from './IdentityHeader.astro';
 import ProseSection from './ProseSection.astro';
-import ExclusionsBlock from './ExclusionsBlock.astro';
+import CapabilityList from './CapabilityList.astro';
 import FlowDiagram from './FlowDiagram.astro';
 import DeliverablesBlock from './DeliverablesBlock.astro';
+import DataHandling from './DataHandling.astro';
+import RegulatoryPosition from './RegulatoryPosition.astro';
 import CorporateDataTable from './CorporateDataTable.astro';
-import GroupStructure from './GroupStructure.astro';
 import CompliancePosture from './CompliancePosture.astro';
 import ContactBlock from './ContactBlock.astro';
 import LegalFooter from './LegalFooter.astro';
@@ -28,33 +34,70 @@ const { data } = Astro.props;
 <SiteHeader nav={data.nav} />
 
 <main id="contenido">
+  <!-- 1 · Identity header -->
   <IdentityHeader identity={data.identity} />
 
+  <!-- 2 · What we do -->
   <ProseSection
     id="what-we-do"
     title={data.whatWeDo.title}
     paragraphs={data.whatWeDo.paragraphs}
   />
 
-  <ExclusionsBlock id="exclusions" exclusions={data.exclusions} />
-
-  <FlowDiagram id="how-it-works" flow={data.flow} />
-
-  <DeliverablesBlock id="deliverables" deliverables={data.deliverables} />
-
-  <ProseSection
-    id="advisory"
-    title={data.advisory.title}
-    paragraphs={data.advisory.paragraphs}
+  <!-- 3 · The platform -->
+  <CapabilityList
+    id="the-platform"
+    title={data.platform.title}
+    intro={data.platform.intro}
+    items={data.platform.items}
   />
 
+  <!-- 4 · How the platform works -->
+  <FlowDiagram id="how-it-works" flow={data.flow} />
+
+  <!-- 5 · What our clients receive -->
+  <DeliverablesBlock id="deliverables" deliverables={data.deliverables} />
+
+  {/*
+    PENDIENTE — bloqueante (§6, §9.10): captura real de la interfaz
+    (originación y/o paquete documental), con datos de demo obviamente
+    ficticios y rótulo "Illustrative demo data" / "Datos de demostración".
+    Fabricar una captura está prohibido por el brief, así que esta sección
+    se publica sin imagen hasta que Wilmar la provea o autorice
+    expresamente publicar sin ella. No se agrega ningún <img> de reemplazo.
+  */}
+
+  <!-- 6 · Platform and data handling -->
+  <DataHandling id="data-handling" dataHandling={data.dataHandling} />
+
+  <!-- 7 · Technology and provider stack -->
+  <CapabilityList
+    id="provider-stack"
+    title={data.providerStack.title}
+    items={data.providerStack.items}
+  />
+
+  <!-- 8 · Who it is for -->
+  <ProseSection
+    id="who-it-is-for"
+    title={data.whoItIsFor.title}
+    paragraphs={data.whoItIsFor.paragraphs}
+  />
+
+  <!-- ─── Bloque de verificación (9–13) ─────────────────────── -->
+
+  <!-- 9 · Regulatory position -->
+  <RegulatoryPosition id="regulatory-position" regulatoryPosition={data.regulatoryPosition} />
+
+  <!-- 10 · Corporate information (incluye Revenue y Related party) -->
   <CorporateDataTable id="corporate-information" corporate={data.corporate} />
 
-  <GroupStructure id="group-structure" group={data.group} />
-
+  <!-- 11 · Compliance posture -->
   <CompliancePosture id="compliance" compliance={data.compliance} />
 
+  <!-- 12 · Contact -->
   <ContactBlock id="contact" contact={data.contact} />
 </main>
 
+<!-- 13 · Pie legal -->
 <LegalFooter footer={data.footer} canonical={data.meta.canonical} />

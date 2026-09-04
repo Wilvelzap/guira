@@ -20,6 +20,10 @@ export interface Props {
   class?: string;
   /** Margen inferior. Default: 'mb-16 sm:mb-20 md:mb-24' */
   marginBottom?: string;
+  /** Tamaño del título: 'sm' | 'md' | 'lg' | 'monumental'. Default: 'monumental' */
+  size?: 'sm' | 'md' | 'lg' | 'monumental';
+  /** Clases CSS adicionales o específicas para el título */
+  titleClass?: string;
 }
 
 const {
@@ -30,6 +34,8 @@ const {
   description,
   as: Tag = 'h2',
   theme = 'light',
+  size = 'monumental',
+  titleClass = '',
   reveal = true,
   class: className = '',
   marginBottom = 'mb-16 sm:mb-20 md:mb-24',
@@ -37,6 +43,13 @@ const {
 } = Astro.props;
 
 const isDark = theme === 'dark';
+
+const sizeClasses: Record<string, string> = {
+  sm: 'text-2xl sm:text-3xl md:text-4xl leading-tight',
+  md: 'text-3xl sm:text-4xl md:text-5xl lg:text-[2.75rem] leading-[1.06]',
+  lg: 'text-3xl sm:text-5xl md:text-6xl lg:text-7xl leading-[1.0]',
+  monumental: 'text-4xl sm:text-6xl md:text-7xl lg:text-[76px] xl:text-[88px] leading-[0.95]',
+};
 ---
 
 <div
@@ -67,7 +80,10 @@ const isDark = theme === 'dark';
   )}
 
   <Tag
-    class="text-4xl sm:text-6xl md:text-7xl lg:text-[76px] xl:text-[88px] font-black uppercase tracking-tight leading-[0.95] text-left select-none"
+    class:list={[
+      "font-black uppercase tracking-tight text-left select-none",
+      titleClass || sizeClasses[size] || sizeClasses.monumental,
+    ]}
   >
     {line1 && (
       <span class:list={[isDark ? "text-white" : "text-slate-900", "block"]}>
@@ -87,7 +103,14 @@ const isDark = theme === 'dark';
   </Tag>
 
   {(description || Astro.slots.has('default')) && (
-    <div class="mt-8 sm:mt-12 md:mt-16 grid grid-cols-1 md:grid-cols-12 gap-6 items-end">
+    <div
+      class:list={[
+        (size === 'sm' || size === 'md')
+          ? "mt-6 sm:mt-8 md:mt-10"
+          : "mt-8 sm:mt-12 md:mt-16",
+        "grid grid-cols-1 md:grid-cols-12 gap-6 items-end",
+      ]}
+    >
       <div class="hidden md:block md:col-span-5 lg:col-span-6">
         <!-- Espacio de balance editorial -->
       </div>
