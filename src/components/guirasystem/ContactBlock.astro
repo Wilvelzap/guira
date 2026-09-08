@@ -10,8 +10,9 @@ interface Props {
   contact: {
     title: string;
     entityLine: string;
+    emailLabel?: string;
     email: string | null;
-    emailPending: string;
+    emailPending?: string | null;
     note: string;
     form: {
       subject: string;
@@ -42,16 +43,16 @@ const f = contact.form;
 
     {contact.email ? (
       <p class="gs-contact__email">
+        {contact.emailLabel && <span>{contact.emailLabel} </span>}
         <a href={`mailto:${contact.email}`}>{contact.email}</a>
       </p>
     ) : (
-      <p class="gs-contact__email gs-contact__email--pending">
-        {contact.emailPending}
-      </p>
+      contact.emailPending && (
+        <p class="gs-contact__email gs-contact__email--pending">
+          {contact.emailPending}
+        </p>
+      )
     )}
-    {/* PENDIENTE (§9.2): publicar la casilla institucional una vez que Wilmar
-        confirme cuál es (debe ser del dominio corporativo y estar monitoreada).
-        Al confirmarla, basta cargar "email" en en.json y es.json. */}
 
     <p>{contact.note}</p>
 

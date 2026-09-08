@@ -1,0 +1,92 @@
+---
+/**
+ * Bloque de verificación de datos de la entidad (§7 del documento de correcciones v2.1).
+ * Renderiza los datos societarios exactos y verificables en un <dl> semántico,
+ * accesible y seleccionable, inmediatamente después del encabezado principal.
+ */
+interface Props {
+  id?: string;
+  entityDetails: {
+    title: string;
+    rows: { label: string; value: string }[];
+  };
+}
+
+const { id = 'entity-details', entityDetails } = Astro.props;
+---
+
+<section class="gs-section gs-section--entity" id={id}>
+  <div class="gs-shell">
+    <h2>{entityDetails.title}</h2>
+    <dl class="gs-datalist">
+      {entityDetails.rows.map((row) => (
+        <div class="gs-datalist__row">
+          <dt>{row.label}</dt>
+          <dd>{row.value}</dd>
+        </div>
+      ))}
+    </dl>
+  </div>
+</section>
+
+<style>
+  .gs-section--entity {
+    background: var(--gs-surface-alt);
+    border-top: 1px solid var(--gs-rule);
+    padding: 2.5rem 0;
+  }
+
+  .gs-section--entity h2 {
+    margin: 0 0 1.5rem;
+    font-size: 1.125rem;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    color: var(--gs-ink);
+  }
+
+  .gs-datalist {
+    margin: 0;
+    border-top: 1px solid var(--gs-rule);
+  }
+
+  .gs-datalist__row {
+    display: grid;
+    gap: 0.25rem 1.5rem;
+    padding: 0.85rem 0;
+    border-bottom: 1px solid var(--gs-rule);
+  }
+
+  @media (min-width: 48rem) {
+    .gs-datalist__row {
+      grid-template-columns: 18rem 1fr;
+    }
+  }
+
+  .gs-datalist dt {
+    margin: 0;
+    font-size: 0.8125rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--gs-ink-faint);
+  }
+
+  .gs-datalist dd {
+    margin: 0;
+    font-family: var(--gs-mono);
+    font-size: 0.9375rem;
+    line-height: 1.5;
+    color: var(--gs-ink);
+    word-break: break-word;
+  }
+
+  @media print {
+    .gs-section--entity {
+      background: #fff;
+      padding: 0.5rem 0;
+    }
+    .gs-datalist__row {
+      padding: 0.3rem 0;
+    }
+  }
+</style>

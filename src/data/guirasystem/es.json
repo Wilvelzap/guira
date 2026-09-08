@@ -2,7 +2,7 @@
   "lang": "es",
   "meta": {
     "title": "Guira System LLC — Software de originación y documentación de pagos",
-    "description": "Guira System LLC es una empresa estadounidense de software y servicios empresariales. Operamos una plataforma web B2B para pagos a proveedores.",
+    "description": "Guira System LLC es una empresa estadounidense de software y servicios empresariales. Operamos una plataforma web B2B utilizada por pequeñas y medianas empresas importadoras de Bolivia y Perú.",
     "canonical": "https://www.guiracorp.com/es/guirasystem/",
     "alternate": "https://www.guiracorp.com/guirasystem/",
     "ogLocale": "es_ES"
@@ -26,11 +26,25 @@
     "tagline": "Software de originación y documentación de pagos para el comercio internacional B2B.",
     "buildStatement": "Construimos la capa tecnológica que permite a las empresas importadoras originar pagos a proveedores con un registro documental completo y auditable — y contratamos a proveedores de pago licenciados para ejecutarlos."
   },
+  "entityDetails": {
+    "title": "Datos de la entidad",
+    "rows": [
+      { "label": "Razón social", "value": "Guira System LLC" },
+      { "label": "Tipo de entidad", "value": "Limited Liability Company" },
+      { "label": "Jurisdicción", "value": "State of Delaware, United States of America" },
+      { "label": "Número de archivo estatal", "value": "10432896" },
+      { "label": "Fecha de constitución", "value": "December 10, 2025 (effective January 1, 2026)" },
+      { "label": "Domicilio registrado en Delaware", "value": "1201 North Market Street #111, Wilmington, New Castle County, Delaware 19801" },
+      { "label": "Agente registrado", "value": "International Delaware Registered Agent INC." },
+      { "label": "Domicilio comercial", "value": "150 SE 2nd Avenue, Miami, Florida 33131, United States of America" },
+      { "label": "NAICS", "value": "541511 — Custom Computer Programming Services · 541611 — Administrative & Management Consulting Services" }
+    ]
+  },
   "whatWeDo": {
     "title": "Qué hacemos",
     "paragraphs": [
-      "Guira System LLC es una empresa estadounidense de software y servicios empresariales. Desarrollamos y operamos una plataforma web B2B utilizada por pequeñas y medianas empresas importadoras de Bolivia para originar y documentar pagos internacionales a proveedores.",
-      "Guira System LLC no recibe, retiene, intercambia ni transmite fondos de clientes. La ejecución y la liquidación de los pagos son realizadas por proveedores de pago licenciados en Estados Unidos con los que la empresa contrata; los fondos de los clientes se mueven únicamente a través de las cuentas de esos proveedores licenciados y nunca a través de cuentas de Guira System LLC.",
+      "Guira System LLC es una empresa estadounidense de software y servicios empresariales. Desarrollamos y operamos una plataforma web B2B utilizada por pequeñas y medianas empresas importadoras de Bolivia y Perú para originar y documentar pagos internacionales a proveedores.",
+      "Guira System LLC no recibe, retiene, intercambia ni transmite fondos de clientes. La ejecución y la liquidación de los pagos son realizadas por proveedores de pago licenciados con los que la empresa contrata; los fondos de los clientes se mueven únicamente a través de las cuentas de esos proveedores licenciados y nunca a través de cuentas de Guira System LLC.",
       "Nuestro producto es la plataforma de software y el paquete de documentación que genera para cada operación: registros de verificación KYC/KYB, documentos comerciales de respaldo, un audit trail completo de la transacción y la evidencia de liquidación, que nuestros clientes utilizan con fines contables, aduaneros y de auditoría."
     ]
   },
@@ -88,7 +102,7 @@
       {
         "number": "3",
         "name": "Ejecución",
-        "text": "La ejecución y la liquidación son realizadas por proveedores de pago licenciados en Estados Unidos. Los fondos se mueven a través de las cuentas de esos proveedores. Nunca se mueven a través de cuentas de Guira System LLC."
+        "text": "La ejecución y la liquidación son realizadas por proveedores de pago licenciados. Los fondos se mueven a través de las cuentas de esos proveedores. Nunca se mueven a través de cuentas de Guira System LLC."
       },
       {
         "number": "4",
@@ -99,8 +113,8 @@
     "diagram": {
       "perimeterLabel": "Guira System LLC",
       "outsideLabel": "Proveedores de pago licenciados",
-      "outsideNote": "Estados Unidos · fuera del perímetro de Guira System LLC",
-      "alt": "Diagrama de la operación. Tres etapas —originación, verificación y documentación— están dentro de un perímetro punteado rotulado Guira System LLC. La etapa de ejecución y liquidación queda fuera de ese perímetro, en un bloque separado rotulado proveedores de pago licenciados, Estados Unidos, lo que muestra que los fondos de los clientes se mueven únicamente por las cuentas de los proveedores licenciados y nunca por cuentas de Guira System LLC."
+      "outsideNote": "Fuera del perímetro de Guira System LLC",
+      "alt": "Diagrama de la operación. Tres etapas —originación, verificación y documentación— están dentro de un perímetro punteado rotulado Guira System LLC. La etapa de ejecución y liquidación queda fuera de ese perímetro, en un bloque separado rotulado proveedores de pago licenciados, lo que muestra que los fondos de los clientes se mueven únicamente por las cuentas de los proveedores licenciados y nunca por cuentas de Guira System LLC."
     }
   },
   "deliverables": {
@@ -129,11 +143,11 @@
     "items": [
       {
         "name": "Verificación",
-        "description": "Un proveedor externo especializado para la verificación de identidad y de empresas, y para el screening de sanciones y PEP, integrado por API."
+        "description": "La Compañía realiza su propia verificación de identidad y de la empresa cliente, y el screening contra fuentes de sanciones, personas expuestas políticamente y medios adversos, mediante herramientas especializadas de terceros, bajo su Programa de Cumplimiento AML/CFT. De forma separada e independiente, el proveedor de pago licenciado verifica a cada usuario final bajo su propio programa. Cada instrucción es revisada y liberada por un especialista antes de continuar."
       },
       {
         "name": "Ejecución",
-        "description": "Proveedores de pago licenciados en Estados Unidos, integrados por API. Estos proveedores ejecutan y liquidan el pago y emiten la evidencia de liquidación. Los fondos del cliente se mueven únicamente a través de sus cuentas."
+        "description": "Proveedores de pago licenciados, integrados por API. Estos proveedores ejecutan y liquidan el pago y emiten la evidencia de liquidación. Los fondos del cliente se mueven únicamente a través de sus cuentas."
       },
       {
         "name": "Interfaces",
@@ -152,35 +166,32 @@
   "regulatoryPosition": {
     "title": "Posición regulatoria",
     "paragraphs": [
-      "Guira System LLC es una empresa de software y servicios empresariales. No recibe, retiene, intercambia ni transmite fondos de clientes. No mantiene saldos de clientes ni custodia de ningún tipo. No opera como money services business, money transmitter, casa de cambio ni proveedor de servicios de activos virtuales, y no realiza ninguna actividad que requiera licencia de transmisión de dinero. No es un banco y no presta servicios bancarios.",
-      "La ejecución y la liquidación son realizadas exclusivamente por proveedores de pago licenciados en Estados Unidos con los que la empresa contrata. Los fondos de los clientes se mueven únicamente a través de las cuentas de esos proveedores y nunca a través de cuentas de Guira System LLC."
-    ]
+      "Guira System LLC es una empresa de software y servicios empresariales. No recibe, retiene, intercambia ni transmite fondos de clientes. No mantiene saldos de clientes ni custodia de ningún tipo. No opera como money services business, money transmitter, casa de cambio ni proveedor de servicios de activos virtuales. No es un banco y no presta servicios bancarios.",
+      "La ejecución y la liquidación son realizadas exclusivamente por proveedores de pago licenciados con los que la empresa contrata. Los fondos de los clientes se mueven únicamente a través de las cuentas de esos proveedores y nunca a través de cuentas de Guira System LLC."
+    ],
+    "assessment": "Sobre la base de la conducta descrita anteriormente, la evaluación de la Compañía es que no encuadra en la definición de money transmitter de 31 CFR § 1010.100(ff)(5) y no está sujeta a registro bajo 31 CFR Parte 1022. Dicha evaluación, y el análisis que la respalda, constan en el Programa de Cumplimiento AML/CFT de la Compañía, disponible a solicitud."
   },
   "corporate": {
     "title": "Información corporativa",
     "rows": [
       { "label": "Razón social", "value": "Guira System LLC" },
       { "label": "Tipo de entidad", "value": "Limited Liability Company" },
-      { "label": "Jurisdicción", "value": "Estado de Delaware, Estados Unidos de América" },
+      { "label": "Jurisdicción", "value": "State of Delaware, United States of America" },
       { "label": "Actividad", "value": "Software y servicios empresariales (B2B)" },
       { "label": "Clasificación de industria", "value": "NAICS 541511 — Custom Computer Programming Services (principal); NAICS 541611 — Administrative & Management Consulting Services (secundaria)" },
       { "label": "Producto", "value": "Plataforma web B2B de originación y documentación de pagos internacionales a proveedores" },
-      { "label": "Mercado atendido", "value": "Pequeñas y medianas empresas importadoras de Bolivia" },
-      { "label": "Managing Member", "value": "Wilmar Velásquez Zapata" },
+      { "label": "Mercado atendido", "value": "Pequeñas y medianas empresas importadoras de Bolivia y Perú" },
       { "label": "Dominio corporativo", "value": "guiracorp.com" }
     ],
     "revenue": {
       "title": "Ingresos",
-      "paragraph": "Nuestros ingresos consisten exclusivamente en honorarios de licencia de plataforma y de servicio facturados a nuestros clientes, en partner fees remitidos por los proveedores de pago licenciados con los que contratamos como nuestra participación contractual en las comisiones cobradas sobre las operaciones originadas en nuestra plataforma, y en un honorario de servicios intercompañía de nuestra parte vinculada GUIRAGLOBAL S.R.L. (La Paz, Bolivia)."
-    },
-    "relatedParty": {
-      "title": "Parte vinculada",
-      "paragraph": "GUIRAGLOBAL S.R.L. (La Paz, Bolivia) — firma asesora boliviana independiente bajo propiedad común. Presta servicios locales de asesoría y acompañamiento documental a las empresas clientes bajo un retainer mensual fijo. No recibe, retiene ni mueve fondos de clientes, no es una entidad financiera y no cobra honorarios por transacción ni ad valorem."
+      "paragraph": "Nuestros ingresos consisten exclusivamente en honorarios de licencia de plataforma y de servicio facturados a nuestros clientes, y en partner fees remitidos por los proveedores de pago licenciados con los que contratamos como nuestra participación contractual en las comisiones cobradas sobre las operaciones originadas en nuestra plataforma."
     }
   },
   "compliance": {
     "title": "Postura de cumplimiento",
     "items": [
+      "La Compañía mantiene un Programa de Cumplimiento AML/CFT por escrito con un Oficial de Cumplimiento designado, que cubre la debida diligencia de clientes, screening de sanciones, revisión de transacciones, escalamiento al proveedor de pago licenciado, retención de registros, capacitación y revisión independiente. Disponible a solicitud para instituciones financieras y proveedores de pago licenciados.",
       "La verificación de identidad (KYC/KYB) y el screening de sanciones y PEP se realizan a través de un proveedor externo especializado antes de completar el onboarding.",
       "Cada instrucción de pago es revisada por un especialista antes de ser enviada para su ejecución.",
       "Los registros de cada operación se conservan y se ponen a disposición del cliente con fines contables y de auditoría.",
@@ -190,8 +201,9 @@
   "contact": {
     "title": "Contacto",
     "entityLine": "Guira System LLC · Estado de Delaware, Estados Unidos",
-    "email": null,
-    "emailPending": "Casilla institucional del dominio corporativo — por confirmar antes de la publicación.",
+    "emailLabel": "Consultas de cumplimiento e institucionales:",
+    "email": "soporte@guiracorp.com",
+    "emailPending": null,
     "note": "El acceso a la plataforma se ofrece actualmente a un grupo limitado de empresas. Solicite una evaluación de su operación.",
     "form": {
       "subject": "Guira System LLC — solicitud de evaluación",
@@ -210,7 +222,7 @@
   },
   "footer": {
     "copyright": "© 2026 Guira System LLC. Todos los derechos reservados.",
-    "disclaimer": "Guira System LLC es una empresa de software y servicios empresariales constituida en el Estado de Delaware, Estados Unidos. No es un banco, money services business ni institución financiera, y no presta asesoría financiera, legal, tributaria ni de inversión. La ejecución y la liquidación de los pagos son realizadas por proveedores licenciados independientes.",
+    "disclaimer": "Guira System LLC es una empresa de software y servicios empresariales constituida en el Estado de Delaware, Estados Unidos. No es un banco ni money services business, no posee licencia financiera, y no presta asesoría financiera, legal, tributaria ni de inversión. La ejecución y la liquidación de los pagos son realizadas por proveedores licenciados independientes.",
     "links": [
       { "label": "Condiciones Generales", "href": "/terminos/" },
       { "label": "Política de Privacidad", "href": "/privacidad/" }

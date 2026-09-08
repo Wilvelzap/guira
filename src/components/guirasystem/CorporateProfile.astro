@@ -13,6 +13,7 @@
  */
 import SiteHeader from './SiteHeader.astro';
 import IdentityHeader from './IdentityHeader.astro';
+import EntityDetails from './EntityDetails.astro';
 import ProseSection from './ProseSection.astro';
 import CapabilityList from './CapabilityList.astro';
 import FlowDiagram from './FlowDiagram.astro';
@@ -36,6 +37,9 @@ const { data } = Astro.props;
 <main id="contenido">
   <!-- 1 · Identity header -->
   <IdentityHeader identity={data.identity} />
+
+  <!-- 1.1 · Entity details -->
+  {data.entityDetails && <EntityDetails entityDetails={data.entityDetails} />}
 
   <!-- 2 · What we do -->
   <ProseSection
@@ -89,7 +93,7 @@ const { data } = Astro.props;
   <!-- 9 · Regulatory position -->
   <RegulatoryPosition id="regulatory-position" regulatoryPosition={data.regulatoryPosition} />
 
-  <!-- 10 · Corporate information (incluye Revenue y Related party) -->
+  <!-- 10 · Corporate information (incluye Revenue) -->
   <CorporateDataTable id="corporate-information" corporate={data.corporate} />
 
   <!-- 11 · Compliance posture -->

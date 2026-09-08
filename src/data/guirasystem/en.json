@@ -2,7 +2,7 @@
   "lang": "en",
   "meta": {
     "title": "Guira System LLC — Payment origination and documentation software",
-    "description": "Guira System LLC is a US-based software and business-services company. We develop and operate a B2B web platform used by Bolivian importers.",
+    "description": "Guira System LLC is a US-based software and business-services company. We develop and operate a B2B web platform used by small and medium-sized importing companies in Bolivia and Peru.",
     "canonical": "https://www.guiracorp.com/guirasystem/",
     "alternate": "https://www.guiracorp.com/es/guirasystem/",
     "ogLocale": "en_US"
@@ -26,11 +26,25 @@
     "tagline": "Payment origination and documentation software for international B2B trade.",
     "buildStatement": "We build the technology layer that lets importing companies originate supplier payments with a complete, auditable documentary record — and we contract licensed payment providers to execute them."
   },
+  "entityDetails": {
+    "title": "Entity details",
+    "rows": [
+      { "label": "Legal name", "value": "Guira System LLC" },
+      { "label": "Entity type", "value": "Limited Liability Company" },
+      { "label": "Jurisdiction", "value": "State of Delaware, United States of America" },
+      { "label": "State file number", "value": "10432896" },
+      { "label": "Date of formation", "value": "December 10, 2025 (effective January 1, 2026)" },
+      { "label": "Registered office in Delaware", "value": "1201 North Market Street #111, Wilmington, New Castle County, Delaware 19801" },
+      { "label": "Registered agent", "value": "International Delaware Registered Agent INC." },
+      { "label": "Business address", "value": "150 SE 2nd Avenue, Miami, Florida 33131, United States of America" },
+      { "label": "NAICS", "value": "541511 — Custom Computer Programming Services · 541611 — Administrative & Management Consulting Services" }
+    ]
+  },
   "whatWeDo": {
     "title": "What we do",
     "paragraphs": [
-      "Guira System LLC is a US-based software and business-services company. We develop and operate a B2B web platform used by Bolivian small and medium-sized importers to originate and document international supplier payments.",
-      "Guira System LLC does not hold, receive, exchange or transmit customer funds. All payment execution and settlement is performed by licensed payment providers in the United States with which we contract; customer funds move only through those licensed providers' accounts and never through Guira System LLC's own accounts.",
+      "Guira System LLC is a US-based software and business-services company. We develop and operate a B2B web platform used by small and medium-sized importing companies in Bolivia and Peru to originate and document international supplier payments.",
+      "Guira System LLC does not hold, receive, exchange or transmit customer funds. All payment execution and settlement is performed by licensed payment providers with which we contract; customer funds move only through those licensed providers' accounts and never through Guira System LLC's own accounts.",
       "Our product is the software platform and the documentation package it generates for each transaction: KYC/KYB verification records, supporting commercial documents, a full transaction audit trail and settlement evidence, which our clients use for accounting, customs and audit purposes."
     ]
   },
@@ -88,7 +102,7 @@
       {
         "number": "3",
         "name": "Execution",
-        "text": "Execution and settlement are performed by licensed payment providers in the United States. Funds move through those providers' accounts. They never move through accounts of Guira System LLC."
+        "text": "Execution and settlement are performed by licensed payment providers. Funds move through those providers' accounts. They never move through accounts of Guira System LLC."
       },
       {
         "number": "4",
@@ -99,8 +113,8 @@
     "diagram": {
       "perimeterLabel": "Guira System LLC",
       "outsideLabel": "Licensed payment providers",
-      "outsideNote": "United States · outside the Guira System LLC perimeter",
-      "alt": "Diagram of the operation. Three stages — origination, verification and documentation — sit inside a dashed perimeter labelled Guira System LLC. The execution and settlement stage sits outside that perimeter, in a separate block labelled licensed payment providers, United States, showing that client funds move only through the licensed providers' accounts and never through accounts of Guira System LLC."
+      "outsideNote": "Outside the Guira System LLC perimeter",
+      "alt": "Diagram of the operation. Three stages — origination, verification and documentation — sit inside a dashed perimeter labelled Guira System LLC. The execution and settlement stage sits outside that perimeter, in a separate block labelled licensed payment providers, showing that client funds move only through the licensed providers' accounts and never through accounts of Guira System LLC."
     }
   },
   "deliverables": {
@@ -129,11 +143,11 @@
     "items": [
       {
         "name": "Verification",
-        "description": "A specialised third-party provider for identity and business verification and for sanctions and PEP screening, integrated by API."
+        "description": "The Company completes its own business and identity verification of the client, and screening against sanctions, politically-exposed-person and adverse-media sources, using specialised third-party tools, under its AML/CFT Compliance Programme. Separately and independently, the licensed payment provider verifies each end user under its own programme. Every instruction is reviewed and released by a specialist before it proceeds."
       },
       {
         "name": "Execution",
-        "description": "Licensed payment providers in the United States, integrated by API. These providers execute and settle the payment and issue the settlement evidence. Client funds move only through their accounts."
+        "description": "Licensed payment providers, integrated by API. These providers execute and settle the payment and issue the settlement evidence. Client funds move only through their accounts."
       },
       {
         "name": "Interfaces",
@@ -152,9 +166,10 @@
   "regulatoryPosition": {
     "title": "Regulatory position",
     "paragraphs": [
-      "Guira System LLC is a software and business-services company. It does not hold, receive, exchange or transmit customer funds. It does not maintain customer balances or custody of any kind. It does not operate as a money services business, money transmitter, currency exchange or virtual asset service provider, and it performs no activity requiring a money transmission licence. It is not a bank and it provides no banking services.",
-      "Payment execution and settlement are performed exclusively by licensed payment providers in the United States with which the company contracts. Customer funds move only through those providers' accounts and never through accounts of Guira System LLC."
-    ]
+      "Guira System LLC is a software and business-services company. It does not hold, receive, exchange or transmit customer funds. It does not maintain customer balances or custody of any kind. It does not operate as a money services business, money transmitter, currency exchange or virtual asset service provider. It is not a bank and it provides no banking services.",
+      "Payment execution and settlement are performed exclusively by licensed payment providers with which the company contracts. Customer funds move only through those providers' accounts and never through accounts of Guira System LLC."
+    ],
+    "assessment": "On the basis of the conduct described above, the Company's assessment is that it does not fall within the definition of a money transmitter at 31 CFR § 1010.100(ff)(5) and is not subject to registration under 31 CFR Part 1022. That assessment, and the analysis supporting it, are set out in the Company's AML/CFT Compliance Programme, which is available on request."
   },
   "corporate": {
     "title": "Corporate information",
@@ -165,22 +180,18 @@
       { "label": "Activity", "value": "Software and business services (B2B)" },
       { "label": "Industry classification", "value": "NAICS 541511 — Custom Computer Programming Services (primary); NAICS 541611 — Administrative & Management Consulting Services (secondary)" },
       { "label": "Product", "value": "B2B web platform for the origination and documentation of international supplier payments" },
-      { "label": "Market served", "value": "Small and medium-sized importing companies in Bolivia" },
-      { "label": "Managing Member", "value": "Wilmar Velásquez Zapata" },
+      { "label": "Market served", "value": "Small and medium-sized importing companies in Bolivia and Peru" },
       { "label": "Corporate domain", "value": "guiracorp.com" }
     ],
     "revenue": {
       "title": "Revenue",
-      "paragraph": "Our revenue consists exclusively of platform license and service fees invoiced to our clients, partner fees remitted by the licensed payment providers with which we contract as our contractual share of the fees charged on transactions originated through our platform, and an intercompany service fee from our related party GUIRAGLOBAL S.R.L. (La Paz, Bolivia)."
-    },
-    "relatedParty": {
-      "title": "Related party",
-      "paragraph": "GUIRAGLOBAL S.R.L. (La Paz, Bolivia) — a separate Bolivian advisory firm under common ownership. It provides local advisory and documentation support to client companies under a fixed monthly retainer. It does not receive, hold or move client funds, it is not a financial institution, and it charges no transaction-based or ad valorem fee."
+      "paragraph": "Our revenue consists exclusively of platform license and service fees invoiced to our clients, and partner fees remitted by the licensed payment providers with which we contract as our contractual share of the fees charged on transactions originated through our platform."
     }
   },
   "compliance": {
     "title": "Compliance posture",
     "items": [
+      "The Company maintains a written AML/CFT Compliance Programme with a designated Compliance Officer, covering client due diligence, sanctions screening, transaction review, escalation to the licensed payment provider, record retention, training and independent review. Available to financial institutions and licensed payment providers on request.",
       "Identity verification (KYC/KYB) and sanctions and PEP screening are performed through a specialised third-party provider before onboarding is completed.",
       "Every payment instruction is reviewed by a specialist before it is submitted for execution.",
       "Records for each operation are retained and made available to the client for accounting and audit purposes.",
@@ -190,8 +201,9 @@
   "contact": {
     "title": "Contact",
     "entityLine": "Guira System LLC · State of Delaware, United States",
-    "email": null,
-    "emailPending": "Institutional mailbox of the corporate domain — to be confirmed before publication.",
+    "emailLabel": "Compliance and institutional enquiries:",
+    "email": "soporte@guiracorp.com",
+    "emailPending": null,
     "note": "Access to the platform is currently offered to a limited group of companies. Request an assessment of your operation.",
     "form": {
       "subject": "Guira System LLC — assessment request",
@@ -210,7 +222,7 @@
   },
   "footer": {
     "copyright": "© 2026 Guira System LLC. All rights reserved.",
-    "disclaimer": "Guira System LLC is a software and business-services company incorporated in the State of Delaware, United States. It is not a bank, money services business or financial institution, and it does not provide financial, legal, tax or investment advice. Payment execution and settlement are performed by licensed third-party providers.",
+    "disclaimer": "Guira System LLC is a software and business-services company incorporated in the State of Delaware, United States. It is not a bank or money services business, it holds no financial licence, and it does not provide financial, legal, tax or investment advice. Payment execution and settlement are performed by licensed third-party providers.",
     "links": [
       { "label": "Terms of Service", "href": "/terminos/" },
       { "label": "Privacy Policy", "href": "/privacidad/" }

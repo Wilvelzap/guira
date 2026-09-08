@@ -8,11 +8,9 @@ import CorporateLayout from '../../layouts/CorporateLayout.astro';
 import CorporateProfile from '../../components/guirasystem/CorporateProfile.astro';
 import data from '../../data/guirasystem/en.json';
 
-// Solo campos verificables. Sin telephone, sin address de calle, sin
+// Solo campos verificables. Sin telephone, sin
 // sameAs hasta que exista el perfil corporativo de LinkedIn (§9.7).
-// Sin subOrganization: GUIRAGLOBAL S.R.L. no es una filial de Guira
-// System LLC (§3.5) — aparece solo como Related party en el JSON de datos,
-// nunca en este schema.
+// Sin subOrganization: GUIRAGLOBAL S.R.L. no es una filial de Guira System LLC.
 const organizationSchema = {
   '@context': 'https://schema.org',
   '@type': 'Organization',

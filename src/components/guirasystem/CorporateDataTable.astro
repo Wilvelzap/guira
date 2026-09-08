@@ -14,7 +14,7 @@ interface Props {
     title: string;
     rows: { label: string; value: string }[];
     revenue: { title: string; paragraph: string };
-    relatedParty: { title: string; paragraph: string };
+    relatedParty?: { title: string; paragraph: string };
   };
 }
 
@@ -32,24 +32,10 @@ const { id, corporate } = Astro.props;
         </div>
       ))}
     </dl>
-    {/*
-      PENDIENTE (§9.3, §9.4, §9.2): fecha de constitución, dirección
-      comercial operativa y casilla de contacto. No se publican hasta que
-      Wilmar los confirme. La dirección operativa debe ser idéntica a la
-      declarada en el formulario bancario; la dirección del agente
-      registrado en Delaware no se publica como dirección comercial. El
-      contacto se trata en su propia sección (ContactBlock), no como fila
-      de esta tabla.
-    */}
 
     <div class="gs-corporate__block">
       <h3>{corporate.revenue.title}</h3>
       <p>{corporate.revenue.paragraph}</p>
-    </div>
-
-    <div class="gs-corporate__block">
-      <h3>{corporate.relatedParty.title}</h3>
-      <p>{corporate.relatedParty.paragraph}</p>
     </div>
   </div>
 </section>

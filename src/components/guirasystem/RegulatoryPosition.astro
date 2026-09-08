@@ -1,15 +1,15 @@
 ---
 /**
- * Regulatory position. Condensa las cuatro afirmaciones de §3.3 en dos
- * párrafos, en fondo oscuro: marca visualmente el corte entre el bloque de
- * producto (secciones 1–8) y el bloque de verificación (9–13) que pide el
- * brief §8, sin necesidad de una etiqueta nueva.
+ * Regulatory position. Condensa la postura regulatoria en fondo oscuro.
+ * El párrafo de evaluación sobre 31 CFR se renderiza en tipografía secundaria
+ * inmediatamente debajo de la lista de lo que la empresa no hace (§2 del brief v2.1).
  */
 interface Props {
   id?: string;
   regulatoryPosition: {
     title: string;
     paragraphs: string[];
+    assessment?: string;
   };
 }
 
@@ -19,6 +19,28 @@ const { id, regulatoryPosition } = Astro.props;
 <section class="gs-section gs-section--dark" id={id}>
   <div class="gs-shell">
     <h2>{regulatoryPosition.title}</h2>
-    {regulatoryPosition.paragraphs.map((text) => <p>{text}</p>)}
+    {regulatoryPosition.paragraphs[0] && <p>{regulatoryPosition.paragraphs[0]}</p>}
+    {regulatoryPosition.assessment && (
+      <p class="gs-regulatory__assessment">{regulatoryPosition.assessment}</p>
+    )}
+    {regulatoryPosition.paragraphs.slice(1).map((text) => <p>{text}</p>)}
   </div>
 </section>
+
+<style>
+  .gs-regulatory__assessment {
+    font-size: 0.875rem;
+    line-height: 1.6;
+    color: #94a3b8;
+    margin: 1.25rem 0;
+    padding-left: 1rem;
+    border-left: 2px solid var(--gs-accent, #00b4d8);
+  }
+
+  @media print {
+    .gs-regulatory__assessment {
+      color: #4b5563 !important;
+      border-left-color: #000 !important;
+    }
+  }
+</style>
