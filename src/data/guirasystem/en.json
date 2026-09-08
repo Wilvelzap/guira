@@ -41,7 +41,11 @@
     ]
   },
   "whatWeDo": {
+    "kicker": "What we do",
     "title": "What we do",
+    "headline": "Payment origination and documentation software for international B2B trade",
+    "imageSrc": "/assets/images/plataforma-dashboard-macbook.webp",
+    "imageAlt": "Guira B2B web platform for supplier payment origination and audit trail",
     "paragraphs": [
       "Guira System LLC is a US-based software and business-services company. We develop and operate a B2B web platform used by small and medium-sized importing companies in Bolivia and Peru to originate and document international supplier payments.",
       "Guira System LLC does not hold, receive, exchange or transmit customer funds. All payment execution and settlement is performed by licensed payment providers with which we contract; customer funds move only through those licensed providers' accounts and never through Guira System LLC's own accounts.",
@@ -49,6 +53,8 @@
     ]
   },
   "platform": {
+    "kicker": "Platform",
+    "topBadge": "Core Architecture",
     "title": "The platform",
     "intro": "Guira System LLC develops and operates a B2B web application. Client companies use it to originate international supplier payments and to produce the documentary record of each operation.",
     "items": [

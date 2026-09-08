@@ -1,71 +1,124 @@
 ---
 /**
- * Lista de definición para capacidades reales del software (§8 del brief:
- * "<dl>, no tarjetas con iconos. Nombre de la capacidad en seminegrita,
- * descripción debajo. Densa y legible, sin decoración"). Se reutiliza para
- * "The platform" (con intro) y "Technology and provider stack" (sin intro):
- * misma forma visual, contenido distinto.
+ * CapabilityList.astro
+ *
+ * Sección "Tecnología y proveedores" / "Technology and provider stack".
+ * Rediseñado con estilo de 3 tarjetas en retícula horizontal con líneas divisorias
+ * y badge de icono en cada tarjeta, idéntico a la referencia (media_1788548606894.png):
+ * - Titular principal de sección en mayúsculas
+ * - Borde superior y divisores verticales entre tarjetas (md:divide-x)
+ * - Icono en contenedor redondeado blanco con borde sutil
+ * - Nombre de capacidad en mayúsculas negrita y descripción debajo
  */
 interface Props {
   id?: string;
+  kicker?: string;
+  topBadge?: string;
   title: string;
   intro?: string;
   items: { name: string; description: string }[];
 }
 
-const { id, title, intro, items } = Astro.props;
+const { id, kicker, topBadge, title, intro, items = [] } = Astro.props;
 ---
 
-<section class="gs-section" id={id}>
+<section class="gs-capability-cards bg-white text-slate-900 py-16 sm:py-20 lg:py-24 border-b border-slate-200" id={id}>
   <div class="gs-shell">
-    <h2>{title}</h2>
-    {intro && <p class="gs-capabilities__intro">{intro}</p>}
-    <dl class="gs-capabilities">
-      {items.map((item) => (
-        <div class="gs-capabilities__row">
-          <dt>{item.name}</dt>
-          <dd>{item.description}</dd>
+    
+    <!-- Encabezado de sección -->
+    <div class="mb-10 sm:mb-12 lg:mb-14">
+      {kicker && (
+        <div class="inline-flex items-center gap-2 mb-3">
+          <span class="w-1.5 h-1.5 rounded-full bg-blue-600"></span>
+          <span class="text-xs sm:text-sm font-semibold tracking-[0.2em] uppercase text-blue-600 font-mono">
+            {kicker}
+          </span>
+          {topBadge && (
+            <span class="ml-2 font-mono text-xs text-slate-400 tracking-wider">
+              {topBadge}
+            </span>
+          )}
+        </div>
+      )}
+      <h2 class="text-2xl sm:text-3xl md:text-4xl lg:text-[2.65rem] font-bold uppercase tracking-tight text-slate-950 leading-[1.12] m-0">
+        {title}
+      </h2>
+      {intro && (
+        <p class="mt-4 text-base sm:text-lg text-slate-600 leading-relaxed max-w-3xl m-0">
+          {intro}
+        </p>
+      )}
+    </div>
+
+    <!-- Retícula de 3 tarjetas con divisores -->
+    <div class="grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-slate-200 border-t border-slate-200">
+      {items.map((item, index) => (
+        <div class="py-8 sm:py-10 md:py-12 md:px-8 lg:px-12 first:md:pl-0 last:md:pr-0 flex flex-col justify-start">
+          
+          <!-- Contenedor redondeado de icono -->
+          <div class="w-12 h-12 rounded-xl border border-slate-200 bg-white flex items-center justify-center text-slate-700 shadow-xs mb-6 sm:mb-8">
+            {index === 0 && (
+              /* Icono de Verificación: Identidad, KYC/KYB y validación */
+              <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
+                <circle cx="9" cy="7" r="4" />
+                <path d="m16 11 2 2 4-4" />
+              </svg>
+            )}
+            {index === 1 && (
+              /* Icono de Ejecución: Proveedores licenciados / Entidad de liquidación */
+              <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M3 21h18" />
+                <path d="M3 10h18" />
+                <path d="M5 10v11" />
+                <path d="M9 10v11" />
+                <path d="M15 10v11" />
+                <path d="M19 10v11" />
+                <path d="m12 2 10 5H2z" />
+              </svg>
+            )}
+            {index === 2 && (
+              /* Icono de Interfaces: Aplicación web B2B */
+              <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <rect width="20" height="14" x="2" y="3" rx="2" />
+                <line x1="8" x2="16" y1="21" y2="21" />
+                <line x1="12" x2="12" y1="17" y2="21" />
+              </svg>
+            )}
+            {index > 2 && (
+              /* Fallback para tarjetas adicionales si hubiese */
+              <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+                <polyline points="14 2 14 8 20 8" />
+                <line x1="16" y1="13" x2="8" y2="13" />
+                <line x1="16" y1="17" x2="8" y2="17" />
+                <polyline points="10 9 9 9 8 9" />
+              </svg>
+            )}
+          </div>
+
+          <!-- Titular de la tarjeta en mayúsculas -->
+          <h3 class="text-base sm:text-lg font-bold uppercase tracking-tight text-slate-950 mb-3 sm:mb-4">
+            {item.name}
+          </h3>
+
+          <!-- Descripción -->
+          <p class="text-sm sm:text-base text-slate-600 leading-relaxed font-normal m-0">
+            {item.description}
+          </p>
         </div>
       ))}
-    </dl>
+    </div>
+
   </div>
 </section>
 
 <style>
-  .gs-capabilities__intro {
-    margin-bottom: 1.75rem;
-  }
-
-  .gs-capabilities {
-    margin: 0;
-    border-top: 1px solid var(--gs-rule);
-  }
-
-  .gs-capabilities__row {
-    display: grid;
-    gap: 0.3rem;
-    padding: 1rem 0;
-    border-bottom: 1px solid var(--gs-rule);
-  }
-
-  @media (min-width: 40rem) {
-    .gs-capabilities__row {
-      grid-template-columns: 13rem 1fr;
-      gap: 0 1.5rem;
+  @media print {
+    .gs-capability-cards {
+      padding: 1.5rem 0 !important;
+      border-bottom: 1px solid #cbd5e1 !important;
+      break-inside: avoid;
     }
-  }
-
-  .gs-capabilities dt {
-    margin: 0;
-    font-size: 0.9375rem;
-    font-weight: 700;
-    color: var(--gs-ink);
-  }
-
-  .gs-capabilities dd {
-    margin: 0;
-    font-size: 0.9375rem;
-    line-height: 1.6;
-    color: var(--gs-ink-soft);
   }
 </style>

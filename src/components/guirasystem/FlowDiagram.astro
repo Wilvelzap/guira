@@ -1,10 +1,17 @@
 ---
 /**
- * Diagrama de flujo en SVG inline (sin dependencias, sin JavaScript).
- * El argumento entero de la página está en la geometría: originación,
- * verificación y documentación quedan dentro del perímetro punteado de
- * Guira System LLC; la ejecución queda fuera, en los proveedores licenciados.
- * El texto equivalente vive en la lista ordenada que acompaña al diagrama.
+ * Diagrama de flujo en SVG inline. El argumento entero de la página está en
+ * la geometría: originación, verificación y documentación quedan dentro del
+ * perímetro punteado de Guira System LLC; la ejecución queda fuera, en los
+ * proveedores licenciados. El texto equivalente vive en la lista ordenada
+ * que acompaña al diagrama.
+ *
+ * La animación replica el estilo del "haz láser" usado en la sección Flujo
+ * de /pagos-cobros-internacionales: un trazo con glow (feGaussianBlur +
+ * feMerge) y una partícula recorren cada tramo real del <path> con
+ * getTotalLength()/getPointAtLength() vía requestAnimationFrame (sin
+ * librerías), y la caja de destino se ilumina al llegar. Respeta
+ * prefers-reduced-motion.
  */
 interface Props {
   id?: string;
@@ -27,11 +34,13 @@ const d = flow.diagram;
 
 <section class="gs-section" id={id}>
   <div class="gs-shell">
-    <h2>{flow.title}</h2>
+    <div class="gs-prose--wide">
+      <h2>{flow.title}</h2>
+    </div>
 
     <figure class="gs-flow__diagram">
       <svg
-        viewBox="0 0 700 380"
+        viewBox="0 0 700 340"
         role="img"
         aria-labelledby={`${id}-diagram-title ${id}-diagram-desc`}
         xmlns="http://www.w3.org/2000/svg"
@@ -51,71 +60,251 @@ const d = flow.diagram;
           >
             <path d="M 0 0 L 10 5 L 0 10 z" fill="currentColor" />
           </marker>
+
+          <linearGradient id={`${id}-sheen`} x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#ffffff" stop-opacity="0.5" />
+            <stop offset="55%" stop-color="#ffffff" stop-opacity="0" />
+            <stop offset="100%" stop-color="#0f172a" stop-opacity="0.05" />
+          </linearGradient>
+
+          <!-- Glow del haz animado, mismo mecanismo que la sección Flujo de pagos-cobros-internacionales -->
+          <filter
+            id={`${id}-laser-glow`}
+            filterUnits="userSpaceOnUse"
+            x="0" y="0" width="700" height="340"
+          >
+            <feGaussianBlur stdDeviation="3" result="coloredBlur" />
+            <feMerge>
+              <feMergeNode in="coloredBlur" />
+              <feMergeNode in="SourceGraphic" />
+            </feMerge>
+          </filter>
         </defs>
 
         <!-- Perímetro de Guira System LLC -->
         <rect
-          x="8" y="34" width="684" height="132" rx="6"
+          class="gs-svg-perimeter-box"
+          x="8" y="30" width="684" height="104" rx="10"
           fill="none" stroke="var(--gs-accent)" stroke-width="1.5"
           stroke-dasharray="7 5"
         />
-        <text x="20" y="24" class="gs-svg-perimeter">{d.perimeterLabel}</text>
+        <text x="20" y="20" class="gs-svg-perimeter">{d.perimeterLabel}</text>
 
         <!-- Nodos dentro del perímetro -->
-        <g class="gs-svg-node">
-          <rect x="28" y="60" width="188" height="80" rx="4" />
-          <text x="46" y="92" class="gs-svg-num">{origination.number}</text>
-          <text x="46" y="118" class="gs-svg-name">{origination.name}</text>
+        <g class="gs-svg-node" data-node="origination">
+          <rect class="gs-card-base" x="24" y="54" width="160" height="64" rx="10" />
+          <rect class="gs-card-sheen" x="24" y="54" width="160" height="64" rx="10" fill={`url(#${id}-sheen)`} />
+          <text x="40" y="80" class="gs-svg-num">{origination.number}</text>
+          <text x="40" y="102" class="gs-svg-name">{origination.name}</text>
         </g>
-        <g class="gs-svg-node">
-          <rect x="256" y="60" width="188" height="80" rx="4" />
-          <text x="274" y="92" class="gs-svg-num">{verification.number}</text>
-          <text x="274" y="118" class="gs-svg-name">{verification.name}</text>
+        <g class="gs-svg-node" data-node="verification">
+          <rect class="gs-card-base" x="270" y="54" width="160" height="64" rx="10" />
+          <rect class="gs-card-sheen" x="270" y="54" width="160" height="64" rx="10" fill={`url(#${id}-sheen)`} />
+          <text x="286" y="80" class="gs-svg-num">{verification.number}</text>
+          <text x="286" y="102" class="gs-svg-name">{verification.name}</text>
         </g>
-        <g class="gs-svg-node">
-          <rect x="484" y="60" width="188" height="80" rx="4" />
-          <text x="502" y="92" class="gs-svg-num">{documentation.number}</text>
-          <text x="502" y="118" class="gs-svg-name">{documentation.name}</text>
+        <g class="gs-svg-node" data-node="documentation">
+          <rect class="gs-card-base" x="516" y="54" width="160" height="64" rx="10" />
+          <rect class="gs-card-sheen" x="516" y="54" width="160" height="64" rx="10" fill={`url(#${id}-sheen)`} />
+          <text x="532" y="80" class="gs-svg-num">{documentation.number}</text>
+          <text x="532" y="102" class="gs-svg-name">{documentation.name}</text>
         </g>
 
         <!-- Nodo de ejecución, fuera del perímetro -->
-        <g class="gs-svg-node gs-svg-node--outside">
-          <rect x="256" y="238" width="250" height="100" rx="4" />
-          <text x="274" y="270" class="gs-svg-num">{execution.number}</text>
-          <text x="274" y="294" class="gs-svg-name">{execution.name}</text>
-          <text x="274" y="320" class="gs-svg-outside">{d.outsideLabel}</text>
+        <g class="gs-svg-node gs-svg-node--outside" data-node="execution">
+          <rect class="gs-card-base" x="240" y="210" width="220" height="90" rx="10" />
+          <rect class="gs-card-sheen" x="240" y="210" width="220" height="90" rx="10" fill={`url(#${id}-sheen)`} />
+          <text x="258" y="240" class="gs-svg-num">{execution.number}</text>
+          <text x="258" y="262" class="gs-svg-name">{execution.name}</text>
+          <text x="258" y="282" class="gs-svg-outside">{d.outsideLabel}</text>
         </g>
-        <text x="256" y="362" class="gs-svg-outside-note">{d.outsideNote}</text>
+        <text x="240" y="322" class="gs-svg-outside-note">{d.outsideNote}</text>
 
-        <!-- Recorrido -->
-        <g class="gs-svg-arrow" marker-end={`url(#${id}-arrow)`}>
-          <line x1="222" y1="100" x2="250" y2="100" />
-          <polyline points="350,146 350,232" fill="none" />
-          <polyline points="512,288 578,288 578,146" fill="none" />
+        <!-- Trazado base (siempre visible, tenue) -->
+        <g class="gs-svg-arrow">
+          <path id={`${id}-path-1`} d="M 184,86 H 270" marker-end={`url(#${id}-arrow)`} />
+          <path id={`${id}-path-2`} d="M 350,118 V 210" marker-end={`url(#${id}-arrow)`} />
+          <path id={`${id}-path-3`} d="M 460,255 H 596 V 118" marker-end={`url(#${id}-arrow)`} />
+        </g>
+
+        <!-- Haz animado: trazo con glow + partícula, recorre cada tramo real -->
+        <g class="gs-laser-layer" aria-hidden="true">
+          <path class="gs-laser-trail" fill="none" stroke-width="2.5" stroke-linecap="butt" filter={`url(#${id}-laser-glow)`} opacity="0" />
+          <circle class="gs-laser-particle" r="4.5" stroke-width="2" filter={`url(#${id}-laser-glow)`} opacity="0" />
         </g>
       </svg>
     </figure>
 
-    <ol class="gs-flow__steps">
-      {flow.steps.map((step) => (
-        <li>
-          <span class="gs-flow__num">{step.number}</span>
-          <div>
-            <h3>{step.name}</h3>
-            <p>{step.text}</p>
-          </div>
-        </li>
-      ))}
-    </ol>
+    <div class="mt-12">
+      <ol class="border-y border-slate-200 divide-y divide-slate-200 list-none p-0 m-0">
+        {flow.steps.map((step) => (
+          <li class="grid gap-3 sm:grid-cols-12 sm:gap-8 lg:gap-12 py-6 sm:py-7 items-start">
+            <div class="sm:col-span-4 flex items-baseline gap-3">
+              <span class="font-mono text-xs sm:text-sm font-bold text-slate-400 shrink-0 select-none">
+                {String(step.number).padStart(2, '0')}
+              </span>
+              <h3 class="text-base sm:text-lg lg:text-xl font-extrabold uppercase tracking-tight text-slate-900 m-0">
+                {step.name}
+              </h3>
+            </div>
+            <div class="sm:col-span-8">
+              <p class="text-sm sm:text-base font-medium leading-relaxed text-slate-700 m-0">
+                {step.text}
+              </p>
+            </div>
+          </li>
+        ))}
+      </ol>
+    </div>
   </div>
 </section>
 
+<script define:vars={{ sectionId: id }} is:inline>
+  (function () {
+    function init() {
+      var section = document.getElementById(sectionId);
+      if (!section) return;
+      var svg = section.querySelector(".gs-flow__diagram svg");
+      if (!svg || svg.dataset.flowInit === "1") return;
+      svg.dataset.flowInit = "1";
+
+      if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+
+      var trail = svg.querySelector(".gs-laser-trail");
+      var particle = svg.querySelector(".gs-laser-particle");
+      var nodes = svg.querySelectorAll(".gs-svg-node");
+      var nodeByKey = {};
+      nodes.forEach(function (n) {
+        nodeByKey[n.getAttribute("data-node")] = n;
+      });
+
+      var STEPS = [
+        { type: "node", node: nodeByKey.origination, duration: 500 },
+        { type: "path", path: svg.querySelector("#" + sectionId + "-path-1"), duration: 700 },
+        { type: "node", node: nodeByKey.verification, duration: 550 },
+        { type: "path", path: svg.querySelector("#" + sectionId + "-path-2"), duration: 700 },
+        { type: "node", node: nodeByKey.execution, duration: 600 },
+        { type: "path", path: svg.querySelector("#" + sectionId + "-path-3"), duration: 780 },
+        { type: "node", node: nodeByKey.documentation, duration: 1000 },
+      ];
+
+      var stepIndex = 0;
+      var stepTimeout = null;
+      var loopTimer = null;
+
+      function clearActive() {
+        nodes.forEach(function (n) {
+          n.classList.remove("is-active");
+        });
+        if (trail) trail.setAttribute("opacity", "0");
+        if (particle) particle.setAttribute("opacity", "0");
+      }
+
+      function highlightNode(node, duration, done) {
+        if (!node) {
+          done();
+          return;
+        }
+        node.classList.add("is-active");
+        stepTimeout = setTimeout(function () {
+          node.classList.remove("is-active");
+          done();
+        }, duration);
+      }
+
+      function animatePath(pathEl, duration, done) {
+        if (!pathEl || !trail || !particle) {
+          done();
+          return;
+        }
+        var totalLen = pathEl.getTotalLength();
+        // Deja un hueco antes de la punta real para que el trazo animado no se
+        // monte sobre el triángulo de la flecha estática (evita el remate
+        // redondeado chocando con la punta).
+        var tipGap = Math.min(9, totalLen * 0.25);
+        var travel = Math.max(totalLen - tipGap, 0);
+        trail.setAttribute("d", pathEl.getAttribute("d"));
+        trail.style.strokeDasharray = totalLen + " " + totalLen;
+        trail.style.strokeDashoffset = String(totalLen);
+        trail.setAttribute("opacity", "1");
+        particle.setAttribute("opacity", "1");
+
+        var start = pathEl.getPointAtLength(0);
+        particle.setAttribute("cx", String(start.x));
+        particle.setAttribute("cy", String(start.y));
+
+        var startTime = performance.now();
+        var totalDuration = duration * 1.3;
+
+        function tick(now) {
+          var elapsed = now - startTime;
+          var raw = Math.min(elapsed / totalDuration, 1);
+
+          if (raw <= 0.6) {
+            var p1 = raw / 0.6;
+            var ease1 = 1 - Math.pow(1 - p1, 3);
+            var dist = ease1 * travel;
+            var pt = pathEl.getPointAtLength(dist);
+            particle.setAttribute("cx", String(pt.x));
+            particle.setAttribute("cy", String(pt.y));
+            trail.style.strokeDashoffset = String(totalLen - dist);
+          } else {
+            var p2 = (raw - 0.6) / 0.4;
+            var ease2 = p2 * p2;
+            var end = pathEl.getPointAtLength(travel);
+            particle.setAttribute("cx", String(end.x));
+            particle.setAttribute("cy", String(end.y));
+            particle.setAttribute("opacity", String(Math.max(0, 1 - p2 * 1.5)));
+            trail.style.strokeDashoffset = String((totalLen - travel) - ease2 * travel);
+          }
+
+          if (raw < 1) {
+            requestAnimationFrame(tick);
+          } else {
+            trail.setAttribute("opacity", "0");
+            particle.setAttribute("opacity", "0");
+            trail.style.strokeDashoffset = "0";
+            done();
+          }
+        }
+
+        requestAnimationFrame(tick);
+      }
+
+      function next() {
+        if (stepIndex >= STEPS.length) {
+          loopTimer = setTimeout(function () {
+            stepIndex = 0;
+            next();
+          }, 1100);
+          return;
+        }
+        var step = STEPS[stepIndex];
+        stepIndex++;
+        if (step.type === "node") {
+          highlightNode(step.node, step.duration, next);
+        } else {
+          animatePath(step.path, step.duration, next);
+        }
+      }
+
+      clearActive();
+      next();
+    }
+
+    if (document.readyState === "loading") {
+      document.addEventListener("DOMContentLoaded", init);
+    } else {
+      init();
+    }
+    document.addEventListener("astro:page-load", init);
+  })();
+</script>
+
 <style>
   .gs-flow__diagram {
-    margin: 0 0 2.25rem;
-    padding: 1.25rem;
-    border: 1px solid var(--gs-rule);
-    background: var(--gs-surface-alt);
+    margin: 1.75rem 0 2.25rem;
+    padding: 1.75rem clamp(1.25rem, 4vw, 2.5rem);
   }
 
   .gs-flow__diagram svg {
@@ -123,18 +312,47 @@ const d = flow.diagram;
     width: 100%;
     height: auto;
     color: var(--gs-ink-faint);
+    overflow: visible;
   }
 
-  .gs-svg-node rect {
+  .gs-svg-perimeter-box {
+    animation: gs-perimeter-breathe 6s ease-in-out infinite;
+  }
+
+  .gs-svg-node {
+    transform-box: fill-box;
+    transform-origin: center;
+    transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .gs-svg-node.is-active {
+    transform: scale(1.05);
+  }
+
+  .gs-card-base {
     fill: var(--gs-surface);
-    stroke: var(--gs-ink);
+    stroke: var(--gs-rule);
     stroke-width: 1.25;
+    filter: drop-shadow(0 2px 3px rgba(15, 23, 42, 0.14));
+    transition: stroke 0.3s ease, filter 0.3s ease;
   }
 
-  .gs-svg-node--outside rect {
-    fill: var(--gs-surface);
-    stroke: var(--gs-ink);
+  .gs-svg-node--outside .gs-card-base {
+    stroke: var(--gs-ink-soft);
+    stroke-width: 1.5;
+  }
+
+  .gs-svg-node.is-active .gs-card-base {
+    stroke: var(--gs-accent);
     stroke-width: 2;
+    filter:
+      drop-shadow(0 2px 3px rgba(15, 23, 42, 0.14))
+      drop-shadow(0 0 10px color-mix(in srgb, var(--gs-accent) 55%, transparent));
+  }
+
+  .gs-card-sheen {
+    stroke: none;
+    pointer-events: none;
   }
 
   .gs-svg-perimeter {
@@ -148,37 +366,60 @@ const d = flow.diagram;
 
   .gs-svg-num {
     font-family: var(--gs-mono);
-    font-size: 15px;
+    font-size: 13px;
     font-weight: 600;
     fill: var(--gs-accent);
+    transition: fill 0.3s ease;
   }
 
   .gs-svg-name {
     font-family: var(--gs-font);
-    font-size: 16px;
+    font-size: 15px;
     font-weight: 700;
     fill: var(--gs-ink);
   }
 
   .gs-svg-outside {
     font-family: var(--gs-font);
-    font-size: 12.5px;
+    font-size: 12px;
     font-weight: 600;
     fill: var(--gs-ink-soft);
   }
 
   .gs-svg-outside-note {
     font-family: var(--gs-font);
-    font-size: 12px;
+    font-size: 11.5px;
     font-weight: 500;
     fill: var(--gs-ink-faint);
   }
 
-  .gs-svg-arrow line,
-  .gs-svg-arrow polyline {
+  .gs-svg-arrow path {
     stroke: var(--gs-ink-faint);
     stroke-width: 1.5;
     fill: none;
+  }
+
+  .gs-laser-trail {
+    stroke: var(--gs-accent);
+  }
+
+  .gs-laser-particle {
+    fill: #ffffff;
+    stroke: var(--gs-accent);
+  }
+
+  @keyframes gs-perimeter-breathe {
+    0%, 100% { stroke-opacity: 0.55; }
+    50% { stroke-opacity: 1; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .gs-svg-perimeter-box {
+      animation: none;
+    }
+    .gs-svg-node {
+      transition: none;
+    }
   }
 
   .gs-flow__steps {
@@ -193,6 +434,25 @@ const d = flow.diagram;
     gap: 1.1rem;
     padding: 1.25rem 0;
     border-bottom: 1px solid var(--gs-rule);
+    opacity: 0;
+    transform: translateY(8px);
+    animation: gs-step-in 0.6s ease-out forwards;
+    animation-delay: calc(var(--gs-step-delay, 0s) * 0.12);
+  }
+
+  @keyframes gs-step-in {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .gs-flow__steps li {
+      opacity: 1;
+      transform: none;
+      animation: none;
+    }
   }
 
   .gs-flow__num {

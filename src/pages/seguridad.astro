@@ -1,6 +1,8 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import KineticButton from "../components/KineticButton.astro";
+import SecurityHeroAnimation from "../components/SecurityHeroAnimation.astro";
+import SecurityHorizontalCards from "../components/SecurityHorizontalCards.astro";
 ---
 
 <Layout
@@ -37,13 +39,12 @@ import KineticButton from "../components/KineticButton.astro";
 
     <!-- Hero -->
     <header
-        data-stack-section
-        class="pt-28 md:pt-32 pb-16 md:pb-20 relative z-10 bg-white border-b border-slate-200"
+        class="pt-28 md:pt-32 pb-16 md:pb-20 relative z-10 bg-white border-b border-slate-200 overflow-hidden"
     >
         <div
-            class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-12 items-center"
+            class="max-w-7xl mx-auto px-6 grid lg:grid-cols-12 gap-8 lg:gap-0 items-center relative"
         >
-            <div class="text-left reveal-up">
+            <div class="lg:col-span-6 text-left reveal-up relative z-20">
                 <div
                     class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white border border-slate-200 shadow-sm text-xs font-bold text-slate-600 mb-6 cursor-default"
                 >
@@ -67,309 +68,37 @@ import KineticButton from "../components/KineticButton.astro";
                 </p>
             </div>
 
-            <!-- Panel de estado de seguridad -->
+            <!-- Animación de Candado + Código Cifrado + Pulso de Radar (Expandido) -->
             <div
-                class="relative lg:ml-auto w-full max-w-lg mt-4 lg:mt-0 reveal-up delay-100"
+                class="lg:col-span-6 relative w-full flex items-center justify-center lg:justify-center reveal-up delay-100 z-10 -my-6 lg:-my-14 lg:-ml-8 xl:-ml-12"
             >
-                <div
-                    class="bg-white border border-slate-200 rounded-2xl p-6 shadow-2xl relative z-20 hover:border-slate-300 transition-colors duration-500"
-                >
-                    <div
-                        class="flex items-center justify-between mb-6 border-b border-slate-100 pb-4"
-                    >
-                        <div class="flex items-center gap-3">
-                            <div
-                                class="w-8 h-8 rounded bg-slate-100 flex items-center justify-center"
-                            >
-                                <i
-                                    data-lucide="shield"
-                                    class="w-4 h-4 text-slate-700"></i>
-                            </div>
-                            <h3 class="font-bold text-slate-900 text-sm">
-                                Estado de seguridad operativa
-                            </h3>
-                        </div>
-                        <span class="flex h-2 w-2 relative">
-                            <span
-                                class="animate-ping absolute inline-flex h-full w-full rounded-full bg-guira-teal opacity-75"
-                            ></span>
-                            <span
-                                class="relative inline-flex rounded-full h-2 w-2 bg-guira-teal"
-                            ></span>
-                        </span>
-                    </div>
-
-                    <div class="space-y-3">
-                        <div
-                            class="flex items-center justify-between bg-slate-50 rounded-lg p-3 border border-slate-100"
-                        >
-                            <div class="flex items-center gap-3">
-                                <i
-                                    data-lucide="file-check"
-                                    class="w-4 h-4 text-guira-teal shrink-0"
-                                ></i>
-                                <span class="text-xs text-slate-900 font-bold"
-                                    >Validación empresarial</span
-                                >
-                            </div>
-                            <span
-                                class="text-[10px] font-bold text-slate-500 uppercase tracking-wider"
-                                >Activa</span
-                            >
-                        </div>
-                        <div
-                            class="flex items-center justify-between bg-slate-50 rounded-lg p-3 border border-slate-100"
-                        >
-                            <div class="flex items-center gap-3">
-                                <i
-                                    data-lucide="activity"
-                                    class="w-4 h-4 text-guira-teal shrink-0"
-                                ></i>
-                                <span class="text-xs text-slate-900 font-bold"
-                                    >Trazabilidad operativa</span
-                                >
-                            </div>
-                            <span
-                                class="text-[10px] font-bold text-slate-500 uppercase tracking-wider"
-                                >Habilitada</span
-                            >
-                        </div>
-                        <div
-                            class="flex items-center justify-between bg-slate-50 rounded-lg p-3 border border-slate-100"
-                        >
-                            <div class="flex items-center gap-3">
-                                <i
-                                    data-lucide="lock"
-                                    class="w-4 h-4 text-guira-teal shrink-0"
-                                ></i>
-                                <span class="text-xs text-slate-900 font-bold"
-                                    >Cifrado y controles</span
-                                >
-                            </div>
-                            <span
-                                class="text-[10px] font-bold text-slate-500 uppercase tracking-wider"
-                                >Aplicados</span
-                            >
-                        </div>
-                    </div>
-
-                    <div
-                        class="mt-5 pt-4 border-t border-slate-100 flex items-center gap-2"
-                    >
-                        <i
-                            data-lucide="info"
-                            class="w-3.5 h-3.5 text-slate-400 shrink-0"></i>
-                        <p
-                            class="text-[11px] text-slate-500 font-medium leading-snug"
-                        >
-                            Depende del perfil operativo, jurisdicción y
-                            documentación de cada empresa.
-                        </p>
-                    </div>
-                </div>
+                <SecurityHeroAnimation />
             </div>
         </div>
     </header>
 
-    <!-- Content -->
-    <main
-        data-stack-section
-        class="pt-16 pb-24 flex-1 text-left bg-slate-50 border-b border-slate-200"
-    >
-        <div class="max-w-6xl mx-auto px-6">
-            <div class="px-6 md:px-8 divide-y divide-sky-200">
-                <!-- Bloque 1 -->
-                <div
-                    class="flex flex-col md:flex-row md:items-center gap-4 md:gap-6 py-8 reveal group"
-                >
-                    <div
-                        class="w-12 h-12 rounded-xl bg-slate-50 border border-slate-100 flex items-center justify-center shrink-0 group-hover:bg-guira-teal/10 group-hover:border-guira-teal/20 transition-colors"
-                    >
-                        <i
-                            data-lucide="file-check"
-                            class="text-guira-teal w-6 h-6"></i>
-                    </div>
-                    <div>
-                        <h3 class="h3-card text-slate-900 mb-2 group-hover:text-guira-teal transition-colors">
-                            Validación empresarial y revisión de perfil
-                        </h3>
-                        <p
-                            class="text-slate-600 mb-2 font-medium leading-relaxed"
-                        >
-                            Antes de activar una operación, Guira y los
-                            proveedores aplicables revisan la información básica
-                            de la empresa, sus representantes y su actividad.
-                            Esto ayuda a habilitar una operación alineada con
-                            criterios de cumplimiento, riesgo y elegibilidad del
-                            servicio.
-                        </p>
-                        <p
-                            class="text-sm text-slate-500 font-medium leading-relaxed"
-                        >
-                            La disponibilidad del servicio depende del perfil
-                            operativo de la empresa, la jurisdicción, la
-                            actividad comercial y la documentación de respaldo
-                            presentada, sujeta a criterios de prevención
-                            corporativa.
-                        </p>
-                    </div>
-                    <div class="flex items-center gap-2 shrink-0 md:ml-auto">
-                        <span
-                            class="fi fi-bo rounded-sm shadow-sm"
-                            title="Bolivia"></span>
-                        <span
-                            class="fi fi-us rounded-sm shadow-sm"
-                            title="Estados Unidos"></span>
-                    </div>
-                </div>
+    <!-- Recorrido Horizontal de Pilares de Seguridad (GSAP ScrollTrigger) -->
+    <SecurityHorizontalCards />
 
-                <!-- Bloque 2 -->
-                <div
-                    class="flex flex-col md:flex-row md:items-center gap-4 md:gap-6 py-8 reveal group"
-                >
-                    <div
-                        class="w-12 h-12 rounded-xl bg-slate-50 border border-slate-100 flex items-center justify-center shrink-0 group-hover:bg-guira-teal/10 group-hover:border-guira-teal/20 transition-colors"
-                    >
-                        <i
-                            data-lucide="activity"
-                            class="text-guira-teal w-6 h-6"></i>
-                    </div>
-                    <div>
-                        <h3 class="h3-card text-slate-900 mb-2 group-hover:text-guira-teal transition-colors">
-                            Trazabilidad y monitoreo operativo
-                        </h3>
-                        <p
-                            class="text-slate-600 mb-2 font-medium leading-relaxed"
-                        >
-                            Guira está diseñado para ofrecer mayor visibilidad
-                            sobre movimientos, estados operativos y flujos
-                            empresariales. Esto permite a cada empresa operar
-                            con más claridad documental y mejor seguimiento
-                            sobre ingresos, pagos y solicitudes asociadas a su
-                            actividad.
-                        </p>
-                        <p
-                            class="text-sm text-slate-500 font-medium leading-relaxed"
-                        >
-                            La trazabilidad es parte central de una operación
-                            internacional más ordenada y confiable.
-                        </p>
-                    </div>
-                    <div class="flex items-center gap-2 shrink-0 md:ml-auto">
-                        <span
-                            class="fi fi-bo rounded-sm shadow-sm"
-                            title="Bolivia"></span>
-                        <span
-                            class="fi fi-us rounded-sm shadow-sm"
-                            title="Estados Unidos"></span>
-                    </div>
-                </div>
-
-                <!-- Bloque 3 -->
-                <div
-                    class="flex flex-col md:flex-row md:items-center gap-4 md:gap-6 py-8 reveal group"
-                >
-                    <div
-                        class="w-12 h-12 rounded-xl bg-slate-50 border border-slate-100 flex items-center justify-center shrink-0 group-hover:bg-guira-teal/10 group-hover:border-guira-teal/20 transition-colors"
-                    >
-                        <i data-lucide="lock" class="text-guira-teal w-6 h-6"
-                        ></i>
-                    </div>
-                    <div>
-                        <h3 class="h3-card text-slate-900 mb-2 group-hover:text-guira-teal transition-colors">
-                            Controles de acceso y seguridad tecnológica
-                        </h3>
-                        <p
-                            class="text-slate-600 mb-2 font-medium leading-relaxed"
-                        >
-                            La plataforma incorpora controles de acceso, buenas
-                            prácticas de autenticación y capas de seguridad
-                            orientadas a proteger el entorno operativo y la
-                            información sensible de cada empresa, incluyendo
-                            cifrado y protección de datos estructurada.
-                        </p>
-                        <p
-                            class="text-sm text-slate-500 font-medium leading-relaxed"
-                        >
-                            Según el flujo y la configuración del servicio,
-                            pueden aplicarse mecanismos adicionales de
-                            verificación y autorización para acciones sensibles.
-                        </p>
-                    </div>
-                    <div class="flex items-center gap-2 shrink-0 md:ml-auto">
-                        <span
-                            class="fi fi-bo rounded-sm shadow-sm"
-                            title="Bolivia"></span>
-                        <span
-                            class="fi fi-us rounded-sm shadow-sm"
-                            title="Estados Unidos"></span>
-                    </div>
-                </div>
-
-                <!-- Bloque 4 -->
-                <div
-                    class="flex flex-col md:flex-row md:items-center gap-4 md:gap-6 py-8 reveal group"
-                >
-                    <div
-                        class="w-12 h-12 rounded-xl bg-slate-50 border border-slate-100 flex items-center justify-center shrink-0 group-hover:bg-guira-teal/10 group-hover:border-guira-teal/20 transition-colors"
-                    >
-                        <i
-                            data-lucide="building"
-                            class="text-guira-teal w-6 h-6"></i>
-                    </div>
-                    <div>
-                        <h3 class="h3-card text-slate-900 mb-2 group-hover:text-guira-teal transition-colors">
-                            Infraestructura y partners aplicables
-                        </h3>
-                        <p
-                            class="text-slate-600 mb-2 font-medium leading-relaxed"
-                        >
-                            Guira provee software e infraestructura operativa
-                            para facilitar flujos financieros empresariales. Los
-                            servicios financieros aplicables pueden involucrar
-                            instituciones o partners especializados, según el
-                            riel, la jurisdicción y el caso de uso
-                            correspondiente.
-                        </p>
-                        <p
-                            class="text-sm text-slate-500 font-medium leading-relaxed"
-                        >
-                            Esto permite ofrecer a las empresas una operación
-                            ágil y estructurada, respaldada por la solidez
-                            institucional de nuestra red operativa.
-                        </p>
-                    </div>
-                    <div class="flex items-center gap-2 shrink-0 md:ml-auto">
-                        <span
-                            class="fi fi-bo rounded-sm shadow-sm"
-                            title="Bolivia"></span>
-                        <span
-                            class="fi fi-us rounded-sm shadow-sm"
-                            title="Estados Unidos"></span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Disclaimer -->
-            <div
-                class="bg-white p-6 rounded-2xl border border-slate-200 reveal mt-6"
-            >
-                <div class="flex gap-3">
+    <!-- Disclaimer Legal -->
+    <section class="py-12 bg-white border-b border-slate-200 relative z-10">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="bg-slate-50 p-6 md:p-8 rounded-2xl border border-slate-200 shadow-sm">
+                <div class="flex gap-3.5">
                     <i
                         data-lucide="info"
                         class="w-5 h-5 text-slate-400 shrink-0 mt-0.5"></i>
                     <p
-                        class="text-slate-500 text-xs leading-relaxed font-medium"
+                        class="text-slate-500 text-xs md:text-sm leading-relaxed font-medium"
                     >
                         Guira es una plataforma tecnológica B2B. No somos banco,
-                        entidad financiera, casa de cambio
-                        ni custodio directo de fondos. Los servicios
-                        financieros, rieles de pago, cuentas de recepción,
-                        custodia, movimiento de fondos o procesamiento
-                        transaccional, cuando correspondan, son provistos
-                        exclusivamente por terceros o partners aplicables bajo
-                        sus propias autorizaciones, términos, límites,
-                        jurisdicciones y criterios de aprobación. La
+                        entidad financiera, casa de cambio ni custodio directo
+                        de fondos. Los servicios financieros, rieles de pago,
+                        cuentas de recepción, custodia, movimiento de fondos o
+                        procesamiento transaccional, cuando correspondan, son
+                        provistos exclusivamente por terceros o partners
+                        aplicables bajo sus propias autorizaciones, términos,
+                        límites, jurisdicciones y criterios de aprobación. La
                         disponibilidad del servicio depende del perfil de la
                         empresa, documentación presentada, jurisdicción, caso de
                         uso y revisión correspondiente.
@@ -377,12 +106,11 @@ import KineticButton from "../components/KineticButton.astro";
                 </div>
             </div>
         </div>
-    </main>
+    </section>
 
     <!-- Cierre -->
     <section
-        data-stack-section
-        class="py-20 bg-guira-navy text-center relative overflow-hidden z-10"
+        class="py-20 bg-guira-navy text-center relative overflow-hidden z-20"
     >
         <div class="max-w-3xl mx-auto px-6 relative z-10 reveal-up">
             <h2 class="text-2xl md:text-3xl font-extrabold tracking-tight text-white mb-4">

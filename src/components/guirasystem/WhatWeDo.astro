@@ -1,0 +1,85 @@
+---
+/**
+ * WhatWeDo.astro
+ *
+ * Sección "Qué hacemos" / "What we do" para Guira System LLC.
+ * Estilo editorial con mockup 3D interactivo en la columna izquierda
+ * y texto explicativo en la columna derecha.
+ */
+import PhoneFlowMockup from '../PhoneFlowMockup.astro';
+
+interface Props {
+  id?: string;
+  kicker?: string;
+  title?: string;
+  headline?: string;
+  paragraphs: string[];
+  imageSrc?: string;
+  imageAlt?: string;
+}
+
+const {
+  id = 'what-we-do',
+  kicker = 'QUÉ HACEMOS',
+  title = 'Qué hacemos',
+  headline = 'SOFTWARE DE ORIGINACIÓN Y DOCUMENTACIÓN PARA EL COMERCIO INTERNACIONAL B2B',
+  paragraphs = [],
+} = Astro.props;
+
+const displayHeadline = headline || title;
+---
+
+<section id={id} class="gs-what-we-do bg-white text-slate-900 py-16 sm:py-20 lg:py-24 border-b border-slate-200 overflow-hidden">
+  <div class="gs-shell">
+    
+    <!-- Bloque superior: Kicker a la izquierda y Titular desplazado a partir de Col 4 -->
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-y-6 lg:gap-x-12 mb-10 sm:mb-14 lg:mb-16 items-start">
+      <!-- Kicker: alineado al extremo izquierdo superior -->
+      <div class="lg:col-span-3">
+        <div class="inline-flex items-center gap-2">
+          <span class="w-1.5 h-1.5 rounded-full bg-blue-600"></span>
+          <span class="text-xs sm:text-sm font-semibold tracking-[0.2em] uppercase text-blue-600 font-mono">
+            {kicker}
+          </span>
+        </div>
+      </div>
+
+      <!-- Titular principal: inicia a la altura de la columna 4 y abarca hasta el extremo derecho -->
+      <div class="lg:col-span-9">
+        <h2 class="text-2xl sm:text-3xl md:text-4xl lg:text-[2.65rem] xl:text-[2.85rem] font-bold uppercase tracking-tight text-slate-950 leading-[1.12] m-0">
+          {displayHeadline}
+        </h2>
+      </div>
+    </div>
+
+    <!-- Bloque de contenido inferior: PhoneFlowMockup a la izquierda (Col 1-5), Párrafos (Col 6-12) -->
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-x-12 items-center">
+      
+      <!-- Columna izquierda: PhoneFlowMockup -->
+      <div class="lg:col-span-5 flex justify-center">
+        <PhoneFlowMockup class="py-2 sm:py-4" />
+      </div>
+
+      <!-- Columna derecha (Col 6-12): Párrafos de texto corrido -->
+      <div class="lg:col-span-7 flex flex-col justify-center space-y-6">
+        {paragraphs.map((text) => (
+          <p class="text-base sm:text-lg text-slate-600 leading-relaxed font-normal m-0">
+            {text}
+          </p>
+        ))}
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<style>
+  @media print {
+    .gs-what-we-do {
+      padding: 1.5rem 0 !important;
+      border-bottom: 1px solid #cbd5e1 !important;
+      break-inside: avoid;
+    }
+  }
+</style>

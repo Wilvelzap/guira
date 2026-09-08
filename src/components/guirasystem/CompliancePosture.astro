@@ -1,9 +1,9 @@
 ---
 /**
- * Controles operativos. La revisión humana de cada instrucción se presenta
- * como atributo de control, no como limitación técnica. Parte del bloque
- * de verificación (banda gris), no de la sección oscura de Regulatory
- * position.
+ * Controles operativos.
+ * Diseno editorial compacto en fondo blanco con disposicion de 2 columnas (grid 12 cols):
+ * - Titulo a la izquierda (col 4) con tamano reducido y la palabra "cumplimiento" en color plomo (slate-400).
+ * - Los 4 puntos de cumplimiento a la derecha (col 8) con espaciado mas compacto.
  */
 interface Props {
   id?: string;
@@ -14,39 +14,62 @@ interface Props {
 }
 
 const { id, compliance } = Astro.props;
+
+const words = compliance.title.split(' ');
+const titleFirst = words.length === 3 ? words.slice(0, 2).join(' ') : words[0];
+const titleRest = words.length === 3 ? words.slice(2).join(' ') : words.slice(1).join(' ');
 ---
 
-<section class="gs-section gs-section--verification gs-compliance" id={id}>
-  <div class="gs-shell">
-    <h2>{compliance.title}</h2>
-    <ul class="gs-compliance__list">
-      {compliance.items.map((item) => <li>{item}</li>)}
-    </ul>
+<section
+  class="relative overflow-hidden bg-white border-t border-slate-200 py-8 md:py-10 text-slate-900"
+  id={id}
+>
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="grid gap-8 md:grid-cols-12 md:gap-12 lg:gap-16">
+      <div class="md:col-span-4 md:pr-4 lg:pr-6">
+        <h2
+          class="text-2xl sm:text-3xl md:text-4xl font-extrabold uppercase tracking-tight leading-[1.1] text-slate-900"
+        >
+          <span>{titleFirst}</span>
+          {titleRest && <br />}
+          <span class="text-slate-400">{titleRest}</span>
+        </h2>
+      </div>
+      <div class="md:col-span-8">
+        <ul class="border-y border-slate-200 divide-y divide-slate-200 list-none p-0 m-0">
+          {compliance.items.map((item, index) => (
+            <li class="py-3.5 sm:py-4 flex items-start gap-4 sm:gap-6">
+              <span class="font-mono text-xs sm:text-sm font-bold text-slate-400 shrink-0 pt-0.5 select-none">
+                {String(index + 1).padStart(2, '0')}
+              </span>
+              <p class="text-sm sm:text-base font-medium leading-relaxed text-slate-600 m-0">
+                {item}
+              </p>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
   </div>
 </section>
 
 <style>
-  .gs-compliance__list {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    border-top: 1px solid var(--gs-rule);
-  }
-
-  .gs-compliance__list li {
-    position: relative;
-    padding: 0.85rem 0 0.85rem 1.5rem;
-    border-bottom: 1px solid var(--gs-rule);
-    color: var(--gs-ink-soft);
-  }
-
-  .gs-compliance__list li::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 1.45rem;
-    width: 0.55rem;
-    height: 2px;
-    background: var(--gs-accent);
+  @media print {
+    section {
+      background: #fff !important;
+      color: #000 !important;
+      border-color: #cbd5e1 !important;
+      padding: 0.75rem 0 !important;
+    }
+    h2,
+    h2 span,
+    p,
+    span {
+      color: #000 !important;
+    }
+    ul,
+    li {
+      border-color: #cbd5e1 !important;
+    }
   }
 </style>

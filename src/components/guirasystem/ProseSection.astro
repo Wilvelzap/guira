@@ -1,7 +1,9 @@
 ---
 /**
- * Sección de texto corrido. El copy llega desde en.json / es.json:
- * los párrafos del núcleo canónico no se editan en el markup.
+ * Seccion de texto corrido / Para quien es.
+ * Diseno editorial en fondo blanco con disposicion de 2 columnas (grid 12 cols):
+ * - Titulo a la izquierda (col 4) con la segunda parte en color plomo (slate-400).
+ * - Parrafos de contenido a la derecha (col 8).
  */
 interface Props {
   id?: string;
@@ -10,11 +12,50 @@ interface Props {
 }
 
 const { id, title, paragraphs } = Astro.props;
+
+const words = title.split(' ');
+const titleFirst = words[0];
+const titleRest = words.slice(1).join(' ');
 ---
 
-<section class="gs-section" id={id}>
-  <div class="gs-shell">
-    <h2>{title}</h2>
-    {paragraphs.map((text) => <p>{text}</p>)}
+<section
+  class="relative overflow-hidden bg-white border-t border-slate-200 py-12 md:py-16 text-slate-900"
+  id={id}
+>
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="grid gap-12 md:grid-cols-12 md:gap-16 lg:gap-20 xl:gap-24">
+      <div class="md:col-span-4 md:pr-4 lg:pr-8">
+        <h2
+          class="text-4xl font-extrabold uppercase tracking-tight leading-[1.08] text-slate-900 md:text-5xl lg:text-6xl"
+        >
+          <span>{titleFirst}</span>
+          {titleRest && <br />}
+          <span class="text-slate-400">{titleRest}</span>
+        </h2>
+      </div>
+      <div class="md:col-span-8 space-y-6">
+        {paragraphs.map((text) => (
+          <p class="text-base font-medium leading-relaxed text-slate-800 m-0">
+            {text}
+          </p>
+        ))}
+      </div>
+    </div>
   </div>
 </section>
+
+<style>
+  @media print {
+    section {
+      background: #fff !important;
+      color: #000 !important;
+      border-color: #cbd5e1 !important;
+      padding: 1rem 0 !important;
+    }
+    h2,
+    h2 span,
+    p {
+      color: #000 !important;
+    }
+  }
+</style>

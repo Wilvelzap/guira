@@ -1,106 +1,120 @@
 ---
 /**
- * Datos registrales en <dl> semántico: texto seleccionable y copiable,
- * nunca imagen. Un analista copia estos campos a su expediente.
+ * Datos registrales en <dl> semantico: texto seleccionable y copiable.
+ * Diseno editorial en fondo blanco con disposicion de 2 columnas (grid 12 cols):
+ * - Titulo "Informacion corporativa" en col 4, tabla en col 8.
+ * - Bloques de "Ingresos" y "Parte vinculada" a la misma recta:
+ *   titulo en col 4 (alineado a la izquierda con Informacion corporativa)
+ *   y descripcion en col 8.
  *
- * Revenue y Related party van dentro de esta misma sección (§5.8 del
- * brief), no en secciones propias: son datos de verificación, no mensajes
- * de producto. GUIRAGLOBAL S.R.L. aparece únicamente aquí en toda la
- * página — ninguna otra sección la menciona (§3.5, checklist §10).
+ * Revenue y Related party van dentro de esta misma seccion (§5.8 del
+ * brief), no en secciones propias: son datos de verificacion, no mensajes
+ * de producto. GUIRAGLOBAL S.R.L. aparece unicamente aqui en toda la
+ * pagina — ninguna otra seccion la menciona (§3.5, checklist §10).
  */
 interface Props {
   id?: string;
   corporate: {
     title: string;
     rows: { label: string; value: string }[];
-    revenue: { title: string; paragraph: string };
+    revenue?: { title: string; paragraph: string };
     relatedParty?: { title: string; paragraph: string };
   };
 }
 
 const { id, corporate } = Astro.props;
+
+const titleWords = corporate.title.split(' ');
+const titleFirst = titleWords[0];
+const titleRest = titleWords.slice(1).join(' ');
 ---
 
-<section class="gs-section gs-section--verification" id={id}>
-  <div class="gs-shell">
-    <h2>{corporate.title}</h2>
-    <dl class="gs-datalist">
-      {corporate.rows.map((row) => (
-        <div class="gs-datalist__row">
-          <dt>{row.label}</dt>
-          <dd>{row.value}</dd>
-        </div>
-      ))}
-    </dl>
-
-    <div class="gs-corporate__block">
-      <h3>{corporate.revenue.title}</h3>
-      <p>{corporate.revenue.paragraph}</p>
+<section
+  class="relative overflow-hidden bg-white border-t border-slate-200 py-12 md:py-16 text-slate-900"
+  id={id}
+>
+  <div class="max-w-7xl mx-auto px-6 space-y-12">
+    <!-- Bloque 1: Informacion corporativa -->
+    <div class="grid gap-12 md:grid-cols-12 md:gap-16 lg:gap-20 xl:gap-24">
+      <div class="md:col-span-4 md:pr-4 lg:pr-8">
+        <h2
+          class="text-4xl font-extrabold uppercase tracking-tight leading-[1.08] text-slate-900 md:text-5xl lg:text-6xl"
+        >
+          {titleFirst}
+          {titleRest && <br />}
+          {titleRest}
+        </h2>
+      </div>
+      <div class="md:col-span-8">
+        <dl class="border-y border-slate-200">
+          {corporate.rows.map((row) => (
+            <div
+              class="grid gap-2 border-b border-slate-200 py-6 sm:grid-cols-2 sm:gap-16 lg:gap-24 last:border-b-0"
+            >
+              <dt class="text-sm font-semibold uppercase tracking-wider text-slate-500">
+                {row.label}
+              </dt>
+              <dd class="text-base font-medium leading-relaxed text-slate-800">
+                {row.value}
+              </dd>
+            </div>
+          ))}
+        </dl>
+      </div>
     </div>
+
+    <!-- Bloque 2: Ingresos a la recta de Informacion corporativa -->
+    {corporate.revenue && (
+      <div class="border-t border-slate-200 pt-10 grid gap-8 md:grid-cols-12 md:gap-16 lg:gap-20 xl:gap-24">
+        <div class="md:col-span-4 md:pr-4 lg:pr-8">
+          <h3 class="text-2xl sm:text-3xl font-extrabold uppercase tracking-tight text-slate-900">
+            {corporate.revenue.title}
+          </h3>
+        </div>
+        <div class="md:col-span-8">
+          <p class="text-base font-medium leading-relaxed text-slate-800">
+            {corporate.revenue.paragraph}
+          </p>
+        </div>
+      </div>
+    )}
+
+    <!-- Bloque 3: Parte vinculada a la recta de Informacion corporativa -->
+    {corporate.relatedParty && (
+      <div class="border-t border-slate-200 pt-10 grid gap-8 md:grid-cols-12 md:gap-16 lg:gap-20 xl:gap-24">
+        <div class="md:col-span-4 md:pr-4 lg:pr-8">
+          <h3 class="text-2xl sm:text-3xl font-extrabold uppercase tracking-tight text-slate-900">
+            {corporate.relatedParty.title}
+          </h3>
+        </div>
+        <div class="md:col-span-8">
+          <p class="text-base font-medium leading-relaxed text-slate-800">
+            {corporate.relatedParty.paragraph}
+          </p>
+        </div>
+      </div>
+    )}
   </div>
 </section>
 
 <style>
-  .gs-datalist {
-    margin: 0;
-    border-top: 1px solid var(--gs-rule);
-  }
-
-  .gs-datalist__row {
-    display: grid;
-    gap: 0.25rem 1.5rem;
-    padding: 0.85rem 0;
-    border-bottom: 1px solid var(--gs-rule);
-  }
-
-  @media (min-width: 40rem) {
-    .gs-datalist__row {
-      grid-template-columns: 13rem 1fr;
-    }
-  }
-
-  .gs-datalist dt {
-    margin: 0;
-    font-size: 0.8125rem;
-    font-weight: 600;
-    letter-spacing: 0.04em;
-    text-transform: uppercase;
-    color: var(--gs-ink-faint);
-  }
-
-  .gs-datalist dd {
-    margin: 0;
-    font-family: var(--gs-mono);
-    font-size: 0.9375rem;
-    line-height: 1.5;
-    color: var(--gs-ink);
-  }
-
-  .gs-corporate__block {
-    margin-top: 1.75rem;
-    padding-top: 1.5rem;
-    border-top: 1px solid var(--gs-rule);
-  }
-
-  .gs-corporate__block h3 {
-    margin: 0 0 0.6rem;
-    font-size: 0.8125rem;
-    font-weight: 700;
-    letter-spacing: 0.04em;
-    text-transform: uppercase;
-    color: var(--gs-ink-faint);
-  }
-
-  .gs-corporate__block p {
-    margin: 0;
-    font-size: 0.9375rem;
-    line-height: 1.6;
-    color: var(--gs-ink-soft);
-  }
-
   @media print {
-    .gs-datalist__row {
-      padding: 0.3rem 0;
+    section {
+      background: #fff !important;
+      color: #000 !important;
+      border-color: #cbd5e1 !important;
+      padding: 1rem 0 !important;
+    }
+    h2,
+    h3,
+    dt,
+    dd,
+    p {
+      color: #000 !important;
+    }
+    dl,
+    div {
+      border-color: #cbd5e1 !important;
     }
   }
 </style>

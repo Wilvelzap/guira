@@ -1,5 +1,6 @@
 ---
 import KineticButton from './KineticButton.astro';
+import EditorialHeader from './EditorialHeader.astro';
 
 export interface EditorialGridItem {
   step?: string;
@@ -78,6 +79,26 @@ export interface Props {
    * Ancho de columna del titular (por defecto 'lg:col-span-8')
    */
   titleColSpan?: string;
+  /**
+   * Primera línea monumental del título (alto contraste)
+   */
+  line1?: string;
+  /**
+   * Segunda línea monumental del título (tono atenuado)
+   */
+  line2?: string;
+  /**
+   * Tamaño del encabezado editorial: 'sm' | 'md' | 'lg' | 'monumental'. Default: 'md'
+   */
+  headerSize?: 'sm' | 'md' | 'lg' | 'monumental';
+  /**
+   * Clases CSS adicionales o personalizadas para el titular
+   */
+  titleClass?: string;
+  /**
+   * Forzar el uso del componente EditorialHeader incluso si solo se especifica title
+   */
+  useEditorialHeader?: boolean;
 }
 
 const {
@@ -85,6 +106,11 @@ const {
   kicker = '',
   title = '',
   description = '',
+  line1,
+  line2,
+  headerSize = 'md',
+  titleClass,
+  useEditorialHeader,
   items = [],
   columns,
   buttons = [],
@@ -181,37 +207,53 @@ const hasButtons = buttons.length > 0;
 
   <div class="max-w-7xl mx-auto px-6 relative z-10">
     <!-- Encabezado superior estilo editorial -->
-    <div class="grid lg:grid-cols-12 gap-8 lg:gap-12 items-end mb-12 lg:mb-16 reveal">
-      <div class={titleColSpan}>
-        {kicker && (
-          <p class={`section-kicker ${kickerColor} mb-3`}>
-            {kicker}
-          </p>
-        )}
-        {Astro.slots.has('title') ? (
-          <h2 class={`text-3xl sm:text-4xl md:text-5xl lg:text-[2.65rem] font-extrabold uppercase tracking-tight ${titleColor} leading-[1.08]`}>
-            <slot name="title" />
-          </h2>
-        ) : title ? (
-          <h2
-            class={`text-3xl sm:text-4xl md:text-5xl lg:text-[2.65rem] font-extrabold uppercase tracking-tight ${titleColor} leading-[1.08]`}
-            set:html={title}
-          />
-        ) : null}
-        {description && (
-          <p class={`mt-4 text-base sm:text-lg font-medium ${descColor} leading-relaxed max-w-2xl`}>
-            {description}
-          </p>
-        )}
-        <slot name="header-left" />
-      </div>
-
-      {Astro.slots.has('header-right') && (
-        <div class="lg:col-span-4 flex flex-col items-start lg:items-end justify-between self-stretch pt-2">
-          <slot name="header-right" />
+    {useEditorialHeader || line1 || line2 ? (
+      <EditorialHeader
+        theme={theme}
+        size={headerSize}
+        kicker={kicker}
+        line1={line1}
+        line2={line2}
+        title={title}
+        description={description}
+        titleClass={titleClass}
+        marginBottom="mb-12 lg:mb-16"
+      >
+        <slot name="header-right" />
+      </EditorialHeader>
+    ) : (
+      <div class="grid lg:grid-cols-12 gap-8 lg:gap-12 items-end mb-12 lg:mb-16 reveal">
+        <div class={titleColSpan}>
+          {kicker && (
+            <p class={`section-kicker ${kickerColor} mb-3`}>
+              {kicker}
+            </p>
+          )}
+          {Astro.slots.has('title') ? (
+            <h2 class={titleClass ? `${titleClass} ${titleColor}` : `text-3xl sm:text-4xl md:text-5xl lg:text-[2.65rem] font-extrabold uppercase tracking-tight ${titleColor} leading-[1.08]`}>
+              <slot name="title" />
+            </h2>
+          ) : title ? (
+            <h2
+              class={titleClass ? `${titleClass} ${titleColor}` : `text-3xl sm:text-4xl md:text-5xl lg:text-[2.65rem] font-extrabold uppercase tracking-tight ${titleColor} leading-[1.08]`}
+              set:html={title}
+            />
+          ) : null}
+          {description && (
+            <p class={`mt-4 text-base sm:text-lg font-medium ${descColor} leading-relaxed max-w-2xl`}>
+              {description}
+            </p>
+          )}
+          <slot name="header-left" />
         </div>
-      )}
-    </div>
+
+        {Astro.slots.has('header-right') && (
+          <div class="lg:col-span-4 flex flex-col items-start lg:items-end justify-between self-stretch pt-2">
+            <slot name="header-right" />
+          </div>
+        )}
+      </div>
+    )}
 
     <!-- Fila de tarjetas divididas por líneas finas -->
     {items.length > 0 ? (
@@ -226,7 +268,11 @@ const hasButtons = buttons.length > 0;
               <div class={`reveal ${delay} ${paddingClass} group`}>
                 {item.icon && (
                   <div class={`w-11 h-11 rounded-xl flex items-center justify-center mb-5 ${item.iconBgClass || defaultIconBg}`}>
-                    <i data-lucide={item.icon} class="w-5 h-5" />
+                    {item.icon.startsWith('<svg') ? (
+                      <Fragment set:html={item.icon} />
+                    ) : (
+                      <i data-lucide={item.icon} class="w-5 h-5" />
+                    )}
                   </div>
                 )}
                 {tagText && (
