@@ -280,7 +280,7 @@ const letters = (text: string) =>
     </form>
 </div>
 
-<script>
+<script is:inline>
     const demoForm = document.getElementById("demo-form");
     if (demoForm) {
         demoForm.addEventListener("submit", function (e) {
@@ -291,7 +291,7 @@ const letters = (text: string) =>
 
             const originalHTML = btn.innerHTML;
 
-            (btn as HTMLButtonElement).disabled = true;
+            btn.disabled = true;
             btn.innerHTML =
                 '<i data-lucide="loader-2" class="w-5 h-5 animate-spin mx-auto"></i>';
             btn.classList.add("is-filled");
@@ -347,7 +347,7 @@ const letters = (text: string) =>
                             "is-success",
                             "is-error",
                         );
-                        (btn as HTMLButtonElement).disabled = false;
+                        btn.disabled = false;
                     }, 4000);
                 })
                 .catch((error) => {
@@ -361,7 +361,7 @@ const letters = (text: string) =>
                     setTimeout(() => {
                         btn.innerHTML = originalHTML;
                         btn.classList.remove("is-filled", "is-error");
-                        (btn as HTMLButtonElement).disabled = false;
+                        btn.disabled = false;
                     }, 4000);
                 });
         });
@@ -425,12 +425,12 @@ const letters = (text: string) =>
     }
 
     document.addEventListener("click", (e) => {
-        if (volumeAccordion && !volumeAccordion.contains(e.target as Node)) {
+        if (volumeAccordion && !volumeAccordion.contains(e.target)) {
             volumeAccordion
                 .querySelector(".accordion-trigger")
                 ?.setAttribute("aria-expanded", "false");
         }
-        if (usecaseAccordion && !usecaseAccordion.contains(e.target as Node)) {
+        if (usecaseAccordion && !usecaseAccordion.contains(e.target)) {
             usecaseAccordion
                 .querySelector(".accordion-trigger")
                 ?.setAttribute("aria-expanded", "false");

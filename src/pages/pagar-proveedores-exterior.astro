@@ -637,7 +637,7 @@ FORM: Recorrido operativo asimétrico, séptima estructura del concepto d4a56fbd
     </footer>
   </div>
 
-  <script>
+  <script is:inline>
     document.addEventListener("click", (event) => {
       const link = event.target.closest('a[href*="wa.me"]');
       if (!link) return;
@@ -647,101 +647,109 @@ FORM: Recorrido operativo asimétrico, séptima estructura del concepto d4a56fbd
   </script>
 
   <script>
-    import { gsap } from "gsap";
-    import { ScrollTrigger } from "gsap/ScrollTrigger";
-
-    gsap.registerPlugin(ScrollTrigger);
-
     const reducedMotion = window.matchMedia(
       "(prefers-reduced-motion: reduce)",
     ).matches;
 
     if (!reducedMotion) {
-      // Entrada del hero al cargar
-      const heroTimeline = gsap.timeline({
-        defaults: { ease: "power3.out" },
-      });
-      heroTimeline
-        .from(".audience-tag", { opacity: 0, y: 16, duration: 0.6 })
-        .from(".hero h1", { opacity: 0, y: 22, duration: 0.75 }, "-=0.4")
-        .from(".hero-lead", { opacity: 0, y: 20, duration: 0.7 }, "-=0.55")
-        .from(".hero-actions", { opacity: 0, y: 16, duration: 0.6 }, "-=0.5")
-        .from(".hero-support", { opacity: 0, y: 12, duration: 0.5 }, "-=0.4")
-        .from(".trust-line", { opacity: 0, y: 16, duration: 0.6 }, "-=0.4")
-        .from(
-          ".hero-device",
-          { opacity: 0, x: 40, scale: 0.96, duration: 0.9 },
-          "-=0.7",
-        )
-        .from(
-          ".network-route",
-          { opacity: 0, duration: 0.45, stagger: 0.07 },
-          "-=0.48",
-        )
-        .from(
-          ".network-center",
-          { autoAlpha: 0, scale: 0.78, duration: 0.55 },
-          "-=0.42",
-        )
-        .from(
-          ".network-node",
-          { autoAlpha: 0, scale: 0.72, duration: 0.45, stagger: 0.08 },
-          "-=0.36",
-        );
+      const initGsapAnimations = async () => {
+        const [{ gsap }, { ScrollTrigger }] = await Promise.all([
+          import("gsap"),
+          import("gsap/ScrollTrigger"),
+        ]);
 
-      // Parallax sutil del halo del hero al hacer scroll
-      gsap.to(".hero-wash", {
-        y: 130,
-        ease: "none",
-        scrollTrigger: {
-          trigger: ".hero",
-          start: "top top",
-          end: "bottom top",
-          scrub: 1,
-        },
-      });
+        gsap.registerPlugin(ScrollTrigger);
 
-      // Tarjetas de "Cómo funciona": entran y se reactivan al subir/bajar
-      const processCards = gsap.utils.toArray("#como-funciona .group");
-      if (processCards.length) {
-        gsap.set(processCards, { opacity: 0, y: 30, scale: 0.94 });
-        gsap.to(processCards, {
-          opacity: 1,
-          y: 0,
-          scale: 1,
-          duration: 0.7,
-          ease: "power3.out",
-          stagger: 0.12,
-          scrollTrigger: {
-            trigger: "#como-funciona .grid",
-            start: "top 78%",
-            toggleActions: "play none none reverse",
-          },
-          onComplete: () => gsap.set(processCards, { clearProps: "all" }),
-          onReverseComplete: () =>
-            gsap.set(processCards, { opacity: 0, y: 30, scale: 0.94 }),
+        // Entrada secundaria del hero (sin ocultar H1 para no retrasar LCP)
+        const heroTimeline = gsap.timeline({
+          defaults: { ease: "power3.out" },
         });
-      }
+        heroTimeline
+          .from(".audience-tag", { opacity: 0, y: 16, duration: 0.6 })
+          .from(".hero-actions", { opacity: 0, y: 16, duration: 0.6 }, "-=0.3")
+          .from(".hero-support", { opacity: 0, y: 12, duration: 0.5 }, "-=0.3")
+          .from(".trust-line", { opacity: 0, y: 16, duration: 0.6 }, "-=0.3")
+          .from(
+            ".hero-device",
+            { opacity: 0, x: 40, scale: 0.96, duration: 0.9 },
+            "-=0.5",
+          )
+          .from(
+            ".network-route",
+            { opacity: 0, duration: 0.45, stagger: 0.07 },
+            "-=0.48",
+          )
+          .from(
+            ".network-center",
+            { autoAlpha: 0, scale: 0.78, duration: 0.55 },
+            "-=0.42",
+          )
+          .from(
+            ".network-node",
+            { autoAlpha: 0, scale: 0.72, duration: 0.45, stagger: 0.08 },
+            "-=0.36",
+          );
 
-      // Preguntas de "Antes de empezar": suben desde abajo y se reactivan al subir/bajar
-      const faqItems = gsap.utils.toArray(".faq-list details");
-      if (faqItems.length) {
-        gsap.set(faqItems, { opacity: 0, y: 44 });
-        gsap.to(faqItems, {
-          opacity: 1,
-          y: 0,
-          duration: 0.65,
-          ease: "power3.out",
-          stagger: 0.14,
+        // Parallax sutil del halo del hero al hacer scroll
+        gsap.to(".hero-wash", {
+          y: 130,
+          ease: "none",
           scrollTrigger: {
-            trigger: ".faq-list",
-            start: "top 82%",
-            toggleActions: "play none none reverse",
+            trigger: ".hero",
+            start: "top top",
+            end: "bottom top",
+            scrub: 1,
           },
-          onComplete: () =>
-            gsap.set(faqItems, { clearProps: "opacity,transform" }),
-          onReverseComplete: () => gsap.set(faqItems, { opacity: 0, y: 44 }),
         });
+
+        // Tarjetas de "Cómo funciona": entran y se reactivan al subir/bajar
+        const processCards = gsap.utils.toArray("#como-funciona .group");
+        if (processCards.length) {
+          gsap.set(processCards, { opacity: 0, y: 30, scale: 0.94 });
+          gsap.to(processCards, {
+            opacity: 1,
+            y: 0,
+            scale: 1,
+            duration: 0.7,
+            ease: "power3.out",
+            stagger: 0.12,
+            scrollTrigger: {
+              trigger: "#como-funciona .grid",
+              start: "top 78%",
+              toggleActions: "play none none reverse",
+            },
+            onComplete: () => gsap.set(processCards, { clearProps: "all" }),
+            onReverseComplete: () =>
+              gsap.set(processCards, { opacity: 0, y: 30, scale: 0.94 }),
+          });
+        }
+
+        // Preguntas de "Antes de empezar": suben desde abajo y se reactivan al subir/bajar
+        const faqItems = gsap.utils.toArray(".faq-list details");
+        if (faqItems.length) {
+          gsap.set(faqItems, { opacity: 0, y: 44 });
+          gsap.to(faqItems, {
+            opacity: 1,
+            y: 0,
+            duration: 0.65,
+            ease: "power3.out",
+            stagger: 0.14,
+            scrollTrigger: {
+              trigger: ".faq-list",
+              start: "top 82%",
+              toggleActions: "play none none reverse",
+            },
+            onComplete: () =>
+              gsap.set(faqItems, { clearProps: "opacity,transform" }),
+            onReverseComplete: () => gsap.set(faqItems, { opacity: 0, y: 44 }),
+          });
+        }
+      };
+
+      if (document.readyState === "complete") {
+        initGsapAnimations();
+      } else {
+        window.addEventListener("load", initGsapAnimations, { once: true });
       }
     }
   </script>
