@@ -7,6 +7,7 @@
     "dev": "astro dev",
     "start": "astro dev",
     "build": "astro build",
+    "test:whatsapp-tracking": "node --test tests/whatsapp-tracking.test.cjs",
     "preview": "astro preview",
     "astro": "astro",
     "build:css": "tailwindcss -i assets/css/tailwind.css -o assets/css/tw.css --minify",

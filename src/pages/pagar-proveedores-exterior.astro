@@ -54,7 +54,7 @@ FORM: Recorrido operativo asimétrico, séptima estructura del concepto d4a56fbd
     <nav class="landing-nav" aria-label="Encabezado">
       <div class="page-wrap nav-inner">
         <a
-          href="https://www.guiracorp.com/?utm_source=landing_pagar_proveedores&utm_medium=header_logo&utm_campaign=internal_navigation"
+          href="/"
           class="inline-flex items-center"
           aria-label="Ir al inicio de Guira"
         >
@@ -88,6 +88,7 @@ FORM: Recorrido operativo asimétrico, séptima estructura del concepto d4a56fbd
                 target="_blank"
                 rel="noopener noreferrer"
                 label="Quiero pagar a mi proveedor"
+                ctaLocation="hero"
               />
             </div>
             <p class="hero-support">
@@ -342,6 +343,7 @@ FORM: Recorrido operativo asimétrico, séptima estructura del concepto d4a56fbd
               target="_blank"
               rel="noopener noreferrer"
               label="Quiero resolver esto"
+              ctaLocation="problem"
             />
           </div>
         </div>
@@ -466,6 +468,7 @@ FORM: Recorrido operativo asimétrico, séptima estructura del concepto d4a56fbd
               target="_blank"
               rel="noopener noreferrer"
               label="Empezar mi primera operación"
+              ctaLocation="how_it_works"
             />
           </div>
         </div>
@@ -521,6 +524,7 @@ FORM: Recorrido operativo asimétrico, séptima estructura del concepto d4a56fbd
               target="_blank"
               rel="noopener noreferrer"
               label="Quiero ver el respaldo por operación"
+              ctaLocation="documentation"
             />
           </div>
         </div>
@@ -604,6 +608,7 @@ FORM: Recorrido operativo asimétrico, séptima estructura del concepto d4a56fbd
           <div class="flex flex-col gap-4 md:items-end">
             <a
               href="https://wa.me/59167015106"
+              data-cta-location="footer"
               target="_blank"
               rel="noopener noreferrer"
               class="text-guira-cyan hover:text-guira-neon font-bold"
@@ -637,15 +642,6 @@ FORM: Recorrido operativo asimétrico, séptima estructura del concepto d4a56fbd
       </div>
     </footer>
   </div>
-
-  <script is:inline>
-    document.addEventListener("click", (event) => {
-      const link = event.target.closest('a[href*="wa.me"]');
-      if (!link) return;
-      window.dataLayer = window.dataLayer || [];
-      window.dataLayer.push({ event: "click-whatsapp" });
-    });
-  </script>
 
   <script>
     const reducedMotion = window.matchMedia(

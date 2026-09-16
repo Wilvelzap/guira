@@ -50,6 +50,7 @@ export interface Props {
     variant?: 'teal' | 'dark' | 'outline' | 'white';
     size?: 'sm' | 'md' | 'lg';
     class?: string;
+    ctaLocation?: 'hero' | 'problem' | 'benefits' | 'how_it_works' | 'documentation' | 'trust' | 'faq' | 'final_cta' | 'sticky_mobile' | 'footer';
   }>;
   /**
    * Clase personalizada de fondo para la sección (ej. "bg-slate-900", "bg-guira-navy", "bg-white")
@@ -316,6 +317,7 @@ const hasButtons = buttons.length > 0;
               size={btn.size || 'md'}
               label={btn.label}
               class={btn.class || 'w-full sm:w-auto'}
+              data-cta-location={btn.ctaLocation}
             />
           ))}
         <slot name="footer" />

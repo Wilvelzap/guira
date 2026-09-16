@@ -51,7 +51,7 @@ const cobrarExteriorFaq = [
     <nav class="landing-nav" aria-label="Encabezado">
       <div class="page-wrap nav-inner">
         <a
-          href="https://www.guiracorp.com/?utm_source=landing_cobrar_clientes&utm_medium=header_logo&utm_campaign=internal_navigation"
+          href="/"
           class="inline-flex items-center"
           aria-label="Ir al inicio de Guira"
         >
@@ -85,6 +85,7 @@ const cobrarExteriorFaq = [
                 target="_blank"
                 rel="noopener noreferrer"
                 label="Quiero cobrar a mi cliente"
+                ctaLocation="hero"
               />
             </div>
             <p class="hero-support">
@@ -392,6 +393,7 @@ const cobrarExteriorFaq = [
               target="_blank"
               rel="noopener noreferrer"
               label="Quiero resolver esto"
+              ctaLocation="problem"
             />
           </div>
         </div>
@@ -513,6 +515,7 @@ const cobrarExteriorFaq = [
               target="_blank"
               rel="noopener noreferrer"
               label="Empezar mi primera operación"
+              ctaLocation="how_it_works"
             />
           </div>
         </div>
@@ -569,6 +572,7 @@ const cobrarExteriorFaq = [
               target="_blank"
               rel="noopener noreferrer"
               label="Quiero ver el respaldo por operación"
+              ctaLocation="documentation"
             />
           </div>
         </div>
@@ -652,6 +656,7 @@ const cobrarExteriorFaq = [
           <div class="flex flex-col gap-4 md:items-end">
             <a
               href="https://wa.me/59167015106"
+              data-cta-location="footer"
               target="_blank"
               rel="noopener noreferrer"
               class="text-guira-cyan hover:text-guira-neon font-bold"
@@ -685,15 +690,6 @@ const cobrarExteriorFaq = [
       </div>
     </footer>
   </div>
-
-  <script is:inline>
-    document.addEventListener("click", (event) => {
-      const link = event.target?.closest?.('a[href*="wa.me"]');
-      if (!link) return;
-      window.dataLayer = window.dataLayer || [];
-      window.dataLayer.push({ event: "click-whatsapp" });
-    });
-  </script>
 
   <script>
     const reducedMotion = window.matchMedia(

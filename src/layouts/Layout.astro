@@ -206,6 +206,7 @@ const finalCanonicalUrl = canonicalBase === siteOrigin || canonicalBase.endsWith
     {!hideFloatingWhatsapp && (
       <a
         href={activeFloatingWhatsappHref}
+        data-cta-location="sticky_mobile"
         target="_blank"
         rel="noopener noreferrer"
         class="fixed bottom-6 right-6 w-14 h-14 bg-emerald-500 text-white rounded-full flex items-center justify-center shadow-lg shadow-emerald-500/40 hover:scale-110 hover:bg-emerald-400 transition-all z-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400 focus-visible:ring-offset-2"
@@ -232,12 +233,6 @@ const finalCanonicalUrl = canonicalBase === siteOrigin || canonicalBase.endsWith
             link_location: location,
             registration_link: href.includes('/registro')
           });
-        } else if (href.includes('wa.me')) {
-          window.posthog?.capture('whatsapp_contact_clicked', {
-            link_location: location
-          });
-          window.dataLayer = window.dataLayer || [];
-          window.dataLayer.push({ event: 'click-whatsapp' });
         } else if (href === '/demo' || href.startsWith('/demo?') || href === '#solicitar-demo') {
           window.posthog?.capture('demo_cta_clicked', {
             link_location: location,

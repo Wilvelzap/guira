@@ -1,4 +1,5 @@
 import { createIcons, projectIcons } from './icons.js';
+import './whatsapp-tracking.js';
 
 // Expose on window for backward compatibility with inline scripts
 window.lucide = {
