@@ -36,14 +36,8 @@ const cobrarExteriorFaq = [
     <link
       rel="preload"
       as="image"
-      href="/assets/images/logo-horizontal-color-oscuro.png"
-      type="image/png"
-    />
-    <link
-      rel="preload"
-      as="image"
-      href="/assets/images/logo-isotipo-color.png"
-      type="image/png"
+      href="/assets/images/logo-horizontal-color-oscuro.webp"
+      type="image/webp"
     />
     <style is:inline>
       html {
@@ -61,8 +55,10 @@ const cobrarExteriorFaq = [
           aria-label="Ir al inicio de Guira"
         >
           <img
-            src="/assets/images/logo-horizontal-color-oscuro.png"
+            src="/assets/images/logo-horizontal-color-oscuro.webp"
             alt="Guira"
+            width="144"
+            height="36"
             class="h-8 md:h-9 w-auto"
           />
         </a>
@@ -248,10 +244,12 @@ const cobrarExteriorFaq = [
 
             <div class="network-center" aria-hidden="true">
               <img
-                src="/assets/images/logo-isotipo-color.png"
+                src="/assets/images/logo-isotipo-color.webp"
                 alt=""
                 width="98"
                 height="98"
+                loading="lazy"
+                decoding="async"
               />
             </div>
             <span class="network-node network-node-usd" aria-hidden="true"
@@ -521,16 +519,19 @@ const cobrarExteriorFaq = [
 
       <section class="control-section section-space">
         <div class="page-wrap control-grid">
-          <div class="">
+          <div class="control-demo">
             <!-- TODO: Reemplazar por el arte de cobros cuando esté listo -->
-            <img
-              src="/DOCUMENTACION2.png"
-              alt="Documentación de una operación internacional"
-              width="1768"
-              height="890"
-              loading="lazy"
-              decoding="async"
-            />
+            <picture>
+              <source srcset="/DOCUMENTACION2.webp" type="image/webp" />
+              <img
+                src="/DOCUMENTACION2.png"
+                alt="Documentación de una operación internacional"
+                width="1024"
+                height="1536"
+                loading="lazy"
+                decoding="async"
+              />
+            </picture>
           </div>
           <div class="section-heading control-copy">
             <span

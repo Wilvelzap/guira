@@ -386,16 +386,30 @@ const coverageCol2 = [
             <div
                 class="hidden xl:block relative h-[420px] reveal reveal-delay-4"
             >
-                <img
-                    src="/assets/images/tablet_sin_fondo.png"
-                    alt="Panel de operaciones de Guira Empresas en tablet"
-                    class="absolute inset-0 w-full h-full object-contain object-center animate-float-tablet"
-                />
-                <img
-                    src="/assets/images/telefono_guira_sin_fondo.png"
-                    alt="Panel de operaciones de Guira Empresas en el celular"
-                    class="absolute bottom-0 -right-10 h-[92%] w-auto drop-shadow-2xl rotate-6 animate-float-phone"
-                />
+                <picture>
+                    <source srcset="/assets/images/tablet_sin_fondo.webp" type="image/webp" />
+                    <img
+                        src="/assets/images/tablet_sin_fondo.png"
+                        alt="Panel de operaciones de Guira Empresas en tablet"
+                        width="800"
+                        height="550"
+                        loading="lazy"
+                        decoding="async"
+                        class="absolute inset-0 w-full h-full object-contain object-center animate-float-tablet"
+                    />
+                </picture>
+                <picture>
+                    <source srcset="/assets/images/telefono_guira_sin_fondo.webp" type="image/webp" />
+                    <img
+                        src="/assets/images/telefono_guira_sin_fondo.png"
+                        alt="Panel de operaciones de Guira Empresas en el celular"
+                        width="400"
+                        height="750"
+                        loading="lazy"
+                        decoding="async"
+                        class="absolute bottom-0 -right-10 h-[92%] w-auto drop-shadow-2xl rotate-6 animate-float-phone"
+                    />
+                </picture>
             </div>
         </div>
     </header>
