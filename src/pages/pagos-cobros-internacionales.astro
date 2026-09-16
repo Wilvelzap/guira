@@ -115,6 +115,7 @@ const cobrosFaq = [
   canonicalUrl="https://www.guiracorp.com/pagos-cobros-internacionales"
   activeLink="pagos-cobros-internacionales"
   footerTheme="dark"
+  hideFloatingWhatsapp={true}
 >
   <Fragment slot="head">
     <link
@@ -132,10 +133,6 @@ const cobrosFaq = [
     <style is:inline>
       html {
         scroll-behavior: smooth;
-      }
-      /* Ocultar el widget global de WhatsApp (inyectado por main.js); en esta página usamos el botón personalizado más grande */
-      body > a.bg-emerald-500[href*="wa.me"]:not(.p-6) {
-        display: none !important;
       }
     </style>
   </Fragment>
