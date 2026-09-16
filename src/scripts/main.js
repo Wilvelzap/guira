@@ -1,8 +1,13 @@
+import { createIcons, projectIcons } from './icons.js';
+
+// Expose on window for backward compatibility with inline scripts
+window.lucide = {
+    createIcons: (options = {}) => createIcons({ icons: projectIcons, ...options })
+};
+
 document.addEventListener('DOMContentLoaded', () => {
     // 1. Initialize Lucide Icons
-    if (typeof lucide !== 'undefined') {
-        lucide.createIcons();
-    }
+    createIcons({ icons: projectIcons });
 
     // 2. Reveal on Scroll Animation (Intersection Observer)
     const revealElements = document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .fade-in, .reveal-up, .pair-reveal-left, .pair-reveal-right');
