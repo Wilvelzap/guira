@@ -1,0 +1,9 @@
+# Cabeceras de seguridad para Cloudflare Pages.
+# CSP queda fuera a propósito: GTM, PostHog y los recursos externos
+# necesitan un inventario antes de activarla sin romper el sitio.
+/*
+  Strict-Transport-Security: max-age=31536000
+  X-Frame-Options: SAMEORIGIN
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=(), usb=()
